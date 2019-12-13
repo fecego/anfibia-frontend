@@ -2,9 +2,12 @@
 
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
-
-    .menu-design{
-        border-left: solid 0.5px #E6E6E6;
+    .container-fluid{
+        max-width: 100%;
+    }
+    
+    .flex-wrap{
+        max-width: 100%;
     }
 
     .logo-position{
@@ -78,7 +81,8 @@
     }
     
     .navbar{
-        margin-top: 2px;
+        margin-top: 0px;
+        width: 100%;
     }
     
     @media (min-width: 768px) {  
@@ -91,6 +95,7 @@
 
     .anfibia-title{
         text-align: center;
+        padding-right: 200px;
     }
 
     .anfibio-title h3{
@@ -106,7 +111,7 @@
     }
 
     .icon-header{
-        padding-right: 80px;
+        padding-right: 20px;
     }
     .navbar {
         padding:0rem;
@@ -187,6 +192,11 @@
 /*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
 @media screen and (max-width: 768px) and (min-width: 490px) {
 
+   
+    .menu-design{
+        border-left: solid 0.5px #E6E6E6;
+    }
+
     .logo-position{
         padding-top: 0px;
         padding-left: 45%;
@@ -263,7 +273,7 @@
     }
     
     .navbar{
-        margin-top: 2px;
+        margin-top: 0px;
     }
     
     @media (min-width: 768px) {  
@@ -291,7 +301,8 @@
     }
 
     .icon-header{
-        padding-left: 20px;
+        padding-left: 80px;
+        padding-bottom: 15px;
     }
     .navbar {
         padding:0rem;
@@ -373,15 +384,16 @@
 /*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
 @media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
 
-    .navbar{
-        background-color: #162953;
+
+    .menu-design{
+        border-left: solid 0.5px #E6E6E6;
     }
 
-    .icon-navbar{
-        color: white;
-        font-size: 30px;
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 30px;
     }
-  
+
     .banner-area{
         height: 100vh;
         width: 100%;
@@ -394,18 +406,27 @@
     
     #mega-one{
         color: white;
+        font-family: 'Prometo-Thin';
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-two{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-three{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-four{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
 
@@ -424,8 +445,12 @@
     }
     
     .dropdown-item{
-        padding: 5px 10px;
+        padding: 2px 10px;
         background: white;
+        font-family: 'Prometo-Thin';
+        color: black;
+        font-size: 14px;
+        
     }
     
     h5{
@@ -435,7 +460,7 @@
     }
     
     .navbar{
-        margin-top: 2px;
+        margin-top: 0px;
     }
     
     @media (min-width: 768px) {  
@@ -463,7 +488,7 @@
     }
 
     .icon-header{
-        padding-right: 80px;
+        padding-right: 20px;
     }
     .navbar {
         padding:0rem;
@@ -537,7 +562,6 @@
         border: 2px solid #003e9a;
     }
     
-
 
 
 }
@@ -546,15 +570,21 @@
 /*Tablets*/
 /*Iphone 4, 5, 7 PORTRAIT*/
 @media only screen and (max-width: 319px){
-    .navbar{
-        background-color: #162953;
-    }
-
     .icon-navbar{
         color: white;
         font-size: 30px;
     }
-  
+
+
+    .menu-design{
+        border-left: solid 1px #E6E6E6;
+    }
+
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 30%;
+    }
+
     .banner-area{
         height: 100vh;
         width: 100%;
@@ -567,18 +597,27 @@
     
     #mega-one{
         color: white;
+        font-family: 'Prometo-Thin';
+        font-size: 20px;
+        padding-left: 10px;
     }
 
     #mega-two{
         color: white;
+        font-size: 20px;
+        padding-left: 10px;
     }
 
     #mega-three{
         color: white;
+        font-size: 20px;
+        padding-left: 10px;
     }
 
     #mega-four{
         color: white;
+        font-size: 20px;
+        padding-left: 10px;
     }
 
 
@@ -597,8 +636,12 @@
     }
     
     .dropdown-item{
-        padding: 5px 10px;
+        padding: 2px 10px;
         background: white;
+        font-family: 'Prometo-Thin';
+        color: black;
+        font-size: 14px;
+        
     }
     
     h5{
@@ -608,7 +651,8 @@
     }
     
     .navbar{
-        margin-top: 2px;
+        margin-top: 0px;
+        background-color: #162953;
     }
     
     @media (min-width: 768px) {  
@@ -621,6 +665,7 @@
 
     .anfibia-title{
         text-align: center;
+        padding-left: 5%;
     }
 
     .anfibio-title h3{
@@ -636,7 +681,8 @@
     }
 
     .icon-header{
-        padding-right: 80px;
+        padding-left: 30px;
+        padding-bottom: 10px;
     }
     .navbar {
         padding:0rem;
@@ -664,7 +710,8 @@
         height: 60px;
         border-radius: 0%;
         overflow: hidden;
-        margin-top: -6px;
+        margin-top: 10px;
+
     }
     
     .menuHeader{
@@ -710,9 +757,196 @@
         border: 2px solid #003e9a;
     }
     
-    
-
-
-
 }
 
+/*Celulares Portrait*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .icon-navbar{
+        color: white;
+        font-size: 30px;
+    }
+
+
+    .menu-design{
+        border-left: solid 1px #E6E6E6;
+    }
+
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 30%;
+    }
+
+    .banner-area{
+        height: 100vh;
+        width: 100%;
+        background: white;
+        -webkit-background-size: cover;
+        background-size:cover ;
+        background-position: center center;
+    
+    }
+    
+    #mega-one{
+        color: white;
+        font-family: 'Prometo-Thin';
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    #mega-two{
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    #mega-three{
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    #mega-four{
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+
+
+
+    .menu-area{
+        position: static;
+    }
+    
+    .mega-area{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
+    
+    .dropdown-item{
+        padding: 2px 10px;
+        background: white;
+        font-family: 'Prometo-Thin';
+        color: black;
+        font-size: 14px;
+        
+    }
+    
+    h5{
+        font-family: 'Prometo-x-bold';
+        letter-spacing: 2px;
+        font-weight: 900;
+    }
+    
+    .navbar{
+        margin-top: 0px;
+        background-color: #162953;
+    }
+    
+    @media (min-width: 768px) {  
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+          border-radius:0;
+         }
+        }
+
+    .anfibia-title{
+        text-align: center;
+        padding-left: 5%;
+    }
+
+    .anfibio-title h3{
+        font-family: 'Prometo-x-bold';
+    }
+
+    .anfibia-title p{
+        color: white;
+        font-size: 12px;
+        letter-spacing: 4px;
+        padding-bottom: 0px;
+        font-family: 'Prometo-Thin';
+    }
+
+    .icon-header{
+        padding-left: 40px;
+        padding-bottom: 10px;
+    }
+    .navbar {
+        padding:0rem;
+        margin-bottom:2rem;
+      }
+      
+      .dropdown .dropdown-menu {
+        border-radius:0;
+       }
+      
+      
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+      .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        border-radius:0;
+       }
+      }
+    
+    
+      .logo-image{
+        width: 60px;
+        height: 60px;
+        border-radius: 0%;
+        overflow: hidden;
+        margin-top: 10px;
+
+    }
+    
+    .menuHeader{
+        background: #162953;
+        border-bottom: solid white 1px;
+        
+    
+    }
+    .menuHeader i{
+        color: white;
+        font-size: 20px;
+        
+    }
+    
+    
+    .menuHeaderV2{
+        background: #162953;
+        
+        
+    }
+    
+    .menuHeaderV2 {
+        color: white;
+        font-weight: bolder;
+        font-family: 'Prometo-Thin';
+        letter-spacing: 3px;
+    }
+    
+    .menuHeaderV2 h3{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      font-weight: bold;
+      font-size: 40px;
+      padding-bottom: 0;
+      letter-spacing: 8px;
+    }
+    
+    
+    
+    .searchAnfibia{
+        background: transparent;
+        color: white;
+        border: 2px solid #003e9a;
+    }
+    
+}
