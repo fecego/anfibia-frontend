@@ -2,6 +2,16 @@
 
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
+
+    .menu-design{
+        border-left: solid 0.5px #E6E6E6;
+    }
+
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 30px;
+    }
+
     .banner-area{
         height: 100vh;
         width: 100%;
@@ -14,18 +24,27 @@
     
     #mega-one{
         color: white;
+        font-family: 'Prometo-Thin';
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-two{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-three{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
     #mega-four{
         color: white;
+        font-size: 20px;
+        padding-left: 40px;
     }
 
 
@@ -44,8 +63,12 @@
     }
     
     .dropdown-item{
-        padding: 5px 10px;
+        padding: 2px 10px;
         background: white;
+        font-family: 'Prometo-Thin';
+        color: black;
+        font-size: 14px;
+        
     }
     
     h5{
@@ -164,6 +187,11 @@
 /*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
 @media screen and (max-width: 768px) and (min-width: 490px) {
 
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 45%;
+    }
+
     .navbar{
         background-color: #162953;
     }
@@ -185,22 +213,31 @@
     
     #mega-one{
         color: white;
+        padding-left: 15px;
+        letter-spacing:4px;
+        font-family: 'Prometo-Thin';
     }
 
     #mega-two{
         color: white;
+        padding-left: 15px;
+        letter-spacing: 4px;
+        font-family: 'Prometo-Thin';
     }
 
     #mega-three{
         color: white;
+        padding-left: 15px;
+        letter-spacing: 4px;
+        font-family: 'Prometo-Thin';
     }
 
     #mega-four{
         color: white;
+        padding-left: 15px;
+        letter-spacing: 4px;
+        font-family: 'Prometo-Thin';
     }
-
-
-
 
     .menu-area{
         position: static;
@@ -254,7 +291,7 @@
     }
 
     .icon-header{
-        padding-right: 80px;
+        padding-left: 20px;
     }
     .navbar {
         padding:0rem;
@@ -268,21 +305,23 @@
       
       /* Medium devices (tablets, 768px and up) 
       The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
+      /*@media (max-width: 768px) and (min-width: 490px)  {  
       .dropdown:hover .dropdown-menu {
           display: block;
           margin-top: 0;
         border-radius:0;
        }
-      }
+      }*/
     
     
       .logo-image{
+        
         width: 60px;
         height: 60px;
         border-radius: 0%;
         overflow: hidden;
         margin-top: -6px;
+        position: center;
     }
     
     .menuHeader{
