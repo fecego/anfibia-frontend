@@ -1,142 +1,678 @@
 
-.navbar {
-    padding:0rem;
-    margin-bottom:2rem;
+/*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
+@media only screen and (min-width: 1025px) {
+
+  .footer-style{
+    background: #162953;
   }
   
-  .dropdown .dropdown-menu {
-    border-radius:0;
-   }
-  
-  
-  /* Medium devices (tablets, 768px and up) 
-  The navbar toggle appears at this breakpoint */
-  @media (min-width: 768px) {  
-  .dropdown:hover .dropdown-menu {
-      display: block;
-      margin-top: 0;
-    border-radius:0;
-   }
+  .menu-footer{
+    padding:30px
   }
-
-  .logo-image{
-    width: 46px;
-    height: 56px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-}
-
-.menuHeader{
-    background: #001F4D;
-    
-
-}
-.menuHeader i{
+  
+  .menu-footer h5{
     color: white;
-}
-
-
-.menuHeaderV2{
-    background: #042455;
-    
-}
-
-.menuHeaderV2 a{
-    color: white;
-    font-weight: bolder;
-    padding-left: 5px;
-}
-
-.searchAnfibia{
-    background: transparent;
-    color: white;
-    border: 2px solid #003e9a;
-}
-
-
-.effect {
-    width: 100%;
-    padding: 50px 0px 70px 0px;
-    background-color: #001F4D;
-  }
-  .effect h2 {
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    font-size: 25px;
-    letter-spacing: 3px;
-  }
-  .effect:nth-child(2) {
-    margin-top: 50px;
-  }
-  .effect:nth-child(2n+1) {
-    background-color: #001F4D;
-  }
-  .effect:nth-child(2n+1) h2 {
-    color: #212121;
-  }
-  .effect:nth-child(2n) a {
-    color: #fff;
-    border-color: #fff;
-  }
-  .effect .buttons {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    font-family: 'Prometo-x-bold';
+    font-size: 20px;
+    letter-spacing: 4px;
   }
   
-  /* styles for a common effect !!!YOU NEED THEM */
+  .menu-footer a{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+  }
+  
+  .copyright p{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  
   .effect {
-    /*display: flex; !!!uncomment this line !!!*/
-  }
-  .effect a {
-    text-decoration: none !important;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 20px;
-    font-size: 25px;
-    overflow: hidden;
-    position: relative;
-    color: white;
-    border: 2px solid white;
-  }
-  .effect a i {
-    position: relative;
-    z-index: 3;
-  }
-  .effect a:last-child {
-    margin-right: 0px;
-  }
-  .effect a:before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  .effect a i {
-    display: inline-block;
-    vertical-align: middle;
-  }
+      width: 100%;
+      padding: 50px 0px 70px 0px;
+      background-color: #4cada9;
+    }
+    .effect h2 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+    .effect:nth-child(2) {
+      margin-top: 50px;
+    }
+    .effect:nth-child(2n+1) {
+      background-color: #162953;
+    }
+    .effect:nth-child(2n+1) h2 {
+      color: #212121;
+    }
+    .effect:nth-child(2n) a {
+      color: #fff;
+      border-color: #fff;
+    }
+    .effect .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* styles for a common effect !!!YOU NEED THEM */
+    .effect {
+      /*display: flex; !!!uncomment this line !!!*/
+    }
+    .effect a {
+      text-decoration: none !important;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      font-size: 25px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    .effect h1{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  
+    .effect h5{
+      color: white;
+      font-family: 'Prometo-Thin';
+      letter-spacing: 4px;
+      text-align: center;
+    }
+  
+    .effect a i {
+      position: relative;
+      z-index: 3;
+    }
+    .effect a:last-child {
+      margin-right: 0px;
+    }
+    .effect a:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .effect a i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+  .effect.thurio a {
+      transition: border-radius 0.2s linear 0s;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .effect.thurio a i {
+      transition: -webkit-transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .effect.thurio a:hover {
+      border-radius: 0px;
+    }
 
-.effect.thurio a {
-    transition: border-radius 0.2s linear 0s;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  .effect.thurio a i {
-    transition: -webkit-transform 0.01s linear 0s;
-    transition: transform 0.01s linear 0s;
-    transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-  }
-  .effect.thurio a:hover {
-    border-radius: 0px;
+
+}
+
+
+
+/*Tablet Vertical*/
+/*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
+@media screen and (max-width: 768px) and (min-width: 490px) {
+  .footer-style{
+    background: #162953;
   }
   
+  .menu-footer{
+    padding:30px
+  }
+  
+  .menu-footer h5{
+    color: white;
+    font-family: 'Prometo-x-bold';
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .menu-footer a{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  
+  .copyright p{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  
+  .effect {
+      width: 100%;
+      padding: 50px 0px 70px 0px;
+      background-color: #4cada9;
+    }
+    .effect h2 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+    .effect:nth-child(2) {
+      margin-top: 50px;
+    }
+    .effect:nth-child(2n+1) {
+      background-color: #162953;
+    }
+    .effect:nth-child(2n+1) h2 {
+      color: #212121;
+    }
+    .effect:nth-child(2n) a {
+      color: #fff;
+      border-color: #fff;
+    }
+    .effect .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* styles for a common effect !!!YOU NEED THEM */
+    .effect {
+      /*display: flex; !!!uncomment this line !!!*/
+    }
+    .effect a {
+      text-decoration: none !important;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      font-size: 25px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    .effect h1{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  
+    .effect h5{
+      color: white;
+      font-family: 'Prometo-Thin';
+      letter-spacing: 4px;
+      text-align: center;
+    }
+  
+    .effect a i {
+      position: relative;
+      z-index: 3;
+    }
+    .effect a:last-child {
+      margin-right: 0px;
+    }
+    .effect a:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .effect a i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+  .effect.thurio a {
+      transition: border-radius 0.2s linear 0s;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .effect.thurio a i {
+      transition: -webkit-transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .effect.thurio a:hover {
+      border-radius: 0px;
+    }
+
+}
+
+
+
+/*Celular Vertical*/
+/*Afecta Android phones Portrait, iphone 4 Portrait, iphone 7 Landscape, iphone 7 plus Portrait, */
+@media (min-width: 320px) and (max-width: 480px) {
+  .footer-style{
+    background: #162953;
+  }
+  
+  .menu-footer{
+    padding:30px
+  }
+  
+  .menu-footer h5{
+    color: white;
+    font-family: 'Prometo-x-bold';
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  
+  .menu-footer a{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+  }
+  
+  .copyright p{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  
+  .effect {
+      width: 100%;
+      padding: 50px 0px 70px 0px;
+      background-color: #4cada9;
+    }
+    .effect h2 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+    .effect:nth-child(2) {
+      margin-top: 50px;
+    }
+    .effect:nth-child(2n+1) {
+      background-color: #162953;
+    }
+    .effect:nth-child(2n+1) h2 {
+      color: #212121;
+    }
+    .effect:nth-child(2n) a {
+      color: #fff;
+      border-color: #fff;
+    }
+    .effect .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* styles for a common effect !!!YOU NEED THEM */
+    .effect {
+      /*display: flex; !!!uncomment this line !!!*/
+    }
+    .effect a {
+      text-decoration: none !important;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      font-size: 25px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    .effect h1{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  
+    .effect h5{
+      color: white;
+      font-family: 'Prometo-Thin';
+      letter-spacing: 4px;
+      text-align: center;
+    }
+  
+    .effect a i {
+      position: relative;
+      z-index: 3;
+    }
+    .effect a:last-child {
+      margin-right: 0px;
+    }
+    .effect a:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .effect a i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+  .effect.thurio a {
+      transition: border-radius 0.2s linear 0s;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .effect.thurio a i {
+      transition: -webkit-transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .effect.thurio a:hover {
+      border-radius: 0px;
+    }
+
+}
+
+/*Tablets*/
+/*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
+@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+  .footer-style{
+    background: #162953;
+  }
+  
+  .menu-footer{
+    padding:30px
+  }
+  
+  .menu-footer h5{
+    color: white;
+    font-family: 'Prometo-x-bold';
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .menu-footer a{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+  }
+  
+  .copyright p{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  
+  .effect {
+      width: 100%;
+      padding: 50px 0px 70px 0px;
+      background-color: #4cada9;
+    }
+    .effect h2 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+    .effect:nth-child(2) {
+      margin-top: 50px;
+    }
+    .effect:nth-child(2n+1) {
+      background-color: #162953;
+    }
+    .effect:nth-child(2n+1) h2 {
+      color: #212121;
+    }
+    .effect:nth-child(2n) a {
+      color: #fff;
+      border-color: #fff;
+    }
+    .effect .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* styles for a common effect !!!YOU NEED THEM */
+    .effect {
+      /*display: flex; !!!uncomment this line !!!*/
+    }
+    .effect a {
+      text-decoration: none !important;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      font-size: 25px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    .effect h1{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  
+    .effect h5{
+      color: white;
+      font-family: 'Prometo-Thin';
+      letter-spacing: 4px;
+      text-align: center;
+    }
+  
+    .effect a i {
+      position: relative;
+      z-index: 3;
+    }
+    .effect a:last-child {
+      margin-right: 0px;
+    }
+    .effect a:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .effect a i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+  .effect.thurio a {
+      transition: border-radius 0.2s linear 0s;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .effect.thurio a i {
+      transition: -webkit-transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .effect.thurio a:hover {
+      border-radius: 0px;
+    }
+}
+
+
+/*Tablets*/
+/*Iphone 4, 5, 7 PORTRAIT*/
+@media only screen and (max-width: 319px){
+  .footer-style{
+    background: #162953;
+  }
+  
+  .menu-footer{
+    padding:30px
+  }
+  
+  .menu-footer h5{
+    color: white;
+    font-family: 'Prometo-x-bold';
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+  
+  .menu-footer a{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+  }
+  
+  .copyright p{
+    color: white;
+    font-family: 'Prometo-Thin';
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  
+  .effect {
+      width: 100%;
+      padding: 50px 0px 70px 0px;
+      background-color: #4cada9;
+    }
+    .effect h2 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+    .effect:nth-child(2) {
+      margin-top: 50px;
+    }
+    .effect:nth-child(2n+1) {
+      background-color: #162953;
+    }
+    .effect:nth-child(2n+1) h2 {
+      color: #212121;
+    }
+    .effect:nth-child(2n) a {
+      color: #fff;
+      border-color: #fff;
+    }
+    .effect .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* styles for a common effect !!!YOU NEED THEM */
+    .effect {
+      /*display: flex; !!!uncomment this line !!!*/
+    }
+    .effect a {
+      text-decoration: none !important;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      font-size: 25px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    .effect h1{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  
+    .effect h5{
+      color: white;
+      font-family: 'Prometo-Thin';
+      letter-spacing: 4px;
+      text-align: center;
+    }
+  
+    .effect a i {
+      position: relative;
+      z-index: 3;
+    }
+    .effect a:last-child {
+      margin-right: 0px;
+    }
+    .effect a:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .effect a i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+  .effect.thurio a {
+      transition: border-radius 0.2s linear 0s;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .effect.thurio a i {
+      transition: -webkit-transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s;
+      transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .effect.thurio a:hover {
+      border-radius: 0px;
+    }
+}
+
 

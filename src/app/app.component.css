@@ -1,142 +1,85 @@
+@font-face {
+  font-family: 'Prometo-Bold';
+  src: url('/assets/fonts/Prometo/PrometoBold.otf');
+}
 
-.navbar {
-    padding:0rem;
-    margin-bottom:2rem;
-  }
+@font-face{
+  font-family: 'Prometo-Black';
+  src: url('/assets/fonts/Prometo/PrometoBlack.otf');
+}
+
+@font-face{
+  font-family: 'Prometo-Black-Italic';
+  src: url('/assets/fonts/Prometo/PrometoBlackItalic.otf');
+}
+
+@font-face{
+  font-family: 'Prometo-Bold-Italic';
+  src: url('/assets/fonts/Prometo/PrometoBoldItalic.otf');
+
+}
+
+@font-face{
+  font-family: 'Prometo-Italic';
+  src: url('/assets/fonts/Prometo/PrometoItalic.otf');
+}
+
+@font-face{
+  font-family: 'Prometo-Light';
+  src: url('/assets/fonts/Prometo/PrometoLight.otf');
+
+}
+
+@font-face{
+  font-family: 'Prometo-Light-Italic';
+  src: url('/assets/fonts/Prometo/PrometoLightItalic.otf');
+}
+
+@font-face{
+  font-family: 'Prometo-Medium';
+  src: url('/assets/fonts/Prometo/PrometoMedium.otf');
+
+}
+
+@font-face{
+  font-family: 'Prometo-Medium-Italic';
+  src: url('/assets/fonts/Prometo/PrometoMediumItalic.otf');
+}
+
+@font-face{
+  font-family: 'Prometo-Regular';
+  src: url('/assets/fonts/Prometo/PrometoRegular.otf');
+}
+
+
+@font-face{
+  font-family: 'Prometo-Thin-Italic';
+  src: url('/assets/fonts/Prometo/PrometoThinItalic.otf');
   
-  .dropdown .dropdown-menu {
-    border-radius:0;
-   }
-  
-  
-  /* Medium devices (tablets, 768px and up) 
-  The navbar toggle appears at this breakpoint */
-  @media (min-width: 768px) {  
-  .dropdown:hover .dropdown-menu {
-      display: block;
-      margin-top: 0;
-    border-radius:0;
-   }
-  }
-
-  .logo-image{
-    width: 46px;
-    height: 56px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-}
-
-.menuHeader{
-    background: #001F4D;
-    
-
-}
-.menuHeader i{
-    color: white;
 }
 
 
-.menuHeaderV2{
-    background: #042455;
-    
+@font-face{
+  font-family: 'Prometo-Thin';
+  src: url('/assets/fonts/Prometo/PrometoThin.otf');
 }
 
-.menuHeaderV2 a{
-    color: white;
-    font-weight: bolder;
-    padding-left: 5px;
+@font-face{
+  font-family: 'Prometo-x-bold';
+  src: url('/assets/fonts/Prometo/PrometoXBold.otf');
+
 }
 
-.searchAnfibia{
-    background: transparent;
-    color: white;
-    border: 2px solid #003e9a;
+@font-face{
+  font-family: 'Prometo-x-bold-italic';
+  src: url('/assets/fonts/Prometo/PrometoXBoldItalic.otf');
 }
 
 
-.effect {
-    width: 100%;
-    padding: 50px 0px 70px 0px;
-    background-color: #001F4D;
-  }
-  .effect h2 {
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    font-size: 25px;
-    letter-spacing: 3px;
-  }
-  .effect:nth-child(2) {
-    margin-top: 50px;
-  }
-  .effect:nth-child(2n+1) {
-    background-color: #001F4D;
-  }
-  .effect:nth-child(2n+1) h2 {
-    color: #212121;
-  }
-  .effect:nth-child(2n) a {
-    color: #fff;
-    border-color: #fff;
-  }
-  .effect .buttons {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* styles for a common effect !!!YOU NEED THEM */
-  .effect {
-    /*display: flex; !!!uncomment this line !!!*/
-  }
-  .effect a {
-    text-decoration: none !important;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 20px;
-    font-size: 25px;
-    overflow: hidden;
-    position: relative;
-    color: white;
-    border: 2px solid white;
-  }
-  .effect a i {
-    position: relative;
-    z-index: 3;
-  }
-  .effect a:last-child {
-    margin-right: 0px;
-  }
-  .effect a:before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  .effect a i {
-    display: inline-block;
-    vertical-align: middle;
-  }
 
-.effect.thurio a {
-    transition: border-radius 0.2s linear 0s;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  .effect.thurio a i {
-    transition: -webkit-transform 0.01s linear 0s;
-    transition: transform 0.01s linear 0s;
-    transition: transform 0.01s linear 0s, -webkit-transform 0.01s linear 0s;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-  }
-  .effect.thurio a:hover {
-    border-radius: 0px;
-  }
-  
+
+
+
+
+
 

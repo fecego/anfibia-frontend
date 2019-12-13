@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MenuheaderComponent } from './menuheader/menuheader.component';
 import { FooterComponent } from './footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AnfibiaMainComponent } from './anfibia-main/anfibia-main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuheaderComponent,
-    FooterComponent
+    FooterComponent,
+    AnfibiaMainComponent
   ],
   imports: [
     BrowserModule,
