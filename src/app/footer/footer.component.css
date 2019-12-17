@@ -1,9 +1,13 @@
 
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
+
+
 @media only screen and (min-width: 1025px) {
 
   .footer-style{
-    background: #162953;
+    background: black;
+    
+ 
   }
   
   .menu-footer{
@@ -47,7 +51,7 @@
       margin-top: 50px;
     }
     .effect:nth-child(2n+1) {
-      background-color: #162953;
+      background-color: black;
     }
     .effect:nth-child(2n+1) h2 {
       color: #212121;
@@ -140,7 +144,7 @@
 /*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
 @media screen and (max-width: 768px) and (min-width: 490px) {
   .footer-style{
-    background: #162953;
+    background: black;
   }
   
   .menu-footer{
@@ -186,7 +190,7 @@
       margin-top: 50px;
     }
     .effect:nth-child(2n+1) {
-      background-color: #162953;
+      background-color: black;
     }
     .effect:nth-child(2n+1) h2 {
       color: #212121;
@@ -278,7 +282,7 @@
 /*Afecta Android phones Portrait, iphone 4 Portrait, iphone 7 Landscape, iphone 7 plus Portrait, */
 @media (min-width: 320px) and (max-width: 480px) {
   .footer-style{
-    background: #162953;
+    background: black;
   }
   
   .menu-footer{
@@ -322,7 +326,7 @@
       margin-top: 50px;
     }
     .effect:nth-child(2n+1) {
-      background-color: #162953;
+      background-color: black;
     }
     .effect:nth-child(2n+1) h2 {
       color: #212121;
@@ -412,7 +416,7 @@
 /*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
 @media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
   .footer-style{
-    background: #162953;
+    background: black;
   }
   
   .menu-footer{
@@ -456,7 +460,7 @@
       margin-top: 50px;
     }
     .effect:nth-child(2n+1) {
-      background-color: #162953;
+      background-color: black;
     }
     .effect:nth-child(2n+1) h2 {
       color: #212121;
@@ -546,7 +550,7 @@
 /*Iphone 4, 5, 7 PORTRAIT*/
 @media only screen and (max-width: 319px){
   .footer-style{
-    background: #162953;
+    background: black;
   }
   
   .menu-footer{
@@ -590,7 +594,7 @@
       margin-top: 50px;
     }
     .effect:nth-child(2n+1) {
-      background-color: #162953;
+      background-color: black;
     }
     .effect:nth-child(2n+1) h2 {
       color: #212121;
