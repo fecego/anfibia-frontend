@@ -1,10 +1,103 @@
 
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
+
+
+
     body{
         margin: 0;
         padding: 0;
     }
+
+    .contenedorInicial{
+        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 600px; 
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .posicion-big{
+        background: white;
+        background-size: cover;
+        position: absolute;
+        top: 7%;
+        left: 8%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little{
+
+        position: absolute;
+        background: white;
+        background-size: cover;
+        top: 5%;
+        right: 13%;
+        height: 500px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia{
+        position: absolute;
+        background: transparent;
+        top: 10%;
+        right: 30%;
+        height: 400px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia h1{
+        text-align: center;
+        font-family: 'Prometo-Medium';
+        color: white;
+        font-weight: bold;
+        font-size: 120px;
+        letter-spacing: 5px;
+        padding-top: 200px;
+    }
+
+    .texto-inside-anfibia p{
+        text-align: center;
+        font-family: 'Prometo-Light';
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 2px;
+        
+    }
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little3{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-size: cover;
+        top: 2%;
+        right: 15%;
+        height: 500px;
+        width: 100%;
+    }
+
 
     .product-card {
         width: 100%;
@@ -420,12 +513,475 @@
        
 }
 
-/*Tablet Vertical*/
+
 /*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
 @media screen and (max-width: 768px) and (min-width: 490px) {
     body{
         margin: 0;
         padding: 0;
+    }
+
+    
+    .product-card {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 7px #dfdfdf;
+        margin: 50px auto;
+        background: #fafafa;
+    }
+    
+    .badge {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: red;
+        color: #fff;
+        padding: 3px 10px;
+    }
+    
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 50px;
+        background: #f0f0f0;
+    }
+    
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .product-details {
+        padding: 30px;
+    }
+    
+    .product-catagory {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 18px;
+    }
+    
+    .product-details h4 a {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        color: #363636;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .product-details h4 a:hover {
+        color: #fbb72c;
+    }
+    
+    .product-details p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
+    
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
+    
+    .product-price {
+        font-size: 18px;
+        color: #fbb72c;
+        font-weight: 600;
+    }
+    
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .product-links {
+        text-align: right;
+    }
+    
+    .product-links a {
+        display: inline-block;
+        margin-left: 5px;
+        color: #e1e1e1;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    .product-links a:hover {
+        color: #fbb72c;
+    }
+
+    .product-Title h1{
+        font-family: 'Prometo-Medium';
+        padding-top: 20px;
+    }
+
+    .product-Title hr{
+        background: #00BEF8;
+        width: 20%;
+        height: 10px;
+        margin-left: 0;
+       
+    }
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    
+    .slides input { display: none; }
+    
+    .slide-container { display: block; }
+    
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        position: absolute;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav label {
+        width: 200px;
+        height: 100%;
+        display: none;
+        position: absolute;
+    
+          opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+    
+        transition: opacity .2s;
+    
+        color: #FFF;
+        font-size: 156pt;
+        text-align: center;
+        line-height: 380px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+    
+    .slide:hover + .nav label { opacity: 0.5; }
+    
+    .nav label:hover { opacity: 1; }
+    
+    .nav .next { right: 0; }
+    
+    input:checked + .slide-container  .slide {
+        opacity: 1;
+    
+        transform: scale(1);
+    
+        transition: opacity 1s ease-in-out;
+    }
+    
+    input:checked + .slide-container .nav label { display: block; }
+    
+    .nav-dots {
+        width: 100%;
+        bottom: 9px;
+        height: 11px;
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .nav-dots .nav-dot {
+        top: -5px;
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .nav-dots .nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    input#img-1:checked ~ .nav-dots label#img-dot-1,
+    input#img-2:checked ~ .nav-dots label#img-dot-2,
+    input#img-3:checked ~ .nav-dots label#img-dot-3,
+    input#img-4:checked ~ .nav-dots label#img-dot-4,
+    input#img-5:checked ~ .nav-dots label#img-dot-5,
+    input#img-6:checked ~ .nav-dots label#img-dot-6 {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .parallax {
+        margin-top: 20px;
+        /* The image used */
+        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+    .contenedorInicial{
+        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 400px; 
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .posicion-big{
+        background: white;
+        background-size: cover;
+        position: absolute;
+        top: 7%;
+        left: 8%;
+        height: 300px;
+        width: 100%;
+    }
+
+    .posicion-little{
+
+        position: absolute;
+        background: white;
+        background-size: cover;
+        top: 5%;
+        right: 13%;
+        height: 300px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia{
+        position: absolute;
+        background: transparent;
+        top: 20%;
+        left: 10%;
+        height: 200px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia h1{
+        text-align: center;
+        padding-top: 50px;
+        font-family: 'Prometo-Medium';
+        color: white;
+        font-weight: bold;
+        font-size:60px;
+        letter-spacing: 5px;
+       
+    }
+
+    .texto-inside-anfibia p{
+        text-align: center;
+        font-family: 'Prometo-Light';
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 2px;
+        
+    }
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 300px;
+        width: 100%;
+    }
+
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 300px;
+        width: 100%;
+    }
+
+    .posicion-little3{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-size: cover;
+        top: 2%;
+        right: 15%;
+        height: 300px;
+        width: 100%;
+    }
+
+
+    .a-categorias{
+        background: transparent;
+        border: 2px solid black;
+        color: black; 
+        font-family: 'Prometo-Medium';
+        padding: 3px;
+        font-size: 20px;
+    }
+    section{
+        position: relative;
+        height: 100vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+
+
+
+
+
+    section:hover .screen{
+        opacity: 0.1;
+    } 
+
+    section .screen:hover{
+        flex-grow: 5;
+        opacity: 1;
+    }
+
+    
+
+    section .screen:nth-child(1){
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+    }
+    section .screen:nth-child(2){
+        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+    }
+    section .screen:nth-child(3){
+        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+    }
+
+    
+    section .screen .content{
+        position: relative;
+        width: 100%;
+        height: 50%;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 2px;
+        font-size: 20px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 10px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+
+    .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 50px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
     }
     
     .container-fluid-video{
@@ -483,6 +1039,476 @@
         margin: 0;
         padding: 0;
     }
+
+    .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 70px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    section{
+        position: relative;
+        height: 100vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+
+
+
+
+
+    section:hover .screen{
+        opacity: 0.1;
+    } 
+
+    section .screen:hover{
+        flex-grow: 5;
+        opacity: 1;
+    }
+
+    
+
+    section .screen:nth-child(1){
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(2){
+        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(3){
+        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+    
+    section .screen .content{
+        position: relative;
+        width: 400px;
+        height: auto;
+        background: white;
+        padding: 40px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 2px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 20px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+    
+    
+
+    .product-Title h1{
+        font-family: 'Prometo-Medium';
+        padding-top: 20px;
+    }
+
+    .product-Title hr{
+        background: #00BEF8;
+        width: 20%;
+        height: 10px;
+        margin-left: 0;
+       
+    }
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    
+    .slides input { display: none; }
+    
+    .slide-container { display: block; }
+    
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        position: absolute;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav label {
+        width: 200px;
+        height: 100%;
+        display: none;
+        position: absolute;
+    
+          opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+    
+        transition: opacity .2s;
+    
+        color: #FFF;
+        font-size: 156pt;
+        text-align: center;
+        line-height: 380px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+    
+    .slide:hover + .nav label { opacity: 0.5; }
+    
+    .nav label:hover { opacity: 1; }
+    
+    .nav .next { right: 0; }
+    
+    input:checked + .slide-container  .slide {
+        opacity: 1;
+    
+        transform: scale(1);
+    
+        transition: opacity 1s ease-in-out;
+    }
+    
+    input:checked + .slide-container .nav label { display: block; }
+    
+    .nav-dots {
+        width: 100%;
+        bottom: 9px;
+        height: 11px;
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .nav-dots .nav-dot {
+        top: -5px;
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .nav-dots .nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    input#img-1:checked ~ .nav-dots label#img-dot-1,
+    input#img-2:checked ~ .nav-dots label#img-dot-2,
+    input#img-3:checked ~ .nav-dots label#img-dot-3,
+    input#img-4:checked ~ .nav-dots label#img-dot-4,
+    input#img-5:checked ~ .nav-dots label#img-dot-5,
+    input#img-6:checked ~ .nav-dots label#img-dot-6 {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .parallax {
+        margin-top: 20px;
+        /* The image used */
+        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+    .contenedorInicial{
+        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 600px; 
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .posicion-big{
+        background: white;
+        background-size: cover;
+        position: absolute;
+        top: 7%;
+        left: 8%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little{
+
+        position: absolute;
+        background: white;
+        background-size: cover;
+        top: 5%;
+        right: 13%;
+        height: 500px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia{
+        position: absolute;
+        background: transparent;
+        top: 10%;
+        right: 20%;
+        height: 400px;
+        width: 500px;
+    }
+
+    .texto-inside-anfibia h1{
+        text-align: center;
+        font-family: 'Prometo-Medium';
+        color: white;
+        font-weight: bold;
+        font-size: 120px;
+        letter-spacing: 5px;
+        padding-top: 200px;
+    }
+
+    .texto-inside-anfibia p{
+        text-align: center;
+        font-family: 'Prometo-Light';
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 2px;
+        
+    }
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 10%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .posicion-little3{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-size: cover;
+        top: 2%;
+        right: 15%;
+        height: 500px;
+        width: 100%;
+    }
+
+
+    .product-card {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 7px #dfdfdf;
+        margin: 50px auto;
+        background: #fafafa;
+    }
+    
+    .badge {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: red;
+        color: #fff;
+        padding: 3px 10px;
+    }
+    
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        padding: 50px;
+        background: #f0f0f0;
+    }
+    
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .product-details {
+        padding: 30px;
+    }
+    
+    .product-catagory {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 18px;
+    }
+    
+    .product-details h4 a {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        color: #363636;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .product-details h4 a:hover {
+        color: #fbb72c;
+    }
+    
+    .product-details p {
+        font-size: 13px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
+    
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
+    
+    .product-price {
+        font-size: 18px;
+        color: #fbb72c;
+        font-weight: 600;
+    }
+    
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .product-links {
+        text-align: right;
+    }
+    
+    .product-links a {
+        display: inline-block;
+        margin-left: 5px;
+        color: #e1e1e1;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    .product-links a:hover {
+        color: #fbb72c;
+    }
+
+
+    .a-categorias{
+        background: transparent;
+        border: 2px solid black;
+        color: black; 
+        font-family: 'Prometo-Medium';
+        padding: 5px;
+        font-size: 20px;
+    }
+    
+    .container-fluid-video{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background: black;
+        
+    }   
     
     .container-fluid-video{
         position: relative;
@@ -538,6 +1564,461 @@
         margin: 0;
         padding: 0;
     }
+
+    .product-Title h1{
+        font-family: 'Prometo-Medium';
+        padding-top: 20px;
+        font-size: 30px;
+    }
+
+    .product-Title hr{
+        background: #00BEF8;
+        width: 20%;
+        height: 10px;
+        margin-left: 0;
+       
+    }
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    
+    .slides input { display: none; }
+    
+    .slide-container { display: block; }
+    
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        position: absolute;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav label {
+        width: 200px;
+        height: 100%;
+        display: none;
+        position: absolute;
+    
+          opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+    
+        transition: opacity .2s;
+    
+        color: #FFF;
+        font-size: 156pt;
+        text-align: center;
+        line-height: 380px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+    
+    .slide:hover + .nav label { opacity: 0.5; }
+    
+    .nav label:hover { opacity: 1; }
+    
+    .nav .next { right: 0; }
+    
+    input:checked + .slide-container  .slide {
+        opacity: 1;
+    
+        transform: scale(1);
+    
+        transition: opacity 1s ease-in-out;
+    }
+    
+    input:checked + .slide-container .nav label { display: block; }
+    
+    .nav-dots {
+        width: 100%;
+        bottom: 9px;
+        height: 11px;
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .nav-dots .nav-dot {
+        top: -5px;
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .nav-dots .nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    input#img-1:checked ~ .nav-dots label#img-dot-1,
+    input#img-2:checked ~ .nav-dots label#img-dot-2,
+    input#img-3:checked ~ .nav-dots label#img-dot-3,
+    input#img-4:checked ~ .nav-dots label#img-dot-4,
+    input#img-5:checked ~ .nav-dots label#img-dot-5,
+    input#img-6:checked ~ .nav-dots label#img-dot-6 {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .parallax {
+        margin-top: 20px;
+        /* The image used */
+        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+
+    .contenedorInicial{
+        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 600px; 
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .posicion-big{
+        background: white;
+        background-size: cover;
+        position: absolute;
+        top: 7%;
+        left: 1%;
+        height: 500px;
+        width: 80px;
+    }
+
+    .posicion-little{
+
+        position: absolute;
+        background: white;
+        background-size: cover;
+        top: 5%;
+        right: 2%;
+        height: 500px;
+        width: 80px;
+    }
+
+    .texto-inside-anfibia{
+        position: absolute;
+        background: transparent;
+        top: 30%;
+        left: 20%;
+        height: 220px;
+        width: 270px;
+    }
+
+    .texto-inside-anfibia h1{
+        text-align: center;
+        font-family: 'Prometo-Medium';
+        color: white;
+        font-weight: bold;
+        font-size: 60px;
+        letter-spacing: 5px;
+       
+    }
+
+    .texto-inside-anfibia p{
+        text-align: center;
+        font-family: 'Prometo-Light';
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 2px;
+        
+    }
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 2%;
+        height: 500px;
+        width: 40%;
+    }
+
+    
+
+    .posicion-little3{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-size: cover;
+        top: 2%;
+        right: 3%;
+        height: 500px;
+        width: 40%;
+    }
+
+
+    .product-card {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 7px #dfdfdf;
+        margin: 50px auto;
+        background: #fafafa;
+    }
+    
+    .badge {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: red;
+        color: #fff;
+        padding: 3px 10px;
+    }
+    
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 50px;
+        background: #f0f0f0;
+    }
+    
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .product-details {
+        padding: 30px;
+    }
+    
+    .product-catagory {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 18px;
+    }
+    
+    .product-details h4 a {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        color: #363636;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .product-details h4 a:hover {
+        color: #fbb72c;
+    }
+    
+    .product-details p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
+    
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
+    
+    .product-price {
+        font-size: 18px;
+        color: #fbb72c;
+        font-weight: 600;
+    }
+    
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .product-links {
+        text-align: right;
+    }
+    
+    .product-links a {
+        display: inline-block;
+        margin-left: 5px;
+        color: #e1e1e1;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    .product-links a:hover {
+        color: #fbb72c;
+    }
+
+
+    .a-categorias{
+        background: transparent;
+        border: 2px solid black;
+        color: black; 
+        font-family: 'Prometo-Medium';
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    section{
+        position: relative;
+        height: 70vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+
+
+
+
+
+    section:hover .screen{
+        opacity: 0.1;
+    } 
+
+    section .screen:hover{
+        flex-grow: 5;
+        opacity: 1;
+    }
+
+    
+
+    section .screen:nth-child(1){
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(2){
+        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(3){
+        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+    
+    section .screen .content{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background: white;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 10px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+    
+
+    .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 20px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
+    }
     
     .container-fluid-video{
         position: relative;
@@ -592,6 +2073,461 @@
         padding: 0;
     }
     
+    .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 15px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    section{
+        position: relative;
+        height: 100vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+
+
+
+
+
+    section:hover .screen{
+        opacity: 0.1;
+    } 
+
+    section .screen:hover{
+        flex-grow: 5;
+        opacity: 1;
+    }
+
+    
+
+    section .screen:nth-child(1){
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(2){
+        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    section .screen:nth-child(3){
+        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+    
+    section .screen .content{
+        position: relative;
+        width: 100%;
+        height: 45%;
+        background: white;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 10px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+    
+    
+
+    .product-Title h1{
+        font-family: 'Prometo-Medium';
+        padding-top: 20px;
+        font-size: 30px;
+    }
+
+    .product-Title hr{
+        background: #00BEF8;
+        width: 20%;
+        height: 10px;
+        margin-left: 0;
+       
+    }
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    
+    .slides input { display: none; }
+    
+    .slide-container { display: block; }
+    
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 420px;
+        display: block;
+        position: absolute;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav label {
+        width: 200px;
+        height: 100%;
+        display: none;
+        position: absolute;
+    
+          opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+    
+        transition: opacity .2s;
+    
+        color: #FFF;
+        font-size: 156pt;
+        text-align: center;
+        line-height: 380px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+    
+    .slide:hover + .nav label { opacity: 0.5; }
+    
+    .nav label:hover { opacity: 1; }
+    
+    .nav .next { right: 0; }
+    
+    input:checked + .slide-container  .slide {
+        opacity: 1;
+    
+        transform: scale(1);
+    
+        transition: opacity 1s ease-in-out;
+    }
+    
+    input:checked + .slide-container .nav label { display: block; }
+    
+    .nav-dots {
+        width: 100%;
+        bottom: 9px;
+        height: 11px;
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .nav-dots .nav-dot {
+        top: -5px;
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .nav-dots .nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    input#img-1:checked ~ .nav-dots label#img-dot-1,
+    input#img-2:checked ~ .nav-dots label#img-dot-2,
+    input#img-3:checked ~ .nav-dots label#img-dot-3,
+    input#img-4:checked ~ .nav-dots label#img-dot-4,
+    input#img-5:checked ~ .nav-dots label#img-dot-5,
+    input#img-6:checked ~ .nav-dots label#img-dot-6 {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .parallax {
+        margin-top: 20px;
+        /* The image used */
+        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    .contenedorInicial{
+        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 600px; 
+        position: relative;
+        margin-top: 20px;
+    }
+
+   /* .posicion-big{
+        background: red;
+        background-size: cover;
+        position: absolute;
+        top: 7%;
+        left: 8%;
+        height: 500px;
+        width: 20px;
+    }
+
+    .posicion-little{
+
+        position: absolute;
+        background: red;
+        background-size: cover;
+        top: 5%;
+        right: 13%;
+        height: 500px;
+        width:20px;
+    }
+*/
+    .texto-inside-anfibia{
+        position: absolute;
+        background: transparent;
+        top: 50%;
+        right: 5%;
+        height: 100px;
+        width: 250px;
+    }
+
+    .texto-inside-anfibia h1{
+        text-align: center;
+        font-family: 'Prometo-Medium';
+        color: white;
+        font-weight: bold;
+        font-size: 40px;
+        letter-spacing: 5px;
+        
+    }
+
+    .texto-inside-anfibia p{
+        text-align: center;
+        font-family: 'Prometo-Light';
+        color: white;
+        font-weight: bold;
+        font-size: 10px;
+        letter-spacing: 2px;
+        
+   }
+   /*
+    .posicion-little2{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
+        background-size: cover;
+        top: 2%;
+        left: 4%;
+        height: 500px;
+        width: 120px;
+    }
+
+   
+    .posicion-little3{
+        position: absolute;
+        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
+        background-size: cover;
+        top: 2%;
+        right: 15%;
+        height: 500px;
+        width: 20px ;
+    }*/
+
+
+    .product-card {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 7px #dfdfdf;
+        margin: 50px auto;
+        background: #fafafa;
+    }
+    
+    .badge {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: red;
+        color: #fff;
+        padding: 3px 10px;
+    }
+    
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 50px;
+        background: #f0f0f0;
+    }
+    
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .product-details {
+        padding: 30px;
+    }
+    
+    .product-catagory {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 18px;
+    }
+    
+    .product-details h4 a {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        color: #363636;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .product-details h4 a:hover {
+        color: #fbb72c;
+    }
+    
+    .product-details p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
+    
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
+    
+    .product-price {
+        font-size: 18px;
+        color: #fbb72c;
+        font-weight: 600;
+    }
+    
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .product-links {
+        text-align: right;
+    }
+    
+    .product-links a {
+        display: inline-block;
+        margin-left: 5px;
+        color: #e1e1e1;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    
+    .product-links a:hover {
+        color: #fbb72c;
+    }
+
+
+    .a-categorias{
+        background: transparent;
+        border: 2px solid black;
+        color: black; 
+        font-family: 'Prometo-Medium';
+        padding: 5px;
+        font-size: 10px;
+    }
+
+
     .container-fluid-video{
         position: relative;
         height: 36vh;
@@ -643,116 +2579,3 @@
 }
 
 
-/* ----------- iPhone 4 and 4S ----------- */
-
-
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-    body{
-        margin: 0;
-        padding: 0;
-    }
-    
-    .container-fluid-video{
-        position: relative;
-        height: 36vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
-        height: auto;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .texto-video{
-        position: absolute;
-        top: 30%;
-        left: 35%;
-        padding: 20px;
-    }
-
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 100px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 6px;
-        font-size: 30px;
-        text-align: center;
-    }
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-    body{
-        margin: 0;
-        padding: 0;
-    }
-    
-    .container-fluid-video{
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
-        height: auto;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .texto-video{
-        position: absolute;
-        top: 30%;
-        left: 35%;
-        padding: 20px;
-    }
-
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 100px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 6px;
-        font-size: 30px;
-        text-align: center;
-    }
-
-}
