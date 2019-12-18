@@ -41,7 +41,35 @@ Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait ,
 ipad landscape, Ipad mini Landscape.
 \*--------------------------------------------------------------*/
 @media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+    .container-fluid{
+        padding-bottom: 100px;
+    }
 
+    .titulo{
+        color:#042455;
+        margin-top: 30px ;
+        margin-bottom: 30px;
+        font-family: 'Prometo-x-bold';  
+    }
+
+    .texto{
+        font-family: 'Prometo-light';
+        font-size: 22px;
+        padding-left: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+    .borde{
+        border-right: 1px solid #D5D5D5; 
+    }
 }
 
 /*--------------------------------------------------------------*\
@@ -49,7 +77,36 @@ ipad landscape, Ipad mini Landscape.
 Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
 \*--------------------------------------------------------------*/
 @media screen and (max-width: 768px) and (min-width: 490px) {
-   
+    .container-fluid{
+        padding-bottom: 100px;
+    }
+
+    .titulo{
+        color:#042455;
+        margin-top: 30px ;
+        margin-bottom: 30px;
+        font-family: 'Prometo-x-bold';  
+    }
+
+    .texto{
+        font-family: 'Prometo-light';
+        font-size: 22px;
+        padding-left: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+    .borde{
+        padding-top: 10px;
+        border-right: 1px solid #D5D5D5; 
+    }
 }
 
 /*--------------------------------------------------------------*\
@@ -58,7 +115,36 @@ Iphone 4, 5, 7 PORTRAIT.
 \*--------------------------------------------------------------*/
 
 @media only screen and (max-width: 319px){
-   
+    .container-fluid{
+        padding-bottom: 100px;
+    }
+
+    .titulo{
+        color:#042455;
+        margin-top: 30px ;
+        margin-bottom: 30px;
+        font-family: 'Prometo-x-bold';  
+    }
+
+    .texto{
+        font-family: 'Prometo-light';
+        font-size: 22px;
+        padding-left: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+    .borde{
+        padding-top: 10px;
+         
+    }
 
       /* Medium devices (tablets, 768px and up) 
       The navbar toggle appears at this breakpoint */
@@ -72,7 +158,36 @@ Iphone 4, 5, 7 PORTRAIT.
 Celulares Portrait.
 \*--------------------------------------------------------------*/
 @media (min-width: 320px) and (max-width: 480px) {
+    .container-fluid{
+        padding-bottom: 100px;
+    }
 
+    .titulo{
+        color:#042455;
+        margin-top: 30px ;
+        margin-bottom: 30px;
+        font-family: 'Prometo-x-bold';  
+    }
+
+    .texto{
+        font-family: 'Prometo-light';
+        font-size: 22px;
+        padding-left: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+    .borde{
+        padding-top: 10px;
+        
+    }
       /* Medium devices (tablets, 768px and up) 
       The navbar toggle appears at this breakpoint */
       @media (min-width: 768px) {  
