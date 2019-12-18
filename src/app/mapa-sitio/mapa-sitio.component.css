@@ -1,0 +1,82 @@
+/*--------------------------------------------------------------*\
+            "PAGINA ADAPTABLE A COMPUTADORAS"
+Afecta a computadoras, laptops modelos:Nexus 10 landscape, 
+Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
+\*--------------------------------------------------------------*/
+@media only screen and (min-width: 1025px) {
+    .container-fluid{
+        padding-bottom: 100px;
+    }
+
+    .titulo{
+        color:#042455;
+        margin-top: 30px ;
+        margin-bottom: 30px;
+        font-family: 'Prometo-x-bold';  
+    }
+
+    .texto{
+        font-family: 'Prometo-light';
+        font-size: 22px;
+        padding-left: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+    .borde{
+        border-right: 1px solid #D5D5D5; 
+    }
+}
+
+/*--------------------------------------------------------------*\
+         "PAGINA ADAPTABLE A TABLETS HORIZONTAL"
+Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , 
+ipad landscape, Ipad mini Landscape.
+\*--------------------------------------------------------------*/
+@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+
+}
+
+/*--------------------------------------------------------------*\
+         "PAGINA ADAPTABLE A TABLETS VERTICAL"
+Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
+\*--------------------------------------------------------------*/
+@media screen and (max-width: 768px) and (min-width: 490px) {
+   
+}
+
+/*--------------------------------------------------------------*\
+               "PAGINA ADAPTABLE A CELULARES"
+Iphone 4, 5, 7 PORTRAIT.
+\*--------------------------------------------------------------*/
+
+@media only screen and (max-width: 319px){
+   
+
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+      
+      }  
+}
+
+/*--------------------------------------------------------------*\
+               "PAGINA ADAPTABLE A CELULARES"
+Celulares Portrait.
+\*--------------------------------------------------------------*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+    
+      }
+    
+}

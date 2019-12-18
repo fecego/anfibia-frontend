@@ -7,13 +7,15 @@ import { MenuheaderComponent } from './menuheader/menuheader.component';
 import { FooterComponent } from './footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AnfibiaMainComponent } from './anfibia-main/anfibia-main.component';
+import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuheaderComponent,
     FooterComponent,
-    AnfibiaMainComponent
+    AnfibiaMainComponent,
+    MapaSitioComponent
   ],
   imports: [
     BrowserModule,
