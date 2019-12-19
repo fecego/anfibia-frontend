@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AnfibiaMainComponent } from './anfibia-main/anfibia-main.component';
 import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
+import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
     MenuheaderComponent,
     FooterComponent,
     AnfibiaMainComponent,
-    MapaSitioComponent
+    MapaSitioComponent,
+    CrearCuentaComponent
   ],
   imports: [
     BrowserModule,
