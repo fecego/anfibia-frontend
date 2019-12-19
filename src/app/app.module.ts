@@ -9,6 +9,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AnfibiaMainComponent } from './anfibia-main/anfibia-main.component';
 import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
 import { FishingComponent } from './fishing/fishing.component';
+import { HuntingComponent } from './hunting/hunting.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FishingComponent } from './fishing/fishing.component';
     FooterComponent,
     AnfibiaMainComponent,
     MapaSitioComponent,
-    FishingComponent
+    FishingComponent,
+    HuntingComponent
   ],
   imports: [
     BrowserModule,
