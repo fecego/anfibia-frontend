@@ -11,6 +11,7 @@ import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
 import { FishingComponent } from './fishing/fishing.component';
 import { HuntingComponent } from './hunting/hunting.component';
 import { SurvivalComponent } from './survival/survival.component';
+import { AsuntosLegalesComponent } from './asuntos-legales/asuntos-legales.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SurvivalComponent } from './survival/survival.component';
     MapaSitioComponent,
     FishingComponent,
     HuntingComponent,
-    SurvivalComponent
+    SurvivalComponent,
+    AsuntosLegalesComponent
   ],
   imports: [
     BrowserModule,
