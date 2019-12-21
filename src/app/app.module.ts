@@ -8,8 +8,10 @@ import { FooterComponent } from './footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AnfibiaMainComponent } from './anfibia-main/anfibia-main.component';
 import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
+import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { FishingComponent } from './fishing/fishing.component';
 import { HuntingComponent } from './hunting/hunting.component';
+import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HuntingComponent } from './hunting/hunting.component';
     AnfibiaMainComponent,
     MapaSitioComponent,
     FishingComponent,
-    HuntingComponent
+    HuntingComponent,
+    CrearCuentaComponent,
+    PreguntasFrecuentesComponent
   ],
   imports: [
     BrowserModule,

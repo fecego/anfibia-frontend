@@ -1,0 +1,143 @@
+/*--------------------------------------------------------------*\
+            "PAGINA ADAPTABLE A COMPUTADORAS"
+Afecta a computadoras, laptops modelos:Nexus 10 landscape, 
+Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
+\*--------------------------------------------------------------*/
+@media only screen and (min-width: 1025px) {
+
+    .container {
+        margin-top: 50px;
+        font-family: 'Prometo-light';
+        font-size: 17px;
+        margin-bottom: 100px;
+    }
+
+    .imagen{
+        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
+        width: 100%;
+        height: 200px;
+    }
+
+    .imagen h1{
+        margin-top: 30px;
+        position: relative;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'Prometo-x-bold';
+        color: white;
+    }
+
+    .imagen h2{
+        
+        position: relative;
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Prometo-light';
+        color: white;
+    }
+
+
+    .faq-nav {
+        flex-direction: column;
+        margin: 0 0 32px;
+        
+    }
+
+    .nav-pills .nav-link.active, .show>.nav-pills .nav-link{
+        background: #163039!important
+}
+
+    .nav-link {
+        position: relative;
+        font-family: 'Prometo-medium';
+        display: block;
+        margin: 0;
+        padding: 15px 30px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 0;
+        color: #616161;
+        transition: background-color .2s ease;
+        font-size: 25px;
+        background: #F8F8F8;
+    }
+    
+    .nav-link:hover{
+        border: 1px solid #163039;
+    }
+    .nav-link i{
+        font-size: 30px; 
+        padding-right: 5px;
+    }
+
+    i.mdi {
+        margin-right: 5px;
+        font-size: 18px;
+        position: relative;
+    }
+    
+    
+    .card {
+      border: none;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+    
+    h2 {
+        background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+        background-size: 20px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: 'Prometo-medium';
+    }
+    
+    .collapsed {
+        background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+    }
+}
+
+/*--------------------------------------------------------------*\
+         "PAGINA ADAPTABLE A TABLETS HORIZONTAL"
+Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , 
+ipad landscape, Ipad mini Landscape.
+\*--------------------------------------------------------------*/
+@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+
+}
+
+/*--------------------------------------------------------------*\
+         "PAGINA ADAPTABLE A TABLETS VERTICAL"
+Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
+\*--------------------------------------------------------------*/
+@media screen and (max-width: 768px) and (min-width: 490px) {
+   
+}
+
+/*--------------------------------------------------------------*\
+               "PAGINA ADAPTABLE A CELULARES"
+Iphone 4, 5, 7 PORTRAIT.
+\*--------------------------------------------------------------*/
+
+@media only screen and (max-width: 319px){
+   
+
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+      
+      }  
+}
+
+/*--------------------------------------------------------------*\
+               "PAGINA ADAPTABLE A CELULARES"
+Celulares Portrait.
+\*--------------------------------------------------------------*/
+@media (min-width: 320px) and (max-width: 480px) {
+    
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+    
+      }
+    
+}

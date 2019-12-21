@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AotSummaryResolver } from '@angular/compiler';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-mapa-sitio',
@@ -10,6 +12,7 @@ export class MapaSitioComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    AOS.init();
   }
 
 }
