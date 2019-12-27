@@ -19,7 +19,8 @@
 
  .tabs {
 	display: flex;
-	flex-wrap: wrap; /* make sure it wraps*/
+  flex-wrap: wrap; /* make sure it wraps*/
+  
 }
 .tabs label {
 	order: 1; /* Put the labels first*/
@@ -29,10 +30,17 @@
 	cursor: pointer;
   background: none;
   font-weight: bold;
+  font-family: 'Prometo-Thin';
+  color: black;
+  font-size: 18px;
   transition: background ease 0.2s;
+  border: 1px solid black;
 }
 
 .tabs label:hover{
+  background: black;
+  color: white;
+  
     
 }
 .tabs .tab {
@@ -43,6 +51,19 @@
   padding: 1rem;
   background: #fff;
 }
+
+.tabs h4{
+  font-family: 'Prometo-Medium';
+  color: black;
+
+}
+
+.tabs p{
+  font-family: 'Prometo-Thin';
+  font-weight: bolder;
+  color: black;
+}
+
 .tabs input[type="radio"] {
 	display: none;
 }
@@ -73,7 +94,7 @@ body {
   min-height: 100vh;
 	box-sizing: border-box;
 	padding-top: 10vh;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  
   font-weight: 300;
   line-height: 1.5;
   max-width: 60rem;
