@@ -265,13 +265,13 @@ section{
 
 .promocionesFishing{
     padding: 5px;
-    height: 700px;
+   
     position: relative;
 }
 
 .imagenPromocion{
     width: 100%;
-    height: 100%;
+    height:auto;
     padding: 10px;
 }
 
