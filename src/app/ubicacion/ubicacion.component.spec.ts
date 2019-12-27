@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnfibiaMainComponent } from './anfibia-main.component';
+import { UbicacionComponent } from './ubicacion.component';
 
-
-describe('AnfibiaMainComponent', () => {
-  let component: AnfibiaMainComponent;
-  let fixture: ComponentFixture<AnfibiaMainComponent>;
+describe('UbicacionComponent', () => {
+  let component: UbicacionComponent;
+  let fixture: ComponentFixture<UbicacionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnfibiaMainComponent ]
+      declarations: [ UbicacionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnfibiaMainComponent);
+    fixture = TestBed.createComponent(UbicacionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
