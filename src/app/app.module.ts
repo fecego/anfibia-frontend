@@ -12,6 +12,7 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { FishingComponent } from './fishing/fishing.component';
 import { HuntingComponent } from './hunting/hunting.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
     FishingComponent,
     HuntingComponent,
     CrearCuentaComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,
