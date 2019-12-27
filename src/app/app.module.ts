@@ -12,6 +12,8 @@ import { FishingComponent } from './fishing/fishing.component';
 import { HuntingComponent } from './hunting/hunting.component';
 import { SurvivalComponent } from './survival/survival.component';
 import { AsuntosLegalesComponent } from './asuntos-legales/asuntos-legales.component';
+import { UbicacionComponent } from './ubicacion/ubicacion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { AsuntosLegalesComponent } from './asuntos-legales/asuntos-legales.compo
     FishingComponent,
     HuntingComponent,
     SurvivalComponent,
-    AsuntosLegalesComponent
+    AsuntosLegalesComponent,
+    UbicacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
