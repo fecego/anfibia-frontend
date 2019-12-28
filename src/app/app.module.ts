@@ -16,6 +16,7 @@ import { AsuntosLegalesComponent } from './asuntos-legales/asuntos-legales.compo
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
 import { PreguntasFrecuentesComponent} from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { Blogv1Component } from './blogv1/blogv1.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PreguntasFrecuentesComponent} from './preguntas-frecuentes/preguntas-fr
     AsuntosLegalesComponent,
     UbicacionComponent,
     CrearCuentaComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    Blogv1Component
   ],
   imports: [
     BrowserModule,
