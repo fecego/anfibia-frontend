@@ -5,6 +5,17 @@ Afecta a computadoras, laptops modelos:Nexus 10 landscape,
 Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
 \*--------------------------------------------------------------*/
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
+
+    #canvas-basic {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
     
     section{
         position: relative;
@@ -14,7 +25,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     }
 
     .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
+        background: url('/assets/imagenes/Nosotros/montaña2.jpg');
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -39,11 +50,12 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     }
 
     .sec1 h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
         color:white;
-        font-size: 80px;
-        padding-top: 350px;
-        letter-spacing: 0.2em;
+        font-size: 100px;
+        padding-top: 300px;
+        letter-spacing: 2px;
         text-align: center;
     }
 
@@ -204,7 +216,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
 
     .sec2{
         position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
+        background: url('/assets/imagenes/Nosotros/montaña3.jpg');
         height: 500px;
         background-size: cover;
         background-attachment: fixed;
@@ -258,7 +270,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     
     .social-btns .btn {
         display: inline-block;
-        background-color: #fff;
+        background: transparent;
         width: 120px;
         height: 120px;
         line-height: 120px;
@@ -549,7 +561,7 @@ ipad landscape, Ipad mini Landscape.
 
     .sec2{
         position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
+        background: url('/assets/imagenes/Nosotros/montaña.jpg');
         height: 500px;
         background-size: cover;
         background-attachment: fixed;
