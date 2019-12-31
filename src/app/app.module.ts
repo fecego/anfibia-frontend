@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuheaderComponent } from './menuheader/menuheader.component';
@@ -17,8 +16,9 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { FormsModule } from '@angular/forms';
-
 import { Blogv1Component } from './blogv1/blogv1.component';
+
+
 
 @NgModule({
   declarations: [

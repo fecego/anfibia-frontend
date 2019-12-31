@@ -5,7 +5,7 @@ Afecta a computadoras, laptops modelos:Nexus 10 landscape,
 Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
 \*--------------------------------------------------------------*/
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
-    
+    /* PRIMERA SECCIÓN: TÍTULO*/
     section{
         position: relative;
         width: 100%;
@@ -14,7 +14,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     }
 
     .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
+        background: url('/assets/imagenes/Nosotros/montaña2.jpg');
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -38,37 +38,56 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         top: 80px;
     }
 
+    span{
+        font-family: 'Prometo-Thin';
+    }
+
+    .titulo{
+        position: absolute; 
+        top: 92%; 
+        left: 49%;
+    }
+
+    .titulo p{
+        font-family: 'Prometo-Medium'; 
+        font-size: 35px; 
+        color: white;
+    }
+
     .sec1 h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
         color:white;
-        font-size: 80px;
-        padding-top: 350px;
-        letter-spacing: 0.2em;
+        font-size: 100px;
+        padding-top: 300px;
+        letter-spacing: 2px;
         text-align: center;
     }
 
-    .sec1 h2{
-        color: white;
-        font-size: 60px;
-        padding-left: 370px;
-        font-family: 'Prometo-medium';
-    }
-
+    /* SEGUNDA SECCIÓN: NOMBRE Y PARRAFO*/
     h2{
         position: relative;
         padding-top: 50px;
         text-align: center;
         font-size: 100px;
         font-family: 'Prometo-x-bold';
+        color: black;
     }
 
     p{
         text-align: justify;
         font-family: 'Prometo-light';
-        font-size: 19px;
+        font-size: 20px;
+        color: black;
     }
 
+    hr{
+        background: #076E67; 
+        width: 20%; 
+        height: 10px;
+    }
 
+    /* TERCERA SECCIÓN: IMAGENES DE LAS CATEGORIA DE ANFIBIA*/
     .project {
         font-family: 'Prometo-light';
         position: relative;
@@ -122,13 +141,6 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         -ms-transition: all 0.6s ease;
         transition: all 0.6s ease; 
     }
-    
-    .project .text span {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.8); 
-    }
 
     .project .text h3 {
         color: #fff; 
@@ -137,45 +149,12 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         
     .project .text h3 a {
           color: #fff; 
-        }
+    }
         
         @media (max-width: 991.98px) {
             .project .text {
                 opacity: 1;
                 bottom: 0; 
-            } 
-        }
-
-    .project .icon {
-        position: absolute;
-        top: -50px;
-        right: 2em;
-        width: 50px;
-        height: 50px;
-        bordeR: 1px solid #fff;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease;
-        opacity: 0;
-        z-index: 2; }
-      
-    .project .icon span {
-        color: #fff;
-        font-size: 20px; 
-    }
-        @media (max-width: 991.98px) {
-            .project .icon {
-                opacity: 1;
-                top: 50px; 
             } 
         }
 
@@ -188,11 +167,6 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         bottom: 0; 
     }
 
-    .project:hover .icon, .project:focus .icon {
-        top: 50px;
-        opacity: 1; 
-    }
-
     .project:hover img, .project:focus img {
         -webkit-transform: scale(1.2);
         -moz-transform: scale(1.3);
@@ -200,40 +174,8 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         -ms-transform: scale(1.3);
         transform: scale(1.3); 
     }
-  
 
-    .sec2{
-        position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        height: 500px;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-
-    .sec2 h4{
-        font-family: 'Prometo-x-bold';
-        padding-top: 200px;
-        text-align: center;
-        color: white;
-        font-size: 100px;
-    }
-
-    .sec2 a{
-        color: white;
-    }
-
-    .skewedBox2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width:  0 0 100px 1500px;;/*TOP LEFT BOTTOM RIGHT*/
-        border-color: transparent transparent transparent white;
-        border-style: solid;
-    }
-
+    /* CUARTA SECCIÓN: MENU SOCIAL*/
     .social{
         margin-top: 100px;
         margin-bottom: 100px;
@@ -258,7 +200,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     
     .social-btns .btn {
         display: inline-block;
-        background-color: #fff;
+        background: transparent;
         width: 120px;
         height: 120px;
         line-height: 120px;
@@ -342,214 +284,11 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         -webkit-transform: scale(1);
         transform: scale(1);
     }
-}   
 
-
-/*--------------------------------------------------------------*\
-     "PAGINA ADAPTABLE A TABLETS HORIZONTAL (VERTICAL)"
-Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , 
-ipad landscape, Ipad mini Landscape.
-\*--------------------------------------------------------------*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    section{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .skewedBox1{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-width: 600px 0 200px 1500px; /*top left bottom right*/
-        border-color: transparent transparent white transparent;
-        border-style: solid;
-    }
-
-    .img{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        left: 300px;
-        top: 100px;
-    }
-
-    .sec1 h1{
-        font-family: 'Prometo-x-bold';
-        color:white;
-        font-size: 70px;
-        padding-top: 370px;
-        letter-spacing: 0.2em;
-        text-align: center;
-    }
-
-    .sec1 h2{
-        color: white;
-        font-size: 60px;
-        padding-left: 370px;
-        font-family: 'Prometo-medium';
-    }
-
-    h2{
-        position: relative;
-        padding-top: 50px;
-        text-align: center;
-        font-size: 100px;
-        font-family: 'Prometo-x-bold';
-    }
-
-    p{
-        text-align: justify;
-        font-family: 'Prometo-light';
-        font-size: 19px;
-    }
-
-
-    .project {
-        font-family: 'Prometo-light';
-        position: relative;
-        width: 100%;
-        display: block;
-        overflow: hidden;
-        z-index: 0; }
-
-    .project:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background: #91E5EF;
-        opacity: 0;
-        z-index: 1;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; 
-    }
-
-    .project img {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        z-index: -1;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text {
-        position: absolute;
-        bottom: -200px;
-        left: 0;
-        right: 0;
-        padding: 2em;
-        opacity: 0;
-        z-index: 2;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text span {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.8); 
-    }
-
-    .project .text h3 {
-        color: #fff; 
-        font-size: 50px;
-    }
-        
-    .project .text h3 a {
-          color: #fff; 
-        }
-        
-        @media (max-width: 991.98px) {
-            .project .text {
-                opacity: 1;
-                bottom: 0; 
-            } 
-        }
-
-    .project .icon {
-        position: absolute;
-        top: -50px;
-        right: 2em;
-        width: 50px;
-        height: 50px;
-        bordeR: 1px solid #fff;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease;
-        opacity: 0;
-        z-index: 2; }
-      
-    .project .icon span {
-        color: #fff;
-        font-size: 20px; 
-    }
-        @media (max-width: 991.98px) {
-            .project .icon {
-                opacity: 1;
-                top: 50px; 
-            } 
-        }
-
-    .project:hover:after, .project:focus:after {
-        opacity: .2; 
-    }
-
-    .project:hover .text, .project:focus .text {
-        opacity: 1;
-        bottom: 0; 
-    }
-
-    .project:hover .icon, .project:focus .icon {
-        top: 50px;
-        opacity: 1; 
-    }
-
-    .project:hover img, .project:focus img {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.3);
-        -o-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3); 
-    }
-  
-
+    /* QUINTA SECCIÓN: ULTIMA IMAGEN */
     .sec2{
         position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
+        background: url('/assets/imagenes/Nosotros/4.jpg');
         height: 500px;
         background-size: cover;
         background-attachment: fixed;
@@ -559,1176 +298,167 @@ ipad landscape, Ipad mini Landscape.
     }
 
     .sec2 h4{
-        font-family: 'Prometo-x-bold';
-        padding-top: 250px;
         text-align: center;
-        color: white;
-        font-size: 70px;
-    }
-
-    .sec2 a{
-        color: white;
-    }
-
-    .skewedBox2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width:  0 0 100px 1500px;;/*TOP LEFT BOTTOM RIGHT*/
-        border-color: transparent transparent transparent white;
-        border-style: solid;
-    }
-
-    .social{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-
-    .social h3{
-        text-align: center;
-        font-family: 'Prometo-medium';
-        padding-bottom: 30px;
-    }
-    
-    .social-btns {
-        height: 90px;
-        margin: auto;
-        font-size: 0;
-        text-align: center;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-    .social-btns .btn {
-        display: inline-block;
-        background-color: #fff;
-        width: 120px;
-        height: 120px;
-        line-height: 120px;
-        margin: 0 20px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-radius: 28%;
-        box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-        opacity: 0.99;
-    }
-      
-    .social-btns .btn:before {
-        content: '';
-        width: 120%;
-        height: 120%;
-        position: absolute;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .social-btns .btn .fa {
-        font-size: 48px;
-        vertical-align: center;
-    }
-
-    .social-btns .btn, .social-btns .btn:before, .social-btns .btn .fa {
-        transition: all 0.35s;
-        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    }
-
-    .social-btns .btn:before {
-        top: 90%;
-        left: -110%;
-    }
-
-    .social-btns .btn .fa {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-    }
-
-    .social-btns .btn.facebook:before {
-        background-color: #3b5998;
-    }
-
-    .social-btns .btn.facebook .fa {
-        color: #3b5998;
-    }
-
-    .social-btns .btn.twitter:before {
-        background-color: #3cf;
-    }
-    
-    .social-btns .btn.twitter .fa {
-        color: #3cf;
-    }
-
-    .social-btns .btn.whatsapp:before {
-        background-color: #25D366;
-    }
-
-    .social-btns .btn.whatsapp .fa {
-        color: #25D366;
-    }
-
-    .social-btns .btn.instagram:before {
-        background-color: #f26798;
-    }
-
-    .social-btns .btn.instagram .fa {
-        color: #f26798;
-    }
-
-    .social-btns .btn:focus:before, .social-btns .btn:hover:before {
-        top: -10%;
-        left: -10%;
-    }
-
-    .social-btns .btn:focus .fa, .social-btns .btn:hover .fa {
-        color: #fff;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
-
-
-/*--------------------------------------------------------------*\
-    "PAGINA ADAPTABLE A TABLETS VERTICAL (CELULAR HORINZOTAL)"
-Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
-\*--------------------------------------------------------------*/
-@media screen and (max-width: 768px) and (min-width: 490px) {
-    section{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .skewedBox1{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-width: 600px 0 200px 1500px; /*top left bottom right*/
-        border-color: transparent transparent white transparent;
-        border-style: solid;
-    }
-
-    .img{
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        left: 250px;
-        top: 20px;
-    }
-
-    .sec1 h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Prometo-Thin';
+        font-size: 80px;
+        padding-top: 150px;
         color:white;
-        font-size: 60px;
-        padding-top: 200px;
-        letter-spacing: 0.2em;
-        text-align: center;
     }
 
-    .sec1 h2{
-        color: white;
-        font-size: 60px;
-        padding-left: 370px;
-        font-family: 'Prometo-medium';
+    .half_background {
+        background: linear-gradient(to top, #076E67
+         30%, transparent 50%);
+        font-family: 'Prometo-Medium';
+        letter-spacing: 8px;
+        font-weight: bolder;
+
     }
 
-    h2{
-        position: relative;
-        padding-top: 50px;
-        text-align: center;
-        font-size: 100px;
-        font-family: 'Prometo-x-bold';
-    }
-
-    p{
-        text-align: justify;
-        font-family: 'Prometo-light';
-        font-size: 19px;
-    }
-
-
-    .project {
-        font-family: 'Prometo-light';
-        position: relative;
-        width: 100%;
-        display: block;
-        overflow: hidden;
-        z-index: 0; }
-
-    .project:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background: #91E5EF;
-        opacity: 0;
-        z-index: 1;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; 
-    }
-
-    .project img {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        z-index: -1;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
     
-    .project .text {
-        position: absolute;
-        bottom: -200px;
-        left: 0;
-        right: 0;
-        padding: 2em;
-        opacity: 0;
-        z-index: 2;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text span {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.8); 
-    }
-
-    .project .text h3 {
-        color: #fff; 
-        font-size: 50px;
-    }
-        
-    .project .text h3 a {
-          color: #fff; 
-        }
-        
-        @media (max-width: 991.98px) {
-            .project .text {
-                opacity: 1;
-                bottom: 0; 
-            } 
-        }
-
-    .project .icon {
-        position: absolute;
-        top: -50px;
-        right: 2em;
-        width: 50px;
-        height: 50px;
-        bordeR: 1px solid #fff;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease;
-        opacity: 0;
-        z-index: 2; }
-      
-    .project .icon span {
-        color: #fff;
-        font-size: 20px; 
-    }
-        @media (max-width: 991.98px) {
-            .project .icon {
-                opacity: 1;
-                top: 50px; 
-            } 
-        }
-
-    .project:hover:after, .project:focus:after {
-        opacity: .2; 
-    }
-
-    .project:hover .text, .project:focus .text {
-        opacity: 1;
-        bottom: 0; 
-    }
-
-    .project:hover .icon, .project:focus .icon {
-        top: 50px;
-        opacity: 1; 
-    }
-
-    .project:hover img, .project:focus img {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.3);
-        -o-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3); 
+.accordion {
+    width: 100%;
+    max-width: 1080px;
+    height: 250px;
+    overflow: hidden;
+    margin: 50px auto;
+  }
+  .accordion ul {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+  }
+  .accordion ul li {
+    display: table-cell;
+    vertical-align: bottom;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 500ms ease;
+  }
+  .accordion ul li div {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
+  .accordion ul li div a {
+    display: block;
+    height: 250px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    vertical-align: bottom;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    font-family: Open Sans, sans-serif;
+    transition: all 200ms ease;
+  }
+  .accordion ul li div a  {
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 5;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+  }
+  .accordion ul li div a h2 {
+    font-family: Montserrat,sans-serif;
+    text-overflow: clip;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    top: 160px;
+  }
+  .accordion ul li div a p {
+    top: 160px;
+    font-size: 13.5px;
+  }
+  .accordion ul li:nth-child(1) {
+    background-image: url("http://michael-ferry.com/assets/accordion1.jpg");
+  }
+  .accordion ul li:nth-child(2) {
+    background-image: url("http://michael-ferry.com/assets/accordion2.jpg");
+  }
+  .accordion ul li:nth-child(3) {
+    background-image: url("http://michael-ferry.com/assets/accordion3.jpg");
+  }
+  .accordion ul li:nth-child(4) {
+    background-image: url("http://michael-ferry.com/assets/accordion4.jpg");
+  }
+  .accordion ul li:nth-child(5) {
+    background-image: url("http://michael-ferry.com/assets/accordion5.jpg");
+  }
+  .accordion ul:hover li, .accordion ul:focus-within li {
+    width: 8%;
+  }
+  .accordion ul li:focus {
+    outline: none;
+  }
+  .accordion ul:hover li:hover,
+  .accordion ul li:focus, .accordion ul:focus-within li:focus {
+    width: 60%;
+  }
+  .accordion ul:hover li:hover a,
+  .accordion ul li:focus a, .accordion ul:focus-within li:focus a {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .accordion ul:hover li:hover a *,
+  .accordion ul li:focus a *, .accordion ul:focus-within li:focus a * {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .accordion ul:hover li {
+    width: 8% !important;
+  }
+  .accordion ul:hover li a * {
+    opacity: 0 !important;
+  }
+  .accordion ul:hover li:hover {
+    width: 40% !important;
+  }
+  .accordion ul:hover li:hover a {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .accordion ul:hover li:hover a * {
+    opacity: 1 !important;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      margin: 0;
     }
   
-
-    .sec2{
-        position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        height: 500px;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-
+    .accordion {
+      height: auto;
     }
-
-    .sec2 h4{
-        font-family: 'Prometo-x-bold';
-        padding-top: 250px;
-        text-align: center;
-        color: white;
-        font-size: 60px;
+    .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
+      position: relative;
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      -webkit-transition: none;
+      transition: none;
     }
-
-    .sec2 a{
-        color: white;
-    }
-
-    .skewedBox2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width:  0 0 100px 1500px;;/*TOP LEFT BOTTOM RIGHT*/
-        border-color: transparent transparent transparent white;
-        border-style: solid;
-    }
-
-    .social{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-
-    .social h3{
-        text-align: center;
-        font-family: 'Prometo-medium';
-        padding-bottom: 30px;
-    }
-    
-    .social-btns {
-        height: 90px;
-        margin: auto;
-        font-size: 0;
-        text-align: center;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-    .social-btns .btn {
-        display: inline-block;
-        background-color: #fff;
-        width: 90px;
-        height: 90px;
-        line-height: 90px;
-        margin: 0 10px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-radius: 28%;
-        box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-        opacity: 0.99;
-    }
-      
-    .social-btns .btn:before {
-        content: '';
-        width: 120%;
-        height: 120%;
-        position: absolute;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .social-btns .btn .fa {
-        font-size: 38px;
-        vertical-align: center;
-    }
-
-    .social-btns .btn, .social-btns .btn:before, .social-btns .btn .fa {
-        transition: all 0.35s;
-        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    }
-
-    .social-btns .btn:before {
-        top: 90%;
-        left: -110%;
-    }
-
-    .social-btns .btn .fa {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-    }
-
-    .social-btns .btn.facebook:before {
-        background-color: #3b5998;
-    }
-
-    .social-btns .btn.facebook .fa {
-        color: #3b5998;
-    }
-
-    .social-btns .btn.twitter:before {
-        background-color: #3cf;
-    }
-    
-    .social-btns .btn.twitter .fa {
-        color: #3cf;
-    }
-
-    .social-btns .btn.whatsapp:before {
-        background-color: #25D366;
-    }
-
-    .social-btns .btn.whatsapp .fa {
-        color: #25D366;
-    }
-
-    .social-btns .btn.instagram:before {
-        background-color: #f26798;
-    }
-
-    .social-btns .btn.instagram .fa {
-        color: #f26798;
-    }
-
-    .social-btns .btn:focus:before, .social-btns .btn:hover:before {
-        top: -10%;
-        left: -10%;
-    }
-
-    .social-btns .btn:focus .fa, .social-btns .btn:hover .fa {
-        color: #fff;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
+  }
 }
 
 
 
-/*--------------------------------------------------------------*\
-               "PAGINA ADAPTABLE A CELULARES"
-Iphone 4, 5, 7 PORTRAIT.
-\*--------------------------------------------------------------*/
 
-@media only screen and (max-width: 319px){
-   
-
-    section{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .skewedBox1{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-width: 600px 0 200px 1500px; /*top left bottom right*/
-        border-color: transparent transparent white transparent;
-        border-style: solid;
-    }
-
-    .img{
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        left: 250px;
-        top: 20px;
-    }
-
-    .sec1 h1{
-        font-family: 'Prometo-x-bold';
-        color:white;
-        font-size: 60px;
-        padding-top: 200px;
-        letter-spacing: 0.2em;
-        text-align: center;
-    }
-
-    .sec1 h2{
-        color: white;
-        font-size: 60px;
-        padding-left: 370px;
-        font-family: 'Prometo-medium';
-    }
-
-    h2{
-        position: relative;
-        padding-top: 50px;
-        text-align: center;
-        font-size: 100px;
-        font-family: 'Prometo-x-bold';
-    }
-
-    p{
-        text-align: justify;
-        font-family: 'Prometo-light';
-        font-size: 19px;
-    }
-
-
-    .project {
-        font-family: 'Prometo-light';
-        position: relative;
-        width: 100%;
-        display: block;
-        overflow: hidden;
-        z-index: 0; }
-
-    .project:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background: #91E5EF;
-        opacity: 0;
-        z-index: 1;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; 
-    }
-
-    .project img {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        z-index: -1;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text {
-        position: absolute;
-        bottom: -200px;
-        left: 0;
-        right: 0;
-        padding: 2em;
-        opacity: 0;
-        z-index: 2;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text span {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.8); 
-    }
-
-    .project .text h3 {
-        color: #fff; 
-        font-size: 50px;
-    }
-        
-    .project .text h3 a {
-          color: #fff; 
-        }
-        
-        @media (max-width: 991.98px) {
-            .project .text {
-                opacity: 1;
-                bottom: 0; 
-            } 
-        }
-
-    .project .icon {
-        position: absolute;
-        top: -50px;
-        right: 2em;
-        width: 50px;
-        height: 50px;
-        bordeR: 1px solid #fff;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease;
-        opacity: 0;
-        z-index: 2; }
-      
-    .project .icon span {
-        color: #fff;
-        font-size: 20px; 
-    }
-        @media (max-width: 991.98px) {
-            .project .icon {
-                opacity: 1;
-                top: 50px; 
-            } 
-        }
-
-    .project:hover:after, .project:focus:after {
-        opacity: .2; 
-    }
-
-    .project:hover .text, .project:focus .text {
-        opacity: 1;
-        bottom: 0; 
-    }
-
-    .project:hover .icon, .project:focus .icon {
-        top: 50px;
-        opacity: 1; 
-    }
-
-    .project:hover img, .project:focus img {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.3);
-        -o-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3); 
-    }
-  
-
-    .sec2{
-        position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        height: 500px;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-
-    .sec2 h4{
-        font-family: 'Prometo-x-bold';
-        padding-top: 250px;
-        text-align: center;
-        color: white;
-        font-size: 60px;
-    }
-
-    .sec2 a{
-        color: white;
-    }
-
-    .skewedBox2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width:  0 0 100px 1500px;;/*TOP LEFT BOTTOM RIGHT*/
-        border-color: transparent transparent transparent white;
-        border-style: solid;
-    }
-
-    .social{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-
-    .social h3{
-        text-align: center;
-        font-family: 'Prometo-medium';
-        padding-bottom: 30px;
-    }
-    
-    .social-btns {
-        height: 90px;
-        margin: auto;
-        font-size: 0;
-        text-align: center;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-    .social-btns .btn {
-        display: inline-block;
-        background-color: #fff;
-        width: 90px;
-        height: 90px;
-        line-height: 90px;
-        margin: 0 10px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-radius: 28%;
-        box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-        opacity: 0.99;
-    }
-      
-    .social-btns .btn:before {
-        content: '';
-        width: 120%;
-        height: 120%;
-        position: absolute;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .social-btns .btn .fa {
-        font-size: 38px;
-        vertical-align: center;
-    }
-
-    .social-btns .btn, .social-btns .btn:before, .social-btns .btn .fa {
-        transition: all 0.35s;
-        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    }
-
-    .social-btns .btn:before {
-        top: 90%;
-        left: -110%;
-    }
-
-    .social-btns .btn .fa {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-    }
-
-    .social-btns .btn.facebook:before {
-        background-color: #3b5998;
-    }
-
-    .social-btns .btn.facebook .fa {
-        color: #3b5998;
-    }
-
-    .social-btns .btn.twitter:before {
-        background-color: #3cf;
-    }
-    
-    .social-btns .btn.twitter .fa {
-        color: #3cf;
-    }
-
-    .social-btns .btn.whatsapp:before {
-        background-color: #25D366;
-    }
-
-    .social-btns .btn.whatsapp .fa {
-        color: #25D366;
-    }
-
-    .social-btns .btn.instagram:before {
-        background-color: #f26798;
-    }
-
-    .social-btns .btn.instagram .fa {
-        color: #f26798;
-    }
-
-    .social-btns .btn:focus:before, .social-btns .btn:hover:before {
-        top: -10%;
-        left: -10%;
-    }
-
-    .social-btns .btn:focus .fa, .social-btns .btn:hover .fa {
-        color: #fff;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
-
-
-/*--------------------------------------------------------------*\
-               "PAGINA ADAPTABLE A CELULARES"
-Celulares Portrait.
-\*--------------------------------------------------------------*/
-@media (min-width: 320px) and (max-width: 480px) {
-    
-    section{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .sec1{
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        background-size: cover;
-        height: 400px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .skewedBox1{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-width: 600px 0 200px 1500px; /*top left bottom right*/
-        border-color: transparent transparent white transparent;
-        border-style: solid;
-    }
-
-    .img{
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        left: 100px;
-        top: 10px;
-    }
-
-    .sec1 h1{
-        font-family: 'Prometo-x-bold';
-        color:white;
-        font-size: 60px;
-        padding-top: 200px;
-        letter-spacing: 0.2em;
-        text-align: center;
-    }
-
-    .sec1 h2{
-        color: white;
-        font-size: 60px;
-        padding-left: 370px;
-        font-family: 'Prometo-medium';
-    }
-
-    h2{
-        position: relative;
-        padding-top: 50px;
-        text-align: center;
-        font-size: 70px;
-        font-family: 'Prometo-x-bold';
-    }
-
-    p{
-        text-align: justify;
-        font-family: 'Prometo-light';
-        font-size: 16px;
-    }
-
-
-    .project {
-        font-family: 'Prometo-light';
-        position: relative;
-        width: 100%;
-        display: block;
-        overflow: hidden;
-        z-index: 0; }
-
-    .project:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background: #91E5EF;
-        opacity: 0;
-        z-index: 1;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; 
-    }
-
-    .project img {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        z-index: -1;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text {
-        position: absolute;
-        bottom: -200px;
-        left: 0;
-        right: 0;
-        padding: 2em;
-        opacity: 0;
-        z-index: 2;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease; 
-    }
-    
-    .project .text span {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.8); 
-    }
-
-    .project .text h3 {
-        color: #fff; 
-        font-size: 25px;
-    }
-        
-    .project .text h3 a {
-          color: #fff; 
-        }
-        
-        @media (max-width: 991.98px) {
-            .project .text {
-                opacity: 1;
-                bottom: 0; 
-            } 
-        }
-
-    .project .icon {
-        position: absolute;
-        top: -50px;
-        right: 2em;
-        width: 30px;
-        height: 30px;
-        bordeR: 1px solid #fff;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        -moz-transition: all 0.6s ease;
-        -o-transition: all 0.6s ease;
-        -webkit-transition: all 0.6s ease;
-        -ms-transition: all 0.6s ease;
-        transition: all 0.6s ease;
-        opacity: 0;
-        z-index: 2; }
-      
-    .project .icon span {
-        color: #fff;
-        font-size: 10px; 
-    }
-        @media (max-width: 991.98px) {
-            .project .icon {
-                opacity: 1;
-                top: 50px; 
-            } 
-        }
-
-    .project:hover:after, .project:focus:after {
-        opacity: .2; 
-    }
-
-    .project:hover .text, .project:focus .text {
-        opacity: 1;
-        bottom: 0; 
-    }
-
-    .project:hover .icon, .project:focus .icon {
-        top: 50px;
-        opacity: 1; 
-    }
-
-    .project:hover img, .project:focus img {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.3);
-        -o-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3); 
-    }
-  
-
-    .sec2{
-        position: relative;
-        background: url('/assets/imagenes/Nosotros/forest.jpg');
-        height: 400px;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-
-    .sec2 h4{
-        font-family: 'Prometo-x-bold';
-        padding-top: 220px;
-        text-align: center;
-        color: white;
-        font-size: 35px;
-    }
-
-    .sec2 a{
-        color: white;
-    }
-
-    .skewedBox2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width:  0 0 100px 1500px;;/*TOP LEFT BOTTOM RIGHT*/
-        border-color: transparent transparent transparent white;
-        border-style: solid;
-    }
-
-    .social{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-
-    .social h3{
-        text-align: center;
-        font-family: 'Prometo-medium';
-        padding-bottom: 30px;
-    }
-    
-    .social-btns {
-        height: 90px;
-        margin: auto;
-        font-size: 0;
-        text-align: center;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    
-    .social-btns .btn {
-        display: inline-block;
-        background-color: #fff;
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
-        margin: 0 5px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-radius: 28%;
-        box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-        opacity: 0.99;
-    }
-      
-    .social-btns .btn:before {
-        content: '';
-        width: 120%;
-        height: 120%;
-        position: absolute;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .social-btns .btn .fa {
-        font-size: 28px;
-        vertical-align: center;
-    }
-
-    .social-btns .btn, .social-btns .btn:before, .social-btns .btn .fa {
-        transition: all 0.35s;
-        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    }
-
-    .social-btns .btn:before {
-        top: 90%;
-        left: -110%;
-    }
-
-    .social-btns .btn .fa {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-    }
-
-    .social-btns .btn.facebook:before {
-        background-color: #3b5998;
-    }
-
-    .social-btns .btn.facebook .fa {
-        color: #3b5998;
-    }
-
-    .social-btns .btn.twitter:before {
-        background-color: #3cf;
-    }
-    
-    .social-btns .btn.twitter .fa {
-        color: #3cf;
-    }
-
-    .social-btns .btn.whatsapp:before {
-        background-color: #25D366;
-    }
-
-    .social-btns .btn.whatsapp .fa {
-        color: #25D366;
-    }
-
-    .social-btns .btn.instagram:before {
-        background-color: #f26798;
-    }
-
-    .social-btns .btn.instagram .fa {
-        color: #f26798;
-    }
-
-    .social-btns .btn:focus:before, .social-btns .btn:hover:before {
-        top: -10%;
-        left: -10%;
-    }
-
-    .social-btns .btn:focus .fa, .social-btns .btn:hover .fa {
-        color: #fff;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    
-}
 
 
 
