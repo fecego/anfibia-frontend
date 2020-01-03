@@ -17,6 +17,7 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
+import { Blogv2Component } from './blogv2/blogv2.component';
 
 
 
@@ -35,7 +36,8 @@ import { Blogv1Component } from './blogv1/blogv1.component';
     CrearCuentaComponent,
     PreguntasFrecuentesComponent,
     Blogv1Component,
-    NosotrosComponent
+    NosotrosComponent,
+    Blogv2Component
   ],
   imports: [
     BrowserModule,
