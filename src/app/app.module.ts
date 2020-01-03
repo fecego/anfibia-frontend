@@ -10,14 +10,26 @@ import { MapaSitioComponent } from './mapa-sitio/mapa-sitio.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { FishingComponent } from './fishing/fishing.component';
 import { HuntingComponent } from './hunting/hunting.component';
+<<<<<<< HEAD
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { AsuntosLegalesComponent } from './asuntos-legales/asuntos-legales.component';
+=======
+>>>>>>> fc4e7cfbf395bed745402c930638819c415e0607
 import { SurvivalComponent } from './survival/survival.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
 
+=======
+import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { FormsModule } from '@angular/forms';
+import { Blogv1Component } from './blogv1/blogv1.component';
+
+
+>>>>>>> fc4e7cfbf395bed745402c930638819c415e0607
 
 @NgModule({
   declarations: [
