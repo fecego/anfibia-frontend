@@ -17,7 +17,11 @@ import { SurvivalComponent } from './survival/survival.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
+<<<<<<< HEAD
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+=======
+import { Blogv2Component } from './blogv2/blogv2.component';
+>>>>>>> 8c8d16836ac33686ee14e358dfce36ae83663a1a
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { ProveedoresComponent } from './proveedores/proveedores.component';
     PreguntasFrecuentesComponent,
     Blogv1Component,
     NosotrosComponent,
+<<<<<<< HEAD
     ProveedoresComponent
+=======
+    Blogv2Component
+>>>>>>> 8c8d16836ac33686ee14e358dfce36ae83663a1a
   ],
   imports: [
     BrowserModule,

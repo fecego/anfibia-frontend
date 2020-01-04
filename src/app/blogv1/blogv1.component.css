@@ -150,8 +150,6 @@
     height: 5px;
 }
 
-
-
 .text-next-canvas span{
     font-family: 'Prometo-x-bold';
     font-size: 100px;
@@ -165,179 +163,259 @@
 
 }
 
-.single-team{
-    width: 360px;
-    height: 400px;
-    padding: 24px;
-    background: red;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    transition: .6s ease-out;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+
+.m_b_30 {
+    margin-bottom: 30px; 
 }
-.container{
+
+.single-blog {
+    transition: all 300ms linear 0s;
+    position: relative; 
+}
+
+.single-blog .thumb {
+    overflow: hidden; 
+}
+.single-blog .thumb img {
     width: 100%;
-    max-width: 1200px;
-    height: 420px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-.container .card{
-    width: 100%;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
-    transition: all 0.25s;
+    height: 600px;
+    transition: all 300ms linear 0s;
+    position: relative;  
 }
 
-.container .card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
-
-.container .card img{
-    width: 100%;
-    height: 220px;
-}
-
-.container .card h4{
-    font-weight: bolder;
-}
-
-.container .card p{
-    padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.container .card a{
-    font-weight: 500;
-    text-decoration: none;
-    color: black;
-}
-
-.single-portafolio{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-.portafolio-img{
-    width:100%;
-    height:100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-}
-
-.portafolio-text{
+.single-blog .short_details {
+    background: #fff;
+    transition: all 300ms linear 0s;
     position: absolute;
     bottom: 0;
-    padding: 10px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-    -webkit-transform: all .5s ease-out;
-    -moz-transform: all .5s ease-out;
-    -ms-transform: all .5s ease-out;
-    transform: all .5s ease-out;
-
-}
-
-.portafolio-text h3{
-    font-family: 'Prometo-Medium';
-    font-size: 30px;
-
-}
-
-.portafolio-text p{
-    font-family: 'Prometo-Thin';
-    text-align: justify;
-    font-size: 20px;
-}
-
-.single-portafolio:hover .portafolio-text{
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
-}
-
-.single-portafolio:hover .portafolio-img{
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    transform: scale(1.15);
+    right: 0;
+    width: 80%;
+    padding: 40px;
+    transition: all 300ms linear 0s; 
 }
     
-.parallax-blog{
-    background-image: url('/assets/imagenes/blogv1/nicetrip5.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.single-blog .short_details a {
+    color: #33353b;
+    font-weight: 600;
+    text-transform: capitalize; 
+}
+
+.single-blog .short_details a:hover {
+    color: #0A2D45; 
+}
+
+.single-blog .meta-bottom a i {
+    margin-right: 11px; 
+    text-decoration: none;
+}
+
+.single-blog .meta-bottom a:hover {
+    color: #0A2D45; 
+    text-decoration: none;
+}
+      
+.single-blog .meta-top {
+    margin-bottom: 6px; 
+}
+        
+.single-blog .meta-top a {
+    display: inline-block;
+    font-size: 13px;
+    color: #0A2D45;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 600;
+    font-family: 'Prometo-light';
+    transition: all 300ms linear 0s;
+    text-decoration: none; 
+}
+          
+.single-blog .meta-top a:hover {
+    color: #0A2D45; 
+}
+      
+.single-blog h4 {
+    font-size: 27px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 36px;
+    transition: all 300ms linear 0s;
+    font-family: 'Prometo-x-bold'; 
+}
+        
+@media (max-width: 1199px) {
+    .single-blog h4 {
+        font-size: 18px; 
+    } 
+}
+
+@media (max-width: 991px) {
+    .single-blog h4 {
+        margin-bottom: 8px; 
+    } 
+}
+      
+.single-blog:hover img {
+    transform: scale(1.1); }
+    
+.single-blog .meta-top a:first-child {
+    margin-right: 3px; }
+    
+.single-blog .meta-top a:last-child {
+    margin-left: 3px; }
+    
+/*ESTILO DOS PRIMERAS NOTAS*/
+.single-blog.style_two {
+    position: relative; 
+}
+        
+.single-blog.style_two .short_details {
+    background: transparent;
+    right: 0;
     width: 100%;
-    height: 500px;
-    padding: 0;
+    padding: 0 65px;
+    bottom: 50%;
+    transform: translateY(50%);
+    transition: all 300ms linear 0s; 
+}
+        
+.single-blog.style_two .short_details a {
+    color: #fff; 
+}
+            
+.single-blog.style_two .short_details a:hover {
+    color: #0A2D45; 
+}
+        
+.single-blog.style_two .meta-bottom a {
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 300ms linear 0s; 
+}
+        
+.single-blog.style_two .meta-top a {
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 300ms linear 0s; 
+}
+          
+.single-blog.style_two .meta-top a:hover {
+    color: #0A2D45; 
+}
+        
+.single-blog.style_two h4 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 36px;
+    transition: all 300ms linear 0s; 
+}
+          
+@media (max-width: 1199px) {
+    .single-blog.style_two h4 {
+        font-size: 18px; 
+    } 
 }
 
-.entradas{
-   position: relative;
-   width: 500px;
-   height: 150px; 
-   top: 50%;
-   left: 20%;
-   display: inline-block;
-   background: white;
+@media (max-width: 991px) {
+    .single-blog.style_two h4 {
+        margin-bottom: 8px; 
+    } 
 }
-
-.entradas h1{
-    color: black;
-    font-family: 'Prometo-x-bold';
-    font-weight: bolder;
-    font-size: 50px;
-}
-
-.entradas hr{
-    width: 60%;
-    top: 80%;
-    background:red;
-    height: 10px;
-    padding-left: 0px;
-
-}
-
-.texto h1{
-    color: white;
-    font-family: 'Prometo-x-bold';
-    letter-spacing: 6px;
-    font-size: 100px;
-    font-weight: bolder;
-}
-
-.texto h4{
-    color: white;
-    font-family: 'Prometo-Medium';
+      
+/*ESTILO TRES DE LAS PRIMERAS ENTRADAS*/
+.single-blog.style-three {
     text-align: center;
-    font-size: 40px;
-    letter-spacing: 4px;
+    transition: all 300ms linear 0s;
+    position: relative; 
+}
+        
+.single-blog.style-three .thumb {
+    overflow: hidden; 
+}
+          
+.single-blog.style-three .thumb img {
+    width: 100%;
+    height: 270px;
+    transition: all 300ms linear 0s;
+}
+        
+.single-blog.style-three .short_details {
+    background: #fff;
+    transition: all 300ms linear 0s;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    width: 80%;
+    padding: 10px 5px;
+    transition: all 300ms linear 0s; 
+}
+          
+.single-blog.style-three .short_details a {
+    color: #33353b;
+    font-weight: 600;
+    text-transform: capitalize; 
+}
+            
+.single-blog.style-three .short_details a:hover {
+    color: #0A2D45; 
+}
+        
+.single-blog.style-three .meta-bottom a {
+    display: inline-block;
+    color: #797979;
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 300ms linear 0s; 
+}
+          
+.single-blog.style-three .meta-bottom a i {
+    margin-right: 10px; 
+}
+          
+.single-blog.style-three .meta-bottom a:hover {
+    color: #0A2D45; 
+}
+        
+.single-blog.style-three .meta-top {
+    margin-bottom: 6px; 
+}
+          
+.single-blog.style-three .meta-top a {
+    display: inline-block;
+    font-size: 13px;
+    color: #0A2D45;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 600;
+    transition: all 300ms linear 0s; 
+}
+            
+.single-blog.style-three .meta-top a:hover {
+    color: #0A2D45; 
+}
+        
+.single-blog.style-three h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 36px;
+    transition: all 300ms linear 0s; 
+}
+          
+@media (max-width: 1199px) {
+    .single-blog.style-three h4 {
+        font-size: 18px; 
+    } 
+}
+
+@media (max-width: 991px) {
+    .single-blog.style-three h4 {
+        margin-bottom: 8px; 
+    } 
 }
 
 
