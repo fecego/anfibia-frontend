@@ -1,6 +1,4 @@
 
-
-
 #canvas-image-blending {
     position: absolute;
     display: block;
@@ -347,6 +345,85 @@
     color: white;
     font-family: 'Prometo-Thin';
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     letter-spacing: 4px;
 }
+
+.input-correo{
+    color: white;
+    background: transparent;
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    font-family: 'Prometo-Thin';
+    border: none;
+}
+h2 {
+    font-family: 'Damion', cursive;
+    font-weight: 400;
+    color: #4caf50;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+}
+h2:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    top: 22px;
+    background: #4caf50;
+    height: 1px;
+}
+h2 i {
+    font-style: normal;
+    background: #fff;
+    position: relative;
+    padding: 10px;
+}
+
+.signup-form {
+    background-color: black;
+    width: 100%;
+  }
+  
+  .signup-form form {
+    padding: 20px 10px;
+    color: white;
+  }
+  
+  .signup-form input[type=text], select {
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: inherit;
+    display: block;
+    width: 100%;
+    margin: none;
+  }
+  
+  .signup-form input[type=text]:focus, select:focus {
+    outline: none;
+  }
+  
+  .form-group {
+    text-align: center;
+  }
+  
+  .form-group .line {
+    height: 2px;
+    width: 0px;
+    position: absolute;
+    background-color: darkgrey;
+    display: inline-block;
+    transition: .3s width ease-in-out;
+    position: relative;
+    top: -14px;
+  }
+  
+  .signup-form input[type=text]:focus+.line, select:focus+.line {
+    width: 100%;
+    background-color: #02add7;
+    height: 5px;
+  }
+
+  
