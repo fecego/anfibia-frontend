@@ -427,6 +427,14 @@
     letter-spacing: 4px;
 }
 
+.texto h4{
+    color: white;
+    font-family: 'Prometo-Medium';
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
 .input-correo{
     color: white;
     background: transparent;
