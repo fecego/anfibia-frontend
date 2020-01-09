@@ -1,515 +1,645 @@
 
-#canvas-image-blending {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 2%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-
-.half_background {
-    background: linear-gradient(to top, red 50%, transparent 50%);
-    font-family: 'Prometo-x-bold';
-    letter-spacing: 8px;
-    font-weight: bolder;
-
-}
-
-
-.texto-over-canvas{
-    position: absolute;
-    top: 50%;
-    left: 25%;
-
-}
-
-.texto-over-canvas h1{
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    font-size: 120px;
-    color: white;
-    letter-spacing: 2px;
-
-}
-
-.texto-over-canvas h2{
-    font-family: 'Prometo-Thin';
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    letter-spacing: 5px;
-    position: absolute;
-    top: -10%;
-    left: 30%;
-    border-bottom: 8px solid red;
-}
-
-
-.text-next-canvas h3{
-    font-family: 'Prometo-Thin';
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    letter-spacing: 5px;
-    position: absolute;
-    top: 110%;
-    left: 25%;
-}
-
-.texto-over-canvas h4{
-    font-family: 'Prometo-Medium';
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    letter-spacing: 5px;
-}
-
-
-.text-next-canvas h1{
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    font-family: 'Prometo-x-bold';
-    font-weight: bolder;
-    text-align: center;
-    top: 95%;
-    left: 25%;    
-}
-
-.text-next-canvas h2{
-    -webkit-transform:rotate(-90deg);
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    text-align: center;
-    top: 87%;
-    left: 6%;    
-    border-bottom: 4px solid red;
-}
-
-.text-next-canvas h4{
     
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    font-family: 'Prometo-Medium';
-    text-align: center;
-    top: 120%;
-    left: 30%;    
-}
+    /*-----TITULO-----*/
+    #canvas-image-blending {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 2%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 
-.text-next-canvas h5{
+    .half_background {
+        background: linear-gradient(to top, red 50%, transparent 50%);
+        font-family: 'Prometo-x-bold';
+        letter-spacing: 8px;
+        font-weight: bolder;
+    }
+
+    .texto-over-canvas{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+    }
+
+    .texto-over-canvas h1{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 120px;
+        color: white;
+        letter-spacing: 2px;
+    }
+
+    .texto-over-canvas h2{
+        font-family: 'Prometo-Thin';
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        letter-spacing: 5px;
+        position: absolute;
+        top: -10%;
+        left: 30%;
+        border-bottom: 8px solid red;
+    }
+
+    .text-next-canvas h3{
+        font-family: 'Prometo-Thin';
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        letter-spacing: 5px;
+        position: absolute;
+        top: 110%;
+        left: 25%;
+    }
+
+    .texto-over-canvas h4{
+        font-family: 'Prometo-Medium';
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        letter-spacing: 5px;
+    }
+
+    .text-next-canvas h1{
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        font-family: 'Prometo-x-bold';
+        font-weight: bolder;
+        text-align: center;
+        top: 95%;
+        left: 25%;    
+    }
+
+    .text-next-canvas h2{
+        -webkit-transform:rotate(-90deg);
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        text-align: center;
+        top: 87%;
+        left: 6%;    
+        border-bottom: 4px solid red;
+    }
+
+    .text-next-canvas h4{
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        font-family: 'Prometo-Medium';
+        text-align: center;
+        top: 120%;
+        left: 30%;    
+    }
+
+    .text-next-canvas h5{
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        font-family: 'Prometo-Medium';
+        font-style: italic;
+        font-weight: bolder;
+        text-align: center;
+        top: 120%;
+        left: 45%;    
+    }
+
+    .text-next-canvas h6{
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        text-align: center;
+        top: 43%;
+        left: 23%;    
+    }
+
+    .text-next-canvas p{
+        writing-mode: tb-rl;
+        font-size: 50px;
+        font-weight: bolder;
+        font-family: 'Prometo-Thin';
+        font-style: italic;
+        color: white;
+        position: absolute;
+        top: 39%;
+        right: 10%;
+    }
+
+    .text-next-canvas hr{
+        position: absolute;
+        top: 103%;
+        left: 25%;
+        background: red;
+        width: 20%;
+        height: 5px;
+    }
+
+    .text-next-canvas span{
+        font-family: 'Prometo-x-bold';
+        font-size: 100px;
+        color: white;
+    }
+
+    .team-area{
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+    }/*-----TITULO-----*/
     
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    font-family: 'Prometo-Medium';
-    font-style: italic;
-    font-weight: bolder;
-    text-align: center;
-    top: 120%;
-    left: 45%;    
-}
+    /*-----ENTRADAS MAS RECIENTES-----*/
+    .entradas h1{
+        margin-top: 50px;
+        margin-left: 50px;
+        font-family: 'Prometo-x-bold';
+        font-size: 50px;
+    }
 
-.text-next-canvas h6{
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    text-align: center;
-    top: 43%;
-    left: 23%;    
-}
+    .entradas hr{
+        position: relative;
+        background: #CF2020;
+        width: 50%;
+        height: 2px;
+    }/*-----ENTRADAS MAS RECIENTES-----*/
 
-.text-next-canvas p{
-    writing-mode: tb-rl;
-    font-size: 50px;
-    font-weight: bolder;
-    font-family: 'Prometo-Thin';
-    font-style: italic;
-    color: white;
-    position: absolute;
-    top: 39%;
-    right: 10%;
-}
+    /*-----PRIMERAS ENTRADAS-----*/
+    .m_b_30 {
+        margin-bottom: 30px; 
+    }
 
+    .single-blog {/*-----Este afecta a todas las notas que tengan single blog-----*/
+        transition: all 300ms linear 0s;
+        position: relative; 
+    }
 
-.text-next-canvas hr{
-    position: absolute;
-    top: 103%;
-    left: 25%;
-    background: red;
-    width: 20%;
-    height: 5px;
-}
-
-.text-next-canvas span{
-    font-family: 'Prometo-x-bold';
-    font-size: 100px;
-    color: white;
-}
-
-.team-area{
-    display: flex;
-    width: 90%;
-    justify-content: space-around;
-
-}
-
-
-.m_b_30 {
-    margin-bottom: 30px; 
-}
-
-.single-blog {
-    transition: all 300ms linear 0s;
-    position: relative; 
-}
-
-.single-blog .thumb {
-    overflow: hidden; 
-}
-.single-blog .thumb img {
-    width: 100%;
-    height: 600px;
-    transition: all 300ms linear 0s;
-    position: relative;  
-}
-
-.single-blog .short_details {
-    background: #fff;
-    transition: all 300ms linear 0s;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    padding: 40px;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog .thumb {
+        overflow: hidden; 
+    }
     
-.single-blog .short_details a {
-    color: #33353b;
-    font-weight: 600;
-    text-transform: capitalize; 
-}
+    .single-blog .thumb img {
+        width: 100%;
+        height: 700px;
+        transition: all 300ms linear 0s;
+        position: relative;  
+    }
 
-.single-blog .short_details a:hover {
-    color: #0A2D45; 
-}
+    .single-blog .short_details {
+        background: #fff;
+        transition: all 300ms linear 0s;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        padding: 40px;
+        transition: all 300ms linear 0s; 
+    }
+    
+    .single-blog .short_details a {
+        color: #33353b;
+        font-weight: 600;
+        text-transform: capitalize; 
+    }
 
-.single-blog .meta-bottom a i {
-    margin-right: 11px; 
-    text-decoration: none;
-}
+    .single-blog .short_details a:hover {
+        color: #0A2D45; 
+    }
 
-.single-blog .meta-bottom a:hover {
-    color: #0A2D45; 
-    text-decoration: none;
-}
+    .single-blog .meta-bottom a i {
+        margin-right: 11px; 
+        text-decoration: none;
+    }
+
+    .single-blog .meta-bottom a:hover {
+        color: #0A2D45; 
+        text-decoration: none;
+    }
       
-.single-blog .meta-top {
-    margin-bottom: 6px; 
-}
+    .single-blog .meta-top {
+        margin-bottom: 6px; 
+    }
         
-.single-blog .meta-top a {
-    display: inline-block;
-    font-size: 13px;
-    color: #0A2D45;
-    text-transform: uppercase;
-    position: relative;
-    font-weight: 600;
-    font-family: 'Prometo-light';
-    transition: all 300ms linear 0s;
-    text-decoration: none; 
-}
+    .single-blog .meta-top a {
+        display: inline-block;
+        font-size: 13px;
+        color: #0A2D45;
+        text-transform: uppercase;
+        position: relative;
+        font-weight: 600;
+        font-family: 'Prometo-light';
+        transition: all 300ms linear 0s;
+        text-decoration: none; 
+    }
           
-.single-blog .meta-top a:hover {
-    color: #0A2D45; 
-}
+    .single-blog .meta-top a:hover {
+        color: #0A2D45; 
+    }
       
-.single-blog h4 {
-    font-size: 27px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    line-height: 36px;
-    transition: all 300ms linear 0s;
-    font-family: 'Prometo-x-bold'; 
-}
-        
-@media (max-width: 1199px) {
     .single-blog h4 {
-        font-size: 18px; 
-    } 
-}
+        font-size: 27px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        line-height: 36px;
+        transition: all 300ms linear 0s;
+        font-family: 'Prometo-x-bold'; 
+    }
+        
+    @media (max-width: 1199px) {
+        .single-blog h4 {
+            font-size: 18px; 
+        } 
+    }
 
-@media (max-width: 991px) {
-    .single-blog h4 {
-        margin-bottom: 8px; 
-    } 
-}
+    @media (max-width: 991px) {
+        .single-blog h4 {
+            margin-bottom: 8px; 
+        } 
+    }
       
-.single-blog:hover img {
-    transform: scale(1.1); }
+    .single-blog:hover img {
+        transform: scale(1.1); }
     
-.single-blog .meta-top a:first-child {
-    margin-right: 3px; }
+    .single-blog .meta-top a:first-child {
+        margin-right: 3px; }
     
-.single-blog .meta-top a:last-child {
-    margin-left: 3px; }
+    .single-blog .meta-top a:last-child {
+        margin-left: 3px; }/*-----Este afecta a todas las notas que tengan single blog-----*/
     
-/*ESTILO DOS PRIMERAS NOTAS*/
-.single-blog.style_two {
-    position: relative; 
-}
+    /*Estilo dos (nota de enmedio)*/
+    .single-blog.style_two {
+        position: relative; 
+    }
         
-.single-blog.style_two .short_details {
-    background: transparent;
-    right: 0;
-    width: 100%;
-    padding: 0 65px;
-    bottom: 50%;
-    transform: translateY(50%);
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style_two .short_details {
+        background: transparent;
+        right: 0;
+        width: 100%;
+        padding: 0 65px;
+        bottom: 50%;
+        transform: translateY(50%);
+        transition: all 300ms linear 0s; 
+    }
         
-.single-blog.style_two .short_details a {
-    color: #fff; 
-}
+    .single-blog.style_two .short_details a {
+        color: #fff; 
+    }
             
-.single-blog.style_two .short_details a:hover {
-    color: #0A2D45; 
-}
+    .single-blog.style_two .short_details a:hover {
+        color: #0A2D45; 
+    }
         
-.single-blog.style_two .meta-bottom a {
-    color: #fff;
-    font-size: 13px;
-    text-transform: uppercase;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style_two .meta-bottom a {
+        color: #fff;
+        font-size: 13px;
+        text-transform: uppercase;
+        transition: all 300ms linear 0s; 
+    }
         
-.single-blog.style_two .meta-top a {
-    font-size: 13px;
-    color: #fff;
-    text-transform: uppercase;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style_two .meta-top a {
+        font-size: 13px;
+        color: #fff;
+        text-transform: uppercase;
+        transition: all 300ms linear 0s; 
+    }
           
-.single-blog.style_two .meta-top a:hover {
-    color: #0A2D45; 
-}
+    .single-blog.style_two .meta-top a:hover {
+        color: #0A2D45; 
+    }
         
-.single-blog.style_two h4 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    line-height: 36px;
-    transition: all 300ms linear 0s; 
-}
-          
-@media (max-width: 1199px) {
     .single-blog.style_two h4 {
-        font-size: 18px; 
-    } 
-}
+        font-size: 30px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        line-height: 36px;
+        transition: all 300ms linear 0s; 
+    }
+          
+    @media (max-width: 1199px) {
+        .single-blog.style_two h4 {
+            font-size: 18px; 
+        } 
+    }
 
-@media (max-width: 991px) {
-    .single-blog.style_two h4 {
-        margin-bottom: 8px; 
-    } 
-}
+    @media (max-width: 991px) {
+        .single-blog.style_two h4 {
+            margin-bottom: 8px; 
+        } 
+    } /*Estilo dos (nota de enmedio)*/
       
-/*ESTILO TRES DE LAS PRIMERAS ENTRADAS*/
-.single-blog.style-three {
-    text-align: center;
-    transition: all 300ms linear 0s;
-    position: relative; 
-}
+    /*Estilo tres (ultima dos notas pequeñas)*/
+    .single-blog.style-three {
+        text-align: center;
+        transition: all 300ms linear 0s;
+        position: relative; 
+    }
         
-.single-blog.style-three .thumb {
-    overflow: hidden; 
-}
+    .single-blog.style-three .thumb {
+        overflow: hidden; 
+    }       
           
-.single-blog.style-three .thumb img {
-    width: 100%;
-    height: 270px;
-    transition: all 300ms linear 0s;
-}
+    .single-blog.style-three .thumb img {
+        width: 100%;
+        height: 320px;
+        transition: all 300ms linear 0s;
+    }
         
-.single-blog.style-three .short_details {
-    background: #fff;
-    transition: all 300ms linear 0s;
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    width: 80%;
-    padding: 10px 5px;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style-three .short_details {
+        background: #fff;
+        transition: all 300ms linear 0s;
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        width: 80%;
+        padding: 10px 5px;
+        transition: all 300ms linear 0s; 
+    }
           
-.single-blog.style-three .short_details a {
-    color: #33353b;
-    font-weight: 600;
-    text-transform: capitalize; 
-}
+    .single-blog.style-three .short_details a {
+        color: #33353b;
+        font-weight: 600;
+        text-transform: capitalize; 
+    }
             
-.single-blog.style-three .short_details a:hover {
-    color: #0A2D45; 
-}
+    .single-blog.style-three .short_details a:hover {
+        color: #0A2D45; 
+    }
         
-.single-blog.style-three .meta-bottom a {
-    display: inline-block;
-    color: #797979;
-    position: relative;
-    font-size: 13px;
-    text-transform: uppercase;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style-three .meta-bottom a {
+        display: inline-block;
+        color: #797979;
+        position: relative;
+        font-size: 13px;
+        text-transform: uppercase;
+        transition: all 300ms linear 0s; 
+    }
           
-.single-blog.style-three .meta-bottom a i {
-    margin-right: 10px; 
-}
+    .single-blog.style-three .meta-bottom a i {
+        margin-right: 10px; 
+    }
           
-.single-blog.style-three .meta-bottom a:hover {
-    color: #0A2D45; 
-}
+    .single-blog.style-three .meta-bottom a:hover {
+        color: #0A2D45; 
+    }
         
-.single-blog.style-three .meta-top {
-    margin-bottom: 6px; 
-}
+    .single-blog.style-three .meta-top {
+        margin-bottom: 6px; 
+    }
           
-.single-blog.style-three .meta-top a {
-    display: inline-block;
-    font-size: 13px;
-    color: #0A2D45;
-    text-transform: uppercase;
-    position: relative;
-    font-weight: 600;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style-three .meta-top a {
+        display: inline-block;
+        font-size: 13px;
+        color: #0A2D45;
+        text-transform: uppercase;
+        position: relative;
+        font-weight: 600;
+        transition: all 300ms linear 0s; 
+    }
             
-.single-blog.style-three .meta-top a:hover {
-    color: #0A2D45; 
-}
+    .single-blog.style-three .meta-top a:hover {
+        color: #0A2D45; 
+    }
         
-.single-blog.style-three h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    line-height: 36px;
-    transition: all 300ms linear 0s; 
-}
+    .single-blog.style-three h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        line-height: 36px;
+        transition: all 300ms linear 0s; 
+    }
           
-@media (max-width: 1199px) {
-    .single-blog.style-three h4 {
-        font-size: 18px; 
-    } 
-}
+    @media (max-width: 1199px) {
+        .single-blog.style-three h4 {
+            font-size: 18px; 
+        } 
+    }
 
-@media (max-width: 991px) {
-    .single-blog.style-three h4 {
-        margin-bottom: 8px; 
-    } 
-}
+    @media (max-width: 991px) {
+        .single-blog.style-three h4 {
+            margin-bottom: 8px; 
+        } 
+    }/*Estilo tres (ultima dos notas pequeñas)*/
 
+    /*-----Parallax-----*/
+    .parallax-fishing{
+        background: url('/assets/imagenes/paginaInicial/gun3.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+        margin-top: 50px;
+        position: relative;
+    }
+    
+    .parallax h1{
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        font-family: 'Prometo-x-bold';
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 150px;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+    }
+    /*-----Parallax-----*/
 
-.texto h3{
-    color: white;
-    font-family: 'Prometo-Thin';
-    text-align: center;
-    font-size: 20px;
-    letter-spacing: 4px;
-}
+    /*-----Ultimas notas-----*/
+    .area-padding {
+        padding: 100px 0px;
+        font-family: 'Prometo-light';
+    }
+  
+    .area-heading {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 45px; 
+    }
 
-.texto h4{
-    color: white;
-    font-family: 'Prometo-Medium';
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: 4px;
-}
+    .area-heading h3 {  /*-----Titulo enmedio-----*/
+        font-weight: 600;
+        position: relative;
+        margin-bottom: 23px;
+        font-family: 'Prometo-x-bold';
+        font-size: 50px; 
+    }
+    
+    .area-heading hr{  /*-----HR-----*/
+        position: relative;
+        background: #CF2020;
+        width: 25%;
+        height: 2px;
+    }
 
-.input-correo{
-    color: white;
-    background: transparent;
-    width: 400px;
-    height: 40px;
-    padding: 10px;
-    font-family: 'Prometo-Thin';
-    border: none;
-}
-h2 {
-    font-family: 'Damion', cursive;
-    font-weight: 400;
-    color: #4caf50;
-    font-size: 35px;
-    text-align: center;
-    position: relative;
-}
-h2:before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    left: 0;
-    top: 22px;
-    background: #4caf50;
-    height: 1px;
-}
-h2 i {
-    font-style: normal;
-    background: #fff;
-    position: relative;
-    padding: 10px;
-}
+    /*-----Estilo cinco (Ultimas cuatro notas)-----*/
+    .single-blog .style-five {
+        border: 6px solid #b9be7e;
+        position: relative;
+    }
+    
+    .single-blog .short_details2{
+        background-color:white;
+        transition: all 300ms linear 0s;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        padding: 20px;
+        transition: all 300ms linear 0s; 
+        height: 150px;
+    }
 
-.signup-form {
-    background-color: black;
-    width: 100%;
-  }
-  
-  .signup-form form {
-    padding: 20px 10px;
-    color: white;
-  }
-  
-  .signup-form input[type=text], select {
-    border: none;
-    border-bottom: 2px solid white;
-    background-color: inherit;
-    display: block;
-    width: 100%;
-    margin: none;
-  }
-  
-  .signup-form input[type=text]:focus, select:focus {
-    outline: none;
-  }
-  
-  .form-group {
-    text-align: center;
-  }
-  
-  .form-group .line {
-    height: 2px;
-    width: 0px;
-    position: absolute;
-    background-color: darkgrey;
-    display: inline-block;
-    transition: .3s width ease-in-out;
-    position: relative;
-    top: -14px;
-  }
-  
-  .signup-form input[type=text]:focus+.line, select:focus+.line {
-    width: 100%;
-    background-color: #02add7;
-    height: 5px;
-  }
+    .single-blog.style-five .thumb img {
+        width: 100%;
+        height: 500px;
+        transition: all 300ms linear 0s;
+    }
+   
+    .single-blog.style_five .short_details a {
+        color: #fff; }
+    
+    .single-blog.style_five .short_details a:hover {
+        color: #ff7a7f; }
+    
+    .single-blog.style_five .meta-bottom a {
+        color: #fff;
+        font-size: 13px;
+        text-transform: uppercase;
+        transition: all 300ms linear 0s; }
+    
+    .single-blog.style_five .meta-top a {
+        font-size: 11px;
+        color: #fff;
+        text-transform: uppercase;
+        transition: all 300ms linear 0s; }
 
+    .single-blog.style_five .meta-top a:hover {
+        color: #ff7a7f; }
+
+    .single-blog.style-five h4{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        line-height: 25px;
+        transition: all 300ms linear 0s;
+        text-align: justify;
+        color: #212529;
+    }
+
+    @media (max-width: 1199px) {
+        .single-blog.style_five h4 {
+            font-size: 18px; 
+        } 
+    }
+    @media (max-width: 991px) {
+        .single-blog.style_five h4 {
+            margin-bottom: 8px;
+        } 
+    }/*-----Estilo cinco (Ultimas cuatro notas)-----*/
+
+    /*-----Subscricion al Blog-----*/         
+    .texto h3{
+        color: white;
+        font-family: 'Prometo-Thin';
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .texto h4{
+        color: white;
+        font-family: 'Prometo-Medium';
+        text-align: center;
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+
+    .input-correo{
+        color: white;
+        background: transparent;
+        width: 400px;
+        height: 40px;
+        padding: 10px;
+        font-family: 'Prometo-Thin';
+        border: none;
+    }
+
+    h2 {
+        font-family: 'Damion', cursive;
+        font-weight: 400;
+        color: #4caf50;
+        font-size: 35px;
+        text-align: center;
+        position: relative;
+    }
+
+    h2:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        left: 0;
+        top: 22px;
+        background: #4caf50;
+        height: 1px;
+    }
+
+    h2 i {
+        font-style: normal;
+        background: #fff;
+        position: relative;
+        padding: 10px;
+    }   
+
+    .signup-form {
+        background-color: black;
+        width: 100%;
+    }
   
+    .signup-form form {
+        padding: 20px 10px;
+        color: white;
+    }
+  
+    .signup-form input[type=text], select {
+        border: none;
+        border-bottom: 2px solid white;
+        background-color: inherit;
+        display: block;
+        width: 100%;
+        margin: none;
+    }
+  
+    .signup-form input[type=text]:focus, select:focus {
+        outline: none;
+    }
+  
+    .form-group {
+        text-align: center;
+    }
+  
+    .form-group .line {
+        height: 2px;
+        width: 0px;
+        position: absolute;
+        background-color: darkgrey;
+        display: inline-block;
+        transition: .3s width ease-in-out;
+        position: relative;
+        top: -14px;
+    }
+  
+    .signup-form input[type=text]:focus+.line, select:focus+.line {
+        width: 100%;
+        background-color: #02add7;
+        height: 5px;
+    }/*-----Subscricion al Blog-----*/    
