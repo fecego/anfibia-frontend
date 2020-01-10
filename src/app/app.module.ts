@@ -18,7 +18,7 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
-import { Blogv2Component } from './blogv2/blogv2.component';
+import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
 
 
 
@@ -38,7 +38,8 @@ import { Blogv2Component } from './blogv2/blogv2.component';
     PreguntasFrecuentesComponent,
     Blogv1Component,
     NosotrosComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    Entrada1Component
   ],
   imports: [
     BrowserModule,
