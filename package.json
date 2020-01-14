@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-    "@types/jquery": "^3.3.31",
+    "@types/jquery": "^3.4.1",
     "angular-font-awesome": "^3.1.2",
     "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
@@ -28,7 +28,9 @@
     "granim": "^2.0.0",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.6.1",
+    "ngx-slick-carousel": "^0.4.7",
     "rxjs": "~6.4.0",
+    "slick-carousel": "^1.8.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

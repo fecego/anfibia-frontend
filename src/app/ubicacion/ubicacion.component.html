@@ -1,129 +1,148 @@
-<div class="container" style="padding-top: 20px;">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="col-sm-12">
-                <div class="ct-select-group ct-js-select-group">
-                    <select class="ct-select ct-js-select" id="cms-features" name="CMS Features" [(ngModel)] = "sucursalSeleccionada" (change)="cambiarSucursal(sucursalSeleccionada)">
-                      <option value="SELECCIONE UNA SUCURSAL">SELECCIONE UNA SUCURSAL</option>
-                      <option [ngValue] = "SanRafael" value="SanRafael">San Rafael</option>
-                      <option [ngValue] = "Merida" value="Merida">Mérida</option>
-                      	
-                    </select>
-                  </div>
+
+
+
+<div class="container-fluid contenedor-ubicacion" >
+    <div class="estilo-new">
+        <h1>Ubicación</h1>
+        <h4>Ven y conocenos en nuestras sucursales</h4>
+        <hr>
+    </div>
+    
+    <div class="container-fluid">
         
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="container-fluid contenedor-ubicacion"  *ngIf="sucursalSanRafael">
-    <p>Visitanos en nuestra sucursal</p>
-    <h1>San Rafael, Veracruz </h1>
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.6832774087034!2d-96.86903918598566!3d20.188908636459296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8d550d8632e4dd52!2sFerretera%20Central%20del%20Golfo%20S.A.%20de%20C.V.!5e0!3m2!1ses!2smx!4v1577205473339!5m2!1ses!2smx" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <div class="informacion">
-                    
-                    <h1>Información</h1>
-                    <hr>
-                    <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación:<span> Salvador Díaz Mirón No 5, Col. Centro 93620, San Rafael, Veracruz.</span></h2>
-                    <h2><i class="fa fa-phone" aria-hidden="true"></i> Telefono: <span> 232 324 9060</span></h2>
-                    <h2><i class="fa fa-envelope-o" aria-hidden="true"></i> Correo: <span>fecego@fecego-marina.com</span></h2>
-                </div> 
+            <div class="col-sm-6" style="border-right: 1px solid #848484;">
+                <p>Nuestra sucursal</p>
+                <h1>San Rafael, Veracruz </h1>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.6832774087034!2d-96.86903918598566!3d20.188908636459296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8d550d8632e4dd52!2sFerretera%20Central%20del%20Golfo%20S.A.%20de%20C.V.!5e0!3m2!1ses!2smx!4v1577205473339!5m2!1ses!2smx" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="informacion">
+                            
+                            <h1>Información</h1>
+                            <hr>
+                            <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación:<span> Salvador Díaz Mirón No 5, Col. Centro 93620, San Rafael, Veracruz.</span></h2>
+                            <h2><i class="fa fa-phone" aria-hidden="true"></i> Telefono: <span> 232 324 9060</span></h2>
+                            <h2><i class="fa fa-envelope-o" aria-hidden="true"></i> Correo: <span>fecego@fecego-marina.com</span></h2>
+                        </div> 
+                    </div>
+                    <div class="col-sm-6">
+                        
+                        <div class="informacion">
+                                    <h1>Horarios</h1>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                           <tr>
+                                               <td>Lunes</td>
+                                               <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+                                           <tr>
+                                            <td>Martes</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+
+                                           <tr>
+                                            <td>Miercoles</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+                                           <tr>
+                                            <td>Jueves</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+                                           <tr>
+                                            <td>Viernes</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+                                           <tr>
+                                            <td>Sabado</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+                                           <tr>
+                                            <td>Domingo</td>
+                                            <td>08:00 a.m - 17:00 p.m</td>
+                                           </tr>
+            
+                                        </div>
+                                        
+                                    </div>
+                           
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-6">
-                
-                <div class="informacion">
+                <p>Nuestra sucursal</p>
+                <h1>Merida, Yucatan </h1>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.109300449252!2d-89.60705948506738!3d21.028312185998644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5677ed3ce46637%3A0x106f02998a63f9d6!2sAnfibia%20Outdoor%20Experience!5e0!3m2!1ses!2smx!4v1577402312419!5m2!1ses!2smx" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="informacion">
+                            
+                            <h1>Información</h1>
+                            <hr>
+                            <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación:<span> Salvador Díaz Mirón No 5, Col. Centro 93620, San Rafael, Veracruz.</span></h2>
+                            <h2><i class="fa fa-phone" aria-hidden="true"></i> Telefono: <span> 232 324 9060</span></h2>
+                            <h2><i class="fa fa-envelope-o" aria-hidden="true"></i> Correo: <span>fecego@fecego-marina.com</span></h2>
+                        </div> 
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="informacion">
                             <h1>Horarios</h1>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <h3>Lunes</h3>
-                                    <h3>Martes</h3>
-                                    <h3>Miercoles</h3>
-                                    <h3>Jueves</h3>
-                                    <h3>Viernes</h3>
-                                    <h3>Sabado</h3>
-                                    <h3>Domingo</h3>
+                                <div class="col-sm-12">
+                                   <tr>
+                                       <td>Lunes</td>
+                                       <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Martes</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+
+                                   <tr>
+                                    <td>Miercoles</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Jueves</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Viernes</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Sabado</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Domingo</td>
+                                    <td>08:00 a.m - 17:00 p.m</td>
+                                   </tr>
     
                                 </div>
-                                <div class="col-sm-6">
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>No laborable</h4>
-                                </div>
+                                
                             </div>
                    
                 </div>
+                    </div>
+                </div>
             </div>
+
         </div>
+        
 
     </div>
     
 </div>
 
-<div class="container-fluid contenedor-ubicacion"  *ngIf="sucursalMerida">
-    <p>Visitanos en nuestra sucursal</p>
-    <h1>Mérida, Yucatan</h1>
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.109300449252!2d-89.60705948506738!3d21.028312185998644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5677ed3ce46637%3A0x106f02998a63f9d6!2sAnfibia%20Outdoor%20Experience!5e0!3m2!1ses!2smx!4v1577402312419!5m2!1ses!2smx" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="informacion">
-                    
-                    <h1>Información</h1>
-                    <hr>
-                    <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación:<span> Andrés, Av. Andrés García Lavín 301, San Ramón Nte, 97117 Mérida, Yuc.</span></h2>
-                    <h2><i class="fa fa-phone" aria-hidden="true"></i> Telefono: <span>  999 912 7453</span></h2>
-                    <h2><i class="fa fa-envelope-o" aria-hidden="true"></i> Correo: <span>fecego@fecego-marina.com</span></h2>
-                </div> 
-            </div>
-            <div class="col-sm-6">
-                
-                <div class="informacion">
-                            <h1>Horarios</h1>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h3>Lunes</h3>
-                                    <h3>Martes</h3>
-                                    <h3>Miercoles</h3>
-                                    <h3>Jueves</h3>
-                                    <h3>Viernes</h3>
-                                    <h3>Sabado</h3>
-                                    <h3>Domingo</h3>
-    
-                                </div>
-                                <div class="col-sm-6">
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>09:00 a.m - 19:00 p.m</h4>
-                                    <h4>No laborable</h4>
-                                </div>
-                            </div>
-                   
-                </div>
-            </div>
-        </div>
 
-    </div>
-    
-</div>
 
 <div class="contenedor-gradiant" style="position: relative;">
     <canvas id="canvas-basic">
@@ -136,15 +155,16 @@
   
 </div>
 
-<div class="container textos-final" style="padding-bottom: 20px;">
+<div class="container-fluid textos-final" style="padding-bottom: 20px;">
     <div class="row">
         <div class="col-sm-12">
             
             <h1>No te olvides de visitar nuestra tienda en linea</h1>
             <h3> ANFIBIA</h3>
-           <div class="wrapper">
-                <button class="draw meet">Ir a la tienda</button>
-           </div>
+            <div class="dark">
+                <a href="#0" class="bttn-dark">Ir a la tienda</a>
+              </div>
+            
           
         </div>
 

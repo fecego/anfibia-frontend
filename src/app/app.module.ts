@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { Blogv2Component } from './blogv2/blogv2.component';
+import { StoreOnlineComponent } from './store-online/store-online.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -38,13 +40,16 @@ import { Blogv2Component } from './blogv2/blogv2.component';
     PreguntasFrecuentesComponent,
     Blogv1Component,
     NosotrosComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    StoreOnlineComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     AngularFontAwesomeModule,
-    FormsModule 
+    FormsModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

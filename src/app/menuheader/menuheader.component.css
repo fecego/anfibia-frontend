@@ -3,7 +3,18 @@
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
 
-    
+    .next-to-icons i{
+        color: #fff;
+        padding-right: 4px;
+        
+    }
+
+    .next-to-icons a{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        padding-left:3px;
+        font-size: 18px;
+    }
 
     .container-fluid{
         max-width: 100%;
