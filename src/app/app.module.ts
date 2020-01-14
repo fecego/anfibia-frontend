@@ -18,9 +18,13 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
 import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+<<<<<<< HEAD
 import { Blogv2Component } from './blogv2/blogv2.component';
 import { StoreOnlineComponent } from './store-online/store-online.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+=======
+import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
+>>>>>>> 6853347259eb7aad966e24d0e3ea7b829d165a34
 
 
 
@@ -41,8 +45,12 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     Blogv1Component,
     NosotrosComponent,
     ProveedoresComponent,
+<<<<<<< HEAD
     StoreOnlineComponent,
     
+=======
+    Entrada1Component
+>>>>>>> 6853347259eb7aad966e24d0e3ea7b829d165a34
   ],
   imports: [
     BrowserModule,
