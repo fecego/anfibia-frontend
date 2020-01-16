@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
 import * as Mapboxgl from 'mapbox-gl';
 import * as Granim from 'granim';
 import { BrowserStack } from 'protractor/built/driverProviders';
