@@ -4,7 +4,7 @@
 
 
 .promociones{
-    background: #162953;
+    background: #7401DF;
     position: -webkit-sticky;
     position: sticky;
     height: 50px;
@@ -17,6 +17,7 @@
 .promociones h1{
     color: #fff;
     font-family: 'Prometo-Thin';
+    font-weight: bolder;
     text-align: center;
     font-size: 25px;
     padding: 10px;
