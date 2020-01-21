@@ -2,7 +2,7 @@
  * Tabs
  */
 .letrasAndLogos h1{
-    color: white;
+    color: #000;
     font-family: 'Prometo-Medium';
     font-size: 120px;
     text-align: center;
@@ -10,7 +10,7 @@
 }
 
 .letrasAndLogos p{
-    color: white;
+    color: #000;
     font-family: 'Prometo-Medium';
     font-size: 30px;
     text-align: center;
@@ -39,7 +39,7 @@
 
 .tabs label:hover{
   background: black;
-  color: white;
+  color: #fff;
   
     
 }
@@ -68,7 +68,8 @@
 	display: none;
 }
 .tabs input[type="radio"]:checked + label {
-	background: #fff;
+  background: #000;
+  color: #fff;
 }
 .tabs input[type="radio"]:checked + label + .tab {
 	display: block;

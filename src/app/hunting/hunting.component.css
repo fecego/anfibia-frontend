@@ -1,3 +1,181 @@
+.fit-div{
+    width: 100%;
+    height: 500px;
+    background: blue;
+}
+
+.publicidad1{
+    background: red;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.anuncio1{
+    background: url('/assets/imagenes/paginaInicial/gun1.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.anuncio2{
+    background: url('/assets/imagenes/paginaInicial/adventure.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.anuncio3{
+    background: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+
+.wrapper {
+    height: 200px;
+    width: 100%;
+    margin: 50px auto;
+    margin-bottom: 1px;
+    border-radius: 7px 7px 7px 7px;
+    background: black;
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-img {
+    float: left;
+    height: 100%;
+    width: 50%;
+    background: blue;
+    
+  }
+  
+  .product-img img {
+    height: 100%;
+    background: #f0f0f0;
+    width: 100%;
+  }
+  
+  .product-info {
+    float: left;
+    height: 100%;
+    width: 50%;
+    background-color: #ffffff;
+  }
+  
+  .product-text {
+    height: 300px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+  
+  .product-text h1 {
+    margin: 0 0 0 18px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: 'Prometo-Medium';
+  }
+  
+  
+  
+  .product-text h2 {
+    margin: 0 0 47px 38px;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.2em;
+  }
+  
+  .product-text p {
+    height: 125px;
+    margin: 0 0 0 38px;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+  }
+  
+  .product-price-btn {
+    height: 103px;
+    width: 327px;
+    margin-top: 17px;
+    position: relative;
+  }
+  
+  .product-price-btn p {
+    display: inline-block;
+    position: absolute;
+    top: -13px;
+    height: 50px;
+    font-family: 'Prometo-Thin';
+    margin: 0 0 0 18px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Prometo-Medium';
+  }
+  
+  .product-price span {
+   
+    display: inline-block;
+    height: 50px;
+    font-family: 'Suranna', serif;
+    font-size: 34px;
+  }
+  
+  .product-price-btn button {
+   border: none;
+   margin-top: 20px;
+   background: none;
+   margin-left: 10px;
+   color: #000;
+   font-size: 17px;
+   text-decoration: none;
+  }
+  
+  .product-price-btn button:hover {
+   color: red;
+  }
+      .seccion-productos-extras{
+          margin-top:5px;
+      }
+  
+      .seccion-productos-extras h1{
+          font-family: 'Prometo-Medium';
+          color: black;
+  
+      }
+
+
+.seccion-productos-extras{
+    margin-top: 20px;
+}
+
+.seccion-productos-extras h1{
+    font-family: 'Prometo-Medium';
+    color: black;
+
+}
+
+.seccion-productos-extras hr{
+    height: 5px;
+    width: 20%;
+    margin-left: 0px;
+    background-color: red;
+}
+
 .container-fluid-video{
     position: relative;
     height: 100vh;
@@ -120,14 +298,14 @@
 section{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     overflow: hidden;
 
 }
 
 .sec1{
     
-    background: url('/assets/imagenes/paginaInicial/gun2.jpg');
+    background: url('/assets/imagenes/paginaInicial/guns.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -170,7 +348,7 @@ section{
     top: 0;
     left: 0;
     border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent #fff;
     border-style: solid;
 
 }
@@ -227,38 +405,39 @@ section{
     position: absolute;
     height: 350px; 
     width: 60%; 
-    background: white; 
+    background: #000;
     top: 35%; 
     left: 3%;
 }
 
 .asimetrico4 h1{
-    font-family: 'Prometo-Medium';
-    font-size: 90px;
-    color: black;
+    font-family: 'Prometo-x-bold';
+    font-size: 95px;
+    color: #fff;
     text-align: center;
    
     
 }
 
 .asimetrico4 p{
-    font-family: 'Prometo-Light';
-    font-size: 20px;
-    color: black;
+    font-family: 'Prometo-Thin';
+    font-size: 18px;
+    font-weight: bolder;
+    color: #fff;
     
 }
 
 .asimetrico4 hr{
    width: 20%;
    height: 10px;
-   background: #162953;
+   background: red;
    margin-left: 40%;
 
 }
 
 .container-fluid-asimetrico{
     position: relative;
-    background: #fff; 
+    background: #000;
     height: 1000px; 
     padding-top: 0; 
     margin: 0;
@@ -344,7 +523,7 @@ html,body{
   }
     img{
       display: block;
-      width: 32px;
+     
     }
   
 
@@ -354,6 +533,11 @@ html,body{
         box-shadow: 0 2px 7px #dfdfdf;
         margin: 50px auto;
         background: #fafafa;
+        height: 550px;
+        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+
     }
     
     .badge {
@@ -391,7 +575,7 @@ html,body{
         font-size: 12px;
         font-weight: 700;
         text-transform: uppercase;
-        color: #ccc;
+        color: #000;
         margin-bottom: 18px;
     }
     
@@ -400,13 +584,15 @@ html,body{
         display: block;
         margin-bottom: 18px;
         text-transform: uppercase;
-        color: #363636;
+        color: #000000;
         text-decoration: none;
         transition: 0.3s;
+        font-size: 18px;
+        font-family: 'Prometo-Medium';
     }
     
     .product-details h4 a:hover {
-        color: #fbb72c;
+        color: #162953;
     }
     
     .product-details p {
@@ -418,8 +604,10 @@ html,body{
     
     .product-bottom-details {
         overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
+        
+       
+        position: absolute;
+        top: 85%;
     }
     
     .product-bottom-details div {
@@ -428,9 +616,10 @@ html,body{
     }
     
     .product-price {
-        font-size: 18px;
-        color: #fbb72c;
+        font-size: 20px;
+        color: #000000;
         font-weight: 600;
+        font-family: 'Prometo-Medium';
     }
     
     .product-price small {
@@ -443,27 +632,29 @@ html,body{
     
     .product-links {
         text-align: right;
+        padding-left: 35px;
     }
     
     .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
+        
+        color: #000000;
         transition: 0.3s;
         font-size: 17px;
     }
     
     .product-links a:hover {
-        color: #fbb72c;
+        color: red;
     }
+
 
     .product-Title h1{
         font-family: 'Prometo-Medium';
         padding-top: 20px;
+        color: #000;
     }
 
     .product-Title hr{
-        background: #00BEF8;
+        background: red;
         width: 20%;
         height: 10px;
         margin-left: 0;
@@ -471,27 +662,36 @@ html,body{
     }   
 
     .categorias-content{
-        margin-bottom: 10px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        background: #fff
+    }
+
+    .div-color{
+        margin-top: 30px;
+        margin-bottom: 0px;
+        background: rgb(174,0,221);
+background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
     }
 
     .half-categorias{
-        border-right: 0.5px solid grey;
+        border-right: 0.5px solid #000;
     }
 
     .categorias-text h1{
         text-align: center;
-        font-family: 'Prometo-Medium';
-        font-size: 70px;
-        color: black;
+        font-family: 'Prometo-x-bold';
+        font-size: 95px;
+        color: #000;
         font-weight: bolder;
 
     }
 
     .categorias-text h3{
         text-align: center;
-        font-family: 'Prometo-Light';
-        font-size: 20px;
-        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 25px;
+        color: #000;
 
     }
 
@@ -499,19 +699,19 @@ html,body{
         text-align: left;
         font-family: 'Prometo-Medium';
         font-size: 25px;
-        color: black;
+        color: #000 ;
 
     }
 
     .categorias-text hr{
         width: 20%;
-        background: #162953;
+        background: red;
         height: 5px;
         margin-top: 0;
     }
 
     a.bttn-dark {
-        color: black;
+        color: #fff ;
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s ease all;
@@ -522,7 +722,7 @@ html,body{
 
       }
       a.bttn-dark:hover {
-        color: #FFF;
+        color: #000;
       }
       a.bttn-dark:focus {
         color: #FFF;
@@ -553,7 +753,7 @@ html,body{
         bottom: 0;
         opacity: 0;
         content: '';
-        background-color: #000;
+        background-color: #fff;
         z-index: -1;
       }
       .bttn-dark:hover:before {
