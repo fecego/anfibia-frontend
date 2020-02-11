@@ -3,8 +3,11 @@
 }
 
 
+
+
 .promociones{
-    background: #7401DF;
+    background: #fff;
+    border-bottom: solid 1px #000;
     position: -webkit-sticky;
     position: sticky;
     height: 50px;
@@ -15,9 +18,8 @@
 }
 
 .promociones h1{
-    color: #fff;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
+    color: #000;
+    font-family: 'Prometo-Medium';
     text-align: center;
     font-size: 25px;
     padding: 10px;
@@ -510,14 +512,18 @@ input[type=checkbox]{
     margin: 50px auto;
     background: #fafafa;
     height: 550px;
+    transition: all 200ms ease-in;
+    transform: scale(1);
    
 
 }
 
 .product-card:hover{
-    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+   /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    transition: all 300ms ease-in;
+    transform: scale(1.1);*/
 }
 
 .badge {
@@ -543,10 +549,15 @@ input[type=checkbox]{
 
 .product-tumb img {
 
-    width: 100%;
     max-width: 100%;
-    height: 100%;
     max-height: 100%;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+
+.product-tumb img:hover {
+  transition: all 300ms ease-in;
+  transform: scale(1.2);
 }
 
 .product-details {
@@ -603,6 +614,20 @@ input[type=checkbox]{
     font-family: 'Prometo-Medium';
 }
 
+.product-price i{
+  color: #ffffff;
+  float: right;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+}
+
+.product-price i:hover{
+  color: #ff0000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff0000;
+}
+
+
 .product-price small {
     font-size: 80%;
     font-weight: 400;
@@ -621,7 +646,7 @@ input[type=checkbox]{
 }
 
 .product-links a {
-    
+    background: none;
     color: #000000;
     transition: 0.3s;
     font-size: 17px;
@@ -632,6 +657,40 @@ input[type=checkbox]{
     color: red;
 }
 
+
+.product-links-wish{
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  font-family: 'Prometo-Medium';
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 10px;
+  text-decoration: none;
+  
+}
+
+.product-links-wish:hover{
+  background: #000000;
+  color: #ffffff;
+}
+
+
+.product-links-bag {
+  position: absolute;
+  top: 85%;
+  right: 5%;
+  font-family: 'Prometo-Medium';
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.product-links-bag:hover{
+  background: #000000;
+  color: #ffffff;
+}
 
 
 .myCheckbox input {

@@ -20,6 +20,8 @@ import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { StoreOnlineComponent } from './store-online/store-online.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+import {IndividualProductComponent} from './individual-product/individual-product.component';
 import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 
@@ -46,7 +48,8 @@ import { WishListComponent } from './wish-list/wish-list.component';
     StoreOnlineComponent,
     Entrada1Component,
     WishListComponent,
-    StoreOnlineComponent
+    StoreOnlineComponent,
+    IndividualProductComponent
 
   ],
   imports: [
