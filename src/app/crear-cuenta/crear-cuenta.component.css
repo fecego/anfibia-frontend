@@ -8,19 +8,14 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         font-family: 'Prometo-light';
     }
 
-    .imagen{
-        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
-        width: 100%;
-        height: 200px;
-    }
-
     .titulo h1{
         margin-top: 20px;
         position: relative;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
         font-family: 'Prometo-x-bold';
-        color: white;
+        color:black;
+        letter-spacing: 0.1em;
     }
 
     .texto h2{
@@ -29,8 +24,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         text-align: center;
         font-size: 16px;
         font-family: 'Prometo-light';
-        color: white;
-
+        color: black;
     }
 
     .formulario h3{
@@ -296,20 +290,14 @@ ipad landscape, Ipad mini Landscape.
         font-family: 'Prometo-light';
     }
 
-    .imagen{
-        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
-        width: 100%;
-        height: 200px;
-        
-    }
-
     .titulo h1{
         margin-top: 20px;
         position: relative;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
         font-family: 'Prometo-x-bold';
-        color: white;
+        color:black;
+        letter-spacing: 0.1em;
     }
 
     .texto h2{
@@ -585,20 +573,14 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
         margin-bottom: 50px;
     }
 
-    .imagen{
-        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
-        width: 100%;
-        height: 200px;
-        
-    }
-
     .titulo h1{
         margin-top: 20px;
         position: relative;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
         font-family: 'Prometo-x-bold';
-        color: white;
+        color:black;
+        letter-spacing: 0.1em;
     }
 
     .texto h2{
@@ -876,20 +858,15 @@ Iphone 4, 5, 7 landscape.
         margin-bottom: 50px;
     }
 
-    .imagen{
-        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
-        width: 100%;
-        height: 200px;
-        
-    }
 
     .titulo h1{
         margin-top: 20px;
         position: relative;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
         font-family: 'Prometo-x-bold';
-        color: white;
+        color:black;
+        letter-spacing: 0.1em;
     }
 
     .texto h2{
@@ -1172,20 +1149,15 @@ Celulares Portrait.
         margin-bottom: 50px;
     }
 
-    .imagen{
-        background-image: url('/assets/imagenes/CrearCuenta/inicio.png');
-        width: 100%;
-        height: 200px;
-        
-    }
 
     .titulo h1{
         margin-top: 20px;
         position: relative;
         text-align: center;
-        font-size: 40px;
+        font-size: 60px;
         font-family: 'Prometo-x-bold';
-        color: white;
+        color:black;
+        letter-spacing: 0.1em;
     }
 
     .texto h2{
