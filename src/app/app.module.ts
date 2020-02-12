@@ -25,6 +25,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
 import { ProcesoCompraComponent } from './proceso-compra/proceso-compra.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 
@@ -51,6 +52,7 @@ import { ProcesoCompraComponent } from './proceso-compra/proceso-compra.componen
     ContactoComponent,
     CarritoComprasComponent,
     ProcesoCompraComponent,
+    PedidosComponent,
     
   ],
   imports: [
