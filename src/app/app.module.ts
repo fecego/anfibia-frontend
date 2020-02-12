@@ -5,15 +5,18 @@ import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { NotPageFoundComponent } from './not-page-found/not-page-found.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
     routingComponents,
-    NotPageFoundComponent
+   
+    
+
     
   ],
   imports: [
