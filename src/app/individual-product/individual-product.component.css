@@ -864,6 +864,7 @@ float: right;
 color: #ff0000;
 -webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: #ff0000;
+transition: 0.5s;
 }
 
 
@@ -913,6 +914,7 @@ text-decoration: none;
 .product-links-wish:hover{
 background: #000000;
 color: #ffffff;
+transition: 0.5s;
 }
 
 
@@ -931,6 +933,7 @@ font-size: 13px;
 .product-links-bag:hover{
 background: #000000;
 color: #ffffff;
+transition: 0.5s;
 }
 
 

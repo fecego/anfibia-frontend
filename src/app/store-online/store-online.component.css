@@ -625,6 +625,7 @@ input[type=checkbox]{
   color: #ff0000;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff0000;
+  transition: 0.5s;
 }
 
 
@@ -661,7 +662,7 @@ input[type=checkbox]{
 .product-links-wish{
   position: absolute;
   top: 85%;
-  left: 5%;
+  left: 1%;
   font-family: 'Prometo-Medium';
   color: #000000;
   border: 2px solid #000000;
@@ -673,13 +674,14 @@ input[type=checkbox]{
 .product-links-wish:hover{
   background: #000000;
   color: #ffffff;
+  transition: 0.5s;
 }
 
 
 .product-links-bag {
   position: absolute;
   top: 85%;
-  right: 5%;
+  right: 1%;
   font-family: 'Prometo-Medium';
   color: #000000;
   border: 2px solid #000000;
@@ -690,6 +692,7 @@ input[type=checkbox]{
 .product-links-bag:hover{
   background: #000000;
   color: #ffffff;
+  transition: 0.5s;
 }
 
 
