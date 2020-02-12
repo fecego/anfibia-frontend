@@ -1,5 +1,5 @@
 .half_background {
-    background: linear-gradient(to top, red 50%, transparent 50%);
+    background: linear-gradient(to top, #162953 50%, transparent 50%);
     font-family: 'Prometo-Medium';
     letter-spacing: 8px;
     font-weight: bolder;
@@ -644,8 +644,16 @@ a {
     .next-slide:hover {
       background-position: -24px -53px;
     }
-  
+    
+    .hover-grey{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
     .hover-grey figure img {
+    
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
       -webkit-transition: .3s ease-in-out;

@@ -3,6 +3,25 @@
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
 
+    .cool-link {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+      }
+      
+      .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width .3s;
+      }
+      
+      .cool-link:hover::after {
+        width: 100%;
+      }
+
     .next-to-icons i{
         color: #fff;
         padding-right: 4px;
@@ -43,41 +62,60 @@
     #mega-one{
         color: white;
         font-family: 'Prometo-Thin';
-        font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
         border-bottom: none;
+        text-align: center;
+        
     }
+
+    #mega-one:hover{
+        background: #fff;
+        color: #000;
+    }
+
+   
 
     
 
     #mega-two{
         color: white;
         font-family: 'Prometo-Thin';
-        font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
         border-bottom: none;
     }
 
-    
+    #mega-two:hover{
+        background: #fff;
+        color: #000;
+    }
+  
 
     #mega-three{
         color: white;
         font-family: 'Prometo-Thin';
-        font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
         border-bottom: none;
     }
 
+    #mega-three:hover{
+        background: #fff;
+        color: #000;
+    }
+ 
    
     #mega-four{
         color: white;
         font-family: 'Prometo-Thin';
-        font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
         border-bottom: none;
     }
 
-
+    #mega-four:hover{
+        background: #fff;
+        color: #000;
+    }
+    
+  
 
 
 
@@ -113,6 +151,41 @@
         width: 100%;
     }
     
+
+
+
+    .menu ul{
+        color: red;
+        height: 0px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .menu:hover ul{
+        height: 100px;
+    }
+
+    .dropdown-menu{
+        background: red;
+        height: 10px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    #mega-one:hover + .dropdown-menu{
+        height: 1000px;
+        background: blue;
+    }
+   
+
+    
     @media (min-width: 768px) {  
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -140,7 +213,10 @@
 
     .icon-header{
         padding-right: 20px;
+    
     }
+
+    
     .navbar {
         padding:0rem;
         margin-bottom:2rem;
@@ -171,22 +247,28 @@
     }
     
     .menuHeader{
-        background: black;
+        background: none;
         border-bottom: solid white 1px;
         
     
     }
     .menuHeader i{
-        color: white;
+        color: #fff;
         font-size: 20px;
-        
+        background: #000;
+        padding: 37px 15px 37px 15px; 
     }
+
+    .menuHeader i:hover{
+        background: #fff;
+        color: #000;
+    }
+
+    
     
     
     .menuHeaderV2{
-        background: black;
-        
-        
+        background: #000; 
     }
     
     .menuHeaderV2 {
@@ -254,6 +336,7 @@
         padding-left: 15px;
         letter-spacing:4px;
         font-family: 'Prometo-Thin';
+        
     }
 
     #mega-two{
@@ -262,6 +345,9 @@
         letter-spacing: 4px;
         font-family: 'Prometo-Thin';
     }
+
+
+    
 
     #mega-three{
         color: white;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
 import Typed from 'typed.js';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-store-online',
   templateUrl: './store-online.component.html',
@@ -20,6 +21,7 @@ export class StoreOnlineComponent implements OnInit {
       showCursor: false,
       typeSpeed: 20
     });
+
   }
 
 }

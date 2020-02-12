@@ -20,6 +20,8 @@ import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { StoreOnlineComponent } from './store-online/store-online.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+import {IndividualProductComponent} from './individual-product/individual-product.component';
 import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -54,6 +56,17 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     ProcesoCompraComponent,
     PedidosComponent,
     
+<<<<<<< HEAD
+=======
+=======
+    StoreOnlineComponent,
+    Entrada1Component,
+    WishListComponent,
+    StoreOnlineComponent,
+    IndividualProductComponent
+
+>>>>>>> 1cbfe07afd270818cc233b8c5dc625f333b1e43a
+>>>>>>> 918c50638dfad3b8c9a35e152752be3845cd9a81
   ],
   imports: [
     BrowserModule,

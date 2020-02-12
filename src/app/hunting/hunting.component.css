@@ -43,120 +43,146 @@
     margin-bottom: 1px;
     border-radius: 7px 7px 7px 7px;
     background: black;
-    /* VIA CSS MATIC https://goo.gl/cIbnS */
-    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  }
-  
-  .product-img {
-    float: left;
-    height: 100%;
-    width: 50%;
-    background: blue;
     
-  }
-  
-  .product-img img {
-    height: 100%;
-    background: #f0f0f0;
-    width: 100%;
-  }
-  
-  .product-info {
-    float: left;
-    height: 100%;
-    width: 50%;
-    background-color: #ffffff;
-  }
-  
-  .product-text {
-    height: 300px;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-  }
-  
-  .product-text h1 {
-    margin: 0 0 0 18px;
-    padding-top: 20px;
-    font-size: 18px;
-    font-family: 'Prometo-Medium';
-  }
-  
-  
-  
-  .product-text h2 {
-    margin: 0 0 47px 38px;
-    font-size: 13px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #d2d2d2;
-    letter-spacing: 0.2em;
-  }
-  
-  .product-text p {
-    height: 125px;
-    margin: 0 0 0 38px;
-    font-family: 'Playfair Display', serif;
-    color: #8d8d8d;
-    line-height: 1.7em;
-    font-size: 15px;
-    font-weight: lighter;
-    overflow: hidden;
-  }
-  
-  .product-price-btn {
-    height: 103px;
-    width: 327px;
-    margin-top: 17px;
-    position: relative;
-  }
-  
-  .product-price-btn p {
-    display: inline-block;
+}
+
+.wishlist-heart{
     position: absolute;
-    top: -13px;
-    height: 50px;
-    font-family: 'Prometo-Thin';
-    margin: 0 0 0 18px;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    font-family: 'Prometo-Medium';
-  }
-  
-  .product-price span {
-   
-    display: inline-block;
-    height: 50px;
-    font-family: 'Suranna', serif;
-    font-size: 34px;
-  }
-  
-  .product-price-btn button {
-   border: none;
-   margin-top: 20px;
-   background: none;
-   margin-left: 10px;
-   color: #000;
-   font-size: 17px;
-   text-decoration: none;
-  }
-  
-  .product-price-btn button:hover {
-   color: red;
-  }
-      .seccion-productos-extras{
-          margin-top:5px;
-      }
-  
-      .seccion-productos-extras h1{
-          font-family: 'Prometo-Medium';
-          color: black;
-  
-      }
+    right: 35%;
+    top: 85%;
+    color: #ffffff;
+    padding: 2px;
+    background: none;
+    border: none;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    
+}
+
+.wishlist-heart i:hover{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+    transition: 0.5s;
+}
+
+.product-img {
+float: left;
+background: #f0f0f0;
+width: 50%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.product-img img {
+
+max-height: 100%;
+
+max-width: 100%;
+}
+
+.product-info {
+float: left;
+height: 100%;
+width: 50%;
+background-color: #ffffff;
+}
+
+.product-text {
+height: 300px;
+width: 100%;
+height: 100%;
+background: transparent;
+}
+
+.product-text h1 {
+margin: 0 0 0 18px;
+padding-top: 20px;
+font-size: 20px;
+font-family: 'Prometo-Medium';
+}
+
+
+
+.product-text h2 {
+margin: 0 0 0 18px;
+padding-top: 20px;
+font-size: 20px;
+font-family: 'Prometo-Medium';
+}
+
+.product-text p {
+height: 125px;
+margin: 0 0 0 38px;
+font-family: 'Playfair Display', serif;
+color: #8d8d8d;
+line-height: 1.7em;
+font-size: 15px;
+font-weight: lighter;
+overflow: hidden;
+}
+
+.product-price{
+padding-left: 14px;
+}
+
+.product-price i{
+color: #ffffff;
+float: right;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #000;
+}
+
+.product-price i:hover{
+color: #ff0000;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #ff0000;
+transition: 0.5s;
+}
+
+.product-price-btn {
+height: 103px;
+width: 327px;
+position: absolute;
+top: 80%;
+}
+
+.product-price-btn p {
+display: inline-block;
+position: absolute;
+top: -13px;
+height: 50px;
+font-family: 'Prometo-Thin';
+margin: 0 0 0 18px;
+font-size: 20px;
+color: #000000;
+font-weight: 600;
+font-family: 'Prometo-Medium';
+}
+
+.product-price span {
+
+display: inline-block;
+height: 50px;
+font-family: 'Suranna', serif;
+font-size: 34px;
+}
+
+.product-price-btn button {
+border: none;
+margin-top: 20px;
+background: none;
+margin-left: 10px;
+color: #000;
+font-size: 17px;
+text-decoration: none;
+}
+
+.product-price-btn button:hover {
+color: red;
+}
 
 
 .seccion-productos-extras{
@@ -166,14 +192,15 @@
 .seccion-productos-extras h1{
     font-family: 'Prometo-Medium';
     color: black;
+    font-size: 60px;
 
 }
 
 .seccion-productos-extras hr{
-    height: 5px;
+    height: 10px;
     width: 20%;
     margin-left: 0px;
-    background-color: red;
+    background-color: #162953;
 }
 
 .container-fluid-video{
@@ -481,21 +508,116 @@ html,body{
     flex-direction: row;
     width: 100%;
     height: 70vh;
+    position: relative;
   }
   
   .item {
-    flex: 1;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: none;
-    transition: flex 0.8s ease;
-  }
+        flex: 1;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: none;
+        transition: flex 0.8s ease;
+        
+    }
+
+
     .item:hover{
       flex: 7;
     }
-  
-  
+
+    .item h2 {
+        color: transparent;
+        padding: 10px;
+        font-family: 'Prometo-x-bold';
+        position: absolute;
+        opacity: 0;
+        top: 25%;
+        -webkit-text-stroke: 6px #fff;
+       
+        
+        
+    }
+
+    .item:hover h2 {
+        transition: 0.5s;
+        font-size: 130px;
+        opacity: 1;
+        transform: translate(100px,0);
+        letter-spacing: 4px;
+        -webkit-text-stroke: 6px #fff;
+        padding: 15px;
+        border-radius: 5px;
+        color: transparent;
+       
+       
+    }
+
+    .item h3{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 30px;
+        position: absolute;
+        opacity: 0;
+        top: 60%;
+    }
+
+    .item:hover h3{
+        transition: 0.5s;
+        opacity: 1;
+        text-align: center;
+        transform: translate(100px,0);
+    }
+
+    .item button{
+        position: absolute;
+        opacity: 0;
+        bottom: 20%;
+
+    }
+
+    .item:hover button{
+        transition: 0.5s;
+        opacity: 1;
+        transform: translate(120px,0);
+    }
+
+
+    .item button{
+        color: #fff;
+        background: transparent;
+        border:2px solid #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 25px;
+        padding: 10px; 
+        letter-spacing: 3px; 
+       
+    }
+
+    .item button:hover{
+        color: #000;
+        background: #fff;
+    }
+    
+    
+    .texto-acordion{
+        color: #ffffff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        position: relative;
+        width: 100%;
+        top: 90%;
+        opacity: 0;
+    }
+
+    .item:hover .texto-acordion{
+        transition: 1s;
+        opacity: 1;
+        transform: translate(10px, -120px);
+    }
+
+
   .item-1 { 
     background-image: url('/assets/imagenes/hunting/fishinghook.jpg');
   }
@@ -527,6 +649,7 @@ html,body{
     }
   
 
+    
     .product-card {
         width: 100%;
         position: relative;
@@ -534,10 +657,18 @@ html,body{
         margin: 50px auto;
         background: #fafafa;
         height: 550px;
-        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-
+        transition: all 200ms ease-in;
+        transform: scale(1);
+       
+    
+    }
+    
+    .product-card:hover{
+       /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        transition: all 300ms ease-in;
+        transform: scale(1.1);*/
     }
     
     .badge {
@@ -562,8 +693,16 @@ html,body{
     }
     
     .product-tumb img {
+    
         max-width: 100%;
         max-height: 100%;
+        transition: all 200ms ease-in;
+        transform: scale(1);
+    }
+    
+    .product-tumb img:hover {
+      transition: all 300ms ease-in;
+      transform: scale(1.2);
     }
     
     .product-details {
@@ -604,8 +743,6 @@ html,body{
     
     .product-bottom-details {
         overflow: hidden;
-        
-       
         position: absolute;
         top: 85%;
     }
@@ -622,6 +759,20 @@ html,body{
         font-family: 'Prometo-Medium';
     }
     
+    .product-price i{
+      color: #ffffff;
+      float: right;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #000;
+    }
+    
+    .product-price i:hover{
+      color: #ff0000;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #ff0000;
+    }
+    
+    
     .product-price small {
         font-size: 80%;
         font-weight: 400;
@@ -633,17 +784,60 @@ html,body{
     .product-links {
         text-align: right;
         padding-left: 35px;
+        position: absolute;
+        top: 85%;
+        right: 10%;
+        
     }
     
     .product-links a {
-        
+        background: none;
         color: #000000;
         transition: 0.3s;
         font-size: 17px;
+        padding: 5px;
     }
     
     .product-links a:hover {
         color: red;
+    }
+    
+    
+    .product-links-wish{
+      position: absolute;
+      top: 85%;
+      left: 5%;
+      font-family: 'Prometo-Medium';
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      
+    }
+    
+    .product-links-wish:hover{
+      background: #000000;
+      color: #ffffff;
+    }
+    
+    
+    .product-links-bag {
+      position: absolute;
+      top: 85%;
+   
+      right: 2%;
+      font-family: 'Prometo-Medium';
+      font-size: 13px;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px;
+      text-decoration: none;
+    }
+    
+    .product-links-bag:hover{
+      background: #000000;
+      color: #ffffff;
     }
 
 
@@ -651,10 +845,11 @@ html,body{
         font-family: 'Prometo-Medium';
         padding-top: 20px;
         color: #000;
+        font-size: 60px;
     }
 
     .product-Title hr{
-        background: red;
+        background: #162953;
         width: 20%;
         height: 10px;
         margin-left: 0;
@@ -770,3 +965,39 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
         right: 0;
         opacity: 1;
       }
+
+      .animated{
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:both;
+        animation-fill-mode:both
+    }
+
+    @-webkit-keyframes fadeInLeft{
+        0%{
+            opacity:0;
+            -webkit-transform:translateX(-200px);
+            transform:translateX(-200px)}
+        100%{
+            opacity:1;
+            -webkit-transform:translateX(0);
+            transform:translateX(0)
+        }
+    }
+    @keyframes fadeInLeft{
+        0%{
+            opacity:0;
+            -webkit-transform:translateX(-200px);
+            -ms-transform:translateX(-200px);
+            transform:translateX(-200px)}
+        100%{
+            opacity:1;
+            -webkit-transform:translateX(0);
+            -ms-transform:translateX(0);
+            transform:translateX(0)
+        }
+    }
+    .fadeInLeft{
+        -webkit-animation-name:fadeInLeft;
+        animation-name:fadeInLeft
+    }
