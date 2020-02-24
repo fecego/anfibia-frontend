@@ -70,26 +70,7 @@
         text-transform: uppercase;
     }
 
-    #show,#hide {
-        display:none;
-    }
-    
-    div#content {
-        display:none;
-      padding:10px;
-     
-      width:200px;
-      cursor:pointer;
-    }
-    
-    input#show:checked ~ div#content {
-        display:block;
-    }
-    
-    input#hide:checked ~ div#content {
-        display:none;
-    }
-
+  
 
     .wrapper {
         margin: 0 auto;
@@ -145,6 +126,7 @@
         border-left: 2px solid #00417b;
       }
       .step-progress-item.is-done::after {
+        background-color: #00417b;
         font-size: 20px;
         color: #fff;
         text-align: center;
@@ -171,3 +153,15 @@
       .step-progress strong {
         display: block;
       }
+
+      .pedido .btn {
+        width: 100%;
+        color: #fff;
+        background-color: #393939;
+        text-align: center !important; 
+        border-color: #393939;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
