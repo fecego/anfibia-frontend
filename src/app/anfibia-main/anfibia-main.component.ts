@@ -13,6 +13,10 @@ export class AnfibiaMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
+
+    
+    
+   
     
   }
 

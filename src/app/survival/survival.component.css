@@ -1,3 +1,209 @@
+.fit-div{
+    width: 100%;
+    height: 500px;
+    background: blue;
+}
+
+.publicidad1{
+    background: red;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.anuncio1{
+    background: url('/assets/imagenes/paginaInicial/gun1.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.anuncio2{
+    background: url('/assets/imagenes/paginaInicial/adventure.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.anuncio3{
+    background: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+
+.wrapper {
+    height: 200px;
+    width: 100%;
+    margin: 50px auto;
+    margin-bottom: 1px;
+    border-radius: 7px 7px 7px 7px;
+    background: black;
+    
+}
+
+.wishlist-heart{
+    position: absolute;
+    right: 35%;
+    top: 85%;
+    color: #ffffff;
+    padding: 2px;
+    background: none;
+    border: none;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    
+}
+
+.wishlist-heart i:hover{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+    transition: 0.5s;
+}
+
+.product-img {
+float: left;
+background: #f0f0f0;
+width: 50%;
+height: 100%;
+padding: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.product-img img {
+
+max-height: 100%;
+
+max-width: 100%;
+}
+
+.product-info {
+float: left;
+height: 100%;
+width: 50%;
+background-color: #ffffff;
+}
+
+.product-text {
+height: 300px;
+width: 100%;
+height: 100%;
+background: transparent;
+}
+
+.product-text h1 {
+margin: 0 0 0 18px;
+padding-top: 20px;
+font-size: 20px;
+font-family: 'Prometo-Medium';
+}
+
+
+
+.product-text h2 {
+margin: 0 0 0 18px;
+padding-top: 20px;
+font-size: 20px;
+font-family: 'Prometo-Medium';
+}
+
+.product-text p {
+height: 125px;
+margin: 0 0 0 38px;
+font-family: 'Playfair Display', serif;
+color: #8d8d8d;
+line-height: 1.7em;
+font-size: 15px;
+font-weight: lighter;
+overflow: hidden;
+}
+
+.product-price{
+padding-left: 14px;
+}
+
+.product-price i{
+color: #ffffff;
+float: right;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #000;
+}
+
+.product-price i:hover{
+color: #ff0000;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #ff0000;
+transition: 0.5s;
+}
+
+.product-price-btn {
+height: 103px;
+width: 327px;
+position: absolute;
+top: 80%;
+}
+
+.product-price-btn p {
+display: inline-block;
+position: absolute;
+top: -13px;
+height: 50px;
+font-family: 'Prometo-Thin';
+margin: 0 0 0 18px;
+font-size: 20px;
+color: #000000;
+font-weight: 600;
+font-family: 'Prometo-Medium';
+}
+
+.product-price span {
+
+display: inline-block;
+height: 50px;
+font-family: 'Suranna', serif;
+font-size: 34px;
+}
+
+.product-price-btn button {
+border: none;
+margin-top: 20px;
+background: none;
+margin-left: 10px;
+color: #000;
+font-size: 17px;
+text-decoration: none;
+}
+
+.product-price-btn button:hover {
+color: red;
+}
+
+
+.seccion-productos-extras{
+    margin-top: 20px;
+}
+
+.seccion-productos-extras h1{
+    font-family: 'Prometo-x-bold';
+    color: black;
+    font-size: 60px;
+
+}
+
+.seccion-productos-extras hr{
+    height: 3px;
+    width: 50%;
+    margin-left: 0px;
+    background-color: #162953;
+}
+
 .container-fluid-video{
     position: relative;
     height: 100vh;
@@ -31,7 +237,7 @@
     color: white;
     font-family: 'Prometo-Medium';
     letter-spacing: 4px;
-    font-size: 170px;
+    font-size: 155px;
 }
 
 .texto-video p{
@@ -62,6 +268,12 @@
 
 }
 
+
+
+.texto-video span{
+    font-weight: bolder; font-family: 'Prometo-Medium';
+}
+
 .a-categorias{
     background: transparent;
     border: 2px solid white;
@@ -73,12 +285,13 @@
 
 .hashtag-pesca{
     background: black;
+   
 }
 
 .knokaut-text{
     color: white;
     font-family: 'Prometo-Medium';
-    background: url('/assets/imagenes/paginaInicial/surivival5.jpg');
+    background: url('/assets/imagenes/paginaInicial/gun3.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -91,10 +304,10 @@
 .knokaut-text2{
     color: white;
     font-family: 'Prometo-Medium';
-    background: url('/assets/imagenes/paginaInicial/surivival5.jpg');
+    background: url('/assets/imagenes/paginaInicial/gun3.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-size: 8vw;
@@ -109,9 +322,9 @@
 }
 
 .parallax-fishing{
-    background: url('/assets/imagenes/paginaInicial/surivival4.jpg');
+    background: url('/assets/imagenes/paginaInicial/gun3.jpg');
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
     height: 500px;
 }
@@ -119,25 +332,25 @@
 section{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
 
 }
 
 .sec1{
     
-    background: url('/assets/imagenes/paginaInicial/surivival5.jpg');
+    background: url('/assets/imagenes/survival/supervivencia3.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
 
 }
 .sec2{
-    background: url('/assets/imagenes/paginaInicial/surivival5.jpg');
+    background: url('/assets/imagenes/survival/supervivencia3.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
 
 }
@@ -169,7 +382,7 @@ section{
     top: 0;
     left: 0;
     border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent #fff;
     border-style: solid;
 
 }
@@ -189,7 +402,7 @@ section{
     position: absolute;
     height: 800px;
     width: 90%; 
-    background: url('/assets/imagenes/paginaInicial/surivival.jpg');
+    background: url('/assets/imagenes/survival/supervivencia.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -226,53 +439,70 @@ section{
     position: absolute;
     height: 350px; 
     width: 60%; 
-    background: white; 
+    background: #000;
     top: 35%; 
     left: 3%;
 }
 
 .asimetrico4 h1{
-    font-family: 'Prometo-Medium';
-    font-size: 90px;
-    color: black;
+    font-family: 'Prometo-x-bold';
+    font-size: 95px;
+    color: #fff;
     text-align: center;
    
     
 }
 
 .asimetrico4 p{
-    font-family: 'Prometo-Light';
-    font-size: 20px;
-    color: black;
+    font-family: 'Prometo-Thin';
+    font-size: 18px;
+    font-weight: bolder;
+    color: #fff;
     
 }
 
 .asimetrico4 hr{
    width: 20%;
    height: 10px;
-   background: #162953;
+   background: red;
    margin-left: 40%;
 
 }
 
 .container-fluid-asimetrico{
     position: relative;
-    background: #fff; 
+    background: #000;
     height: 1000px; 
     padding-top: 0; 
     margin: 0;
 
 }
 
+.fluid-asimetrico1{
+    background: none; 
+    width: 1300px; 
+    height: 850px; 
+    position: absolute;
+}
+
+.fluid-asimetrico2{
+    background: none; 
+    width: 1300px; 
+    height: 450px; 
+    position: absolute;
+    top: 60%; 
+    right: 10%;
+}
+
 .promocionesFishing{
     padding: 5px;
-    height: 700px;
+   
     position: relative;
 }
 
 .imagenPromocion{
     width: 100%;
-    height: 100%;
+    height:auto;
     padding: 10px;
 }
 
@@ -301,40 +531,135 @@ html,body{
     flex-direction: row;
     width: 100%;
     height: 70vh;
+    position: relative;
   }
   
   .item {
-    flex: 1;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: none;
-    transition: flex 0.8s ease;
-  }
+        flex: 1;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: none;
+        transition: flex 0.8s ease;
+        
+    }
+
+
     .item:hover{
       flex: 7;
     }
+
+    .item h2 {
+        color: transparent;
+        padding: 10px;
+        font-family: 'Prometo-x-bold';
+        position: absolute;
+        opacity: 0;
+        top: 25%;
+        -webkit-text-stroke: 6px #fff;
+       
+        
+        
+    }
+
+    .item:hover h2 {
+        transition: 0.5s;
+        font-size: 130px;
+        opacity: 1;
+        transform: translate(100px,0);
+        letter-spacing: 4px;
+        -webkit-text-stroke: 6px #fff;
+        padding: 15px;
+        border-radius: 5px;
+        color: transparent;
+       
+       
+    }
+
+    .item h3{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 30px;
+        position: absolute;
+        opacity: 0;
+        top: 60%;
+    }
+
+    .item:hover h3{
+        transition: 0.5s;
+        opacity: 1;
+        text-align: center;
+        transform: translate(100px,0);
+    }
+
+    .item button{
+        position: absolute;
+        opacity: 0;
+        bottom: 20%;
+
+    }
+
+    .item:hover button{
+        transition: 0.5s;
+        opacity: 1;
+        transform: translate(120px,0);
+    }
+
+
+    .item button{
+        color: #fff;
+        background: transparent;
+        border:2px solid #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 25px;
+        padding: 10px; 
+        letter-spacing: 3px; 
+       
+    }
+
+    .item button:hover{
+        color: #000;
+        background: #fff;
+    }
+    
+    
+    .texto-acordion{
+        color: #ffffff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        position: relative;
+        width: 100%;
+        top: 90%;
+        opacity: 0;
+    }
+
+    .item:hover .texto-acordion{
+        transition: 1s;
+        opacity: 1;
+        transform: translate(10px, -120px);
+    }
+
+
+  .item-1 { 
+    background-image: url('/assets/imagenes/hunting/fishinghook.jpg');
+  }
   
+  .item-2 { 
+    background-image: url('/assets/imagenes/hunting/fishingrod.jpg');
+  }
   
-    .item-1 { 
-        background-image: url('/assets/imagenes/hunting/fishinghook.jpg');
-      }
-      
-      .item-2 { 
-        background-image: url('/assets/imagenes/hunting/fishingrod.jpg');
-      }
-      
-      .item-3 { 
-        background-image: url('/assets/imagenes/hunting/fishingreels.jpg');
-      }
-      
-      .item-4 { 
-        background-image: url('/assets/imagenes/hunting/fishingaccesories.jpg');
-      }
-      
-      .item-5 { 
-        background-image: url('/assets/imagenes/hunting/kayaks.jpg');
-      }
+  .item-3 { 
+    background-image: url('/assets/imagenes/hunting/fishingreels.jpg');
+  }
+  
+  .item-4 { 
+    background-image: url('/assets/imagenes/hunting/fishingaccesories.jpg');
+  }
+  
+  .item-5 { 
+    background-image: url('/assets/imagenes/hunting/kayaks.jpg');
+  }
   
   .social{
     position: absolute;
@@ -343,16 +668,30 @@ html,body{
   }
     img{
       display: block;
-      width: 32px;
+     
     }
   
 
+    
     .product-card {
         width: 100%;
         position: relative;
         box-shadow: 0 2px 7px #dfdfdf;
         margin: 50px auto;
         background: #fafafa;
+        height: 550px;
+        transition: all 200ms ease-in;
+        transform: scale(1);
+       
+    
+    }
+    
+    .product-card:hover{
+       /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        transition: all 300ms ease-in;
+        transform: scale(1.1);*/
     }
     
     .badge {
@@ -377,8 +716,16 @@ html,body{
     }
     
     .product-tumb img {
+    
         max-width: 100%;
         max-height: 100%;
+        transition: all 200ms ease-in;
+        transform: scale(1);
+    }
+    
+    .product-tumb img:hover {
+      transition: all 300ms ease-in;
+      transform: scale(1.2);
     }
     
     .product-details {
@@ -390,7 +737,7 @@ html,body{
         font-size: 12px;
         font-weight: 700;
         text-transform: uppercase;
-        color: #ccc;
+        color: #000;
         margin-bottom: 18px;
     }
     
@@ -399,13 +746,15 @@ html,body{
         display: block;
         margin-bottom: 18px;
         text-transform: uppercase;
-        color: #363636;
+        color: #000000;
         text-decoration: none;
         transition: 0.3s;
+        font-size: 18px;
+        font-family: 'Prometo-Medium';
     }
     
     .product-details h4 a:hover {
-        color: #fbb72c;
+        color: #162953;
     }
     
     .product-details p {
@@ -417,8 +766,8 @@ html,body{
     
     .product-bottom-details {
         overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
+        position: absolute;
+        top: 85%;
     }
     
     .product-bottom-details div {
@@ -427,10 +776,25 @@ html,body{
     }
     
     .product-price {
-        font-size: 18px;
-        color: #fbb72c;
+        font-size: 20px;
+        color: #000000;
         font-weight: 600;
+        font-family: 'Prometo-Medium';
     }
+    
+    .product-price i{
+      color: #ffffff;
+      float: right;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #000;
+    }
+    
+    .product-price i:hover{
+      color: #ff0000;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #ff0000;
+    }
+    
     
     .product-price small {
         font-size: 80%;
@@ -442,55 +806,110 @@ html,body{
     
     .product-links {
         text-align: right;
+        padding-left: 35px;
+        position: absolute;
+        top: 85%;
+        right: 10%;
+        
     }
     
     .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
+        background: none;
+        color: #000000;
         transition: 0.3s;
         font-size: 17px;
+        padding: 5px;
     }
     
     .product-links a:hover {
-        color: #fbb72c;
+        color: red;
+    }
+    
+    
+    .product-links-wish{
+      position: absolute;
+      top: 85%;
+      left: 5%;
+      font-family: 'Prometo-Medium';
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      
+    }
+    
+    .product-links-wish:hover{
+      background: #000000;
+      color: #ffffff;
+    }
+    
+    
+    .product-links-bag {
+      position: absolute;
+      top: 85%;
+   
+      right: 2%;
+      font-family: 'Prometo-Medium';
+      font-size: 13px;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 4px;
+      text-decoration: none;
+    }
+    
+    .product-links-bag:hover{
+      background: #000000;
+      color: #ffffff;
     }
 
+
     .product-Title h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         padding-top: 20px;
+        color: #000;
+        font-size: 60px;
     }
 
     .product-Title hr{
-        background: #00BEF8;
-        width: 20%;
-        height: 10px;
+        background: #162953;
+        width: 50%;
+        height: 3px;
         margin-left: 0;
        
     }   
 
     .categorias-content{
-        margin-bottom: 10px;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        background: #fff
+    }
+
+    .div-color{
+        margin-top: 30px;
+        margin-bottom: 0px;
+        background: rgb(174,0,221);
+background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
     }
 
     .half-categorias{
-        border-right: 0.5px solid grey;
+        border-right: 0.5px solid #000;
     }
 
     .categorias-text h1{
         text-align: center;
-        font-family: 'Prometo-Medium';
-        font-size: 70px;
-        color: black;
+        font-family: 'Prometo-x-bold';
+        font-size: 65px;
+        color: #000;
         font-weight: bolder;
 
     }
 
     .categorias-text h3{
         text-align: center;
-        font-family: 'Prometo-Light';
-        font-size: 20px;
-        color: black;
+        font-family: 'Prometo-Medium';
+        font-size: 25px;
+        color: #000;
 
     }
 
@@ -498,19 +917,19 @@ html,body{
         text-align: left;
         font-family: 'Prometo-Medium';
         font-size: 25px;
-        color: black;
+        color: #000 ;
 
     }
 
     .categorias-text hr{
         width: 20%;
-        background: #162953;
+        background: red;
         height: 5px;
         margin-top: 0;
     }
 
     a.bttn-dark {
-        color: black;
+        color: #fff ;
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s ease all;
@@ -521,7 +940,7 @@ html,body{
 
       }
       a.bttn-dark:hover {
-        color: #FFF;
+        color: #000;
       }
       a.bttn-dark:focus {
         color: #FFF;
@@ -552,7 +971,7 @@ html,body{
         bottom: 0;
         opacity: 0;
         content: '';
-        background-color: #000;
+        background-color: #fff;
         z-index: -1;
       }
       .bttn-dark:hover:before {
@@ -569,3 +988,39 @@ html,body{
         right: 0;
         opacity: 1;
       }
+
+      .animated{
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:both;
+        animation-fill-mode:both
+    }
+
+    @-webkit-keyframes fadeInLeft{
+        0%{
+            opacity:0;
+            -webkit-transform:translateX(-200px);
+            transform:translateX(-200px)}
+        100%{
+            opacity:1;
+            -webkit-transform:translateX(0);
+            transform:translateX(0)
+        }
+    }
+    @keyframes fadeInLeft{
+        0%{
+            opacity:0;
+            -webkit-transform:translateX(-200px);
+            -ms-transform:translateX(-200px);
+            transform:translateX(-200px)}
+        100%{
+            opacity:1;
+            -webkit-transform:translateX(0);
+            -ms-transform:translateX(0);
+            transform:translateX(0)
+        }
+    }
+    .fadeInLeft{
+        -webkit-animation-name:fadeInLeft;
+        animation-name:fadeInLeft
+    }

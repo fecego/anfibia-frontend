@@ -22,6 +22,19 @@ export class StoreOnlineComponent implements OnInit {
       typeSpeed: 20
     });
 
+
+    $("img").click(function(){
+      /*Obtengo la ruta de la imagen que es clickeada y la de la imagen Principal, 
+      la reasigno a la imagenPrincipal y la cambia.
+      */
+      var imagenPrincipal = $("#imagen-principal").attr('src');
+      console.log('imagenPrincipal '+ imagenPrincipal);
+      var clickedImage = $(this).attr('src');
+      console.log("This is img" + clickedImage);
+      var c = $("#imagen-principal").attr('src', clickedImage);
+
+    });
+    
   }
 
 }

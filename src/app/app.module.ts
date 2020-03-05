@@ -9,15 +9,11 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-
-    routingComponents,
-   
-    
-
-    
+    routingComponents
   ],
   imports: [
     BrowserModule,

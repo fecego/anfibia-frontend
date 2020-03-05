@@ -3,6 +3,135 @@
 /*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
 @media only screen and (min-width: 1025px) {
 
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
+
+
+    .div-busqueda h1{
+        
+        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff;
+        font-size: 30px;
+    }
+
+    .form-control{
+        width: 5%;
+    }
+
+    .form-control:hover{
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    .div-busqueda{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+    }
+
+    #button-cerrar{
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        color: #fff;
+        background: none;
+        border: none;
+        font-size: 30px;
+    }
+
+    #button-cerrar i{
+        background: none;
+        color: #fff;
+    }
+
+    #button-cerrar:hover i{
+        
+        color: #ff0000;
+    }
+
+    #input-busqueda{
+        border: none;
+        border-bottom: 2px solid #fff;
+        background: none;
+        width: 350px;
+        color: #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        visibility: hidden;
+        transition:  width 0.5s ease-out;
+        outline: none;
+        
+    }
+    ::placeholder {
+        color: #fff;
+       
+      }
+
+      #input-busqueda:focus{
+        width: 800px;
+       
+        
+        
+    }
+    
+    #boton-busquedas i{
+        font-size: 30px;
+        color: #fff;
+        border: none; 
+    }
+
+    #boton-busquedas:hover i{
+        
+        color: #ff0000;
+        transition: 0.5s;
+    }
+
+
+    #div-busqueda{
+        background: #000;
+        position: absolute;
+        top:0%;
+        left: -33%;
+        background-repeat: no-repeat;
+        width: 0px;
+        height: 133px;
+        
+        
+    }
+
+
+    #div-busqueda h1{
+        font-family: 'Prometo-x-bold';
+        font-weight: bolder;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    
+    .search-bar-expanded{
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: red;
+        opacity: 0;
+    }
+
     .cool-link {
         display: inline-block;
         color: #000;
@@ -61,7 +190,7 @@
     
     #mega-one{
         color: #848484;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         font-size: 20px;
         padding-left: 15px;
         border-bottom: none;
@@ -76,9 +205,14 @@
         transition: ease-out 0.5s;
     }
 
+    #mega-one:focus{
+        color: #fff;
+    }
+    
+
     #mega-two{
         color: #848484;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         font-size: 20px;
         padding-left: 15px;
         border-bottom: none;
@@ -91,11 +225,15 @@
         transition: 0.5s;
         transition: ease-out 0.5s;
     }
-  
+    
+
+    #mega-two:focus{
+        color: #fff;
+    }
 
     #mega-three{
         color: #848484;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         font-size: 20px;
         padding-left: 15px;
         border-bottom: none;
@@ -108,11 +246,15 @@
         transition: 0.5s;
         transition: ease-out 0.5s;
     }
+
+    #mega-three:focus{
+        color: #fff;
+    }
  
    
     #mega-four{
         color: #848484;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         font-size: 20px;
         padding-left: 15px;
         border-bottom: none;
@@ -124,6 +266,10 @@
         color: #fff;
         transition: 0.5s;
         transition: ease-out 0.5s;
+    }
+
+    #mega-four:focus{
+        color: #fff;
     }
     
   
@@ -149,11 +295,19 @@
         font-weight: bolder;
         color: #000;
         font-size: 14px;
+       
         
     }
 
+
+    .dropdown-item-grey{
+        transition:1s;
+        color: #848484;
+    }
+
+
     .dropdown-menu a:hover{
-       border-bottom: 1px solid #000;
+       font-family: 'Prometo-x-bold';
        color: #000;
        padding-left: 1px;
        transition: 0.5s;
@@ -164,10 +318,23 @@
        background: #fff;
        color: #000;
        padding-top: 10px;
+       font-family: 'Prometo-Medium';
+       font-size: 20px;
        
     }
 
-    
+    .position-menu{
+        position: absolute;
+        top: 53px;
+        left: 120px;
+        width: 50px;
+        padding: 0px;
+    }
+
+    .position-menu a{
+        color: #000;
+        background: #fff;
+    }
 
     .dropdown-menu h5{
         padding-top: 10px;
@@ -251,11 +418,11 @@
     
     
       .logo-image{
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         border-radius: 0%;
         overflow: hidden;
-        margin-top: -6px;
+        margin-top: 10px;
     }
     
     .menuHeader{
@@ -264,6 +431,13 @@
         
     
     }
+
+    .menuHeader button{
+        background: none;
+        border: none;
+        outline: none;
+    }
+
     .menuHeader i{
         color: #848484;
         font-size: 25px;
@@ -298,17 +472,19 @@
       color: white;
       font-family: 'Prometo-x-bold';
       font-weight: bold;
-      font-size: 50px;
+      font-style: italic;
+      font-size: 40px;
       padding-bottom: 0;
-      letter-spacing: 8px;
+      letter-spacing: 5px;
     }
 
     .menuHeaderV2 p{
         color: white;
         font-family: 'Prometo-Medium';
         font-weight: bold;
-        font-size: 15px;
+        font-size: 13px;
         padding-bottom: 0;
+        letter-spacing: 1px;
         
       }
     
@@ -328,205 +504,174 @@
 @media screen and (max-width: 768px) and (min-width: 490px) {
 
    
-    .menu-design{
-        border-left: solid 0.5px #E6E6E6;
+    .has-search .form-control {
+        padding-left: 2.375rem;
     }
 
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 45%;
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
     }
 
-    .navbar{
-        background-color: black;
-    }
 
-    .icon-navbar{
-        color: white;
+    .div-busqueda h1{
+        
+        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff;
         font-size: 30px;
     }
-  
-    .banner-area{
-        height: 100vh;
+
+    .form-control{
+        width: 5%;
+    }
+
+    .form-control:hover{
         width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: #848484;
-        padding-left: 15px;
-        letter-spacing:4px;
-        font-family: 'Prometo-Medium';
-        
+        transition: 0.5s;
     }
 
-    #mega-two{
-        color: #848484;
-        padding-left: 15px;
-        letter-spacing: 4px;
-        font-family: 'Prometo-Medium';
-    }
-
-
-    
-
-    #mega-three{
-        color: #848484;
-        padding-left: 15px;
-        letter-spacing: 4px;
-        font-family: 'Prometo-Medium';
-    }
-
-    #mega-four{
-        color: #848484;
-        padding-left: 15px;
-        letter-spacing: 4px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
+    .div-busqueda{
         position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
+        top: 20%;
+        left: 30%;
     }
-    
-    .dropdown-item{
-        padding: 5px 10px;
-        background: white;
+
+    #button-cerrar{
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        color: #fff;
+        background: none;
+        border: none;
+        font-size: 30px;
     }
-    
-    h5{
-        font-family: 'Prometo-x-bold';
-        letter-spacing: 2px;
-        font-weight: 900;
+
+    #button-cerrar i{
+        background: none;
         color: #fff;
     }
-    
-    .navbar{
-        margin-top: 0px;
-    }
-    
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
 
-    .anfibia-title{
-        text-align: center;
+    #button-cerrar:hover i{
+        
+        color: #ff0000;
     }
 
-    .anfibio-title h3{
+    #input-busqueda{
+        border: none;
+        border-bottom: 2px solid #fff;
+        background: none;
+        width: 350px;
+        color: #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        visibility: hidden;
+        transition:  width 0.5s ease-out;
+        outline: none;
+        
+    }
+    ::placeholder {
+        color: #fff;
+       
+      }
+
+      #input-busqueda:focus{
+        width: 800px;
+       
+        
+        
+    }
+    
+    #boton-busquedas i{
+        font-size: 30px;
+        color: #fff;
+        border: none; 
+    }
+
+    #boton-busquedas:hover i{
+        
+        color: #ff0000;
+        transition: 0.5s;
+    }
+
+
+    #div-busqueda{
+        background: #000;
+        position: absolute;
+        top:0%;
+        left: -33%;
+        background-repeat: no-repeat;
+        width: 0px;
+        height: 133px;
+        
+        
+    }
+
+
+    #div-busqueda h1{
         font-family: 'Prometo-x-bold';
+        font-weight: bolder;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    
+    .search-bar-expanded{
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: red;
+        opacity: 0;
     }
 
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
-        padding-left: 80px;
-        padding-bottom: 15px;
-    }
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
+    .cool-link {
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
       }
       
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
+      .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width .3s;
+      }
       
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      /*@media (max-width: 768px) and (min-width: 490px)  {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }*/
-    
-    
-      .logo-image{
-        
-        width: 60px;
-        height: 60px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: -6px;
-        position: center;
-    }
-    
-    .menuHeader{
-        background: black;
-        border-bottom: solid white 1px;
-        
-    
-    }
-    .menuHeader i{
-        color: white;
-        font-size: 20px;
+      .cool-link:hover::after {
+        width: 100%;
+      }
+
+    .next-to-icons i{
+        color: #fff;
+        padding-right: 4px;
         
     }
-    
-    
-    .menuHeaderV2{
-        background: black;
-        
-        
-    }
-    
-    .menuHeaderV2 {
-        color: white;
-        font-weight: bolder;
+
+    .next-to-icons a{
+        color: #fff;
         font-family: 'Prometo-Thin';
-        letter-spacing: 3px;
+        padding-left:3px;
+        font-size: 18px;
+    }
+
+    .container-fluid{
+        max-width: 100%;
+        
     }
     
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 8px;
-    }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
-    
-}
-
-/*Tablets*/
-/*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
-@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
-
-
-    .menu-design{
-        border-left: solid 0.5px #E6E6E6;
+    .flex-wrap{
+        max-width: 100%;
     }
 
     .logo-position{
@@ -545,30 +690,90 @@
     }
     
     #mega-one{
-        color: white;
-        font-family: 'Prometo-Thin';
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+        
     }
 
+    #mega-one:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-one:focus{
+        color: #fff;
+    }
+    
+
     #mega-two{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #mega-two:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+    
+
+    #mega-two:focus{
+        color: #fff;
     }
 
     #mega-three{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
     }
 
+    #mega-three:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-three:focus{
+        color: #fff;
+    }
+ 
+   
     #mega-four{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 40px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
     }
 
+    #mega-four:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-four:focus{
+        color: #fff;
+    }
+    
+  
 
 
 
@@ -587,22 +792,80 @@
     .dropdown-item{
         padding: 2px 10px;
         background: white;
-        font-family: 'Prometo-Thin';
-        color: black;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        color: #000;
         font-size: 14px;
+       
         
     }
+
+
+    .dropdown-item-grey{
+        transition:1s;
+        color: #848484;
+    }
+
+
+    .dropdown-menu a:hover{
+       font-family: 'Prometo-x-bold';
+       color: #000;
+       padding-left: 1px;
+       transition: 0.5s;
+       
+    }
     
-    h5{
+    .dropdown-menu {
+       background: #fff;
+       color: #000;
+       padding-top: 10px;
+       font-family: 'Prometo-Medium';
+       font-size: 20px;
+       
+    }
+
+    .position-menu{
+        position: absolute;
+        top: 53px;
+        left: 120px;
+        width: 50px;
+        padding: 0px;
+    }
+
+    .position-menu a{
+        color: #000;
+        background: #fff;
+    }
+
+    .dropdown-menu h5{
+        padding-top: 10px;
         font-family: 'Prometo-x-bold';
-        letter-spacing: 2px;
-        font-weight: 900;
+        font-size: 30px;
+        border-bottom: 2px solid black;
     }
     
     .navbar{
         margin-top: 0px;
+        width: 100%;
     }
     
+
+
+
+    .menu ul{
+        color: red;
+        height: 0px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .menu:hover ul{
+        height: 100px;
+    }
+
     @media (min-width: 768px) {  
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -613,9 +876,10 @@
 
     .anfibia-title{
         text-align: center;
+        padding-right: 200px;
     }
 
-    .anfibio-title h3{
+    .anfibia-title h3{
         font-family: 'Prometo-x-bold';
     }
 
@@ -629,7 +893,10 @@
 
     .icon-header{
         padding-right: 20px;
+    
     }
+
+    
     .navbar {
         padding:0rem;
         margin-bottom:2rem;
@@ -652,47 +919,574 @@
     
     
       .logo-image{
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         border-radius: 0%;
         overflow: hidden;
-        margin-top: -6px;
+        margin-top: 10px;
     }
     
     .menuHeader{
-        background: black;
+        background: none;
         border-bottom: solid white 1px;
         
     
     }
-    .menuHeader i{
-        color: white;
-        font-size: 20px;
-        
+
+    .menuHeader button{
+        background: none;
+        border: none;
+        outline: none;
     }
+
+    .menuHeader i{
+        color: #848484;
+        font-size: 25px;
+        background: #000;
+        padding: 10px 
+    }
+
+    .menuHeader i:hover{
+        color: #ffffff;
+        transition: 0.5s;
+       
+    }
+
+    
     
     
     .menuHeaderV2{
-        background: black;
-        
-        
+        background: #000; 
     }
     
-    .menuHeaderV2 {
+    .menuHeaderV2{
         color: white;
         font-weight: bolder;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         letter-spacing: 3px;
     }
+
+
+
     
     .menuHeaderV2 h3{
       color: white;
       font-family: 'Prometo-x-bold';
       font-weight: bold;
+      font-style: italic;
       font-size: 40px;
       padding-bottom: 0;
-      letter-spacing: 8px;
+      letter-spacing: 5px;
     }
+
+    .menuHeaderV2 p{
+        color: white;
+        font-family: 'Prometo-Medium';
+        font-weight: bold;
+        font-size: 13px;
+        padding-bottom: 0;
+        letter-spacing: 1px;
+        
+      }
+    
+    
+    
+    .searchAnfibia{
+        background: transparent;
+        color: white;
+        border: 2px solid #003e9a;
+    }
+    
+}
+
+/*Tablets*/
+/*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
+@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
+
+
+    .div-busqueda h1{
+        
+        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff;
+        font-size: 30px;
+    }
+
+    .form-control{
+        width: 5%;
+    }
+
+    .form-control:hover{
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    .div-busqueda{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+    }
+
+    #button-cerrar{
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        color: #fff;
+        background: none;
+        border: none;
+        font-size: 30px;
+    }
+
+    #button-cerrar i{
+        background: none;
+        color: #fff;
+    }
+
+    #button-cerrar:hover i{
+        
+        color: #ff0000;
+    }
+
+    #input-busqueda{
+        border: none;
+        border-bottom: 2px solid #fff;
+        background: none;
+        width: 350px;
+        color: #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        visibility: hidden;
+        transition:  width 0.5s ease-out;
+        outline: none;
+        
+    }
+    ::placeholder {
+        color: #fff;
+       
+      }
+
+      #input-busqueda:focus{
+        width: 800px;
+       
+        
+        
+    }
+    
+    #boton-busquedas i{
+        font-size: 30px;
+        color: #fff;
+        border: none; 
+    }
+
+    #boton-busquedas:hover i{
+        
+        color: #ff0000;
+        transition: 0.5s;
+    }
+
+
+    #div-busqueda{
+        background: #000;
+        position: absolute;
+        top:0%;
+        left: -33%;
+        background-repeat: no-repeat;
+        width: 0px;
+        height: 133px;
+        
+        
+    }
+
+
+    #div-busqueda h1{
+        font-family: 'Prometo-x-bold';
+        font-weight: bolder;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    
+    .search-bar-expanded{
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: red;
+        opacity: 0;
+    }
+
+    .cool-link {
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+      }
+      
+      .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width .3s;
+      }
+      
+      .cool-link:hover::after {
+        width: 100%;
+      }
+
+    .next-to-icons i{
+        color: #fff;
+        padding-right: 4px;
+        
+    }
+
+    .next-to-icons a{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        padding-left:3px;
+        font-size: 18px;
+    }
+
+    .container-fluid{
+        max-width: 100%;
+        
+    }
+    
+    .flex-wrap{
+        max-width: 100%;
+    }
+
+    .logo-position{
+        padding-top: 0px;
+        padding-left: 30px;
+    }
+
+    .banner-area{
+        height: 100vh;
+        width: 100%;
+        background: white;
+        -webkit-background-size: cover;
+        background-size:cover ;
+        background-position: center center;
+    
+    }
+    
+    #mega-one{
+        color: #848484;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+        
+    }
+
+    #mega-one:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-one:focus{
+        color: #fff;
+    }
+    
+
+    #mega-two{
+        color: #848484;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #mega-two:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+    
+
+    #mega-two:focus{
+        color: #fff;
+    }
+
+    #mega-three{
+        color: #848484;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #mega-three:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-three:focus{
+        color: #fff;
+    }
+ 
+   
+    #mega-four{
+        color: #848484;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #mega-four:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-four:focus{
+        color: #fff;
+    }
+    
+  
+
+
+
+    .menu-area{
+        position: static;
+    }
+    
+    .mega-area{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
+    
+    .dropdown-item{
+        padding: 2px 10px;
+        background: white;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        color: #000;
+        font-size: 14px;
+       
+        
+    }
+
+
+    .dropdown-item-grey{
+        transition:1s;
+        color: #848484;
+    }
+
+
+    .dropdown-menu a:hover{
+       font-family: 'Prometo-x-bold';
+       color: #000;
+       padding-left: 1px;
+       transition: 0.5s;
+       
+    }
+    
+    .dropdown-menu {
+       background: #fff;
+       color: #000;
+       padding-top: 10px;
+       font-family: 'Prometo-Medium';
+       font-size: 20px;
+       
+    }
+
+    .position-menu{
+        position: absolute;
+        top: 53px;
+        left: 120px;
+        width: 50px;
+        padding: 0px;
+    }
+
+    .position-menu a{
+        color: #000;
+        background: #fff;
+    }
+
+    .dropdown-menu h5{
+        padding-top: 10px;
+        font-family: 'Prometo-x-bold';
+        font-size: 30px;
+        border-bottom: 2px solid black;
+    }
+    
+    .navbar{
+        margin-top: 0px;
+        width: 100%;
+    }
+    
+
+
+
+    .menu ul{
+        color: red;
+        height: 0px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .menu:hover ul{
+        height: 100px;
+    }
+
+    @media (min-width: 768px) {  
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+          border-radius:0;
+         }
+        }
+
+    .anfibia-title{
+        text-align: center;
+        padding-right: 200px;
+    }
+
+    .anfibia-title h3{
+        font-family: 'Prometo-x-bold';
+    }
+
+    .anfibia-title p{
+        color: white;
+        font-size: 12px;
+        letter-spacing: 4px;
+        padding-bottom: 0px;
+        font-family: 'Prometo-Thin';
+    }
+
+    .icon-header{
+        padding-right: 20px;
+    
+    }
+
+    
+    .navbar {
+        padding:0rem;
+        margin-bottom:2rem;
+      }
+      
+      .dropdown .dropdown-menu {
+        border-radius:0;
+       }
+      
+      
+      /* Medium devices (tablets, 768px and up) 
+      The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+      .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        border-radius:0;
+       }
+      }
+    
+    
+      .logo-image{
+        width: 70px;
+        height: 70px;
+        border-radius: 0%;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    
+    .menuHeader{
+        background: none;
+        border-bottom: solid white 1px;
+        
+    
+    }
+
+    .menuHeader button{
+        background: none;
+        border: none;
+        outline: none;
+    }
+
+    .menuHeader i{
+        color: #848484;
+        font-size: 25px;
+        background: #000;
+        padding: 10px 
+    }
+
+    .menuHeader i:hover{
+        color: #ffffff;
+        transition: 0.5s;
+       
+    }
+
+    
+    
+    
+    .menuHeaderV2{
+        background: #000; 
+    }
+    
+    .menuHeaderV2{
+        color: white;
+        font-weight: bolder;
+        font-family: 'Prometo-Medium';
+        letter-spacing: 3px;
+    }
+
+
+
+    
+    .menuHeaderV2 h3{
+      color: white;
+      font-family: 'Prometo-x-bold';
+      font-weight: bold;
+      font-style: italic;
+      font-size: 40px;
+      padding-bottom: 0;
+      letter-spacing: 5px;
+    }
+
+    .menuHeaderV2 p{
+        color: white;
+        font-family: 'Prometo-Medium';
+        font-weight: bold;
+        font-size: 13px;
+        padding-bottom: 0;
+        letter-spacing: 1px;
+        
+      }
     
     
     
@@ -710,211 +1504,179 @@
 /*Tablets*/
 /*Iphone 4, 5, 7 PORTRAIT*/
 @media only screen and (max-width: 319px){
-    .icon-navbar{
-        color: white;
-        font-size: 30px;
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
     }
 
 
-    .menu-design{
-        border-left: solid 1px #E6E6E6;
+    .div-busqueda h1{
+        
+        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff;
+        font-size: 30px;
+    }
+
+    .form-control{
+        width: 5%;
+    }
+
+    .form-control:hover{
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    .div-busqueda{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+    }
+
+    #button-cerrar{
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        color: #fff;
+        background: none;
+        border: none;
+        font-size: 30px;
+    }
+
+    #button-cerrar i{
+        background: none;
+        color: #fff;
+    }
+
+    #button-cerrar:hover i{
+        
+        color: #ff0000;
+    }
+
+    #input-busqueda{
+        border: none;
+        border-bottom: 2px solid #fff;
+        background: none;
+        width: 350px;
+        color: #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        visibility: hidden;
+        transition:  width 0.5s ease-out;
+        outline: none;
+        
+    }
+    ::placeholder {
+        color: #fff;
+       
+      }
+
+      #input-busqueda:focus{
+        width: 800px;
+       
+        
+        
+    }
+    
+    #boton-busquedas i{
+        font-size: 30px;
+        color: #fff;
+        border: none; 
+    }
+
+    #boton-busquedas:hover i{
+        
+        color: #ff0000;
+        transition: 0.5s;
+    }
+
+
+    #div-busqueda{
+        background: #000;
+        position: absolute;
+        top:0%;
+        left: -33%;
+        background-repeat: no-repeat;
+        width: 0px;
+        height: 133px;
+        
+        
+    }
+
+
+    #div-busqueda h1{
+        font-family: 'Prometo-x-bold';
+        font-weight: bolder;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    
+    .search-bar-expanded{
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: red;
+        opacity: 0;
+    }
+
+    .cool-link {
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+      }
+      
+      .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width .3s;
+      }
+      
+      .cool-link:hover::after {
+        width: 100%;
+      }
+
+    .next-to-icons i{
+        color: #fff;
+        padding-right: 4px;
+        
+    }
+
+    .next-to-icons a{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        padding-left:3px;
+        font-size: 18px;
+    }
+
+    .container-fluid{
+        max-width: 100%;
+        
+    }
+    
+    .flex-wrap{
+        max-width: 100%;
     }
 
     .logo-position{
         padding-top: 0px;
-        padding-left: 30%;
-    }
-
-    .banner-area{
-        height: 100vh;
-        width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: white;
-        font-family: 'Prometo-Thin';
-        font-size: 20px;
-        padding-left: 10px;
-    }
-
-    #mega-two{
-        color: white;
-        font-size: 20px;
-        padding-left: 10px;
-    }
-
-    #mega-three{
-        color: white;
-        font-size: 20px;
-        padding-left: 10px;
-    }
-
-    #mega-four{
-        color: white;
-        font-size: 20px;
-        padding-left: 10px;
-    }
-
-
-
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
-    }
-    
-    .dropdown-item{
-        padding: 2px 10px;
-        background: white;
-        font-family: 'Prometo-Thin';
-        color: black;
-        font-size: 14px;
-        
-    }
-    
-    h5{
-        font-family: 'Prometo-x-bold';
-        letter-spacing: 2px;
-        font-weight: 900;
-    }
-    
-    .navbar{
-        margin-top: 0px;
-        background-color: black;
-    }
-    
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
-
-    .anfibia-title{
-        text-align: center;
-        padding-left: 5%;
-    }
-
-    .anfibio-title h3{
-        font-family: 'Prometo-x-bold';
-    }
-
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
         padding-left: 30px;
-        padding-bottom: 10px;
-    }
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
-      }
-      
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
-      
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }
-    
-    
-      .logo-image{
-        width: 60px;
-        height: 60px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: 10px;
-
-    }
-    
-    .menuHeader{
-        background: black;
-        border-bottom: solid white 1px;
-        
-    
-    }
-    .menuHeader i{
-        color: white;
-        font-size: 20px;
-        
-    }
-    
-    
-    .menuHeaderV2{
-        background: black;
-        
-        
-    }
-    
-    .menuHeaderV2 {
-        color: white;
-        font-weight: bolder;
-        font-family: 'Prometo-Thin';
-        letter-spacing: 3px;
-    }
-    
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 8px;
-    }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
-    
-}
-
-/*Celulares Portrait*/
-@media (min-width: 320px) and (max-width: 480px) {
-
-    .icon-navbar{
-        color: white;
-        font-size: 30px;
-    }
-
-
-    .menu-design{
-        border-left: solid 1px #E6E6E6;
-    }
-
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 30%;
     }
 
     .banner-area{
@@ -928,30 +1690,90 @@
     }
     
     #mega-one{
-        color: white;
-        font-family: 'Prometo-Thin';
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 10px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+        
     }
 
+    #mega-one:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-one:focus{
+        color: #fff;
+    }
+    
+
     #mega-two{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 10px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #mega-two:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+    
+
+    #mega-two:focus{
+        color: #fff;
     }
 
     #mega-three{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 10px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
     }
 
+    #mega-three:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-three:focus{
+        color: #fff;
+    }
+ 
+   
     #mega-four{
-        color: white;
+        color: #848484;
+        font-family: 'Prometo-Medium';
         font-size: 20px;
-        padding-left: 10px;
+        padding-left: 15px;
+        border-bottom: none;
+        text-align: center;
     }
 
+    #mega-four:hover{
+        font-family: 'Prometo-Medium';
+        color: #fff;
+        transition: 0.5s;
+        transition: ease-out 0.5s;
+    }
+
+    #mega-four:focus{
+        color: #fff;
+    }
+    
+  
 
 
 
@@ -970,23 +1792,80 @@
     .dropdown-item{
         padding: 2px 10px;
         background: white;
-        font-family: 'Prometo-Thin';
-        color: black;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        color: #000;
         font-size: 14px;
+       
         
     }
+
+
+    .dropdown-item-grey{
+        transition:1s;
+        color: #848484;
+    }
+
+
+    .dropdown-menu a:hover{
+       font-family: 'Prometo-x-bold';
+       color: #000;
+       padding-left: 1px;
+       transition: 0.5s;
+       
+    }
     
-    h5{
+    .dropdown-menu {
+       background: #fff;
+       color: #000;
+       padding-top: 10px;
+       font-family: 'Prometo-Medium';
+       font-size: 20px;
+       
+    }
+
+    .position-menu{
+        position: absolute;
+        top: 53px;
+        left: 120px;
+        width: 50px;
+        padding: 0px;
+    }
+
+    .position-menu a{
+        color: #000;
+        background: #fff;
+    }
+
+    .dropdown-menu h5{
+        padding-top: 10px;
         font-family: 'Prometo-x-bold';
-        letter-spacing: 2px;
-        font-weight: 900;
+        font-size: 30px;
+        border-bottom: 2px solid black;
     }
     
     .navbar{
         margin-top: 0px;
-        background-color: black;
+        width: 100%;
     }
     
+
+
+
+    .menu ul{
+        color: red;
+        height: 0px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .menu:hover ul{
+        height: 100px;
+    }
+
     @media (min-width: 768px) {  
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -997,10 +1876,10 @@
 
     .anfibia-title{
         text-align: center;
-        padding-left: 5%;
+        padding-right: 200px;
     }
 
-    .anfibio-title h3{
+    .anfibia-title h3{
         font-family: 'Prometo-x-bold';
     }
 
@@ -1013,9 +1892,11 @@
     }
 
     .icon-header{
-        padding-left: 40px;
-        padding-bottom: 10px;
+        padding-right: 20px;
+    
     }
+
+    
     .navbar {
         padding:0rem;
         margin-bottom:2rem;
@@ -1038,48 +1919,75 @@
     
     
       .logo-image{
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         border-radius: 0%;
         overflow: hidden;
         margin-top: 10px;
-
     }
     
     .menuHeader{
-        background: black;
+        background: none;
         border-bottom: solid white 1px;
         
     
     }
-    .menuHeader i{
-        color: white;
-        font-size: 20px;
-        
+
+    .menuHeader button{
+        background: none;
+        border: none;
+        outline: none;
     }
+
+    .menuHeader i{
+        color: #848484;
+        font-size: 25px;
+        background: #000;
+        padding: 10px 
+    }
+
+    .menuHeader i:hover{
+        color: #ffffff;
+        transition: 0.5s;
+       
+    }
+
+    
     
     
     .menuHeaderV2{
-        background: black;
-        
-        
+        background: #000; 
     }
     
-    .menuHeaderV2 {
+    .menuHeaderV2{
         color: white;
         font-weight: bolder;
-        font-family: 'Prometo-Thin';
+        font-family: 'Prometo-Medium';
         letter-spacing: 3px;
     }
+
+
+
     
     .menuHeaderV2 h3{
       color: white;
       font-family: 'Prometo-x-bold';
       font-weight: bold;
+      font-style: italic;
       font-size: 40px;
       padding-bottom: 0;
-      letter-spacing: 8px;
+      letter-spacing: 5px;
     }
+
+    .menuHeaderV2 p{
+        color: white;
+        font-family: 'Prometo-Medium';
+        font-weight: bold;
+        font-size: 13px;
+        padding-bottom: 0;
+        letter-spacing: 1px;
+        
+      }
     
     
     

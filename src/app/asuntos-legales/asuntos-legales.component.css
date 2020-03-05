@@ -1,6 +1,61 @@
-/**
- * Tabs
- */
+/*Afecta Computadoras--
+laptops --
+Los siguientes modelos de tablets
+ Nexus 10 Landscape--
+Surface 3 Pro Landscape--, 
+Ipad Pro Landscape--
+Ipad Mini 2.4 Landscape--*/
+@media only screen and (min-width: 1025px) {
+
+.botones-menu ul li{
+  display: block;
+  margin: 2px;
+
+}
+
+.active{
+  background: red;
+}
+
+
+.imgagen-legales{
+  height: 300px;width: 100%; background:#fff
+}
+
+
+
+.botones-menu ul li button{
+  background: #F8F8F8;
+  color: #616161;
+  font-family: 'Prometo-Medium';
+  font-size: 20px;
+  border: 2px solid #000;
+  padding: 15px;
+  transition: 0.5s ease-in-out;
+  width: 100%;
+  text-align: left;
+  
+}
+
+.botones-menu ul li button:hover{
+  background: #163039;
+  color: #fff;
+}
+
+
+
+.botones-menu ul li button:focus{
+  background: #163039;
+  color: #fff;
+}
+
+
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
 .letrasAndLogos h1{
     color: #000;
     font-family: 'Prometo-Medium';
@@ -33,7 +88,7 @@
   font-family: 'Prometo-Thin';
   color: black;
   font-size: 18px;
-  transition: background ease 0.2s;
+  transition: ease 0.2s;
   border: 1px solid black;
 }
 
@@ -104,5 +159,1137 @@ body {
 }
 
 
+}
 
 
+/*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+
+
+
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+  
+ 
+  
+  
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+    
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 120px;
+      text-align: center;
+      letter-spacing: 6px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 25px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+
+}
+
+
+/*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+  
+ 
+  
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 12px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+    
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 120px;
+      text-align: center;
+      letter-spacing: 6px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+  
+
+}
+
+
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 641px){
+
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+  
+  
+  
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 20px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+    
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 120px;
+      text-align: center;
+      letter-spacing: 6px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+  
+
+}
+
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Kindle Fire Portrait 
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 568px){
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left; 
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+ 
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 90px;
+      text-align: center;
+      letter-spacing: 6px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+  
+
+
+
+}
+
+
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 5 Lanscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 567px) and (min-width: 392px){
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+  
+  
+  
+  
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+    
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+ 
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 70px;
+      text-align: center;
+      letter-spacing: 6px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+}
+
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+    
+  
+  }
+  
+  .active{
+    background: red;
+  }
+  
+
+  
+
+  .botones-menu ul{
+    background: #fff;
+    margin-left: 2px;
+    padding: 0;
+
+  
+  }
+  
+  
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 15px;
+    transition: 0.5s ease-in-out;
+    width: 90%;
+    text-align: left;
+    
+    
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 60px;
+      text-align: center;
+      letter-spacing: 2px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 15px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+
+
+
+ }
+
+
+
+ /*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){  
+  .botones-menu ul li{
+    display: block;
+    margin: 2px;
+    padding-left: 0px;
+    margin-left: 0px;
+  
+  }
+  
+  .active{
+    background: red;
+  }
+
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Prometo-Medium';
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .botones-menu ul li button:hover{
+    background: #163039;
+    color: #fff;
+  }
+  
+
+  .botones-menu ul li button:focus{
+    background: #163039;
+    color: #fff;
+  }
+  
+  
+  
+.letrasAndLogos{
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+  
+  .letrasAndLogos h1{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 50px;
+      text-align: center;
+      letter-spacing: 2px;
+  }
+  
+  .letrasAndLogos p{
+      color: #000;
+      font-family: 'Prometo-Medium';
+      font-size: 15px;
+      text-align: center;
+      letter-spacing: 0px;
+  }
+  
+   .tabs {
+    display: flex;
+    flex-wrap: wrap; /* make sure it wraps*/
+    
+  }
+  .tabs label {
+    order: 1; /* Put the labels first*/
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-family: 'Prometo-Thin';
+    color: black;
+    font-size: 18px;
+    transition: ease 0.2s;
+    border: 1px solid black;
+  }
+  
+  .tabs label:hover{
+    background: black;
+    color: #fff;
+    
+      
+  }
+  .tabs .tab {
+    order: 99; /* Put the tabs last*/
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs h4{
+    font-family: 'Prometo-Medium';
+    color: black;
+  
+  }
+  
+  .tabs p{
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #000;
+    color: #fff;
+  }
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  
+  /**
+   * Generic Styling
+  */
+  body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+
+
+
+}

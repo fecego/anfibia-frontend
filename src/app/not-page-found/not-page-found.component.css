@@ -1,58 +1,253 @@
 
-section{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0 ;
+    .container-fluid{
+        background-image: url('/assets/imagenes/blogv1/astro2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 1200px;
+     }
+     
+     section{
+         position: relative;
+         width: 100%;
+         min-height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 50px 0 ;
+         
+     }
+     
+     section .content h1{
+         font-size: 350px;
+         letter-spacing: 20px; 
+         font-family: 'Prometo-x-bold'; 
+         text-align: center; 
+         color: transparent;
+         line-height: 1em;
+         -webkit-text-stroke-width: 6px;
+        -webkit-text-stroke-color: #000;
+         
+     }
+     
+     .texto-centro{
+         text-align: center;
+     }
+     
+     
+     
+     
+     .content h2{
+         font-size: 35px; 
+         font-family: 'Prometo-Medium'; 
+         font-weight: bolder;
+         text-align: center; 
+         color: #000;
+     }
+     
+     .content h4{
+         font-size: 18px; 
+         font-family: 'Prometo-Medium'; 
+         text-align: center; 
+         color: #000;
+         font-weight: bolder;
+     }
+     
+     .boton-not-found{
+         border: 2px solid #000; 
+         color: #000; 
+         font-family: 'Prometo-Medium'; 
+         padding: 5px; 
+         font-size: 20px;
+         background:none;
+         margin-top: 40px;
+         font-weight: bolder;
+     }
+     
+     .boton-not-found:hover{
+         
+     }
+     
+     section .content hr{
+         background: #fff;
+         width: 100%;
+         height: 5px;
+     }
+
+
+/*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+    .container-fluid{
+      
+        height: 700px;
+     }
 }
 
-section .content h1{
-    font-size: 250px;
-    letter-spacing: 20px; 
-    font-family: 'Prometo-x-bold'; 
-    text-align: center; 
-    color: #000;
-    line-height: 1em;
+
+
+/*
+    Afecta tablets Portrait
+    Nexus 7 -- Dejo de afectarla 
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    kindlefire portrait -- Dejo de afectarla
+    Esta afectando el iphone 7 plus
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 641px){
+    .container-fluid{
+     
+        height: 600px;
+     }
+     
     
+     
+     section .content h1{
+         font-size: 250px;
+      
+         
+     }
+}
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Kindle Fire Portrait 
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 568px){
+
+    .container-fluid{
+        height: 590px;
+     }
+
+    section .content h1{
+        font-size:200px;
+        letter-spacing: 20px; 
+        font-family: 'Prometo-x-bold'; 
+        text-align: center; 
+        color: transparent;
+        line-height: 1em;
+        
+    }
+}
+    
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 5 Lanscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 567px) and (min-width: 392px){
+    .container-fluid{
+        height: 700px;
+     }
+
+     section .content h1{
+        font-size: 150px;
+        
+        
+    }
+
+
 }
 
 
 
+     /*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+
+    .container-fluid{
+        height: 600px;
+     }
+    
+    section .content h1{
+        font-size:150px;
+        letter-spacing: 20px; 
+        font-family: 'Prometo-x-bold'; 
+        text-align: center; 
+        color: transparent;
+        line-height: 1em;
+        
+    }
+    
+    .texto-centro{
+        text-align: center;
+    }
+    
+    
+    
+    
+    .content h2{
+        font-size: 35px; 
+        font-family: 'Prometo-Medium'; 
+        text-align: center; 
+        color: #000;
+    }
+    
+    .content h4{
+        font-size: 18px; 
+        font-family: 'Prometo-Medium'; 
+        text-align: center; 
+        color: #000;
+    }
+    
+    .boton-not-found{
+        border: 1px solid #000; 
+        color: #000; 
+        font-family: 'Prometo-Medium'; 
+        padding: 5px; 
+        font-size: 20px;
+        background:none;
+    }
+    
+    .boton-not-found:hover{
+        background: none;
+        color: #000;
+        transition: 0.5s;
+        border: 1px solid #000;
+    }
 
 
-.content h2{
-    font-size: 35px; 
-    font-family: 'Prometo-Medium'; 
-    text-align: center; 
-    color: #000;
 }
 
-.content h4{
-    font-size: 18px; 
-    font-family: 'Prometo-Medium'; 
-    text-align: center; 
-    color: #000;
+
+/*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+    .container-fluid{
+        height: 500px;
+     }
+     
+     
+     
+     section .content h1{
+         font-size: 120px;
+     
+         
+     }
 }
 
-.boton-not-found{
-    border: 4px solid #000; 
-    color: #000; 
-    font-family: 'Prometo-Medium'; 
-    padding: 5px; 
-    font-size: 30px;
-}
 
-.boton-not-found:hover{
-    background: #000;
-    color: #fff;
-    transition: 0.5s;
-}
 
-section .content hr{
-    background: #000;
-    width: 100%;
-    height: 5px;
-}

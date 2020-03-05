@@ -4,13 +4,13 @@
         <div class="navbar  navbar-expand-md flex-row flex-wrap" style="margin: 0;">
            <button class=" navbar-toggler navbar-toggle order-1 order-xs-1 order-md-4" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars icon-navbar" aria-hidden="true"></i>
-       </button>
+            </button>
        <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeader">
            <ul class="navbar-nav justify-content-start flex-grow-1">
                <li class="nav-item">
                    <a class="navbar-brand logo-position" href="/">
                        <div class="logo-image">
-                           <img src="assets/imagenes/menu/anfibia.jpg" class="img-fluid responsive">
+                           <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
                        </div>
                    </a>
                </li>
@@ -25,28 +25,48 @@
            <ul class="navbar-nav justify-content-center flex-grow-1 menuHeaderV2">
                 <li class="nav-item">
                     <div class="anfibia-title">
-                            <h3 class="nav-link">ANFIBIA</h3>
-                            <p>Outdoor experience</p>
+                            <h3 style="margin-bottom: 0;">ANFIBIA</h3>
+                            
                     </div>
                 </li>
             </ul>  
            <ul class="navbar-nav justify-content-end">
                <div class="row ">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
-                       <a href=""><i class="fa fa-search icon-header" aria-hidden="true"></i> </a>
-                       <a href=""><i class="fa fa-heart-o icon-header" aria-hidden="true"></i> </a>
-                       <a href=""><i class="fa fa-map-marker icon-header" aria-hidden="true"></i> </a>
-                       <a href=""><i class="fa fa-user-o icon-header" aria-hidden="true"></i></a>
-                       <a href=""><i class="fa fa-cart-plus icon-header" aria-hidden="true"></i> </a>
+                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true"></i> </button>
+                       <button type="button"><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true"></i> </button>
+                       <button type="button"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true"></i> </button>
+                       <button type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user-o icon-header" id="boton-perfil" aria-hidden="true"></i></button>
+                       <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Mi perfil</a>
+                        <a class="dropdown-item" href="#">Mis pedidos</a>
+                        <a class="dropdown-item" href="#">Otras opciones</a>
+                       </div>
+                       <button type="link"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true"></i> </button>
                    </div>
-               </div>      
+               </div>
+              <div class="row" id="div-busqueda">
+                <div class="col-sm-12">
+                <div >
+                        <button id="button-cerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <div class="div-busqueda">
+                            <h1>Escribe aquí el nombre del producto que estas buscando.</h1>
+                            <input type="search" id="input-busqueda" placeholder="nombre del producto">
+                            <button id="boton-busquedas"><i class="fa fa-search" aria-hidden="true"></i></button>   
+                        </div>
+                        
+        
+                </div> 
+                </div>
+
+              </div>     
            </ul>   
        </div><!--/.nav-collapse -->
        <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeaderV2">
            <ul class="navbar-nav justify-content-start flex-grow-1">
-                   <li class="nav-item menu-area dropdown">
-                           <a class="nav-link" href="#" id="mega-one"  data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                   <li class="nav-item menu-area dropdown" routerLinkActive="active">
+                           <a class="nav-link"  id="mega-one"  
+                            aria-haspopup="true" aria-expanded="false" routerLink="anfibia-pesca" data-toggle="dropdown" >
                            PESCA
                            </a>
                           <div class="dropdown-menu mega-area" aria-labelledby="mega-one">
@@ -55,25 +75,25 @@
                                        <h5>Accesorios</h5>
                                        <div class="row">
                                            <div class="col-sm-4 dropdown-item menu-design">
-                                                   <a href="" class="dropdown-item ">Marca 1</a>
-                                                   <a href="" class="dropdown-item">Marca 2</a>
-                                                   <a href="" class="dropdown-item">Marca 3</a>
-                                                   <a href="" class="dropdown-item">Marco 4</a>
-                                                   <a href="" class="dropdown-item">Marca 1</a>
-                                                   <a href="" class="dropdown-item">Marca 2</a>
-                                                   <a href="" class="dropdown-item">Marca 3</a>
-                                                   <a href="" class="dropdown-item">Marco 4</a>
+                                                   <a id="item-header" href="" class="dropdown-item ">Marca 1</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 2</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 3</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marco 4</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 1</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 2</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 3</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marco 4</a>
                                                    
                                            </div>
                                            <div class="col-sm-4 dropdown-item menu-design">
-                                                   <a href="" class="dropdown-item">Marca 1</a>
-                                                   <a href="" class="dropdown-item">Marca 2</a>
-                                                   <a href="" class="dropdown-item">Marca 3</a>
-                                                   <a href="" class="dropdown-item">Marco 4</a>
-                                                   <a href="" class="dropdown-item">Marca 1</a>
-                                                   <a href="" class="dropdown-item">Marca 2</a>
-                                                   <a href="" class="dropdown-item">Marca 3</a>
-                                                   <a href="" class="dropdown-item">Marco 4</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 1</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 2</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 3</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marco 4</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 1</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 2</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marca 3</a>
+                                                   <a id="item-header" href="" class="dropdown-item">Marco 4</a>
                                                    
    
                                            </div>
@@ -349,8 +369,8 @@
                           </div>
                        </li>
                        <li class="nav-item dropdown menu-area">
-                               <a class="nav-link" href="#" id="mega-two"  data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                               <a class="nav-link" href="#" id="mega-two"  
+                                aria-haspopup="true" aria-expanded="false" routerLink="anfibia-caceria" data-toggle="dropdown">
                                CACERÍA
                                </a>
                               <div class="dropdown-menu mega-area" aria-labelledby="mega-two">
@@ -403,7 +423,7 @@
                            </li>
                            <li class="nav-item dropdown menu-area">
                                    <a class="nav-link" href="#" id="mega-three"  data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
+                                    aria-haspopup="true" aria-expanded="false" routerLink="anfibia-supervivencia">
                                    SUPERVIVENCÍA
                                    </a>
                                   <div class="dropdown-menu mega-area" aria-labelledby="mega-three">
@@ -450,28 +470,43 @@
                            </a>
                           <div class="dropdown-menu mega-area" aria-labelledby="mega-four">
                               <div class="row">
-                                  <div class="col-sm-6 menu-design">
-                                       <h5>Web design</h5>
-                                       <a href="" class="dropdown-item">HTML Template</a>
-                                       <a href="" class="dropdown-item">Wordpress Template</a>
-                                       <a href="" class="dropdown-item">Joomla Template</a>
-                                       <a href="" class="dropdown-item">Blogger Template</a>
+                                  <div class="col-sm-6">
+                                     <div class="row">
+                                        <div class="col-sm-12 menu-design">
+                                                <h5>Más de ANFIBIA</h5>
+                                                <a href="" class="dropdown-item" routerLink="sobre-nosotros">Sobre nosotros</a>
+                                                <a href="" class="dropdown-item" routerLink="contactanos">Contactanos</a>
+                                                <a href="" class="dropdown-item" routerLink="ubicaciones">Ubicaciones</a>
+                                                <a href="" class="dropdown-item" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
+                                               
+                                           </div>
+                                           <div class="col-sm-12 menu-design">
+                                                <h5>Otras secciones</h5>
+                                                <a href="" class="dropdown-item" routerLink="blog">Blog</a>
+                                                <a href="" class="dropdown-item" routerLink="proveedores">Proveedores</a>
+                                                <a href="" class="dropdown-item" routerLink="mapa-sitio">Mapa del sitio</a>
+                                               
+                                           </div>
+                                           <div class="col-sm-12 menu-design">
+                                                <h5>Legales</h5>
+                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-privacidad">Politicas de privacidad</a>
+                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-compras">Politicas de compras</a>
+                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-envios">Politicas de envíos</a>
+                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-devoluciones">Politicas de devoluciones</a>
+                                           </div> 
+                                     </div>
+
                                   </div>
-                                  <div class="col-sm-6 menu-design">
-                                       <h5>Graphics Design design</h5>
-                                       <a href="" class="dropdown-item">Logo Design</a>
-                                       <a href="" class="dropdown-item">Broucher Design</a>
-                                       <a href="" class="dropdown-item">Card Design</a>
-                                      
+                                  <div class="col-sm-6">
+                                        <div class="row">
+                                        <div class="col-sm-12 menu-design">
+                                                <img src="assets/imagenes/Nosotros/montaña2.jpg" class="img-fluid responsive">
+                                        </div>
+        
+                                        </div>
+
                                   </div>
-                                  <div class="col-sm-6 menu-design">
-                                       <h5>Company Profile</h5>
-                                       <a href="" class="dropdown-item">Card Design</a>
-                                  </div>
-                                  <div class="col-sm-6 menu-design">
-                                       <h5>Company Profile</h5>
-                                       <a href="" class="dropdown-item">Card Design</a>
-                                  </div>
+                                 
    
    
                               </div>

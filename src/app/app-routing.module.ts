@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 /*import { SlickCarouselModule } from 'ngx-slick-carousel';*/
 /*Importamos todos nuestros componentes en el routing, además del ModuleWithProviders, si el no se podría realizar el routing*/
 import { MenuheaderComponent } from './menuheader/menuheader.component';
@@ -25,6 +25,10 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
 import { ProcesoCompraComponent } from './proceso-compra/proceso-compra.component';
 import { NotPageFoundComponent } from './not-page-found/not-page-found.component';
+import { PoliticasPrivacidadComponent } from './politicas-privacidad/politicas-privacidad.component';
+import { PoliticasComprasComponent } from './politicas-compras/politicas-compras.component';
+import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politicas-devoluciones.component';
+import { EnviosComponent } from './envios/envios.component';
 
 
 const routes: Routes = [
@@ -34,9 +38,19 @@ const routes: Routes = [
   {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'anfibia-pesca', component: FishingComponent}, 
   {path: 'anfibia-caceria', component: HuntingComponent},
-  {path: 'preguntas-frecentes', component: PreguntasFrecuentesComponent},
+  {path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
   {path: 'sobre-nosotros', component: NosotrosComponent}, 
-  {path: 'asuntos-legales', component: AsuntosLegalesComponent},
+  {
+    path: 'asuntos-legales', 
+    component: AsuntosLegalesComponent,
+    children: [
+      {path: '', component: PoliticasPrivacidadComponent},
+      {path: 'politicas-privacidad', component: PoliticasPrivacidadComponent },
+      {path: 'politicas-compras', component: PoliticasComprasComponent},
+      {path: 'politicas-devoluciones', component: PoliticasDevolucionesComponent},
+      {path: 'politicas-envios', component: EnviosComponent}
+    ]
+  },
   {path: 'anfibia-supervivencia', component: SurvivalComponent}, 
   {path: 'ubicaciones', component: UbicacionComponent},
   {path: 'blog', component: Blogv1Component}, 
@@ -58,4 +72,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
-  StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent ]
+  StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent]
