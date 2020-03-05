@@ -1,0 +1,208 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h2>Menu</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Mi perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tienda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mis pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lista de deseos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Carrito de compras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+            </ul>
+            <hr>
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Si tiene alguna pregunta o necesita ayuda con su cuenta, puede contactarnos para ayudarlo.</p>
+            <div class="help">
+                <li><i class="fa fa-envelope-o"></i> Loremipsum@gmail.com</li>
+                <li><i class="fa fa-phone"></i> 0180098746535</li>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-lg-9 col-md-4 col-sm-4 col-xs-12">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <h1>KARLA DÍAZ</h1>
+                    <dl class="detalles">
+                        <dt><i class="fa fa-envelope" aria-hidden="true"></i> dkarla404@gmail.com</dt>
+                        <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i> 31/Agosto</dt>
+                    </dl>
+                </div>
+                <!--<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <img src="/assets/imagenes/Logo/LogoCopia.png" class="rounded float-right" alt="Anfibia">
+                </div>-->
+            </div>
+            <hr>
+
+            <div class="row perfil">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <h2><i class="fa fa-home" aria-hidden="true"></i> Direcciones</h2>
+                    <p>Puedes agregar y editar tu dirección aqui.</p>
+                    <dl class="direccion">
+                        <dt>Karla Veronica Sánchez Díaz</dt>
+                        <dt>Calle cerrada san Luis #107, Fraccionamiento el Roble</dt>
+                        <dt>Martínez de la Torre, Veracruz, México</dt>
+                        <dt>232 138 7665</dt>
+                    </dl>
+                    <a href="" data-toggle="modal" data-target="#myModal">Editar dirección</a>
+                </div>
+                <!-- Trigger the modal with a button -->
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <a class="boton boton1"  data-toggle="modal" data-target="#myModal">Agregar nueva dirección</a>
+                </div>
+        
+                 <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">  
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="nombre">Nombre</label>
+                                                <input type="text" class="form-control" id="nombre" aria-describedby="nombre"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="apellido">Apellido</label>
+                                                <input type="text" class="form-control" id="apellido" aria-describedby="nombre"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="direccion">Dirección</label>
+                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="direccion">Colonia</label>
+                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="direccion">Número</label>
+                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="direccion">Código Postal</label>
+                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="inputState">Estado</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Selecciona un estado</option>
+                                                    <option>Aguascalientes</option>
+                                                    <option>Baja California</option>
+                                                    <option>Baja California Sur</option>
+                                                    <option>Campeche</option>
+                                                    <option>Chiapas</option>
+                                                    <option>Chihuahua</option>
+                                                    <option>Ciudad de México</option>
+                                                    <option>Coahuila de Zaragoza</option>
+                                                    <option>Colima</option>
+                                                    <option>Durango</option>
+                                                    <option>Guanajuato</option>
+                                                    <option>Guerrero</option>
+                                                    <option>Hidalgo</option>
+                                                    <option>Jalisco</option>
+                                                    <option>México</option>
+                                                    <option>Michoacán de Ocampo</option>
+                                                    <option>Morelos</option>
+                                                    <option>Nayarit</option>
+                                                    <option>Nuevo León</option>
+                                                    <option>Oaxaca</option>
+                                                    <option>Puebla</option>
+                                                    <option>Querétaro</option>
+                                                    <option>Quintana Roo</option>
+                                                    <option>San Luis Potosí</option>
+                                                    <option>Sinaloa</option>
+                                                    <option>Sonora</option>
+                                                    <option>Tabasco</option>
+                                                    <option>Tamaulipas</option>
+                                                    <option>Tlaxcala</option>
+                                                    <option>Veracruz de Ignacio de la Llave</option>
+                                                    <option>Yucatán</option>
+                                                    <option>Zacatecas</option>
+                                        
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="Pais">Pais</label>
+                                                <input type="text" class="form-control" id="pais" aria-describedby="pais" placeholder="México" disabled> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="Pais">Municipio</label>
+                                                <input type="text" class="form-control" id="pais" aria-describedby="pais" placeholder=""> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <a class="button boton2">Guardar dirección</a>
+                                    </div> 
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row perfil">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <h2><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Métodos de pago</h2>
+                    <p>Forma de pago predeterminada</p>
+                    <dl class="pago">
+                        <dt>XXXX XXXX XXXX 4567</dt>
+                        <dt>12/20</dt>
+                    </dl>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <a class="boton boton1" href="">Agregar método de pago</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row perfil">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <h2><i class="fa fa-heart" aria-hidden="true"></i> Lista de deseos</h2>
+                    <p>Mira tu lista de deseo y bla bla </p>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <a class="boton boton1" href="">Ver mi lista de deseos</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
