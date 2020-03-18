@@ -38,8 +38,15 @@ export class FishingComponent implements OnInit {
   slideConfig = {
     infinite: true,
     slidesToShow: 2.2,
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    mobileFirst: true
+
   };
+  
+
+
   
   
   

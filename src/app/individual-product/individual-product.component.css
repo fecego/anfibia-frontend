@@ -1,3 +1,29 @@
+.fijo div label{
+    background: #000;
+    color: #fff;
+    width: 40%;
+    font-family: 'Prometo-Thin';
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #000;
+    margin-bottom: 2px;
+}
+
+
+.fijo div select{
+   background: #fff;
+   border-radius: 1px;
+   height: 36px;
+   width: 50%;
+   font-family: 'Prometo-Medium';
+}
+
+
+.fijo div select option{
+  font-family: 'Prometo-Thin';
+  text-align: center;
+}
+
 .producto-inicio{
   position: relative;
 }
@@ -97,9 +123,7 @@ input[type="number"] {
 }
 
 .valoraciones hr{
-    height: 1px;
-    width: 100%;
-    background-color: #000;
+    
 }
 
 .valoraciones h1{
@@ -690,9 +714,9 @@ input[type='checkbox'] + label {
 
 }
 label{
-    color: red;
+    color: #000;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Prometo-Medium';
     padding-right: 10px;
 }
@@ -752,12 +776,7 @@ select{
     color: #000;
 }
 
-.text-also hr{
-    background: #000;
-    height: 1px;
-    width: 100%;
-    margin-left: 0;
-}
+
 
 
 .product-card {
@@ -862,12 +881,27 @@ transform: scale(1.2);
   width: 50%;
 }
 
+.product-price h5{
+  position: absolute;
+  top: 85%;
+}
+
+.product-price a {
+  position: absolute;
+  top: 85%;
+  right: 3%;
+}
+
 .product-price {
   font-size: 20px;
   color: #000000;
   font-weight: 600;
   font-family: 'Prometo-Medium';
 }
+
+
+
+
 
 .product-price i{
 color: #ffffff;
@@ -916,12 +950,12 @@ transition: 0.5s;
 
 .product-links-wish{
 position: absolute;
-top: 85%;
+top: 92%;
 left: 5%;
 font-family: 'Prometo-Medium';
 font-size: 13px;
 color: #000000;
-border: 2px solid #000000;
+border: 1px solid #000000;
 padding: 4px;
 text-decoration: none;
 
@@ -936,11 +970,11 @@ transition: 0.5s;
 
 .product-links-bag {
 position: absolute;
-top: 85%;
+top: 92%;
 right: 5%;
 font-family: 'Prometo-Medium';
 color: #000000;
-border: 2px solid #000000;
+border: 1px solid #000000;
 padding: 4px;
 text-decoration: none;
 font-size: 13px;
@@ -1165,4 +1199,693 @@ input:hover,
 input:focus{
     background: #ff008b;
     color: #fff;
+}
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 611px){
+
+  .product-links-wish{
+    font-size: 13px;
+    padding: 1px;
+  }
+
+  .product-links-bag{
+    font-family: 13px;
+    padding: 1px;
+  }
+
+  .descriptivo h1{
+    font-size: 24px;
+  }
+
+  .descriptivo h2{
+    font-size: 20px;
+  }
+
+  .descriptivo p{
+    font-size: 15px;
+  }
+  
+
+  .top-section2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    padding: 50px;
+    background: #f0f0f0;
+  
+  }
+  
+  .top-section2 img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+  .card2{
+    width: 70%;
+    background: #f1f1f1;
+    position: relative;
+}
+
+.top-section2 img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bottom-section2{
+  background: #fff;
+  position: absolute;
+  top: 0%;
+  right: -20%;
+}
+
+
+
+.nav2{
+  text-align: center;
+  
+}
+
+.nav2 img{
+  width: 50px;
+  height: 50px;
+  margin: 8px 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline;
+  padding: 10px;
+  display: block;
+  opacity: 0.7;
+  background-color: #F2F2F2;
+
+}
+
+
+}
+
+
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+
+
+    .top-section2{
+      height: 250px;
+    }
+
+    .product-card{
+      width: 80%;
+      height: 500px;
+    }
+
+    .product-tumb{
+      height: 250px;
+    }
+
+    .product-links-wish{
+      font-size: 11px;
+    }
+
+    .product-links-bag{
+      font-size: 11px;
+    }
+
+    .descriptivo img{
+      width: 85%;
+      max-width: 100%;
+      height: 230px;
+      max-height: 100%;
+  }
+
+  .nav2 img{
+    width: 40px;
+    height: 40px;
+    margin: 8px 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline;
+    padding: 10px;
+    display: block;
+    opacity: 0.7;
+    background-color: #F2F2F2;
+  
+  }
+
+  .botones-individual{
+    padding: 10px;
+   
+  }
+
+  .botones-individual2{
+    padding: 10px;
+  }
+
+ }
+
+
+
+
+ /*Kindle Fire Portrait 
+Nexus 7 Portrait*/
+@media screen and (max-width: 610px) and (min-width: 569px){
+   .descriptivo img{
+      width: 85%;
+      max-width: 100%;
+      height: 420px;
+      max-height: 100%;
+  }
+
+  .product-card{
+    width: 100%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 250px;
+  }
+
+  .product-links-wish{
+    font-size: 12px;
+  }
+
+  .product-links-bag{
+    font-size: 12px;
+  }
+
+}
+
+/*Media query tablets 
+Nexus 10 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 870px) {
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
+  }
+
+  .product-card{
+    width: 75%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 250px;
+  }
+
+  .product-links-wish{
+    font-size: 12px;
+  }
+
+  .product-links-bag{
+    font-size: 12px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .input-group .button-minus,
+.input-group .button-plus,
+.input-group .quantity-field {
+
+  height: 30px;
+}
+}
+
+
+/*Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 870px) and (max-width: 999px) {
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
+  }
+
+  .product-card{
+    width: 75%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 250px;
+  }
+
+  .product-links-wish{
+    font-size: 12px;
+  }
+
+  .product-links-bag{
+    font-size: 12px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .input-group .button-minus,
+.input-group .button-plus,
+.input-group .quantity-field {
+
+  height: 30px;
+}
+
+}
+
+
+
+ /*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+  }
+
+  .product-card{
+    width: 100%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 11px;
+    padding: 2px;
+  }
+
+  .product-links-bag{
+    font-size: 11px;
+    padding: 2px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .input-group .button-minus,
+.input-group .button-plus,
+.input-group .quantity-field {
+
+  height: 30px;
+}
+
+
+
+
+}
+
+
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus Landscape
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 680px){
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    max-height: 100%;
+  }
+
+  .product-card{
+    width: 100%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .product-links-bag{
+    font-size: 13px;
+    padding: 2px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+    width: 60%;
+    
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+    width: 60%;
+  }
+
+  .input-group .button-minus,
+.input-group .button-plus,
+.input-group .quantity-field {
+ 
+  height: 30px;
+  
+}
+ .input-group .button-minus,
+ .input-group .button-plus{
+  width: 20px;
+ }
+
+}
+
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 500px) and (min-width: 392px){
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+    max-height: 90%;
+  }
+
+  .product-card{
+    width: 79%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 14px;
+    padding: 2px;
+  }
+
+  .product-links-bag{
+    font-size: 14px;
+    padding: 2px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+
+
+.input-group .quantity-field {
+  height: 50px;
+  width: 50px;
+  
+}
+ .input-group .button-minus,
+ .input-group .button-plus{
+  width: 10px;
+ }
+
+
+}
+
+
+
+/*Afecta 
+    Iphone 5 Lanscape
+*/
+@media only screen and (max-width: 568px) and (min-width: 502px){
+
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 450px;
+    max-height: 90%;
+  }
+
+  .product-card{
+    width: 70%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 17px;
+    padding: 6px;
+  }
+
+  .product-links-bag{
+    font-size: 17px;
+    padding: 6px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+
+
+.input-group .quantity-field {
+  height: 50px;
+  width: 50px;
+  
+}
+ .input-group .button-minus,
+ .input-group .button-plus{
+  width: 10px;
+ }
+
+
+}
+
+
+
+/*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+
+  .nav2 img{
+    width: 50px;
+    height: 50px;
+  }
+
+
+.card2{
+    width: 80%;
+    background: #f1f1f1;
+    position: relative;
+}
+
+.top-section2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  padding: 50px;
+  background: #f0f0f0;
+
+}
+
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    max-height: 90%;
+  }
+
+  .product-card{
+    width: 100%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 13px;
+    padding: 1px;
+  }
+
+  .product-links-bag{
+    font-size: 13px;
+    padding: 1px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+
+
+.input-group .quantity-field {
+  height: 50px;
+  width: 50px;
+  
+}
+ .input-group .button-minus,
+ .input-group .button-plus{
+  width: 10px;
+ }
+
+
+
+ .valoraciones h1{
+   font-size: 40px;
+ }
+
+ .text-also h1{
+   font-size: 40px;
+ }
+}
+
+
+/*Iphone 7 Landscape*/
+@media only screen and (max-width: 679px) and (min-width: 641px){
+
+
+  .descriptivo img{
+    width: 100%;
+    max-width: 100%;
+    height: 450px;
+    max-height: 90%;
+  }
+
+  .product-card{
+    width: 100%;
+    height: 475px;
+  }
+
+  .product-tumb{
+    height: 235px;
+  }
+
+  .product-links-wish{
+    font-size: 12px;
+    padding: 1px;
+  }
+
+  .product-links-bag{
+    font-size: 12px;
+    padding: 1px;
+  }
+
+
+  .botones-individual{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    
+  }
+
+  .botones-individual2{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+
+
+.input-group .quantity-field {
+  height: 50px;
+  width: 50px;
+  
+}
+ .input-group .button-minus,
+ .input-group .button-plus{
+  width: 10px;
+ }
+
+
+
+ .valoraciones h1{
+   font-size: 40px;
+ }
+
+ .text-also h1{
+   font-size: 40px;
+ }
+
 }

@@ -19,7 +19,7 @@
 
 
 .main-imgModal{
-  display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 400px;
@@ -38,15 +38,8 @@
   
 }
 
-#miModal .modal-content img{
-  
- 
- 
-  
+#miModal .modal-content img{  
 }
-
-
-
 
 .diferente-vistaImg{
   padding-top: 8px;
@@ -56,10 +49,6 @@
   height: 100px;
   background: #f0f0f0;
 }
-
-
-
- 
 
 .diferente-vistaImg img{
   max-width: 100%;
@@ -74,10 +63,8 @@
 }
 
 
-
 .diferente-vistaImg:hover{
-  transition: all 300ms ease-in;
- 
+  transition: all 300ms ease-in; 
   transform: scale(1.2);
   
  
@@ -130,24 +117,19 @@
 
  .marca{
  color: #fff;
-  padding: 2px;
- 
+  padding: 2px; 
 }
 
 .modal-textos h5{
   font-family: 'Prometo-Medium';
   color: #000;
   padding-top: 20px;
-
 }
 
 
 .filtros-leftside{
     padding: 10px;
 }
-
-
-
 
 .promociones{
     background: #fff;
@@ -157,8 +139,6 @@
     height: 50px;
     top: 0%;
     z-index: 1;
-    
-
 }
 
 .promociones h1{
@@ -167,11 +147,15 @@
     text-align: center;
     font-size: 25px;
     padding: 10px;
-   
+}
+
+
+.barra-superior{
+  margin-bottom: 20px;
+  border-bottom: 2px solid #aaa;
 }
 
 .barra-superior h1{ 
-   
     color: #000;
     font-family: 'Prometo-x-bold';
     font-size: 80px;
@@ -183,13 +167,24 @@
 }
 
 
+.barra-superior div{
+  position: absolute;
+  right: 5%;
+  top: 105%;
+  margin-bottom: 20%  ;
+  font-family: 'Prometo-Medium';
+  font-size: 15px;
+}
+
+
+
 input[type='checkbox'] + label {
     display: block;
-    margin: 0.2em;
+    margin: 0.1em;
     cursor: pointer;
     padding: 0.2em;
     font-family: 'Prometo-Medium';
-    font-size: 15px;
+    font-size: 12px;
   }
   
   input[type='checkbox'] {
@@ -201,15 +196,14 @@ input[type='checkbox'] + label {
     border: 0.1em solid #000;
     border-radius: 0.2em;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     padding-left: 2px;
     padding-bottom: 4px;
     margin-right: 0.2em;
     vertical-align: bottom;
     color: transparent;
-    transition: .2s;
-    
+    transition: .2s; 
   }
 
   input[type='checkbox'] + label:active:before {
@@ -604,14 +598,8 @@ input[type='checkbox'] + label {
 
 .fijo{
     margin-top: 30px;
-    width: 100%;
-    height: 100vh; 
-    min-height: 200px;
-    overflow: auto;
-    position: -webkit-sticky;
-    position: sticky;
     top: 5%;
-    
+    border-right: 1px solid #aaa;
    
 }
 
@@ -626,7 +614,7 @@ input[type='checkbox'] + label {
 }
 
 .filtros h2{
-    border-bottom: solid 1px #000;
+    
     font-family: 'Prometo-Medium';
     font-weight: bolder;
     color: #000;
@@ -751,12 +739,25 @@ input[type=checkbox]{
     width: 50%;
 }
 
-.product-price {
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    font-family: 'Prometo-Medium';
-}
+.product-price h5{
+  font-size: 20px;
+  font-family: 'Prometo-x-bold';
+  font-weight: bolder;
+  padding: 2px;
+  color: #000;
+  position: absolute;
+  top: 84%;
+
+  }
+
+  .product-price a{
+      position: absolute;
+      top: 84%;
+      right: 5%;
+
+  }
+
+
 
 .product-price i{
   color: #ffffff;
@@ -830,12 +831,12 @@ input[type=checkbox]{
 
 .product-links-wish{
   position: absolute;
-  top: 85%;
+  top: 90%;
   left: 1%;
   font-family: 'Prometo-Medium';
   color: #000000;
-  border: 2px solid #000000;
-  padding: 10px;
+  border: 1px solid #000000;
+  padding: 5px;
   text-decoration: none;
   
 }
@@ -849,12 +850,12 @@ input[type=checkbox]{
 
 .product-links-bag {
   position: absolute;
-  top: 85%;
+  top: 90%;
   right: 1%;
   font-family: 'Prometo-Medium';
   color: #000000;
-  border: 2px solid #000000;
-  padding: 10px;
+  border: 1px solid #000000;
+  padding: 5px;
   text-decoration: none;
 }
 
@@ -870,10 +871,11 @@ input[type=checkbox]{
   left: 1%;
   font-family: 'Prometo-Medium';
   color: #000000;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   padding: 10px;
   text-decoration: none;
   width: 100%;
+  
 
 }
 
@@ -906,6 +908,7 @@ input[type=checkbox]{
   color: #000;
   background: none;
   border: none;
+
  
 }
 
@@ -922,5 +925,554 @@ input[type=checkbox]{
 }
 
 .myCheckbox input:checked + span {
+
+}
+
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 611px){
+
   
+  .see-more{
+    margin-bottom: 50px;
+  }
+  .barra-superior h1{ 
+    color: #000;
+    font-family: 'Prometo-x-bold';
+    font-size: 50px;
+    
+}
+
+.filtros h1{
+  font-family: 'Prometo-x-bold';
+  font-size: 25px;
+  
+}
+
+
+.product-card{
+  height: 500px;
+}
+
+.product-tumb{
+  height: 250px;
+}
+
+
+.product-links-wish{
+  font-size: 11px;
+  padding: 4px;
+  
+}
+
+
+
+
+.product-links-bag {
+font-size: 11px;
+padding: 4px;
+}
+
+.product-details h4 a {
+  font-size: 14px;
+}
+
+
+
+
+}
+
+
+
+/*Kindle Fire Portrait 
+Nexus 7 Portrait*/
+@media screen and (max-width: 610px) and (min-width: 569px){
+
+
+  .see-more{
+    margin-bottom: 50px;
+  }
+  .barra-superior h1{ 
+    color: #000;
+    font-family: 'Prometo-x-bold';
+    font-size: 50px;
+    
+}
+
+.filtros h1{
+  font-family: 'Prometo-x-bold';
+  font-size: 25px;
+  
+}
+
+
+.product-card{
+  height: 450px;
+}
+
+.product-tumb{
+  height: 225px;
+}
+
+
+.product-links-wish{
+  font-size: 10px;
+  padding: 4px;
+  
+}
+
+
+
+
+.product-links-bag {
+font-size: 10px;
+padding: 4px;
+}
+
+.product-details h4 a {
+  font-size: 14px;
+}
+
+
+}
+
+
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+
+  .heart-button{
+    top: 23%;
+  }
+
+  .see-more{
+    padding-bottom: 60px;
+  }
+
+  .diferente-vistaImg{
+    height: 80px;
+    width: 100%;
+
+  }
+
+  .main-imgModal{
+    height: 250px;
+  }
+
+  .barra-superior h1{ 
+    font-size: 40px;
+
+    }
+
+  .product-links-wish{
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .product-links-bag{
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .product-card{
+    height: 500px;
+    width: 80%;
+  }
+
+  .product-tumb{
+    height: 250px;
+
+  }
+
+
+ }
+
+
+
+ /*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+      .product-links-wish{
+          padding: 5px;
+          font-size: 12px;
+      }
+
+      .product-links-bag{
+        padding: 5px;
+        font-size: 12px;
+      }
+
+      .product-card{
+        height: 500px;
+      }
+
+      .product-tumb{
+        height: 250px;
+
+      }
+
+}
+
+
+
+/*Media query tablets 
+Nexus 10 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 870px) {
+
+  .modal-content{
+    width: 600px;
+    position: absolute;
+    left: 1px;
+    
+  }
+
+  .diferente-vistaImg{
+    height:60px;
+  }
+  
+  .heart-button{
+    top: 25%;
+  }
+
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+
+  .modal-textos p{
+    font-size: 15px;
+
+  }
+  .main-imgModal{
+    height: 300px;
+  }
+
+  .modal-textos h1{
+    font-size: 25px;
+  }
+
+  .barra-superior h1{
+    font-size: 40px;
+  }
+
+  .product-links-wish{
+    padding: 5px;
+    font-size: 14px;
+}
+
+.product-links-bag{
+  padding: 5px;
+  font-size: 14px;
+}
+
+.product-card{
+  height: 500px;
+}
+
+.product-tumb{
+  height: 250px;
+
+}
+
+
+}
+
+/*Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 870px) and (max-width: 999px) {
+  .modal-content{
+    width: 600px;
+    position: absolute;
+    left: 1px;
+    
+  }
+
+  .diferente-vistaImg{
+    height:60px;
+  }
+  
+  .heart-button{
+    top: 25%;
+  }
+
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+
+  .modal-textos p{
+    font-size: 15px;
+
+  }
+  .main-imgModal{
+    height: 300px;
+  }
+
+  .modal-textos h1{
+    font-size: 25px;
+  }
+
+  .barra-superior h1{
+    font-size: 40px;
+  }
+
+  .product-links-wish{
+    padding: 5px;
+    font-size: 14px;
+}
+
+.product-links-bag{
+  padding: 5px;
+  font-size: 14px;
+}
+
+.product-card{
+  height: 500px;
+  width: 85%;
+}
+
+.product-tumb{
+  height: 250px;
+
+}
+
+
+}
+
+
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus Landscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 680px){
+
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+  .product-links-wish{
+    padding: 3px;
+    font-size: 13px;
+}
+
+.product-links-bag{
+  padding: 3px;
+  font-size: 13px;
+}
+
+.product-card{
+  height: 500px;
+}
+
+.product-tumb{
+  height: 250px;
+
+}
+
+
+}
+
+
+/*Iphone 7 Landscape*/
+@media only screen and (max-width: 679px) and (min-width: 641px){
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+  .product-links-wish{
+    padding: 3px;
+    font-size: 12px;
+}
+
+.product-links-bag{
+  padding: 3px;
+  font-size: 12px;
+}
+
+.product-card{
+  height: 450px;
+}
+
+.product-tumb{
+  height: 225px;
+
+}
+
+
+}
+
+
+/*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+
+  
+  .heart-button{
+    top: 27%;
+   }
+
+.main-imgModal{
+  height: 200px;
+}
+
+.diferente-vistaImg{
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+}
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+  .barra-superior h1{ 
+    
+    font-size: 30px;
+    
+}
+
+    .product-links-wish{
+      padding: 3px;
+      font-size: 15px;
+  }
+
+  .product-links-bag{
+    padding: 3px;
+    font-size: 15px;
+  }
+
+  .product-card{
+    height: 450px;
+  }
+
+  .product-tumb{
+    height: 225px;
+
+  }
+
+
+}
+
+
+
+
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 500px) and (min-width: 392px){
+
+
+  .see-more{
+    padding-bottom: 50px;
+  }
+
+
+  .barra-superior h1{ 
+    font-size: 30px;
+    
+}
+.product-links-wish{
+  padding: 3px;
+  font-size: 15px;
+}
+
+  
+
+  
+
+  .product-links-bag{
+    padding: 3px;
+    font-size: 15px;
+  }
+
+  .product-card{
+    height: 450px;
+  }
+
+  .product-tumb{
+    height: 225px;
+
+  }
+
+  .product-card{
+    width: 78%;
+  }
+
+  @media only screen and (max-width: 480px) and (min-width: 420px){
+    .product-card{
+      width: 65%;
+    }
+
+  }
+  
+
+
+}
+
+
+
+/*Afecta 
+    Iphone 5 Lanscape
+*/
+@media only screen and (max-width: 568px) and (min-width: 502px){
+
+
+  .see-more{
+    padding-bottom: 50px;
+  }
+  .barra-superior h1{ 
+    font-size: 50px;
+    
+}
+    .product-links-wish{
+      padding: 3px;
+      font-size: 17px;
+  }
+
+  .product-links-bag{
+    padding: 3px;
+    font-size: 17px;
+  }
+
+  .product-card{
+    height: 450px;
+  }
+
+  .product-tumb{
+    height: 225px;
+
+  }
+
+  .product-card{
+    width: 62%;
+  }
+
+
 }
