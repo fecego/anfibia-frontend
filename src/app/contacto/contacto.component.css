@@ -229,7 +229,15 @@
         width: 400px;
         margin-left: 165px;
         margin-top: 30px;
-    }
+    }  
+                /*Media query en tablets horizontal*/
+                @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                    .section{
+                        width: 400px;
+                        margin-left: 65px;
+                        margin-top: 30px;
+                    }
+                }
       
     .ease-all{
         -webkit-transition: all 400ms ease-in-out;
