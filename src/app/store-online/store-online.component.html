@@ -1,23 +1,109 @@
+<div class="modal fade" id="miModal" role="dialog">
+  <div class="modal-dialog modal-xl">
+      <!-- Modal content-->
+      <div class="modal-content">
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                     <div class="main-imgModal">
+                      <img id="imagen-principal" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" >
+                     </div>
+                     <div class="row" style="padding-top: 10px;">
+                      <div class="col-12 col-sm-12">
+                          <div class="row">
+                            <div class="col-3 col-sm-3">
+                              <div class="diferente-vistaImg">
+                                <img src="/assets/imagenes/paginaInicial/carretes/042555_2.png" alt="" >
+                              </div>
+                              
+                            </div>
+                            <div class="col-3 col-sm-3">
+                              <div class="diferente-vistaImg">
+                                <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" >
+                              </div>
+                            </div>
+                            <div class="col-3 col-sm-3">
+                              <div class="diferente-vistaImg">
+                                <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" >
+                              </div>
+                            </div>
+                            <div class="col-3 col-sm-3">
+                              <div class="diferente-vistaImg">
+                                <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" >
+                              </div>
+                            </div>
+                           
+  
+                          </div>
+                      </div>
+                      
+  
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 ml-auto modal-textos">
+                    <h1>CARRETE TORITO TO4000</h1>
+                    <hr>
+                    <div class="row" style="padding-top: 20px;">
+                      <div class="col-sm-12">
+                        <h4> <span>$230.99</span></h4>
+                        <div class="basic-info">
+                          <h4>CARRETE </h4>
+                           <h4 class="marca">YELLOW TAIL</h4>
+                        </div>
+                        <h5>Descripción</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <button class="see-more">Ver más</button>
+
+
+                       
+                         
+                         
+                      </div>
+                      <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                      <button class="heart-button"><a href=""><i class="fa fa-heart" aria-hidden="true"></i></a></button>
+
+                    </div>
+                  </div>
+                </div>
+                
+               
+              </div>
+            </div>
+          
+      </div>
+  </div>
+</div>
 
 <div class="container-fluid">
-  <div class="row promociones">
+  <!--<div class="row promociones">
     <div class="col-sm-12">
       <h1> <span class="typed"></span> </h1>
 
     </div>
 
-  </div>
+  </div>-->
   <div class="row">
-    <div class="col-sm-12 barra-superior">
+    <div class="col-xs-6 col-sm-12 barra-superior">
       <h1>Nuestros Productos</h1>
 
-    </div>
+      <div>
+        <label for="filtro-superior">Ordena por: </label>
+      <select name="filtro-superior" id="filtro-superior">
+        <option value="low-price">Precio de más bajo a más alto</option>
+        <option value="high-price">Precio de más alto a más bajo</option>
+        <option value="Destacados">Destacados</option>
+        <option value="Más nuevos">Más nuevos</option>
+      </select>
+      </div>
 
+    </div>
   </div>
   
    
     <div class="row">
-      <div class="col-sm-3 fijo filtros">
+      <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros">
         <h1>Productos</h1>
         <div class="filtros-leftside">
           <h2>Categorias</h2>
@@ -83,7 +169,7 @@
 
         </div>
 
-        <div class="filtros-leftside">
+        <!--<div class="filtros-leftside">
           <h2>Color</h2>
           <table style="width:100%">
             <tr>
@@ -130,7 +216,7 @@
             </tr>
           </table>
 
-        </div>
+        </div>-->
        
         <div class="filtros-leftside">
           <h2>Marca</h2>
@@ -257,24 +343,25 @@
         
          
       </div>
-      <div class="col-sm-9">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
        
         <div class="row">
           <!--Estilo nuevo del carrito-->
-          <div class="col-sm-4">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+                  <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/029977_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -282,7 +369,7 @@
                      
                   </div>
 
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#miModal">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                     <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                    
               
@@ -291,20 +378,21 @@
       
            </div>
          <!--Cierre de las etiquetas-->
-         <div class="col-sm-4">
+         <div class="col-12 col-sm-6 col-md-6 col-lg-4">
           <div class="product-card">
             <div class="badge">Nuevo</div>
             <div class="product-tumb">
-                <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                <img src="/assets/imagenes/paginaInicial/carretes/029977_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                 onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
             </div>
             <div class="product-details">
                 <span class="product-catagory">CARRETES Yellow Tail</span>
              
                 <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                <div class="product-price">$230.99
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
+                <div class="product-price">
+                  <h5>$230.98</h5>
+                <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+              </div>
                 
                 <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                 <div class="product-bottom-details">
@@ -320,7 +408,7 @@
         </div>
     
          </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -331,9 +419,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -349,20 +438,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -378,20 +468,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042558_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -407,20 +498,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042560_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -436,7 +528,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -447,9 +539,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -465,20 +558,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042562_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -494,20 +588,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -523,7 +618,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -534,9 +629,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -552,20 +648,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -581,20 +678,21 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="/assets/imagenes/paginaInicial/carretes/042699_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -610,7 +708,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -621,9 +719,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -639,7 +738,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -650,9 +749,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -668,7 +768,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -679,9 +779,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -697,7 +798,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -708,9 +809,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -726,7 +828,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -737,9 +839,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -755,7 +858,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -766,9 +869,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -784,7 +888,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -795,9 +899,39 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
+                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <div class="product-bottom-details">
+                      
+                     
                   </div>
+
+                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                   
+              
+              </div>
+          </div>
+      
+           </div>
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card">
+              <div class="badge">Nuevo</div>
+              <div class="product-tumb">
+                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+              </div>
+              <div class="product-details">
+                  <span class="product-catagory">CARRETES Yellow Tail</span>
+               
+                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -813,7 +947,7 @@
           </div>
       
            </div>
-           <div class="col-sm-4">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="product-card">
               <div class="badge">Nuevo</div>
               <div class="product-tumb">
@@ -824,38 +958,10 @@
                   <span class="product-catagory">CARRETES Yellow Tail</span>
                
                   <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
-                  
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-sm-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                   <div class="product-bottom-details">
@@ -875,25 +981,7 @@
 
         </div>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+       
        
         
 

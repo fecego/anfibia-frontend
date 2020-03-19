@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Granim from 'granim';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-nosotros',
@@ -11,7 +12,7 @@ export class NosotrosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var granimInstance = new Granim({
+    /*var granimInstance = new Granim({
       element: '#canvas-basic',
       direction: 'diagonal',
       isPausedWhenNotInView: true,
@@ -24,7 +25,7 @@ export class NosotrosComponent implements OnInit {
               ]
           }
       }
-  });
+  });*/
   }
 
 }

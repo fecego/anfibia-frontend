@@ -1,0 +1,227 @@
+/*Afecta Computadoras--
+laptops --
+Los siguientes modelos de tablets
+ Nexus 10 Landscape--
+Surface 3 Pro Landscape--, 
+Ipad Pro Landscape--
+Ipad Mini 2.4 Landscape--*/
+@media only screen and (min-width: 1025px) {
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+    }
+}
+
+
+/*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 16px;
+    }
+}
+
+/*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+
+}
+
+
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 641px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+    }
+}
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Kindle Fire Portrait 
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 568px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+}
+
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 5 Lanscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 567px) and (min-width: 392px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+
+}
+
+
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 17px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+
+ }
+
+  /*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+
+ }
+

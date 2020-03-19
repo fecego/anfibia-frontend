@@ -93,6 +93,17 @@
             }
           }
 
+<<<<<<< HEAD
+=======
+    .img{
+        position: absolute;
+        width: 596px;
+        height: 408px;
+        top: 30px;
+        left: 350px;
+    }
+    
+>>>>>>> 9b6bb8d8748770d64bfcf50592b048f45b044193
 
     span{
       font-family: 'Prometo-Thin';

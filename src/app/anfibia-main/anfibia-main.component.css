@@ -1,10 +1,99 @@
 
-/*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
-@media only screen and (min-width: 1025px) {
+/*Afecta Computadoras--
+laptops --
+Los siguientes modelos de tablets
+ Nexus 10 Landscape--
+Surface 3 Pro Landscape--, 
+Ipad Pro Landscape--
+Ipad Mini 2.4 Landscape--*/
+
+    .product-price h5{
+    font-size: 20px;
+    font-family: 'Prometo-x-bold';
+    font-weight: bolder;
+    padding: 2px;
+    color: #000;
+    position: absolute;
+    top: 85%;
+
+    }
+
+    .product-price a{
+        position: absolute;
+        top: 85%;
+        right: 5%;
+
+    }
+
+    .product-price2{ 
+        background: none;
+        padding-left: 10px;
+        
+        padding-top: 3px;
+    }
+    
+    .product-price2 h5{
+        color: #000;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 15%;
+    }
+
+    
+
+
+    .imagen-publicidad2{
+        position:absolute;top: 40%;width:100%; max-width: 100%;  height: 700px; max-height: 100%; padding-top: 30px; margin-left: 0;
+    }
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 700px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 40px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 1100px; 
+        background: #fff;
+    }
+
+
+    .imagen-video{
+        position: absolute;
+        top: 20%; 
+        left: 30%; 
+        width: 500px; 
+        height: 500px;
+    }
+
+    .imagen-video img{
+        max-width: 100%;
+        max-height: 100%;
+    }
 
     .wishlist-heart{
         position: absolute;
-        right: 35%;
+        right: 40%;
         top: 85%;
         color: #ffffff;
         padding: 2px;
@@ -12,6 +101,7 @@
         border: none;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #000;
+        transition: 0.5s ease-in-out;
         
     }
 
@@ -19,7 +109,7 @@
         color: red;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: red;
-        transition: 0.5s;
+       
     }
 
 
@@ -31,9 +121,18 @@
     }
     
     .publicidad1{
-        background: red;
+        
         width: 100%;
-        height: 500px;
+        height: 600px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 292px;
+        padding: 2px;
         max-height: 100%;
         max-width: 100%;
     }
@@ -53,6 +152,7 @@
   background: #f0f0f0;
   width: 50%;
   height: 100%;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,13 +206,19 @@
   overflow: hidden;
 }
 
-.product-price{
-    padding-left: 14px;
+.product-price{ 
+    background: none;
+    display: inline;
+    padding-left: 3px;
+}
+
+.product-price h5{
+    
+    display: inline;
 }
 
 .product-price i{
   color: #ffffff;
-  float: right;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #000;
 }
@@ -170,15 +276,15 @@
     }
 
     .seccion-productos-extras h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         color: black;
         font-size: 60px;
 
     }
 
     .seccion-productos-extras hr{
-        height: 10px;
-        width: 20%;
+        height: 3px;
+        width: 50%;
         margin-left: 0px;
         background-color: #162953;
     }
@@ -206,6 +312,7 @@
       
       a.bttn-dark {
         color: #000;
+        font-size: 20px;
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s ease all;
@@ -272,6 +379,7 @@
         position: relative;
        
         z-index: 2;
+        margin-bottom: 20px;
       }
       .bttn-dark:before {
         -webkit-transition: 0.5s all ease;
@@ -357,7 +465,7 @@
     }
 
     .half_background {
-        background: linear-gradient(to top, #00BEF8 50%, transparent 50%);
+        background: linear-gradient(to top, #8d8d8d 50%, transparent 50%);
         font-family: 'Prometo-Medium';
         letter-spacing: 5px;
         font-weight: bolder;
@@ -620,14 +728,15 @@
     
     .product-links-wish{
       position: absolute;
-      top: 85%;
-      left: 5%;
+      bottom: 3%;
+      left: 3%;
       font-family: 'Prometo-Medium';
       color: #000000;
-      border: 2px solid #000000;
+      border: 1px solid #000000;
       padding: 4px;
       text-decoration: none;
       font-size: 13px;
+      transition: 0.5s ease-in-out;
       
     }
     
@@ -639,21 +748,38 @@
     
     .product-links-bag {
       position: absolute;
-      top: 85%;
-   
-      right: 0%;
+      bottom: 3%;
+      right: 3%;
       font-family: 'Prometo-Medium';
       font-size: 13px;
       color: #000000;
-      border: 2px solid #000000;
+      border: 1px solid #000000;
       padding: 4px;
       text-decoration: none;
+      transition: 0.5s ease-in-out;
     }
     
     .product-links-bag:hover{
       background: #000000;
       color: #ffffff;
     }
+
+    .product-links-bag2 {
+        position: absolute;
+        top: 85%;
+        right: 7%;
+        font-family: 'Prometo-Medium';
+        font-size: 13px;
+        color: #000000;
+        border: 1px solid #000000;
+        padding: 4px;
+        text-decoration: none;
+      }
+      
+      .product-links-bag2:hover{
+        background: #000000;
+        color: #ffffff;
+      }
 
 
     .a-categorias{
@@ -714,7 +840,7 @@
 
     .contenido-main h1{
         color: black;
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         font-size: 70px;
         text-align: center;
         letter-spacing: 2px;
@@ -727,6 +853,14 @@
         letter-spacing: 3px;
         font-weight: bolder;
         text-align: center;
+    }
+
+    .contenido-main span{
+        color: black; text-decoration: underline;
+    }
+
+    .contenido-main hr{
+        background: #162953; height: 3px; width: 10%;
     }
 
     section{
@@ -767,18 +901,21 @@
         background: url('/assets/imagenes/paginaInicial/camping.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         
     }
     section .screen:nth-child(2){
         background: url('/assets/imagenes/paginaInicial/hunting.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         
     }
     section .screen:nth-child(3){
         background: url('/assets/imagenes/paginaInicial/fishing.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         
     }
 
@@ -787,7 +924,7 @@
         position: relative;
         width: 400px;
         height: auto;
-        background: white;
+        background: #fff;
         padding: 40px;
         box-sizing: border-box;
         transform: translateX(100%);
@@ -804,7 +941,7 @@
 
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         color: black;
         letter-spacing: 2px;
     }
@@ -818,10 +955,12 @@
     
     }
     
+
+    
     
 
     .product-Title h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         padding-top: 20px;
         color: #000;
         font-size: 60px;
@@ -829,8 +968,8 @@
 
     .product-Title hr{
         background: #162953;
-        width: 20%;
-        height: 10px;
+        width: 50%;
+        height: 3px;
         margin-left: 0;
        
     }
@@ -976,275 +1115,12 @@
         background-size: cover;
       }
 
-
-       
-}
-
-.parallax {
-    margin-top: 10px;
-    /* The image used */
-    background-image: url('/assets/imagenes/paginaInicial/sunrise.jpg');
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-
-/*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
-@media screen and (max-width: 768px) and (min-width: 490px) {
-    body{
-        margin: 0;
-        padding: 0;
-    }
-
-    
-    .product-card {
-        width: 100%;
-        position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
-        margin: 50px auto;
-        background: #fafafa;
-    }
-    
-    .badge {
-        position: absolute;
-        left: 0;
-        top: 20px;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        background: red;
-        color: #fff;
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 300px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-        max-width: 50%;
-        max-height:50%;
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #ccc;
-        margin-bottom: 18px;
-    }
-    
-    .product-details h4 a {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        color: #363636;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    .product-details h4 a:hover {
-        color: #fbb72c;
-    }
-    
-    .product-details p {
-        font-size: 15px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-    }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 18px;
-        color: #fbb72c;
-        font-weight: 600;
-    }
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-    }
-    
-    .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-    
-    .product-links a:hover {
-        color: #fbb72c;
-    }
-
-    .product-Title h1{
-        font-family: 'Prometo-Medium';
-        padding-top: 20px;
-    }
-
-    .product-Title hr{
-        background: #00BEF8;
-        width: 20%;
-        height: 10px;
-        margin-left: 0;
-       
-    }
-
-    .slides {
-        padding: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .slides * {
-        user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-    }
-    
-    .slides input { display: none; }
-    
-    .slide-container { display: block; }
-    
-    .slide {
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
-        position: absolute;
-    
-        transform: scale(0);
-    
-        transition: all .7s ease-in-out;
-    }
-    
-    .slide img {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .nav label {
-        width: 200px;
-        height: 100%;
-        display: none;
-        position: absolute;
-    
-          opacity: 0;
-        z-index: 9;
-        cursor: pointer;
-    
-        transition: opacity .2s;
-    
-        color: #FFF;
-        font-size: 156pt;
-        text-align: center;
-        line-height: 380px;
-        font-family: "Varela Round", sans-serif;
-        background-color: rgba(255, 255, 255, .3);
-        text-shadow: 0px 0px 15px rgb(119, 119, 119);
-    }
-    
-    .slide:hover + .nav label { opacity: 0.5; }
-    
-    .nav label:hover { opacity: 1; }
-    
-    .nav .next { right: 0; }
-    
-    input:checked + .slide-container  .slide {
-        opacity: 1;
-    
-        transform: scale(1);
-    
-        transition: opacity 1s ease-in-out;
-    }
-    
-    input:checked + .slide-container .nav label { display: block; }
-    
-    .nav-dots {
-        width: 100%;
-        bottom: 9px;
-        height: 11px;
-        display: block;
-        position: absolute;
-        text-align: center;
-    }
-    
-    .nav-dots .nav-dot {
-        top: -5px;
-        width: 11px;
-        height: 11px;
-        margin: 0 4px;
-        position: relative;
-        border-radius: 100%;
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    
-    .nav-dots .nav-dot:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    input#img-1:checked ~ .nav-dots label#img-dot-1,
-    input#img-2:checked ~ .nav-dots label#img-dot-2,
-    input#img-3:checked ~ .nav-dots label#img-dot-3,
-    input#img-4:checked ~ .nav-dots label#img-dot-4,
-    input#img-5:checked ~ .nav-dots label#img-dot-5,
-    input#img-6:checked ~ .nav-dots label#img-dot-6 {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    .parallax {
+      .parallax {
         margin-top: 20px;
         /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
-      
+        background-image: url('/assets/imagenes/paginaInicial/sunrise.jpg');
         /* Full height */
         height: 100%; 
-      
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
@@ -1252,169 +1128,100 @@
         background-size: cover;
       }
 
-    .contenedorInicial{
-        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 400px; 
-        position: relative;
-        margin-top: 20px;
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Kindle Fire Portrait 
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 568px){
+
+
+    .publicidad-inicial{
+        height: auto;
+        padding-bottom: 20px;
     }
-
-    .posicion-big{
-        background: white;
-        background-size: cover;
-        position: absolute;
-        top: 7%;
-        left: 8%;
-        height: 300px;
-        width: 100%;
-    }
-
-    .posicion-little{
-
-        position: absolute;
-        background: white;
-        background-size: cover;
-        top: 5%;
-        right: 13%;
-        height: 300px;
-        width: 500px;
-    }
-
-    .texto-inside-anfibia{
-        position: absolute;
-        background: transparent;
-        top: 20%;
-        left: 10%;
-        height: 200px;
-        width: 500px;
-    }
-
-    .texto-inside-anfibia h1{
-        text-align: center;
-        padding-top: 50px;
-        font-family: 'Prometo-Medium';
-        color: white;
-        font-weight: bold;
-        font-size:60px;
-        letter-spacing: 5px;
        
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
     }
 
-    .texto-inside-anfibia p{
-        text-align: center;
-        font-family: 'Prometo-Light';
-        color: white;
-        font-weight: bold;
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 300px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
         font-size: 20px;
+        padding-left: 20px; 
+        margin-top: 20%; 
+        
+    }
+
+   
+
+    .product-Title h1{
+        
+        padding-top: 20px;
+        
+        font-size: 30px;
+    }
+
+    
+    .publicidad1{
+        
+        width: 100%;
+        height: 250px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 120px;
+        padding: 2px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .contenido-main{
+    
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        
+        font-size: 30px;
+        
         letter-spacing: 2px;
-        
-    }
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 10%;
-        height: 300px;
-        width: 100%;
     }
 
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 10%;
-        height: 300px;
-        width: 100%;
+    .contenido-main p{
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
     }
-
-    .posicion-little3{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-size: cover;
-        top: 2%;
-        right: 15%;
-        height: 300px;
-        width: 100%;
-    }
-
-
-    .a-categorias{
-        background: transparent;
-        border: 2px solid black;
-        color: black; 
-        font-family: 'Prometo-Medium';
-        padding: 3px;
-        font-size: 20px;
-    }
-    section{
-        position: relative;
-        height: 100vh;
-        display: flex;
-        
-        background: #000;
-    }
-
-    section .screen{
-        position: relative;
-        flex-grow: 2;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        overflow: hidden;
-        transition: 0.5s;
-        
-        
-    }
-
-
-
-
-
-
-    section:hover .screen{
-        opacity: 0.1;
-    } 
-
-    section .screen:hover{
-        flex-grow: 5;
-        opacity: 1;
-    }
-
     
 
-    section .screen:nth-child(1){
-        background: url('/assets/imagenes/paginaInicial/camping.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        
-    }
-    section .screen:nth-child(2){
-        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        
-    }
-    section .screen:nth-child(3){
-        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        
-    }
-
-    
     section .screen .content{
         position: relative;
-        width: 100%;
-        height: 50%;
-        background: white;
+        width: 90%;
+        height: 45%;
+        background: #fff;
         padding: 20px;
         box-sizing: border-box;
         transform: translateX(100%);
@@ -1446,6 +1253,153 @@
     
     }
 
+    .button-slide a{
+        font-size: 13px;
+        padding: 6px;
+        color: black;
+        overflow: hidden;
+        width: 80%;
+        position: absolute;
+        top: 88%;
+        left:50%;
+    }
+
+    .seccion-productos-extras h1{
+        font-size: 30px;
+
+    }
+
+    .product-text h2{
+        font-size: 15px;
+    }
+
+
+    .product-price2 h5{
+        position: absolute;
+        top: 68%;
+        font-size: 15px;
+    }
+
+    .wishlist-heart{
+        position: absolute;
+        right: 35%;
+        top: 75%;
+        
+    }
+
+    .product-links-bag2{
+        position: absolute;
+        top: 87%;
+        right: 0%;
+    }
+
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 250px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .slide{
+        height: 250px;
+    }
+
+    .nav label {
+        width: 100px;
+        height: 100%;
+        display: none;
+        position: absolute;
+    
+          opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+    
+        transition: opacity .2s;
+    
+        color: #FFF;
+        font-size: 78pt;
+        text-align: center;
+        line-height: 210px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+ 
+
+  
+
+}
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .pi-left img{
+        width: 100%;
+        height: 400px;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 5%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 1000px; 
+        background: #fff;
+    }
+
+
+    .product-Title h1{
+        font-family: 'Prometo-x-bold';
+        padding-top: 20px;
+        color: #000;
+        font-size: 30px;
+    }
+
+    .publicidad1{
+            
+        width: 100%;
+        height: 300px;
+        max-height: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 300px;
+        max-height: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
     .contenido-main{
         background: white;
         padding: 40px;
@@ -1453,7 +1407,468 @@
 
     .contenido-main h1{
         color: black;
+        font-family: 'Prometo-x-bold';
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .contenido-main span{
+        color: black; text-decoration: underline;
+    }
+
+    section{
+        position: relative;
+        height: 50vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen .content{
+        position: relative;
+        width: 110px;
+        height: 200px;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
         font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 2px;
+        font-size: 18px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 13px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+
+    .button-slide a{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 85%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: arial;
+        background: #fff;
+        border: 2px solid #000;
+        padding: 4px;
+        color: black;
+        overflow: hidden;
+        width: 80%;
+        text-align: center;
+        font-family: 'Prometo-Medium';
+  
+    }
+
+    .seccion-productos-extras h1{
+        font-size: 30px;
+
+    }
+    .product-text h2 {
+        margin: 0 0 0 18px;
+        padding-top: 20px;
+        font-size: 15px;
+        font-family: 'Prometo-Medium';
+    }
+
+
+    .product-price2{ 
+        background: none;
+        padding-left: 10px;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        padding-top: 3px;
+        position: absolute;
+        bottom: 18%;
+    }
+    
+    .product-price2 h5{
+        color: #000;
+        font-size: 15px;
+        padding-left: 13px;
+        
+    }
+
+
+    .wishlist-heart{
+        position: absolute;
+        right: 43%;
+        top: 85%;
+        color: #ffffff;
+        padding: 2px;
+        background: none;
+        border: none;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+        
+    }
+
+
+    .slides {
+        padding: 0;
+        width: 100%;
+        height: 220px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 220px;
+        display: block;
+        position: absolute;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav label {
+        width: 80px;
+        height: 100%;
+        display: none;
+        position: absolute;
+        opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+        transition: opacity .2s;
+        color: #FFF;
+        font-size: 76pt;
+        text-align: center;
+        line-height: 150px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+
+
+    .product-links-wish{
+       
+        font-size: 16px;
+        
+      }
+
+      .product-links-bag{
+          font-size: 16px;
+      }
+   
+ }
+
+
+
+
+ /*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 480px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 30px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 850px; 
+        background: #fff;
+    }
+
+    .product-Title h1{
+        font-family: 'Prometo-x-bold';
+        padding-top: 20px;
+        color: #000;
+        font-size: 60px;
+    }
+
+    
+    .publicidad1{
+        
+        width: 100%;
+        height: 370px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 180px;
+        padding: 2px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+
+    .product-links-wish{
+     
+        font-size: 17px;
+       
+        
+      }
+      
+   
+      
+      
+      .product-links-bag {
+   
+        font-size: 17px;
+       
+      }
+
+      .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+    
+        font-size: 40px;
+      
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+     
+        font-size: 30px;
+      
+    }
+
+    .contenido-main span{
+        color: black;
+         text-decoration: underline;
+    }
+
+    section{
+        position: relative;
+        height: 100vh;
+        display: flex;
+        background: #000;
+    }
+
+    section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+    section .screen .content{
+        position: relative;
+        width: 300px;
+       
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-x-bold';
+        color: black;
+        font-size: 20px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 15px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+
+         
+    .button-slide a{
+      
+        font-size: 15px;
+        
+  
+    }
+    
+    .wishlist-heart{
+        right: 43%;
+    }
+
+}
+
+
+
+/*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+kindlefire landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 450px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 700px; 
+        background: #fff;
+    }
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 450px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 700px; 
+        background: #fff;
+    }
+
+    .product-Title h1{
+        font-family: 'Prometo-x-bold';
+        padding-top: 20px;
+        color: #000;
+        font-size: 50px;
+    }
+
+    .product-links-wish{
+       
+        font-size: 11px;
+        
+      }
+
+      .product-links-bag{
+       
+        font-size: 11px;
+        
+      }
+
+      .publicidad1{
+            
+        width: 100%;
+        height: 410px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 200px;
+        max-height: 100%;
+        padding: 2px;
+        max-width: 100%;
+    }
+
+    .contenido-main{
+        background: white;
+        padding: 40px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-x-bold';
         font-size: 50px;
         text-align: center;
         letter-spacing: 2px;
@@ -1467,61 +1882,161 @@
         font-weight: bolder;
         text-align: center;
     }
-    
-    .container-fluid-video{
+
+    .contenido-main span{
+        color: black; text-decoration: underline;
+    }
+
+    section{
         position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
+        height: 80vh;
+        display: flex;
+        background: #000;
+    }
+
+    
+    section .screen .content{
+        position: relative;
+        width: 250px;
         height: auto;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: left;
+       
+    }
+    section .screen .content h1{
+        font-family: 'Prometo-x-bold';
+        font-weight: 900;
+        color: black;
+        letter-spacing: 2px;
+        font-size: 24px;
+       
     }
 
-    .texto-video{
+    section .screen .content p{
+        font-family: 'Prometo-Thin';
+        
+        color: black;
+        font-size: 18px;
+        font-weight: bolder;
+        font-weight: bold;
+        padding-bottom: 35px;
+    
+    }
+
+    .button-slide a{
+        font-size: 18px;
         position: absolute;
-        top: 40%;
-        left: 30%;
-        padding: 20px;
+        top: 85%;
+        left:45%;
     }
 
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 60px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 6px;
+    .product-text h2{
         font-size: 15px;
-        text-align: center;
     }
 
+    .product-price2 h5{ 
+        background: none;
+        padding-left: 10px;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        padding-top: 3px;
+        color: #000;
+        padding-left: 15px;
+        position: absolute;
+        top: 70%;
+        font-size: 15px;
+
+    }
+
+    .product-links-bag2 {
+        position: absolute;
+        top: 85%;
+        right: 2px;
+        font-family: 'Prometo-Medium';
+        font-size: 13px;
+        color: #000000;
+        border: 1px solid #000000;
+        padding: 4px;
+        text-decoration: none;
+      }
+      .wishlist-heart{
+        position: absolute;
+        right: 40%;
+        top: 85%;
+        color: #ffffff;
+        padding: 2px;
+        background: none;
+        border: none;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+        
+    }
 
 }
 
 
-/*Tablets*/
-/*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
-@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
 
-    body{
-        margin: 0;
-        padding: 0;
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 641px){
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pi-left img{
+        width: 100%;
+        max-width: 100%; 
+        height: 380px; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 650px; 
+        background: #fff;
+    }
+
+    .product-Title h1{
+        font-size: 40px;
+    }
+
+    .publicidad1{
+            
+        width: 100%;
+        height: 240px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 116px;
+        padding: 2px;
+        max-height: 100%;
+        max-width: 100%;
     }
 
     .contenido-main{
@@ -1531,8 +2046,8 @@
 
     .contenido-main h1{
         color: black;
-        font-family: 'Prometo-Medium';
-        font-size: 70px;
+        font-family: 'Prometo-x-bold';
+        font-size: 50px;
         text-align: center;
         letter-spacing: 2px;
     }
@@ -1548,150 +2063,107 @@
 
     section{
         position: relative;
-        height: 100vh;
+        height: 80vh;
         display: flex;
         background: #000;
     }
 
-    section .screen{
-        position: relative;
-        flex-grow: 2;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        overflow: hidden;
-        transition: 0.5s;
-        
-    }
-
-
-
-
-
-
-    section:hover .screen{
-        opacity: 0.1;
-    } 
-
-    section .screen:hover{
-        flex-grow: 5;
-        opacity: 1;
-    }
-
-    
-
-    section .screen:nth-child(1){
-        background: url('/assets/imagenes/paginaInicial/camping.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(2){
-        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(3){
-        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-
-    
     section .screen .content{
         position: relative;
-        width: 400px;
+        width: 270px;
         height: auto;
-        background: white;
-        padding: 40px;
+        background: #fff;
+        padding: 30px;
         box-sizing: border-box;
         transform: translateX(100%);
         transition: 0.5s;
         text-align: justify;
+        
        
     }
-    
-
-    section .screen:hover .content{
-        transform: translateX(0);
-        transition-delay: 0.3s;
-    }
-
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         color: black;
         letter-spacing: 2px;
+        font-size: 15px;
     }
 
     section .screen .content p{
         font-family: 'Prometo-Light';
         color: black;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bolder;
         font-weight: bold;
     
     }
-    
-    
 
-    .product-Title h1{
-        font-family: 'Prometo-Medium';
-        padding-top: 20px;
-    }
-
-    .product-Title hr{
-        background: red;
-        width: 20%;
-        height: 10px;
-        margin-left: 0;
-       
-    }
-
-    .slides {
+    .button-slide a{
+        margin: 0;
         padding: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .slides * {
-        user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-    }
-    
-    .slides input { display: none; }
-    
-    .slide-container { display: block; }
-    
-    .slide {
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
         position: absolute;
-    
-        transform: scale(0);
-    
-        transition: all .7s ease-in-out;
+        top: 88%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: 13px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: arial;
+        background: #fff;
+        border: 2px solid #000;
+        padding: 6px;
+        color: black;
+        overflow: hidden;
+        width: 80%;
+        text-align: center;
+        font-family: 'Prometo-Medium';
+  
+    }
+
+    .seccion-productos-extras h1{
+        font-size: 40px;
     }
     
-    .slide img {
-        width: 100%;
-        height: 100%;
-    }
+
     
+    .wishlist-heart{
+        position: absolute;
+        right: 40%;
+        top: 74%;
+        color: #ffffff;
+        padding: 2px;
+        background: none;
+        border: none;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+        
+    }
+
+    .product-links-bag2 {
+        position: absolute;
+        top: 85%;
+        right: 2%;
+        font-family: 'Prometo-Medium';
+        font-size: 13px;
+        color: #000000;
+        border: 1px solid #000000;
+        padding: 4px;
+        text-decoration: none;
+      }
+
+      .product-price2 h5{ 
+        background: none;
+        padding-left: 0px;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        padding-top: 3px;
+        color: #000;
+        position: absolute;
+        bottom: 22%;
+    }
+
     .nav label {
-        width: 200px;
+        width: 100px;
         height: 100%;
         display: none;
         position: absolute;
@@ -1703,9 +2175,9 @@
         transition: opacity .2s;
     
         color: #FFF;
-        font-size: 156pt;
+        font-size: 86pt;
         text-align: center;
-        line-height: 380px;
+        line-height: 280px;
         font-family: "Varela Round", sans-serif;
         background-color: rgba(255, 255, 255, .3);
         text-shadow: 0px 0px 15px rgb(119, 119, 119);
@@ -1751,644 +2223,151 @@
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.8);
     }
-    
-    input#img-1:checked ~ .nav-dots label#img-dot-1,
-    input#img-2:checked ~ .nav-dots label#img-dot-2,
-    input#img-3:checked ~ .nav-dots label#img-dot-3,
-    input#img-4:checked ~ .nav-dots label#img-dot-4,
-    input#img-5:checked ~ .nav-dots label#img-dot-5,
-    input#img-6:checked ~ .nav-dots label#img-dot-6 {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    .parallax {
-        margin-top: 20px;
-        /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
-      
-        /* Full height */
-        height: 100%; 
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-    .contenedorInicial{
-        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 600px; 
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .posicion-big{
-        background: white;
-        background-size: cover;
-        position: absolute;
-        top: 7%;
-        left: 8%;
-        height: 500px;
-        width: 100%;
-    }
-
-    .posicion-little{
-
-        position: absolute;
-        background: white;
-        background-size: cover;
-        top: 5%;
-        right: 13%;
-        height: 500px;
-        width: 500px;
-    }
-
-    .texto-inside-anfibia{
-        position: absolute;
-        background: transparent;
-        top: 10%;
-        right: 20%;
-        height: 400px;
-        width: 500px;
-    }
-
-    .texto-inside-anfibia h1{
-        text-align: center;
-        font-family: 'Prometo-Medium';
-        color: white;
-        font-weight: bold;
-        font-size: 120px;
-        letter-spacing: 5px;
-        padding-top: 200px;
-    }
-
-    .texto-inside-anfibia p{
-        text-align: center;
-        font-family: 'Prometo-Light';
-        color: white;
-        font-weight: bold;
-        font-size: 30px;
-        letter-spacing: 2px;
-        
-    }
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 10%;
-        height: 500px;
-        width: 100%;
-    }
-
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 10%;
-        height: 500px;
-        width: 100%;
-    }
-
-    .posicion-little3{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-size: cover;
-        top: 2%;
-        right: 15%;
-        height: 500px;
-        width: 100%;
-    }
 
 
-    .product-card {
-        width: 100%;
-        position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
-        margin: 50px auto;
-        background: #fafafa;
-    }
-    
-    .badge {
-        position: absolute;
-        left: 0;
-        top: 20px;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        background: red;
-        color: #fff;
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 150px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #ccc;
-        margin-bottom: 18px;
-    }
-    
-    .product-details h4 a {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        color: #363636;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    .product-details h4 a:hover {
-        color: #fbb72c;
-    }
-    
-    .product-details p {
-        font-size: 13px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-    }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 18px;
-        color: #fbb72c;
-        font-weight: 600;
-    }
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-    }
-    
-    .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-    
-    .product-links a:hover {
-        color: #fbb72c;
-    }
-
-
-    .a-categorias{
-        background: transparent;
-        border: 2px solid black;
-        color: black; 
-        font-family: 'Prometo-Medium';
-        padding: 5px;
-        font-size: 20px;
-    }
-    
-    .container-fluid-video{
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-        
-    }   
-    
-    .container-fluid-video{
-        position: relative;
-        height: 82.2vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
-        height: auto;
-        width: 100%;
-        height: 100%;
+    .slides {
         padding: 0;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 320px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
     }
 
-    .texto-video{
+    .slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 320px;
+        display: block;
         position: absolute;
-        top: 30%;
-        left: 25%;
-        padding: 20px;
+    
+        transform: scale(0);
+    
+        transition: all .7s ease-in-out;
     }
-
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 100px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 6px;
-        font-size: 30px;
-        text-align: center;
-    }
-   
-
 }
 
 
-/*Celular Vertical*/
-/*Afecta Android phones Portrait, iphone 4 Landscape, iphone 7 Landscape, iphone 7 plus Portrait, */
-@media (min-width: 320px) and (max-width: 480px) {
-    body{
-        margin: 0;
-        padding: 0;
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 567px) and (min-width: 392px){
+
+   
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .pi-left img{
+        width: 100%;
+        height: 400px;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 5%; color: #000; font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium'; color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 1000px; 
+        
+        
     }
 
     .product-Title h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Prometo-x-bold';
         padding-top: 20px;
+        color: #000;
         font-size: 30px;
     }
 
-    .product-Title hr{
-        background: #00BEF8;
-        width: 20%;
-        height: 10px;
-        margin-left: 0;
-       
+    .product-card{
+        width: 100%;
     }
 
-    .slides {
-        padding: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .slides * {
-        user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-    }
-    
-    .slides input { display: none; }
-    
-    .slide-container { display: block; }
-    
-    .slide {
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 420px;
-        display: block;
+    .product-links-wish{
         position: absolute;
-    
-        transform: scale(0);
-    
-        transition: all .7s ease-in-out;
-    }
-    
-    .slide img {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .nav label {
-        width: 200px;
-        height: 100%;
-        display: none;
-        position: absolute;
-    
-          opacity: 0;
-        z-index: 9;
-        cursor: pointer;
-    
-        transition: opacity .2s;
-    
-        color: #FFF;
-        font-size: 156pt;
-        text-align: center;
-        line-height: 380px;
-        font-family: "Varela Round", sans-serif;
-        background-color: rgba(255, 255, 255, .3);
-        text-shadow: 0px 0px 15px rgb(119, 119, 119);
-    }
-    
-    .slide:hover + .nav label { opacity: 0.5; }
-    
-    .nav label:hover { opacity: 1; }
-    
-    .nav .next { right: 0; }
-    
-    input:checked + .slide-container  .slide {
-        opacity: 1;
-    
-        transform: scale(1);
-    
-        transition: opacity 1s ease-in-out;
-    }
-    
-    input:checked + .slide-container .nav label { display: block; }
-    
-    .nav-dots {
-        width: 100%;
-        bottom: 9px;
-        height: 11px;
-        display: block;
-        position: absolute;
-        text-align: center;
-    }
-    
-    .nav-dots .nav-dot {
-        top: -5px;
-        width: 11px;
-        height: 11px;
-        margin: 0 4px;
-        position: relative;
-        border-radius: 100%;
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    
-    .nav-dots .nav-dot:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    input#img-1:checked ~ .nav-dots label#img-dot-1,
-    input#img-2:checked ~ .nav-dots label#img-dot-2,
-    input#img-3:checked ~ .nav-dots label#img-dot-3,
-    input#img-4:checked ~ .nav-dots label#img-dot-4,
-    input#img-5:checked ~ .nav-dots label#img-dot-5,
-    input#img-6:checked ~ .nav-dots label#img-dot-6 {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    .parallax {
-        margin-top: 20px;
-        /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
-      
-        /* Full height */
-        height: 100%; 
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        top: 90%;
+        left: 5%;
+        font-family: 'Prometo-Medium';
+        color: #000000;
+        border: 1px solid #000000;
+        padding: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        
       }
 
 
-    .contenedorInicial{
-        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 600px; 
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .posicion-big{
-        background: white;
-        background-size: cover;
+      .product-links-bag {
         position: absolute;
-        top: 7%;
-        left: 1%;
-        height: 500px;
-        width: 80px;
-    }
-
-    .posicion-little{
-
-        position: absolute;
-        background: white;
-        background-size: cover;
-        top: 5%;
-        right: 2%;
-        height: 500px;
-        width: 80px;
-    }
-
-    .texto-inside-anfibia{
-        position: absolute;
-        background: transparent;
-        top: 30%;
-        left: 20%;
-        height: 220px;
-        width: 270px;
-    }
-
-    .texto-inside-anfibia h1{
-        text-align: center;
+        top: 90%;
+        right: 5%;
         font-family: 'Prometo-Medium';
-        color: white;
-        font-weight: bold;
-        font-size: 60px;
-        letter-spacing: 5px;
-       
-    }
-
-    .texto-inside-anfibia p{
-        text-align: center;
-        font-family: 'Prometo-Light';
-        color: white;
-        font-weight: bold;
-        font-size: 30px;
-        letter-spacing: 2px;
-        
-    }
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 2%;
-        height: 500px;
-        width: 40%;
-    }
-
-    
-
-    .posicion-little3{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-size: cover;
-        top: 2%;
-        right: 3%;
-        height: 500px;
-        width: 40%;
-    }
-
-
-    .product-card {
-        width: 100%;
-        position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
-        margin: 50px auto;
-        background: #fafafa;
-    }
-    
-    .badge {
-        position: absolute;
-        left: 0;
-        top: 20px;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        background: red;
-        color: #fff;
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 300px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #ccc;
-        margin-bottom: 18px;
-    }
-    
-    .product-details h4 a {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        color: #363636;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    .product-details h4 a:hover {
-        color: #fbb72c;
-    }
-    
-    .product-details p {
         font-size: 15px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-    }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 18px;
-        color: #fbb72c;
-        font-weight: 600;
-    }
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-    }
-    
-    .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-    
-    .product-links a:hover {
-        color: #fbb72c;
-    }
-
-
-    .a-categorias{
-        background: transparent;
-        border: 2px solid black;
-        color: black; 
-        font-family: 'Prometo-Medium';
+        color: #000000;
+        border: 1px solid #000000;
         padding: 5px;
-        font-size: 10px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .publicidad1{
+            
+        width: 100%;
+        height: 300px;
+        max-height: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .publicidad2{
+        
+        width: 100%;
+        height: 300px;
+        max-height: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .contenido-main h1{
+        color: black;
+        font-family: 'Prometo-x-bold';
+        font-size: 28px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .contenido-main p{
+        color: black;
+        font-family: 'Prometo-Light';
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .contenido-main hr{
+        background: none;
+    }
+
+    .contenido-main span{
+        color: black; text-decoration: underline;
     }
 
     section{
@@ -2398,58 +2377,11 @@
         background: #000;
     }
 
-    section .screen{
-        position: relative;
-        flex-grow: 2;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        overflow: hidden;
-        transition: 0.5s;
-        
-    }
-
-
-
-
-
-
-    section:hover .screen{
-        opacity: 0.1;
-    } 
-
-    section .screen:hover{
-        flex-grow: 5;
-        opacity: 1;
-    }
-
-    
-
-    section .screen:nth-child(1){
-        background: url('/assets/imagenes/paginaInicial/camping.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(2){
-        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(3){
-        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-
-    
     section .screen .content{
         position: relative;
-        width: 100%;
+        width: 140px;
         height: 200px;
-        background: white;
+        background: #fff;
         padding: 10px;
         box-sizing: border-box;
         transform: translateX(100%);
@@ -2468,250 +2400,59 @@
     section .screen .content h1{
         font-family: 'Prometo-Medium';
         color: black;
-        letter-spacing: 2px;
-        font-size: 15px;
+        letter-spacing: 1px;
+        font-size: 14px;
     }
 
     section .screen .content p{
         font-family: 'Prometo-Light';
         color: black;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: bolder;
         font-weight: bold;
     
     }
-    
 
-    .contenido-main{
-        background: white;
-        padding: 40px;
-    }
-
-    .contenido-main h1{
-        color: black;
-        font-family: 'Prometo-Medium';
-        font-size: 30px;
-        text-align: center;
-        letter-spacing: 2px;
-    }
-
-    .contenido-main p{
-        color: black;
-        font-family: 'Prometo-Light';
-        font-size: 20px;
-        letter-spacing: 3px;
-        font-weight: bolder;
-        text-align: center;
-    }
-    
-    .container-fluid-video{
-        position: relative;
-        height: 30vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
-        height: auto;
-        width: 100%;
-        height: 100%;
-        padding: 0;
+    .button-slide a{
         margin: 0;
-        top: 50%;
-        left: 50%;
+        padding: 0;
+        position: absolute;
+        top: 85%;
+        left:50%;
         transform: translate(-50%, -50%);
-    }
-
-    .texto-video{
-        position: absolute;
-        top: 30%;
-        left: 20%;
-        padding: 20px;
-    }
-
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 40px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 4px;
-        font-size: 10px;
-        text-align: center;
-    }
-}
-
-
-/*Tablets*/
-/*Iphone 4, 5, 7 PORTRAIT*/
-@media only screen and (max-width: 319px){
-     body{
-        margin: 0;
-        padding: 0;
-    }
-    
-    .contenido-main{
-        background: white;
-        padding: 40px;
-    }
-
-    .contenido-main h1{
+        font-size: 12px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: arial;
+        background: #fff;
+        border: 2px solid #000;
+        padding: 4px;
         color: black;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        text-align: center;
-        letter-spacing: 2px;
-    }
-
-    .contenido-main p{
-        color: black;
-        font-family: 'Prometo-Light';
-        font-size: 15px;
-        letter-spacing: 3px;
-        font-weight: bolder;
-        text-align: center;
-    }
-
-    section{
-        position: relative;
-        height: 100vh;
-        display: flex;
-        background: #000;
-    }
-
-    section .screen{
-        position: relative;
-        flex-grow: 2;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
         overflow: hidden;
-        transition: 0.5s;
-        
-    }
-
-
-
-
-
-
-    section:hover .screen{
-        opacity: 0.1;
-    } 
-
-    section .screen:hover{
-        flex-grow: 5;
-        opacity: 1;
-    }
-
-    
-
-    section .screen:nth-child(1){
-        background: url('/assets/imagenes/paginaInicial/camping.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(2){
-        background: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-    section .screen:nth-child(3){
-        background: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        
-    }
-
-    
-    section .screen .content{
-        position: relative;
-        width: 100%;
-        height: 45%;
-        background: white;
-        padding: 10px;
-        box-sizing: border-box;
-        transform: translateX(100%);
-        transition: 0.5s;
-        text-align: justify;
-       
-    }
-    
-
-    section .screen:hover .content{
-        transform: translateX(0);
-        transition-delay: 0.3s;
-    }
-
-
-    section .screen .content h1{
+        width: 80%;
+        text-align: center;
         font-family: 'Prometo-Medium';
-        color: black;
-        letter-spacing: 2px;
-        font-size: 15px;
+  
     }
 
-    section .screen .content p{
-        font-family: 'Prometo-Light';
-        color: black;
-        font-size: 10px;
-        font-weight: bolder;
-        font-weight: bold;
-    
-    }
-    
-    
-
-    .product-Title h1{
-        font-family: 'Prometo-Medium';
-        padding-top: 20px;
+    .seccion-productos-extras h1{
         font-size: 30px;
-    }
-
-    .product-Title hr{
-        background: #00BEF8;
-        width: 20%;
-        height: 10px;
-        margin-left: 0;
-       
     }
 
     .slides {
         padding: 0;
         width: 100%;
-        height: 420px;
+        height: 220px;
         display: block;
         margin: 0 auto;
         position: relative;
     }
-    
-    .slides * {
-        user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-    }
-    
-    .slides input { display: none; }
-    
-    .slide-container { display: block; }
-    
+
     .slide {
         top: 0;
         opacity: 0;
         width: 100%;
-        height: 420px;
+        height: 220px;
         display: block;
         position: absolute;
     
@@ -2719,347 +2460,262 @@
     
         transition: all .7s ease-in-out;
     }
-    
-    .slide img {
-        width: 100%;
-        height: 100%;
-    }
-    
+
     .nav label {
-        width: 200px;
+        width: 80px;
         height: 100%;
         display: none;
         position: absolute;
-    
-          opacity: 0;
+        opacity: 0;
         z-index: 9;
         cursor: pointer;
-    
         transition: opacity .2s;
-    
         color: #FFF;
-        font-size: 156pt;
+        font-size: 76pt;
         text-align: center;
-        line-height: 380px;
+        line-height: 150px;
         font-family: "Varela Round", sans-serif;
         background-color: rgba(255, 255, 255, .3);
         text-shadow: 0px 0px 15px rgb(119, 119, 119);
     }
-    
-    .slide:hover + .nav label { opacity: 0.5; }
-    
-    .nav label:hover { opacity: 1; }
-    
-    .nav .next { right: 0; }
-    
-    input:checked + .slide-container  .slide {
-        opacity: 1;
-    
-        transform: scale(1);
-    
-        transition: opacity 1s ease-in-out;
-    }
-    
-    input:checked + .slide-container .nav label { display: block; }
-    
-    .nav-dots {
-        width: 100%;
-        bottom: 9px;
-        height: 11px;
-        display: block;
-        position: absolute;
-        text-align: center;
-    }
-    
-    .nav-dots .nav-dot {
-        top: -5px;
-        width: 11px;
-        height: 11px;
-        margin: 0 4px;
-        position: relative;
-        border-radius: 100%;
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    
-    .nav-dots .nav-dot:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    input#img-1:checked ~ .nav-dots label#img-dot-1,
-    input#img-2:checked ~ .nav-dots label#img-dot-2,
-    input#img-3:checked ~ .nav-dots label#img-dot-3,
-    input#img-4:checked ~ .nav-dots label#img-dot-4,
-    input#img-5:checked ~ .nav-dots label#img-dot-5,
-    input#img-6:checked ~ .nav-dots label#img-dot-6 {
-        background: rgba(0, 0, 0, 0.8);
-    }
 
-    .parallax {
-        margin-top: 20px;
-        /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/camping.jpg');
-      
-        /* Full height */
-        height: 100%; 
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    .contenedorInicial{
-        background-image: url('/assets/imagenes/paginaInicial/paisaje.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 600px; 
-        position: relative;
-        margin-top: 20px;
-    }
-
-   /* .posicion-big{
-        background: red;
-        background-size: cover;
-        position: absolute;
-        top: 7%;
-        left: 8%;
-        height: 500px;
-        width: 20px;
-    }
-
-    .posicion-little{
-
-        position: absolute;
-        background: red;
-        background-size: cover;
-        top: 5%;
-        right: 13%;
-        height: 500px;
-        width:20px;
-    }
-*/
-    .texto-inside-anfibia{
-        position: absolute;
-        background: transparent;
-        top: 50%;
-        right: 5%;
-        height: 100px;
-        width: 250px;
-    }
-
-    .texto-inside-anfibia h1{
-        text-align: center;
-        font-family: 'Prometo-Medium';
-        color: white;
-        font-weight: bold;
-        font-size: 40px;
-        letter-spacing: 5px;
-        
-    }
-
-    .texto-inside-anfibia p{
-        text-align: center;
-        font-family: 'Prometo-Light';
-        color: white;
-        font-weight: bold;
-        font-size: 10px;
-        letter-spacing: 2px;
-        
-   }
-   /*
-    .posicion-little2{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/hunting.jpg');
-        background-size: cover;
-        top: 2%;
-        left: 4%;
-        height: 500px;
-        width: 120px;
-    }
-
-   
-    .posicion-little3{
-        position: absolute;
-        background-image: url('/assets/imagenes/paginaInicial/fishing.jpg');
-        background-size: cover;
-        top: 2%;
-        right: 15%;
-        height: 500px;
-        width: 20px ;
-    }*/
-
-
-    .product-card {
-        width: 100%;
-        position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
-        margin: 50px auto;
-        background: #fafafa;
-    }
-    
-    .badge {
-        position: absolute;
-        left: 0;
-        top: 20px;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        background: red;
-        color: #fff;
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 300px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #ccc;
-        margin-bottom: 18px;
-    }
-    
-    .product-details h4 a {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        color: #363636;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    .product-details h4 a:hover {
-        color: #fbb72c;
-    }
-    
-    .product-details p {
-        font-size: 15px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-    }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        border-top: 1px solid #eee;
-        padding-top: 20px;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 18px;
-        color: #fbb72c;
-        font-weight: 600;
-    }
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-    }
-    
-    .product-links a {
-        display: inline-block;
-        margin-left: 5px;
-        color: #e1e1e1;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-    
-    .product-links a:hover {
-        color: #fbb72c;
-    }
-
-
-    .a-categorias{
-        background: transparent;
-        border: 2px solid black;
-        color: black; 
-        font-family: 'Prometo-Medium';
-        padding: 5px;
-        font-size: 10px;
-    }
-
-
-    .container-fluid-video{
-        position: relative;
-        height: 36vh;
-        width: 100%;
-        overflow: hidden;
-        background: black;
-    }   
-    .container-fluid video{
-        
-        position: absolute;
-        width: auto;
-        height: auto;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .texto-video{
-        position: absolute;
-        top: 25%;
-        left: 13%;
-        padding: 20px;
-    }
-
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 6px;
-        font-size: 40px;
-    }
-
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 6px;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .contenido-main{
-        position: relative;
-        background: white;
-        height: 300px;
-    }
 }
 
+
+
+/*Afecta 
+    Iphone 5 Lanscape
+*/
+@media only screen and (max-width: 568px) and (min-width: 502px){
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .pi-left img{
+        width: 100%;
+        height: 500px;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';
+        font-size: 25px;
+        padding-left: 20px; 
+        margin-top: 5%; 
+        color: #000; 
+        font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium';
+        color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 1200px; 
+        
+    }
+
+    .product-Title h1{
+        font-size: 40px;
+    }
+
+    .product-card{
+        width: 70%;
+    }
+
+    .button-slide a{
+        font-size: 10px;
+    }
+
+    .seccion-productos-extras h1{
+        font-size: 40px;
+    }
+
+    .wrapper{
+        width: 80%;
+    }
+
+
+    .contenido-main h1{
+        font-size: 25px;
+    }
+
+    .contenido-main hr{
+        background: none;
+    }
+
+}
+
+
+
+
+/*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+
+    .pi-left{
+        padding-right: 0;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .pi-left img{
+        width: 100%;
+        height: 300px;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+
+    .pi-left h1{
+        font-family: 'Prometo-Thin';
+        font-size: 18px;
+        padding-left: 20px; 
+        margin-top: 5%; 
+        color: #000; 
+        font-weight: bolder;
+    }
+
+    .pi-left span{
+        font-family:'Prometo-Medium';
+        color: #000;
+    }
+
+    .publicidad-inicial{
+        padding-top: 20px;
+        padding-bottom: 10px; 
+        padding-left: 0; 
+        position: relative;
+        height: 800px; 
+        
+    }
+
+    .product-Title h1{
+        font-size: 30px;
+    }
+
+    .product-card{
+        width: 100%;
+    }
+
+    .publicidad1{
+        height: 200px;
+        padding: 2px;
+
+    }
+
+    .publicidad2{
+        height: 200px;
+    }
+    
+
+    .contenido-main h1{
+        font-size: 30px;
+    }
+
+    .contenido-main hr{
+        background: none;
+    }
+
+    section{
+        height: 70vh;
+    }
+
+
+    section .screen .content{
+        position: relative;
+        width: 140px;
+        height: 200px;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+
+    
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+
+
+    section .screen .content h1{
+        font-family: 'Prometo-Medium';
+        color: black;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+
+    section .screen .content p{
+        font-family: 'Prometo-Light';
+        color: black;
+        font-size: 11px;
+        font-weight: bolder;
+        font-weight: bold;
+    
+    }
+
+    .button-slide a{
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .seccion-productos-extras h1{
+        font-size: 30px;
+    }
+
+    .product-text h2{
+        font-size: 15px;
+    }
+
+    .product-price2 h5{
+        top: 60%;
+        padding-left: 2px;
+    }
+
+    .wishlist-heart{
+        top: 70%;
+    }
+
+    .slides{
+        height: 200px;
+    }
+
+    .slide{
+        height: 200px;
+    }
+
+    .nav label {
+        width: 80px;
+        height: 100%;
+        display: none;
+        position: absolute;
+        opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+        transition: opacity .2s;
+        color: #FFF;
+        font-size: 76pt;
+        text-align: center;
+        line-height: 150px;
+        font-family: "Varela Round", sans-serif;
+        background-color: rgba(255, 255, 255, .3);
+        text-shadow: 0px 0px 15px rgb(119, 119, 119);
+    }
+
+}
 
