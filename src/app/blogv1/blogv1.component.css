@@ -198,6 +198,18 @@
         position: relative; 
     }
 
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .single-blog{
+                    margin-top: 50px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 321px){
+                .single-blog{
+                    margin-top: 50px;
+                }
+            }
+
     .single-blog .thumb {
         overflow: hidden; 
     }
@@ -208,6 +220,11 @@
         transition: all 300ms linear 0s;
         position: relative;  
     }
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .single-blog .thumb img{
+                    height: 500px;
+                }
+            }
 
     .single-blog .short_details {
         background: #fff;
@@ -219,6 +236,13 @@
         padding: 40px;
         transition: all 300ms linear 0s; 
     }
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .single-blog .short_details{
+                    width: 90%;
+                    right: 15px;
+                }
+            }
+
     
     .single-blog .short_details a {
         color: #33353b;
@@ -357,7 +381,12 @@
         transition: all 300ms linear 0s;
         position: relative; 
     }
-        
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .single-blog.style-three{
+                    margin-top: 80px;
+                }
+            }
+
     .single-blog.style-three .thumb {
         overflow: hidden; 
     }       
@@ -378,6 +407,11 @@
         padding: 10px 5px;
         transition: all 300ms linear 0s; 
     }
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .single-blog.style-three .short_details{
+                    right: 0%;
+                }
+            }
           
     .single-blog.style-three .short_details a {
         color: #33353b;
@@ -470,6 +504,17 @@
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 2px;
     }
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .parallax h1{
+                    font-size: 80px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .parallax h1{
+                    font-size: 80px;
+                }
+            }
     /*-----Parallax-----*/
 
     /*-----Ultimas notas-----*/
@@ -516,6 +561,11 @@
         transition: all 300ms linear 0s; 
         height: 150px;
     }
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .single-blog .short_details2{
+                    width: 100%;
+                }
+            }
 
     .single-blog.style-five .thumb img {
         width: 100%;
@@ -526,8 +576,14 @@
     .single-blog.style_five .short_details a {
         color: #fff; }
     
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .single-blog.style_five h4 {
+                font-size: 8px;
+            } 
+        }
+    
     .single-blog.style_five .short_details a:hover {
-        color: #ff7a7f; }
+        color: #0A2D45; }
     
     .single-blog.style_five .meta-bottom a {
         color: #fff;
@@ -542,7 +598,7 @@
         transition: all 300ms linear 0s; }
 
     .single-blog.style_five .meta-top a:hover {
-        color: #ff7a7f; }
+        color: #0A2D45; }
 
     .single-blog.style-five h4{
         font-size: 20px;
@@ -566,7 +622,30 @@
         } 
     }/*-----Estilo cinco (Ultimas cuatro notas)-----*/
 
-    /*-----Subscricion al Blog-----*/         
+    /*-----Subscricion al Blog-----*/ 
+    .texto{
+        position: absolute; 
+        top: 10%; 
+        left: 29%;
+    }       
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .texto{
+                    left: 19%;
+                }
+            }
+            
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .texto{
+                    left: 10%;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 321px){
+                .texto{
+                    left: 0;
+                }
+            }
+            
     .texto h3{
         color: white;
         font-family: 'Prometo-Thin';
@@ -574,7 +653,7 @@
         font-size: 20px;
         letter-spacing: 4px;
     }
-
+  
     .texto h4{
         color: white;
         font-family: 'Prometo-Medium';
@@ -582,6 +661,11 @@
         font-size: 40px;
         letter-spacing: 4px;
     }
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .texto h4{
+                    margin-top: 40px;
+                }
+            }
 
     .input-correo{
         color: white;
