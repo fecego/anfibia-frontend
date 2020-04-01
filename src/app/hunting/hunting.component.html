@@ -76,19 +76,20 @@
                <h1>Productos nuevos</h1>
                
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="product-card">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoCaceria of productosCaceria; index as i; let index = i;">
+              <div class="product-card" *ngIf="i<4">
                   <div class="badge">Nuevo</div>
+                  <div class="badge2">Destacado</div>
                   <div class="product-tumb">
-                      <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                      <img src="{{productoCaceria.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                       onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
                   </div>
                   <div class="product-details">
-                      <span class="product-catagory">CARRETES Yellow Tail</span>
+                      <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
                    
-                      <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                      <h4><a href="">{{productoCaceria.nombre}}</a></h4>
                       <div class="product-price">
-                        <h5>$230.98</h5>
+                        <h5>{{productoCaceria.precio}}</h5>
                         <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                     </div>
                       
@@ -100,7 +101,7 @@
                   </div>
               </div>
              </div>
-             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+             <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="product-card">
                   <div class="badge">Nuevo</div>
                   <div class="product-tumb">
@@ -116,7 +117,7 @@
                         <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                       </div>
                       
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                       <div class="product-bottom-details">
                       </div>
                         <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
@@ -141,7 +142,7 @@
                         <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                       </div>
                       
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                       <div class="product-bottom-details">
                           
                          
@@ -184,7 +185,7 @@
                   </div>
               </div>
   
-             </div>
+             </div>-->
   
 
       </div>
@@ -233,18 +234,20 @@
            <h1>Más productos nuevos</h1>
           
           <div class="row">
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-               <div class="wrapper">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoCaceria of productosCaceria;index as i; let index = i">
+               <div class="wrapper" *ngIf="i<6">
+                    <div class="badge" *ngIf="productoCaceria.nuevo">Nuevo</div>
+                    <div class="badge2" *ngIf="productoCaceria.destacado">Destacado</div>
                    <div class="product-img">
-                     <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
+                     <img src="{{productoCaceria.image}}">
                    </div>
                    <div class="product-info">
                      <div class="product-text">
-                       <h2>Caña de pescar Kiriktsyo </h2>
+                       <h2>{{productoCaceria.nombre}} </h2>
                        
                        
                        <div class="product-price2">
-                         <h5>$230.99</h5>
+                         <h5>${{productoCaceria.precio}}</h5>
                        </div>
                            <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
                            <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
@@ -254,28 +257,7 @@
                  </div>
    
               </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-               <div class="wrapper">
-                   <div class="product-img">
-                     <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                   </div>
-                   <div class="product-info">
-                     <div class="product-text">
-                       <h2>Caña de pescar Kirikutsyo </h2>
-                       
-                       
-                       <div class="product-price2">
-                         <h5>$230.99</h5>
-                       </div>
-                           <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                           <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                     </div>
-                     
-                   </div>
-                 </div>
-   
-              </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+              <!--<div class="col-12 col-sm-6 col-md-6 col-lg-4">
                <div class="wrapper">
                    <div class="product-img">
                      <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
@@ -359,6 +341,27 @@
                  </div>
    
               </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+               <div class="wrapper">
+                   <div class="product-img">
+                     <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
+                   </div>
+                   <div class="product-info">
+                     <div class="product-text">
+                       <h2>Caña de pescar Kirikutsyo </h2>
+                       
+                       
+                       <div class="product-price2">
+                         <h5>$230.99</h5>
+                       </div>
+                           <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                           <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     </div>
+                     
+                   </div>
+                 </div>
+   
+              </div>-->
    
           </div>
          
@@ -395,7 +398,7 @@
 <div class="container-fluid categorias-content" >
   <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
-          <h1>Categorías de <span>CACERÍA</span></h1>
+          <h1>Categorías de <span>Cacería</span></h1>
       </div>
 
   </div>
@@ -444,7 +447,38 @@
              <h1>Productos destacados</h1>
             
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12" >
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoCaceria of productosCaceria; index as i; let index = i;">
+            <div class="product-card" *ngIf="i<4">
+                <div class="badge" *ngIf="productoCaceria.nuevo">Nuevo</div>
+                <div class="badge2" *ngIf="productoCaceria.destacado">Destacado</div>
+                <div class="product-tumb">
+                    <img src="{{productoCaceria.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                    onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
+                 
+                    <h4><a href="">{{productoCaceria.nombre}}</a></h4>
+                    <div class="product-price">
+                      <h5>${{productoCaceria.precio}}</h5>
+                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </div>
+                    
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <div class="product-bottom-details">
+                        
+                       
+                    </div>
+  
+                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                      <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     
+                
+                </div>
+            </div>
+
+           </div>
+           <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="product-card">
                 <div class="badge">Nuevo</div>
                 <div class="product-tumb">
@@ -460,7 +494,7 @@
                     <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                   </div>
                     
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                     <div class="product-bottom-details">
                         
                        
@@ -490,7 +524,7 @@
                     <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                   </div>
                     
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                     <div class="product-bottom-details">
                         
                        
@@ -520,7 +554,7 @@
                     <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                   </div>
                     
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                     <div class="product-bottom-details">
                         
                        
@@ -533,37 +567,7 @@
                 </div>
             </div>
 
-           </div>
-           <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="product-card">
-                <div class="badge">Nuevo</div>
-                <div class="product-tumb">
-                    <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                    onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-                </div>
-                <div class="product-details">
-                    <span class="product-catagory">CARRETES Yellow Tail</span>
-                 
-                    <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                    <div class="product-price">
-                      <h5>$230.98</h5>
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
-                    
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                    <div class="product-bottom-details">
-                        
-                       
-                    </div>
-  
-                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                      <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                     
-                
-                </div>
-            </div>
-
-           </div>
+           </div>-->
 
 
     </div>
@@ -604,18 +608,20 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-12 seccion-productos-extras">
             <h1>Más productos destacados</h1>
            <div class="row" >
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="wrapper">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let productoCaceria of productosCaceria; index as i; let index = i;">
+                <div class="wrapper" *ngIf="i<6" >
+                  <div class="badge" >Nuevo</div>
+                  <div class="badge2" >Destacado</div>
                     <div class="product-img">
-                      <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
+                      <img src="{{productoCaceria.image}}">
                     </div>
                     <div class="product-info">
                       <div class="product-text">
-                        <h2>Caña de pescar Kirikutsyo </h2>
+                        <h2>{{productoCaceria.nombre}} </h2>
                         
                         
                         <div class="product-price2">
-                          <h5>$230.99</h5>
+                          <h5>${{productoCaceria.precio}}</h5>
                         </div>
                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
@@ -625,7 +631,7 @@
                   </div>
     
                </div>
-               <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+               <!--<div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="wrapper">
                     <div class="product-img">
                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
@@ -733,7 +739,7 @@
     
                </div>
     
-        </div>
+        </div>-->
        
         
        
@@ -749,7 +755,8 @@
 </div>
 
 </div>
-<div class="container-fluid parallax-fishing">
+</div>
+<div class="container-fluid parallax-fishing" style="margin: 0; padding: 0;">
 
 </div>
     

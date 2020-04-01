@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
-
+import $ from 'jquery';
+import { ProductosService } from "../servicios/productos.service";
 @Component({
   selector: 'app-fishing',
   templateUrl: './fishing.component.html',
@@ -8,30 +9,28 @@ import * as AOS from 'aos';
 })
 export class FishingComponent implements OnInit {
 
+
+  public productosPesca: Array<any> = [];
+
   slides = [
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: 'Este es un texto relacionado a la imagen 1'
+      img: "/assets/imagenes/paginaInicial/blackfriday.jpg"
+     
      
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen2"
+      img: "/assets/imagenes/paginaInicial/blackfriday.jpg"
+     
       
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen3"
+      img: "/assets/imagenes/paginaInicial/blackfriday.jpg"
+     
       
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen4"
-      
+      img: "/assets/imagenes/paginaInicial/blackfriday.jpg"
+     
     }
   ];
  
@@ -70,9 +69,93 @@ export class FishingComponent implements OnInit {
     console.log('beforeChange');
   }
 
-  constructor() { }
+  constructor(private _productosPesca: ProductosService) {
+      this.productosPesca = this._productosPesca.getProductosPesca();
+      console.log(this.productosPesca);
+   }
+
+
 
   ngOnInit() {
+    $(".item-1").mouseenter(function(){
+       $(".item-2").css("filter", "brightness(50%)");
+       $(".item-3").css("filter", "brightness(50%)");
+       $(".item-4").css("filter", "brightness(50%)");
+       $(".item-5").css("filter", "brightness(50%)");
+       
+    });
+
+    $(".item-1").mouseleave(function(){
+      $(".item-2").css("filter", "brightness(100%)");
+      $(".item-3").css("filter", "brightness(100%)");
+      $(".item-4").css("filter", "brightness(100%)");
+      $(".item-5").css("filter", "brightness(100%)");
+      
+   });
+
+   $(".item-2").mouseenter(function(){
+    $(".item-1").css("filter", "brightness(50%)");
+    $(".item-3").css("filter", "brightness(50%)");
+    $(".item-4").css("filter", "brightness(50%)");
+    $(".item-5").css("filter", "brightness(50%)");
+    
+ });
+
+ $(".item-2").mouseleave(function(){
+   $(".item-1").css("filter", "brightness(100%)");
+   $(".item-3").css("filter", "brightness(100%)");
+   $(".item-4").css("filter", "brightness(100%)");
+   $(".item-5").css("filter", "brightness(100%)");
+   
+});
+
+$(".item-3").mouseenter(function(){
+  $(".item-1").css("filter", "brightness(50%)");
+  $(".item-2").css("filter", "brightness(50%)");
+  $(".item-4").css("filter", "brightness(50%)");
+  $(".item-5").css("filter", "brightness(50%)");
+  
+});
+
+$(".item-3").mouseleave(function(){
+ $(".item-1").css("filter", "brightness(100%)");
+ $(".item-2").css("filter", "brightness(100%)");
+ $(".item-4").css("filter", "brightness(100%)");
+ $(".item-5").css("filter", "brightness(100%)");
+ 
+});
+
+$(".item-4").mouseenter(function(){
+  $(".item-1").css("filter", "brightness(50%)");
+  $(".item-2").css("filter", "brightness(50%)");
+  $(".item-3").css("filter", "brightness(50%)");
+  $(".item-5").css("filter", "brightness(50%)");
+  
+});
+
+$(".item-4").mouseleave(function(){
+ $(".item-1").css("filter", "brightness(100%)");
+ $(".item-2").css("filter", "brightness(100%)");
+ $(".item-3").css("filter", "brightness(100%)");
+ $(".item-5").css("filter", "brightness(100%)");
+ 
+});
+
+$(".item-5").mouseenter(function(){
+  $(".item-1").css("filter", "brightness(50%)");
+  $(".item-2").css("filter", "brightness(50%)");
+  $(".item-3").css("filter", "brightness(50%)");
+  $(".item-4").css("filter", "brightness(50%)");
+  
+});
+
+$(".item-5").mouseleave(function(){
+ $(".item-1").css("filter", "brightness(100%)");
+ $(".item-2").css("filter", "brightness(100%)");
+ $(".item-3").css("filter", "brightness(100%)");
+ $(".item-4").css("filter", "brightness(100%)");
+ 
+});
     
 
   }

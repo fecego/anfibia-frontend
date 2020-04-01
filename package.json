@@ -33,6 +33,7 @@
     "jquery": "^3.4.1",
     "jquery.nice-number": "^2.0.1",
     "mapbox-gl": "^1.6.1",
+    "ngx-owl-carousel-o": "^3.0.0",
     "ngx-slick-carousel": "^0.4.7",
     "rxjs": "~6.4.0",
     "slick-carousel": "^1.8.1",

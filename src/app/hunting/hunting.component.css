@@ -14,6 +14,7 @@ Ipad Mini 2.4 Landscape--*/
     font-weight: bolder;
     position: absolute;
     top: 85%;
+    font-size: 18px;
 }
 
 
@@ -36,6 +37,7 @@ Ipad Mini 2.4 Landscape--*/
     font-weight: bolder;
     padding-left: 10px;
     position: absolute;
+    font-size: 18px;
     bottom: 15%;
 }
 
@@ -206,7 +208,7 @@ font-family: 'Prometo-Medium';
 .product-text h2 {
 margin: 0 0 0 18px;
 padding-top: 20px;
-font-size: 20px;
+font-size: 15px;
 font-family: 'Prometo-Medium';
 }
 
@@ -289,8 +291,8 @@ margin-top: 20px;
 .seccion-productos-extras h1{
 font-family: 'Prometo-x-bold';
 color: #000;
-font-size: 50px;
-
+font-size: 80px;
+text-transform: none;
 padding: 20px;
 
 
@@ -840,6 +842,18 @@ img{
     padding: 3px 10px;
 }
 
+.badge2 {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: purple;
+    color: #fff;
+    padding: 3px 10px;
+}
+
 .product-tumb {
     display: flex;
     align-items: center;
@@ -883,7 +897,7 @@ img{
     color: #000000;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Prometo-Medium';
 }
 
@@ -1021,6 +1035,8 @@ img{
     color: #000;
     font-size: 50px;
     padding: 20px;
+    font-size: 80px;
+    text-transform: none;
 }
 
 .product-Title hr{
@@ -1051,6 +1067,7 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
 .categorias-text h1{
     text-align: center;
     font-family: 'Prometo-x-bold';
+    text-transform: none;
     font-size: 75px;
     color: #000;
     font-weight: bolder;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
+import { ProductosService } from "../servicios/productos.service";
 
 @Component({
   selector: 'app-survival',
@@ -70,9 +71,12 @@ export class SurvivalComponent implements OnInit {
     console.log('beforeChange');
   }
 
-  constructor() { }
+  constructor(private _productSupervivencia:ProductosService) { }
+
+  public productosSupervivencia:Array<any> = [];
 
   ngOnInit() {
+    this.productosSupervivencia = this._productSupervivencia.getProductosSupervivencia();
   }
 
 }

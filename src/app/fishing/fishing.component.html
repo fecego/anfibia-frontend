@@ -1,4 +1,4 @@
-<div style="margin-bottom: 0; padding-bottom: 0;">
+<div>
     <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" width="100%">
         <source src="assets/videos/pesca2.mp4" type="video/mp4">
     </video>
@@ -42,21 +42,27 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-12 texto-image-background"> 
       <h1>Pesca</h1>
       <hr>
-      <p >Encontrarás nuestros más nuevos y destacados productos de pesca, además de promociones relacionadas a dicha actividad.</p>
+      <p >Bienvenido a la tribu, Pescador, preparate para la aventura, equipate con nosotros y conviertete en el lider de la tribu.</p>
       <div class="flex dark">
           <a href="#0" class="bttn-dark">Ir a la tienda</a>
         </div>
     </div>
   </div>
-  <div class="row" style="padding-top: 20px;" data-aos="fade-down"
+  <div class="row" style="padding-top: 20px;" data-aos="fade-up"
   data-aos-easing="linear"
   data-aos-duration="1000">
-   <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
+      <h1>ANFIBIA PESCA</h1>
+      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos recientemente adquiridos, así como también
+        encontrarás nuestros productos destacados, promociones, entre otras cosas.
+      </p>
+    </div>
+    <div class="col-12 col-sm-8 col-md-8 col-lg-8">
        
-           <img src="/assets/imagenes/paginaInicial/1916.jpg" alt="" class="publicidad1">
-          
+      <img src="/assets/imagenes/paginaInicial/1916.jpg" alt="" class="publicidad1">
+     
 
-      </div>
+ </div>
 
  </div>
 </div>
@@ -73,26 +79,28 @@
       <div class="container" >
     
 
-        <div class="row" data-aos="fade-down"
+        <div class="row" data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="1000">
             <div class="col-sm-12 product-Title">
                  <h1>Productos nuevos</h1>
+                 <p>Te presentamos algúnas de nuestras recientes adquisiciones</p>
                  
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="product-card">
-                    <div class="badge">Nuevo</div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
+                <div class="product-card" *ngIf="i<4">
+                    <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
+                    <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
                     <div class="product-tumb">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                        <img src="{{productoPesca.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                         onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
                     </div>
                     <div class="product-details">
-                        <span class="product-catagory">CARRETES Yellow Tail</span>
+                        <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
                      
-                        <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                        <h4><a href="">{{productoPesca.nombre}}</a></h4>
                         <div class="product-price">
-                          <h5>$230.98</h5>
+                          <h5>${{productoPesca.precio}}</h5>
                           <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                       </div>
                         
@@ -104,7 +112,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+               <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="product-card">
                     <div class="badge">Nuevo</div>
                     <div class="product-tumb">
@@ -120,7 +128,7 @@
                           <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                         </div>
                         
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                         <div class="product-bottom-details">
                         </div>
                           <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
@@ -145,7 +153,7 @@
                           <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                         </div>
                         
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                         <div class="product-bottom-details">
                             
                            
@@ -188,7 +196,7 @@
                     </div>
                 </div>
     
-               </div>
+               </div>-->
     
  
         </div>
@@ -199,16 +207,18 @@
    </div>
 
     <div class="container-fluid">
-       <div class="row" data-aos="fade-down"
-       data-aos-easing="linear"
-       data-aos-duration="1000">
-           <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;">
+       <div class="row" >
+           <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
+           data-aos-easing="linear"
+           data-aos-duration="1000">
            
                 <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
                
 
            </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;">
+           <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
+           data-aos-easing="linear"
+           data-aos-duration="1000">
             
                 <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
                
@@ -234,17 +244,20 @@
 <div class="container-fluid">
   <div class="row">
     <div class="container" style="position: relative;">
-      <div class="row" data-aos="fade-down"
+      <div class="row" data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000">
          <div class="col-sm-12 seccion-productos-extras">
+           
              <h1>Más productos nuevos</h1>
             
-            <div class="row"  data-aos="fade-down"
+            <div class="row"  data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="1000">
-             <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
+             <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoPesca of productosPesca; index as i; let index = i">
+                 <div class="wrapper" *ngIf="i<6">
+                  <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
+                  <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
                      <div class="product-img">
                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
                      </div>
@@ -264,7 +277,7 @@
                    </div>
      
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+               <!--<div class="col-12 col-sm-6 col-md-6 col-lg-4">
                  <div class="wrapper">
                      <div class="product-img">
                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
@@ -368,7 +381,7 @@
                      </div>
                    </div>
      
-                </div>
+                </div>-->
      
             </div>
            
@@ -379,8 +392,9 @@
   </div>
 
 </div>
-
-<div class="container-fluid">
+<br>
+<div class="container-fluid" style="background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);">
  <div class="row">
    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
     <ngx-slick-carousel class="carousel" 
@@ -405,7 +419,9 @@
 <div class="container-fluid categorias-content" >
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
-            <h1>Categorías de <span>PESCA</span></h1>
+            <h1>Categorías de <span>Pesca</span></h1>
+            <p>Visita nuestros productos de acuerdo a su clasificación, contamos con las siguientes categorías</p>
+            <hr>
         </div>
 
     </div>
@@ -413,30 +429,47 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
         <div class="gallery-wrap">
             <div class="item item-1 ">
+                <div class="item-div">
+                  
+                  <h2><a href="">Anzuelos</a></h2>
+                  <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+                </div>
                 
-                <h2><a href="">Anzuelos</a></h2>
+               
                 
             </div>
             <div class="item item-2">
-               
+               <div>
                 <h2><a href="">Cañas</a></h2>
+               <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+               </div>
+                
                
               
             </div>
             <div class="item item-3">
-              
+              <div>
                 <h2><a href="">Carretes</a></h2>
+                <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+              </div>
+                
                
             </div>
             <div class="item item-4">
                 
+               <div>
                 <h2><a href="">Accesorios</a></h2>
+                <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+               </div>
                
                
             </div>
             <div class="item item-5">
              
-                <h2><a href="">Kayaks</a></h2>
+                <div>
+                  <h2><a href="">Kayaks</a></h2>
+                <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+                </div>
                 
                
             </div>
@@ -444,8 +477,18 @@
       </div>
 
     </div>
+   
+ 
+
+
+
+   
 
 </div>
+
+
+
+ 
 <div class="container-fluid">
   <div class="row">
     <div class="container" style="margin-top: 30px;">
@@ -454,9 +497,35 @@
       data-aos-duration="1000">
           <div class="col-sm-12 product-Title">
                <h1>Productos destacados</h1>
+               <p>Te presentamos algúnos de los productos que más le gustan a nuestros clientes</p>
               
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12" >
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
+            <div class="product-card" *ngIf="i<4">
+                <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
+                <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+                <div class="product-tumb">
+                    <img src="{{productoPesca.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                    onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                 
+                    <h4><a href="">{{productoPesca.nombre}}</a></h4>
+                    <div class="product-price">
+                      <h5>${{productoPesca.precio}}</h5>
+                      <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </div>
+                    
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <div class="product-bottom-details"> 
+                    </div>
+                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                      <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                </div>
+            </div>
+           </div>
+             <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="product-card">
                   <div class="badge">Nuevo</div>
                   <div class="product-tumb">
@@ -472,7 +541,7 @@
                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                     </div>
                       
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                       <div class="product-bottom-details">
                           
                          
@@ -502,7 +571,7 @@
                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                     </div>
                       
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                       <div class="product-bottom-details">
                           
                          
@@ -532,7 +601,7 @@
                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                     </div>
                       
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                       <div class="product-bottom-details">
                           
                          
@@ -545,37 +614,7 @@
                   </div>
               </div>
   
-             </div>
-             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="product-card">
-                  <div class="badge">Nuevo</div>
-                  <div class="product-tumb">
-                      <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                      onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-                  </div>
-                  <div class="product-details">
-                      <span class="product-catagory">CARRETES Yellow Tail</span>
-                   
-                      <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                      <div class="product-price">
-                        <h5>$230.98</h5>
-                      <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                    </div>
-                      
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                      <div class="product-bottom-details">
-                          
-                         
-                      </div>
-    
-                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                        <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       
-                  
-                  </div>
-              </div>
-  
-             </div>
+             </div>-->
   
   
       </div>
@@ -584,23 +623,19 @@
   </div>
 
 </div>
-<div class="container-fluid">
+<div class="container-fluid" style="background: #000;">
     <div class="row"  data-aos="fade-down"
     data-aos-easing="linear"
     data-aos-duration="1000">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+        <div class="col-lg-6 col-md-4 col-sm-12 col-12 texto-publicidad2">
          
-             <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
-           
+            <h1>ANFIBIA</h1>
+            <p>Visita nuestra tienda, contamos con una gran variedad de Anzuelos, Carretes, Cañas, Kayaks, Accesorios de Pesca y más</p>
+              
 
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-         
-             <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
-            
-
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+        
+        <div class="col-lg-6 col-md-4 col-sm-12 col-12">
          
           <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
          
@@ -622,28 +657,30 @@
              <div class="row"  data-aos="fade-down"
              data-aos-easing="linear"
              data-aos-duration="1000">
-              <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
+             <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoPesca of productosPesca; index as i; let index = i">
+              <div class="wrapper" *ngIf="i<6">
+               <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
+               <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+                  <div class="product-img">
+                    <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
+                  </div>
+                  <div class="product-info">
+                    <div class="product-text">
+                      <h2>Caña de pescar Kiriktsyo </h2>
+                      
+                      
+                      <div class="product-price2">
+                        <h5>$230.99</h5>
                       </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
+                          <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                          <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                     </div>
-      
-                 </div>
-                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    
+                  </div>
+                </div>
+  
+             </div>
+               <!--<div class="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="wrapper">
                       <div class="product-img">
                         <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
@@ -749,7 +786,7 @@
                       </div>
                     </div>
       
-                 </div>
+                 </div>-->
       
           </div>
          

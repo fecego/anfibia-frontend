@@ -347,19 +347,20 @@
        
         <div class="row">
           <!--Estilo nuevo del carrito-->
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoTienda of productosTienda; index as i; let index=i;">
             <div class="product-card">
-              <div class="badge">Nuevo</div>
+              <div class="badge" *ngIf="productoTienda.nuevo">Nuevo</div>
+              <div class="badge2" *ngIf="productoTienda.destacado">Destacado</div>
               <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  <img src="{{productoTienda.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                   onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/029977_1.png'">
               </div>
               <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
+                  <span class="product-catagory">{{productoTienda.categoria}} {{productoTienda.marca}}</span>
                
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                  <h4><a href="" (click)="abreProducto()">{{productoTienda.nombre}}</a></h4>
                   <div class="product-price">
-                    <h5>$230.98</h5>
+                    <h5>${{productoTienda.precio}}</h5>
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
@@ -369,16 +370,16 @@
                      
                   </div>
 
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#miModal">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                    <button class="product-links-wish" (click) = "productoModal(productoTienda)" type="button" data-toggle="modal" data-target="#miModal">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-bag" (click) = "crearProducto(productoTienda)" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                    
               
               </div>
           </div>
       
            </div>
-         <!--Cierre de las etiquetas-->
-         <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+     
+         <!--<div class="col-12 col-sm-6 col-md-6 col-lg-4">
           <div class="product-card">
             <div class="badge">Nuevo</div>
             <div class="product-tumb">
@@ -394,7 +395,7 @@
                 <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
               </div>
                 
-                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                 <div class="product-bottom-details">
                     
                    
@@ -424,7 +425,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -454,7 +455,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -484,7 +485,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -514,7 +515,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -544,7 +545,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -574,7 +575,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -604,7 +605,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -634,7 +635,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -664,7 +665,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -694,7 +695,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -724,7 +725,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -754,7 +755,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -784,7 +785,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -814,7 +815,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -844,7 +845,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -874,7 +875,7 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -903,37 +904,7 @@
                     <h5>$230.98</h5>
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -963,7 +934,37 @@
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                   
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                  <div class="product-bottom-details">
+                      
+                     
+                  </div>
+
+                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                   
+              
+              </div>
+          </div>
+      
+           </div>
+           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card">
+              <div class="badge">Nuevo</div>
+              <div class="product-tumb">
+                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+              </div>
+              <div class="product-details">
+                  <span class="product-catagory">CARRETES Yellow Tail</span>
+               
+                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                  <div class="product-price">
+                    <h5>$230.98</h5>
+                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
+                  
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                   <div class="product-bottom-details">
                       
                      
@@ -979,7 +980,7 @@
            </div>
       
 
-        </div>
+        </div>-->
 
        
        
