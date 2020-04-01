@@ -3,6 +3,10 @@
         font-family: 'Prometo-light';
     }
 
+    .container{
+        margin-bottom: 100px;
+    }
+
     .regresar{
         margin-top: 40px;
     }
@@ -126,7 +130,7 @@
     }
 
     .pago{
-        
+        margin-top: 80px;
         margin-bottom: 30px;
         padding-bottom: 30px;
        
@@ -155,7 +159,7 @@
         background: transparent !important;
     }
 
-    .pedido .datos {
+    .pedido  {
         background-color: #DADADA;
         margin-bottom: 50px;
         padding-bottom: 30px;

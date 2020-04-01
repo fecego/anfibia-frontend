@@ -13,12 +13,47 @@
         color: black;
         letter-spacing: 0.1em;
     }
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                h1{
+                    font-size: 45px;
+                }
+            }
+
+    .pedido h3{
+        margin-left: 50px;
+        font-size: 18px;
+    }
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .pedido h3{
+                    margin-left: 30px;
+                }
+            }
 
     .productos img{
         width: 100%;
         margin-bottom: 20px;
     }
 
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .productos img {
+                    width: 60%;
+                }
+            }
+            
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .productos img{
+                    width: 40%;
+                    margin-bottom: 0;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .productos img{
+                    width: 30%;
+                }
+            }
+            
     .content{
         border-bottom: 1px solid #6D6B6B;
         margin-bottom: 20px;
@@ -31,6 +66,36 @@
         background-color: transparent;
         border: none;
     }
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .productos .content .eliminar{
+                    margin-left: 420px;
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .productos .content .eliminar{
+                    margin-left: 210px;
+                    font-size: 20px;
+                }
+                .product{
+                    margin-left: -100px;
+                }
+            }
+
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .productos .content .eliminar{
+                    margin-left: 290px;
+                    font-size: 17px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .productos .content .eliminar{
+                    margin-left: 290px;
+                    font-size: 17px;
+                }
+            }
 
     .productos .content h2{
         font-size: 18px;
@@ -93,7 +158,7 @@
 
     .input-group {
         clear: both;
-        margin: 15px 2%;
+        margin: 15px 0%;
         position: relative;
     }
 
@@ -101,7 +166,7 @@
         background: #fff;
         border: 2px solid #000;
         color: #000;
-        min-width: 20%;
+        min-width: 10%;
         width: auto;
         transition: all 300ms ease;
     }
@@ -122,13 +187,13 @@
 
     .input-group .quantity-field {
         position: relative;
-        height: 50px;
-        left: -6px;
+        height: 42px;
+        left: -5px;
         text-align: center;
-        width: 100px;
+        width: 10%;
         display: inline-block;
         font-size: 13px;
-        margin: 0 8px 0 8px;
+        margin: 0 10px 0 8px;
         resize: vertical;
         background: #000;
         color: #fff;
@@ -153,6 +218,26 @@
         background-color: #F1F1F1;
         height: 700px;
     }
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .btn-info{
+                    font-size: 13px;
+                    margin-left: -20px;
+                }
+            }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .pedido{
+                    background-color: #F1F1F1;
+                    height: 800px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .pedido{
+                    background-color: #F1F1F1;
+                    height: 800px;
+                }
+            }
 
     .pedido h4{
         margin-top: 20px;
@@ -231,6 +316,23 @@
     .pedido .iconos{
         margin-left: 85px;
     }
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .pedido .iconos{
+                    margin-left: 170px;
+                }
+            }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .pedido .iconos{
+                    margin-left: 70px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .pedido .iconos{
+                    margin-left: 100px;
+                }
+            }
 
     .pedido .info4 .iconos span i{
         font-size: 30px;

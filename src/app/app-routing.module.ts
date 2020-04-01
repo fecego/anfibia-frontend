@@ -29,6 +29,7 @@ import { PoliticasPrivacidadComponent } from './politicas-privacidad/politicas-p
 import { PoliticasComprasComponent } from './politicas-compras/politicas-compras.component';
 import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politicas-devoluciones.component';
 import { EnviosComponent } from './envios/envios.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 const routes: Routes = [
@@ -73,4 +74,4 @@ export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, PedidosComponent]

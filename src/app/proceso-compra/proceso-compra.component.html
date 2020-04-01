@@ -12,24 +12,24 @@
             <h1>Mi información</h1>
         </div>
     </div>
-    <!--Información sobre direcciones-->
+    <!--INFORMACIÓN DEL CLIENTE-->
     <div class="row">
+        <!--DIRECCIONES-->
         <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 informacion">
-            <!-- Trigger the modal with a button -->
+            <!--MODAL DE ENTREGRAS-->
             <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
             </div>  
             <h2>Envío</h2>
             <h3><b>Tipo de envío</b></h3>
             <p>Entrega estándar (5-7 días, $100.00)</p>
-            
             <h3><b>Dirección de envío</b></h3>
             <p>Karla Veronica Sánchez Díaz, Calle cerrada San Luis #107, Fraccionamiento el Roble, 93610, 
             Martinez de la Torre, Veracruz, México.<br>+52 232 138 76 65</p>
             <div class="d-flex justify-content-end">
                 <a class="btn-ldireccion btn-direccion" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar una nueva dirección <i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
-            <!--Agregar una dirección-->
+            <!--AGREGAR UNA NUEVA DIRECCIÓN-->
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
                     <div class="row">
@@ -103,6 +103,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
@@ -128,6 +129,91 @@
                     </div>
                 </div>
             </div>
+            <!--AGREGAR UNA NUEVA DIRECCIÓN-->
+            
+            <!--PAGOS-->
+            <div class="col-lg-12 col-md-8 col-sm-12 col-xs-12 pago">
+                <!--MODAL DE PAGOS-->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
+                </div>  
+                <h2>información de pago</h2>
+                <div id="myGroup1" class="container col-lg-12">
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"> Content 1 </button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"> Content 2 </button>
+                    </p>
+                    <div id="collapseExample1" class="collapse" data-parent="#myGroup1">
+                        <div class="card card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="num">Número de tarjeta:</label>
+                                            <input type="text" class="form-control" id="num" placeholder="XXXX XXXX XXXX XXXX">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre">
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label>Fecha de expiración:</label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="dia" placeholder="Día">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="año" placeholder="Año">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+            
+                                    <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="seg">Número de seguridad</label>
+                                            <input type="text" class="form-control" id="seg" placeholder="CCV">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="collapseExample2" class="collapse" data-parent="#myGroup1">
+                        <div class="card card-body">Content 2 here</div>
+                    </div>
+                </div>
+                
+                
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">  
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button style="padding-right: 10px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <h1>ENTREGAS</h1>
+                                    <hr>                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+           
             
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
@@ -145,28 +231,13 @@
                 </div>
             </div>
         </div>
-        
-        
-        <!--Información sobre direcciones-->
+        <!--DIRECCIONES-->
         
 
         <!--Información sobre el pedido que se realizo-->
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pedido">
             <h2>Pedido</h2>
             <hr>
-            <div class="row" style="margin-bottom: 40px;">
-                <h3>AGREGA TU CÓDIGO DE DESCUENTO</h3>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <form>
-                        <div class="form-group">
-                          <input class="form-control" id="inputdefault" type="text" placeholder="Código">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <button type="button" class="btn btn-info ">Aplicar descuento</button>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h5>Total del pedido: </h5>
@@ -231,72 +302,10 @@
         
     </div>
 
-    <div class="row">
-        <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 pago">
-            <!-- Trigger the modal with a button -->
-            <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
-            </div>  
-            <h2>información de pago</h2>
-            <form>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <label for="num">Número de tarjeta:</label>
-                            <input type="text" class="form-control" id="num" placeholder="XXXX XXXX XXXX XXXX">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <label>Fecha de expiración:</label>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="dia" placeholder="Día">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="año" placeholder="Año">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <label for="seg">Número de seguridad</label>
-                            <input type="text" class="form-control" id="seg" placeholder="CCV">
-                        </div>
-                    </div>
-                </div>
-            </form>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">  
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button style="padding-right: 10px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h1>ENTREGAS</h1>
-                            <hr>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
 </div>
+
+
+
+
 

@@ -18,10 +18,30 @@
         font-size: 18px;
         text-align: center;
     }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                h3{
+                    font-size: 15px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                h3{
+                    font-size: 15px;
+                }
+            }
 
     .form  {
         border-right: 1px solid #DAD9D8;
     }
+            /*Media query en tablets vertical*/
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .form{
+                    border-right: 0px;
+                    border-bottom: 1px solid #DAD9D8;
+                    margin-bottom: 40px;
+                }
+            }
 
     
 
@@ -220,22 +240,62 @@
 
     h4{
         margin-top: 40px;
-        text-align: center;
+        margin-left: 190px;
         font-size: 20px;
         font-family: 'Prometo-medium';
     }
 
     section{
         width: 400px;
-        margin-left: 165px;
+        margin-left: 200px;
         margin-top: 30px;
     }  
                 /*Media query en tablets horizontal*/
                 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
-                    .section{
+                    h4{
+                        margin-left: 125px;
+                    }
+                    section{
                         width: 400px;
-                        margin-left: 65px;
+                        margin-left: 130px;
                         margin-top: 30px;
+                    }
+                }
+
+                /*Media query en tablets vertical*/
+                @media only screen and (max-width: 768px) and (min-width: 641px){
+                    h4{
+                        margin-left: 125px;
+                    }
+                    section{
+                        width: 400px;
+                        margin-left: 125px;
+                        margin-top: 30px;
+                        margin-bottom: 50px;
+                    }
+                }
+                /*Media query en celulares vertical*/
+                @media only screen and (max-width: 390px) and (min-width: 321px){
+                    h4{
+                        margin-left: 60px;
+                    }
+                    section{
+                        width: 400px;
+                        margin-left: 60px;
+                        margin-top: 30px;
+                        margin-bottom: 50px;
+                    }
+                }
+
+                @media only screen and (max-width: 567px) and (min-width: 392px){
+                    h4{
+                        margin-left: 70px;
+                    }
+                    section{
+                        width: 400px;
+                        margin-left: 70px;
+                        margin-top: 30px;
+                        margin-bottom: 50px;
                     }
                 }
       
