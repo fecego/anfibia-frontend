@@ -1,167 +1,244 @@
     
     .container {
-        margin-top: 50px;
-        font-family: 'Prometo-light';
-        font-size: 17px;
-        margin-bottom: 100px;
+      margin-top: 50px;
+      font-family: 'Prometo-light';
+      font-size: 17px;
+      margin-bottom: 100px;
     }
 
     .titulo h1{
-        margin-top: 30px;
-        position: relative;
-        text-align: center;
-        font-size: 80px;
-        font-family: 'Prometo-x-bold';
-        color: black;
-        letter-spacing: 0.1em;
+      margin-top: 30px;
+      position: relative;
+      text-align: center;
+      font-size: 80px;
+      font-family: 'Prometo-x-bold';
+      color: black;
+      letter-spacing: 0.1em;
     }
 
     .menu h2{
-        margin-left: 0px;
-        margin-top: 0px;
-        font-family: 'Prometo-X-bold';
-        font-size: 20px;
-        text-align: left;
+      margin-left: 0px;
+      margin-top: 0px;
+      font-family: 'Prometo-X-bold';
+      font-size: 20px;
+      text-align: left;
     }
+      
+    /*Media query en tablets vertical*/
+      @media only screen and (max-width: 768px) and (min-width: 641px){
+        .menu{
+          display: none;
+        }
+      }
+    /*Media query en celulares vertical*/
+      @media only screen and (max-width: 390px) and (min-width: 321px){
+        .menu{
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 567px) and (min-width: 392px){
+        .menu{
+          display: none;
+        }
+      }
 
     .nav-item a{
-        color: black;
+      color: black;
     }
 
     .menu p{
-        margin-left: 15px;
-        text-align: justify;
+      margin-left: 15px;
+      text-align: justify;
     }
+    
+    /*Media query en tablets horizontal*/
+      @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        .menu p{
+          margin-left: 0;
+          text-align: left;
+        }
+      }
 
     .help li{
-        margin-left: 15px;
-        list-style: none;
+      margin-left: 15px;
+      list-style: none;
     }
+        
+    /*Media query en tablets horizontal*/
+      @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        .help li{
+          margin-left: 5px;
+        }
+      }
 
     .menu{
-        border-right: 1px solid #DAD9D8;
-        top: 0px;  
+      border-right: 1px solid #DAD9D8;
+      top: 0px;  
     }
 
     .card h2{
-        font-family: 'Prometo-medium';
-        font-size: 20px;
-        margin-left: 10px;
+      font-family: 'Prometo-medium';
+      font-size: 20px;
+      margin-left: 10px;
     }
 
     .card h3{
-        font-size: 18px;
-        margin-left: 10px;
+      font-size: 18px;
+      margin-left: 10px;
     }
 
     .card img{
-        margin-top: 20px;
-        width: 100%;
-        margin-left: 10px;
+      margin-top: 20px;
+      width: 100%;
+      margin-left: 10px;
     }
 
     .card .detalles{
-        margin-top: 30px;
+      margin-top: 30px;
     }
+    /*Media query en celulares vertical*/
+      @media only screen and (max-width: 390px) and (min-width: 321px){
+        .card .detalles{
+          text-align: center;
+        }
+      }
+
+      @media only screen and (max-width: 567px) and (min-width: 392px){
+        .card .detalles{
+          text-align: center;
+        }
+      }
 
     .card .detalles a{
-        color: #037775;
-        font-size: 19px;
-        text-transform: uppercase;
+      color: #037775;
+      font-size: 19px;
+      text-transform: uppercase;
     }
 
-  
-
     .wrapper {
-        margin: 0 auto;
-        width: 100%;
-        font-family: 'Helvetica';
-        font-size: 14px;
+      margin: 0 auto;
+      width: 100%;
+      font-family: 'Prometo-light';
+      font-size: 14px;
+    }
+
+    /*Media query en tablets vertical*/
+      @media only screen and (max-width: 768px) and (min-width: 641px){
+        .wrapper{
+          margin-top: 50px;
+          font-size: 15px;
+          margin-left: 150px;
+          }
+        }
+    /*Media query en celulares vertical*/
+      @media only screen and (max-width: 390px) and (min-width: 321px){
+        .wrapper{
+          margin-left: 100px;
+          margin-top: 50px;
+        }
       }
-      .step-progress {
-        position: relative;
-        padding-left: 20px;
-        list-style: none;
-      }
-      .step-progress::before {
-        display: inline-block;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0px;
-        width: 10px;
-        height: 100%;
-        border-left: 2px solid #ccc;
-      }
-      .step-progress-item {
-        position: relative;
-        counter-increment: list;
-        padding-top: 10px;
-        padding-left: 15px;
-      }
-      .step-progress-item:not(:last-child) {
-        padding-bottom: 50px;
-      }
-      .step-progress-item::before {
-        display: inline-block;
-        content: '';
-        position: absolute;
-        left: -21px;
-        height: 100%;
-        width: 10px;
-      }
-      .step-progress-item::after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: -38px;
-        width: 32px;
-        height: 32px;
-        border: 2px solid #ccc;
-        border-radius: 50%;
-        background-color: #fff;
-      }
-      .step-progress-item.is-done::before {
-        border-left: 2px solid #00417b;
-      }
-      .step-progress-item.is-done::after {
-        background-color: #00417b;
-        font-size: 20px;
-        color: #fff;
-        text-align: center;
-        border: 2px solid #00417b;
-      }
+
+      @media only screen and (max-width: 567px) and (min-width: 392px){
+        .wrapper{
+          margin-left: 100px;
+          margin-top: 50px;
+        }
+      } 
+
+
+    .step-progress {
+      position: relative;
+      padding-left: 20px;
+      list-style: none;
+    }
       
-      .step-progress-item.current::before {
-        border-left: 2px solid #00417b;
-      }
-      .step-progress-item.current::after {
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 32px;
-        height: 32px;
-        top: 0;
-        left: -38px;
-        font-size: 14px;
-        text-align: center;
-        color: #00417b;
-        border: 2px solid #00417b;
-        background-color: white;
-      }
-      .step-progress strong {
-        display: block;
-      }
+    .step-progress::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0px;
+      width: 10px;
+      height: 100%;
+      border-left: 2px solid #ccc;
+    }
 
-      .pedido .btn {
-        width: 100%;
-        color: #fff;
-        background-color: #393939;
-        text-align: center !important; 
-        border-color: #393939;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .step-progress-item {
+      position: relative;
+      counter-increment: list;
+      padding-top: 10px;
+      padding-left: 15px;
+    }
+      
+    .step-progress-item:not(:last-child) {
+      padding-bottom: 50px;
+    }
+      
+    .step-progress-item::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      left: -21px;
+      height: 100%;
+      width: 10px;
+    }
+      
+    .step-progress-item::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -38px;
+      width: 32px;
+      height: 32px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+    
+    .step-progress-item.is-done::before {
+      border-left: 2px solid #00417b;
+    }
+      
+    .step-progress-item.is-done::after {
+      background-color: #00417b;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      border: 2px solid #00417b;
+    }
+      
+    .step-progress-item.current::before {
+      border-left: 2px solid #00417b;
+    }
+      
+    .step-progress-item.current::after {
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      left: -38px;
+      font-size: 14px;
+      text-align: center;
+      color: #00417b;
+      border: 2px solid #00417b;
+      background-color: white;
+    }
+      
+    .step-progress strong {
+      display: block;
+    }
 
+    .pedido .btn {
+      width: 100%;
+      color: #fff;
+      background-color: #393939;
+      text-align: center !important; 
+      border-color: #393939;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }

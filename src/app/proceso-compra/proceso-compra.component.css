@@ -5,6 +5,8 @@
 
     .container{
         margin-bottom: 100px;
+        margin-top: 100px;
+        font-family: 'Prometo-light';
     }
 
     .regresar{
@@ -21,11 +23,6 @@
     .regresar i{
         font-size: 25px;
         padding-right: 10px;
-    }
-
-    .container{
-        margin-top: 100px;
-        font-family: 'Prometo-light';
     }
 
     .titulo h1{
@@ -83,30 +80,6 @@
         border: 0;
     }
 
-    .modal-body h1{
-        font-family: 'Prometo-medium';
-        font-size: 30px;
-        letter-spacing: 3px;
-    }
-
-    .modal-body .card {
-        border: none;
-        margin-bottom: 20px;
-        margin-top: 10px;
-      }
-      
-    .modal-body .card h2 {
-          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
-          background-size: 20px;
-          cursor: pointer;
-          font-size: 18px;
-          font-family: 'Prometo-medium';
-      }
-      
-    .modal-body .card .collapsed {
-          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
-    }
-
     .informacion .btn .btn-info {
         color: #fff;
         background-color: #393939;
@@ -133,7 +106,6 @@
         margin-top: 80px;
         margin-bottom: 30px;
         padding-bottom: 30px;
-       
     }
 
     .pago h2{
@@ -159,12 +131,106 @@
         background: transparent !important;
     }
 
+    .pagoos{
+        margin-top: -80px;
+    }
+
+    .pagoos button {
+        width: 45%;
+        margin-right: 0px;
+        margin-left: 20px;
+        padding: 5px 0 5px 0;
+        color:#fff;
+        background-color: #393939 !important; 
+        text-align: center !important; 
+        border-color: #393939 !important; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }   
+            /*Media query en tablets horizontal*/
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .pagoos button{
+                    margin-left: 15px;
+                }
+            }
+            /*Media query en tablets vertical*/
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .pagoos button{
+                    margin-left: 17px;
+                    font-size: 17px;
+                }
+            }
+
+            /*Media query en celulares vertical*/
+             @media only screen and (max-width: 390px) and (min-width: 321px){
+                .pagoos button{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .pagoos button{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    font-size: 17px;
+                }
+            }
+
+
+    .modal-body h1{
+        font-family: 'Prometo-medium';
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    .modal-body .card {
+        border: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+      
+    .modal-body .card h2 {
+          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+          background-size: 20px;
+          cursor: pointer;
+          font-size: 18px;
+          font-family: 'Prometo-medium';
+      }
+      
+    .modal-body .card .collapsed {
+          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+    }
+
+
     .pedido  {
         background-color: #DADADA;
+        max-height: 750px;
         margin-bottom: 50px;
         padding-bottom: 30px;
-        
     }
+            /*Media query en tablets vertical*/
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .pedido{
+                    max-height: 850px;
+                }
+            }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                 img{
+                    width: 20%;
+                }
+            }
+         
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                 img{
+                    width: 20%;
+                }
+            }
 
     .pedido h2{
         font-size: 25px;
@@ -180,16 +246,26 @@
     }
 
     .pedido h5{
-        font-size: 18px;
-        
+        font-size: 18px; 
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .pedido h5{
+                font-size: 13px;
+            } 
+        }
+
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .pedido h5{
+                font-size: 13px;
+            } 
+        }
 
     .pedido h6{
-        font-size: 18px;
-        text-align: right;
-        
+        font-size: 18px; 
+        text-align: right !important;
     }
-
+    
     .pedido .btn {
         width: 100%;
         color: #fff;
@@ -251,18 +327,27 @@
         margin-bottom: 20px;
         margin-top: 10px;
         background-color: #DADADA;
-      }
-      
-      .card h2 {
-          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
-          background-size: 20px;
-          cursor: pointer;
-          font-size: 18px;
-          font-family: 'Prometo-medium';
-      }
-      
-      .card .collapsed {
-          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
-      }
+    }
 
-      
+    .card .btn {
+        width: 40%;
+        color: #fff;
+        background-color: #393939 !important;
+        text-align: center !important; 
+        border-color: #393939 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .card .btn{
+                    width: 70%;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .card .btn{
+                    width: 70%;
+                }
+            }

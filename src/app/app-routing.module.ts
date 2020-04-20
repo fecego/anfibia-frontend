@@ -30,6 +30,7 @@ import { PoliticasComprasComponent } from './politicas-compras/politicas-compras
 import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politicas-devoluciones.component';
 import { EnviosComponent } from './envios/envios.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { PerfilComponent} from './perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,8 @@ const routes: Routes = [
   {path: 'lista-deseos', component: WishListComponent }, 
   {path: 'carrito-compras', component: CarritoComprasComponent}, 
   {path: 'proceso-compra', component: ProcesoCompraComponent},
+  {path: 'pedidos', component: PedidosComponent},
+  {path: 'perfil', component: PerfilComponent},
   {path: '**', component: NotPageFoundComponent}
 ];
 
@@ -74,4 +77,5 @@ export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, PedidosComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, PedidosComponent, PerfilComponent
+]

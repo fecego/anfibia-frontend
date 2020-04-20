@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductosService } from './servicios/productos.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -23,7 +22,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FormsModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    CarouselModule
   ],
   providers: [ProductosService],
   bootstrap: [AppComponent]

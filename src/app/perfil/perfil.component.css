@@ -4,6 +4,19 @@
         font-family: 'Prometo-light';
     }
 
+    /*Media query en celulares vertical*/
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+        .menu{
+            display: none;
+        }
+      }
+
+    @media only screen and (max-width: 567px) and (min-width: 392px){
+        .menu{
+            display: none;
+        }
+    }
+
     h1{
         text-align: left;
         font-family: 'Prometo-x-bold';
@@ -44,6 +57,12 @@
         transition-duration: 0.4s;
         cursor: pointer;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .boton{
+                font-size: 16px;
+            }
+        }
 
     .boton1 {
         background-color: white;
@@ -80,7 +99,7 @@
 
     .menu{
         border-right: 1px solid #DAD9D8;
-        top: 0px;  
+        top: 80px;  
     }
 
     .modal-content{
