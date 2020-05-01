@@ -66,8 +66,9 @@ const routes: Routes = [
   {path: 'proceso-compra', component: ProcesoCompraComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'perfil', component: PerfilComponent},
-  {path: '**', component: NotPageFoundComponent}
+  {path: '**', component: NotPageFoundComponent} 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
