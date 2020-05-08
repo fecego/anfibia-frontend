@@ -19,7 +19,7 @@ import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { StoreOnlineComponent } from './store-online/store-online.component';
 import { ContactoComponent } from './contacto/contacto.component'
-import {IndividualProductComponent} from './individual-product/individual-product.component';
+import { IndividualProductComponent} from './individual-product/individual-product.component';
 import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
@@ -31,7 +31,6 @@ import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politic
 import { EnviosComponent } from './envios/envios.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { PerfilComponent} from './perfil/perfil.component';
-
 
 const routes: Routes = [
   {path: '', redirectTo: '/anfibia-i', pathMatch: 'full'},
