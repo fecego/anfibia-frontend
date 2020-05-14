@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "@types/aos": "^3.0.3",
     "@types/ez-plus": "^1.2.1",
     "@types/jquery": "^3.4.1",

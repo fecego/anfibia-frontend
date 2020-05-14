@@ -9,13 +9,12 @@ import { ProductosService } from './servicios/productos.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    PerfilComponent
+    PerfilComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -24,8 +23,12 @@ import { PerfilComponent } from './perfil/perfil.component';
     FormsModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
+
   ],
   providers: [ProductosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }
+
+
