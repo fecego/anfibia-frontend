@@ -7,8 +7,729 @@ Surface 3 Pro Landscape--,
 Ipad Pro Landscape--
 Ipad Mini 2.4 Landscape--*/
 
+.texto-yellow{
+    background: #000;
+    width: 100%;
+    padding: 1px;
+    height: 450px;
+}
+
+#titulo-yellow{
+    font-size: 90px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: 0px;
+    margin-top: 90px;
+    
+}
+
+.texto-yellow h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+    padding-top: 80px;
+    color: #fff;
+}
+
+.texto-yellow span{
+    color: #F7FE2E;
+    font-weight: bolder;
+}
+
+.texto-yellow p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 27px;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+.see-more{
+    font-family: 'Prometo-Medium';
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background: none;
+    border: none;
+  
+   
+  }
+
+.heart-button{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+  }
+  
+  .heart-button i{
+    color: #ffffff;
+    float: right;
+    font-size: 25px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  
+  }
+  
+  .heart-button i:hover{
+    color: #ff0000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ff0000;
+    transition: 0.5s;
+  
+  }
+#miModal{
+    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .modal-content{
+    height: auto;
+    
+   
+   
+  }
+  
+  #miModal .modal-header h1{
+    color: #000;
+    
+  }
+  
+  
+  .main-imgModal{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      padding: 50px;
+      background: #f0f0f0;
+  }
+  
+  .main-imgModal img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  
+  #miModal .modal-content{
+    background: #fff;
+    
+  }
+  
+  #miModal .modal-content img{  
+  }
+  
+  .diferente-vistaImg{
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #f0f0f0;
+  }
+  
+  .diferente-vistaImg img{
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    opacity: 0.7;
+    
+  }
+  
+  .diferente-vistaImg:hover img{
+    opacity: 1;
+  }
+  
+  
+  .diferente-vistaImg:hover{
+    transition: all 300ms ease-in; 
+    transform: scale(1.2);
+    
+   
+  }
+  .modal-textos{
+    padding: 5px;
+  }
+  
+  .modal-textos h1{
+    color: #000;
+    font-family: 'Prometo-x-bold';
+    font-size: 30px;
+  }
+  
+  .modal-textos hr{
+    background: #000;
+    height: 2px;
+    width: 100%;
+   
+  }
+  
+  .modal-textos h4 span{
+    font-family: 'Prometo-Medium';
+    font-size: 20px;
+    color: #fff;
+    background: #ff0000;
+    padding: 10px;
+  }
+  
+  
+  .modal-textos p{
+    color: #000;
+    font-family: 'Prometo-Thin';
+    font-weight: bolder;
+  }
+  
+  .basic-info{
+    padding-top: 20px;
+  }
+  
+  .basic-info h4{
+    font-family: 'Prometo-x-bold';
+    font-weight: bolder;
+    color: #000;
+    display: inline;
+   
+    
+    
+  }
+  
+   .marca{
+   color: #fff;
+    padding: 2px; 
+  }
+  
+  .modal-textos h5{
+    font-family: 'Prometo-Medium';
+    color: #000;
+    padding-top: 20px;
+  }
+  
+
+    .text-background-slide4{
+        position: absolute;
+        top: 20%;
+        right: 30%;
+    }
+
+    .text-background-slide4 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 80px;
+        color: #000;
+        line-height: 0.4em;
+    }
+
+
+    .text-background-slide4 P{
+        font-family: 'Anton', sans-serif;
+        font-weight: bolder;
+        font-size: 30px;
+        color: #04B4AE;
+    }
+
+    .text-background-slide4 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 80px;
+        color: #000;
+        line-height: 0.3em;
+    }
+
+    .text-background-slide4 span{
+        color: #04B4AE;
+    }
+
+
+
+
+
+    .text-bakcground-slide3{
+        position: absolute;
+        top: 25%;
+        left: 20%;
+    }
+
+    .text-bakcground-slide3 h1{
+        font-family: 'Anton', sans-serif;
+        color: #fff;
+        font-size: 80px;
+        line-height: 1em;
+        z-index: 1;
+        
+        
+    }
+
+    
+
+    .text-bakcground-slide3 p{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+        color: #000;
+        line-height: 1.3em;
+
+        
+        
+    }
+
+    .text-bakcground-slide3 span{
+        color: #04B4AE;
+        font-family: 'Anton', sans-serif;
+        margin-left: 40px;
+        font-size: 90px;
+        letter-spacing: 0em;
+        font-weight: bolder;
+    }
+
+
+
+
+    .text-background-slide2{
+        position: absolute;
+        left: 25%;
+        top: 20%;
+        z-index: 1;
+    }
+
+    .text-background-slide2 h1{
+        font-family: 'Julius Sans One', sans-serif;
+        font-weight: bolder;
+        color: #fff;
+        font-size: 40px;
+
+    }
+
+    .background-slide2 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 140px;
+        color: #04B4AE;
+        position: absolute;
+        top: 35%;
+        left: 25%;
+    }
+
+    .text-background-slide{
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        padding-top: 20px;
+        line-height: 0.8em;
+        
+    }
+
+    .text-background-slide p{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+        color: #000;
+        line-height: 0.8em;
+        z-index: 100;
+        position: absolute;
+        top: 10%;
+        left: 99%;
+    }
+
+
+    .text-background-slide span{
+        color: #000;
+    }
+
+    .text-background-slide #text-primero{
+        font-family: 'Anton', sans-serif;
+        font-size: 120px;
+        color: #000;
+        line-height: 0.5em;
+       
+        
+    }
+
+    .text-background-slide #text-segundo{
+        font-family: 'Anton', sans-serif;
+        font-size: 120px;
+        color: #04B4AE;
+        padding-left: 90px;
+        line-height: 0.5em;
+       
+        
+    }
+
+    .text-background-slide #text-tercero{
+        font-family: 'Anton', sans-serif;
+        font-size: 120px;
+        color: #000;
+        padding-left: 20px;
+        line-height: 0.7em;
+       
+        
+    }
+
+    .text-background-slide h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 120px;
+        color: #04B4AE;
+        margin-left: 45%;
+        letter-spacing: 5px;
+    }
+
+    .text-background-slide h3{
+        font-family: 'Anton', sans-serif;
+        color: #fff;
+        font-size: 50px;
+    }
+
+    .texto-publicidad2{
+        position: absolute;
+        top: 40%;
+        left: 10%;
+    }
+
+    .texto-publicidad2 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad2 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        line-height: 0.2em;
+    }
+
+    .texto-publicidad2 p{
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .texto-publicidad2 span{
+        color: #04B4AE;
+    }
+
+
+    .texto-publicidad1 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        color: #fff;
+    }
+    .texto-publicidad1 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        line-height: 0.2em;
+    }
+
+
+    .texto-publicidad4{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    .texto-publicidad4 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad4 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad4 span{
+        color: #ff0000;
+    }
+
+
+    .texto-publicidad5{
+        position: absolute;
+        top: 25%;
+        left: 10%;
+    }
+
+    .texto-publicidad5 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad5 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad5 span{
+        color: #04B4AE;
+    }
+
+    .texto-publicidad6{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    .texto-publicidad6 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad6 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 15px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad6 span{
+        color: #ff0000;
+    }
+
+
+    .texto-publicidad1 p{
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .texto-publicidad1 span{
+        color: #04B4AE;
+    }
+
+    .texto-fondo-imagen3{
+        position: absolute;
+        top: 65%;
+        right: 10%;
+    }
+
+    .texto-fondo-imagen3 h6{
+        font-family: 'Anton', sans-serif;
+        font-size: 50px;
+        color: #000;
+        line-height: 0.8em;
+    }
+
+    .texto-fondo-imagen3 span{
+        font-family: 'Anton', sans-serif;
+        
+        font-size: 40px;
+        color: #04B4AE;
+        margin-left: -40px;
+        line-height: 0.8em;
+
+    }
+
+    .texto-publicidad3{
+        position: absolute;
+        top: 50%;
+        left: 10%;
+    }
+
+    .texto-publicidad3 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad3 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+        color: #fff;
+
+    }
+
+    .texto-publicidad3 span{
+        color: red;
+    }
+
+    .texto-fondo-imagen{
+        position: absolute;
+        top: 15%;
+        left: 7%;
+    }
+
+
+    .texto-fondo-imagen h4{
+        font-family: 'Anton', sans-serif;
+        font-size: 80px;
+        color: #000;
+        line-height: 0.8em;
+        
+        
+    }
+
+    .texto-fondo-imagen p{
+        font-family: 'Anton', sans-serif;
+        
+        font-size: 15px;
+        color: #000;
+        line-height: 0.7em;
+    }
+
+
+    .texto-fondo-imagen span{
+        text-align: center;
+        color: #04B4AE;
+    }
+
+
+    .texto-fondo-left-imagen{
+        position: absolute;
+        top: 51%;
+        right: 3%;
+    }
+
+    .texto-fondo-left-imagen h5{
+        font-family: 'Prometo-x-bold';
+        font-size: 20px;
+        color: #000;
+    }
+
+    .texto-fondo-left-descubre{
+        position: absolute;
+        top: 45%;
+        right: 6%;
+    }
+
+    .texto-fondo-left-descubre{
+        font-family: 'Prometo-x-bold';
+        font-size: 20px;
+        color: #000;
+    }
+
+
+    .last-container h1{
+        font-family: 'Anton', sans-serif;
+        padding-top: 20px;
+        color: #000;
+        font-size: 40px;
+        text-align: left;
+        text-transform: none;
+
+    }
+
+    .last-container hr{
+        background: #04B4AE;
+        width: 20%;
+        height:3px;
+        margin-left: 0;
+
+    }
+
+    .last-container-text{
+        font-family: 'Anton', sans-serif;
+        background: #fff;
+    }
+
+    .last-container-text h1{
+        color: transparent;
+        font-size: 85px;
+        color: #000;
+        /*-webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: #000;*/
+        line-height: 1.2em;
+    }
+
+    .last-container-text p{
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 20px;
+        line-height: 0em;
+        color: #000;
+    }
+
+    .last-container-text span{
+        color: #04B4AE;
+        -webkit-text-stroke-width: 0px;
+        -webkit-text-stroke-color: #000;
+
+    }
+
+
+    .last-container-text2{
+        font-family: 'Anton', sans-serif;
+        background: #fff;
+        
+    }
+
+    .last-container-text2 h1{
+        color: transparent;
+        font-size: 70px;
+        color: #000;
+        /*-webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: #000;*/
+        line-height: 1.2em;
+    }
+
+    .last-container-text2 p{
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        line-height: 0em;
+        color: #000;
+    }
+
+    .last-container-text2 span{
+        color: #04B4AE;
+        -webkit-text-stroke-width: 0px;
+        -webkit-text-stroke-color: #000;
+
+    }
+
+    .last-text-fit-top {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+    }
+
+    .last-text-fit-top2 {
+        position: absolute;
+        top: 88%;
+        right: 5%;
+    }
+
+    .last-text-fit-y{
+        position: absolute;
+        top: 55%;
+        left: 12%;
+    }
+
+    .last-text-fit-middle {
+        position: absolute;
+        top: 55%;
+        left: 70%;
+    }
+
+    .last-text-fit{
+        padding-top: 10px;
+    }
+
+    .last-text-fit-fish2{
+        position: absolute;
+        top: 83%;
+    }
+
+    .last-container{
+        margin-top: 20px;
+       /*background-image: url('/assets/imagenes/paginaInicial/lastpicture.jpg');
+       background-position: bottom;
+       background-repeat: no-repeat;
+       background-size: cover;*/
+
+    }
+
     .texto-segundo{
         color: #fff;
+        background: #000;
 
     }
 
@@ -16,7 +737,7 @@ Ipad Mini 2.4 Landscape--*/
         font-family: 'Prometo-x-bold';
         font-size: 100px;
         text-align: center;
-        padding-top: 30%;
+        padding-top: 26%;
     }
 
     .texto-segundo h3{
@@ -67,20 +788,22 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .textos-iniciales p{
-        font-family: 'Prometo-Thin';
-        font-size: 25px; 
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 17px; 
         padding-left: 20px; 
         margin-top: 6%;
         color: #000; 
-        font-weight: bolder;
+        
         text-align: center;
     }
 
     .textos-iniciales h3{
         text-align: center;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
+        font-weight: bolder;
         margin-top: 20px;
-        font-size: 50px;
+        font-size: 60px;
+        color: #000;
     }
 
     .textos-iniciales2{
@@ -138,14 +861,11 @@ Ipad Mini 2.4 Landscape--*/
 
 
     .fondo-imagen{
-        background-image: url('/assets/imagenes/paginaInicial/kayaks.jpg');
-      
+        background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
         /* Full height */
         width: 100%;
-
-        height: 700px;
+        height: 800px;
         max-height: 100%; 
-      
         /* Create the parallax scrolling effect */
         background-position: center;
         background-repeat: no-repeat;
@@ -154,20 +874,28 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .publicidad-imagen1{
-        background-image: url('/assets/imagenes/paginaInicial/800x900-caza.jpg');
-      
+        background-image: url('/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg');
         /* Full height */
         width: 100%;
 
-        height: 700px;
+        height: 650px;
         max-height: 100%; 
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-position: center;
+        
       
         /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        
         
 
+    }
+
+    .publicidad-imagen1 img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .tex-publicidad-1{
@@ -208,48 +936,95 @@ background: rgba(0, 0, 0, 0.3);
 
 
     .publicidad-imagen2{
-        padding: 20px;
-        background-image: url('/assets/imagenes/paginaInicial/cazador.jpg');
-      
+        background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
         /* Full height */
         width: 100%;
 
-        height: 700px;
+        height: 650px;
         max-height: 100%; 
-      
-        /* Create the parallax scrolling effect */
-        background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size:100% 100%;
+        background-position: center;
+        
+        /* Create the parallax scrolling effect */
+      
 
     }
+
+    /*.publicidad-imagen2 img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+
+    }*/
 
     .publicidad-imagen3{
-        background-image: url('/assets/imagenes/paginaInicial/pescador.jpg');
+    background-image: url('/assets/imagenes/paginaInicial/Caña-ALLY1.jpg');
+     /* Full height */
+     width: 100%;
+
+     height: 650px;
+     max-height: 100%; 
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+    }
+
+    /*.publicidad-imagen3 img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+
+    }*/
+
+    .publicidad-imagen9{
+        background-image: url('/assets/imagenes/paginaInicial/abugarcia.jpg');
       
         /* Full height */
         width: 100%;
 
-        height: 700px;
+        height: 650px;
         max-height: 100%; 
-      
+        padding: 0px;
         /* Create the parallax scrolling effect */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
     }
+
+    .publicidad-imagen10{
+        background-image: url('/assets/imagenes/paginaInicial/Stella.jpg');
+      
+        /* Full height */
+        width: 100%;
+
+        height: 650px;
+        max-height: 100%; 
+        padding: 0px;
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+
+
+    
 
     
     .publicidad-imagen4{
-        background-image: url('/assets/imagenes/fishing/fishinghook.jpg');
+        background-image: url('/assets/imagenes/paginaInicial/Coronado-CJ6000.jpg');
       
         /* Full height */
         width: 100%;
 
-        height: 500px;
+        height: 450px;
         max-height: 100%; 
-      
+        padding: 0px;
         /* Create the parallax scrolling effect */
         background-position: center;
         background-repeat: no-repeat;
@@ -258,12 +1033,12 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .publicidad-imagen5{
-        background-image: url('/assets/imagenes/hunting/gun1.jpg');
+        background-image: url('/assets/imagenes/paginaInicial/stingra-st7000.jpg');
       
         /* Full height */
         width: 100%;
-
-        height: 500px;
+        padding: 0px;
+        height: 450px;
         max-height: 100%; 
       
         /* Create the parallax scrolling effect */
@@ -273,16 +1048,48 @@ background: rgba(0, 0, 0, 0.3);
 
     }
 
+
+    .publicidad-imagen6{
+        background-image: url('/assets/imagenes/paginaInicial/Torito.jpg');
+      
+        /* Full height */
+        width: 100%;
+        padding: 0px;
+        height: 450px;
+        max-height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .publicidad-imagen7{
+        background-image: url('/assets/imagenes/paginaInicial/SR15000.jpg');
+      
+        /* Full height */
+        width: 100%;
+        padding: 0px;
+        height: 450px;
+        max-height: 100%; 
+      
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
 
 
     .fondo-imagen2{
         margin-top: 40px;
-        background-image: url('/assets/imagenes/paginaInicial/fishingreel.jpg');
+        background-image: url('/assets/imagenes/paginaInicial/Cazador-3.jpg');
       
         /* Full height */
         width: 100%;
 
-        height: 700px;
+        height: 800px;
         max-height: 100%; 
       
         /* Create the parallax scrolling effect */
@@ -292,20 +1099,89 @@ background: rgba(0, 0, 0, 0.3);
 
     }
 
+    .texto-fondo-imagen2{
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        
+    }
+
+
+    .texto-fondo-imagen2 h5{
+        font-family: 'Anton', sans-serif;
+        font-size: 70px;
+        line-height: 0.5em;
+    }
+
+
+    .texto-fondo-imagen2 span{
+        font-family: 'Julius Sans One';
+        font-weight: bolder;
+        color: #FF0072;
+        font-size: 70px;
+        margin-left: 50px;
+    }
+
     .product-price h5{
-    font-size: 18px;
-    font-family: 'Prometo-x-bold';
+        font-size: 17px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        color: #000;
+        position: absolute;
+        top: 82%;
+    
+        }
+
+    .product-price h4{
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        
+        text-decoration: line-through;
+        color: #000;
+        position: absolute;
+        top: 82%;
+    
+        }
+
+    .product-price h4 span{
+        font-size: 18px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        color: #000;
+        
+       
+
+    }
+
+
+    .product-price h3{
+        font-size: 17px;
+        font-weight: bold;
+        font-family: 'Meera Inimai', sans-serif;
+        padding: 2px;
+        color: #000;
+        position: absolute;
+        top: 82%;
+    
+        }
+
+    .product-price h5{
+    font-size: 17px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
     padding: 2px;
-    color: #000;
+    color: #ff0000;
     position: absolute;
     top: 85%;
 
     }
 
-    .product-price a{
+    .product-price button{
         position: absolute;
-        top: 85%;
+        top: 3%;
         right: 5%;
+        border: none;
 
     }
 
@@ -315,12 +1191,45 @@ background: rgba(0, 0, 0, 0.3);
         
         padding-top: 3px;
     }
+
+
+    .product-price2 h6{
+        color: #000;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bolder;
+        font-size:17px;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 15%;
+    
+        }
+
+    .product-price2 h4{
+        color: #000;
+        text-decoration: line-through;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bolder;
+        font-size: 14px;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 22%;
+    }
+
+    /*.product-price h4 span{
+        font-size: 18px;
+        font-family: 'Prometo-Medium';
+        
+        color: #000;
+        
+       
+
+    }*/
     
     .product-price2 h5{
-        color: #000;
-        font-family: 'Prometo-Medium';
+        color: #ff0000;
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bolder;
-        font-size: 15px;
+        font-size: 17px;
         padding-left: 10px;
         position: absolute;
         bottom: 15%;
@@ -346,27 +1255,35 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .pi-left h2{
-        font-family: 'Prometo-x-bold';
-        font-size: 50px;
+        font-family: 'Anton', sans-serif;
+        font-size: 70px;
         text-align: center;
+        color: #000;
+        letter-spacing: 4px;
+    }
+
+    .pi-left hr{
+        background-color: #04B4AE;
+        width: 20%;
+        height: 3px;
     }
 
     .pi-left h1{
-        font-family: 'Prometo-Thin';
-        font-size: 25px; 
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 17px; 
         padding-left: 20px; 
         margin-top: 6%;
         color: #000; 
-        font-weight: bolder;
+        
         text-align: center;
     }
 
-    .pi-left span{
-        font-family:'Prometo-Thin';
+    /*.pi-left span{
+        font-family:'Prometo-Medium';
       
-        color: #000000;
+        color: #000;
         
-    }
+    }*/
 
     .publicidad-inicial{
         padding-top: 20px;
@@ -395,7 +1312,7 @@ background: rgba(0, 0, 0, 0.3);
         position: absolute;
         right: 40%;
         top: 85%;
-        color: #ffffff;
+        color: transparent;
         padding: 2px;
         background: none;
         border: none;
@@ -442,9 +1359,8 @@ background: rgba(0, 0, 0, 0.3);
         height: 200px;
         width: 100%;
         margin: 50px auto;
-        margin-bottom: 1px;
-        border-radius: 7px 7px 7px 7px;
-        background: black;
+        margin-bottom: 30px;
+        
         
     }
 
@@ -483,17 +1399,34 @@ background: rgba(0, 0, 0, 0.3);
 .product-text h1 {
   margin: 0 0 0 18px;
   padding-top: 20px;
-  font-size: 20px;
-  font-family: 'Prometo-Medium';
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Meera Inimai', sans-serif;
 }
 
-
+.product-text h2 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 15px;
+    padding-top: 2px;
+    color: #000;
+}
 
 .product-text h2 {
     margin: 0 0 0 18px;
+    padding-top: 2px;
+    font-size: 15px;
+    font-family: 'Meera Inimai', sans-serif;
+}
+
+.product-text h3 {
+    margin: 0 0 0 18px;
     padding-top: 20px;
-    font-size: 18px;
-    font-family: 'Prometo-Medium';
+    font-size: 12px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 .product-text p {
@@ -551,14 +1484,28 @@ background: rgba(0, 0, 0, 0.3);
   font-family: 'Prometo-Medium';
 }
 
-.product-price span {
+.product-price h4 span {
  
   display: inline-block;
   height: 50px;
-  font-family: 'Suranna', serif;
-  font-size: 34px;
+  font-family: 'Meera Inimai', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
 }
 
+.product-price h5 span{
+    font-family: 'Meera Inimai', sans-serif;
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+}
+
+.product-price h3 span{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
 .product-price-btn button {
  border: none;
  margin-top: 20px;
@@ -577,17 +1524,19 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .seccion-productos-extras h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         color: black;
-        font-size: 60px;
+        font-size: 40px;
+        text-align: left;
 
     }
 
     .seccion-productos-extras hr{
         height: 3px;
-        width: 50%;
-        margin-left: 0px;
-        background-color: #162953;
+        width: 20%;
+       
+        background-color: #04B4AE;
+        margin-left: 0;
     }
 
     .dark {
@@ -613,14 +1562,14 @@ background: rgba(0, 0, 0, 0.3);
       
       a.bttn-dark {
         color: #000;
-        font-size: 20px;
+        font-size: 17px;
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s ease all;
-        border: 2px solid black;
+        
       }
       a.bttn-dark:hover {
-        color: #FFF;
+        color: #fff;
       }
       a.bttn-dark:focus {
         color: #FFF;
@@ -668,6 +1617,7 @@ background: rgba(0, 0, 0, 0.3);
       }
       
       .bttn-dark {
+        font-family: 'Meera Inima', sans-serif;
         font-size: 38px;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -678,7 +1628,6 @@ background: rgba(0, 0, 0, 0.3);
         padding: 14px 0px;
         border-radius: 2px;
         position: relative;
-       
         z-index: 2;
         margin-bottom: 20px;
       }
@@ -709,6 +1658,66 @@ background: rgba(0, 0, 0, 0.3);
         right: 0;
         opacity: 1;
       }
+
+
+      a.bttn-dark2{
+        color: #fff;
+        font-size: 17px;
+        text-decoration: none;
+        -webkit-transition: 0.3s all ease;
+        transition: 0.3s ease all;
+        
+      }
+      a.bttn-dark2:hover {
+        color: #000;
+      }
+      a.bttn-dark2:focus {
+        color: #FFF;
+      }
+
+
+
+      .bttn-dark2 {
+        font-size: 38px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+        padding: 14px 4px;
+        border-radius: 2px;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+      }
+      .bttn-dark2:before {
+        -webkit-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: '';
+        background-color: #fff;
+        z-index: -1;
+      }
+      .bttn-dark2:hover:before {
+        -webkit-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+      }
+      .bttn-dark2:focus:before {
+        -webkit-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+      }
       
     .button-slide a{
         margin: 0;
@@ -723,7 +1732,7 @@ background: rgba(0, 0, 0, 0.3);
         font-family: arial;
         background: #fff;
         border: 2px solid #000;
-        padding: 6px;
+        padding: 4px;
         color: black;
         overflow: hidden;
         width: 80%;
@@ -888,6 +1897,7 @@ background: rgba(0, 0, 0, 0.3);
     }
     
     .product-card:hover{
+        
        /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -895,16 +1905,18 @@ background: rgba(0, 0, 0, 0.3);
         transform: scale(1.1);*/
     }
     
-    .badge {
+    .badge1 {
         position: absolute;
         left: 0;
-        top: 20px;
+        top: 13px;
+        font-family: 'Meera Inimai', sans-serif;
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
-        background: red;
+        background: #000;
         color: #fff;
         padding: 3px 10px;
+        border-radius: none;
     }
 
     .badge2 {
@@ -912,12 +1924,31 @@ background: rgba(0, 0, 0, 0.3);
         left: 0;
         top: 40px;
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: 700;
-        background: purple;
+        background: #ff0000;
         color: #fff;
         padding: 3px 10px;
     }
+
+   
+
+    .badge3 {
+        position: absolute;
+        right: 5px;
+        top: 47%;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: 700;
+        color: #fff;
+        background-color: #000000;
+        
+        
+        padding: 3px 10px;
+    }
+    
     
     .product-tumb {
         display: flex;
@@ -948,26 +1979,30 @@ background: rgba(0, 0, 0, 0.3);
     .product-catagory {
         display: block;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: bolder;
         text-transform: uppercase;
         color: #000;
-        margin-bottom: 18px;
+        margin-bottom: 13px;
+        font-family: 'Meera Inimai', sans-serif;
     }
     
+
     .product-details h4 a {
         font-weight: 500;
         display: block;
         margin-bottom: 18px;
-        text-transform: uppercase;
+        text-transform: none;
         color: #000000;
         text-decoration: none;
         transition: 0.3s;
         font-size: 15px;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bolder;
+        
     }
     
     .product-details h4 a:hover {
-        color: #162953;
+        color: #000;
     }
     
     .product-details p {
@@ -996,7 +2031,7 @@ background: rgba(0, 0, 0, 0.3);
     }
     
     .product-price i{
-      color: #ffffff;
+      color: transparent;
       float: right;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: #000;
@@ -1043,13 +2078,15 @@ background: rgba(0, 0, 0, 0.3);
       position: absolute;
       bottom: 3%;
       left: 3%;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
+      font-weight: bolder;
       color: #000000;
-      border: 1px solid #000000;
+      border: 1px solid #000;
       padding: 4px;
       text-decoration: none;
       font-size: 13px;
       transition: 0.5s ease-in-out;
+      border-radius: 2px;
       
     }
     
@@ -1063,13 +2100,15 @@ background: rgba(0, 0, 0, 0.3);
       position: absolute;
       bottom: 3%;
       right: 3%;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
+      font-weight: bolder;
       font-size: 13px;
       color: #000000;
-      border: 1px solid #000000;
+      border: 1px solid #000;
       padding: 4px;
       text-decoration: none;
       transition: 0.5s ease-in-out;
+      border-radius: 2px;
     }
     
     .product-links-bag:hover{
@@ -1153,17 +2192,16 @@ background: rgba(0, 0, 0, 0.3);
 
     .contenido-main h1{
         color: black;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 70px;
         text-align: center;
-        letter-spacing: 2px;
     }
 
     .contenido-main p{
         color: black;
-        font-family: 'Prometo-Light';
+        font-family: 'Anton', sans-serif;
         font-size: 30px;
-        letter-spacing: 3px;
+        letter-spacing: 1px;
         font-weight: bolder;
         text-align: center;
     }
@@ -1173,7 +2211,7 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .contenido-main hr{
-        background: #162953; height: 3px; width: 10%;
+        background: #04B4AE; height: 3px; width: 10%;
     }
 
     section{
@@ -1211,21 +2249,21 @@ background: rgba(0, 0, 0, 0.3);
     
 
     section .screen:nth-child(1){
-        background: url('/assets/imagenes/fishing/1.jpg');
+        background: url('/assets/imagenes/paginaInicial/Cazadores.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         
     }
     section .screen:nth-child(2){
-        background: url('/assets/imagenes/hunting/1.jpg');
+        background: url('/assets/imagenes/paginaInicial/1.11.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         
     }
     section .screen:nth-child(3){
-        background: url('/assets/imagenes/survival/1.jpg');
+        background: url('/assets/imagenes/paginaInicial/supervivencia.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -1254,17 +2292,15 @@ background: rgba(0, 0, 0, 0.3);
 
 
     section .screen .content h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         color: black;
         letter-spacing: 2px;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inimai', sans-serif;
         color: black;
         font-size: 20px;
-        font-weight: bolder;
-        font-weight: bold;
     
     }
     
@@ -1273,11 +2309,11 @@ background: rgba(0, 0, 0, 0.3);
     
 
     .product-Title h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         padding-top: 20px;
         color: #000;
-        font-size: 60px;
-        text-align: center;
+        font-size: 40px;
+        text-align: left;
         text-transform: none;
     }
 
@@ -1290,17 +2326,18 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .product-Title hr{
-        background: #162953;
-        width: 50%;
-        height: 3px;
+        background: #04B4AE;
+        width: 20%;
+        height:3px;
         margin-left: 0;
+        
        
     }
 
     .slides {
         padding: 0;
         width: 100%;
-        height: 420px;
+        height: 520px;
         display: block;
         margin: 0 auto;
         position: relative;
@@ -1323,7 +2360,7 @@ background: rgba(0, 0, 0, 0.3);
         top: 0;
         opacity: 0;
         width: 100%;
-        height: 420px;
+        height: 520px;
         display: block;
         position: absolute;
     
@@ -1357,7 +2394,72 @@ background: rgba(0, 0, 0, 0.3);
         background-color: rgba(255, 255, 255, .3);
         text-shadow: 0px 0px 15px rgb(119, 119, 119);
     }
+
+
+    .background-slide{
+          /* The image used */
+          background-image: url('/assets/imagenes/paginaInicial/anfibia2.jpg');
+      
+          /* Full height */
+          height: 100%; 
+          max-height: 100%; 
+          /* Create the parallax scrolling effect */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        
+    }
     
+
+    
+    .background-slide2{
+        /* The image used */
+        background-image: url('/assets/imagenes/paginaInicial/Cazador-caminando.jpg');
+    
+        /* Full height */
+        height: 100%; 
+        max-height: 100%;
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+  }
+
+
+  .background-slide3{
+    background-image: url('/assets/imagenes/paginaInicial/tirador.jpg');
+    
+    /* Full height */
+    height: 100%; 
+    max-height: 100%;
+    /* Create the parallax scrolling effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+
+  .background-slide4{
+ 
+    background-image: url('/assets/imagenes/paginaInicial/pescadoreslancha.jpg');
+    
+    /* Full height */
+    height: 100%; 
+    max-height: 100%;
+    /* Create the parallax scrolling effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  
+  }
+
+ 
+
+
+
     .slide:hover + .nav label { opacity: 0.5; }
     
     .nav label:hover { opacity: 1; }
@@ -1438,19 +2540,42 @@ background: rgba(0, 0, 0, 0.3);
         background-size: cover;
       }
 
-      .parallax {
+      .imagen-m {
         margin-top: 20px;
         /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/sunrise.jpg');
+        background-image: url('/assets/imagenes/paginaInicial/fishing-phrase1.jpg');
         /* Full height */
-        height: 100%; 
+        height: 500px;
+        max-height: 100%; 
         /* Create the parallax scrolling effect */
-        background-attachment: fixed;
+        /*background-attachment: fixed;*/
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
       }
 
+
+      .texto-m{
+          font-family: 'Oswald', sans-serif;
+          font-weight: bolder;
+          font-size: 20px;
+          text-align: center;
+          padding-top: 20%;
+          color: #000;
+      }
+      
+
+      .texto-m span{
+          font-family: 'Oswald', sans-serif;
+          color: #04B4AE;
+      }
+
+
+      .texto-m hr{
+          height: 2px;
+          background: #04B4AE;
+          width: 20%;
+      }
 /*Afecta Android phones LANDSCAPE
 HTC ONE Landscape -- Si lo afecta
 Samsung Galaxy S6 Landscape-- Si lo afecta
@@ -1589,6 +2714,7 @@ Media query usado
 
     .seccion-productos-extras h1{
         font-size: 30px;
+        
 
     }
 
@@ -1822,7 +2948,7 @@ Iphone 7 Portrait
         margin: 0 0 0 18px;
         padding-top: 20px;
         font-size: 15px;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
     }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
 import { ProductosService } from "../servicios/productos.service";
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-survival',
@@ -9,29 +10,56 @@ import { ProductosService } from "../servicios/productos.service";
 })
 export class SurvivalComponent implements OnInit {
 
+  public customOptions: OwlOptions = {
+    items: 8,
+    autoplay: true,
+    autoplayTimeout: 1500,
+    autoplayHoverPause: true,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    margin: 30,
+    
+    navSpeed: 700,
+    navText: ['ANTERIOR', 'SIGUIENTE'],
+    responsive: {
+      0: {
+        items: 1 
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
   slides = [
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: 'Este es un texto relacionado a la imagen 1'
+      img: "/assets/imagenes/survival/supervivencia4.jpg",
+      
      
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen2"
+      img: "/assets/imagenes/survival/knife2.jpg",
+      
       
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen3"
+      img: "/assets/imagenes/survival/knife1.jpg",
+     
       
     },
     {
-      img: "/assets/imagenes/paginaInicial/blackfriday.jpg",
-      titulo: 'hola',
-      texto: "Este es un texto relacionado a la imagen4"
+      img: "/assets/imagenes/survival/knife5.jpg",
+    
       
     }
   ];

@@ -1,264 +1,226 @@
+/*Afecta Computadoras--
+laptops --
+Los siguientes modelos de tablets
+ Nexus 10 Landscape--
+Surface 3 Pro Landscape--, 
+Ipad Pro Landscape--
+Ipad Mini 2.4 Landscape--*/
+@media only screen and (min-width: 1025px) {
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
 
-    .container-fluid{
-        font-family: 'Prometo-light';
     }
 
-    .regresar{
-        margin-top: 40px;
+    .textos-asuntos-legales h4{
+        font-family: 'Anton', sans-serif;
+        
     }
 
-    .regresar a{
-        color: black;
+    .textos-asuntos-legales p{
+        font-family: 'Meera Inima', sans-serif;
+    }
+}
+
+
+/*Tablets
+ipad landscape  -- Si lo afecta
+Ipad mini Landscape -- Si lo afecta
+*/
+@media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 16px;
+    }
+}
+
+/*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
+Surface Pro 3 Portrait
+*/
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
         font-size: 18px;
-        margin-left: 30px;
-        padding: 0;
     }
 
-    .regresar i{
-        font-size: 25px;
-        padding-right: 10px;
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
     }
 
-    .container{
-        margin-top: 100px;
-        font-family: 'Prometo-light';
+}
+
+
+/*
+    Afecta tablets Portrait
+    Ipad Portrait -- Lo afecta como debé ser 
+    Ipad Mini Portrait -- Lo afecta como debé ser 
+    Esta afectando el iphone 7 plus
+    iphone 7 Lanscape
+*/
+@media only screen and (max-width: 768px) and (min-width: 641px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
     }
 
-    .titulo h1{
-        text-transform: uppercase;
-        font-size: 30px;
-        letter-spacing: 2px;
-        font-family: 'Prometo-medium';
-        margin-bottom: 20px;
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
     }
 
-    .informacion{
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-        margin-right: 40px;
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+    }
+}
+
+
+/*Afecta Android phones LANDSCAPE
+HTC ONE Landscape -- Si lo afecta
+Samsung Galaxy S6 Landscape-- Si lo afecta
+Samsung Galaxy S6 Edge Landscape--Si lo afecta
+LG G5 Lansdscape -- Si lo afecta
+Afecta MISC
+BlackBerry z10  landscape
+Kindle Fire Portrait 
+Media query usado
+@media screen and (max-width: 736px) and (min-width: 320px){}
+*/
+@media screen and (max-width: 640px) and (min-width: 568px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
     }
 
-    .informacion h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-        margin-top: 15px;
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 20px;
     }
 
-    .informacion h3{
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+}
+
+
+/*Afecta 
+    Iphone 4 Landscape
+    Iphone 5 Lanscape
+    Iphone 7 plus portrait
+*/
+@media only screen and (max-width: 567px) and (min-width: 392px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 15px;
+    }
+
+}
+
+
+
+/*Celular Vertical*/
+/*Afecta 
+Android phones Portrait
+HTC ONE X Portrait  -- Si lo afecta
+Samsung Galaxy S6 Portrait -- Si lo afecta
+Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
+LG G5 Porrait -- Si lo afecta 
+Black Berry  Z10 Portrait  -- Si lo afecta
+Iphone 7 Portrait
+ */
+ @media only screen and (max-width: 390px) and (min-width: 321px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
+        
+
+    }
+
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
         font-size: 17px;
     }
 
-    .informacion p{
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
         font-size: 15px;
     }
 
-    .informacion button{
-        padding: 0;
-        color: black;
-        font-size: 20px;
-        border: 0;
-        background: transparent !important;
-    }
+ }
 
-    .btn-ldireccion {
-        color: black;
-        font-size: 15px;
-        font-family: 'Prometo-light';
-        text-align: right !important; 
-        text-decoration: none;
-       
-    }
-    
-    .informacion .btn-ldireccion i{
-        padding-left: 5px;
+  /*Iphone 4 Portrait
+Iphone 5 Portrait
+*/
+@media only screen and (max-width: 320px){
+    .textos-asuntos-legales{
+        color: #000;
+        text-align: justify;
         
+
     }
 
-    .informacion .collapse .card {
-        border: 0;
-    }
-
-    .modal-body h1{
-        font-family: 'Prometo-medium';
-        font-size: 30px;
-        letter-spacing: 3px;
-    }
-
-    .modal-body .card {
-        border: none;
-        margin-bottom: 20px;
-        margin-top: 10px;
-      }
-      
-    .modal-body .card h2 {
-          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
-          background-size: 20px;
-          cursor: pointer;
-          font-size: 18px;
-          font-family: 'Prometo-medium';
-      }
-      
-    .modal-body .card .collapsed {
-          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
-    }
-
-    .informacion .btn .btn-info {
-        color: #fff;
-        background-color: #393939;
-        width: 100%;
-        font-size: 15px;
-        font-family: 'Prometo-light';
-        text-align: center !important; 
-    }
-    
-    .informacion .btn .btn-info {
-        position: relative;
-        padding-left: 44px;
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .informacion .btn-info:hover {
-        background-color: #252525;
-    }
-
-    .pago{
-        
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-       
-    }
-
-    .pago h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-        margin-top: 15px;
-    }
-
-    .pago h3{
-        font-size: 17px;
-    }
-
-    .pago p{
-        font-size: 15px;
-    }
-
-    .pago button{
-        padding: 0;
-        color: black;
-        font-size: 20px;
-        border: 0;
-        background: transparent !important;
-    }
-
-    .pedido .datos {
-        background-color: #DADADA;
-        margin-bottom: 50px;
-        padding-bottom: 30px;
-        
-    }
-
-    .pedido h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-        margin-top: 15px;
-    }
-
-    .pedido h3{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-    }
-
-    .pedido h5{
+    .textos-asuntos-legales h4{
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
         font-size: 18px;
-        
     }
 
-    .pedido h6{
-        font-size: 18px;
-        text-align: right;
-        
-    }
-
-    .pedido .btn {
-        width: 100%;
-        color: #fff;
-        background-color: #393939;
-        text-align: center !important; 
-        border-color: #393939;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-    }
-
-    .pedido .boton {
-        margin-top: 30px;
-        text-decoration: none;
-        text-align: center;
-        padding: 10px;
-        border: none;
-        border-top: 1px solid #393939;
-        border-bottom: 1px solid #393939;
-        background-color: transparent;
-        color: black;
-        width: 100%;
-    }
-
-    .pedido .total{
-        border-top: 1px solid #393939;
-    }
-
-    .pedido h4{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-        margin: 30px 0 -20px 0;
-    }
-
-    .pedido img{
-        margin-top: 30px;
-        width: 70%;
-        margin-left: 40px;
-    }
-
-    .pedido .detalles{
-        margin-top: 40px;
-    }
-
-    .pedido .detalles dt{
+    .textos-asuntos-legales p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
         font-size: 15px;
-        text-align: left;
     }
 
-    .pedido p{
-        font-size: 12px;
-    }
+ }
 
-
-    .card {
-        border: none;
-        margin-bottom: 20px;
-        margin-top: 10px;
-        background-color: #DADADA;
-      }
-      
-      .card h2 {
-          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
-          background-size: 20px;
-          cursor: pointer;
-          font-size: 18px;
-          font-family: 'Prometo-medium';
-      }
-      
-      .card .collapsed {
-          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
-      }
-
-      

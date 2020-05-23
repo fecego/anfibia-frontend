@@ -3,7 +3,7 @@
 <div class="container-fluid producto-inicio">
     <div class="row rutas" >
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 ruta">
-            <h1><a href="">Inicio</a> / <a href="">Pesca</a> / <a href="">Carretes</a> / <a href="">Carrete Yellow Tail T04000</a>   </h1>
+            <h1><a routerLink="/tienda">tienda</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}">{{productoIndividual.clasificacion}}</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}/{{productoIndividual.categoria}}">{{productoIndividual.categoria}}</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}/{{productoIndividual.categoria}}/{{productoIndividual.idProducto}}/{{productoIndividual.nombre}}">{{productoIndividual.nombre}}</a></h1>
         </div>
     </div>
 
@@ -11,25 +11,28 @@
         <div class="col-12 col-sm-12 col-md-8 col-lg-8" style="margin-top: 30px;">
             <div class="card2">
                 <div class="top-section2">
-                  <img id="image-container2" src="/assets/imagenes/paginaInicial/carretes/042560_1.png" alt=""  data-zoom-image="/assets/imagenes/paginaInicial/carretes/042560_1.png">   
+                  <img id="image-container2" [attr.src]="productoIndividual.image[0].url">   
                 </div>
                 <div class="bottom-section2">
-                    <div class="nav2">
-                        <img id="imagen1" src="/assets/imagenes/paginaInicial/carretes/042560_1.png" alt="prueba1">
-                        <img id="imagen2" src="/assets/imagenes/paginaInicial/carretes/042562_1.png" alt="prueba2">
+                    <div class="nav2" *ngFor="let prod of productoIndividual.image; index as i; let index = i;">
+                        <img  (click) = "chamgeImage(prod.url)" id="imagen1" [attr.src]="prod.url" alt="prueba1">
+                        <!--<img id="imagen2" src="/assets/imagenes/paginaInicial/carretes/042562_1.png" alt="prueba2">
                         <img id="imagen3" src="/assets/imagenes/paginaInicial/carretes/042694_1.png" alt="prueba3">
                         <img id="imagen4" src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="prueba4">
                         <img id="imagen5" src="/assets/imagenes/paginaInicial/carretes/042699_1.png" alt="prueba5">
-                        <img id="imagen6" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="prueba6">
+                        <img id="imagen6" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="prueba6">-->
                     </div>
                 </div>
               </div>
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 fijo">
-            <h1>Carrete Yellow Tail T04000</h1>
+            <div> 
+              <h4>{{productoIndividual.categoria | uppercase}} {{productoIndividual.marca | uppercase}}</h4>
+            </div>
+            <h1>{{productoIndividual.nombre | uppercase}}</h1>
             <hr>
-           <h2>111992489AJA</h2>
-           <h2>Precio: <span>$1200.00</span></h2>
+           <h2>SKU: {{productoIndividual.sku}}</h2>
+           <h2>PRECIO: <span>${{productoIndividual.precio}}</span></h2>
             
             <h3>Variaciones del producto</h3>
             <!--<div class="filtros-leftside">
@@ -123,12 +126,12 @@
         <div class="row descriptivo">
             <hr>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <h1>Carrete Yellow Tail T04000</h1>
+                <h1>{{productoIndividual.nombre}}</h1>
                 <h2>Descripción</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>{{productoIndividual.descripcion}}</p>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <img src="/assets/imagenes/paginaInicial/carretes/042560_1.png" alt="">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
+                <img src="{{productoIndividual.image[0].url}}" alt="">
             </div>
         </div>
         <div class="row valoraciones">
@@ -228,127 +231,49 @@
         <div class="row text-also">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <h1>También te podría interesar.</h1>
-                
+                <hr>
             </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.99</h5>
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
-                  
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#miModal">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-
-           </div>
-           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">$230.99
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                  </div>
-                  
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-
-            </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="product-card">
-            <div class="badge">Nuevo</div>
-            <div class="product-tumb">
-                <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-            </div>
-            <div class="product-details">
-                <span class="product-catagory">CARRETES Yellow Tail</span>
-             
-                <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                <div class="product-price">$230.99
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                
-                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                <div class="product-bottom-details">
-                    
-                   
-                </div>
-
-                  <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                  <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <owl-carousel-o [options]="customOptions">
+             <ng-template carouselSlide *ngFor="let producto of productosInteres; index as i; let index = i;">
+               <div class="" >
+                 <div class="product-card">
+                 <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                 <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                 <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
+                 <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
                  
+                     <div class="product-tumb">
+                         <img [src]="producto.image[0].url"alt="" 
+                         >
+                     </div>
+                     <div class="product-details">
+                         <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>
+                     
+                         <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
+                       
+                         <div class="product-price">
+                             <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> ${{producto.precio_antiguo}}</h4>
+                             <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> ${{producto.precio}}</h5>
+                             <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
+                             <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                         </div>
+                         
+                         <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                        
+                         <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                       </div>
+                 </div>
+             </div>
+             </ng-template>
             
-            </div>
-        </div>
-
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="product-card">
-            <div class="badge">Nuevo</div>
-            <div class="product-tumb">
-                <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-            </div>
-            <div class="product-details">
-                <span class="product-catagory">CARRETES Yellow Tail</span>
-             
-                <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                <div class="product-price">$230.99
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                
-                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                <div class="product-bottom-details">
-                    
-                   
-                </div>
-
-                  <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                  <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                 
-            
-            </div>
-        </div>
-
-        </div>
+         </owl-carousel-o>
+ 
+          </div>
+ 
         </div>
     </div>
 </div>

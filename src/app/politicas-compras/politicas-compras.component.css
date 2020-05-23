@@ -14,13 +14,12 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+        font-family: 'Anton', sans-serif;
+        
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+        font-family: 'Meera Inima', sans-serif;
     }
 }
 

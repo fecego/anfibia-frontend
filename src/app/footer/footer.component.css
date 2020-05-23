@@ -50,7 +50,7 @@ Ipad Mini 2.4 Landscape--*/
     content: '';
     display: block;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: white;
     transition: width .3s;
   }
@@ -72,15 +72,17 @@ Ipad Mini 2.4 Landscape--*/
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
-    font-size: 20px;
-    letter-spacing: 4px;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
-    letter-spacing: 2px;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    
+    
   }
   
   .copyright p{
@@ -145,7 +147,7 @@ Ipad Mini 2.4 Landscape--*/
   
     .effect h1{
       color: white;
-      font-family: 'Prometo-x-bold';
+      font-family: 'Anton', sans-serif;
       letter-spacing: 3px;
       text-align: center;
       font-size: 30px;
@@ -153,7 +155,7 @@ Ipad Mini 2.4 Landscape--*/
   
     .effect h5{
       color: white;
-      font-family: 'Prometo-Thin';
+      font-family: 'Meera Inima', sans-serif;
       letter-spacing: 2px;
       text-align: center;
       font-size: 20px;
@@ -279,7 +281,7 @@ Ipad mini Landscape -- Si lo afecta
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -1254,14 +1256,14 @@ Iphone 7 Portrait
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
   }
   

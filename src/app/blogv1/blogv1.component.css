@@ -1,5 +1,76 @@
 
+
+    .textos-imagen-blog{
+        position: absolute;
+        top: 15%;
+        left: 10%;
+
+    }
+
+    .textos-imagen-blog h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        color: #000;
+    }
+
+    .textos-imagen-blog h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+        color: #000;
+        line-height: 0.5em;
+    }
+
+    .textos-imagen-blog p{
+        font-family: 'Anton', sans-serif;
+        font-size: 30px;
+        color: #000;
+        line-height: 0.3em;
+    }
+
+    .textos-imagen-blog span{
+        color: #04B4AE;
+    }
+
+    .imagen-blog{
+
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        height: 600px;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url('/assets/imagenes/blogv1/feetlandscape.jpg');
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    .inicio-blog{
+        height: 700px;
+        
+    }
     
+    .textos-blog{
+        margin-top: 20%;
+        color: #000;
+        text-align: left;
+
+    }
+
+    .textos-blog h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 80px;
+    }
+
+    .textos-blog h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 20px;
+    }
+
+    .textos-blog span{
+        color: #04B4AE;
+    }
 
     .btn-suscribirme{
         color: #fff;

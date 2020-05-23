@@ -1,80 +1,3 @@
-<div class="modal fade" id="miModal" role="dialog">
-  <div class="modal-dialog modal-xl">
-      <!-- Modal content-->
-      <div class="modal-content">
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-6">
-                     <div class="main-imgModal">
-                      <img id="imagen-principal" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" >
-                     </div>
-                     <div class="row" style="padding-top: 10px;">
-                      <div class="col-12 col-sm-12">
-                          <div class="row">
-                            <div class="col-3 col-sm-3">
-                              <div class="diferente-vistaImg">
-                                <img src="/assets/imagenes/paginaInicial/carretes/042555_2.png" alt="" >
-                              </div>
-                              
-                            </div>
-                            <div class="col-3 col-sm-3">
-                              <div class="diferente-vistaImg">
-                                <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" >
-                              </div>
-                            </div>
-                            <div class="col-3 col-sm-3">
-                              <div class="diferente-vistaImg">
-                                <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" >
-                              </div>
-                            </div>
-                            <div class="col-3 col-sm-3">
-                              <div class="diferente-vistaImg">
-                                <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" >
-                              </div>
-                            </div>
-                           
-  
-                          </div>
-                      </div>
-                      
-  
-                    </div>
-                  </div>
-                  
-                  <div class="col-md-6 ml-auto modal-textos">
-                    <h1>CARRETE TORITO TO4000</h1>
-                    <hr>
-                    <div class="row" style="padding-top: 20px;">
-                      <div class="col-sm-12">
-                        <h4> <span>$230.99</span></h4>
-                        <div class="basic-info">
-                          <h4>CARRETE </h4>
-                           <h4 class="marca">YELLOW TAIL</h4>
-                        </div>
-                        <h5>Descripción</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button class="see-more">Ver más</button>
-
-
-                       
-                         
-                         
-                      </div>
-                      <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                      <button class="heart-button"><a href=""><i class="fa fa-heart" aria-hidden="true"></i></a></button>
-
-                    </div>
-                  </div>
-                </div>
-                
-               
-              </div>
-            </div>
-          
-      </div>
-  </div>
-</div>
 
 <div class="container-fluid">
   <!--<div class="row promociones">
@@ -87,7 +10,8 @@
   <div class="row">
     <div class="col-xs-6 col-sm-12 barra-superior">
       <h1>Nuestros Productos</h1>
-
+      <!--<h2 *ngIf = "pClasificacion">De <span>{{pClasificacion}}</span></h2>
+      <h2 *ngIf = "pCategoria">- {{pCategoria}}</h2>-->
       <div>
         <label for="filtro-superior">Ordena por: </label>
       <select name="filtro-superior" id="filtro-superior">
@@ -106,31 +30,87 @@
       <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros">
         <h1>Productos</h1>
         <div class="filtros-leftside">
-          <h2>Categorias</h2>
+          <h2>Clasificación</h2>
+          <hr>
+          <div class="checkbox">
+            <input type="checkbox" [checked] = "pesca" (change) = "pescaCambio(pesca = !pesca)" id="pesca" name="pesca" value="pesca">
+            <label for="pesca">Pesca</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" [checked] = "caceria" (change) = "caceriaCambio(caceria = !caceria)" id="caceria" name="caceria" value="caceria">
+            <label for="caceria">Cacería</label>
+          </div>
+        </div>
+        <div class="filtros-leftside" *ngIf = "caceria == true">
+          <h2>Categorias de Cacería</h2>
+          <hr>
         <div class="checkbox">
-          <input type="checkbox" id="cañas" name="cañas" value="cañas">
-          <label for="cañas">Cañas</label>
+          <input type="checkbox" id="rifles" name="rifles" value="rifles">
+          <label for="rifles">Rifles</label>
         </div>
         <div class="checkbox">
-          <input type="checkbox" id="carretes" name="carretes" value="carretes">
-          <label for="carretes">Carretes</label>
+          <input type="checkbox" id="pistolas" name="pistolas" value="pistolas">
+          <label for="pistolas">Pistolas</label>
         </div>
         <div class="checkbox">
-          <input type="checkbox" id="anzuelos" name="anzuelos" value="anzuelos">
-          <label for="anzuelos">Anzuelos</label>
+          <input type="checkbox" id="arqueria" name="arqueria" value="arqueria">
+          <label for="arqueria">Arquería</label>
         </div>
         <div class="checkbox">
-          <input type="checkbox" id="accesorios" name="accesorios" value="accesorios">
-          <label for="accesorios">Accesorios</label>
+          <input type="checkbox" id="cuchilleria" name="cuchilleria" value="cuchilleria">
+          <label for="cuchilleria">Cuchillería</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="ropa-caceria" name="ropa-caceria" value="ropacaceria">
+          <label for="ropa-caceria">Ropa</label>
+        </div>
+
+        </div>
+
+        <div class="filtros-leftside" *ngIf = "pesca == true">
+          <h2>Categorias de Pesca</h2>
+          <hr>
+        <div class="checkbox">
+          <input type="checkbox" id="aguadulce" name="aguadulce" value="aguadulce">
+          <label for="aguadulce">Agua Dulce</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="aguasalada" name="aguasalada" value="aguasalada">
+          <label for="aguasalada">Agua Salada</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="lineas" name="lineas" value="lineas">
+          <label for="lineas">Lineas</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="snorkel" name="snorkel" value="snorkel">
+          <label for="snorkel">Snorkel</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="buceo" name="buceo" value="buceo">
+          <label for="buceo">Buceo</label>
         </div>
         <div class="checkbox">
           <input type="checkbox" id="kayaks" name="kayaks" value="kayaks">
           <label for="kayaks">Kayaks</label>
         </div>
+        <div class="checkbox">
+          <input type="checkbox" id="navegacion" name="navegacion" value="navegacion">
+          <label for="navegacion">Navegación</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="ropa" name="ropa" value="ropa">
+          <label for="ropa">Ropa</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="accesorios" name="accesorios" value="accesorios">
+          <label for="accesorios">Accesorios</label>
+        </div>
 
         </div>
         <div class="filtros-leftside">
           <h2>Precios</h2>
+          <hr>
           <div class="checkbox">
             <input type="checkbox" id="less-Price" name="kayaks" value="kayaks">
             <label for="less-Price">$1000 - $1499</label>
@@ -150,6 +130,7 @@
 
         <div class="filtros-leftside">
           <h2>Tamaño</h2>
+          <hr>
         <div class="checkbox">
           <input type="checkbox" id="tamaño-chico" name="chico" value="Chico">
           <label for="tamaño-chico">1.75m</label>
@@ -220,6 +201,7 @@
        
         <div class="filtros-leftside">
           <h2>Marca</h2>
+          <hr>
         <div class="checkbox">
           <input type="checkbox" id="abu-garcia" name="abu-garcia" value="abu-garcia">
           <label for="abu-garcia">Abu Garcia</label>
@@ -349,19 +331,22 @@
           <!--Estilo nuevo del carrito-->
           <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoTienda of productosTienda; index as i; let index=i;">
             <div class="product-card">
-              <div class="badge" *ngIf="productoTienda.nuevo">Nuevo</div>
+              <div class="badge1" *ngIf="productoTienda.nuevo">Nuevo</div>
               <div class="badge2" *ngIf="productoTienda.destacado">Destacado</div>
+              <div class="badge3" *ngIf="productoTienda.descuento">Desc {{productoTienda.descuento}}%</div>
               <div class="product-tumb">
-                  <img src="{{productoTienda.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/029977_1.png'">
+                  <img src="{{productoTienda.image[0].url}}" alt=""
+                  >
               </div>
               <div class="product-details">
                   <span class="product-catagory">{{productoTienda.categoria}} {{productoTienda.marca}}</span>
                
-                  <h4><a href="" (click)="abreProducto()">{{productoTienda.nombre}}</a></h4>
+                  <h4><a routerLink="/tienda/{{productoTienda.clasificacion}}/{{productoTienda.categoria}}/{{productoTienda.idProducto}}/{{productoTienda.nombre}}">{{productoTienda.nombre}}</a></h4>
                   <div class="product-price">
-                    <h5>${{productoTienda.precio}}</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    <h4 *ngIf="productoTienda.descuento"><span>  Precio:</span> ${{productoTienda.precio_antiguo}}</h4>
+                    <h5 *ngIf="productoTienda.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoTienda.precio}}</h5>
+                    <h3 id="precioNormal" *ngIf="productoTienda.descuento == 0"><span>Precio: </span>${{productoTienda.precio}}</h3>
+                    <button (click)="addWishList(productoTienda)"><i class="fa fa-heart" aria-hidden="true"></i></button>
                 </div>
                   
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
@@ -370,7 +355,7 @@
                      
                   </div>
 
-                    <button class="product-links-wish" (click) = "productoModal(productoTienda)" type="button" data-toggle="modal" data-target="#miModal">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-wish" (click)="openModal(productoTienda)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                     <button class="product-links-bag" (click) = "crearProducto(productoTienda)" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                    
               

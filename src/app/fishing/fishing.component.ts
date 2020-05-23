@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as AOS from 'aos';
-import $ from 'jquery';
+/*import * as AOS from 'aos';*/
+/*import * as $ from 'jquery';*/
 import { ProductosService } from "../servicios/productos.service";
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { ProductosModalComponent } from '../modals/productos-modal/productos-modal.component';
 @Component({
   selector: 'app-fishing',
   templateUrl: './fishing.component.html',
@@ -9,8 +13,41 @@ import { ProductosService } from "../servicios/productos.service";
 })
 export class FishingComponent implements OnInit {
 
+  public customOptions: OwlOptions = {
+    items: 8,
+    autoplay: true,
+    autoplayTimeout: 2500,
+    autoplayHoverPause: true,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    margin: 30,
+    
+    navSpeed: 2500,
+    navText: ['ANTERIOR', 'SIGUIENTE'],
+    responsive: {
+      0: {
+        items: 1 
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
 
   public productosPesca: Array<any> = [];
+  public productosPescaDestacados: Array<any> = [];
+  public productosPescaNuevos:Array<any> = [];
 
   slides = [
     {
@@ -69,14 +106,30 @@ export class FishingComponent implements OnInit {
     console.log('beforeChange');
   }
 
-  constructor(private _productosPesca: ProductosService) {
-      this.productosPesca = this._productosPesca.getProductosPesca();
-      console.log(this.productosPesca);
+  constructor(private _productosPesca: ProductosService, private route: Router, private modalProducto: NgbModal) {
+     
    }
 
 
 
   ngOnInit() {
+
+    this.productosPesca = this._productosPesca.getProductos();
+    
+
+
+
+    this.productosPescaNuevos = this.productosPesca.filter((producto) =>{
+      return producto.nuevo = true;
+    });
+
+    this.productosPescaDestacados = this.productosPesca.filter((producto)=>{
+      return producto.destacado = true;
+    });
+
+    
+    
+
     $(".item-1").mouseenter(function(){
        $(".item-2").css("filter", "brightness(50%)");
        $(".item-3").css("filter", "brightness(50%)");
@@ -158,6 +211,27 @@ $(".item-5").mouseleave(function(){
 });
     
 
+  }
+
+  public openModal(datos) {
+    const modalRef = this.modalProducto.open(ProductosModalComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+        size: 'lg'
+        // keyboard: false,
+        // backdrop: 'static'
+      });
+    
+    let productoModal = datos;
+    
+  
+ 
+    modalRef.componentInstance.fromParent = datos;
+    modalRef.result.then((result) => {
+      console.log(result);
+    }, (reason) => {
+    });
   }
 
 }

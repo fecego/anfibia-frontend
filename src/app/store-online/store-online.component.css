@@ -131,6 +131,12 @@
     padding: 10px;
 }
 
+
+.filtros-leftside hr{
+  background-color: #000;
+  height: 1px;
+  width: 100%;
+}
 .promociones{
     background: #fff;
     border-bottom: solid 1px #000;
@@ -153,12 +159,13 @@
 .barra-superior{
   margin-bottom: 20px;
   border-bottom: 2px solid #aaa;
+  border: none;
 }
 
 .barra-superior h1{ 
     color: #000;
-    font-family: 'Prometo-x-bold';
-    font-size: 80px;
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
     letter-spacing: 2px;
     text-align: center;
     border-bottom: solid 2px #fff;
@@ -166,6 +173,40 @@
     padding: 10px;
 }
 
+
+.barra-superior h2{
+  
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.barra-superior h2 span{
+  color: #04B4AE;
+}
+
+.barra-superior select{
+  border: none;
+  border-bottom: 2px solid #000;
+  font-family: 'Meera Inima', sans-serif;
+}
+
+.barra-superior option{
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 15px;
+}
+
+.barra-superior option:hover{
+  background: #000;
+  color: #fff;
+}
+
+.barra-superior label{
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 15px;
+}
 
 .barra-superior div{
   position: absolute;
@@ -183,7 +224,8 @@ input[type='checkbox'] + label {
     margin: 0.1em;
     cursor: pointer;
     padding: 0.2em;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
     font-size: 12px;
   }
   
@@ -608,17 +650,17 @@ input[type='checkbox'] + label {
 }
 
 .filtros h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 30px;
     
 }
 
 .filtros h2{
     
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -658,16 +700,18 @@ input[type=checkbox]{
     transform: scale(1.1);*/
 }
 
-.badge {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: red;
-    color: #fff;
-    padding: 3px 10px;
+.badge1 {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: none;
+  z-index: 1;
 }
 
 .badge2 {
@@ -677,8 +721,25 @@ input[type=checkbox]{
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  background: purple;
+  background: #ff0000;
   color: #fff;
+  padding: 3px 10px;
+  z-index: 1;
+}
+
+
+.badge3 {
+  position: absolute;
+  right: 5px;
+  top: 47%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Meera Inimai', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  background-color: #000000;
+  
+  
   padding: 3px 10px;
 }
 
@@ -711,14 +772,14 @@ input[type=checkbox]{
 .product-catagory {
     display: block;
     font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
     color: #000;
     margin-bottom: 18px;
 }
 
 .product-details h4 a {
-    font-weight: 500;
+    font-weight: bold;
     display: block;
     margin-bottom: 18px;
     text-transform: uppercase;
@@ -726,7 +787,7 @@ input[type=checkbox]{
     text-decoration: none;
     transition: 0.3s;
     font-size: 15px;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
 }
 
 .product-details h4 a:hover {
@@ -751,20 +812,64 @@ input[type=checkbox]{
     width: 50%;
 }
 
-.product-price h5{
+.product-price h3{
   font-size: 17px;
-  font-family: 'Prometo-x-bold';
-  font-weight: bolder;
+  font-weight: bold;
+  font-family: 'Meera Inimai', sans-serif;
   padding: 2px;
   color: #000;
   position: absolute;
-  top: 84%;
+  top: 82%;
+
+  }
+  .product-price h3 span{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+.product-price h4{
+  font-size: 14px;
+  
+  font-family: 'Meera Inima', sans-serif;
+  padding: 2px;
+  text-decoration: line-through;
+  color: #000;
+  position: absolute;
+  top: 82%;
 
   }
 
+  .product-price button{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    border: none;
+
+}
+
+
+.product-price h5{
+  font-size: 17px;
+  font-family: 'Meera Inimai', sans-serif;
+  font-weight: bold;
+  padding: 2px;
+  color: #ff0000;
+  position: absolute;
+  top: 85%;
+}
+
+.product-price h5 span{
+  font-family: 'Meera Inimai', sans-serif;
+font-size: 12px;
+color: #000;
+font-weight: bold;
+}
+
   .product-price a{
       position: absolute;
-      top: 84%;
+      top: 3%;
       right: 5%;
 
   }
@@ -772,7 +877,7 @@ input[type=checkbox]{
 
 
 .product-price i{
-  color: #ffffff;
+  color: transparent;
   float: right;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #000;
@@ -844,8 +949,8 @@ input[type=checkbox]{
 .product-links-wish{
   position: absolute;
   top: 90%;
-  left: 1%;
-  font-family: 'Prometo-Medium';
+  left: 2%;
+  font-family: 'Meera Inimai', sans-serif;
   color: #000000;
   border: 1px solid #000000;
   padding: 5px;
@@ -863,8 +968,8 @@ input[type=checkbox]{
 .product-links-bag {
   position: absolute;
   top: 90%;
-  right: 1%;
-  font-family: 'Prometo-Medium';
+  right: 2%;
+  font-family: 'Meera Inimai', sans-serif;
   color: #000000;
   border: 1px solid #000000;
   padding: 5px;
@@ -960,10 +1065,11 @@ Media query usado
   }
   .barra-superior h1{ 
     color: #000;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton',sans-serif;
     font-size: 50px;
     
 }
+
 
 .filtros h1{
   font-family: 'Prometo-x-bold';

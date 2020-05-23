@@ -36,6 +36,11 @@ export class AsuntosLegalesComponent implements OnInit {
     this.router.navigate(['politicas-compras'], {relativeTo: this.route});
   }
 
+  showTerminosYCondiciones(){
+    console.log('Presioanste Terminos y condiciones');
+    this.router.navigate(['terminos_y_condiciones'], {relativeTo: this.route});
+  }
+
 
 
 }

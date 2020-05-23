@@ -1,0 +1,165 @@
+<!--<div class="modal-header">
+  <h5 class="modal-title">Modal title</h5>
+  <button type="button" class="close" data-dismiss="modal" (click)="closeModal('dismiss')">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>-->
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+         <div class="main-imgModal">
+          <img id="imagen-principal" src="{{productoModal.image[0].url}}" alt="" >
+         </div>
+         <div class="modal-badge-nuevo">
+           <h1 *ngIf ="productoModal.nuevo">NUEVO</h1>
+         </div>
+         <div class="modal-badge-destacado">
+          <h1 *ngIf ="productoModal.destacado">DESTACADO</h1>
+         </div>
+         <div class="row" style="padding-top: 10px;">
+          <div class="col-12 col-sm-12">
+              <div class="row">
+                <div class="col-3 col-sm-3" *ngFor = "let prod of productoModal.image;  index as i; let index = i;">
+                  <div class="diferente-vistaImg">
+                    <img (click) = "changeImage(prod.url)" [attr.src]="prod.url" alt="">
+                  </div>
+                </div>
+                <!--<div class="col-3 col-sm-3">
+                  <div class="diferente-vistaImg">
+                    <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" >
+                  </div>
+                </div>
+                <div class="col-3 col-sm-3">
+                  <div class="diferente-vistaImg">
+                    <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" >
+                  </div>
+                </div>
+                <div class="col-3 col-sm-3">
+                  <div class="diferente-vistaImg">
+                    <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" >
+                  </div>
+                </div>-->
+              </div>
+          </div>
+          
+
+        </div>
+      </div>
+      
+      <div class="col-md-6 ml-auto modal-textos">
+        <button type="button" class="close close-button" data-dismiss="modal" (click)="closeModal('dismiss')">X</button>
+        <h1>{{productoModal.nombre | uppercase}}</h1>
+        <hr>
+        <div class="row" style="padding-top: 20px;">
+          <div class="col-sm-12">
+            <h4 *ngIf="productoModal.descuento">Precio: <span>${{productoModal.precio_antiguo}}</span></h4>
+            <h5 *ngIf="productoModal.descuento != 0; else precioNormal">Precio Desc: <span>${{productoModal.precio}}</span> </h5>
+            <h3 id="precioNormal" *ngIf="productoModal.descuento == 0">Precio: <span> ${{productoModal.precio}}</span></h3>
+            <h4></h4>
+            <div class="basic-info">
+              <h4>{{productoModal.categoria | uppercase}} </h4>
+               <h4 class="marca">{{productoModal.marca | uppercase}}</h4>
+            </div>
+            <h5>Descripción</h5>
+            <p>{{productoModal.descripcion}}.</p>
+            <a class="see-more" routerLink = "/tienda/{{productoModal.clasificacion}}/{{productoModal.categoria}}/{{productoModal.idProducto}}/{{productoModal.nombre}}" (click) = "closeModal()">Ver más</a>
+
+
+           
+             
+             
+          </div>
+          <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+          <button class="heart-button"><a href=""><i class="fa fa-heart" aria-hidden="true"></i></a></button>
+         
+        </div>
+      </div>
+    </div>
+    
+   
+  </div>
+</div>
+<!--<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('close')">Close</button>
+  <button type="button" class="btn btn-primary" (click)="closeModal('changes saved!')">Save changes</button>
+</div>-->
+
+<!--<div class="modal fade" role="dialog">
+    <div class="modal-dialog modal-xl">-->
+        <!-- Modal content-->
+        <!--<div class="modal-content">
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="main-imgModal">
+                        <img id="imagen-principal" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" >
+                       </div>
+                       <div class="row" style="padding-top: 10px;">
+                        <div class="col-12 col-sm-12">
+                            <div class="row">
+                              <div class="col-3 col-sm-3">
+                                <div class="diferente-vistaImg">
+                                  <img src="/assets/imagenes/paginaInicial/carretes/042555_2.png" alt="" >
+                                </div>
+                                
+                              </div>
+                              <div class="col-3 col-sm-3">
+                                <div class="diferente-vistaImg">
+                                  <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" >
+                                </div>
+                              </div>
+                              <div class="col-3 col-sm-3">
+                                <div class="diferente-vistaImg">
+                                  <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" >
+                                </div>
+                              </div>
+                              <div class="col-3 col-sm-3">
+                                <div class="diferente-vistaImg">
+                                  <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png" alt="" >
+                                </div>
+                              </div>
+                             
+    
+                            </div>
+                        </div>
+                        
+    
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6 ml-auto modal-textos">
+                      <button type="button" class="close close-button" data-dismiss="modal" (click)="closeModal('dismiss')">X</button>
+                      <h1>CARRETE TORITO TO4000</h1>
+                      <hr>
+                      <div class="row" style="padding-top: 20px;">
+                        <div class="col-sm-12">
+                          <h4> <span>$230.99</span></h4>
+                          <div class="basic-info">
+                            <h4>CARRETE </h4>
+                             <h4 class="marca">YELLOW TAIL</h4>
+                          </div>
+                          <h5>Descripción</h5>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                          <button class="see-more">Ver más</button>
+  
+  
+                         
+                           
+                           
+                        </div>
+                        <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                        <button class="heart-button"><a href=""><i class="fa fa-heart" aria-hidden="true"></i></a></button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  
+                 
+                </div>
+              </div>
+            
+        </div>
+    </div>
+  </div>-->

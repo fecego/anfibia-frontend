@@ -2,11 +2,12 @@
     background: #000;
     color: #fff;
     width: 40%;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 16px;
     padding: 5px;
     border: 2px solid #000;
     margin-bottom: 2px;
+    text-align: center;
 }
 
 
@@ -15,13 +16,16 @@
    border-radius: 1px;
    height: 36px;
    width: 50%;
-   font-family: 'Prometo-Medium';
+   font-family: 'Meera Inima', sans-serif;
+   text-align: center;
 }
 
 
 .fijo div select option{
-  font-family: 'Prometo-Thin';
+  font-family: 'Meera Inima', sans-serif;
+  color: #fff;
   text-align: center;
+  background: black;
 }
 
 .producto-inicio{
@@ -123,18 +127,19 @@ input[type="number"] {
 }
 
 .valoraciones hr{
+  background-color: #04B4AE;
     
 }
 
 .valoraciones h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     color: #000;
     font-size: 45px;
 
 }
 
 .valoraciones h2{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     color: #000;
     font-size: 30px;
     text-align: left;
@@ -143,13 +148,13 @@ input[type="number"] {
 
 .valoraciones h3{
     float: right; 
-    font-family: 'Prometo-Medium';
+    font-family: 'Anton', sans-serif;
     color: #424242;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .valoraciones p{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     color: #424242;
     font-size: 15px;
     text-align: justify;
@@ -576,7 +581,7 @@ input[type='checkbox'] + label {
 .ruta a{
     color: black;
     text-decoration: underline;
-    font-family: 'Prometo-Medium'; 
+    font-family: 'Meera Inima', sans-serif; 
     font-size: 20px;
     color: #000;
     padding: 4px;
@@ -677,6 +682,7 @@ input[type='checkbox'] + label {
   
 
 .botones-individual{
+    font-family: 'Meera Inima', sans-serif;
     color: #000;
     background: #fff;
     border: 2px solid #000;
@@ -731,49 +737,70 @@ select{
 
 
 .descriptivo{
- 
     margin-top: 60px;
 }
 
 .descriptivo h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     color: #000;
     font-size: 35px;
 }
 
 .descriptivo h2{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000;
     font-size: 30px;
 }
 
 .descriptivo p{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
     text-align: justify;
     color: #000;
 }
 
 
-.descriptivo img{
-    width: 85%;
+.descriptivo{
+    width: 100%;
     max-width: 100%;
     height: 400px;
-    max-height: 100%;
+    
+
+}
+
+.descriptivo-inside{
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.descriptivo-inside img{
+  
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .descriptivo hr{
     height: 1px;
     width: 100%;
-    background-color: #000;
+    background-color: #04B4AE;
 }
 
 .text-also h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size:45px;
     margin-top: 25px;
     color: #000;
+}
+
+.text-also hr{
+  width: 30%;
+  height: 2px;
+  background: #04B4AE;
+  margin-left: 0px;
 }
 
 
@@ -800,18 +827,47 @@ select{
   transform: scale(1.1);*/
 }
 
-.badge {
+.badge1 {
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 13px;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  background: red;
+  background: #000;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: none;
+}
+
+.badge2 {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background: #ff0000;
   color: #fff;
   padding: 3px 10px;
 }
 
+
+
+.badge3 {
+  position: absolute;
+  right: 5px;
+  top: 47%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Meera Inimai', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  background-color: #000000;
+  
+  
+  padding: 3px 10px;
+}
 .product-tumb {
   display: flex;
   align-items: center;
@@ -839,24 +895,24 @@ transform: scale(1.2);
 }
 
 .product-catagory {
+  font-family: 'Meera Inima', sans-serif;
   display: block;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: bold;
   text-transform: uppercase;
   color: #000;
   margin-bottom: 18px;
 }
 
 .product-details h4 a {
-  font-weight: 500;
+  font-weight: bold;
   display: block;
   margin-bottom: 18px;
-  text-transform: uppercase;
   color: #000000;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 18px;
-  font-family: 'Prometo-Medium';
+  font-size: 15px;
+  font-family: 'Meera Inima', sans-serif;
 }
 
 .product-details h4 a:hover {
@@ -881,14 +937,72 @@ transform: scale(1.2);
   width: 50%;
 }
 
+.product-price h3{
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Meera Inimai', sans-serif;
+  padding: 2px;
+  color: #000;
+  position: absolute;
+  top: 82%;
+
+  }
+  .product-price h3 span{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+.product-price h4{
+  font-size: 12px;
+  font-family: 'Meera Inima', sans-serif;
+  padding: 2px;
+  text-decoration: line-through;
+  color: #000;
+  position: absolute;
+  top: 82%;
+
+  }
+
+  .product-price button{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    border: none;
+
+}
+  
+  .product-price h4 span{
+    font-size: 14px;
+    font-family: 'Meera Inimai', sans-serif;
+    
+    color: #000;
+    
+   
+
+}
+
 .product-price h5{
+  font-size: 17px;
+  font-family: 'Meera Inimai', sans-serif;
+  font-weight: bold;
+  padding: 2px;
+  color: #ff0000;
   position: absolute;
   top: 85%;
 }
 
+.product-price h5 span{
+  font-family: 'Meera Inimai', sans-serif;
+font-size: 12px;
+color: #000;
+font-weight: bold;
+}
+
 .product-price a {
   position: absolute;
-  top: 85%;
+  top: 3%;
   right: 3%;
 }
 
@@ -904,7 +1018,7 @@ transform: scale(1.2);
 
 
 .product-price i{
-color: #ffffff;
+color: transparent;
 float: right;
 -webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: #000;
@@ -951,8 +1065,9 @@ transition: 0.5s;
 .product-links-wish{
 position: absolute;
 top: 92%;
-left: 5%;
-font-family: 'Prometo-Medium';
+left: 2%;
+font-family: 'Meera Inimai', sans-serif;
+font-weight: bolder;
 font-size: 13px;
 color: #000000;
 border: 1px solid #000000;
@@ -971,8 +1086,9 @@ transition: 0.5s;
 .product-links-bag {
 position: absolute;
 top: 92%;
-right: 5%;
-font-family: 'Prometo-Medium';
+right: 2%;
+font-family: 'Meera Inimai', sans-serif;
+font-weight: bolder;
 color: #000000;
 border: 1px solid #000000;
 padding: 4px;
@@ -1007,7 +1123,7 @@ transition: 0.5s;
 
 
 .fijo h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 30px;
     color: #000;
     margin-top: 20px;
@@ -1015,15 +1131,15 @@ transition: 0.5s;
 }
 
 .fijo h2{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000000; 
-    font-size: 20px; 
+    font-size: 17px; 
     text-align: left;
 }
 
 .fijo h3{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000; 
     font-size: 25px; 
@@ -1031,9 +1147,17 @@ transition: 0.5s;
     background: #D8D8D8;
     padding: 10px;
 }
+
+.fijo h4{
+  font-family: 'Anton', sans-serif;
+  
+  font-size: 20px;
+  color: #000;
+}
+
 .fijo p{
     font-family: 'Prometo-Thin'; 
-    font-weight: bolder; 
+    
     color: #000; 
     font-size: 17px; 
     padding-top: 10px; 
@@ -1041,8 +1165,8 @@ transition: 0.5s;
 }
 
 .fijo span{
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
+    font-family: 'Meera Inima', sans-serif;
+    
     font-size: 25px;
     color: #ff0000;
 }
@@ -1333,9 +1457,12 @@ Iphone 7 Portrait
 
     .descriptivo img{
       width: 85%;
-      max-width: 100%;
       height: 230px;
+      max-width: 100%;
+      
       max-height: 100%;
+      align-items: center;
+      justify-content: center;
   }
 
   .nav2 img{

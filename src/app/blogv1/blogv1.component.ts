@@ -12,7 +12,7 @@ export class Blogv1Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var granimInstance = new Granim({
+    /*var granimInstance = new Granim({
     element: '#canvas-image-blending',
     direction: 'top-bottom',
     size: '100%',
@@ -24,17 +24,17 @@ export class Blogv1Component implements OnInit {
     states : {
         "default-state": {
             gradients: [
-                ['#B404AE', '#B404AE'],
-                ['#FF0040', '#FA5882'],
-                ['#FF8000', '#FF8000'],
-                ['#FF0000', '#FF0000'],
-                ['#5F04B4', '#5F04B4'],
+                ['#F5A9F2', '#F5A9E1'],
+                ['#F7819F', '#F7819F'],
+                ['#F7D358', '#F7D358'],
+                ['#F78181', '#F78181'],
+                ['#F5A9F2', '#F5A9F2'],
                 ['#fff', '#fff']
             ],
             transitionSpeed: 4000
         }
     }
-});
+});*/
 
 }
 

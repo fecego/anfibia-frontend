@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { JsonPipe } from '@angular/common';
+/*import { JsonPipe } from '@angular/common';*/
 
 
 

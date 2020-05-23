@@ -1,0 +1,273 @@
+.modal-badge-nuevo{
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  
+}
+
+.modal-badge-nuevo h1{
+  background: #000;
+  color: #fff;
+  font-family: 'Meera Inima', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.modal-badge-destacado{
+  position: absolute;
+  top:5%;
+  left: 0px;
+  
+}
+
+.modal-badge-destacado h1{
+  background: #ff0000;
+  color: #fff;
+  font-family: 'Meera Inima', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px;
+}
+
+
+.see-more{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background: none;
+    border: none;
+  
+   
+  }
+
+.heart-button{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+  }
+  
+  .heart-button i{
+    color: #ffffff;
+    float: right;
+    font-size: 25px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  
+  }
+  
+  .heart-button i:hover{
+    color: #ff0000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ff0000;
+    transition: 0.5s;
+  
+  }
+#miModal{
+    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .modal-content{
+    height: auto;
+    
+   
+   
+  }
+  
+  #miModal .modal-header h1{
+    color: #000;
+    
+  }
+  
+  
+  .main-imgModal{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      padding: 50px;
+      background: #f0f0f0;
+  }
+  
+  .main-imgModal img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  
+  #miModal .modal-content{
+    background: #fff;
+    
+  }
+  
+  #miModal .modal-content img{  
+  }
+  
+  .diferente-vistaImg{
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #f0f0f0;
+  }
+  
+  .diferente-vistaImg img{
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    opacity: 0.7;
+    
+  }
+  
+  .diferente-vistaImg:hover img{
+    opacity: 1;
+  }
+  
+  
+  .diferente-vistaImg:hover{
+    transition: all 300ms ease-in; 
+    transform: scale(1.2);
+    
+   
+  }
+  .modal-textos{
+    padding: 5px;
+  }
+  
+  .modal-textos h1{
+    color: #000;
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+  }
+  
+  .modal-textos hr{
+    background: #000;
+    height: 2px;
+    width: 100%;
+   
+  }
+
+  .modal-textos h4{
+    font-family: 'Meera Inima', sans-serif;
+    color: #000;
+    font-size: 18px;
+    line-height: 0.2em;
+
+  }
+  
+  .modal-textos h4 span{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #000;
+    text-decoration: line-through;
+    padding: 10px;
+  }
+
+  .modal-textos h3{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    color: #000;
+    line-height: 0.2em;
+
+  }
+
+  .modal-textos h3 span{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #000;
+    padding: 10px;
+  }
+
+  .modal-textos h5{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    color: #000;
+    line-height: 0.2em;
+  }
+
+  .modal-textos h5 span{
+    color: #ff0000;
+    font-size: 25px;
+  }
+  
+  
+  .modal-textos p{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    
+  }
+  
+  .basic-info{
+    padding-top: 20px;
+  }
+  
+  .basic-info h4{
+    font-family: 'Anton', sans-serif;
+    color: #000;
+    display: inline;
+    font-size: 17px;
+    
+    
+  }
+  
+   .marca{
+   color: #fff;
+    padding: 2px; 
+  }
+  
+  .modal-textos h5{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bolder;
+    color: #000;
+    padding-top: 20px;
+  }
+
+  .product-links-bag2{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    font-family: 'Prometo-Medium';
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px;
+    text-decoration: none;
+    width: 100%;
+    
+  
+  }
+  
+  
+  .product-links-bag2 i{
+    color: black;
+    opacity: 0;
+  }
+  
+  .product-links-bag2:hover i{
+    color: #fff;
+    transform: translate(40px);
+    opacity: 1;
+    transition: 0.5s;
+    
+  
+  }
+  
+  
+  .product-links-bag2:hover{
+    background: #000000;
+    color: #ffffff;
+    transition: 0.5s;
+  }
+
+  .close-button{
+      color: #000;
+  }

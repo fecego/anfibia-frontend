@@ -1,14 +1,16 @@
 <div>
     <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" width="100%">
-        <source src="assets/videos/pesca2.mp4" type="video/mp4">
+        <source src="assets/videos/anfibia.mp4" type="video/mp4">
     </video>
-    <div class="row texto-video">
+    <!--<div class="row texto-video">
         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
             <p>Vive la experiencia <span>ANFIBIA</span></p>
             <h1>PESCA</h1>
-            <h5>Si lo que quieres es dominar en esta disciplina, nosotros te ayudaremos a equiparte y lograr tus metas, bienvenido a la Tribu.</h5>    
+            <h5>Descubre tu <span>pasión</span></h5>
+            <h5>Vive nuevas experiencías</h5> 
+            <h5>Las aventuras estan hechas de sol, mar y tierra.</h5>
         </div>
-    </div>
+    </div>-->
     
 </div>
 
@@ -34,32 +36,29 @@
     </div>
 </div>-->
 
-<div class="container-fluid">
+<div class="container-fluid fondoI-pesca" >
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-12 image-background">
 
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-12 texto-image-background"> 
-      <h1>Pesca</h1>
+      <h1>PESCADOR</h1>
       <hr>
-      <p >Bienvenido a la tribu, Pescador, preparate para la aventura, equipate con nosotros y conviertete en el lider de la tribu.</p>
+      <p >Bienvenido a la tribu, tenemos todo lo que necesitas para convertirte en el mejor pescador, si lo que buscas es atrapar al pez más grande, somos tu mejor opción.</p>
       <div class="flex dark">
-          <a href="#0" class="bttn-dark">Ir a la tienda</a>
+          <a routerLink="/tienda/pesca" class="bttn-dark">Ir a la tienda</a>
         </div>
     </div>
   </div>
-  <div class="row" style="padding-top: 20px;" data-aos="fade-up"
-  data-aos-easing="linear"
-  data-aos-duration="1000">
+  <div class="row" style="padding-top: 20px;">
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
-      <h1>ANFIBIA PESCA</h1>
-      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos recientemente adquiridos, así como también
-        encontrarás nuestros productos destacados, promociones, entre otras cosas.
+      <h1>PESCA</h1>
+      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos más nuevos adquiridos, así como también encontrarás nuestros productos destacados, los cuales son productos que otros pescadores han usado para volverse los mejores en su ramo, también encontrarás nuestras promociones.
       </p>
     </div>
-    <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+    <div class="col-12 col-sm-8 col-md-8 col-lg-8 publicidad1">
        
-      <img src="/assets/imagenes/paginaInicial/1916.jpg" alt="" class="publicidad1">
+      
      
 
  </div>
@@ -84,10 +83,9 @@
         data-aos-duration="1000">
             <div class="col-sm-12 product-Title">
                  <h1>Productos nuevos</h1>
-                 <p>Te presentamos algúnas de nuestras recientes adquisiciones</p>
-                 
+                 <hr>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
+           <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
                 <div class="product-card" *ngIf="i<4">
                     <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
                     <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
@@ -104,14 +102,14 @@
                           <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                       </div>
                         
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                         <div class="product-bottom-details"> 
                         </div>
                           <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                     </div>
                 </div>
-               </div>
+               </div>-->
                <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="product-card">
                     <div class="badge">Nuevo</div>
@@ -200,6 +198,46 @@
     
  
         </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <owl-carousel-o [options]="customOptions">
+             <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+               <div class="" >
+                 <div class="product-card">
+                 <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
+                 <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+                 <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+                <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
+                     <div class="product-tumb">
+                         <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "changeImage(productoPesca.image[0].url)">
+                     </div>
+                     <div class="product-details">
+                         <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                     
+                         <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
+                         <div class="product-price">
+                          <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
+                              <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
+                              <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
+                          <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                         
+                         </div>
+                         
+                         <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                         <div class="product-bottom-details"> 
+                         </div>
+                         <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     </div>
+                 </div>
+             </div>
+             </ng-template>
+            
+         </owl-carousel-o>
+ 
+          </div>
+ 
+        </div>
     </div>
 
      </div>
@@ -208,25 +246,88 @@
 
     <div class="container-fluid">
        <div class="row" >
-           <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
+           <div class="col-12 col-sm-6 col-md-6 col-lg-6 " style="padding: 1px;" data-aos="fade-up"
            data-aos-easing="linear"
            data-aos-duration="1000">
-           
-                <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
+           <div class="publicidad2">
+             <div class="text-publicidad2">
+               <h1><span>H</span>ooks</h1>
+               <p><span>C</span>ontamos con una gran variedad de <span>anzuelos</span>.</p>
+
+             </div>
+
+           </div>
+               
                
 
            </div>
            <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
            data-aos-easing="linear"
            data-aos-duration="1000">
-            
-                <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
+            <div class="publicidad3">
+              <div class="text-publicidad3">
+                <h2><span>P</span>ara pescar <span>también se <br></span> necesita <span>estilo</span><br>, <span>nosotros</span> te complementamos</h2>
+                <h1><span>Som</span>breros de pesca</h1>
+                
+ 
+              </div>
+
+            </div>
+                
                
 
            </div>
         
 
        </div>
+       <div class="row" >
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 " style="padding: 1px;" data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+        <div class="publicidad4">
+          <div class="text-publicidad4">
+            <h1>SHIM<span>A</span>NO</h1>
+            <h2>STELLA</h2>
+            <h3>FJ</h3>
+          </div>
+
+        </div>
+            
+            
+
+        </div>
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4" style="padding: 1px;" data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+         <div class="publicidad5">
+          <div class="text-publicidad5">
+            <h1><span>A</span>nzuelos</h1>
+            <h1><span>RAPALA</span></h1>
+          </div>
+
+         </div>
+             
+            
+
+        </div>
+     
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 " style="padding: 1px;" data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+        <div class="publicidad6">
+          <div class="text-publicidad6">
+            <h1>STELLA<span> FI</span></h1>
+            <h2>Gran <span>utilidad</span> y diseño</h2>
+
+          </div>
+
+        </div>
+            
+            
+
+        </div>
+
+    </div>
     
      </div>
 
@@ -244,157 +345,59 @@
 <div class="container-fluid">
   <div class="row">
     <div class="container" style="position: relative;">
-      <div class="row" data-aos="fade-up"
-      data-aos-easing="linear"
-      data-aos-duration="1000">
+      <div class="row">
          <div class="col-sm-12 seccion-productos-extras">
            
-             <h1>Más productos nuevos</h1>
-            
-            <div class="row"  data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000">
-             <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoPesca of productosPesca; index as i; let index = i">
-                 <div class="wrapper" *ngIf="i<6">
-                  <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
-                  <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kiriktsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+             <h1>Productos destacados</h1>
+              <hr>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 <owl-carousel-o [options]="customOptions">
+                   <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+                     <div class="" >
+                       <div class="product-card">
+                       <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
+                       <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+                       <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+                      <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
+                           <div class="product-tumb">
+                               <img src="{{productoPesca.image[0].url}}" alt="">
+                           </div>
+                           <div class="product-details">
+                               <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                           
+                               <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
+                               <div class="product-price">
+                                <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
+                              <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
+                              <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
+                                <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                               
+                               </div>
+                               
+                               <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                               <div class="product-bottom-details"> 
+                               </div>
+                               <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                               <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                           </div>
                        </div>
-                       
-                     </div>
                    </div>
-     
+                   </ng-template>
+                  
+               </owl-carousel-o>
+       
                 </div>
-               <!--<div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kirikutsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
-                       
-                     </div>
-                   </div>
-     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kirikutsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
-                       
-                     </div>
-                   </div>
-     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kirikutsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
-                       
-                     </div>
-                   </div>
-     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kirikutsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
-                       
-                     </div>
-                   </div>
-     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                 <div class="wrapper">
-                     <div class="product-img">
-                       <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                     </div>
-                     <div class="product-info">
-                       <div class="product-text">
-                         <h2>Caña de pescar Kirikutsyo </h2>
-                         
-                         
-                         <div class="product-price2">
-                           <h5>$230.99</h5>
-                         </div>
-                             <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                             <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
-                       
-                     </div>
-                   </div>
-     
-                </div>-->
-     
-            </div>
-           
-         </div>
-       </div>
+       
+              </div>
  </div>
 
   </div>
 
 </div>
 <br>
-<div class="container-fluid" style="background: rgb(255,255,255);
-background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);">
+<!--<div class="container-fluid" style=" background: rgb(1, 223, 215);
+background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%); ">
  <div class="row">
    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
     <ngx-slick-carousel class="carousel" 
@@ -414,17 +417,38 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);"
    </div>
 
  </div>
-</div>
+</div>-->
+
+<div class="container-fluid" style="background-image: url('assets/imagenes/fishing/ocean.jpg'); height: 750px; padding: 35px;">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="img-inside">
+        <div class="texto-img-inside">
+           <h1>SE UN PESCADOR</h1>
+           <h3>
+             Siempre hay nuevos lugares para ir a pescar, para cualquier pescador siempre hay un lugar nuevo, siempre un nuevo horizonte.
+           </h3>
+        </div>
+       
+      </div>
+ 
+    </div>
+ 
+  </div>
+ </div>
+
 
 <div class="container-fluid categorias-content" >
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
-            <h1>Categorías de <span>Pesca</span></h1>
-            <p>Visita nuestros productos de acuerdo a su clasificación, contamos con las siguientes categorías</p>
-            <hr>
-        </div>
-
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
+        <p>ANFIBIA by FECEGO MARINA</p>
+        <h1>Categorías de <span>Pesca</span></h1>
+       
+        <hr>
     </div>
+
+</div>
+    
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
         <div class="gallery-wrap">
@@ -492,15 +516,13 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);"
 <div class="container-fluid">
   <div class="row">
     <div class="container" style="margin-top: 30px;">
-      <div class="row"  data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="1000">
+      <div class="row">
           <div class="col-sm-12 product-Title">
-               <h1>Productos destacados</h1>
-               <p>Te presentamos algúnos de los productos que más le gustan a nuestros clientes</p>
+               <h1>Productos más vendidos</h1>
+               <hr>
               
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
+          <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
             <div class="product-card" *ngIf="i<4">
                 <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
                 <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
@@ -517,14 +539,14 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);"
                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                   </div>
                     
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                     <div class="product-bottom-details"> 
                     </div>
                       <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                 </div>
             </div>
-           </div>
+           </div>-->
              <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="product-card">
                   <div class="badge">Nuevo</div>
@@ -616,179 +638,173 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);"
   
              </div>-->
   
-  
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <owl-carousel-o [options]="customOptions">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPescaDestacados; index as i; let index = i;">
+             <div class="" >
+               <div class="product-card">
+               <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
+               <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+               <div class="badge3"*ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+               <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
+                   <div class="product-tumb">
+                       <img src="{{productoPesca.image[0].url}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                       >
+                   </div>
+                   <div class="product-details">
+                       <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                   
+                       <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
+                       <div class="product-price">
+
+                        <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
+                        <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
+                        <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
+                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                       </div>
+                       
+                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       <div class="product-bottom-details"> 
+                       </div>
+                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                   </div>
+               </div>
+           </div>
+           </ng-template>
+          
+       </owl-carousel-o>
+
+        </div>
+
       </div>
   </div>
 
   </div>
 
 </div>
-<div class="container-fluid" style="background: #000;">
-    <div class="row"  data-aos="fade-down"
-    data-aos-easing="linear"
-    data-aos-duration="1000">
-        <div class="col-lg-6 col-md-4 col-sm-12 col-12 texto-publicidad2">
-         
-            <h1>ANFIBIA</h1>
-            <p>Visita nuestra tienda, contamos con una gran variedad de Anzuelos, Carretes, Cañas, Kayaks, Accesorios de Pesca y más</p>
-              
 
-        </div>
-        
-        <div class="col-lg-6 col-md-4 col-sm-12 col-12">
-         
-          <img src="/assets/imagenes/paginaInicial/blackfriday.jpg" alt="" class="publicidad1">
-         
-     </div>
-  
-     
-
-    </div>
-  
-  </div>
 <div class="container-fluid">
   <div class="row">
-    <div class="container" style="padding-bottom: 20px;">
-      <div class="row" data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="1000" >
-          <div class="col-lg-12 col-md-12 col-sm-12 col-12 seccion-productos-extras">
-              <h1>Más productos destacados</h1>
-             <div class="row"  data-aos="fade-down"
-             data-aos-easing="linear"
-             data-aos-duration="1000">
-             <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoPesca of productosPesca; index as i; let index = i">
-              <div class="wrapper" *ngIf="i<6">
-               <div class="badge" *ngIf="productoPesca.nuevo">Nuevo</div>
-               <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-                  <div class="product-img">
-                    <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                  </div>
-                  <div class="product-info">
-                    <div class="product-text">
-                      <h2>Caña de pescar Kiriktsyo </h2>
-                      
-                      
-                      <div class="product-price2">
-                        <h5>$230.99</h5>
-                      </div>
-                          <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                          <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                    </div>
-                    
-                  </div>
-                </div>
-  
-             </div>
-               <!--<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                      </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
-                    </div>
-      
-                 </div>
-                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                      </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
-                    </div>
-      
-                 </div>
-      
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 " style="padding: 1px;" data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+    <div class="publicidad7">
+      <div class="text-publicidad7">
+        <h1><span>K</span>AYAKS</h1>
+        <h1><span>L</span>OTUS</h1>
+        <p>Visita nuestra</p>
+        <p>Sección de Kayaks</p>
+        <h2>LO <span>M</span>EJOR</h2>
+      </div>
+    </div>
         
+        
+
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+     <div class="publicidad8">
+       <div class="text-publicidad8">
+         <h1>SHIMANO</h1> 
+         <p>CONOCE LA NUEVA</p>
+         <h2>CX<span>BEAST</span>MASTER</h2>
+         <h2>STC<span>S</span>PIN <span>270</span></h2>
+
+       </div>
+     
+
+
+     </div>
+         
+        
+
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding: 1px;" data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+     <div class="parallax-fishing">
+      <div class="texto-parallax-fishing">
+        <h1>SHIMANO</h1>
+        <h2>SLX XT</h2>
+        <h3><span>NUEVO</span></h3>
+        <h4>CARRETE</h4>
+        <p>Vive la <span>experiencía, </span></p>
+        <p>EXPERIMENTA EL NUEVO <span>SHIMANO</span> SLX</p>
+        
+    
+      </div>
+
+
+     </div>
+         
+        
+
+    </div>
+    
+
+  </div>
+
+
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    
+      
+  </div>
+  
+    <div class="container" style="padding-bottom: 20px;">
+      <div class="row">
+        <div class="col-sm-12 product-Title">
+          <h1>Productos Yellow Tail</h1>
+          <hr>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <owl-carousel-o [options]="customOptions">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+             <div class="" >
+               <div class="product-card">
+               <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
+               <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
+               <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+              <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
+                   <div class="product-tumb">
+                       <img src="{{productoPesca.image[0].url}}" alt="">
+                   </div>
+                   <div class="product-details">
+                       <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                   
+                       <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
+                       <div class="product-price">
+                        <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
+                        <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
+                        <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
+                        <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                       
+                       </div>
+                       
+                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       <div class="product-bottom-details"> 
+                       </div>
+                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                   </div>
+               </div>
+           </div>
+           </ng-template>
           
-              <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                      </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
-                    </div>
-      
-                 </div>
-                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                      </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
-                    </div>
-      
-                 </div>
-                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="wrapper">
-                      <div class="product-img">
-                        <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png">
-                      </div>
-                      <div class="product-info">
-                        <div class="product-text">
-                          <h2>Caña de pescar Kirikutsyo </h2>
-                          
-                          
-                          <div class="product-price2">
-                            <h5>$230.99</h5>
-                          </div>
-                              <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                        
-                      </div>
-                    </div>
-      
-                 </div>-->
-      
-          </div>
+       </owl-carousel-o>
+
+        </div>
+
+      </div>
          
           
          
@@ -804,12 +820,28 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(0,0,0,1) 41%);"
   </div>
 
 </div>
-<div class="container-fluid parallax-fishing">
+     
+<div class="container-fluid" style="background-image: url('/assets/imagenes/fishing/fishingblue.jpg'); background-repeat: no-repeat;background-position: center; background-size: cover; height: 700px; margin-bottom: 100px;">
+ <div class="row">
+   <div class="col-sm-12">
+    <div class="image-final">
+      <div class="back-color">
+        <h1>PESCA</h1>
+        <p>Nos encargamos de que nuestros pescadores obtengan siempre los mejores productos, siempre buscamos calidad en las herramientas que proporcionamos a nuestros pescadores,porque sabemos que el mejor cazador debe tener las mejores herramientas.</p>
+        <div class="flex dark">
+          <a routerLink="/tienda/pesca" class="bttn-dark">Ir a la tienda</a>
+        </div>
+      </div>
 
+    </div>
+
+   </div>
+
+ </div>
+  
 </div>      
-        
   
-  
+
 
 
         

@@ -29,6 +29,7 @@ import { PoliticasPrivacidadComponent } from './politicas-privacidad/politicas-p
 import { PoliticasComprasComponent } from './politicas-compras/politicas-compras.component';
 import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politicas-devoluciones.component';
 import { EnviosComponent } from './envios/envios.component';
+import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 
 
 const routes: Routes = [
@@ -48,16 +49,20 @@ const routes: Routes = [
       {path: 'politicas-privacidad', component: PoliticasPrivacidadComponent },
       {path: 'politicas-compras', component: PoliticasComprasComponent},
       {path: 'politicas-devoluciones', component: PoliticasDevolucionesComponent},
-      {path: 'politicas-envios', component: EnviosComponent}
+      {path: 'politicas-envios', component: EnviosComponent},
+      {path: 'terminos_y_condiciones', component:TerminosYCondicionesComponent}
     ]
   },
   {path: 'anfibia-supervivencia', component: SurvivalComponent}, 
   {path: 'ubicaciones', component: UbicacionComponent},
   {path: 'blog', component: Blogv1Component}, 
   {path: 'proveedores', component: ProveedoresComponent}, 
-  {path: 'tienda-online', component: StoreOnlineComponent}, 
+  {path: 'tienda', component: StoreOnlineComponent},
   {path: 'contactanos', component: ContactoComponent}, 
-  {path: 'producto', component: IndividualProductComponent}, 
+  {path: 'tienda/:clasificacion', component:StoreOnlineComponent},
+  {path: 'tienda/:clasificacion/:categoria', component: StoreOnlineComponent},
+  {path: 'tienda/:clasificacion/:categoria', component: StoreOnlineComponent},
+  {path: 'tienda/:clasificacion/:categoria/:id/:nombre', component: IndividualProductComponent},
   {path: 'entrada', component: Entrada1Component}, 
   {path: 'lista-deseos', component: WishListComponent }, 
   {path: 'carrito-compras', component: CarritoComprasComponent}, 
@@ -66,11 +71,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent]
