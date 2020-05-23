@@ -36,6 +36,9 @@ import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos
     /*FontAwesomeModule*/
   ],
   providers: [ProductosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }
+
+

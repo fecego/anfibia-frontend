@@ -15,6 +15,7 @@
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
+
     }
 
     .skewedBox1{
@@ -93,17 +94,6 @@
             }
           }
 
-<<<<<<< HEAD
-=======
-    .img{
-        position: absolute;
-        width: 596px;
-        height: 408px;
-        top: 30px;
-        left: 350px;
-    }
-    
->>>>>>> 9b6bb8d8748770d64bfcf50592b048f45b044193
 
     span{
       font-family: 'Prometo-Thin';
@@ -557,23 +547,25 @@
     }
   
     .accordion ul li:nth-child(1) {
-      background-image: url("http://michael-ferry.com/assets/accordion1.jpg");
+      background-image: url("/assets/imagenes/Nosotros/Logo1.png");
+      
     }
-  
+
+
     .accordion ul li:nth-child(2) {
-      background-image: url("http://michael-ferry.com/assets/accordion2.jpg");
+      background-image: url("/assets/imagenes/Nosotros/Logo2.png");
     }
   
     .accordion ul li:nth-child(3) {
-    background-image: url("http://michael-ferry.com/assets/accordion3.jpg");
+    background-image: url("/assets/imagenes/Nosotros/Logo3.png");
     }
   
     .accordion ul li:nth-child(4) {
-      background-image: url("http://michael-ferry.com/assets/accordion4.jpg");
+      background-image: url("/assets/imagenes/Nosotros/Logo4.png");
     }
   
     .accordion ul li:nth-child(5) {
-      background-image: url("http://michael-ferry.com/assets/accordion5.jpg");
+      background-image: url("/assets/imagenes/Nosotros/Logo5.png");
     }
   
     .accordion ul:hover li, .accordion ul:focus-within li {

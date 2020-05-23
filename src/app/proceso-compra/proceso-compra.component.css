@@ -13,9 +13,20 @@ Ipad Mini 2.4 Landscape--*/
 
     }
 
+<<<<<<< HEAD
     .textos-asuntos-legales h4{
         font-family: 'Anton', sans-serif;
         
+=======
+    .container{
+        margin-bottom: 100px;
+        margin-top: 100px;
+        font-family: 'Prometo-light';
+    }
+
+    .regresar{
+        margin-top: 40px;
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
     }
 
     .textos-asuntos-legales p{
@@ -24,6 +35,7 @@ Ipad Mini 2.4 Landscape--*/
 }
 
 
+<<<<<<< HEAD
 /*Tablets
 ipad landscape  -- Si lo afecta
 Ipad mini Landscape -- Si lo afecta
@@ -40,6 +52,14 @@ Ipad mini Landscape -- Si lo afecta
         font-family: 'Prometo-Medium';
         font-weight: bolder;
         font-size: 20px;
+=======
+    .titulo h1{
+        text-transform: uppercase;
+        font-size: 30px;
+        letter-spacing: 2px;
+        font-family: 'Prometo-medium';
+        margin-bottom: 20px;
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
     }
 
     .textos-asuntos-legales p{
@@ -93,6 +113,7 @@ Surface Pro 3 Portrait
 
     }
 
+<<<<<<< HEAD
     .textos-asuntos-legales h4{
         font-family: 'Prometo-Medium';
         font-weight: bolder;
@@ -121,6 +142,35 @@ Media query usado
         color: #000;
         text-align: justify;
         
+=======
+    .informacion .btn .btn-info {
+        color: #fff;
+        background-color: #393939;
+        width: 100%;
+        font-size: 15px;
+        font-family: 'Prometo-light';
+        text-align: center !important; 
+    }
+    
+    .informacion .btn .btn-info {
+        position: relative;
+        padding-left: 44px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .informacion .btn-info:hover {
+        background-color: #252525;
+    }
+
+    .pago{
+        margin-top: 80px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
 
     }
 
@@ -138,6 +188,7 @@ Media query usado
 }
 
 
+<<<<<<< HEAD
 /*Afecta 
     Iphone 4 Landscape
     Iphone 5 Lanscape
@@ -148,15 +199,135 @@ Media query usado
         color: #000;
         text-align: justify;
         
+=======
+    .pagoos{
+        margin-top: -80px;
+    }
+
+    .pagoos button {
+        width: 45%;
+        margin-right: 0px;
+        margin-left: 20px;
+        padding: 5px 0 5px 0;
+        color:#fff;
+        background-color: #393939 !important; 
+        text-align: center !important; 
+        border-color: #393939 !important; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }   
+            /*Media query en tablets horizontal*/
+            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+                .pagoos button{
+                    margin-left: 15px;
+                }
+            }
+            /*Media query en tablets vertical*/
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .pagoos button{
+                    margin-left: 17px;
+                    font-size: 17px;
+                }
+            }
+
+            /*Media query en celulares vertical*/
+             @media only screen and (max-width: 390px) and (min-width: 321px){
+                .pagoos button{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    font-size: 17px;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .pagoos button{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    font-size: 17px;
+                }
+            }
+
+
+    .modal-body h1{
+        font-family: 'Prometo-medium';
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    .modal-body .card {
+        border: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+      
+    .modal-body .card h2 {
+          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+          background-size: 20px;
+          cursor: pointer;
+          font-size: 18px;
+          font-family: 'Prometo-medium';
+      }
+      
+    .modal-body .card .collapsed {
+          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+    }
+
+
+    .pedido  {
+        background-color: #DADADA;
+        max-height: 750px;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+    }
+            /*Media query en tablets vertical*/
+            @media only screen and (max-width: 768px) and (min-width: 641px){
+                .pedido{
+                    max-height: 850px;
+                }
+            }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                 img{
+                    width: 20%;
+                }
+            }
+         
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                 img{
+                    width: 20%;
+                }
+            }
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
 
     }
 
+<<<<<<< HEAD
     .textos-asuntos-legales h4{
         font-family: 'Prometo-Medium';
         font-weight: bolder;
         font-size: 18px;
+=======
+    .pedido h5{
+        font-size: 18px; 
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .pedido h5{
+                font-size: 13px;
+            } 
+        }
 
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .pedido h5{
+                font-size: 13px;
+            } 
+        }
+
+<<<<<<< HEAD
     .textos-asuntos-legales p{
         font-family: 'Prometo-Thin';
         font-weight: bolder;
@@ -164,6 +335,22 @@ Media query usado
     }
 
 }
+=======
+    .pedido h6{
+        font-size: 18px; 
+        text-align: right !important;
+    }
+    
+    .pedido .btn {
+        width: 100%;
+        color: #fff;
+        background-color: #393939;
+        text-align: center !important; 
+        border-color: #393939;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
 
 
 
@@ -224,3 +411,35 @@ Iphone 5 Portrait
 
  }
 
+<<<<<<< HEAD
+=======
+    .card {
+        border: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background-color: #DADADA;
+    }
+
+    .card .btn {
+        width: 40%;
+        color: #fff;
+        background-color: #393939 !important;
+        text-align: center !important; 
+        border-color: #393939 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 390px) and (min-width: 321px){
+                .card .btn{
+                    width: 70%;
+                }
+            }
+
+            @media only screen and (max-width: 567px) and (min-width: 392px){
+                .card .btn{
+                    width: 70%;
+                }
+            }
+>>>>>>> 2fd557425190126c071472d018de2e47fa1fb799

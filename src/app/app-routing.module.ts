@@ -19,7 +19,7 @@ import { Blogv1Component } from './blogv1/blogv1.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { StoreOnlineComponent } from './store-online/store-online.component';
 import { ContactoComponent } from './contacto/contacto.component'
-import {IndividualProductComponent} from './individual-product/individual-product.component';
+import { IndividualProductComponent} from './individual-product/individual-product.component';
 import { Entrada1Component } from './blogv1/entrada1/entrada1.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
@@ -30,6 +30,8 @@ import { PoliticasComprasComponent } from './politicas-compras/politicas-compras
 import { PoliticasDevolucionesComponent } from './politicas-devoluciones/politicas-devoluciones.component';
 import { EnviosComponent } from './envios/envios.component';
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
 
 
 const routes: Routes = [
@@ -67,8 +69,11 @@ const routes: Routes = [
   {path: 'lista-deseos', component: WishListComponent }, 
   {path: 'carrito-compras', component: CarritoComprasComponent}, 
   {path: 'proceso-compra', component: ProcesoCompraComponent},
-  {path: '**', component: NotPageFoundComponent}
+  {path: 'pedidos', component: PerfilComponent},
+  {path: 'perfil', component: PerfilComponent},
+  {path: '**', component: NotPageFoundComponent} 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

@@ -8,6 +8,10 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         padding-bottom: 100px;
     }
 
+    .img{
+        position: absolute;
+    }
+
     .imagen h1{
         margin-top: 50px;
         position: relative;
@@ -54,6 +58,9 @@ ipad landscape, Ipad mini Landscape.
         padding-bottom: 100px;
     }
 
+    .img{
+        position: absolute;
+    }
 
     .imagen h1{
         margin-top: 50px;
@@ -101,6 +108,9 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
         padding-bottom: 100px;
     }
 
+    .img{
+        position: absolute;
+    }
  
 
     .imagen h1{
@@ -150,6 +160,9 @@ Iphone 4, 5, 7 PORTRAIT.
         padding-bottom: 100px;
     }
 
+    .img{
+        position: absolute;
+    }
 
     .imagen h1{
         margin-top: 50px;
@@ -160,6 +173,8 @@ Iphone 4, 5, 7 PORTRAIT.
         color:black;
         letter-spacing: 0.1em;
     }
+
+ 
 
     .texto{
         font-size: 20px;
@@ -201,6 +216,10 @@ Celulares Portrait.
 @media (min-width: 320px) and (max-width: 480px) {
     .container-fluid{
         padding-bottom: 100px;
+    }
+
+    .img{
+        position: absolute;
     }
 
     .imagen h1{

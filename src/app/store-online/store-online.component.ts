@@ -58,7 +58,7 @@ export class StoreOnlineComponent implements OnInit {
 
   pescaCambio(dato: boolean){
     if(dato == true){
-      this.router.navigateByUrl(`/tienda/pesca`);
+      this.router.navigateByUrl(`/tienda`);
     }
   }
 
