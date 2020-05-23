@@ -3,22 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';*/
 
 import { ProductosService } from '../servicios/productos.service';
-<<<<<<< HEAD
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ProductosModalComponent } from '../modals/productos-modal/productos-modal.component';
 import { Router } from '@angular/router';
-=======
-
-
->>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
 @Component({
   selector: 'app-anfibia-main',
   templateUrl: './anfibia-main.component.html',
   styleUrls: ['./anfibia-main.component.css']
 })
 export class AnfibiaMainComponent implements OnInit {
-<<<<<<< HEAD
 
 
   public customOptions: OwlOptions = {
@@ -54,9 +48,6 @@ export class AnfibiaMainComponent implements OnInit {
 
   /*Constructor genera un objeto de tipo ProductosService*/
   constructor(private _productosS: ProductosService, private modalProducto: NgbModal, private router: Router) { }
-=======
-  constructor(private _productosS: ProductosService) { }
->>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
 
   public productos = [];
   public productosNuevos = [];
@@ -109,7 +100,6 @@ export class AnfibiaMainComponent implements OnInit {
         // backdrop: 'static'
       });
     
-<<<<<<< HEAD
     let productoModal = datos;
     
   
@@ -119,8 +109,6 @@ export class AnfibiaMainComponent implements OnInit {
       console.log(result);
     }, (reason) => {
     });
-=======
->>>>>>> 2fd557425190126c071472d018de2e47fa1fb799
   }
 
 
