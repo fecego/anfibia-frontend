@@ -10,11 +10,12 @@
     }
 
     .sec1{
-      background: url('/assets/imagenes/Nosotros/montaña5.jpg');
+      background: url('/assets/imagenes/Nosotros/creacion.png');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
-      background-repeat: no-repeat;
+      background-repeat:
+       no-repeat;
 
     }
 
@@ -94,33 +95,6 @@
             }
           }
 
-
-    span{
-      font-family: 'Prometo-Thin';
-    }
-
-    .titulo{
-      position: absolute; 
-      top: 92%; 
-      left: 49%;
-    }
-
-    .titulo p{
-      font-family: 'Prometo-Medium'; 
-      font-size: 35px; 
-      color: white;
-    }
-
-    .sec1 h1{
-      font-family: 'Prometo-Medium';
-      font-weight: bolder;
-      color:white;
-      font-size: 100px;
-      padding-top: 300px;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-
      /*-------------------------------------------
        SEGUNDA SECCIÓN: NOMBRE (ANFIBIA) Y PARRAFO
     ----------------------------------------------*/
@@ -129,7 +103,7 @@
       padding-top: 50px;
       text-align: center;
       font-size: 100px;
-      font-family: 'Prometo-x-bold';
+      font-family: 'Anton', sans serif;
       color: black;
     }
           /*Media query celulares*/
@@ -146,8 +120,8 @@
 
     p{
       text-align: justify;
-      font-family: 'Prometo-light';
-      font-size: 20px;
+      font-family: 'Meera';
+      font-size: 60px;
       color: black;
     }
           /*Media query tablets*/
@@ -176,7 +150,7 @@
 
     /*------------------------------------------------------- 
       TERCERA SECCIÓN: IMAGENES DE LAS CATEGORIA DE ANFIBIA
-            (CACERÍA, PESCA Y SUPERVIVENCIA)
+            (CACERÍA y PESCA )
     ---------------------------------------------------------*/
     .project {
       font-family: 'Prometo-light';
@@ -233,8 +207,8 @@
     }
 
     .project .text h3 {
-      color: #fff; 
-      font-size: 50px;
+      color: black; 
+      font-size: 60px;
     }
           /*Media query tablets horizontal*/
           @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
@@ -244,7 +218,7 @@
           }
         
     .project .text h3 a {
-      color: #fff; 
+      color: black; 
     }
           @media (max-width: 991.98px) {
             .project .text {
@@ -276,7 +250,7 @@
     .social{
       margin-top: 100px;
       margin-bottom: 100px;
-      left: 25%;
+      left: 32%;
       position: absolute; 
       top: 1%;
     }
@@ -284,19 +258,19 @@
           /*Tablet horizontal*/
           @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .social{
-              left: 17%;
+              left: 25%;
             }
           }
           /*Tablet vertical*/
           @media only screen and (min-width: 770px) and (max-width: 999px) {
             .social{
-              left: 7%;
+              left: 15%;
             }
           }
           /*Tablet*/
           @media only screen and (max-width: 768px) and (min-width: 641px){
             .social{
-              left: 7%;
+              left: 16%;
             }
           }
           /*Celulares horinzontal*/
@@ -315,7 +289,7 @@
 
     .social h3{
       text-align: center;
-      font-family: 'Prometo-medium';
+      font-family: 'Meera';
       padding-bottom: 30px;
     }
           @media only screen and (max-width: 567px) and (min-width: 321px){
@@ -426,7 +400,7 @@
     /* QUINTA SECCIÓN: ULTIMA IMAGEN */
     .sec2{
         position: relative;
-        background: url('/assets/imagenes/Nosotros/4.jpg');
+        background: url('/assets/imagenes/Nosotros/hombre-c-rifle.jpg');
         height: 500px;
         background-size: cover;
         background-attachment: fixed;
@@ -436,7 +410,7 @@
 
     .sec2 h4{
         text-align: center;
-        font-family: 'Prometo-Thin';
+        font-family: 'Meera';
         font-size: 80px;
         padding-top: 150px;
         color:white;
@@ -547,25 +521,24 @@
     }
   
     .accordion ul li:nth-child(1) {
-      background-image: url("/assets/imagenes/Nosotros/Logo1.png");
+      background-image: url("/assets/imagenes/Nosotros/Montaña.png");
       
     }
 
-
     .accordion ul li:nth-child(2) {
-      background-image: url("/assets/imagenes/Nosotros/Logo2.png");
+      background-image: url("/assets/imagenes/Nosotros/Aleta.png");
     }
   
     .accordion ul li:nth-child(3) {
-    background-image: url("/assets/imagenes/Nosotros/Logo3.png");
+    background-image: url("/assets/imagenes/Nosotros/Casa-de-campaña.png");
     }
   
     .accordion ul li:nth-child(4) {
-      background-image: url("/assets/imagenes/Nosotros/Logo4.png");
+      background-image: url("/assets/imagenes/Nosotros/Letra.png");
     }
   
     .accordion ul li:nth-child(5) {
-      background-image: url("/assets/imagenes/Nosotros/Logo5.png");
+      background-image: url("/assets/imagenes/Nosotros/LogoF.png");
     }
   
     .accordion ul:hover li, .accordion ul:focus-within li {

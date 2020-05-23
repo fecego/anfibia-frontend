@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Anton;
+    src: url(/assets/fonts/Anton-Regular.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: Meera;
+    src: url(/assets/fonts/MeeraInimai-Regular.ttf) format("opentype");
+  }
