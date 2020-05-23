@@ -1,5 +1,5 @@
     .container{
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
     }
             @media only screen and (max-width: 768px) and (min-width: 641px){
                 .help{
@@ -28,24 +28,21 @@
                 }
             }
 
-    .container-fluid .uno .img{
-        position: absolute;
-    }
-
     h1{
-        margin-top: 10px;
+        margin-top: 50px;
         position: relative;
         text-align: center;
         font-size: 60px;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton';
         color: black;
         letter-spacing: 0.1em;
     }
 
+
     .dos h2{
-        margin-left: 50px;
+        margin-left: 30px;
         margin-top: 30px;
-        font-family: 'Prometo-X-bold';
+        font-family: 'Anton';
         font-size: 20px;
         text-align: left;
     }
@@ -60,7 +57,7 @@
             }
 
     .nav{
-        margin-left: 35px;
+        margin-left: 25px;
     }
 
     .nav-item a{
@@ -68,7 +65,7 @@
     }
 
     .linea p{
-        margin-left: 45px;
+        margin-left: 35px;
         text-align: justify;
     }
             @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
@@ -81,7 +78,7 @@
             }
 
     .help li{
-        margin-left: 45px;
+        margin-left: 35px;
         list-style: none;
     }
             @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
@@ -169,6 +166,17 @@
         position: relative;
         margin: auto;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 20px;
+        background: #f0f0f0;
+    }
+
+    .content img {
+        max-width: 100%;
+        max-height: 100%;
     }
   
     .content .content-overlay {
@@ -255,7 +263,7 @@
         transition: all 0.5s;
         cursor: pointer;
         margin: 5px;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
     }
   
     .button span {

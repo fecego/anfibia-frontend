@@ -1,6 +1,6 @@
 
     .container{
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
     }
 
     img{
@@ -13,7 +13,7 @@
         position: relative;
         text-align: center;
         font-size: 60px;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton';
         color: black;
         letter-spacing: 0.1em;
     }
@@ -209,7 +209,7 @@
     .info li{
         text-align: left;
         font-size: 20px;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
         list-style: none;
     }
 
@@ -244,14 +244,14 @@
 
     h4{
         margin-top: 40px;
-        margin-left: 190px;
+        margin-left: 180px;
         font-size: 20px;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
     }
 
     section{
         width: 400px;
-        margin-left: 200px;
+        margin-left: 170px;
         margin-top: 30px;
     }  
                 /*Media query en tablets horizontal*/

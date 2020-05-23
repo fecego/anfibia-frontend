@@ -1,13 +1,13 @@
 
     .container {
         margin-top: 50px;
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
         font-size: 17px;
         margin-bottom: 100px;
     }
 
     a{
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
         font-size: 17px;
         margin-left: 10px;
     }
@@ -21,7 +21,7 @@
         position: relative;
         text-align: center;
         font-size: 80px;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton';
         color: black;
         letter-spacing: 0.1em;
     }
@@ -57,7 +57,7 @@
         position: relative;
         text-align: center;
         font-size: 30px;
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
         color: black;
     }
 
@@ -74,7 +74,7 @@
 
     .nav-link {
         position: relative;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
         display: block;
         margin: 0;
         padding: 15px 30px;
@@ -113,7 +113,7 @@
         background-size: 20px;
         cursor: pointer;
         font-size: 18px;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
     }
     
     .card .collapsed {

@@ -1,6 +1,6 @@
 .container-fluid{
         margin-top:0px;
-        font-family: 'Prometo-light';
+        font-family: 'Meera';
     }
 
     /*Media query en celulares vertical*/
@@ -18,14 +18,15 @@
                                        
     h1{
         text-align: left;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton';
         font-size: 50px;
+        margin-top: 80px;
     }
 
     h2{
         text-transform: uppercase;
         font-size: 20px;
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
     }
 
     img {
@@ -43,7 +44,7 @@
     }
 
     .boton {
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
         border: none;
         width: 100%;
         color: white;
@@ -77,7 +78,7 @@
     .menu h2{
         margin-left: 0px;
         margin-top: 0px;
-        font-family: 'Prometo-X-bold';
+        font-family: 'Anton';
         font-size: 20px;
         text-align: left;
     }
@@ -109,7 +110,7 @@
     }
 
     .card .button {
-        font-family: 'Prometo-medium';
+        font-family: 'Anton';
         border: none;
         width: 100%;
         color: white;
@@ -127,6 +128,7 @@
         background-color: white;
         color: black;
         border: 1px solid black;
+        margin-top: 15px;
     }
 
     .card .boton2:hover {

@@ -33,16 +33,16 @@
            <ul class="navbar-nav justify-content-end">
                <div class="row ">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
-                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true"></i> </button>
-                       <button type="button"><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true"></i> </button>
-                       <button type="button"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true"></i> </button>
-                       <button type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user-o icon-header" id="boton-perfil" aria-hidden="true"></i></button>
+                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i> </button>
+                       <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i> </button>
+                       <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i> </button>
+                       <button type="button"  id="dropdownMenuButton" data-toggle="dropdown" data-toggle="modal" data-target="#myModal" aria-haspopup="true" aria-expanded="false" title="Iniciar sesión"><i class="fa fa-user-o icon-header" id="boton-perfil" aria-hidden="true"></i></button>
                        <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Mi perfil</a>
                         <a class="dropdown-item" href="#">Mis pedidos</a>
                         <a class="dropdown-item" href="#">Otras opciones</a>
                        </div>
-                       <button type="link"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true"></i> </button>
+                       <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i> </button>
                    </div>
                </div>
               <div class="row" id="div-busqueda">
@@ -516,6 +516,42 @@
                           </div>
                        </li>
            </ul>  
-       </div>
-       </div>
-       </div>
+</div>
+</div>
+</div>
+
+<!-- MODAL INICIO DE SESIÓN-->
+<div class="modal fade" id="myModal" role="dialog">
+        <div style="margin-top: 170px;"  class="modal-dialog" >  
+            <!-- Modal content-->
+            <div style="background-color: black;" class="modal-content">
+                <div class="modal-header">
+                    <button style="padding-right: 10px; color: white;" type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div style="background-color: black;" class="modal-body">
+                <h1 style="text-align: center; font-family: Anton; font-size: 35px; color: white; ">BIENVENIDO A LA <span style="color:#01AFAA;">TRIBU</span></h1>
+                
+                        <form >
+                          <h2 style="text-align: center; font-size: 20px; font-family: Anton; color: white;">Inicio de Sesión</h2>
+                            <input id="Usuario" name="Usuario" type="name" placeholder="Nombre de Usuario">
+                            <input id="Contraseña" name="Contraseña" type="password" placeholder="Contraseña">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                        <div style="margin-left: 60px;" class="form-check">
+                                                <input  type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label style="color: white;" class="form-check-label" for="exampleCheck1">Recuérdame</label>
+                                        </div>
+                                </div>
+                                <div class="col-lg-7">
+                                        <a style="margin-left: 30px; color: white;" href=""><u>¿Olvidaste la contraseña?</u></a>
+                                </div>
+                            </div>
+                            <input id="Login" name="Login" type="submit" value="Iniciar sesión">
+                        </form>       
+                <hr> 
+                <span style="color: white; text-align: center;">¿Aún no tienes cuenta con nosotros? <a routerLink="/crear-cuenta" style="color: #01AFAA;">Crear cuenta</a></span>                   
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,7 +1,7 @@
     
     .container {
       margin-top: 50px;
-      font-family: 'Prometo-light';
+      font-family: 'Meera';
       font-size: 17px;
       margin-bottom: 100px;
     }
@@ -15,7 +15,7 @@
       position: relative;
       text-align: center;
       font-size: 80px;
-      font-family: 'Prometo-x-bold';
+      font-family: 'Anton';
       color: black;
       letter-spacing: 0.1em;
     }
@@ -23,7 +23,7 @@
     .menu h2{
       margin-left: 0px;
       margin-top: 0px;
-      font-family: 'Prometo-X-bold';
+      font-family: 'Anton';
       font-size: 20px;
       text-align: left;
     }
@@ -82,7 +82,7 @@
     }
 
     .card h2{
-      font-family: 'Prometo-medium';
+      font-family: 'Anton';
       font-size: 20px;
       margin-left: 10px;
     }
@@ -92,12 +92,23 @@
       margin-left: 10px;
     }
 
-    .card img{
-      margin-top: 20px;
-      width: 100%;
-      margin-left: 10px;
+    .pedido .foto{
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      padding: 10px;
+      background: #F0F0F0;
     }
 
+    .pedido img{
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
     .card .detalles{
       margin-top: 30px;
     }
@@ -123,7 +134,7 @@
     .wrapper {
       margin: 0 auto;
       width: 100%;
-      font-family: 'Prometo-light';
+      font-family: 'Meera';
       font-size: 14px;
     }
 
@@ -150,6 +161,10 @@
         }
       } 
 
+    .envio{
+      
+      align-self: center;
+    }
 
     .step-progress {
       position: relative;

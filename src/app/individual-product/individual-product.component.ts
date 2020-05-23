@@ -14,10 +14,7 @@ declare let $:any;
 export class IndividualProductComponent implements OnInit {
 
   constructor() { }
-
-
   
-
   ngOnInit() {
 
     $("#image-container2").ezPlus({
