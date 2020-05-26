@@ -11,22 +11,11 @@ Ipad Mini 2.4 Landscape--*/
         text-align: justify;
         
 
-<<<<<<< HEAD
     }
 
     .textos-asuntos-legales h4{
         font-family: 'Anton', sans-serif;
         
-=======
-    .container-fluid{
-        font-family: 'Meera';
-    }
-
-    .container{
-        margin-bottom: 100px;
-        margin-top: 100px;
-        font-family: 'Meera';
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 
     .textos-asuntos-legales p{
@@ -47,19 +36,10 @@ Ipad mini Landscape -- Si lo afecta
 
     }
 
-<<<<<<< HEAD
     .textos-asuntos-legales h4{
         font-family: 'Prometo-Medium';
         font-weight: bolder;
         font-size: 20px;
-=======
-    .titulo h1{
-        text-transform: uppercase;
-        font-size: 30px;
-        letter-spacing: 2px;
-        font-family: 'Anton';
-        margin-bottom: 20px;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 
     .textos-asuntos-legales p{
@@ -81,14 +61,6 @@ Surface Pro 3 Portrait
         text-align: justify;
         
 
-<<<<<<< HEAD
-=======
-    .informacion h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
-        margin-top: 15px;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 
     .textos-asuntos-legales h4{
@@ -105,7 +77,6 @@ Surface Pro 3 Portrait
 
 }
 
-<<<<<<< HEAD
 
 /*
     Afecta tablets Portrait
@@ -118,49 +89,13 @@ Surface Pro 3 Portrait
     .textos-asuntos-legales{
         color: #000;
         text-align: justify;
-=======
-    .btn-ldireccion {
-        color: black;
-        font-size: 15px;
-        font-family: 'Meera';
-        text-align: right !important; 
-        text-decoration: none;
-       
-    }
-    
-    .informacion .btn-ldireccion i{
-        padding-left: 5px;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
         
 
     }
 
-<<<<<<< HEAD
     .textos-asuntos-legales h4{
         font-family: 'Prometo-Medium';
         font-weight: bolder;
-=======
-    .informacion .btn .btn-info {
-        color: #fff;
-        background-color: #393939;
-        width: 100%;
-        font-size: 15px;
-        font-family: 'Meera';
-        text-align: center !important; 
-    }
-    
-    .informacion .btn .btn-info {
-        position: relative;
-        padding-left: 44px;
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .informacion .btn-info:hover {
-        background-color: #252525;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 
     .textos-asuntos-legales p{
@@ -169,15 +104,6 @@ Surface Pro 3 Portrait
     }
 }
 
-<<<<<<< HEAD
-=======
-    .pago h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
-        margin-top: 15px;
-    }
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
 
 /*Afecta Android phones LANDSCAPE
 HTC ONE Landscape -- Si lo afecta
@@ -204,91 +130,13 @@ Media query usado
         font-size: 20px;
     }
 
-<<<<<<< HEAD
     .textos-asuntos-legales p{
         font-family: 'Prometo-Thin';
         font-weight: bolder;
         font-size: 15px;
-=======
-    .pagoos{
-        margin-top: -80px;
-    }
-
-    .pagoos button {
-        width: 45%;
-        margin-right: 0px;
-        margin-left: 20px;
-        padding: 5px 0 5px 0;
-        color:#fff;
-        background-color: #393939 !important; 
-        text-align: center !important; 
-        border-color: #393939 !important; 
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }   
-            /*Media query en tablets horizontal*/
-            @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
-                .pagoos button{
-                    margin-left: 15px;
-                }
-            }
-            /*Media query en tablets vertical*/
-            @media only screen and (max-width: 768px) and (min-width: 641px){
-                .pagoos button{
-                    margin-left: 17px;
-                    font-size: 17px;
-                }
-            }
-
-            /*Media query en celulares vertical*/
-             @media only screen and (max-width: 390px) and (min-width: 321px){
-                .pagoos button{
-                    width: 100%;
-                    margin-left: 0px;
-                    margin-top: 10px;
-                    font-size: 17px;
-                }
-            }
-
-            @media only screen and (max-width: 567px) and (min-width: 392px){
-                .pagoos button{
-                    width: 100%;
-                    margin-left: 0px;
-                    margin-top: 10px;
-                    font-size: 17px;
-                }
-            }
-
-
-    .modal-body h1{
-        font-family: 'Anton';
-        font-size: 30px;
-        letter-spacing: 3px;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 }
 
-<<<<<<< HEAD
-=======
-    .modal-body .card {
-        border: none;
-        margin-bottom: 20px;
-        margin-top: 10px;
-      }
-      
-    .modal-body .card h2 {
-          background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
-          background-size: 20px;
-          cursor: pointer;
-          font-size: 18px;
-          font-family: 'Anton';
-      }
-      
-    .modal-body .card .collapsed {
-          background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
-    }
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
 
 /*Afecta 
     Iphone 4 Landscape
@@ -301,55 +149,12 @@ Media query usado
         text-align: justify;
         
 
-<<<<<<< HEAD
     }
 
     .textos-asuntos-legales h4{
         font-family: 'Prometo-Medium';
         font-weight: bolder;
         font-size: 18px;
-=======
-    .pedido  {
-        background-color: #DADADA;
-        max-height: 750px;
-        margin-bottom: 50px;
-        padding-bottom: 30px;
-    }
-            /*Media query en tablets vertical*/
-            @media only screen and (max-width: 768px) and (min-width: 641px){
-                .pedido{
-                    max-height: 850px;
-                }
-            }
-            /*Media query en celulares vertical*/
-            @media only screen and (max-width: 390px) and (min-width: 321px){
-                 img{
-                    width: 20%;
-                }
-            }
-         
-            @media only screen and (max-width: 567px) and (min-width: 392px){
-                 img{
-                    width: 20%;
-                }
-            }
-
-    .pedido h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
-        margin-top: 15px;
-    }
-
-    .pedido h3{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-family: 'Anton';
-    }
-
-    .pedido h5{
-        font-size: 18px; 
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
         /*Media query en celulares vertical*/
         @media only screen and (max-width: 390px) and (min-width: 321px){
@@ -390,25 +195,6 @@ Iphone 7 Portrait
         text-align: justify;
         
 
-<<<<<<< HEAD
-=======
-    .pedido .foto{
-        position: relative;
-        margin: auto;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        padding: 10px;
-        background: #ABB2B9;
-        margin-top: 45px;
-        margin-left: 20px;
-    }
-    .pedido img{
-        max-width: 90%;
-        max-height: 90%;
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
     }
 
     .textos-asuntos-legales h4{

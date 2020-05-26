@@ -69,6 +69,7 @@ const routes: Routes = [
   {path: 'lista-deseos', component: WishListComponent }, 
   {path: 'carrito-compras', component: CarritoComprasComponent}, 
   {path: 'proceso-compra', component: ProcesoCompraComponent},
+  {path: 'proceso-compra/:idCarrito', component: ProcesoCompraComponent},
   {path: 'pedidos', component: PerfilComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: '**', component: NotPageFoundComponent} 

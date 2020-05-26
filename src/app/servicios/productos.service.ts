@@ -12,7 +12,376 @@ export class ProductosService {
 
   }
 
+  getProductoCarrito(){
+    return[
+      {
+        sku: 12821,
+        idProducto: 192,
+        nombre: "Caña Senna",
+        modelo: "SENS662M",
+        clasificacion: "pesca",
+        cantidad: 1,
+        categoria: "cañas",
+        subcategoria1: "Agua dulce",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 500.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 3,
+          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 4,
+          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 5,
+          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
+        },
+       ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+    },
+      {
+        sku: 12821,
+        idProducto: 198,
+        nombre: "Cañas Jigging Agua Salada",
+        modelo: "ALCS501XH",
+        clasificacion: "pesca",
+        categoria: "cañas",
+        cantidad: 2,
+        subcategoria1: "Spinning",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 100.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/029324_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/029324_2.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 3,
+          url: "/assets/imagenes/paginaInicial/productos/029324_3.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 4,
+          url: "/assets/imagenes/paginaInicial/productos/029324_4.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 5,
+          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 6,
+          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
+        }
+      ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Caña para pesca vertical, fabricada en TC24T la cual combina poder con flexibilidad, para un mejor trabajo con señuelos de alto peso y grandes capturas, todos sus componentes son de la marca ALPS."
+    
+    },
+    {
+      sku: 12821,
+      idProducto: 365,
+      nombre: "Carrete Silver King SK100",
+      modelo: "SK100",
+      clasificacion: "pesca",
+      cantidad: 3,
+      categoria: "carretes",
+      subcategoria1: "Spinning",
+      subcategoria2: "Spinning",
+      marca: "Yellow Tail",
+      precio: 300.00,
+      precio_antiguo: 1000.00,
+      image: [{
+        idProducto: 762,
+        secuencial: 1,
+        url: "/assets/imagenes/paginaInicial/productos/042552_1.png"
+      },
+      {
+        idProducto: 132,
+        secuencial: 2,
+        url: "/assets/imagenes/paginaInicial/productos/042552_2.png"
+      }
+    ],
+      descuento: 0,
+      nuevo: true,
+      destacado: true,
+      descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
+  
+  },
+    {
+      sku: 12821,
+      idProducto: 287,
+      nombre: "Carrete Silver King SK200",
+      modelo: "SK200",
+      cantidad: 4,
+      clasificacion: "pesca",
+      categoria: "carretes",
+      subcategoria1: "Spinning",
+      subcategoria2: "Spinning",
+      marca: "Yellow Tail",
+      precio: 200.00,
+      precio_antiguo: 1000.00,
+      image: [{
+        idProducto: 762,
+        secuencial: 1,
+        url: "/assets/imagenes/paginaInicial/productos/042554_1.png"
+      },
+      {
+        idProducto: 132,
+        secuencial: 2,
+        url: "/assets/imagenes/paginaInicial/productos/042554_2.png"
+      }
+    ],
+      descuento: 0,
+      nuevo: true,
+      destacado: true,
+      descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
+  
+  }
+
+    ]
+
+  }
+
  
+
+  getProductosWishList(){
+    return [
+      {
+        sku: 12821,
+        idProducto: 192,
+        nombre: "Caña Senna",
+        modelo: "SENS662M",
+        clasificacion: "pesca",
+        categoria: "cañas",
+        subcategoria1: "Agua dulce",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 795.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 3,
+          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 4,
+          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 5,
+          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
+        },
+       ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+    
+    },
+      {
+        sku: 12821,
+        idProducto: 198,
+        nombre: "Cañas Jigging Agua Salada",
+        modelo: "ALCS501XH",
+        clasificacion: "pesca",
+        categoria: "cañas",
+        subcategoria1: "Spinning",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 3835.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/029324_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/029324_2.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 3,
+          url: "/assets/imagenes/paginaInicial/productos/029324_3.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 4,
+          url: "/assets/imagenes/paginaInicial/productos/029324_4.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 5,
+          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 6,
+          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
+        }
+      ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Caña para pesca vertical, fabricada en TC24T la cual combina poder con flexibilidad, para un mejor trabajo con señuelos de alto peso y grandes capturas, todos sus componentes son de la marca ALPS."
+    
+    },
+    
+      {
+        sku: 12821,
+        idProducto: 378,
+        nombre: "Caña Tortuga Spinning",
+        modelo: "TORS561MH",
+        clasificacion: "pesca",
+        categoria: "cañas",
+        subcategoria1: "Spinning",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 4532.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/041833_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/041833_2.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 3,
+          url: "/assets/imagenes/paginaInicial/productos/041833_3.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 4,
+          url: "/assets/imagenes/paginaInicial/productos/041833_4.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 5,
+          url: "/assets/imagenes/paginaInicial/productos/041833_5.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 6,
+          url: "/assets/imagenes/paginaInicial/productos/041833_6.png"
+        }
+      ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
+    
+    },
+      {
+        sku: 12821,
+        idProducto: 365,
+        nombre: "Carrete Silver King SK100",
+        modelo: "SK100",
+        clasificacion: "pesca",
+        categoria: "carretes",
+        subcategoria1: "Spinning",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 4532.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/042552_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/042552_2.png"
+        }
+      ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
+    
+    },
+      {
+        sku: 12821,
+        idProducto: 287,
+        nombre: "Carrete Silver King SK200",
+        modelo: "SK200",
+        clasificacion: "pesca",
+        categoria: "carretes",
+        subcategoria1: "Spinning",
+        subcategoria2: "Spinning",
+        marca: "Yellow Tail",
+        precio: 4632.00,
+        precio_antiguo: 1000.00,
+        image: [{
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/paginaInicial/productos/042554_1.png"
+        },
+        {
+          idProducto: 132,
+          secuencial: 2,
+          url: "/assets/imagenes/paginaInicial/productos/042554_2.png"
+        }
+      ],
+        descuento: 0,
+        nuevo: true,
+        destacado: true,
+        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
+    
+    }
+
+    ]
+  }
 
   getProductos(){
      return [

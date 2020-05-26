@@ -33,16 +33,16 @@
            <ul class="navbar-nav justify-content-end">
                <div class="row ">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
-                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i> </button>
-                       <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i> </button>
-                       <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i> </button>
-                       <button type="button"  id="dropdownMenuButton" data-toggle="dropdown" data-toggle="modal" data-target="#myModal" aria-haspopup="true" aria-expanded="false" title="Iniciar sesión"><i class="fa fa-user-o icon-header" id="boton-perfil" aria-hidden="true"></i></button>
+                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i><span>Busqueda</span></button>
+                       <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i><span>Lista de deseos</span></button>
+                       <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i><span>Ubicaciones</span> </button>
+                       <button type="button"  id="dropdownMenuButton" data-toggle="dropdown" data-toggle="modal" data-target="#myModal" aria-haspopup="true" aria-expanded="false" title="Iniciar sesión"><i class="fa fa-user-o icon-header" id="boton-perfil" aria-hidden="true"></i><span>Usuario</span></button>
                        <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Mi perfil</a>
                         <a class="dropdown-item" href="#">Mis pedidos</a>
                         <a class="dropdown-item" href="#">Otras opciones</a>
                        </div>
-                       <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i> </button>
+                       <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i><span>Carrito</span></button>
                    </div>
                </div>
               <div class="row" id="div-busqueda">
@@ -275,7 +275,7 @@
                                                         <a href="" class="dropdown-item-categoria">Monofilamento</a><br>
                                                         <a href="" class="dropdown-item-categoria">Trenzadas</a><br>
                                                         <a href="" class="dropdown-item-categoria">Leaders</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Flourocarbono</a><br>
+                                                        <a href="" class="dropdown-item-categoria">Fluorocarbono</a><br>
                                                         <a href="" class="dropdown-item-categoria">Reinales</a>
                                                         
                                                         
@@ -571,6 +571,9 @@
                                                 <a href="" class="dropdown-item" routerLink="blog">Blog</a>
                                                 <a href="" class="dropdown-item" routerLink="proveedores">Proveedores</a>
                                                 <a href="" class="dropdown-item" routerLink="mapa-sitio">Mapa del sitio</a>
+                                                <a href="" class="dropdown-item" routerLink="perfil">Perfil</a>
+                                                <a href="" class="dropdown-item" routerLink="lista-deseos">Mi Wishlist</a>
+                                                <a href="" class="dropdown-item" routerLink="carrito-compras">Mi Carrito</a>
                                                
                                            </div>
                                            <div class="col-sm-12 menu-design">

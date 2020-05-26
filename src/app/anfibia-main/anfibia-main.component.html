@@ -142,7 +142,7 @@
                 <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
                 
                     <div class="product-tumb">
-                        <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="">
+                        <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "changeImage(producto.image[1].url)">
                     </div>
                     <div class="product-details">
                         <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>
