@@ -34,7 +34,6 @@
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
               "node_modules/ez-plus/css/jquery.ez-plus.css"
-
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -43,8 +42,6 @@
               "node_modules/aos/dist/aos.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/ez-plus/src/jquery.ez-plus.js"
-
-              
             ]
           },
           "configurations": {
@@ -116,7 +113,6 @@
               "node_modules/aos/dist/aos.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/ez-plus/css/jquery.ez-plus.css"
-
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -153,6 +149,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "anfibiaFecego"
+    }
+  },
+  "defaultProject": "anfibiaFecego",
+  "cli": {
+    "analytics": "bff5ef6e-7d43-412a-9602-1c96692312e7"
+  }
 }

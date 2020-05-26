@@ -17,7 +17,6 @@ declare let $:any;
 })
 export class IndividualProductComponent implements OnInit {
 
-<<<<<<< HEAD
   public customOptions: OwlOptions = {
     items: 8,
     autoplay: true,
@@ -98,10 +97,6 @@ export class IndividualProductComponent implements OnInit {
 
 
    /*El Metodo ngOnInit solo se desplegara cuando el componente es desplegado por primera vez*/
-=======
-  constructor() { }
-  
->>>>>>> c86bdb3a2f581c063209187afca7abfc06394fdf
   ngOnInit() {
     console.log("Se cargo el ngOnInit");
     /*Carga la lista del Servicio, es una instancia de la clase ProductosServices*/
