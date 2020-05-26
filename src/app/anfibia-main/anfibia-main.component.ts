@@ -73,6 +73,12 @@ export class AnfibiaMainComponent implements OnInit {
   }
 
 
+  public changeImage(dato){
+    var valorImagen = $("#principalProducto").attr("src");
+    console.log("Este es el dato de la imagen 1", dato);
+    var cambioImagen = $("#principalProducto").attr("src", dato);
+  }
+
   public addWishList(dato){
     console.log(this.productosWishList);
     let datoInsertar = dato;
