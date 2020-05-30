@@ -24,13 +24,13 @@
             <h3><b>Tipo de envío</b></h3>
             <p>Entrega estándar (5-7 días, $100.00)</p>
             <h3><b>Dirección de envío</b></h3>
-            <p>Karla Veronica Sánchez Díaz, Calle cerrada San Luis #107, Fraccionamiento el Roble, 93610, 
-            Martinez de la Torre, Veracruz, México.<br>+52 232 138 76 65</p>
+            <p>{{usuario.nombre}} {{usuario.apellidos}}, {{usuario.direccion[0].calle}} #{{usuario.direccion[0].numero}}, Fraccionamiento: {{usuario.direccion[0].fraccionamiento}}, {{usuario.direccion[0].codigoPostal}}, 
+            {{usuario.direccion[0].municipio}}, {{usuario.direccion[0].estado}}, {{usuario.direccion[0].pais}}.<br>+{{usuario.direccion[0].telefono}}</p>
             <div class="d-flex justify-content-end">
-                <a class="btn-ldireccion btn-direccion" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar una nueva dirección <i class="fa fa-plus" aria-hidden="true"></i></a>
+                <a routerLink="/perfil">Agregar una nueva dirección</a>
             </div>
             <!--AGREGAR UNA NUEVA DIRECCIÓN-->
-            <div class="collapse" id="collapseExample">
+            <!--<div class="collapse" id="collapseExample">
                 <div class="card card-body">
                     
                     <div class="row">
@@ -129,7 +129,7 @@
                         <button type="button" class="btn btn-info">Guardar dirección</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!--AGREGAR UNA NUEVA DIRECCIÓN-->
             
             <!--PAGOS-->
@@ -192,7 +192,7 @@
                             </div>
                         </div>-->
                         <!--Pago con transferencia-->
-                        <div id="collapseExample2" class="collapse" data-parent="#myGroup1">
+                        <!--<div id="collapseExample2" class="collapse" data-parent="#myGroup1">
                             <div class="card card-body">
                                 <dl class="">
                                     <dt>CUENTA BANAMEX</dt>
@@ -203,7 +203,7 @@
                                 </dl>
                                 <p><b>IMPORTANTE:</b> Antes de realizar cualquier pago es primordial que te confirmemos la disponibilidad de los productos.</p>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <!--PAGOS-->
@@ -255,9 +255,9 @@
                     <h5><b>Total</b></h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <h6>$1,500.00</h6>
-                    <h6>$100.00</h6>
-                    <h6><b>$1,600.00</b></h6>
+                    <h6>${{totalParcial}}</h6>
+                    <h6>${{gastosEnvio}}</h6>
+                    <h6><b>${{total}}</b></h6>
                 </div>
             </div>
             <div class="row">
@@ -265,36 +265,23 @@
                 <!--<a href="#demo" class="boton" data-toggle="collapse" aria-expanded="true">Simple collapsible</a>
                 <div id="demo" class="collapse"></div>-->
                 <h4>detalles del pedido</h4>
-                <div class="row">
+                <div class="row" *ngFor = "let prodCarrito of carritoUsuario.productos">
                     <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 foto">
-                        <img class="img-fluid" src="/assets/imagenes/CarritoCompras/2.png" alt="">
+                        <img class="img-fluid" [attr.src]="prodCarrito.image[0].url" alt="">
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                         <dl class="detalles">
-                            <dt>Lorem ipsum dolor sit amet.</dt>
-                            <dt>$375.00</dt>                                                 
-                            <dt>Cantidad: 2</dt>
-                            <dt>Color: Negro</dt>
-                            <dt>Total: $750.00</dt>
+                            <dt>{{prodCarrito.nombre}}</dt>
+                            <dt>${{prodCarrito.precio}}</dt>                                                 
+                            <dt>Cantidad: {{prodCarrito.cantidad}}</dt>
+                            <!--<dt>Color: Negro</dt>-->
+                            <dt>Total: {{prodCarrito.totalProductoIndividual}}</dt>
                         </dl>
                     </div>
+                    <hr>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 foto">
-                        <img class="img-fluid" src="/assets/imagenes/CarritoCompras/3.png" alt="">
-                    </div>
-                    <div class="col-lg-7 col-md-6 col-sm-7 col-xs-6">
-                        <dl class="detalles">
-                            <dt>Lorem ipsum dolor sit amet.</dt>
-                            <dt>$375.00</dt>
-                            <dt>Cantidad: 2</dt>
-                            <dt>Color: Negro</dt>
-                            <dt>Total: $750.00</dt>
-                        </dl>
-                    </div>
-                </div>
-                <hr>
+               
+           
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p>Al hacer click en COMPLETAR LA COMPRA aceptas nuestros <a href="">Términos y Condiciones.</a></p>

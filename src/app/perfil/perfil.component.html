@@ -4,10 +4,10 @@
             <h2>Menu</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mi perfil</a>
+                    <a class="nav-link" routerLink="/perfil">Mi perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/tienda-online">Tienda</a>
+                    <a class="nav-link" routerLink="/tienda">Tienda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/pedidos">Mis pedidos</a>
@@ -19,7 +19,7 @@
                   <a class="nav-link" routerLink="/carrito-compras">Carrito de compras</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/preguntas-frecuentes">FAQ</a>
+                  <a type="link" class="nav-link" routerLink="/preguntas-frecuentes">FAQ</a>
                 </li>
             </ul>
             <hr>
@@ -35,12 +35,13 @@
         <div class="col-lg-9 col-md-4 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                    <h1>KARLA DÍAZ</h1>
+                    <h1>{{usuario.nombre}} {{usuario.apellidos}}</h1>
                     <dl class="detalles">
-                        <dt><i class="fa fa-envelope" aria-hidden="true"></i> dkarla404@gmail.com</dt>
-                        <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i> 31/Agosto</dt>
+                        <dt><i class="fa fa-envelope" aria-hidden="true"></i> {{usuario.correo}}</dt>
+                        <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{usuario.birthday}}</dt>
                     </dl>
                 </div>
+               
                 <!--<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                     <img src="/assets/imagenes/Logo/LogoCopia.png" class="rounded float-right" alt="Anfibia">
                 </div>-->
@@ -52,137 +53,29 @@
                     <h2><i class="fa fa-home" aria-hidden="true"></i> Direcciones</h2>
                     <p>Puedes agregar y editar tu dirección aquí
                         .</p>
-                    <dl class="direccion">
-                        <dt>Karla Veronica Sánchez Díaz</dt>
-                        <dt>Calle cerrada san Luis #107, Fraccionamiento el Roble</dt>
-                        <dt>Martínez de la Torre, Veracruz, México</dt>
-                        <dt>232 138 7665</dt>
-                    </dl>
-                    <a href="" data-toggle="modal" data-target="#direccion">Editar dirección</a>
+                   <div *ngFor="let direccion of usuario.direccion; index as i; let index = i;">
+                    <ul class="direccion" >
+                        <li><h2>Calle: <span>{{direccion.calle}}</span>, Numero: <span>{{direccion.numero}}</span>, Fraccionamiento <span>{{direccion.fraccionamiento}}</span></h2>   
+                            <h2>Municipio: <span>{{direccion.municipio}}</span>, Estado: <span>{{direccion.estado}}</span>, País <span>{{direccion.pais}}</span></h2>
+                            <h2>Telefono: <span>{{direccion.telefono}}</span>, Codigo Postal: <span> {{direccion.codigoPostal}}</span></h2>
+                            
+                        </li>
+                        
+                    </ul>
+                    <button  (click) = "openModal(usuario, direccion)">Editar dirección</button>
+                    <button (click) = "eliminarDireccion(usuario, direccion, i)">Eliminar dirección</button>
+                    <hr>
+                   </div>     
+                    
+                   
                 </div>
                 <!-- Trigger the modal with a button -->
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    <a class="boton boton1"  data-toggle="modal" data-target="#direccion">Agregar nueva dirección</a>
+                    <button class="boton boton1" (click) = "openModalNuevaDireccion(usuario.nombre, usuario.apellidos)">Agregar nueva dirección</button>
                 </div>
         
                  <!-- Modal -->
-                <div class="modal fade" id="direccion" role="dialog">
-                    <div class="modal-dialog">  
-                        <!-- Modal content-->
-                        <div class="content">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="card card-body">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="nombre">Nombre</label>
-                                                <input type="text" class="form-control" id="nombre" aria-describedby="nombre"> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="apellido">Apellido</label>
-                                                <input type="text" class="form-control" id="apellido" aria-describedby="nombre"> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="direccion">Dirección</label>
-                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="direccion">Colonia</label>
-                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="direccion">Número</label>
-                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="direccion">Código Postal</label>
-                                                <input type="text" class="form-control" id="direccion" aria-describedby="direccion"> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">  
-                                                <label for="inputState">Estado</label>
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Selecciona un estado</option>
-                                                    <option>Aguascalientes</option>
-                                                    <option>Baja California</option>
-                                                    <option>Baja California Sur</option>
-                                                    <option>Campeche</option>
-                                                    <option>Chiapas</option>
-                                                    <option>Chihuahua</option>
-                                                    <option>Ciudad de México</option>
-                                                    <option>Coahuila de Zaragoza</option>
-                                                    <option>Colima</option>
-                                                    <option>Durango</option>
-                                                    <option>Guanajuato</option>
-                                                    <option>Guerrero</option>
-                                                    <option>Hidalgo</option>
-                                                    <option>Jalisco</option>
-                                                    <option>México</option>
-                                                    <option>Michoacán de Ocampo</option>
-                                                    <option>Morelos</option>
-                                                    <option>Nayarit</option>
-                                                    <option>Nuevo León</option>
-                                                    <option>Oaxaca</option>
-                                                    <option>Puebla</option>
-                                                    <option>Querétaro</option>
-                                                    <option>Quintana Roo</option>
-                                                    <option>San Luis Potosí</option>
-                                                    <option>Sinaloa</option>
-                                                    <option>Sonora</option>
-                                                    <option>Tabasco</option>
-                                                    <option>Tamaulipas</option>
-                                                    <option>Tlaxcala</option>
-                                                    <option>Veracruz de Ignacio de la Llave</option>
-                                                    <option>Yucatán</option>
-                                                    <option>Zacatecas</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="Pais">Pais</label>
-                                                <input type="text" class="form-control" id="pais" aria-describedby="pais" placeholder="México" disabled> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="Pais">Municipio</label>
-                                                <input type="text" class="form-control" id="pais" aria-describedby="pais" placeholder=""> 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                                            <input style="margin-left: 5px;" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label style="margin-left: 20px;" class="form-check-label" for="defaultCheck1">Marcar como dirección predeterminada.</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <a class="button boton2">Guardar dirección</a>
-                                    </div> 
-                                </div>                        
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
             <hr>
             <div class="row perfil">
@@ -191,7 +84,7 @@
                     <p>Mira tu lista de deseo.</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <a class="boton boton1" href="">Ver mi lista de deseos</a>
+                    <a class="boton boton1" routerLink = "/lista-deseos">Ver mi lista de deseos</a>
                 </div>
             </div>
             <hr>

@@ -900,16 +900,26 @@
         }
 
     .publicidad-imagen1{
-        background-image: url('/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg');
+       
         /* Full height */
         width: 100%;
         height: 650px;
         max-height: 100%; 
-        background-repeat: no-repeat;
-        background-size:100% 100%;
-        background-position: center;
+       
         /* Create the parallax scrolling effect */
     }
+
+    .publicidad-imagen1 img{
+        max-height: 100%;
+        width: 100%;
+    }
+
+    .publicidad-imagen1 a{
+        position: absolute;
+        bottom: 10%;
+        left: 0%;
+    }
+
         /*Tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .publicidad-imagen1{
@@ -925,12 +935,7 @@
             }
         }
 
-    .publicidad-imagen1 img{
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 100%;
-    }
+ 
 
     .tex-publicidad-1{
         background-color: rgba(0, 0, 0, 0.3);
@@ -970,16 +975,21 @@ background: rgba(0, 0, 0, 0.3);
 
 
     .publicidad-imagen2{
-        background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
+       
         /* Full height */
         width: 100%;
         height: 650px;
         max-height: 100%; 
-        background-repeat: no-repeat;
-        background-size:100% 100%;
-        background-position: center;
+       
         /* Create the parallax scrolling effect */
     }
+
+
+    .publicidad-imagen2 img{
+        width: 100%;
+        max-height: 100%;
+    }
+
         /*Media query en tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .publicidad-imagen2{
@@ -1004,14 +1014,17 @@ background: rgba(0, 0, 0, 0.3);
     }*/
 
     .publicidad-imagen3{
-    background-image: url('/assets/imagenes/paginaInicial/Caña-ALLY1.jpg');
+    
      /* Full height */
      width: 100%;
      height: 650px;
      max-height: 100%; 
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
+  
+    }
+
+    .publicidad-imagen3 img{
+        width: 100%;
+        max-height: 100%;
     }
         /*Media query en tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
@@ -1064,34 +1077,54 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .publicidad-imagen10{
-        background-image: url('/assets/imagenes/paginaInicial/Stella.jpg');
+       
         /* Full height */
         width: 100%;
         height: 650px;
         max-height: 100%; 
-        padding: 0px;
-        /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
+        
+    }
+
+    .publicidad-imagen10 img{
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .publicidad-yellow{
+       
+        /* Full height */
+        width: 100%;
+        height: 450px;
+        max-height: 100%;
+        background-image: url('/assets/imagenes/paginaInicial/YellowTail-con-logo.jpg');
         background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    .publicidad-yellow img{
+        width: 100%;
+        height: 100%;
     }
         
     .publicidad-imagen4{
-        background-image: url('/assets/imagenes/paginaInicial/Coronado-CJ6000.jpg');
+       
         /* Full height */
         width: 100%;
         height: 450px;
         max-height: 100%; 
-        padding: 0px;
-        /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        
 
+    }
+
+    .publicidad-imagen4 img{
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .publicidad-imagen5{
-        background-image: url('/assets/imagenes/paginaInicial/stingra-st7000.jpg');
+        
       
         /* Full height */
         width: 100%;
@@ -1100,15 +1133,18 @@ background: rgba(0, 0, 0, 0.3);
         max-height: 100%; 
       
         /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        
 
     }
 
 
+    .publicidad-imagen5 img{
+        width: 100%;
+        max-height: 100%;
+    }
+
     .publicidad-imagen6{
-        background-image: url('/assets/imagenes/paginaInicial/Torito.jpg');
+    
       
         /* Full height */
         width: 100%;
@@ -1117,15 +1153,17 @@ background: rgba(0, 0, 0, 0.3);
         max-height: 100%; 
       
         /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+       
 
+    }
+
+    .publicidad-imagen6 img{
+        width: 100%;
+        max-height: 100%;
     }
 
     .publicidad-imagen7{
-        background-image: url('/assets/imagenes/paginaInicial/SR15000.jpg');
-      
+        
         /* Full height */
         width: 100%;
         padding: 0px;
@@ -1133,10 +1171,13 @@ background: rgba(0, 0, 0, 0.3);
         max-height: 100%; 
       
         /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        
 
+    }
+
+    .publicidad-imagen7 img{
+        width: 100%;
+        max-height: 100%;
     }
 
 
@@ -1253,6 +1294,8 @@ background: rgba(0, 0, 0, 0.3);
         border: none;
 
     }
+
+  
 
     .product-price2{ 
         background: none;
@@ -1731,6 +1774,7 @@ background: rgba(0, 0, 0, 0.3);
 
       a.bttn-dark2{
         color: #fff;
+        width: 100%;
         font-size: 17px;
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
@@ -2039,7 +2083,7 @@ background: rgba(0, 0, 0, 0.3);
     .product-tumb img:hover {
       transition: all 300ms ease-in;
       transform: scale(1.2);
-    }
+    }*/
     
     .product-details {
         padding: 30px;

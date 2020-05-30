@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { not } from '@angular/compiler/src/output/output_ast';
 import { Router} from '@angular/router'
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { ModalInicioSesionComponent } from '../modals/modal-inicio-sesion/modal-inicio-sesion.component';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenuheaderComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private modalInicio: NgbModal) { }
 
   ngOnInit() {
 
@@ -69,6 +71,18 @@ export class MenuheaderComponent implements OnInit {
 
    
 
+  }
+
+  openModal(){
+    console.log('Presionaste abrir modal');
+    const modalRef = this.modalInicio.open(ModalInicioSesionComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+        size: 'lg'
+        // keyboard: false,
+        // backdrop: 'static'
+      });
   }
 
  

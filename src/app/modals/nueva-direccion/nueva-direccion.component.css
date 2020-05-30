@@ -1,35 +1,23 @@
-.perfil button{
+.modal-header h1{
     font-family: 'Anton', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    color: #000;
-    background: none;
-    border: none;
-    text-decoration: underline;
-}
-
-.perfil ul{
-    list-style-type: none;
-    text-align: left;
-}
-
-.perfil h2{
-    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
     
-    font-weight: bold;
-    text-transform: none;
-    font-size: 16px;
-    color: #000;
 }
 
-.direccion ul li{
-    list-style-type: none;
+.modal-header h5{
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
 }
 
-.perfil h2 span{
-    font-family: 'Meera Inima',sans-serif;
-    font-weight: normal;
-    color: #000;
+.modal-header h6{
+    font-family: 'Meera Inima, sans-serif';
+    font-size: 14px;
+    font-weight: bolder;
+    color: #FF0000;
+}
+
+label{
+    font-family: 'Anton', sans-serif;
 }
 
 .container-fluid{

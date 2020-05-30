@@ -1065,7 +1065,13 @@ export class ProductosService {
           idProducto: 150,
           secuencial: 1, 
           url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      ],
         nuevo: false,
         destacado: true,
         descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"        
@@ -1083,7 +1089,15 @@ export class ProductosService {
           idProducto: 156,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042557_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      ],
         descuento:0,
         nuevo: true,
         destacado: true,
@@ -1102,7 +1116,15 @@ export class ProductosService {
           idProducto: 157,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042557_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      ],
         descuento:0,
         nuevo: false,
         destacado: true,   
@@ -1123,7 +1145,15 @@ export class ProductosService {
           idProducto: 158,
           secuencial: 1,
           url:  "/assets/imagenes/paginaInicial/carretes/042554_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      ],
         nuevo: false,
         destacado: true,
         descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"     
@@ -1141,7 +1171,16 @@ export class ProductosService {
           idProducto: 159,
           secuencial: 1, 
           url: "/assets/imagenes/paginaInicial/carretes/042560_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      
+      ],
         nuevo: false,
         destacado: false,
         descuento: 20,
@@ -1159,7 +1198,8 @@ export class ProductosService {
           idProducto: 159,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042694_1.png"
-        }],
+        }
+      ],
         descuento: 0,
         nuevo: true,
         destacado: true,
@@ -1179,7 +1219,13 @@ export class ProductosService {
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042699_1.png"
     
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      ],
         nuevo: true,
         destacado: true,
         descuento: 35,
@@ -1198,7 +1244,14 @@ export class ProductosService {
           idProducto: 161,
           secuencial: 1,
           url:  "/assets/imagenes/paginaInicial/carretes/042560_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      ],
         nuevo: true,
         destacado: false, 
         descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"        
@@ -1216,7 +1269,14 @@ export class ProductosService {
           idProducto: 163,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042554_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      ],
         nuevo: false,
         destacado: true,
         descuento: 50,
@@ -1236,7 +1296,14 @@ export class ProductosService {
           idProducto: 163,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      ],
         nuevo: false,
         destacado: true,
         descuento:0,
@@ -1256,7 +1323,15 @@ export class ProductosService {
           idProducto: 165,
           secuencial: 1,
           url:"/assets/imagenes/paginaInicial/carretes/042557_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      ],
         descuento:0,
         nuevo: true,
         destacado: true,
@@ -1275,7 +1350,14 @@ export class ProductosService {
           idProducto: 166,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042557_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      ],
         descuento: 30,
         nuevo: false,
         destacado: false,
@@ -1294,7 +1376,14 @@ export class ProductosService {
           idProducto: 167,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042554_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      ],
         nuevo: false,
         destacado: true,
         descuento: 40,
@@ -1313,7 +1402,15 @@ export class ProductosService {
           idProducto: 168,
           secuencial: 1,
           url: "/assets/imagenes/paginaInicial/carretes/042554_1.png"
-        }],
+        },
+        {
+          idProducto: 150,
+          secuencial: 1, 
+          url: "/assets/imagenes/paginaInicial/carretes/042562_1.png"
+        }
+      
+      
+      ],
         nuevo: false,
         destacado: true,
         descripcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"      
