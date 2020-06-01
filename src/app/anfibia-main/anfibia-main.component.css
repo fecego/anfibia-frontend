@@ -1,9 +1,45 @@
-
     /*Tablets horizontal*/
     @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
          .uno{
             margin-top: 400px;
         }
+        
+        .productyellow{
+            margin-top: -50px !important;
+        }
+    }
+
+    /*Media query en tablets vertical*/
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        .uno{
+            margin-top: 120px;
+        }
+
+        .boton2 .bttn-dark{
+            margin-bottom: 90%;
+        }
+
+        .boton2 .bttn-dark2{
+            margin-bottom: 80%;
+        }
+
+        .boton3 .bttn-dark{
+            margin-bottom: 150%;
+        }
+
+        .dos{
+            margin-top: -25%;
+        }
+
+        .tres{
+            margin-top: -30%;
+        }
+
+        .productyellow{
+            margin-top: -80px !important;
+        }
+
+        
     }
 
 .texto-yellow{
@@ -12,6 +48,30 @@
     padding: 1px;
     height: 450px;
 }
+    /*Tablets horizontal*/
+    @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        .texto-yellow{
+            background: #000;
+            width: 100%;
+            height: 332px;
+            margin-bottom: -50px;
+        }
+        .fila2{
+            margin-top: -117px;
+        }
+    }
+    /*Media query en tablets vertical*/
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        .texto-yellow{
+            background: #000;
+            width: 100%;
+            height: 247px;
+            margin-bottom: -10px;
+        }
+        .fila2{
+            margin-top: -203px;
+        }
+    }
 
 #titulo-yellow{
     font-size: 90px;
@@ -637,6 +697,7 @@
     .last-container-text{
         font-family: 'Anton', sans-serif;
         background: #fff;
+        margin-top: 10%;
     }
 
     .last-container-text h1{
@@ -697,6 +758,22 @@
         top: 10%;
         right: 5%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .last-text-fit-top p{
+                top: 10%;
+                right: 1%;
+                font-size: 15px;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .last-text-fit-top {
+                top: 10%;
+                left: 30%;
+            }
+        }
 
     .last-text-fit-top2 {
         position: absolute;
@@ -706,9 +783,25 @@
 
     .last-text-fit-y{
         position: absolute;
-        top: 55%;
+        top: 65%;
         left: 12%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .last-text-fit-y{
+                position: absolute;
+                top: 65%;
+                left: 15%;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .last-text-fit-y{
+                top: 50%;
+                left: 72%;
+            }
+        }
 
     .last-text-fit-middle {
         position: absolute;
@@ -720,10 +813,17 @@
         padding-top: 10px;
     }
 
-    .last-text-fit-fish2{
+    .last-text-fit-fish{
         position: absolute;
-        top: 83%;
+        top: 100%;
     }
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .last-text-fit-fish{
+                top: 73%;
+                left: 55%;
+            }
+        }
 
     .last-container{
         margin-top: 20px;
@@ -803,6 +903,18 @@
         text-align: center;
     }
 
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .textos-iniciales p{
+                font-family: 'Meera Inimai', sans-serif;
+                font-size: 15px; 
+                padding-left: 20px; 
+                margin-top: 6%;
+                color: #000; 
+                text-align: center;
+            }
+        }
+
     .textos-iniciales h3{
         text-align: center;
         font-family: 'Anton', sans-serif;
@@ -816,6 +928,14 @@
             .textos-iniciales h3{
                 margin-top: 80px;
                 text-align: center;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .textos-iniciales h3{
+                margin-top: 70px;
+                font-size: 40px;
             }
         }
 
@@ -899,6 +1019,22 @@
             }
         }
 
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .fondo-imagen{
+                margin-top: 30px;
+                background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
+                /* Full height */
+                width: 100%;
+                height: 800px;
+                max-height: 30%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
     .publicidad-imagen1{
        
         /* Full height */
@@ -935,7 +1071,32 @@
             }
         }
 
+<<<<<<< HEAD
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .publicidad-imagen1{
+                margin-top: 50px;
+                background-image: url('/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg');
+                /* Full height */
+                width: 100%;
+                height: 520px;
+                max-height: 60%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+
+    .publicidad-imagen1 img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+=======
  
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
 
     .tex-publicidad-1{
         background-color: rgba(0, 0, 0, 0.3);
@@ -1005,6 +1166,36 @@ background: rgba(0, 0, 0, 0.3);
             }
         }
 
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .publicidad-imagen2{
+                background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
+                /* Full height */
+                width: 100%;
+                height: 390px;
+                max-height: 60%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .publicidad-imagen2{
+                background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
+                /* Full height */
+                width: 100%;
+                height: 650px;
+                max-height: 60%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+
     /*.publicidad-imagen2 img{
         width: 100%;
         height: 100%;
@@ -1039,6 +1230,22 @@ background: rgba(0, 0, 0, 0.3);
                  background-position: center;
             }
         }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .publicidad-imagen3{
+                background-image: url('/assets/imagenes/paginaInicial/Caña-ALLY1.jpg');
+                 /* Full height */
+                 width: 100%;
+                 height: 650px;
+                 max-height: 60%; 
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: center;
+            }
+        }
+            
+
     .publicidad-imagen3 .text{
         position: absolute; 
         bottom: 10%; 
@@ -1107,16 +1314,57 @@ background: rgba(0, 0, 0, 0.3);
         width: 100%;
         height: 100%;
     }
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .publicidad-imagen10{
+                margin-top: 50px;
+                background-image: url('/assets/imagenes/paginaInicial/Stella.jpg');
+                /* Full height */
+                width: 100%;
+                height: 390px;
+                max-height: 60%; 
+                padding: 0px;
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
         
     .publicidad-imagen4{
+<<<<<<< HEAD
+=======
        
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
         /* Full height */
         width: 100%;
         height: 450px;
         max-height: 100%; 
+<<<<<<< HEAD
+        padding: 0px;
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+=======
         
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
 
-    }
+    
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .boton {
+                margin-bottom: 18%;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .boton{
+                margin-bottom: 42%;
+            }
+        }
 
     .publicidad-imagen4 img{
         max-width: 100%;
@@ -1124,18 +1372,38 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .publicidad-imagen5{
+<<<<<<< HEAD
+=======
         
       
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
         /* Full height */
         width: 100%;
         padding: 0px;
         height: 450px;
         max-height: 100%; 
-      
         /* Create the parallax scrolling effect */
+<<<<<<< HEAD
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+=======
         
 
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .botonu {
+                margin-bottom: 10%;
+            }
+        }  
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .botonu {
+                margin-bottom: 20%;
+            }
+        } 
 
 
     .publicidad-imagen5 img{
@@ -1144,18 +1412,39 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .publicidad-imagen6{
+<<<<<<< HEAD
+=======
     
       
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
         /* Full height */
         width: 100%;
         padding: 0px;
         height: 450px;
         max-height: 100%; 
-      
         /* Create the parallax scrolling effect */
+<<<<<<< HEAD
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+=======
        
 
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .botonu1 {
+                margin-bottom: 0%;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .botonu1{
+                margin-bottom: 60%;
+            }
+        }
 
     .publicidad-imagen6 img{
         width: 100%;
@@ -1163,14 +1452,37 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .publicidad-imagen7{
+<<<<<<< HEAD
+=======
         
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
         /* Full height */
         width: 100%;
         padding: 0px;
         height: 450px;
         max-height: 100%; 
-      
         /* Create the parallax scrolling effect */
+<<<<<<< HEAD
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .boton1 {
+                margin-bottom: 40%;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .boton1 {
+                margin-bottom: 90% ;
+            }
+        }
+   
+=======
         
 
     }
@@ -1179,6 +1491,7 @@ background: rgba(0, 0, 0, 0.3);
         width: 100%;
         max-height: 100%;
     }
+>>>>>>> e8ad6bdd019f2492048f14c428bb13174cc9f832
 
 
     .fondo-imagen2{
@@ -1202,6 +1515,22 @@ background: rgba(0, 0, 0, 0.3);
                 width: 100%;
                 height: 800px;
                 max-height: 50%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .fondo-imagen2{
+                margin-top: 5px;
+                background-image: url('/assets/imagenes/paginaInicial/Cazador-3.jpg');
+                /* Full height */
+                width: 100%;
+                height: 800px;
+                max-height: 45%; 
                 /* Create the parallax scrolling effect */
                 background-position: center;
                 background-repeat: no-repeat;
@@ -1373,6 +1702,12 @@ background: rgba(0, 0, 0, 0.3);
         color: #000;
         letter-spacing: 4px;
     }
+         /*Media query en tablets vertical*/
+         @media only screen and (max-width: 768px) and (min-width: 641px){
+             .pi-left h2{
+                 font-size: 50px;
+             }
+         }
 
     .pi-left hr{
         background-color: #04B4AE;
@@ -1386,9 +1721,19 @@ background: rgba(0, 0, 0, 0.3);
         padding-left: 20px; 
         margin-top: 6%;
         color: #000; 
-        
         text-align: center;
     }
+         /*Media query en tablets vertical*/
+         @media only screen and (max-width: 768px) and (min-width: 641px){
+            .pi-left h1{
+                font-family: 'Meera Inimai', sans-serif;
+                font-size: 13px !important; 
+                padding-left: 20px; 
+                margin-top: 4% !important;
+                color: #000; 
+                text-align: center;
+            }
+         }
 
     /*.pi-left span{
         font-family:'Prometo-Medium';
@@ -1678,8 +2023,9 @@ background: rgba(0, 0, 0, 0.3);
         text-decoration: none;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s ease all;
-        
       }
+    
+
       a.bttn-dark:hover {
         color: #fff;
       }
@@ -1690,7 +2036,6 @@ background: rgba(0, 0, 0, 0.3);
       .bttn {
         font-size: 18px;
         letter-spacing: 2px;
-       
         display: inline-block;
         text-align: center;
         width: 270px;
@@ -1701,6 +2046,7 @@ background: rgba(0, 0, 0, 0.3);
         position: relative;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
       }
+
       .bttn:before {
         -webkit-transition: 0.5s all ease;
         transition: 0.5s all ease;
@@ -1743,6 +2089,7 @@ background: rgba(0, 0, 0, 0.3);
         z-index: 2;
         margin-bottom: 20px;
       }
+
       .bttn-dark:before {
         -webkit-transition: 0.5s all ease;
         transition: 0.5s all ease;
@@ -1802,7 +2149,7 @@ background: rgba(0, 0, 0, 0.3);
         border-radius: 2px;
         position: relative;
         z-index: 2;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
       }
       .bttn-dark2:before {
         -webkit-transition: 0.5s all ease;
@@ -2656,9 +3003,8 @@ background: rgba(0, 0, 0, 0.3);
       .imagen-m {
         margin-top: 20px;
         /* The image used */
-        background-image: url('/assets/imagenes/paginaInicial/fishing-phrase1.jpg');
         /* Full height */
-        height: 500px;
+        height: 300px;
         max-height: 100%; 
         /* Create the parallax scrolling effect */
         /*background-attachment: fixed;*/
