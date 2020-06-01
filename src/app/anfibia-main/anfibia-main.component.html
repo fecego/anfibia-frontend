@@ -119,13 +119,12 @@
            
            
             <div class="product-card">
-              
               <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
               <div class="badge2" *ngIf="producto.destacado">Destacado</div>
               <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
               <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->      
               <div class="product-tumb">
-              <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
+                <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
               </div>
               <div class="product-details">
                 <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>    
