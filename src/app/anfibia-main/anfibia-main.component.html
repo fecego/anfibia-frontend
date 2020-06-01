@@ -238,159 +238,7 @@
   </div>
 </section>
 
-<div class="container" style="margin-bottom: 20px;">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 seccion-productos-extras">
-      <h1>Productos Destacados</h1>
-      <hr>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
-              <div class="" >
-                <div class="product-card">
-                  <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
-                  <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-                  <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
-                  <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->   
-                  <div class="product-tumb">
-                    <img [src]="producto.image[0].url"alt=""(mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
-                  </div>
-                  <div class="product-details">
-                    <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
-                    <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>           
-                    <div class="product-price">
-                      <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                      <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                      <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                      <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                    </div>             
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->           
-                    <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                  </div>
-                </div>
-              </div>
-            </ng-template>       
-          </owl-carousel-o>
-        </div> 
-      </div>
-               
-      <!--<div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"  *ngFor="let producto of productosNuevos; index as i; let index = i;  ">
-          <div *ngIf="i<6" class="wrapper">
-            <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
-            <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-            <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% DESC</div>
-            <div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>
-            <div class="product-img">
-              <img src="{{producto.image[0].url}}">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h3>{{producto.categoria}} {{producto.marca}}</h3>
-                <h2><a routerLink = "/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a> </h2>
-                <div class="product-price2">
-                  <h4 *ngIf="producto.descuento">${{producto.precio_antiguo}}</h4>
-                  <h5 *ngIf="producto.descuento; else precioNormal">${{producto.precio}}</h5>
-                  <h6  *ngIf="producto.descuento == null">${{producto.precio}}</h6>
-                </div>
-                <button class="wishlist-heart" type="button" (click) ="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>-->
-                  
-        <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="wrapper">
-            <div class="product-img">
-              <img src="/assets/imagenes/paginaInicial/carretes/042699_1.png">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h2>Caña de pescar kirigitsuyo </h2>
-                <div class="product-price2">
-                  <h5>$230.99</h5>  
-                </div>
-                <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="wrapper">
-            <div class="product-img">
-              <img src="/assets/imagenes/paginaInicial/carretes/042559_1.png">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h2>Caña de pescar Kirikutsyo </h2>
-                <div class="product-price2">
-                  <h5>$230.99</h5>
-                </div>
-                <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="wrapper">
-            <div class="product-img">
-              <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h2>Caña de pescar Kirikutsyo </h2>
-                <div class="product-price2">
-                  <h5>$230.99</h5>
-                </div>
-                <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="wrapper">
-            <div class="product-img">
-              <img src="/assets/imagenes/paginaInicial/carretes/029977_1.png">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h2>Caña de pescar Kirikutsyo </h2>
-                <div class="product-price2">
-                  <h5>$230.99</h5>
-                </div>
-                <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="wrapper">
-            <div class="product-img">
-              <img src="/assets/imagenes/paginaInicial/carretes/029892_1.png">
-            </div>
-            <div class="product-info">
-              <div class="product-text">
-                <h2>Caña de pescar Kirikutsyo </h2>
-                <div class="product-price2">
-                  <h5>$230.99</h5>
-                </div>
-                <button class="wishlist-heart" type="button"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>
-        </div>-->
-      <!--</div>-->
-    </div>
-  </div>
-</div>
+
    
 <!-- <div class="contenedor-gradiant" style="position: relative;">
   <canvas id="canvas-basic"></canvas>
@@ -406,79 +254,101 @@
 
 <!--<div class="container-fluid parallax" style="height: 500px;"></div>-->
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-      <div class="imagen-m">
-        <img src="/assets/imagenes/paginaInicial/fishing-phrase1.jpg" class="img-fluid" alt="Anfibia">
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 seccion-productos-extras">
+        <h1>Productos Destacados</h1>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <owl-carousel-o [options]="customOptions">
+              <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
+                <div class="" >
+                  <div class="product-card">
+                    <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                    <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                    <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
+                    <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->   
+                    <div class="product-tumb">
+                      <img [src]="producto.image[0].url"alt=""(mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
+                    </div>
+                    <div class="product-details">
+                      <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
+                      <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>           
+                      <div class="product-price">
+                        <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
+                        <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
+                        <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
+                        <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      </div>             
+                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->           
+                      <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                      <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>       
+            </owl-carousel-o>
+          </div> 
+        </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 last-container-text" >
-      <div class="last-text-fit">
-        <h1><span>VI</span>VE, </h1>
-        <h1>DESCU<span>BRE</span> Y</h1>
-        <div class="last-text-fit-y">
-          <p>#Anfibia<span>Fishing</span></p>
-          <p>#Anfibia<span>hunting</span></p>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="imagen-m">
+          <img src="/assets/imagenes/paginaInicial/fishing-phrase1.jpg" class="img-fluid" alt="Anfibia">
         </div>
-        <h1><span>EXP</span>LORA</h1>
-        <div class="last-text-fit-fish">
-          <p>#ViveLaAventura</p>
-          <p>#EncuentraNuevosRetos</p>
-          <p>#DescubreAnfibia</p>
-          <p><span>#ExploraAnfibia</span></p>
-          <p>#ViveAnfibia</p> 
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 last-container-text" >
+        <div class="last-text-fit">
+          <h1><span>VI</span>VE, </h1>
+          <h1>DESCU<span>BRE</span> Y</h1>
+          <div class="last-text-fit-y">
+            <p>#Anfibia<span>Fishing</span></p>
+            <p>#Anfibia<span>hunting</span></p>
+          </div>
+          <h1><span>EXP</span>LORA</h1>
+          <div class="last-text-fit-fish">
+            <p>#ViveLaAventura</p>
+            <p>#EncuentraNuevosRetos</p>
+            <p>#DescubreAnfibia</p>
+            <p><span>#ExploraAnfibia</span></p>
+            <p>#ViveAnfibia</p> 
+          </div>
+          <div class="last-text-fit-top">
+            <p>#TodoParaTuAventura</p>
+            <p><span>#ViveDescubreExplora</span></p>   
+          </div>
+          
         </div>
-        <div class="last-text-fit-top">
-          <p>#TodoParaTuAventura</p>
-          <p><span>#ViveDescubreExplora</span></p>   
-        </div>
-        <div class="last-text-fit-middle"></div>
       </div>
     </div>
+ 
   </div>
+
 </div>
 
-<div class="container">
-  <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-    <div class="col-sm-12 product-Title">
-      <h1>Productos más vendidos</h1>
-      <hr>
-    </div>
-    <!--<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngFor="let producto of productos; index as i; let index = i;">
-      <div class="product-card" *ngIf="i<4">
-        <div class="badge" *ngIf="producto.nuevo">Nuevo</div>
-          <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-            <div class="product-tumb">
-              <img src="{{producto.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-              onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-            </div>
-            <div class="product-details">
-              <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
-              <h4><a href="">{{producto.nombre}}</a></h4>
-              <div class="product-price">
-                <h5>${{producto.precio}}</h5>
-                <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-              <div class="product-bottom-details"></div>
-                <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
-            </div>
-          </div>-->
-          <!--<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
+<div class="container-fluid" style="margin-top: 20px;">
+  <div class="container">
+    <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+      <div class="col-sm-12 product-Title">
+        <h1>Productos más vendidos</h1>
+        <hr>
+      </div>
+      <!--<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngFor="let producto of productos; index as i; let index = i;">
+        <div class="product-card" *ngIf="i<4">
+          <div class="badge" *ngIf="producto.nuevo">Nuevo</div>
+            <div class="badge2" *ngIf="producto.destacado">Destacado</div>
               <div class="product-tumb">
-                <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                <img src="{{producto.image}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
                 onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
               </div>
               <div class="product-details">
-                <span class="product-catagory">CARRETES Yellow Tail</span>
-                <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
+                <h4><a href="">{{producto.nombre}}</a></h4>
                 <div class="product-price">
-                  <h5>$230.99</h5>
+                  <h5>${{producto.precio}}</h5>
                   <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
@@ -487,29 +357,8 @@
                   <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-              <div class="product-card">
-                <div class="badge">Nuevo</div>
-                <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-                </div>
-              <div class="product-details">
-                <span class="product-catagory">CARRETES Yellow Tail</span>
-                <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                <div class="product-price">
-                  <h5>$230.99</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                <div class="product-bottom-details"></div>
-                  <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                  <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            </div>-->
+            <!--<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
               <div class="product-card">
                 <div class="badge">Nuevo</div>
                 <div class="product-tumb">
@@ -529,148 +378,192 @@
                     <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                   </div>
                 </div>
-              </div>-->
-  </div>
-    
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
-          <div class="" >
-            <div class="product-card">
-              <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
-              <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-              <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% DESC</div>
-              <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
-              <div class="product-tumb">
-                <img [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
               </div>
-              <div class="product-details">
-                <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
-                <h4><a a routerLink = "/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
-                <div class="product-price">
-                  <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                  <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                  <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                  <button href="" (click) ="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="product-card">
+                  <div class="badge">Nuevo</div>
+                  <div class="product-tumb">
+                    <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                    onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+                  </div>
+                <div class="product-details">
+                  <span class="product-catagory">CARRETES Yellow Tail</span>
+                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                  <div class="product-price">
+                    <h5>$230.99</h5>
+                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                  <div class="product-bottom-details"></div>
+                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                  </div>
                 </div>
-                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                <div class="product-bottom-details"> </div>
-                <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="product-card">
+                  <div class="badge">Nuevo</div>
+                  <div class="product-tumb">
+                    <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                    onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
+                  </div>
+                  <div class="product-details">
+                    <span class="product-catagory">CARRETES Yellow Tail</span>
+                    <h4><a href="">CARRETE TORITO TO4000</a></h4>
+                    <div class="product-price">
+                      <h5>$230.99</h5>
+                      <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                    <div class="product-bottom-details"></div>
+                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                      <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                    </div>
+                  </div>
+                </div>-->
+    </div>
+      
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
+            <div class="" >
+              <div class="product-card">
+                <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% DESC</div>
+                <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
+                <div class="product-tumb">
+                  <img [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
+                </div>
+                <div class="product-details">
+                  <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
+                  <h4><a a routerLink = "/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
+                  <div class="product-price">
+                    <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
+                    <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
+                    <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
+                    <button href="" (click) ="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                  </div>
+                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                  <div class="product-bottom-details"> </div>
+                  <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                  <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                </div>
               </div>
             </div>
-          </div>
-        </ng-template>
-      </owl-carousel-o>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
     </div>
-  </div>
-    
-  <div class="row">
-    <ul class="slides">
-      <input type="radio" name="radio-btn" id="img-1" checked />
-      <li class="slide-container">
-        <div class="slide">
-          <div class="background-slide"></div>
-          <!--<div class="text-background-slide">
-            <h1 id="text-primero">AN</h1>
-            <h1 id="text-segundo">FI</h1>
-            <h1 id="text-tercero">BIA</h1>
-            <p><span>P</span>esca, <span>C</span>acería y <span>todo lo</span> que <span>n</span>ecesitas para la aventura</p>
-          </div>-->
-        </div>
-        <div class="nav">
-          <label for="img-4" class="prev">&#x2039;</label>
-          <label for="img-2" class="next">&#x203a;</label>
-        </div>
-      </li>
       
-      <input type="radio" name="radio-btn" id="img-2" />
-      <li class="slide-container">
-        <div class="slide">
-          <div class="background-slide2">
-            <!--<div class="text-background-slide2">   
-              <h1>GRAN</h1>
-              <h1>VARIEDAD</h1>
-              <h1>DE</h1>
+    <div class="row">
+      <ul class="slides">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+          <div class="slide">
+            <div class="background-slide"></div>
+            <!--<div class="text-background-slide">
+              <h1 id="text-primero">AN</h1>
+              <h1 id="text-segundo">FI</h1>
+              <h1 id="text-tercero">BIA</h1>
+              <p><span>P</span>esca, <span>C</span>acería y <span>todo lo</span> que <span>n</span>ecesitas para la aventura</p>
+            </div>-->
+          </div>
+          <div class="nav">
+            <label for="img-4" class="prev">&#x2039;</label>
+            <label for="img-2" class="next">&#x203a;</label>
+          </div>
+        </li>
+        
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+          <div class="slide">
+            <div class="background-slide2">
+              <!--<div class="text-background-slide2">   
+                <h1>GRAN</h1>
+                <h1>VARIEDAD</h1>
+                <h1>DE</h1>
+              </div>
+              <h2>CARRETES</h2>-->
             </div>
-            <h2>CARRETES</h2>-->
           </div>
-        </div>
-        <div class="nav">
-          <label for="img-1" class="prev">&#x2039;</label>
-          <label for="img-3" class="next">&#x203a;</label>
-        </div>
-      </li>
-        
-      <input type="radio" name="radio-btn" id="img-3"/>
-      <li class="slide-container">
-        <div class="slide">
-          <div class="background-slide3">
-            <!--<div class="text-bakcground-slide3">
-              <h1>La <span>emoción</span></h1>  
-              <h1>de descubrir</h1>
-              <h1><span>Nuevos</span> retos.</h1>
-            </div>-->
+          <div class="nav">
+            <label for="img-1" class="prev">&#x2039;</label>
+            <label for="img-3" class="next">&#x203a;</label>
           </div>
-        </div>
-        <div class="nav">
-          <label for="img-2" class="prev">&#x2039;</label>
-          <label for="img-4" class="next">&#x203a;</label>
-        </div>
-      </li>
-        
-      <input type="radio" name="radio-btn" id="img-4" />
-      <li class="slide-container">
-        <div class="slide">
-          <div class="background-slide4">
-            <!--<div class="text-background-slide4">
-              <h1>Busca</h1>
-              <p>nuevos</p>
-              <h2>Destinos</h2>
-            </div>-->
+        </li>
+          
+        <input type="radio" name="radio-btn" id="img-3"/>
+        <li class="slide-container">
+          <div class="slide">
+            <div class="background-slide3">
+              <!--<div class="text-bakcground-slide3">
+                <h1>La <span>emoción</span></h1>  
+                <h1>de descubrir</h1>
+                <h1><span>Nuevos</span> retos.</h1>
+              </div>-->
+            </div>
           </div>
-        </div>
-        <div class="nav">
-          <label for="img-3" class="prev">&#x2039;</label>
-          <label for="img-1" class="next">&#x203a;</label>
-        </div>
-      </li>
-        
-      <!--<input type="radio" name="radio-btn" id="img-5" />
-      <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
-        </div>
-        <div class="nav">
-          <label for="img-4" class="prev">&#x2039;</label>
-          <label for="img-6" class="next">&#x203a;</label>
-        </div>
-      </li>-->
-        
-      <!--<input type="radio" name="radio-btn" id="img-6" />
-      <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
-        </div>
-        <div class="nav">
-          <label for="img-5" class="prev">&#x2039;</label>
-          <label for="img-1" class="next">&#x203a;</label>
-        </div>
-      </li>-->
-        
-      <li class="nav-dots">
-        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-        <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-        <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-        <!--<label for="img-5" class="nav-dot" id="img-dot-5"></label>
-        <label for="img-6" class="nav-dot" id="img-dot-6"></label>-->
-      </li>
-    </ul>
+          <div class="nav">
+            <label for="img-2" class="prev">&#x2039;</label>
+            <label for="img-4" class="next">&#x203a;</label>
+          </div>
+        </li>
+          
+        <input type="radio" name="radio-btn" id="img-4" />
+        <li class="slide-container">
+          <div class="slide">
+            <div class="background-slide4">
+              <!--<div class="text-background-slide4">
+                <h1>Busca</h1>
+                <p>nuevos</p>
+                <h2>Destinos</h2>
+              </div>-->
+            </div>
+          </div>
+          <div class="nav">
+            <label for="img-3" class="prev">&#x2039;</label>
+            <label for="img-1" class="next">&#x203a;</label>
+          </div>
+        </li>
+          
+        <!--<input type="radio" name="radio-btn" id="img-5" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+          </div>
+          <div class="nav">
+            <label for="img-4" class="prev">&#x2039;</label>
+            <label for="img-6" class="next">&#x203a;</label>
+          </div>
+        </li>-->
+          
+        <!--<input type="radio" name="radio-btn" id="img-6" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+          </div>
+          <div class="nav">
+            <label for="img-5" class="prev">&#x2039;</label>
+            <label for="img-1" class="next">&#x203a;</label>
+          </div>
+        </li>-->
+          
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <!--<label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>-->
+        </li>
+      </ul>
+    </div>
+    <!--Here--><!--Here too-->
   </div>
-  <!--Here--><!--Here too-->
 </div>
+
 
 <div class="container-fluid last-container"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
   <h1>Nuestra marca</h1>
