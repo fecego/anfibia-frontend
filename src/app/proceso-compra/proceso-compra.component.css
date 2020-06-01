@@ -1,4 +1,10 @@
-
+    .d-flex a{
+        color: #000;
+        font-family: 'Meera Inima', sans-serif;
+        text-decoration: underline;
+    }
+    
+    
     .container-fluid{
         font-family: 'Meera';
     }
@@ -209,7 +215,6 @@
 
     .pedido  {
         background-color: #DADADA;
-        max-height: 750px;
         margin-bottom: 50px;
         padding-bottom: 30px;
     }

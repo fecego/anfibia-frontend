@@ -35,8 +35,13 @@ export class CarritoComprasComponent implements OnInit {
   }
 
 
-  eliminarProducto(dato){
-    this.listaCarrito.splice(dato, 1); 
+  eliminarProducto(dato, dato2){
+    console.log(dato, dato2);
+    this.totalParcial = this.totalParcial - dato.totalIndividual;
+    this.total = this.totalParcial + this.gastosEnvio;
+    this.listaCarrito.splice(dato2, 1);
+    
+    
   }
 
 

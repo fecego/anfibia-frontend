@@ -71,6 +71,7 @@ Ipad Mini 2.4 Landscape--*/
     position: absolute;
     top: 10%;
     left: 10%;
+    color: ;
 }
 
 
@@ -493,19 +494,21 @@ top: 85%;
 
 .publicidad2{
     
-    background-image: url('/assets/imagenes/fishing/hook.jpg');
+    
    
     width: 100%;
 
-    height: 550px;
+    height: 450px;
     max-height: 100%; 
   
     /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;   
+     
   
+}
+
+.publicidad2 img{
+    height: 100%;
+    max-width: 100%;
 }
 .text-publicidad2{
     position: absolute;
@@ -535,19 +538,21 @@ top: 85%;
 
 .publicidad3{
     
-    background-image: url('/assets/imagenes/fishing/fishin-hat.jpg');
+    
    
     width: 100%;
 
-    height: 550px;
+    height: 450px;
     max-height: 100%; 
   
     /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;   
+   
   
+}
+
+.publicidad3 img{
+    height: 100%;
+    max-width: 100%;
 }
 
 
@@ -580,19 +585,21 @@ top: 85%;
 
 .publicidad4{
     
-    background-image: url('/assets/imagenes/fishing/shimanostellafj.jpg');
+
    
     width: 100%;
 
-    height: 450px;
+    height: 350px;
     max-height: 100%; 
   
     /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;   
   
+  
+}
+
+.publicidad4 img{
+    height: 100%;
+    max-width: 100%;
 }
 
 .text-publicidad4{
@@ -648,34 +655,34 @@ top: 85%;
 
 .publicidad5{
     
-    background-image: url('/assets/imagenes/fishing/bassfishing.jpg');
-   
+    
     width: 100%;
 
-    height: 450px;
+    height: 350px;
     max-height: 100%; 
+     
   
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;   
-  
+}
+
+.publicidad5 img{
+    height: 100%;
+    max-width: 100%;
 }
 
 .publicidad6{
     
-    background-image: url('/assets/imagenes/fishing/stellafi.jpg');
+    
    
     width: 100%;
-    height: 450px;
+    height: 350px;
   
     /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
     
-    background-size: cover;
-    background-position: center center;   
+}
+
+.publicidad6 img{
+    height: 100%;
+    max-width: 100%;
 }
 
 
@@ -704,31 +711,28 @@ top: 85%;
 
 .publicidad7{
     
-    background-image: url('/assets/imagenes/fishing/kayaks9.jpg');
+   
    
     width: 100%;
     height: 550px;
   
     /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    background-size: cover;
-    background-position: center center;   
+   
+}
+
+.publicidad7 img{
+    width: 100%;
+    max-height: 100%;
 }
 
 .publicidad8{
-    background-image: url('/assets/imagenes/fishing/shimanorod.jpg');
-   
     width: 100%;
     height: 550px;
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    background-size: cover;
-    background-position: center center;  
+}
+
+.publicidad8 img{
+    width: 100%;
+    max-height: 100%;
 }
 
 
@@ -1089,7 +1093,7 @@ color: red;
 }
 
 .image-background{
-    background: url('/assets/imagenes/fishing/pesca2.jpg');
+    background: url('/assets/imagenes/fishing/welcometribe.jpg');
     background-position: center;
     background-size: cover;
     height: 700px;
@@ -1123,18 +1127,19 @@ color: red;
 
 .parallax-fishing{
     
-        background-image: url('/assets/imagenes/fishing/shimanoslx.jpg');
+
        
         width: 100%;
         height: 550px;
       
         /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
         
-        background-size: cover;
-        background-position: center center;  
     
+}
+
+.parallax-fishing img{
+    width: 100%;
+    max-height: 100%;
 }
 
 section{

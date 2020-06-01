@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  AfterViewInit } from '@angular/core';
 /*import * as Granim from 'granim';
 import * as AOS from 'aos';*/
 
@@ -13,8 +13,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./anfibia-main.component.css']
 })
 export class AnfibiaMainComponent implements OnInit {
+  public productos = [];
+  
+  public productosNuevos = [];
+  public productosDestacados = [];
+  public productosCarrito = [];
+  public productosWishList = [];
+  public imagenCambio:string = "/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg";
+  
+  public variable:string  = "";
+   /*Constructor genera un objeto de tipo ProductosService*/
+   constructor(private _productosS: ProductosService, private modalProducto: NgbModal, private router: Router) { }
+
+   
 
 
+
+  
+  ngOnInit(){
+    /*Creamos una nueva lista de productos, solo para productos nuevos, en base a la consulta recibida
+    Cabe recalcar que lo podemos hacer desde la base de datos, pero no lo haremos, porque no hay base de datos.
+    */
+    this.productosNuevos = this._productosS.getProductos();
+    this.productosNuevos.forEach(producto =>{
+      producto.imagenPrincipal = producto.image[0].url;
+      if(producto.image[1]){
+        producto.imagenCambio = producto.image[1].url;
+      }else{
+        producto.image[1] = producto.imagenPrincipal;
+        producto.imagenCambio = producto.image[1];
+      }
+    });
+    
+    
+   
+  }
+
+  
+
+ 
   public customOptions: OwlOptions = {
     items: 8,
     autoplay: true,
@@ -46,14 +83,7 @@ export class AnfibiaMainComponent implements OnInit {
     nav: true
   }
 
-  /*Constructor genera un objeto de tipo ProductosService*/
-  constructor(private _productosS: ProductosService, private modalProducto: NgbModal, private router: Router) { }
-
-  public productos = [];
-  public productosNuevos = [];
-  public productosDestacados = [];
-  public productosCarrito = [];
-  public productosWishList = [];
+ 
 
   public informacionModal(objeto){
     console.log("Presionaste información producto", objeto.nombre, objeto.sku);
@@ -73,11 +103,8 @@ export class AnfibiaMainComponent implements OnInit {
   }
 
 
-  public changeImage(dato){
-    var valorImagen = $("#principalProducto").attr("src");
-    console.log("Este es el dato de la imagen 1", dato);
-    var cambioImagen = $("#principalProducto").attr("src", dato);
-  }
+
+
 
   public addWishList(dato){
     console.log(this.productosWishList);
@@ -118,28 +145,9 @@ export class AnfibiaMainComponent implements OnInit {
   }
 
 
-
-  
-  ngOnInit(){
-    /*Creamos una nueva lista de productos, solo para productos nuevos, en base a la consulta recibida
-    Cabe recalcar que lo podemos hacer desde la base de datos, pero no lo haremos, porque no hay base de datos.
-    */
-    this.productosNuevos = this._productosS.getProductos();
-    this.productosNuevos = this.productosNuevos.filter((producto)=>{
-       return producto.nuevo === true
-    });
-    console.log("Estos son los productos nuevos", this.productosNuevos);
-    this.productosNuevos.forEach((producto) =>{
-      console.log(producto.image[0].url);
-    });
+  hoverImage(){
     
-    this.productosDestacados = this._productosS.getProductos().filter((producto) =>{
-      return producto.destacado === true;
-    }); 
-    console.log("Estos son los productos destacados", this.productosDestacados);
-   
   }
-
  
 
 }

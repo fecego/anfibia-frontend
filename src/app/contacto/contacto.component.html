@@ -13,31 +13,31 @@
                 <div class="card">
                     <form >
                         <div class="input-container">
-                            <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required="required" [(ngModel)] = "contacto.nombre"/>
+                            <label for="nombre">Nombre</label>
                             <div class="bar"></div>
                         </div>
             
                         <div class="input-container">
-                            <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Email</label>
+                            <input type="email" id="email" name="email" required="required" [(ngModel)]="contacto.email"/>
+                            <label for="email">Email</label>
                             <div class="bar"></div>
                         </div>
             
                         <div class="input-container">
-                            <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" [(ngModel)] = "contacto.asunto" required="required"/>
+                            <label for="asunto">Asunto</label>
                             <div class="bar"></div>
                         </div>
                                 
                         <div class="input-container mensaje">
-                            <label for="#{label}">Mensaje</label>
-                            <textarea type="#{type}" id="#{label}" required="required" placeholder="Escribe tu mensaje"></textarea>
+                            <label for="mensaje">Mensaje</label>
+                            <textarea type="text" id="mensaje" name="mensaje" required="required" placeholder="Escribe tu mensaje" [(ngModel)]="contacto.mensaje"></textarea>
                             <div class="bar"></div>
                         </div>
             
                         <div class="button-container">
-                            <button><span>Enviar mensaje</span></button>
+                            <button (click) = "enviarMensaje(contacto)"><span>Enviar mensaje</span></button>
                         </div>
                     </form>
                 </div>
