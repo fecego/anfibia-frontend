@@ -34,7 +34,7 @@
         <h4></h4>
       </div>
     </div>
-    <div class="col-sm-6 col-lg-6 pi-left" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pi-left fotocazador" >
       <!--<h1><span>Nosotros</span> te preparamos para cualquier <span>situación.</span></h1>-->
       <h2>ANFIBIA</h2>
       <hr>
@@ -115,9 +115,6 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
           <div class="">
-            
-           
-           
             <div class="product-card">
               <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
               <div class="badge2" *ngIf="producto.destacado">Destacado</div>
@@ -152,7 +149,6 @@
   <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " style="padding:1px">
       <div class="publicidad-imagen1">
-      
           <img  src="/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg" class="img-fluid" alt="">
           <!--<div class="texto-publicidad1">
             <h1>STELLA <span>SW</span></h1>
@@ -182,7 +178,7 @@
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;">
         <div class="publicidad-imagen2">
           <img src="/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg" class="img-fluid" alt="">
-          <div class="text boton2" style="position: absolute; bottom: 20%; left: 25%;">
+          <div class="text boton2" style="position: absolute; bottom: 10%; left: 25%;">
             <a routerLink="/tienda" class="bttn-dark2">Ir al producto</a>
           </div>
         </div>
@@ -213,7 +209,14 @@
     </div>
   </div>  
 </div>
-    
+
+<div class="categorias">
+  <img src="/assets/imagenes/paginaInicial/slider2.png" class="img-fluid" alt="">
+  <div class="flex dark">
+    <a routerLink="/tienda" class="bttn-dark">Ir a la tienda</a>
+  </div>
+</div>
+
 <section class="split">
   <!--<div class="screen">
     <div class="content button-slide">
@@ -566,7 +569,7 @@
     </div>
   </div>
     
-  <div class="row">
+  <div class="row slider">
     <ul class="slides">
       <input type="radio" name="radio-btn" id="img-1" checked />
       <li class="slide-container">
@@ -677,7 +680,7 @@
   <hr>
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding: 1px;">
-      <div class="publicidad-imagen4">
+      <div class="publicidad-imagen11">
         <img src="/assets/imagenes/paginaInicial/YellowTail-con-logo.jpg" class="img-fluid" alt="Anfibia">
       </div>
     </div>
@@ -699,7 +702,7 @@
           <h1><span>A</span>mbassa<span></span>deur <span>Beast</span></h1>
           <h2>Diseñada para atrapar los <span>peces</span> más grandes.</h2>
         </div>-->
-        <div class="boton1" style="position: absolute; bottom: -10%; left: 25%;">
+        <div class="boton1" style="position: absolute; bottom: 10%; left: 25%;">
           <a routerLink="/tienda" class="bttn-dark2">Ir al producto</a>
         </div>
       </div>
