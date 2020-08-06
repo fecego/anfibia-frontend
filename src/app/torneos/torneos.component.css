@@ -1,0 +1,285 @@
+
+    /*--ENCABEZADO--*/
+    .foto{
+        position: relative;
+    }
+
+    .foto1 img{
+        margin-top: 0px;
+        margin-left: -15px;
+        height: 600px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .foto2 img{
+        margin-left: 300px;
+        margin-top: 130px;
+        margin-bottom: 100px;
+    }
+
+    .texto h1{
+        position: absolute;
+        color: black;
+        top: 20%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        font-family: 'Anton';
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 150px;  
+    }
+
+    .texto p{
+        margin-top: 45%;
+        margin-left: 50px;
+        font-family: Meera;
+    }
+    /*--ENCABEZADO--*/
+
+    /*--BOTONES DE PESCA Y CACERÍA--*/
+    .pesca{
+        margin-left:20px ;
+    }
+
+    .btn {
+        color: black;
+        cursor: pointer;
+        display: block;
+        font-size:30px;
+        font-weight: 400;
+        line-height: 45px;
+        margin: 0 0 2em;
+        max-width: 330px; 
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%; 
+        float: center;
+        font-family: 'Anton';
+    }
+
+    .pesca .buttons {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+      
+    .pesca .container {
+        display: table-cell;
+        padding: 1em;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .btnfos {
+        color: black;
+        cursor: pointer;
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 45px;
+        max-width: 330px;
+        margin: 0 auto 2em;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+        font-family: 'anton';
+        padding: 10px;
+    }
+        @media (min-width: 400px) {
+            .btnfos {
+                display: inline-block;
+                margin-right: 2.5em;
+            }
+        
+            .btnfos:nth-of-type(even) {
+                margin-right: 0;
+            }
+        }
+        
+        @media (min-width: 600px) {
+            .btnfos:nth-of-type(even) {
+                margin-right: 2.5em;
+            }
+        
+            .btnfos:nth-of-type(5) {
+                margin-right: 0;
+            }
+        }
+      
+    .btnfos-1 {
+        font-weight: 100;
+    }
+      
+    .btnfos-1 svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 65px;
+    }
+
+    .btnfos-1 rect {
+        fill: none;
+        stroke: black;
+        stroke-width: 1;
+        stroke-dasharray: 422, 0;
+    }
+      
+    .btnfos-1:hover {
+        color: black;
+        letter-spacing: 3px;
+        font-weight: 900;
+        transition: all 0.5s;
+    }
+
+    .btnfos-1:hover rect {
+        stroke-width: 5;
+        stroke-dasharray: 20, 430;
+        stroke-dashoffset: 48;
+        -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    /*--BOTONES DE PESCA Y CACERÍA--*/
+    
+    /*--IMAGENES DE LOS TORNEOS--*/
+    .contpesca img{
+        width: 90%;
+        height: 500px;
+        margin-left: 7%;
+        float: center;
+    }
+
+    .contpesca h2 {
+        font-family: Meera;
+        font-size: 25px;
+        margin-top: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .contpesca a{
+        color: black;
+        text-align: center;
+    }
+
+    .contpesca a:hover{
+        color: rgb(17, 48, 73);
+        text-decoration: none;
+    }
+
+    .contpesca p{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .contpesca{
+        margin-bottom: 200px;
+    }
+ 
+    /*--Menu social--*/
+    .social{
+        margin-left: 120px;
+    }
+ 
+    .social .fa {
+        margin-left: 50px;
+        border-radius: 30px;
+        padding-top: 10px;
+        font-size: 25px;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        text-decoration: none;
+        margin: 4px 4px;
+    }
+      
+    .social .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .social .fa-facebook:hover{
+        background: white;
+        color: #3B5998;
+        border: 1px solid #3B5998;
+    }
+
+    .social .fa-whatsapp {
+        background: #26CC65;
+        color: white;
+    }
+
+    .social .fa-whatsapp:hover{
+        background: white;
+        color: #26CC65;
+        border: 1px solid #26CC65;
+    }
+    /*--Fin menu social--*/
+    /*--IMAGENES DE LOS TORNEOS--*/
+    .publicf{
+        margin-bottom: 200px;
+    }
+
+
+    .fondo{
+        background-image: url('/assets/imagenes/torneos/Pescadores1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-left: -30px;
+        width: 1348px;
+        height: 650px;
+    }
+
+    .publicfoto img{
+        z-index: 2;
+        margin-top: 40px;
+    }
+
+    .publicfoto{
+        margin-right: -15px;
+    }
+
+    .textob{
+        background-color: #F9F9F9;
+        z-index: 1;
+        margin-top: 40px;
+        padding-left: -20px;
+        font-family: Meera;
+        padding-top: 230px;
+        text-align: center;
+    }
+
+    .textob h2{
+        font-size: 50px;
+    }
+    
+    .botonees{
+        background-color: #B0D9EB;
+        height: 250px;
+        width: 1348px;
+        margin-left: -30px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+    .botonees img{
+        width: 35%;
+        margin-left: 150px;
+    }
+
+    .botonees h2{
+        font-family: 'Anton';
+        font-size: 50px;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+
+
+
+    

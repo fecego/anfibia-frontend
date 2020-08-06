@@ -32,6 +32,7 @@ import { EnviosComponent } from './envios/envios.component';
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { TorneosComponent } from './torneos/torneos.component';
 
 
 
@@ -73,6 +74,7 @@ const routes: Routes = [
   {path: 'proceso-compra/:idCarrito', component: ProcesoCompraComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'perfil', component: PerfilComponent},
+  {path: 'torneos', component: TorneosComponent},
   {path: '**', component: NotPageFoundComponent} 
 ];
 
@@ -87,4 +89,4 @@ export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, TorneosComponent]

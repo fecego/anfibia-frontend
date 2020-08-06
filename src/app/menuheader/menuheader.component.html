@@ -1,612 +1,510 @@
 
 <div class="container-fluid" style="background: black; padding: 0; position: relative;">
-    <div class="container" style="max-width: 100%;">
-        <div class="navbar  navbar-expand-md flex-row flex-wrap" style="margin: 0;">
-           <button class=" navbar-toggler navbar-toggle order-1 order-xs-1 order-md-4" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars icon-navbar" aria-hidden="true"></i>
-            </button>
-       <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeader">
-           <ul class="navbar-nav justify-content-start flex-grow-1">
-               <li class="nav-item">
-                   <a class="navbar-brand logo-position" href="/">
-                       <div class="logo-image">
-                           <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
-                       </div>
-                   </a>
-               </li>
-               <!--<li class="nav-item">
-                   <form class="form-inline my-2 my-lg-0" style="padding-top: 3px; padding-left: 40px;">
-                       <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
-                       <button class="btn searchAnfibia my-2 my-sm-0" type="submit">Buscar</button>
-                   </form>
-   
-               </li>-->
-           </ul>
-           <ul class="navbar-nav justify-content-center flex-grow-1 menuHeaderV2">
-                <li class="nav-item">
-                    <div class="anfibia-title">
-                            <h3 style="margin-bottom: 0;">ANFIBIA</h3>
-                            
-                    </div>
-                </li>
-            </ul>  
-           <ul class="navbar-nav justify-content-end">
-               <div class="row ">
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
-                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i><span>Búsqueda</span></button>
-                       <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i><span>Lista de deseos</span></button>
-                       <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i><span>Ubicaciones</span> </button>
-                       <button type="button" (click)="openModal()"><i class="fa fa-user-o icon-header" id="boton-perfil"></i><span>Usuario</span></button>
-                       <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mi perfil</a>
-                        <a class="dropdown-item" href="#">Mis pedidos</a>
-                        <a class="dropdown-item" href="#">Otras opciones</a>
-                       </div>
-                       <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i><span>Carrito</span></button>
-                   </div>
-               </div>
-              <div class="row" id="div-busqueda">
-                <div class="col-sm-12">
-                <div >
-                        <button id="button-cerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
-                        <div class="div-busqueda">
-                            <h1>Escribe aquí el nombre del producto que estas buscando.</h1>
-                            <input type="search" id="input-busqueda" placeholder="nombre del producto">
-                            <button id="boton-busquedas"><i class="fa fa-search" aria-hidden="true"></i></button>   
-                        </div>
+        <div class="container" style="max-width: 100%;">
+                <div class="navbar  navbar-expand-md flex-row flex-wrap" style="margin: 0;">
+                        <button class=" navbar-toggler navbar-toggle order-1 order-xs-1 order-md-4" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fa fa-bars icon-navbar" aria-hidden="true"></i>
+                        </button>
                         
-        
-                </div> 
-                </div>
+                        <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeader">
+                                <ul class="navbar-nav justify-content-start flex-grow-1">
+                                        <li class="nav-item">
+                                                <a class="navbar-brand logo-position" href="/">
+                                                        <div class="logo-image">
+                                                                <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
+                                                        </div>
+                                                </a>
+                                        </li>
+                                        <!--<li class="nav-item">
+                                                <form class="form-inline my-2 my-lg-0" style="padding-top: 3px; padding-left: 40px;">
+                                                <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
+                                                <button class="btn searchAnfibia my-2 my-sm-0" type="submit">Buscar</button>
+                                                </form>
+   
+                                        </li>-->
+                                </ul>
+                                
+                                <ul class="navbar-nav justify-content-center flex-grow-1 menuHeaderV2">
+                                        <li class="nav-item">
+                                                <div class="anfibia-title">
+                                                        <h3 style="margin-bottom: 0;">ANFIBIA</h3>
+                                                </div>
+                                        </li>
+                                </ul>  
+           
+                                <ul class="navbar-nav justify-content-end">
+                                        <div class="row ">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
+                                                        <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i><span>Búsqueda</span></button>
+                                                        <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i><span>Lista de deseos</span></button>
+                                                        <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i><span>Ubicaciones</span> </button>
+                                                        <button type="button" (click)="openModal()"><i class="fa fa-user-o icon-header" id="boton-perfil"></i><span>Usuario</span></button>
+                                                        <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Mi perfil</a>
+                                                                <a class="dropdown-item" href="#">Mis pedidos</a>
+                                                                <a class="dropdown-item" href="#">Otras opciones</a>
+                                                        </div>
+                                                        <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i><span>Carrito</span></button>
+                                                </div>
+                                        </div>
+                        
+                                        <div class="row" id="div-busqueda">
+                                                <div class="col-sm-12">
+                                                        <div>
+                                                                <button id="button-cerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                                                <div class="div-busqueda">
+                                                                        <h1>Escribe aquí el nombre del producto que estas buscando.</h1>
+                                                                        <input type="search" id="input-busqueda" placeholder="nombre del producto">
+                                                                        <button id="boton-busquedas"><i class="fa fa-search" aria-hidden="true"></i></button>   
+                                                                </div>
+                                                        </div> 
+                                                </div>
 
-              </div>
-              
-             
-           </ul>   
-       </div><!--/.nav-collapse -->
-       <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeaderV2">
-           <ul class="navbar-nav justify-content-start flex-grow-1">
-                   <li class="nav-item menu-area dropdown" routerLinkActive="active">
-                           <a class="nav-link"  id="mega-one"  
-                            aria-haspopup="true" aria-expanded="false" routerLink="anfibia-pesca" data-toggle="dropdown" >
-                           PESCA
-                           </a>
-                          <div class="dropdown-menu mega-area" aria-labelledby="mega-one">
-                              <div class="row">
-                                  <div class="col-sm-2">
-                                       <h5>AGUA DULCE</h5>
-                                       <div class="row">
-                                           <div class="col-sm-6 dropdown-item menu-design">
-                                                   <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Accesorios</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Carretes</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
-                                                   
-                                           </div>
-                                           <div class="col-sm-6 dropdown-item menu-design">
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Combos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Señuelos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Blandos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Duros</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Accesorios</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Anzuelos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Granpines</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Destorcedores</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Calcomanías</a>
-                                                   
-   
-                                           </div>
-                                           <!--<div class="col-sm-4">
-                                                 <div class="menu-imagen" style="height:300px">
-                                                        
-                                                 </div>  
-                                                   
-   
-                                           </div>-->
-   
-                                       </div>
-                                  </div>
-                                  <div class="col-sm-2">
-                                       <h5>AGUA SALADA</h5>
-                                       <div class="row">
-                                               <div class="col-sm-6 dropdown-item menu-design">
-                                                <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
-                                                <a id="item-header" href="" class="dropdown-item">Trolling</a>
-                                                <a id="item-header" href="" class="dropdown-item">Surft</a>
-                                                <a id="item-header" href="" class="dropdown-item">Jigging</a>
-                                                <a id="item-header" href="" class="dropdown-item">Popping</a>
-                                                <a id="item-header" href="" class="dropdown-item">Accesorios</a>
-                                                <a id="item-header" href="" class="dropdown-item-categoria">CARRETES</a>
-                                                <a id="item-header" href="" class="dropdown-item">Convencionales</a>
-                                                <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                <a id="item-header" href="" class="dropdown-item">Jigging</a>
-                                                <a id="item-header" href="" class="dropdown-item">Trolling</a>
-                                                <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
-                                                <a id="item-header" href="" class="dropdown-item">Refacciones</a>
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-6 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">COMBOS</a>
-                                                       <a href="" class="dropdown-item">Surft</a>
-                                                       <a href="" class="dropdown-item">Trolling</a>
-                                                       <a href="" class="dropdown-item-categoria">SEÑUELOS</a>
-                                                       <a href="" class="dropdown-item">Off Shore</a>
-                                                       <a href="" class="dropdown-item">Duros</a>
-                                                       <a href="" class="dropdown-item">Blandos</a>
-                                                       <a href="" class="dropdown-item">Jigging</a>
-                                                       <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                       <a href="" class="dropdown-item">Faldas</a>
-                                                       <a href="" class="dropdown-item">Llamadores</a>
-                                                       <a href="" class="dropdown-item">Argollas</a>
-                                                       <a href="" class="dropdown-item">Ochos</a>
-                                                       <a href="" class="dropdown-item">Anzuelos</a>
-                                                       <a href="" class="dropdown-item">Red Recolectora</a>
-                                                       <a href="" class="dropdown-item">Calcomanías</a>
-                                                       
-       
-                                               </div>
-                                               <!--<div class="col-sm-4 dropdown-item menu-design">
-                                                      
-                                                       
-       
-                                               </div>-->
-       
-                                           </div>
-                                      
-                                  </div>
+                                        </div>
+                                </ul>   
+                        </div><!--/.nav-collapse -->
+                
+                        <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeaderV2">
+                                <ul class="navbar-nav justify-content-start flex-grow-1">
+                                        <li class="nav-item menu-area dropdown" routerLinkActive="active">
+                                                <a class="nav-link"  id="mega-one" aria-haspopup="true" aria-expanded="false" routerLink="anfibia-pesca" data-toggle="dropdown" >
+                                                        PESCA
+                                                </a>
+                                                <div class="dropdown-menu mega-area" aria-labelledby="mega-one">
+                                                        <div class="row">
+                                                                <div class="col-sm-2">
+                                                                        <h5>AGUA DULCE</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Casting</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Spinning</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Accesorios</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria">Carretes</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Casting</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Spinning</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
+                                                                                </div>
+                                                                                
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria">Combos</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Spinning</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Casting</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria">Señuelos</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Blandos</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Duros</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Anzuelos</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Granpines</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Destorcedores</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Calcomanías</a>
+                                                                                </div>
+                                                                                <!--<div class="col-sm-4">
+                                                                                <div class="menu-imagen" style="height:300px">
+                                                                                </div>  
+                                                                                </div>-->
+                                                                        </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-sm-2">
+                                                                        <h5>AGUA SALADA</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Trolling</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Surft</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Jigging</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Popping</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Accesorios</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item-categoria">CARRETES</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Convencionales</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Spinning</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Jigging</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Trolling</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
+                                                                                        <a id="item-header" href="" class="dropdown-item">Refacciones</a>
+                                                                                </div>
+                                                                                
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">COMBOS</a>
+                                                                                        <a href="" class="dropdown-item">Surft</a>
+                                                                                        <a href="" class="dropdown-item">Trolling</a>
+                                                                                        <a href="" class="dropdown-item-categoria">SEÑUELOS</a>
+                                                                                        <a href="" class="dropdown-item">Off Shore</a>
+                                                                                        <a href="" class="dropdown-item">Duros</a>
+                                                                                        <a href="" class="dropdown-item">Blandos</a>
+                                                                                        <a href="" class="dropdown-item">Jigging</a>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                        <a href="" class="dropdown-item">Faldas</a>
+                                                                                        <a href="" class="dropdown-item">Llamadores</a>
+                                                                                        <a href="" class="dropdown-item">Argollas</a>
+                                                                                        <a href="" class="dropdown-item">Ochos</a>
+                                                                                        <a href="" class="dropdown-item">Anzuelos</a>
+                                                                                        <a href="" class="dropdown-item">Red Recolectora</a>
+                                                                                        <a href="" class="dropdown-item">Calcomanías</a>
+                                                                                </div>
+                                                                                <!--<div class="col-sm-4 dropdown-item menu-design"></div>-->
+                                                                        </div>
+                                                                </div>
                            
-                                  <div class="col-sm-2">
-                                        <h5>Accesorios</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Almacenamiento</a><br>
-                                                        <a href="" class="dropdown-item">Cajas</a>
-                                                        <a href="" class="dropdown-item">Maletas</a>
-                                                        
-                                                        <a href="" class="dropdown-item-categoria">Arneses de lucha</a><br>
-                                                        
-                                                </div>
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Ganchos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Cuchillería</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Pinzas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Mantenimiento</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Básculas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Termos/vasos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
-                                              
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-                                  <div class="col-sm-2">
-                                       <h5>Navegación</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">GPS</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Brújulas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Audio</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Eléctricos</a>
-                                                       <a href="" class="dropdown-item">Switches</a>
-                                                       <a href="" class="dropdown-item">Conectores</a>
-                                                       
-                                                       
-
-
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                                <a href="" class="dropdown-item">Fender</a>
-                                                <a href="" class="dropdown-item">Anclas</a>
-                                                <a href="" class="dropdown-item">Cuerdas</a>
-                                                <a href="" class="dropdown-item">Cornetas</a>
-                                                <a href="" class="dropdown-item">Silvatos</a>
-                                                <a href="" class="dropdown-item">Aireador Portatil</a>
-                                                <a href="" class="dropdown-item">Volantes</a>
-                                                <a href="" class="dropdown-item">Cepillos</a>
-                                                <a href="" class="dropdown-item">Cornamusas</a>
-                                                <a href="" class="dropdown-item">Tapones</a>
-                                                <a href="" class="dropdown-item">Remolque</a>
-                                                <a href="" class="dropdown-item">Mantenimiento</a>
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-4 dropdown-item menu-desing">
-                                                <a href="" class="dropdown-item-categoria">Plomería</a><br>
-                                                <a href="" class="dropdown-item-categoria">Bombas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Iluminación</a><br>
-                                                <a href="" class="dropdown-item-categoria">Motor</a><br> 
-
-                                               </div>
-                                             
-                                           </div>
-                                      
-                                  </div>
-                                  <div class="col-sm-2">
-                                        <h5>Ropa</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Jersey</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Short</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Traje de baño</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Toallas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Gorras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Sombreros</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
-                                                </div>
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Buffs</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                                        <a href="" class="dropdown-item">Cinturones</a>
-                                                        <a href="" class="dropdown-item">Correas</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Bolsos</a>
-                                                        <a href="" class="dropdown-item">Carteras</a>
-                                                        <a href="" class="dropdown-item">Llaveros</a>
-                                                        <a href="" class="dropdown-item">Cangureras</a>
-                                                        <a href="" class="dropdown-item-categoria">Almohadas</a><br>
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-
-                                   <div class="col-sm-2">
-                                        <h5>Líneas</h5>
-                                        <div class="row">
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Monofilamento</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Trenzadas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Leaders</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Fluorocarbono</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Reinales</a>
-                                                        
-                                                        
-        
-                                                </div>
-                                               <!--<div class="col-sm-8 dropdown-item menu-design">
-                                                 <img src="assets/imagenes/menu/anfibia.jpg" alt="" class="responsive" style="width: 100%; height:100%">
-                                                 
- 
-                                         </div>-->
-        
-                                            </div>
-                                   </div>
-                                  <div class="col-sm-2">
-                                       <h5>Snorkel</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                      
-                                                       <a href="" class="dropdown-item-categoria">Aletas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Tubo Snorkel</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Visores</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Goggles</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Chalecos</a>
-                                                       
-                                                       
-       
-                                               </div>
-                                             
-       
-                                           </div>
-                                      
-                                  </div>
-                                  <div class="col-sm-2">
-                                       <h5>Buceo</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">Aletas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Arpones</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Visores</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                               </div>
-                                           </div>
-                                      
-                                  </div>
-                                 
-                                  <div class="col-sm-2">
-                                        <h5>Kayaks</h5>
-                                        <div class="row">
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Remos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Asientos</a><br>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Kayak</a><br>
-                                                        <a href="" class="dropdown-item">Mini</a>
-                                                        <a href="" class="dropdown-item">Pesca</a>
-                                                        <a href="" class="dropdown-item">Tandem</a>
-                                                        <a href="" class="dropdown-item-categoria">Portacañas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                              
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-                             
-   
-   
-                              </div>
-   
-                          </div>
-                       </li>
-                       <li class="nav-item dropdown menu-area">
-                               <a class="nav-link" href="#" id="mega-two"  
-                                aria-haspopup="true" aria-expanded="false" routerLink="anfibia-caceria" data-toggle="dropdown">
-                               CACERÍA
-                               </a>
-                              <div class="dropdown-menu mega-area" aria-labelledby="mega-two">
-                                  <div class="row">
-                                       <div class="col-sm-6">
-                                               <h5>Rifles</h5>
-                                              <div class="row">
-                                                  <div class="col-sm-4">
-                                                   <div class="menu-imagen2" style="height:300px">
-
-                                                   </div>
-   
-                                                  </div>
-                                                  <div class="col-sm-4">
-                                                   <a href="" class="dropdown-item-categoria">Diábolos Salva</a><br>
-                                                   <a href="" class="dropdown-item-categoria">CO2</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Resorte</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Nitropiston</a><br>
-                                                   <a href="" class="dropdown-item-categoria">PCP</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                  </div>
-
-                                                  <div class="col-sm-4">
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                        <a href="" class="dropdown-item">Salva y Diábolos</a>
-                                                        <a href="" class="dropdown-item">Munición de acero</a>
-                                                        <a href="" class="dropdown-item">Diábolos</a>
-                                                        <a href="" class="dropdown-item">Tanques C02</a>
-                                                        <a href="" class="dropdown-item">Bombas de alta presión</a>
-                                                        <a href="" class="dropdown-item">Siluetas</a>
-                                                        <a href="" class="dropdown-item">Mantenimiento</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Porta Fusiles</a>
-                                                        <a href="" class="dropdown-item">Cartucheras</a>
-                                                        <a href="" class="dropdown-item">Fundas</a>
-                                                        <a href="" class="dropdown-item">Bastones de tiro</a>
-                                                        <a href="" class="dropdown-item">Miras</a>
-                                                        <a href="" class="dropdown-item">Cinta camuflaje</a>
-                                                        <a href="" class="dropdown-item">Colimadores</a>
-                                                       </div>
-   
-                                              </div>
-                                                   
-                                               
-                                              
-                                          </div>
-                                      <div class="col-sm-6 menu-design">
-                                           <h5>Pistolas</h5>
-                                           <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Diábolos Salva</a><br>
-                                                        <a href="" class="dropdown-item-categoria">CO2</a>
-                                                        
-
-                                                </div>
-                                                <div class="col-sm-">
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                        <a href="" class="dropdown-item">Diábolos</a>
-                                                        <a href="" class="dropdown-item">Salva</a>
-                                                        <a href="" class="dropdown-item">Mantenimiento</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Fundas</a>
-                                                        <a href="" class="dropdown-item">Práctica de tiro</a>
-                                                </div>
-
-                                           </div>
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                           <h5>Arquería</h5>
-                                           <a href="" class="dropdown-item-categoria">Arcos</a><br>
-                                           <a href="" class="dropdown-item-categoria">Bayestas </a><br>
-                                           <a href="" class="dropdown-item-categoria">Flechas</a>       
-                                          
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                           <h5>Cuchillería</h5>
-                                           <div class="row">
-                                              <div class="col-sm-6">
-                                                <a href="" class="dropdown-item-categoria">Cuchillos</a><br>
-                                                <a href="" class="dropdown-item-categoria">Navajas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Hachas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Machetes</a><br>
-                                                <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                <div class="col-sm-2">
+                                                                        <h5>Accesorios</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Almacenamiento</a><br>
+                                                                                        <a href="" class="dropdown-item">Cajas</a>
+                                                                                        <a href="" class="dropdown-item">Maletas</a> 
+                                                                                        <a href="" class="dropdown-item-categoria">Arneses de lucha</a><br>  
+                                                                                </div>
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Ganchos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Cuchillería</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Pinzas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Mantenimiento</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Básculas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Termos/vasos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                  
+                                                                <div class="col-sm-2">
+                                                                        <h5>Navegación</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">GPS</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Brújulas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Audio</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Eléctricos</a>
+                                                                                        <a href="" class="dropdown-item">Switches</a>
+                                                                                        <a href="" class="dropdown-item">Conectores</a>
+                                                                                </div>
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a><br>
+                                                                                        <a href="" class="dropdown-item">Fender</a>
+                                                                                        <a href="" class="dropdown-item">Anclas</a>
+                                                                                        <a href="" class="dropdown-item">Cuerdas</a>
+                                                                                        <a href="" class="dropdown-item">Cornetas</a>
+                                                                                        <a href="" class="dropdown-item">Silvatos</a>
+                                                                                        <a href="" class="dropdown-item">Aireador Portatil</a>
+                                                                                        <a href="" class="dropdown-item">Volantes</a>
+                                                                                        <a href="" class="dropdown-item">Cepillos</a>
+                                                                                        <a href="" class="dropdown-item">Cornamusas</a>
+                                                                                        <a href="" class="dropdown-item">Tapones</a>
+                                                                                        <a href="" class="dropdown-item">Remolque</a>
+                                                                                        <a href="" class="dropdown-item">Mantenimiento</a>
+                                                                                </div>
+                                                                                <div class="col-sm-4 dropdown-item menu-desing">
+                                                                                        <a href="" class="dropdown-item-categoria">Plomería</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Bombas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Iluminación</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Motor</a><br> 
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                        
+                                                                <div class="col-sm-2">
+                                                                        <h5>Ropa</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Jersey</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Short</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Traje de baño</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Toallas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Gorras</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Sombreros</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
+                                                                                </div>
+                                                                                <div class="col-sm-6 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Buffs</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a><br>
+                                                                                        <a href="" class="dropdown-item">Cinturones</a>
+                                                                                        <a href="" class="dropdown-item">Correas</a>
+                                                                                        <a href="" class="dropdown-item">Estuches</a>
+                                                                                        <a href="" class="dropdown-item">Bolsos</a>
+                                                                                        <a href="" class="dropdown-item">Carteras</a>
+                                                                                        <a href="" class="dropdown-item">Llaveros</a>
+                                                                                        <a href="" class="dropdown-item">Cangureras</a>
+                                                                                        <a href="" class="dropdown-item-categoria">Almohadas</a><br>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-sm-2">
+                                                                        <h5>Líneas</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Monofilamento</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Trenzadas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Leaders</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Fluorocarbono</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Reinales</a> 
+                                                                                </div>
+                                                                                <!--<div class="col-sm-8 dropdown-item menu-design">
+                                                                                <img src="assets/imagenes/menu/anfibia.jpg" alt="" class="responsive" style="width: 100%; height:100%">
+                                                                                </div>-->
+                                                                        </div>
+                                                                </div>
                                                 
-                                              </div>
-
-                                           </div>
-                                        
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                        <h5>Ropa</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Jerseys</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Playeras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Pantalones</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Chalecos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Gorras</a>
-                                                        
-
+                                                                <div class="col-sm-2">
+                                                                        <h5>Snorkel</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Aletas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Tubo Snorkel</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Visores</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Goggles</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Chalecos</a>
+                                                                                </div> 
+                                                                        </div>
+                                                                </div>
+                                  
+                                                                <div class="col-sm-2">
+                                                                        <h5>Buceo</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Aletas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Arpones</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Visores</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a><br>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                 
+                                                                <div class="col-sm-2">
+                                                                        <h5>Kayaks</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Remos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Asientos</a><br>
+                                                                                </div>
+                                                                                <div class="col-sm-4 dropdown-item menu-design">
+                                                                                        <a href="" class="dropdown-item-categoria">Kayak</a><br>
+                                                                                        <a href="" class="dropdown-item">Mini</a>
+                                                                                        <a href="" class="dropdown-item">Pesca</a>
+                                                                                        <a href="" class="dropdown-item">Tandem</a>
+                                                                                        <a href="" class="dropdown-item-categoria">Portacañas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                </div>
+                                                                        </div> 
+                                                                </div>
+                                                        </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Buffs</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Máscaras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                        </li>
 
-                                                </div>
-
-                                        </div>
-
-
-                                   </div>
-                                   <div class="col-sm-4 menu-design">
-                                           <h5>Accesorios</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Mochilas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Termos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Bolsas para señuelos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Señuelos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Mallas</a>
-                                                        
-
-                                                </div>
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Llamadores</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Silllas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Cuerdas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Bancos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Calcomanías</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Espiadero</a>
-
-                                                </div>
-
-                                        </div>
-
-                                   </div>
-                                     
-   
-   
-                                  </div>
-   
-                              </div>
-                           </li>
-                           <!--
-                                =====================================SUPERVIVENCIA-
-                                =====================================SUPERVIVENCIA 
-                                -
-                                =====================================SUPERVIVENCIA 
-                                <li class="nav-item dropdown menu-area">
-                                   <a class="nav-link" href="#" id="mega-three"  data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" routerLink="anfibia-supervivencia">
-                                   SUPERVIVENCÍA
-                                   </a>
-                                  <div class="dropdown-menu mega-area" aria-labelledby="mega-three">
-                                      <div class="row">
-                                           <div class="col-sm-6">
-                                                   <h5>Company Profile</h5>
+                                        <li class="nav-item dropdown menu-area">
+                                                <a class="nav-link" href="#" id="mega-two" aria-haspopup="true" aria-expanded="false" routerLink="anfibia-caceria" data-toggle="dropdown">
+                                                        CACERÍA
+                                                </a>
+                                                <div class="dropdown-menu mega-area" aria-labelledby="mega-two">
+                                                        <div class="row">
+                                                                <div class="col-sm-6">
+                                                                        <h5>Rifles</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-4">
+                                                                                        <div class="menu-imagen2" style="height:300px"></div>
+                                                                                </div>
+                                                                                <div class="col-sm-4">
+                                                                                        <a href="" class="dropdown-item-categoria">Diábolos Salva</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">CO2</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Resorte</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Nitropiston</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">PCP</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                </div>
                                                   
-                                              </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>Market place we work</h5>
-                                               <a href="" class="dropdown-item">Themeforest</a>
-                                               <a href="" class="dropdown-item">Codester</a>
-                                               <a href="" class="dropdown-item">Creative Market</a>
-                                               <a href="" class="dropdown-item">Graphic River</a>
-                                          </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>IT consulting</h5>
-                                               <a href="" class="dropdown-item">Why consulting</a>
-                                               <a href="" class="dropdown-item">Consulting offering</a>
-                                               <a href="" class="dropdown-item">Delivery Excellence</a>
-                                              
-                                          </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>Something</h5>
-                                               <a href="" class="dropdown-item">Why consulting</a>
-                                               <a href="" class="dropdown-item">Consulting offering</a>
-                                               <a href="" class="dropdown-item">Delivery Excellence</a>
-                                          </div>
-                                         
+                                                                                <div class="col-sm-4">
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                        <a href="" class="dropdown-item">Salva y Diábolos</a>
+                                                                                        <a href="" class="dropdown-item">Munición de acero</a>
+                                                                                        <a href="" class="dropdown-item">Diábolos</a>
+                                                                                        <a href="" class="dropdown-item">Tanques C02</a>
+                                                                                        <a href="" class="dropdown-item">Bombas de alta presión</a>
+                                                                                        <a href="" class="dropdown-item">Siluetas</a>
+                                                                                        <a href="" class="dropdown-item">Mantenimiento</a>
+                                                                                        <a href="" class="dropdown-item">Estuches</a>
+                                                                                        <a href="" class="dropdown-item">Porta Fusiles</a>
+                                                                                        <a href="" class="dropdown-item">Cartucheras</a>
+                                                                                        <a href="" class="dropdown-item">Fundas</a>
+                                                                                        <a href="" class="dropdown-item">Bastones de tiro</a>
+                                                                                        <a href="" class="dropdown-item">Miras</a>
+                                                                                        <a href="" class="dropdown-item">Cinta camuflaje</a>
+                                                                                        <a href="" class="dropdown-item">Colimadores</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                      
+                                                                <div class="col-sm-6 menu-design">
+                                                                        <h5>Pistolas</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Diábolos Salva</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">CO2</a>
+                                                                                </div>
+                                                
+                                                                                <div class="col-sm-">
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                        <a href="" class="dropdown-item">Diábolos</a>
+                                                                                        <a href="" class="dropdown-item">Salva</a>
+                                                                                        <a href="" class="dropdown-item">Mantenimiento</a>
+                                                                                        <a href="" class="dropdown-item">Estuches</a>
+                                                                                        <a href="" class="dropdown-item">Fundas</a>
+                                                                                        <a href="" class="dropdown-item">Práctica de tiro</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                      
+                                                                <div class="col-sm-4 menu-design">
+                                                                        <h5>Arquería</h5>
+                                                                        <a href="" class="dropdown-item-categoria">Arcos</a><br>
+                                                                        <a href="" class="dropdown-item-categoria">Bayestas </a><br>
+                                                                        <a href="" class="dropdown-item-categoria">Flechas</a>       
+                                                                </div>
+                                      
+                                                                <div class="col-sm-4 menu-design">
+                                                                        <h5>Cuchillería</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Cuchillos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Navajas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Hachas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Machetes</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                      
+                                                                <div class="col-sm-4 menu-design">
+                                                                        <h5>Ropa</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Jerseys</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Playeras</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Pantalones</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Chalecos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Gorras</a>
+                                                                                </div>
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Buffs</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Máscaras</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-sm-4 menu-design">
+                                                                        <h5>Accesorios</h5>
+                                                                        <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Mochilas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Termos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Bolsas para señuelos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Señuelos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Mallas</a>
+                                                                                </div>
+                                                                                <div class="col-sm-6">
+                                                                                        <a href="" class="dropdown-item-categoria">Llamadores</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Silllas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Cuerdas</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Bancos</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Calcomanías</a><br>
+                                                                                        <a href="" class="dropdown-item-categoria">Espiadero</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </li>
+                                        <!--=====================================SUPERVIVENCIA-=====================================SUPERVIVENCIA-=====================================SUPERVIVENCIA 
+                                        <li class="nav-item dropdown menu-area">
+                                                <a class="nav-link" href="#" id="mega-three"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="anfibia-supervivencia">
+                                                        SUPERVIVENCÍA
+                                                </a>
+                                                <div class="dropdown-menu mega-area" aria-labelledby="mega-three">
+                                                        <div class="row">
+                                                                <div class="col-sm-6">
+                                                                        <h5>Company Profile</h5> 
+                                                                </div>
+                                                                <div class="col-sm-6 menu-design">
+                                                                        <h5>Market place we work</h5>
+                                                                        <a href="" class="dropdown-item">Themeforest</a>
+                                                                        <a href="" class="dropdown-item">Codester</a>
+                                                                        <a href="" class="dropdown-item">Creative Market</a>
+                                                                        <a href="" class="dropdown-item">Graphic River</a>
+                                                                </div>
+                                                                <div class="col-sm-6 menu-design">
+                                                                        <h5>IT consulting</h5>
+                                                                        <a href="" class="dropdown-item">Why consulting</a>
+                                                                        <a href="" class="dropdown-item">Consulting offering</a>
+                                                                        <a href="" class="dropdown-item">Delivery Excellence</a> 
+                                                                </div>
+                                                                <div class="col-sm-6 menu-design">
+                                                                <h5>Something</h5>
+                                                                        <a href="" class="dropdown-item">Why consulting</a>
+                                                                        <a href="" class="dropdown-item">Consulting offering</a>
+                                                                        <a href="" class="dropdown-item">Delivery Excellence</a>
+                                                                </div>
+                                                        </div>
        
-       
-                                      </div>
-       
-                                  </div>
-                               </li>-->
-           </ul>
+                                                </div>
+                                        </li>-->
+                                </ul>
            
    
-           <ul class="navbar-nav justify-content-end flex-grow-1 ">
-                   <li class="nav-item dropdown menu-area">
-                           <a class="nav-link" href="#" id="mega-four"  data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                           Más secciones
-                           </a>
-                          <div class="dropdown-menu mega-area" aria-labelledby="mega-four">
-                              <div class="row">
-                                  <div class="col-sm-6">
-                                     <div class="row">
-                                        <div class="col-sm-12 menu-design">
-                                                <h5>Más de ANFIBIA</h5>
-                                                <a href="" class="dropdown-item" routerLink="tienda">Ir a la tienda</a>
-                                                <a href="" class="dropdown-item" routerLink="sobre-nosotros">Sobre nosotros</a>
-                                                <a href="" class="dropdown-item" routerLink="contactanos">Contáctanos</a>
-                                                <a href="" class="dropdown-item" routerLink="ubicaciones">Ubicaciones</a>
-                                                <a href="" class="dropdown-item" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
-                                               
-                                           </div>
-                                           <div class="col-sm-12 menu-design">
-                                                <h5>Otras secciones</h5>
-                                                <a href="" class="dropdown-item" routerLink="blog">Blog</a>
-                                                <a href="" class="dropdown-item" routerLink="proveedores">Proveedores</a>
-                                                <a href="" class="dropdown-item" routerLink="mapa-sitio">Mapa del sitio</a>
-                                                <a href="" class="dropdown-item" routerLink="perfil">Perfil</a>
-                                                <a href="" class="dropdown-item" routerLink="lista-deseos">Mi lista de deseos</a>
-                                                <a href="" class="dropdown-item" routerLink="carrito-compras">Mi Carrito</a>
-                                               
-                                           </div>
-                                           <div class="col-sm-12 menu-design">
-                                                <h5>Legales</h5>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-privacidad">Políticas de privacidad</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-compras">Políticas de compras</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-envios">Políticas de envíos</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-devoluciones">Políticas de devoluciones</a>
-                                           </div> 
-                                     </div>
-
-                                  </div>
-                                  <div class="col-sm-6">
-                                        <div class="row">
-                                        <div class="col-sm-12 menu-design">
-                                                <img src="assets/imagenes/Nosotros/montaña2.jpg" class="img-fluid responsive">
-                                        </div>
-        
-                                        </div>
-
-                                  </div>
-                                 
-   
-   
-                              </div>
-   
-                          </div>
-                       </li>
-           </ul>  
-</div>
-</div>
-</div>
+                                <ul class="navbar-nav justify-content-end flex-grow-1 ">
+                                        <li class="nav-item dropdown menu-area">
+                                                <a class="nav-link" href="#" id="mega-four"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Más secciones
+                                                </a>
+                                                <div class="dropdown-menu mega-area" aria-labelledby="mega-four">
+                                                        <div class="row">
+                                                                <div class="col-sm-6">
+                                                                        <div class="row">
+                                                                                <div class="col-sm-12 menu-design">
+                                                                                        <h5>Más de ANFIBIA</h5>
+                                                                                        <a href="" class="dropdown-item" routerLink="tienda">Ir a la tienda</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="sobre-nosotros">Sobre nosotros</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="contactanos">Contáctanos</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="ubicaciones">Ubicaciones</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
+                                                                                </div>
+                                                                                <div class="col-sm-12 menu-design">
+                                                                                        <h5>Otras secciones</h5>
+                                                                                        <a href="" class="dropdown-item" routerLink="blog">Blog</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="proveedores">Proveedores</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="mapa-sitio">Mapa del sitio</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="perfil">Perfil</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="lista-deseos">Mi lista de deseos</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="carrito-compras">Mi Carrito</a>
+                                                                                </div>
+                                                                                <div class="col-sm-12 menu-design">
+                                                                                        <h5>Legales</h5>
+                                                                                        <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-privacidad">Políticas de privacidad</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-compras">Políticas de compras</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-envios">Políticas de envíos</a>
+                                                                                        <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-devoluciones">Políticas de devoluciones</a>
+                                                                                </div> 
+                                                                        </div>
+                                                                </div>
+                                        
+                                                                <div class="col-sm-6">
+                                                                        <div class="row">
+                                                                                <div class="col-sm-12 menu-design">
+                                                                                        <img src="assets/imagenes/Nosotros/montaña2.jpg" class="img-fluid responsive">
+                                                                                </div> 
+                                                                        </div>
+                                                                </div>   
+                                                        </div> 
+                                                </div>
+                                        </li>
+                                </ul>  
+                        </div>
+                </div>
+        </div>
 
 <!-- MODAL INICIO DE SESIÓN-->
+

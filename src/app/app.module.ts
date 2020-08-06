@@ -18,6 +18,7 @@ import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos
 import { EditPerfilComponent } from './modals/edit-perfil/edit-perfil.component';
 import { NuevaDireccionComponent } from './modals/nueva-direccion/nueva-direccion.component';
 import { ModalInicioSesionComponent } from './modals/modal-inicio-sesion/modal-inicio-sesion.component';
+import { TorneosComponent } from './torneos/torneos.component';
 
 /*import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';*/
 
@@ -26,7 +27,7 @@ import { ModalInicioSesionComponent } from './modals/modal-inicio-sesion/modal-i
 @NgModule({
   declarations: [
     AppComponent, 
-    routingComponents, ProductosModalComponent, TerminosYCondicionesComponent, EditPerfilComponent, NuevaDireccionComponent, ModalInicioSesionComponent
+    routingComponents, ProductosModalComponent, TerminosYCondicionesComponent, EditPerfilComponent, NuevaDireccionComponent, ModalInicioSesionComponent, TorneosComponent
   ],
   entryComponents:[
     ProductosModalComponent, 
