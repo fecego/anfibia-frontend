@@ -12,6 +12,7 @@ export class AsuntosLegalesComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
 

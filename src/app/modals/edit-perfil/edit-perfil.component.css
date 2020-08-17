@@ -1,11 +1,23 @@
+.errorFormulario{
+    font-size: 12px;
+    color: rgb(243, 17, 17);
+    font-family: 'Meera Inima', sans-serif;
+    background: rgb(248, 230, 230);
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0em;
+    padding: 5px;
+}
+
 
 .modal-header h5{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima   ', sans-serif;
     font-size: 20px;
 }
 
 label{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
 }
 
 .container-fluid{

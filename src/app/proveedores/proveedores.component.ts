@@ -21,6 +21,7 @@ export class ProveedoresComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     
     
    

@@ -23,6 +23,7 @@ export class CarritoComprasComponent implements OnInit {
 
   ngOnInit() {
     console.log("Ejecuta el ngOnInit");
+    window.scrollTo({top: 0, behavior: 'smooth'});
     this.listaCarrito = this._listaCarrito.getProductoCarrito();
     this.listaCarrito.forEach(producto => {
       

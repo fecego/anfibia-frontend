@@ -17,6 +17,7 @@ export class PerfilComponent implements OnInit {
 
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     this.usuario = this._listaUsuarios.getUsuario();
     this.usuario = this.usuario[0];
     console.log(this.usuario);

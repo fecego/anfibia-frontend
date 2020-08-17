@@ -1,2109 +1,609 @@
-
-
-/*Afecta Computadoras, laptops, Los siguientes modelos de tablets: Nexus 10 Landscape, Surface 3 Pro Landscape, Ipad Pro Landscape, Ipad Mini 2.4 Landscape, Portrait*/
-@media only screen and (min-width: 1025px) {
-
-
-    
-
-    .justify-content-end span{
-      display: block;
-      color: #848484;
-      line-height: 0.1em;
-      font-family: 'Meera Inima', sans-serif;
-      font-size: 12px;
-    }
-
-    .menu-imagen{
-        background-image: url('/assets/imagenes/menu/pesca.jpg');
-      
-        /* Full height */
-        width: 100%;
-        max-height: 100%; 
-        /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-
-    .menu-imagen2{
-        background-image: url('/assets/imagenes/menu/hunting.jpg');
-      
-        /* Full height */
-        width: 100%;
-        max-height: 100%; 
-        /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .has-search .form-control {
-        padding-left: 2.375rem;
-    }
-
-    .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 1;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-    }
-
-
-    .div-busqueda h1{
-        
-        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff;
-        font-size: 30px;
-    }
-
-    .form-control{
-        width: 5%;
-    }
-
-    .form-control:hover{
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .div-busqueda{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-    }
-
-    #button-cerrar{
-        position: absolute;
-        top: 14px;
-        right: 20px;
-        color: #fff;
-        background: none;
-        border: none;
-        font-size: 30px;
-    }
-
-    #button-cerrar i{
-        background: none;
-        color: #fff;
-    }
-
-    #button-cerrar:hover i{
-        
-        color: #ff0000;
-    }
-
-    #input-busqueda{
-        border: none;
-        border-bottom: 2px solid #fff;
-        background: none;
-        width: 350px;
-        color: #fff;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        visibility: hidden;
-        transition:  width 0.5s ease-out;
-        outline: none;
-        
-    }
-    ::placeholder {
-        color: #fff;
-       
-      }
-
-      #input-busqueda:focus{
-        width: 800px;
-       
-        
-        
-    }
-    
-    #boton-busquedas i{
-        font-size: 30px;
-        color: #fff;
-        border: none; 
-    }
-
-    #boton-busquedas:hover i{
-        
-        color: #ff0000;
-        transition: 0.5s;
-    }
-
-
-    #div-busqueda{
-        background: #000;
-        position: absolute;
-        top:0%;
-        left: -33%;
-        background-repeat: no-repeat;
-        width: 0px;
-        height: 133px;
-        
-        
-    }
-
-
-    #div-busqueda h1{
-        font-family: 'Prometo-x-bold';
-        font-weight: bolder;
-        font-size: 30px;
-        color: #fff;
-
-    }
-    
-    .search-bar-expanded{
-        width: 100%;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        background: red;
-        opacity: 0;
-    }
-
-    .cool-link {
-        display: inline-block;
-        color: #000;
-        text-decoration: none;
-      }
-      
-      .cool-link::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: #000;
-        transition: width .3s;
-      }
-      
-      .cool-link:hover::after {
-        width: 100%;
-      }
-
-    .next-to-icons i{
-        color: #fff;
-        padding-right: 4px;
-        
-    }
-
-    .next-to-icons a{
-        color: #fff;
-        font-family: 'Prometo-Thin';
-        padding-left:3px;
-        font-size: 18px;
-    }
-
-    .container-fluid{
-        max-width: 100%;
-        
-    }
-    
-    .flex-wrap{
-        max-width: 100%;
-    }
-
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 30px;
-    }
-
-    .banner-area{
-        height: 100vh;
-        width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-        
-    }
-
-    #mega-one:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-one:focus{
-        color: #fff;
-    }
-    
-
-    #mega-two{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-two:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-    
-
-    #mega-two:focus{
-        color: #fff;
-    }
-
-    #mega-three{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-three:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-three:focus{
-        color: #fff;
-    }
- 
-   
-    #mega-four{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-four:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-four:focus{
-        color: #fff;
-    }
-    
-  
-
-
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
-    }
-    
-    .dropdown-item{
-        padding: 2px 10px;
-        background: white;
-        font-family: 'Meera Inima', sans-serif;
-        letter-spacing: 0;
-        color: #000;
-        font-size: 14px;
-    }
-
-
-    .dropdown-item:hover{
-       color: #000;
-    }
-
-    .dropdown-item-categoria{
-        font-family: 'Meera Inima', sans-serif;
-        color:#000;
-        font-size: 17px;
-        letter-spacing: 0;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-
-    
-
-    .dropdown-item-grey{
-        transition:1s;
-        color: #848484;
-    }
-
-
-    
- 
-
- 
-
-    .position-menu{
-        position: absolute;
-        top: 53px;
-        left: 120px;
-        width: 50px;
-        padding: 0px;
-    }
-
-    .position-menu a{
-        color: #000;
-        background: #fff;
-    }
-
-    .dropdown-menu h5{
-        padding-top: 10px;
-        font-family: 'Anton', sans-serif;
-        font-size: 30px;
-        color: #000;
-        border-bottom: 2px solid #000;
-    }
-    
-    .navbar{
-        margin-top: 0px;
-        width: 100%;
-    }
-    
-
-
-
-    .menu ul{
-        color: red;
-        height: 0px;
-        overflow: hidden;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .menu:hover ul{
-        height: 100px;
-    }
-
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
-
-    .anfibia-title{
-        text-align: center;
-        padding-right: 200px;
-    }
-
-    .anfibia-title h3{
-        font-family: 'Anton', sans-serif;
-    }
-
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
-        padding-right: 20px;
-    
-    }
-
-    
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
-      }
-      
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
-      
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }
-    
-    
-      .logo-image{
-        width: 70px;
-        height: 70px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: 10px;
-    }
-    
-    .menuHeader{
-        background: none;
-        border-bottom: solid white 1px;
-        
-    
-    }
-
-    .menuHeader button{
-        background: none;
-        border: none;
-        outline: none;
-    }
-
-    .menuHeader i{
-        color: #848484;
-        font-size: 25px;
-        background: #000;
-        padding: 10px 
-    }
-
-    .menuHeader i:hover{
-        color: #ffffff;
-        transition: 0.5s;
-       
-    }
-
-    
-    
-    
-    .menuHeaderV2{
-        background: #000; 
-    }
-    
-    .menuHeaderV2{
-        color: white;
-        font-weight: bolder;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 3px;
-    }
-
-
-
-    
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-style: italic;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 5px;
-    }
-
-    .menuHeaderV2 p{
-        color: white;
-        font-family: 'Prometo-Medium';
-        font-weight: bold;
-        font-size: 13px;
-        padding-bottom: 0;
-        letter-spacing: 1px;
-        
-      }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
-    
-
-}
-
-/*Tablet Vertical*/
-/*Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait*/
-@media screen and (max-width: 768px) and (min-width: 490px) {
-
-   
-    .has-search .form-control {
-        padding-left: 2.375rem;
-    }
-
-    .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 1;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-    }
-
-
-    .div-busqueda h1{
-        
-        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff;
-        font-size: 30px;
-    }
-
-    .form-control{
-        width: 5%;
-    }
-
-    .form-control:hover{
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .div-busqueda{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-    }
-
-    #button-cerrar{
-        position: absolute;
-        top: 14px;
-        right: 20px;
-        color: #fff;
-        background: none;
-        border: none;
-        font-size: 30px;
-    }
-
-    #button-cerrar i{
-        background: none;
-        color: #fff;
-    }
-
-    #button-cerrar:hover i{
-        
-        color: #ff0000;
-    }
-
-    #input-busqueda{
-        border: none;
-        border-bottom: 2px solid #fff;
-        background: none;
-        width: 350px;
-        color: #fff;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        visibility: hidden;
-        transition:  width 0.5s ease-out;
-        outline: none;
-        
-    }
-    ::placeholder {
-        color: #fff;
-       
-      }
-
-      #input-busqueda:focus{
-        width: 800px;
-       
-        
-        
-    }
-    
-    #boton-busquedas i{
-        font-size: 30px;
-        color: #fff;
-        border: none; 
-    }
-
-    #boton-busquedas:hover i{
-        
-        color: #ff0000;
-        transition: 0.5s;
-    }
-
-
-    #div-busqueda{
-        background: #000;
-        position: absolute;
-        top:0%;
-        left: -33%;
-        background-repeat: no-repeat;
-        width: 0px;
-        height: 133px;
-        
-        
-    }
-
-
-    #div-busqueda h1{
-        font-family: 'Prometo-x-bold';
-        font-weight: bolder;
-        font-size: 30px;
-        color: #fff;
-
-    }
-    
-    .search-bar-expanded{
-        width: 100%;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        background: red;
-        opacity: 0;
-    }
-
-    .cool-link {
-        display: inline-block;
-        color: #000;
-        text-decoration: none;
-      }
-      
-      .cool-link::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: #000;
-        transition: width .3s;
-      }
-      
-      .cool-link:hover::after {
-        width: 100%;
-      }
-
-    .next-to-icons i{
-        color: #fff;
-        padding-right: 4px;
-        
-    }
-
-    .next-to-icons a{
-        color: #fff;
-        font-family: 'Prometo-Thin';
-        padding-left:3px;
-        font-size: 18px;
-    }
-
-    .container-fluid{
-        max-width: 100%;
-        
-    }
-    
-    .flex-wrap{
-        max-width: 100%;
-    }
-
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 30px;
-    }
-
-    .banner-area{
-        height: 100vh;
-        width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: #000;
-        font-family: 'Anton', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-        
-    }
-
-    #mega-one:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-one:focus{
-        color: #fff;
-    }
-    
-
-    #mega-two{
-        color: #000;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-two:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-    
-
-    #mega-two:focus{
-        color: #fff;
-    }
-
-    #mega-three{
-        color: #000;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-three:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-three:focus{
-        color: #fff;
-    }
- 
-   
-    #mega-four{
-        color: #000;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-four:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-four:focus{
-        color: #fff;
-    }
-    
-    .menu-design h4{
-        color: red;
-    }
-
-    .menu-imagen{
-        background-image: url('/assets/imagenes/menu/anfibia.jpg');
-      
-        /* Full height */
-        width: 100%;
-        max-height: 100%; 
-        /* Create the parallax scrolling effect */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
-    }
-    
-    .dropdown-item{
-        padding: 2px 10px;
-        background: white;
-        font-family: 'Meera Inima', sans-serif;
-        font-weight: bolder;
-        color: #000;
-        font-size: 14px;
-       
-        
-    }
-
-
-    .dropdown-item-grey{
-        transition:1s;
-        color: #848484;
-    }
-
-
-    .dropdown-menu a:hover{
-       font-family: 'Meera Inima', sans-serif;
-       font-weight: bold;
-       color: #000;
-       padding-left: 1px;
-       transition: 0.5s;
-       
-    }
-    
-    .dropdown-menu {
-       background: #fff;
-       color: #000;
-       padding-top: 10px;
-       font-family: 'Prometo-Medium';
-       font-size: 20px;
-       
-    }
-
-    .position-menu{
-        position: absolute;
-        top: 53px;
-        left: 120px;
-        width: 50px;
-        padding: 0px;
-    }
-
-    .position-menu a{
-        color: #000;
-        background: #fff;
-    }
-
-    .dropdown-menu h5{
-        padding-top: 10px;
-        font-family: 'Anton', sans-serif;
-        font-size: 30px;
-        border-bottom: 2px solid black;
-    }
-
-    .dropdown-menu h4{
-        padding-top: 10px;
-        font-family: 'Anton', sans-serif;
-        font-size: 89px;
-        border-bottom: 2px solid black;
-    }
-    
-    .navbar{
-        margin-top: 0px;
-        width: 100%;
-    }
-    
-
-
-
-    .menu ul{
-        color: red;
-        height: 0px;
-        overflow: hidden;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .menu:hover ul{
-        height: 100px;
-    }
-
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
-
-    .anfibia-title{
-        text-align: center;
-        padding-right: 200px;
-    }
-
-    .anfibia-title h3{
-        font-family: 'Prometo-x-bold';
-    }
-
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
-        padding-right: 20px;
-    
-    }
-
-    
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
-      }
-      
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
-      
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }
-    
-    
-      .logo-image{
-        width: 70px;
-        height: 70px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: 10px;
-    }
-    
-    .menuHeader{
-        background: none;
-        border-bottom: solid white 1px;
-        
-    
-    }
-
-    .menuHeader button{
-        background: none;
-        border: none;
-        outline: none;
-    }
-
-    .menuHeader i{
-        color: #848484;
-        font-size: 25px;
-        background: #000;
-        padding: 10px 
-    }
-
-    .menuHeader i:hover{
-        color: #ffffff;
-        transition: 0.5s;
-       
-    }
-
-    
-    
-    
-    .menuHeaderV2{
-        background: #000; 
-    }
-    
-    .menuHeaderV2{
-        color: white;
-        font-weight: bolder;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 3px;
-    }
-
-
-
-    
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-style: italic;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 5px;
-    }
-
-    .menuHeaderV2 p{
-        color: white;
-        font-family: 'Prometo-Medium';
-        font-weight: bold;
-        font-size: 13px;
-        padding-bottom: 0;
-        letter-spacing: 1px;
-        
-      }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
-    
-}
-
-/*Tablets*/
-/*Nexus 10 Portrait, Nexus 7 Landscape, Surface Pro 3 Portrait , ipad landscape, Ipad mini Landscape*/
-@media only screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
-
-    .has-search .form-control {
-        padding-left: 2.375rem;
-    }
-
-    .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 1;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-    }
-
-
-    .div-busqueda h1{
-        
-        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff;
-        font-size: 30px;
-    }
-
-    .form-control{
-        width: 5%;
-    }
-
-    .form-control:hover{
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .div-busqueda{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-    }
-
-    #button-cerrar{
-        position: absolute;
-        top: 14px;
-        right: 20px;
-        color: #fff;
-        background: none;
-        border: none;
-        font-size: 30px;
-    }
-
-    #button-cerrar i{
-        background: none;
-        color: #fff;
-    }
-
-    #button-cerrar:hover i{
-        
-        color: #ff0000;
-    }
-
-    #input-busqueda{
-        border: none;
-        border-bottom: 2px solid #fff;
-        background: none;
-        width: 350px;
-        color: #fff;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        visibility: hidden;
-        transition:  width 0.5s ease-out;
-        outline: none;
-        
-    }
-    ::placeholder {
-        color: #fff;
-       
-      }
-
-      #input-busqueda:focus{
-        width: 800px;
-       
-        
-        
-    }
-    
-    #boton-busquedas i{
-        font-size: 30px;
-        color: #fff;
-        border: none; 
-    }
-
-    #boton-busquedas:hover i{
-        
-        color: #ff0000;
-        transition: 0.5s;
-    }
-
-
-    #div-busqueda{
-        background: #000;
-        position: absolute;
-        top:0%;
-        left: -33%;
-        background-repeat: no-repeat;
-        width: 0px;
-        height: 133px;
-        
-        
-    }
-
-
-    #div-busqueda h1{
-        font-family: 'Prometo-x-bold';
-        font-weight: bolder;
-        font-size: 30px;
-        color: #fff;
-
-    }
-    
-    .search-bar-expanded{
-        width: 100%;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        background: red;
-        opacity: 0;
-    }
-
-    .cool-link {
-        display: inline-block;
-        color: #000;
-        text-decoration: none;
-      }
-      
-      .cool-link::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: #000;
-        transition: width .3s;
-      }
-      
-      .cool-link:hover::after {
-        width: 100%;
-      }
-
-    .next-to-icons i{
-        color: #fff;
-        padding-right: 4px;
-        
-    }
-
-    .next-to-icons a{
-        color: #fff;
-        font-family: 'Prometo-Thin';
-        padding-left:3px;
-        font-size: 18px;
-    }
-
-    .container-fluid{
-        max-width: 100%;
-        
-    }
-    
-    .flex-wrap{
-        max-width: 100%;
-    }
-
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 30px;
-    }
-
-    .banner-area{
-        height: 100vh;
-        width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-        
-    }
-
-    #mega-one:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-one:focus{
-        color: #fff;
-    }
-    
-
-    #mega-two{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-two:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-    
-
-    #mega-two:focus{
-        color: #fff;
-    }
-
-    #mega-three{
-        color: #848484;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-three:hover{
-        font-family: 'Meera Inima', sans-serif;
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-three:focus{
-        color: #fff;
-    }
- 
-   
-    #mega-four{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-four:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-four:focus{
-        color: #fff;
-    }
-    
-  
-
-
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
-    }
-    
-    .dropdown-item{
-        padding: 2px 10px;
-        background: white;
-        font-family: 'Meera Inima', sans-serif;
-        font-weight: bolder;
-        color: #000;
-        font-size: 14px;
-       
-        
-    }
-
-
-    .dropdown-item-grey{
-        transition:1s;
-        color: #848484;
-    }
-
-
-    .dropdown-menu a:hover{
-       font-family: 'Prometo-x-bold';
-       color: #000;
-       padding-left: 1px;
-       transition: 0.5s;
-       
-    }
-    
-    .dropdown-menu {
-       background: #fff;
-       color: #000;
-       padding-top: 10px;
-       font-family: 'Prometo-Medium';
-       font-size: 20px;
-       
-    }
-
-    .position-menu{
-        position: absolute;
-        top: 53px;
-        left: 120px;
-        width: 50px;
-        padding: 0px;
-    }
-
-    .position-menu a{
-        color: #000;
-        background: #fff;
-    }
-
-    .dropdown-menu h5{
-        padding-top: 10px;
-        font-family: 'Prometo-x-bold';
-        font-size: 30px;
-        border-bottom: 2px solid black;
-    }
-    
-    .navbar{
-        margin-top: 0px;
-        width: 100%;
-    }
-    
-
-
-
-    .menu ul{
-        color: red;
-        height: 0px;
-        overflow: hidden;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .menu:hover ul{
-        height: 100px;
-    }
-
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
-
-    .anfibia-title{
-        text-align: center;
-        padding-right: 200px;
-    }
-
-    .anfibia-title h3{
-        font-family: 'Prometo-x-bold';
-    }
-
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
-        padding-right: 20px;
-    
-    }
-
-    
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
-      }
-      
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
-      
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }
-    
-    
-      .logo-image{
-        width: 70px;
-        height: 70px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: 10px;
-    }
-    
-    .menuHeader{
-        background: none;
-        border-bottom: solid white 1px;
-        
-    
-    }
-
-    .menuHeader button{
-        background: none;
-        border: none;
-        outline: none;
-    }
-
-    .menuHeader i{
-        color: #848484;
-        font-size: 25px;
-        background: #000;
-        padding: 10px 
-    }
-
-    .menuHeader i:hover{
-        color: #ffffff;
-        transition: 0.5s;
-       
-    }
-
-    
-    
-    
-    .menuHeaderV2{
-        background: #000; 
-    }
-    
-    .menuHeaderV2{
-        color: white;
-        font-weight: bolder;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 3px;
-    }
-
-
-
-    
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-style: italic;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 5px;
-    }
-
-    .menuHeaderV2 p{
-        color: white;
-        font-family: 'Prometo-Medium';
-        font-weight: bold;
-        font-size: 13px;
-        padding-bottom: 0;
-        letter-spacing: 1px;
-        
-      }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
-    
-
-
+.linkVerMasProductos{
+    color: #000; 
+    font-family: 'Meera Inima', sans-serif; 
+    font-size: 17px; 
+    text-decoration: none;
 }
 
 
-/*Tablets*/
-/*Iphone 4, 5, 7 PORTRAIT*/
-@media only screen and (max-width: 319px){
-    .has-search .form-control {
-        padding-left: 2.375rem;
-    }
+.imagenProductoFiltrado{
+    width: 100%; 
+    height: 180px; 
+    background: #F2F2F2;
+    justify-content: center; 
+    align-items: center;
+    padding: 30px;
+}
 
-    .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 1;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-    }
-
-
-    .div-busqueda h1{
-        
-        -webkit-text-fill-color: #000; /* Will override color (regardless of order) */
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff;
-        font-size: 30px;
-    }
-
-    .form-control{
-        width: 5%;
-    }
-
-    .form-control:hover{
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .div-busqueda{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-    }
-
-    #button-cerrar{
-        position: absolute;
-        top: 14px;
-        right: 20px;
-        color: #fff;
-        background: none;
-        border: none;
-        font-size: 30px;
-    }
-
-    #button-cerrar i{
-        background: none;
-        color: #fff;
-    }
-
-    #button-cerrar:hover i{
-        
-        color: #ff0000;
-    }
-
-    #input-busqueda{
-        border: none;
-        border-bottom: 2px solid #fff;
-        background: none;
-        width: 350px;
-        color: #fff;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        visibility: hidden;
-        transition:  width 0.5s ease-out;
-        outline: none;
-        
-    }
-    ::placeholder {
-        color: #fff;
-       
-      }
-
-      #input-busqueda:focus{
-        width: 800px;
-       
-        
-        
-    }
-    
-    #boton-busquedas i{
-        font-size: 30px;
-        color: #;
-        border: none; 
-    }
-
-    #boton-busquedas:hover i{
-        
-        color: #ff0000;
-        transition: 0.5s;
-    }
-
-
-    #div-busqueda{
-        background: #000;
-        position: absolute;
-        top:0%;
-        left: -33%;
-        background-repeat: no-repeat;
-        width: 0px;
-        height: 133px;
-        
-        
-    }
-
-
-    #div-busqueda h1{
-        font-family: 'Prometo-x-bold';
-        font-weight: bolder;
-        font-size: 30px;
-        color: #fff;
-
-    }
-    
-    .search-bar-expanded{
-        width: 100%;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        background: red;
-        opacity: 0;
-    }
-
-    .cool-link {
-        display: inline-block;
-        color: #000;
-        text-decoration: none;
-      }
-      
-      .cool-link::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: #000;
-        transition: width .3s;
-      }
-      
-      .cool-link:hover::after {
-        width: 100%;
-      }
-
-    .next-to-icons i{
-        color: #fff;
-        padding-right: 4px;
-        
-    }
-
-    .next-to-icons a{
-        color: #fff;
-        font-family: 'Prometo-Thin';
-        padding-left:3px;
-        font-size: 18px;
-    }
-
-    .container-fluid{
-        max-width: 100%;
-        
-    }
-    
-    .flex-wrap{
-        max-width: 100%;
-    }
-
-    .logo-position{
-        padding-top: 0px;
-        padding-left: 30px;
-    }
-
-    .banner-area{
-        height: 100vh;
-        width: 100%;
-        background: white;
-        -webkit-background-size: cover;
-        background-size:cover ;
-        background-position: center center;
-    
-    }
-    
-    #mega-one{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-        
-    }
-
-    #mega-one:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-one:focus{
-        color: #fff;
-    }
-    
-
-    #mega-two{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-two:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-    
-
-    #mega-two:focus{
-        color: #fff;
-    }
-
-    #mega-three{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-three:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-three:focus{
-        color: #fff;
-    }
- 
-   
-    #mega-four{
-        color: #848484;
-        font-family: 'Prometo-Medium';
-        font-size: 20px;
-        padding-left: 15px;
-        border-bottom: none;
-        text-align: center;
-    }
-
-    #mega-four:hover{
-        font-family: 'Prometo-Medium';
-        color: #fff;
-        transition: 0.5s;
-        transition: ease-out 0.5s;
-    }
-
-    #mega-four:focus{
-        color: #fff;
-    }
-    
-  
-
-
-
-    .menu-area{
-        position: static;
-    }
-    
-    .mega-area{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 15px;
-    }
-    
-    .dropdown-item{
-        padding: 2px 10px;
-        background: white;
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
-        color: #000;
-        font-size: 14px;
-       
-        
-    }
-
-
-    .dropdown-item-grey{
-        transition:1s;
-        color: #848484;
-    }
-
-
-    .dropdown-menu a:hover{
-       font-family: 'Prometo-x-bold';
-       color: #000;
-       padding-left: 1px;
-       transition: 0.5s;
-       
-    }
-    
-    .dropdown-menu {
-       background: #fff;
-       color: #000;
-       padding-top: 10px;
-       font-family: 'Prometo-Medium';
-       font-size: 20px;
-       
-    }
-
-    .position-menu{
-        position: absolute;
-        top: 53px;
-        left: 120px;
-        width: 50px;
-        padding: 0px;
-    }
-
-    .position-menu a{
-        color: #000;
-        background: #fff;
-    }
-
-    .dropdown-menu h5{
-        padding-top: 10px;
-        font-family: 'Prometo-x-bold';
-        font-size: 30px;
-        border-bottom: 2px solid black;
-    }
-    
-    .navbar{
-        margin-top: 0px;
-        width: 100%;
-    }
-    
-
-
-
-    .menu ul{
-        color: red;
-        height: 0px;
-        overflow: hidden;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .menu:hover ul{
-        height: 100px;
-    }
-
-    @media (min-width: 768px) {  
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          border-radius:0;
-         }
-        }
-
-    .anfibia-title{
-        text-align: center;
-        padding-right: 200px;
-    }
-
-    .anfibia-title h3{
-        font-family: 'Prometo-x-bold';
-    }
-
-    .anfibia-title p{
-        color: white;
-        font-size: 12px;
-        letter-spacing: 4px;
-        padding-bottom: 0px;
-        font-family: 'Prometo-Thin';
-    }
-
-    .icon-header{
-        padding-right: 20px;
-    
-    }
-
-    
-    .navbar {
-        padding:0rem;
-        margin-bottom:2rem;
-      }
-      
-      .dropdown .dropdown-menu {
-        border-radius:0;
-       }
-      
-      
-      /* Medium devices (tablets, 768px and up) 
-      The navbar toggle appears at this breakpoint */
-      @media (min-width: 768px) {  
-      .dropdown:hover .dropdown-menu {
-          display: block;
-          margin-top: 0;
-        border-radius:0;
-       }
-      }
-    
-    
-      .logo-image{
-        width: 70px;
-        height: 70px;
-        border-radius: 0%;
-        overflow: hidden;
-        margin-top: 10px;
-    }
-    
-    .menuHeader{
-        background: none;
-        border-bottom: solid white 1px;
-        
-    
-    }
-
-    .menuHeader button{
-        background: none;
-        border: none;
-        outline: none;
-    }
-
-    .menuHeader i{
-        color: #848484;
-        font-size: 25px;
-        background: #000;
-        padding: 10px 
-    }
-
-    .menuHeader i:hover{
-        color: #ffffff;
-        transition: 0.5s;
-       
-    }
-
-    
-    
-    
-    .menuHeaderV2{
-        background: #000; 
-    }
-    
-    .menuHeaderV2{
-        color: white;
-        font-weight: bolder;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 3px;
-    }
-
-
-
-    
-    .menuHeaderV2 h3{
-      color: white;
-      font-family: 'Prometo-x-bold';
-      font-weight: bold;
-      font-style: italic;
-      font-size: 40px;
-      padding-bottom: 0;
-      letter-spacing: 5px;
-    }
-
-    .menuHeaderV2 p{
-        color: white;
-        font-family: 'Prometo-Medium';
-        font-weight: bold;
-        font-size: 13px;
-        padding-bottom: 0;
-        letter-spacing: 1px;
-        
-      }
-    
-    
-    
-    .searchAnfibia{
-        background: transparent;
-        color: white;
-        border: 2px solid #003e9a;
-    }
+.imagenProductoFiltrado img{
+    width:70%;
+    height: 100%;
     
 }
 
-
-/*PRUEBA INICIO DE SESION*/
-
-.modal .fade{
-    font-family: 'Meera';
-    
+.productosFiltrados {
+    padding-top: 20px;
 }
 
-input#Usuario, input#Contraseña{
-    border:0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid #01AFAA;
-    padding: 7px 10px;
-    width: 350px;
-    outline: none;
-    border-radius: 4px;
-    transition: 0.25s;
-    color: white;
+.productosFiltrados h1{
+    font-family: 'Julius Sans One';
+    font-weight: bold; 
+    font-size: 14px; 
+    text-align: center; 
+    padding-top: 8px; 
+    color: #000;
 }
-input#Usuario:focus, input#Contraseña:focus{
-    width: 380px;
-    border-color: #005C93;
-    color: white;
+
+.productosFiltrados h2{
+    font-family: 'Julius Sans One';
+    font-size: 14px;
+    text-align: center; 
+    line-height: 0.4em;
 }
-input#Login{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid #005C93;
-    padding: 7px 40px;
-    outline: none;
-    border-radius: 4px;
-    transition: 0.25s;
+
+
+.productosFiltrados span{
+    color: #000;
+    font-family: 'Julius Sans One';
+    font-weight: bold;
+}
+
+.icon-header{
     cursor: pointer;
-    width: 350px;
-    color: white;
 }
-input#Login:hover{
-    background: #005C93;
-    color: white;
-    width: 380px;
+.searchStyle{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    margin-top: 20px;
+    
 }
+
+.searchStyle label{
+    text-align: left;
+}
+
+.searchStyle input{
+    border: none;
+    border-bottom: 2px solid #000;
+    width: 50%;
+    z-index: 2;
+   
+}
+
+.searchStyle input[type="search"]{
+    font-family: 'Julius Sans One';
+    font-size: 20px;
+}
+
+
+.searchStyle ::placeholder {
+font-size: 25px;
+font-family: 'Julius Sans One';
+
+  }
+
+
+.cerrarModalBusqueda{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.busqueda{
+    width: 80%; 
+    background: #fff;
+    position: fixed; 
+    top:19vh;
+    z-index: 1000;
+    max-height: 500px; /* supply current height here */
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+
+.menuNav{
+    padding: 0px; 
+    z-index: 999;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    
+}
+
+
+
+.divAzul{
+    width: 80%; 
+    background: #fff;
+    position: fixed; 
+    z-index: 2;
+    max-height: 500px; /* supply current height here */
+    overflow: hidden;
+    overflow-y: scroll;
+    float: right;
+}
+
+
+
+/*.divAzul a{
+    font-family: 'Anton', sans-serif;   
+    font-size: 80px;
+    letter-spacing: 5px;
+    -webkit-text-stroke: #000;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    background: linear-gradient(to right, #000, #000 50%, #fff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 365ms ease;
+    text-decoration: none; 
+
+}**/
+
+.divAzul a:hover{
+    background-position: 0 100%;
+    
+    
+}
+
+.divAzul p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 17px;
+    color: #000;
+    line-height: 1.2em;
+    
+}
+
+.divAzul ul li{
+    list-style: none;
+}
+
+
+.divAzul h1{
+    
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    
+}
+
+/*.divAzul h1{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+
+.divAzul ul li{
+    list-style: none;
+}
+
+.divAzul ul li a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-text-stroke: #000;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 1px;
+}
+
+.divAzul ul li a:hover{
+    -webkit-text-fill-color: #000;
+}*/
+
+
+
+
+.divGreen{
+    width: 80%;
+    background: #fff; 
+    max-height: 500px; 
+    z-index: 2;
+    max-height: 500px;
+    position: fixed;
+
+    
+    overflow: hidden;
+    right: 0%;
+   
+
+    
+
+
+
+ 
+}
+
+.divGreen h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: #000;
+
+}
+
+.divGreen a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    line-height: 0.8em;
+    color:  #848484;
+}
+
+.divGreen a:hover{
+    color: #000;
+}
+
+.divRojo{
+    width: 80%; 
+    background: #fff;
+    position: fixed; 
+    z-index: 99;
+    max-height: 500px; /* supply current height here */
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prueba a{
+    font-family: 'Anton', sans-serif;   
+    font-size: 60px;
+    letter-spacing: 5px;
+    -webkit-text-stroke: #000;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    background: linear-gradient(to right, #000, #000 50%, #fff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 365ms ease;
+    text-decoration: none;  
+
+}
+
+.pruebaCategoria{
+    font-family: 'Meera Inima', sans-serif;   
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    -webkit-text-stroke: #000;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 1px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    background: linear-gradient(to left, #000, #000 50%, #fff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 365ms ease;
+    text-decoration: none;  
+    border: none;
+    margin-bottom: 4px;
+}
+
+
+.pruebaCategoria:focus{
+    border: none;
+}
+
+.divRojo a:hover{
+    background-position: 0 100%;
+}
+
+.pruebaLinksRapidos ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+.pruebaLinksRapidos a{
+    color: #848484;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 0.8em;
+    padding-left: 0;
+}
+
+.pruebaLinksRapidos a:hover{
+    color: #000;
+}
+
+.divRojo p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 17px;
+    color: #000;
+    line-height: 1.2em;
+    
+}
+
+.divRojo h1{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.divRojo ul li{
+    list-style: none;
+}
+
+/*.divRojo ul li a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-text-stroke: #000;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 1px;
+}
+
+.divRojo ul li a:hover{
+    -webkit-text-fill-color: #000;
+}
+*/
+
+.prueba2 ul li a {
+    color: red;
+}
+
+
+.rightUl{
+    
+    list-style: none;
+    width: 15%;
+    height: 100%;
+}
+.logo-image{
+    width: 60px;
+    height: 60px;
+    border-radius: 0%;
+    overflow: hidden;
+    margin-top: 10px;
+   
+}
+
+.centerUl{
+    list-style: none;
+    width: 15%;
+    height: 100%;
+    
+    padding: 0;
+    margin: 0;
+}
+
+.texto-anfibia {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-image a{
+    list-style: none;
+}
+
+nav{
+    height: 19vh;
+    background: #000;
+    padding: 0%;
+}
+
+.navbar{
+    width: 100%;
+    height: 50%; 
+    padding: 0;
+    margin: 0;
+      
+}
+
+.primerPiso{
+   border-bottom: 2px solid #fff;
+}
+
+
+.segundoPiso{
+
+}
+
+.izquierda{
+  
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.clasificaciones{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+   
+    
+}
+
+.clasificaciones button{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bolder;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s ease-in-out;
+}
+
+.clasificacionesSeleccionado button {
+    background: #fff;
+    color: #000;
+    
+    
+    
+}
+
+.otras-secciones button{
+    font-family: 'Meera Inima', sans-serif;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.otherSectionSelected button{
+    background: #fff;
+    color: #000;
+    
+    
+    
+}
+
+
+.derecha{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    margin-right: 0;
+   
+}
+
+.otras-secciones{
+    display: flex;
+    list-style: none;
+    
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+.otras-secciones a{
+  
+    font-family: 'Julius Sans One';
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+   
+
+
+}
+
+
+.leftUl{
+    
+    width: 40%;
+    height: 100%;
+    
+    
+}
+
+.leftUl i{
+    font-size: 20px;
+    line-height: 1em;
+}
+
+.letrasLeft{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    background: red;
+    margin-left: 60%;
+    
+}
+
+
+
+.letrasLeft button{
+    background: #000;
+    width: 40px;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #A4A4A4;
+  
+}
+
+.letrasLeft button:hover{
+    
+    color: #fff;
+}
+
+
+
+
+
+
+.justify-content-end span{
+    display: block;
+    color: #000;
+    line-height: 0.1em;
+    font-family: 'Julius Sans One';
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 1.4em;
+  }
+
+  .menu-Imagen2{
+    background-image: url('/assets/imagenes/menu/NUEVA LETRAS.png');
+      
+    /* Full height */
+    width: 100%;
+    height: 600px;
+    max-height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+
+  .menu-ImagenCaceria{
+    background-image: url('/assets/imagenes/menu/CACERIA2.png');
+      
+    /* Full height */
+    width: 100%;
+    max-height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }

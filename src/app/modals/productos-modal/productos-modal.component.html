@@ -53,9 +53,9 @@
         <hr>
         <div class="row" style="padding-top: 20px;">
           <div class="col-sm-12">
-            <h4 *ngIf="productoModal.descuento">Precio: <span>${{productoModal.precio_antiguo}}</span></h4>
-            <h5 *ngIf="productoModal.descuento != 0; else precioNormal">Precio Desc: <span>${{productoModal.precio}}</span> </h5>
-            <h3 id="precioNormal" *ngIf="productoModal.descuento == 0">Precio: <span> ${{productoModal.precio}}</span></h3>
+            <h4 *ngIf="productoModal.descuento">Precio: <span>{{productoModal.precio_antiguo | currency}}</span></h4>
+            <h5 *ngIf="productoModal.descuento != 0; else precioNormal">Precio Desc: <span>{{productoModal.precio | currency}}</span> </h5>
+            <h3 id="precioNormal" *ngIf="productoModal.descuento == 0">Precio: <span> {{productoModal.precio | currency}}</span></h3>
             <h4></h4>
             <div class="basic-info">
               <h4>{{productoModal.categoria | uppercase}} </h4>
@@ -63,7 +63,7 @@
             </div>
             <h5>Descripción</h5>
             <p>{{productoModal.descripcion}}.</p>
-            <a class="see-more" routerLink = "/tienda/{{productoModal.clasificacion}}/{{productoModal.categoria}}/{{productoModal.idProducto}}/{{productoModal.nombre}}" (click) = "closeModal()">Ver más</a>
+            <a class="see-more" routerLink = "/tienda/{{productoModal.idProducto}}/{{productoModal.nombre}}" (click) = "closeModal()">Ver más</a>
 
 
            

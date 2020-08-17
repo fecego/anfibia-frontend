@@ -1,17 +1,21 @@
-<div>
-  <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" width="100%">
-      <source src="assets/videos/anfibia54.mp4" type="video/mp4">
-  </video>
-  <div class="row texto-video">
-      <!--<div class="col-lg-12 col-md-12 col-sm-12 col-12">
-          <p>Vive la experiencia <span>ANFIBIA</span></p>
-          <h1>CACERÍA</h1>
-          <h5>Equipate para las grandes aventuras, Busca nuevos destinos, Atrévete a vivir nuevas emociones</h5>    
-      </div>-->
+<div class="container-fluid" style="background: #fff;" >
+<div class="row" >
+  
+  <div class="col-sm-4" >
+   <div class="letras-inicio">
+    <h1>Cacería</h1>
+    <p>Te encuentras en la sección de Cacería de Anfibia, te mostraremos algunos de nuestros productos más nuevos, así como también
+      encontrarás nuestros productos destacados, los cuales son productos que otros cazadores han usado para volverse mejores cazadores.</p>
+   </div>
+
   </div>
   
-</div>
+  <div class="col-sm-8" style="padding:30px">
+    <img src="/assets/imagenes/hunting/hunting23.jpg" alt="" height="100%" width="100%" class="img-fluid">
+  </div>
 
+</div>
+</div>
 
 <!--<div class="container-fluid-asimetrico">
   <div class="row">
@@ -34,8 +38,7 @@
   </div>
 </div>-->
 
-<div class="container-fluid" style="background: rgb(255,255,255);
-background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1) 55%);">
+<div class="container-fluid" style="background: #fff;">
 <div class="row">
   <div class="col-lg-8 col-md-8 col-sm-8 col-12 image-background">
 
@@ -46,15 +49,15 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
     <hr>
     <p >Se bienvenido a la tribu, contamos con lo que necesitas para convertirte en el mejor cazador del lugar.</p>
     <div class="flex dark">
-        <a href="#0" class="bttn-dark">Ir a la tienda</a>
+        <a routerLink="/tienda" [queryParams] = "{clasificacion: 'Caceria'}" class="bttn-dark">Ir a la tienda</a>
       </div>
   </div>
 </div>
 <div class="row" style="padding-top: 20px;">
   <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
-    <h1>CACERÍA</h1>
-    <p>Te encuentras en la sección de Cacería de Anfibia, te mostraremos algunos de nuestros productos más nuevos, recientemente adquiridos, así como también
-      encontrarás nuestros productos destacados, los cuales son productos que otros cazadores han usado para volverse los mejores en su ramo, además de nuestras promociones.
+    
+    <p>
+      Conoce nuestras promociones, tenemos productos en oferta que te podrían interesar, aventurate en nuestra tienda.
     </p>
   </div>
   <div class="col-12 col-sm-8 col-md-8 col-lg-8 image-background2">
@@ -211,25 +214,36 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
                <div class="badge3" *ngIf="productoCaceria.descuento"> {{productoCaceria.descuento}} % DESC</div>
                <!--<div class="badge3" *ngIf="productoCaceria.descuento">Desc {{productoCaceria.descuento}}%</div>-->
                    <div class="product-tumb">
-                       <img [attr.src]="productoCaceria.image[0].url" alt=""
+                       <img [attr.src]="productoCaceria.image[0].url" alt="" (mouseover) = "productoCaceria.image[0].url = productoCaceria.imagenCambio" (mouseout) = "productoCaceria.image[0].url = productoCaceria.imagenPrincipal"
                       >
                    </div>
                    <div class="product-details">
-                       <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
+                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                
+                    <h4><a routerLink="/tienda/{{productoCaceria.idProducto}}/{{productoCaceria.nombre}}">{{productoCaceria.nombre | oracionMayusculas}}</a></h4>
+                    <h4 *ngIf="productoCaceria.descuento"> Precio:<span> {{productoCaceria.precio_antiguo | currency}} </span> </h4>
+                    <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal">Precio desc: <span> {{productoCaceria.precio | currency}}</span> </h5>
+                    
+                    <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>{{productoCaceria.precio | currency}}</h3>
+                
+                    
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                    
-                       <h4><a href="">{{productoCaceria.nombre}}</a></h4>
-                       <div class="product-price">
-                        <h4 *ngIf="productoCaceria.descuento"><span>  Precio:</span> ${{productoCaceria.precio_antiguo}}</h4>
-                        <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoCaceria.precio}}</h5>
-                        <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>${{productoCaceria.precio}}</h3>
-                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                       </div>
+                    <div class="pruebaBotones"> 
+                     <ul>
+                       <li>  <button (click)="addWishList(productoCaceria)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                      
                        
-                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                       <div class="product-bottom-details"> 
-                       </div>
-                       <button class="product-links-wish" type="button" (click)="openModal(productoCaceria)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     </ul>
+                    
+    
+                   </div>
+                   <div class="pruebaBotones2">
+                       <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoCaceria)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="" type="button" (click) = "addCart(productoCaceria)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                     
+    
+                   </div>
                    </div>
                </div>
            </div>
@@ -252,12 +266,12 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
          data-aos-easing="linear"
          data-aos-duration="1000" >
          <div class="publicidad-imagen1">
-           <img src="/assets/imagenes/hunting/walltercreed5.jpg" class="img-fluid" alt="">
-           <div class="text-publicidad1">
+           <img src="/assets/imagenes/hunting/blackMoose.png" class="img-fluid" alt="">
+           <!--<div class="text-publicidad1">
             <h1><span>W</span>ALTER</h1>
             <h2><span>CREED</span></h2>
             
-           </div>
+           </div>-->
 
          </div>
          
@@ -269,8 +283,8 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
          data-aos-easing="linear"
          data-aos-duration="1000">
           <div class="publicidad-imagen2">
-            <img src="/assets/imagenes/hunting/walltercreed4.jpg" class="img-fluid" alt="">
-            <div class="text-publicidad2">
+            <img src="/assets/imagenes/hunting/señuelosCaceria.png" class="img-fluid" alt="">
+            <!--<div class="text-publicidad2">
               <h1><span>W</span>ALTER <span>C</span>REED</h1>
 
             </div>
@@ -281,7 +295,7 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
             <div class="text-publicidad2-third">
               <h1>Visita nuestra <span>tienda</span>> en linea</h1>
 
-            </div>
+            </div>-->
 
           </div>
              
@@ -296,12 +310,12 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
       data-aos-easing="linear"
       data-aos-duration="1000" >
       <div class="publicidad-imagen3">
-        <img src="/assets/imagenes/hunting/hunting14.jpg" class="img-fluid" alt="">
-        <div class="text-publicidad-imagen3">
+        <img src="/assets/imagenes/hunting/sigsauer.png" class="img-fluid" alt="">
+        <!--<div class="text-publicidad-imagen3">
           <h1><span>C</span>onoce más de</h1>
           <h2>SILVER <span>GUN</span></h2>
 
-        </div>
+        </div>-->
 
       </div>
       
@@ -313,14 +327,14 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
       data-aos-easing="linear"
       data-aos-duration="1000">
        <div class="publicidad-imagen4">
-         <img src="/assets/imagenes/hunting/rifle6.jpg" class="img-fluid" alt="">
+         <img src="/assets/imagenes/hunting/Imagenes-caceria-3.png" class="img-fluid" alt="">
          <div class="text-publicidad-imagen4">
+           <!--<h1>C<span>ACE</span>RÍA</h1>
            <h1>C<span>ACE</span>RÍA</h1>
            <h1>C<span>ACE</span>RÍA</h1>
            <h1>C<span>ACE</span>RÍA</h1>
            <h1>C<span>ACE</span>RÍA</h1>
-           <h1>C<span>ACE</span>RÍA</h1>
-           <h1>C<span>ACE</span>RÍA</h1>
+           <h1>C<span>ACE</span>RÍA</h1>-->
            
            
 
@@ -335,12 +349,12 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
       data-aos-easing="linear"
       data-aos-duration="1000">
        <div class="publicidad-imagen5">
-         <img src="/assets/imagenes/hunting/camilus2.jpg" class="img-fluid"  alt="">
-         <div class="text-publicidad-imagen5">
+         <img src="/assets/imagenes/hunting/camillus.png" class="img-fluid"  alt="">
+         <!--<div class="text-publicidad-imagen5">
            <h1>Contamos con una <span>amplía</span> variedad de </h1>
            <h2>Cuchillos <span>CAMILLUS</span></h2>
 
-         </div>
+         </div>-->
 
        </div>
           
@@ -387,21 +401,32 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 55%, rgba(255, 128, 0, 1)
                           >
                        </div>
                        <div class="product-details">
-                           <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
+                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                    
+                        <h4><a routerLink="/tienda/{{productoCaceria.idProducto}}/{{productoCaceria.nombre}}">{{productoCaceria.nombre | oracionMayusculas}}</a></h4>
+                        <h4 *ngIf="productoCaceria.descuento"> Precio:<span> {{productoCaceria.precio_antiguo | currency}} </span> </h4>
+                        <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal">Precio desc: <span> {{productoCaceria.precio | currency}}</span> </h5>
+                    
+                        <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>{{productoCaceria.precio | currency}}</h3>
+                    
+                        
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                        
-                           <h4><a href="">{{productoCaceria.nombre}}</a></h4>
-                           <div class="product-price">
-                            <h4 *ngIf="productoCaceria.descuento"><span>  Precio:</span> ${{productoCaceria.precio_antiguo}}</h4>
-                            <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoCaceria.precio}}</h5>
-                            <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>${{productoCaceria.precio}}</h3>
-                           <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                           </div>
+                        <div class="pruebaBotones"> 
+                         <ul>
+                           <li>  <button (click)="addWishList(productoCaceria)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                          
                            
-                           <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                           <div class="product-bottom-details"> 
-                           </div>
-                           <button class="product-links-wish" type="button" (click)="openModal(productoCaceria)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                         </ul>
+                        
+        
+                       </div>
+                       <div class="pruebaBotones2">
+                           <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoCaceria)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                           <button class="" type="button" (click) = "addCart(productoCaceria)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                         
+        
+                       </div>
                        </div>
                    </div>
                </div>
@@ -479,7 +504,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
           <div class="item item-1 ">
               <div class="item-div">
                 
-                <h2><a href="">Anzuelos</a></h2>
+                <h2><a href="">Rifles</a></h2>
                 <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
               </div>
               
@@ -488,7 +513,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
           </div>
           <div class="item item-2">
              <div>
-              <h2><a href="">Cañas</a></h2>
+              <h2><a href="">Arquería</a></h2>
              <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
              </div>
               
@@ -497,7 +522,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
           </div>
           <div class="item item-3">
             <div>
-              <h2><a href="">Carretes</a></h2>
+              <h2><a href="">Pistolas</a></h2>
               <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
             </div>
               
@@ -506,7 +531,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
           <div class="item item-4">
               
              <div>
-              <h2><a href="">Accesorios</a></h2>
+              <h2><a href="">Cuchillería</a></h2>
               <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
              </div>
              
@@ -515,12 +540,21 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
           <div class="item item-5">
            
               <div>
-                <h2><a href="">Kayaks</a></h2>
+                <h2><a href="">Ropa</a></h2>
               <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
               </div>
               
              
           </div>
+          <div class="item item-6">
+           
+            <div>
+              <h2><a href="">Accesorios</a></h2>
+            <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+            </div>
+            
+           
+        </div>
       </div>
     </div>
 
@@ -561,22 +595,33 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
                          >
                       </div>
                       <div class="product-details">
-                          <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
-                      
-                          <h4><a href="">{{productoCaceria.nombre}}</a></h4>
-                          <div class="product-price">
-                           <h4 *ngIf="productoCaceria.descuento"><span>  Precio:</span> ${{productoCaceria.precio_antiguo}}</h4>
-                           <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoCaceria.precio}}</h5>
-                           <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>${{productoCaceria.precio}}</h3>
-                          <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                          </div>
+                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                    
+                        <h4><a routerLink="/tienda/{{productoCaceria.idProducto}}/{{productoCaceria.nombre}}">{{productoCaceria.nombre | oracionMayusculas}}</a></h4>
+                        <h4 *ngIf="productoCaceria.descuento"> Precio:<span> {{productoCaceria.precio_antiguo | currency}} </span> </h4>
+                        <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal">Precio desc: <span> {{productoCaceria.precio | currency}}</span> </h5>
+                        
+                        <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>{{productoCaceria.precio | currency}}</h3>
+                    
+                        
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       
+                        <div class="pruebaBotones"> 
+                         <ul>
+                           <li>  <button (click)="addWishList(productoCaceria)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                           
-                          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                          <div class="product-bottom-details"> 
-                          </div>
-                          <button class="product-links-wish" type="button" (click)="openModal(productoCaceria)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                          <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                      </div>
+                           
+                         </ul>
+                        
+        
+                       </div>
+                       <div class="pruebaBotones2">
+                           <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoCaceria)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                           <button class="" type="button" (click) = "addCart(productoCaceria)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                         
+        
+                       </div>
+                       </div>
                   </div>
               </div>
               </ng-template>
@@ -679,22 +724,33 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
                          >
                       </div>
                       <div class="product-details">
-                          <span class="product-catagory">{{productoCaceria.categoria}} {{productoCaceria.marca}}</span>
-                      
-                          <h4><a href="">{{productoCaceria.nombre}}</a></h4>
-                          <div class="product-price">
-                           <h4 *ngIf="productoCaceria.descuento"><span>  Precio:</span> ${{productoCaceria.precio_antiguo}}</h4>
-                           <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoCaceria.precio}}</h5>
-                           <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>${{productoCaceria.precio}}</h3>
-                          <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                          </div>
+                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                    
+                        <h4><a routerLink="/tienda/{{productoCaceria.idProducto}}/{{productoCaceria.nombre}}">{{productoCaceria.nombre | oracionMayusculas}}</a></h4>
+                        <h4 *ngIf="productoCaceria.descuento"> Precio:<span> {{productoCaceria.precio_antiguo | currency}} </span> </h4>
+                        <h5 *ngIf="productoCaceria.descuento != 0; else precioNormal">Precio desc: <span> {{productoCaceria.precio | currency}}</span> </h5>
+                        
+                        <h3 id="precioNormal" *ngIf="productoCaceria.descuento == 0"><span>Precio: </span>{{productoCaceria.precio | currency}}</h3>
+                    
+                        
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       
+                        <div class="pruebaBotones"> 
+                         <ul>
+                           <li>  <button (click)="addWishList(productoCaceria)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                           
-                          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                          <div class="product-bottom-details"> 
-                          </div>
-                          <button class="product-links-wish" type="button" (click)="openModal(productoCaceria)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                          <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                      </div>
+                           
+                         </ul>
+                        
+        
+                       </div>
+                       <div class="pruebaBotones2">
+                           <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoCaceria)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                           <button class="" type="button" (click) = "addCart(productoCaceria)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                         
+        
+                       </div>
+                       </div>
                   </div>
               </div>
               </ng-template>
@@ -720,7 +776,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
 
 </div>
 
-<div class="container-fluid" style="background-image: url('/assets/imagenes/hunting/fallwoods2.jpg'); background-repeat: no-repeat;background-position: center; background-size: cover; height: 700px; margin-bottom: 100px;">
+<!--<div class="container-fluid" style="background-image: url('/assets/imagenes/hunting/fallwoods2.jpg'); background-repeat: no-repeat;background-position: center; background-size: cover; height: 700px; margin-bottom: 100px;">
   <div class="row">
     <div class="col-sm-12">
      <div class="image-final">
@@ -728,7 +784,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
          <h1>CACERÍA</h1>
          <p>Nos encargamos de que nuestros pescadores obtengan siempre los mejores productos, siempre buscamos calidad en las herramientas que proporcionamos a nuestros pescadores,porque sabemos que el mejor cazador debe tener las mejores herramientas.</p>
          <div class="flex dark">
-           <a href="#0" class="bttn-dark2">Ir a la tienda</a>
+           <a routerLink = "/tienda" [queryParams] = "{clasificacion: 'Caceria'}" class="bttn-dark2">Ir a la tienda</a>
          </div>
        </div>
  
@@ -738,17 +794,7 @@ background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(77,5,5,1) 0%);"
  
   </div>
    
- </div>   
-
-
-
-      
-
-
-  
- 
-
-
+ </div>-->   
 
 <!--<section class="sec3">
   <div class="skewedBox3">

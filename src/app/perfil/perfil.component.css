@@ -1,5 +1,6 @@
 .perfil button{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
+   
     font-size: 15px;
     text-align: center;
     color: #000;
@@ -55,6 +56,7 @@ h1{
     font-family: 'Anton', sans-serif;
     font-size: 50px;
     margin-top: 80px;
+    color: #000;
 }
 
 h2{
@@ -144,7 +146,7 @@ img {
 }
 
 .card .button {
-    font-family: 'Anton';
+    font-family: 'Meera Inima', sans-serif;
     border: none;
     width: 100%;
     color: white;

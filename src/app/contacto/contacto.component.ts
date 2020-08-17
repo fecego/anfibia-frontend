@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators, AbstractControl  } from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
@@ -6,16 +7,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-  public contacto = {}
-  constructor() {}
+  
+  constructor(private fb: FormBuilder) {}
+
+
+  public contactForm = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]], 
+      asunto: ['', Validators.required],
+      mensaje: ['', Validators.required]
+  })
   
   ngOnInit() {
 
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
-  enviarMensaje(dato){
-    this.contacto = dato;
-    console.log("Esta información se enviara al servidor para que lo envie a travez de un metodo del server", this.contacto);
+  onSubmit(){
+    let contactMessage = {
+      nombre: this.contactForm.value.nombre,
+      email: this.contactForm.value.email,
+      asunto: this.contactForm.value.asunto,
+      mensaje: this.contactForm.value.mensaje
+    }
+
+
+    console.log(contactMessage);
+    this.contactForm.patchValue({
+      nombre: '', 
+      email: '',
+      asunto: '',
+      mensaje: ''
+
+    })
+
   }
 
 }

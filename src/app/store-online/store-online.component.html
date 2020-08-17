@@ -7,10 +7,33 @@
     </div>
 
   </div>-->
-  <div class="row">
-    <div class="col-xs-6 col-sm-12 barra-superior">
-      <h1>Nuestros Productos</h1>
-      <!--<h2 *ngIf = "pClasificacion">De <span>{{pClasificacion}}</span></h2>
+  <div class="row" style="padding: 10px;">
+    <div class="col-xs-6 col-sm-12 barra-superior" 
+    [ngClass] = "{'pesca': cambioImagen.value === 'pesca', 'caceria': cambioImagen.value === 'caceria',
+    'vacio': cambioImagen.value === 'vacio', 'aguadulce': cambioImagen.value === 'aguadulce', 
+    'canhas': cambioImagen.value === 'cañas', 'carretes': cambioImagen.value === 'carretes', 'combos': cambioImagen.value === 'combos',
+    'señuelos': cambioImagen.value === 'señuelos', 'accesorios': cambioImagen.value === 'accesorios',
+    'aguasalada': cambioImagen.value === 'aguasalada',
+    'cañasaguasalada': cambioImagen.value == 'cañasAguaSalada', 'carretesAguaSalada': cambioImagen.value === 'carretesAguaSalada',
+    'combosAguaSalada': cambioImagen.value === 'combosAguaSalada', 'senhuelosAguaSalada': cambioImagen.value === 'senhuelosAguaSalada',
+    'navegacion': cambioImagen.value === 'navegacion', 'gps': cambioImagen.value === 'gps', 'brujulas': cambioImagen.value === 'brujulas',
+    'audio': cambioImagen.value === 'audio', 'electricos': cambioImagen.value === 'audio', 'electricos': cambioImagen.value === 'electricos',
+    'plomeria': cambioImagen.value === 'plomeria', 'bombas': cambioImagen.value === 'bombas', 'iluminacion': cambioImagen.value === 'bombas',
+    'iluminacion': cambioImagen.value === 'iluminacion', 'motor': cambioImagen.value === 'motor','accesoriosNavegacion': cambioImagen.value === 'navegacionAccesorios',
+    'ropa': cambioImagen.value === 'ropa', 'lineas': cambioImagen.value === 'lineas', 'snorkel': cambioImagen.value === 'snorkel', 'buceo': cambioImagen.value === 'buceo',
+    'kayaks': cambioImagen.value === 'kayaks', 'rifles': cambioImagen.value === 'rifles', 'pistolas': cambioImagen.value === 'pistolas', 'arqueria': cambioImagen.value === 'arqueria',
+    'cuchilleria': cambioImagen.value === 'cuchilleria', 'accesoriosCaceria': cambioImagen.value === 'accesoriosCaceria', 'ropaCaceria': cambioImagen.value === 'ropaCaceria',
+    'arcos': cambioImagen.value =='arcos', 'bayestas': cambioImagen.value === 'bayestas', 'flechas': cambioImagen.value === 'flechas', 'diabolos': cambioImagen.value === 'diabolos',
+    'salva': cambioImagen.value === 'salva', 'co2': cambioImagen.value === 'co2', 'resorte': cambioImagen.value === 'resorte', 'nitropiston': cambioImagen.value === 'nitropiston', 'pcp': cambioImagen.value === 'pcp',
+    'accesoriosCaceria': cambioImagen.value === 'accesoriosCaceria', 'busquedaImage': cambioImagen.value === 'busqueda' 
+  }">
+      <h1 *ngIf="!datoEtiqueta" style="color: #000000; padding-top: 0;">Nuestros productos</h1>
+      <h1 *ngIf="datoEtiqueta !== busqueda" >{{datoEtiqueta | uppercase}}</h1>
+      <h1 *ngIf="datoEtiqueta === busqueda"  style="color: #000000; padding-top: -10; font-family: 'Julius Sans One'; font-size: 18px;">Estos son los resultados de tu busqueda: <span style="font-weight: 'bolder'">"{{busqueda | uppercase}}"</span></h1>
+     
+      
+      
+      <!--<h2 *ngIf = "pClasificacion">De <span>{{pClasificacion}}</span><  /h2>
       <h2 *ngIf = "pCategoria">- {{pCategoria}}</h2>-->
       <div>
         <label for="filtro-superior">Ordena por: </label>
@@ -22,958 +45,950 @@
       </select>
       </div>
 
+
+
+ 
+
+    </div>
+
+    <div class="col-xs-6 col-sm-6 links-rutas">
+     
+      <a routerLink ="/tienda">INICIO</a><a [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion}">/ {{clasificacion | uppercase}}</a>
+      <a *ngIf="categoria" [routerLink]="['/tienda']"[queryParams] = "{clasificacion : clasificacion, categoria: categoria}">/ {{categoria | uppercase}}</a>
+      <!--Subcategoría AGUA DULCE-->
+      <a *ngIf="subcategoriaAguaDulceFiltros" [routerLink]="['/tienda']"[queryParams] = "{clasificacion : clasificacion, categoria: categoria, subcategoriaAguadulce: subcategoriaAguaDulceFiltros}">/ {{subcategoriaAguaDulceFiltros | uppercase}}</a>
+      <!--Subcategoría AGUA SALADA-->
+      <a *ngIf="subcategoriaAguaSaladaFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: categoria, subcategoriaAguasalada: subcategoriaAguaSaladaFiltros}">/ {{subcategoriaAguaSaladaFiltros | uppercase}}</a>
+      
+      <a *ngIf="subcategoriaFiltrosCanhas" [routerLink]="['/tienda']"[queryParams] = "{clasificacion : clasificacion, categoria: categoria, subcategoriaAguadulce: subcategoriaAguaDulceFiltros, tipodeCanhas: subcategoriaFiltrosCanhas}">/ {{subcategoriaFiltrosCanhas | uppercase}}</a>
+      <a *ngIf="subcategoriaFiltrosCarretes" [routerLink]="['/tienda']"[queryParams] = "{clasificacion : clasificacion, categoria: categoria, subcategoriaAguaDulceFiltros: subcategoriaAguaDulceFiltros, tipodeCarretes: subcategoriaFiltrosCarretes}">/ {{subcategoriaFiltrosCarretes | uppercase}}</a>
+      <a *ngIf="subcategoriaFiltrosCombos" [routerLink] ="['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: categoria, subcategoriaAguaDulceFiltros: subcategoriaAguaDulceFiltros, tipodeCombos: subcategoriaFiltrosCombos}">/ {{subcategoriaFiltrosCombos | uppercase}}</a>
+      <a *ngIf="subcategoriaFiltrosSenhuelos" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: categoria, subcategoriaAguaDulceFiltros: subcategoriaAguaDulceFiltros, tipoSenhuelos: subcategoriaFiltrosSenhuelos }"> / {{subcategoriaFiltrosSenhuelos | uppercase}}</a> 
+      <a *ngIf="subcategoriaFiltrosAccesorios" [routerLink] ="['/tienda']" [queryParams] = "{clasificacion : clasificacion, categoria: categoria, subcategoriaAguaDulceFiltros: subcategoriaAguaDulceFiltros, tipodeAccesorios: subcategoriaFiltrosAccesorios}">/ {{subcategoriaFiltrosAccesorios | uppercase}}</a>
+
+
+      <a *ngIf ="categoria == 'accesorios'" [routerLink]="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipodeAccesorios: subcategoriaFiltrosAccesorios, tipoSubAccesorios: accesoriosFiltros}">/ {{accesoriosFiltros | uppercase}}</a>
+      
+      <!--Navegación-->  
+      <a *ngIf = "categoria == 'navegacion'" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: categoria, navSub: navegacionFiltros}">/ {{navegacionFiltros | uppercase}}</a>
+      <a *ngIf = "electricosFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: cateogoria, navSub: navegacionFiltros, electricoSub: electricosFiltros}">/ {{electricosFiltros | uppercase}}</a>
+      <a *ngIf = "navAccesoriosFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoria: categoria, navSub: navegacionFiltros, accesoriosSub:navAccesoriosFiltros }"> / {{navAccesoriosFiltros | uppercase}}</a>
+      
+      <!--Ropa-->
+      <a *ngIf = "categoria == 'ropa'"[routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoRopaPesca: ropaPescaFiltro}">/ {{ropaPescaFiltro | uppercase}}</a>
+      <a *ngIf = "ropaPescaAccesoriosFiltros" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoRopaPesca: ropaPescaFiltro, tipoRopaPescaAccesorios: ropaPescaAccesoriosFiltros }">/ {{ropaPescaAccesoriosFiltros | uppercase}}</a>
+   
+      <a *ngIf = "categoria == 'lineas'" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoLineas: lineasFiltro}">/ {{lineasFiltro | uppercase}}</a>
+      
+      <a *ngIf = "categoria == 'snorkel'" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tiposSnorkel: snorkelFiltro}">/ {{snorkelFiltro | uppercase}}</a>
+
+      <a *ngIf = "categoria == 'buceo'" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoBuceo: buceoFiltro}">/ {{buceoFiltro | uppercase}}</a>
+      
+      <a *ngIf = "categoria == 'Kayaks'" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoKayaks: kayakFiltro}">/ {{kayakFiltro | uppercase}}</a>
+      <a *ngIf = "kayakCatFiltro" [routerLink] ="['/tienda']" [queryParams] ="{clasificacion: clasificacion, categoria: categoria, tipoKayaks: kayakFiltro, subKayaks: kayakCatFiltro}">/ {{kayakCatFiltro | uppercase}}</a>
+    
+      
+
+      <!--=======================================CACERÍA===================================================================================================-->
+      <a *ngIf = "clasificacion == 'Caceria'" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoriasCaceria: categoriasCaceria1}">/ {{categoriasCaceria1 | uppercase}}</a>
+      <a *ngIf = "riflesFiltro" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion,categoriasCaceria: categoriasCaceria1, subRifles: riflesFiltro}">/ {{riflesFiltro | uppercase}}</a>
+      <a *ngIf = "subRiflesAccesoriosFiltro" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion,categoriasCaceria: categoriasCaceria1, subRifles: riflesFiltro, subRiflesAccesorios: subRiflesAccesoriosFiltro }">/ {{subRiflesAccesoriosFiltro | uppercase}}</a>
+      
+      
+      
+      <a *ngIf = "subcategoriaPistolasFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion,categoriasCaceria: categoriasCaceria1, subPistolas: subcategoriaPistolasFiltros}">/ {{subcategoriaPistolasFiltros | uppercase}}</a>
+      <a *ngIf = "subcategoriaAccesoriosPistolasFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion,categoriasCaceria: categoriasCaceria1, subPistolas: subcategoriaPistolasFiltros, subAccesoriosPistolas: subcategoriaAccesoriosPistolasFiltros }">/ {{subcategoriaAccesoriosPistolasFiltros | uppercase}}</a>
+
+
+
+
+
+      
+
+
+
+
+
+      <a *ngIf = "subcategoriaArqueriaFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoriasCaceria: categoriasCaceria1, subArqueria: subcategoriaArqueriaFiltros }">/ {{subcategoriaArqueriaFiltros | uppercase}}</a>
+      
+      
+      <a *ngIf = "subcategoriaCuchilleriaFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoriasCaceria: categoriasCaceria1, subCuchilleria: subcategoriaCuchilleriaFiltros }">/ {{subcategoriaCuchilleriaFiltros | uppercase}}</a>
+
+
+      <a *ngIf = "subcategoriaAccesoriosFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoriasCaceria: categoriasCaceria1, subAccesoriosCaceria: subcategoriaAccesoriosFiltros }">/ {{subcategoriaAccesoriosFiltros | uppercase}}</a>
+
+
+      <a *ngIf = "subcategoriaRopaCaceriaFiltros" [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion, categoriasCaceria: categoriasCaceria1, subRopaCaceria: subcategoriaRopaCaceriaFiltros }">/ {{subcategoriaRopaCaceriaFiltros | uppercase}}</a>
+    
+      
+      
+      
+      
+    
     </div>
   </div>
-  
-   
     <div class="row">
-      <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros">
-        <h1>Productos</h1>
-        <div class="filtros-leftside">
-          <h2>Clasificación</h2>
-          <hr>
-          <div class="checkbox">
-            <input type="checkbox" [checked] = "pesca" (change) = "pescaCambio(pesca = !pesca)" id="pesca" name="pesca" value="pesca">
-            <label for="pesca">Pesca</label>
+      <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros ">
+        <h1>Filtros</h1>
+        <hr>
+        <div id="clasificacion" class="filtros-leftside">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Clasificación
+          </a>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#clasificacion">
+              <form [formGroup] = "formRadioClasificacion">
+                <label style="display: block;" *ngFor="let clasificacion of clasificaciones;">
+                  <input
+                  formControlName="clasificaciones"
+                  type="radio"
+                  name="clasificaciones"
+                  [value]="clasificacion.value"
+                  [checked] = "clasificacion.isChecked == true"
+                  (change) = "clasificacionManager(clasificacion.value)"  
+                />
+                {{clasificacion.name}}
+              </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="marcasPesca" class="filtros-leftside" *ngIf="marcasPescaDIV">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingBrands" aria-expanded="true" aria-controls="fishingBrands">
+            Marcas de pesca
+          </a>
+            <div id="fishingBrands" class="collapse show" aria-labelledby="headingOne" data-parent="#marcasPesca">
+              <form [formGroup] = "formRadioMarcasPesca">
+                <label style="display: block;" *ngFor="let marcasp of marcasPesca;">
+                  <input
+                  
+                  formControlName="fishBrand"
+                  type="radio"
+                  name="fishBrand"
+                  [value]="marcasp.value"
+                  
+                  (change) = "marcasPManager(marcasp.value)"  
+                />
+                {{marcasp.name}}
+              </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="categoriasPesca" class="filtros-leftside" *ngIf="categoriasPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#categorias" aria-expanded="true" aria-controls="categorias">
+            Categorías de Pesca
+          </a>
+          <div id="categorias" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriasPesca">
+            <form [formGroup] = "formRadioCategoriaPesca">
+              <label style="display: block;" *ngFor="let catPesca of categoriasPescaFiltro;"> 
+                <input
+                formControlName="categoriasPesca"
+                type="radio"
+                name="categoriasPesca"
+                [value]="catPesca.value"        
+                (change) = "catFishManager(catPesca.value)"             
+              />
+              {{catPesca.name}}
+            </label>
+            </form>
+
           </div>
-          <div class="checkbox">
-            <input type="checkbox" [checked] = "caceria" (change) = "caceriaCambio(caceria = !caceria)" id="caceria" name="caceria" value="caceria">
-            <label for="caceria">Cacería</label>
+        
+        </div>
+      
+
+      
+
+       
+        <!--SUBCATEGORIAS AGUA DULCE -->
+        <div id="subCategoriasAguaDulce" class="filtros-leftside" *ngIf="subaguadulce">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subcatAguaDulce" aria-expanded="true" aria-controls="categorias">
+            Subcategorías Agua dulce
+          </a>
+          <div id="subcatAguaDulce" class="collapse show" aria-labelledby="headingOne" data-parent="#subCategoriasAguaDulce">
+          <form [formGroup] = "formRadioSubAguadulce">
+            <label style="display: block;" *ngFor="let subcatAguadulce of subcategoriasAguaDulce;">
+              <input
+              formControlName="aguadulceSub"
+              type="radio"
+              name="aguadulceSub"
+              [value]="subcatAguadulce.value"
+              (change) = "subAguadulceManager(subcatAguadulce.value)" 
+            />
+            {{subcatAguadulce.name}}
+          </label>
+          </form>
           </div>
         </div>
-        <div class="filtros-leftside" *ngIf = "caceria == true">
-          <h2>Categorias de Cacería</h2>
+
+        <div id ="cañasAguaDulce" class="filtros-leftside" *ngIf="subaguadulceCanhas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#cañasaguadulce" aria-expanded="true" aria-controls="cañasAguaDulce">
+            Cañas de agua dulce
+          </a>
+          <div id="cañasaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#cañasAguaDulce">
+            <form [formGroup] = "formRadioSubAguadulceCanhas">
+              <label style="display: block;" *ngFor="let subcatAguaDulceCanha of subcategoriasAguaDulceCanhas;">
+                <input
+                formControlName="aguadulceSub2Canhas"
+                type="radio"
+                name="aguadulceSub2Canhas"
+                [value]="subcatAguaDulceCanha.value"
+                (change) = "subAguadulceCanhasManager(subcatAguaDulceCanha.value)" 
+              />
+              {{subcatAguaDulceCanha.name}}
+            </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="carretesdeAguadulce" class="filtros-leftside" *ngIf="subAguaDulceCarretes">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#carretessaguadulce" aria-expanded="true" aria-controls="cañasAguaDulce">
+            Carretes de agua dulce
+          </a>
+          <div id="carretessaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#carretesdeAguadulce">
+          <form [formGroup] = "formRadioSubAguadulceCarretes">
+            <label style="display: block;" *ngFor="let subcatAguaDulceCarretes of subcategoriasAguaDulceCarretes;">
+              <input
+              formControlName="aguadulce2SubCarretes"
+              type="radio"
+              name="aguadulce2SubCarretes"
+              [value]="subcatAguaDulceCarretes.value"
+              (change) = "subAguaDulceCarrtesManager(subcatAguaDulceCarretes.value)" 
+            />
+            {{subcatAguaDulceCarretes.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div class="filtros-leftside" *ngIf="subAguaDulceCombos">
+          <h2>Combos de agua dulce</h2>
           <hr>
-        <div class="checkbox">
-          <input type="checkbox" id="rifles" name="rifles" value="rifles">
-          <label for="rifles">Rifles</label>
+          <form [formGroup] = "formRadioAguaDulceCombos">
+            <label style="display: block;" *ngFor="let subcatAguadulceCombos of subcategoriasAguaDulceCombos;">
+              <input
+              formControlName="aguadulce2SubCombos"
+              type="radio"
+              name="aguadulce2SubCombos"
+              [value]="subcatAguadulceCombos.value"
+              (change) = "subAguaSaladaCombosManager(subcatAguadulceCombos.value)" 
+            />
+            {{subcatAguadulceCombos.name}}
+          </label>
+          </form>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" id="pistolas" name="pistolas" value="pistolas">
-          <label for="pistolas">Pistolas</label>
+
+        <div class="filtros-leftside" *ngIf="subAguaDulceSenhuelos">
+          <h2>Señuelos de agua dulce</h2>
+          <hr>
+          <form [formGroup] = "formRadioAguaDulceSenhuelos">
+            <label *ngFor="let subcatAguadulceSenhuelo of subcategoriasAguaDulceSenhuelos;">
+              <input
+              formControlName="aguadulce2SubSenhuelos"
+              type="radio"
+              name="aguadulce2SubSenhuelos"
+              [value]="subcatAguadulceSenhuelo.value"
+              (change) = "subAguadulceSenhuelosManager(subcatAguadulceSenhuelo.value)" 
+            />
+            {{subcatAguadulceSenhuelo.name}}
+          </label>
+          </form>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" id="arqueria" name="arqueria" value="arqueria">
-          <label for="arqueria">Arquería</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="cuchilleria" name="cuchilleria" value="cuchilleria">
-          <label for="cuchilleria">Cuchillería</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="ropa-caceria" name="ropa-caceria" value="ropacaceria">
-          <label for="ropa-caceria">Ropa</label>
-        </div>
+
+        <div id="accesoriosAguaDulce" class="filtros-leftside" *ngIf="subAguaDulceAccesorios">
+          <button class="boton-filtros" data-toggle="collapse" data-target="#accesoriosaguadulce" aria-expanded="true" aria-controls="accesorisaguadulce">
+            Accesorios de Agua dulce
+          </button>
+          <div id="accesoriosaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosAguaDulce">
+            <form [formGroup] = "formRadioAguaDulceAccesorios">
+              <label style="display: block;" *ngFor="let subcatAguaDulceAccesorio of subcategoriasAguaDulceAccesorios;">
+                <input
+                formControlName="aguadulce2SubAccesorios"
+                type="radio"
+                name="aguadulce2SubAccesorios"
+                [value]="subcatAguaDulceAccesorio.value"
+                (change) = "subAguadulceAccesoriosManager(subcatAguaDulceAccesorio.value)" 
+              />
+              {{subcatAguaDulceAccesorio.name}}
+            </label>
+            </form>
+            </div>
+
 
         </div>
 
-        <div class="filtros-leftside" *ngIf = "pesca == true">
-          <h2>Categorias de Pesca</h2>
-          <hr>
-        <div class="checkbox">
-          <input type="checkbox" id="aguadulce" name="aguadulce" value="aguadulce">
-          <label for="aguadulce">Agua Dulce</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="aguasalada" name="aguasalada" value="aguasalada">
-          <label for="aguasalada">Agua Salada</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="lineas" name="lineas" value="lineas">
-          <label for="lineas">Lineas</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="snorkel" name="snorkel" value="snorkel">
-          <label for="snorkel">Snorkel</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="buceo" name="buceo" value="buceo">
-          <label for="buceo">Buceo</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="kayaks" name="kayaks" value="kayaks">
-          <label for="kayaks">Kayaks</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="navegacion" name="navegacion" value="navegacion">
-          <label for="navegacion">Navegación</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="ropa" name="ropa" value="ropa">
-          <label for="ropa">Ropa</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="accesorios" name="accesorios" value="accesorios">
-          <label for="accesorios">Accesorios</label>
-        </div>
-
-        </div>
-        <div class="filtros-leftside">
-          <h2>Precios</h2>
-          <hr>
-          <div class="checkbox">
-            <input type="checkbox" id="less-Price" name="kayaks" value="kayaks">
-            <label for="less-Price">$1000 - $1499</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" id="medium-Price" name="kayaks" value="kayaks">
-            <label for="medium-Price">$1500 - $2000</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" id="big-Price" name="kayaks" value="kayaks">
-            <label for="big-Price">$2000 - $3000</label>
-          </div>
-
-        </div>
+         <!--SUBCATEGORIAS AGUA DULCE -->
        
        
 
-        <div class="filtros-leftside">
-          <h2>Tamaño</h2>
+
+        <!--=====================================AGUA SALADA FILTROS===================================================================== -->
+        <div id="subCategoriasAguaSalada" class="filtros-leftside" *ngIf="subaguasalada">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subcatAguaSalada" aria-expanded="true" aria-controls="categorias">
+            Subcategorías Agua salada
+          </a>
+          <div id="subcatAguaSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#subCategoriasAguaSalada">
+          <form [formGroup] = "formRadioSubAguasalada">
+            <label style="display: block;" *ngFor="let subaguasalada of subcategoriasAguasalada;">
+              <input
+              formControlName="aguasaladaSub"
+              type="radio"
+              name="aguasaladaSub"
+              [value]="subaguasalada.value"
+              (change) = "subAguasaladaManager(subaguasalada.value)" 
+            />
+            {{subaguasalada.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="canhasAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCanhas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#canhasSalada" aria-expanded="true" aria-controls="categorias">
+            Cañas de Agua salada
+          </a>
+          <div id="canhasSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#canhasAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCanhas">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCanha of subcategoriaAguaSaladaCanhas;">
+              <input
+              formControlName="aguasaladaCanhas"
+              type="radio"
+              name="aguasaladaCanhas"
+              [value]="subcatAguaSaladaCanha.value"
+              (change) = "subAguaSaladaCanhasManager(subcatAguaSaladaCanha.value)" 
+            />
+            {{subcatAguaSaladaCanha.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="carretesAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCarretes">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#carretesSalada" aria-expanded="true" aria-controls="categorias">
+            Carretes de Agua salada
+          </a>
+          <div id="carretesSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#carretesAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCarretes">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCarrete of subcategoriaAguaSaladaCarretes;">
+              <input
+              formControlName="aguasaladaCarretes"
+              type="radio"
+              name="aguasaladaCarretes"
+              [value]="subcatAguaSaladaCarrete.value"
+              (change) = "subAguaSaladaCarretesManager(subcatAguaSaladaCarrete.value)" 
+            />
+            {{subcatAguaSaladaCarrete.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="combosAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCombos">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#combosSalada" aria-expanded="true" aria-controls="categorias">
+            Combos de Agua salada
+          </a>
+          <div id="combosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#combosAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCombos">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCombo of subcategoriaAguaSaladaCombos;">
+              <input
+              formControlName="aguasaladaCombos"
+              type="radio"
+              name="aguasaladaCombos"
+              [value]="subcatAguaSaladaCombo.value"
+              (change) = "subAguaSaladaCombosManager(subcatAguaSaladaCombo.value)" 
+            />
+            {{subcatAguaSaladaCombo.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="senhueloAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaSenhuelos">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#senhuelosSalada" aria-expanded="true" aria-controls="categorias">
+            Señuelos de Agua salada
+          </a>
+          <div id="senhuelosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#senhueloAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaSenhuelos">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaSenhuelo of subcategoriaAguaSaladaSenhuelos;">
+              <input
+              formControlName="aguasaladaSenhuelos"
+              type="radio"
+              name="aguasaladaSenhuelos"
+              [value]="subcatAguaSaladaSenhuelo.value"
+              (change) = "subAguaSaladaSenhueloManager(subcatAguaSaladaSenhuelo.value)" 
+            />
+            {{subcatAguaSaladaSenhuelo.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        <div id="accesoriosAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#senhuelosSalada" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Agua salada
+          </a>
+          <div id="senhuelosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaAccesorios">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaAccesorio of subcategoriaAguaSaladaAccesorios;">
+              <input
+              formControlName="aguasaladaAccesorios"
+              type="radio"
+              name="aguasaladaAccesorios"
+              [value]="subcatAguaSaladaAccesorio.value"
+              (change) = "subAguaSaladaAccesoriosManager(subcatAguaSaladaAccesorio.value)" 
+            />
+            {{subcatAguaSaladaAccesorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+         <!--=====================================AGUA SALADA FILTROS===================================================================== -->
+
+        <!--===============================================CATEGORÍAS DE ACCESORIOS=======================================================-->
+        <div id="subcategoriasAccesorios" class="filtros-leftside" *ngIf="subAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#accesoriosSub" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Accesorios
+          </a>
+          <div id="accesoriosSub" class="collapse show" aria-labelledby="headingOne" data-parent="#subcategoriasAccesorios">
+          <form [formGroup] = "formRadioSubAccesorios">
+            <label style="display: block;" *ngFor="let subcategoriaAccessorio of subcategoriasAccesorios">
+              <input
+              formControlName="accesoriosSub"
+              type="radio"
+              name="accesoriosSub"
+              [value]="subcategoriaAccessorio.value"
+              (change) = "subAguaSaladaAccesoriosManager(subcategoriaAccessorio.value)" 
+            />
+            {{subcategoriaAccessorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="subcategorias2Accesorios" class="filtros-leftside" *ngIf="subAccesoriosAlmacenamiento">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#accesorioAlmacenamientosSub" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Almacenamiento
+          </a>
+          <div id="accesorioAlmacenamientosSub" class="collapse show" aria-labelledby="headingOne" data-parent="#subcategorias2Accesorios">
+          <form [formGroup] = "formRadioSub2Accesorios">
+            <label style="display: block;" *ngFor="let subcategoria2Accessorio of subcategorias2Accesorios">
+              <input
+              formControlName="accesoriosSub2"
+              type="radio"
+              name="accesoriosSub2"
+              [value]="subcategoria2Accessorio.value"
+              (change) = "subAccesorios2Manager(subcategoria2Accessorio.value)" 
+            />
+            {{subcategoria2Accessorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+
+
+        
+        <!--===============================================CATEGORÍAS DE ACCESORIOS=======================================================-->
+        <!--===============================================NAVEGACIÓN================================================================================-->
+
+        <div id="categoriaNavegacion" class="filtros-leftside" *ngIf="catNavegacion">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionCat" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Navegación
+          </a>
+          <div id="navegacionCat" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriaNavegacion">
+          <form [formGroup] = "formRadioCatbNavegacion">
+            <label style="display: block;" *ngFor="let navegacionCategoria of navegacionCategorias">
+              <input
+              formControlName="categorias1"
+              type="radio"
+              name="categorias1"
+              [value]="navegacionCategoria.value"
+              (change) = "navegacionManager(navegacionCategoria.value)" 
+            />
+            {{navegacionCategoria.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        <div id="navegacionElectricos" class="filtros-leftside" *ngIf="navElectrico">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionElectrico" aria-expanded="true" aria-controls="categorias">
+            Electricos
+          </a>
+          <div id="navegacionElectrico" class="collapse show" aria-labelledby="headingOne" data-parent="#navegacionElectricos">
+          <form [formGroup] = "formRadioElectricosNavegacion">
+            <label style="display: block;" *ngFor="let elecCategoria of electricosCategoria">
+              <input
+              formControlName="elecC1"
+              type="radio"
+              name="elecC1"
+              [value]="elecCategoria.value"
+              (change) = "electricoManager(elecCategoria.value)" 
+            />
+            {{elecCategoria.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="accesoriosNavegacion" class="filtros-leftside" *ngIf="navAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionAccesorios" aria-expanded="true" aria-controls="categorias">
+            Accesorios de navegación
+          </a>
+          <div id="navegacionAccesorios" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosNavegacion">
+          <form [formGroup] = "formRadioNavegacionAccesorios">
+            <label style="display: block;" *ngFor="let navAccCat of navAccesoriosCategoria">
+              <input
+              formControlName="accNavegacion"
+              type="radio"
+              name="accNavegacion"
+              [value]="navAccCat.value"
+              (change) = "accesoriosNavManager(navAccCat.value)" 
+            />
+            {{navAccCat.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+
+
+        <!--===============================================NAVEGACIÓN================================================================================-->
+        <!--=========================================ROPA PESCA===========================================================================-->
+        <div id="ropaPesca" class="filtros-leftside" *ngIf="ropaPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingClothes" aria-expanded="true" aria-controls="categorias">
+          Ropa de pesca
+          </a>
+          <div id="fishingClothes" class="collapse show" aria-labelledby="headingOne" data-parent="#ropaPesca">
+          <form [formGroup] = "formRadioRopaPesca">
+            <label style="display: block;" *ngFor="let catRopaP of catRopaPesca">
+              <input
+              formControlName="ropaFishing"
+              type="radio"
+              name="ropaFishing"
+              [value]="catRopaP.value"
+              (change) = "ropaPescaManager(catRopaP.value)" 
+            />
+            {{catRopaP.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="ropaPescaAccesorios" class="filtros-leftside" *ngIf="ropaPescaAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingClothesAccesories" aria-expanded="true" aria-controls="categorias">
+          Accesorios de ropa de pesca
+          </a>
+          <div id="fishingClothesAccesories" class="collapse show" aria-labelledby="headingOne" data-parent="#ropaPescaAccesorios">
+          <form [formGroup] = "formRadioAccesoriosRopaPesca">
+            <label style="display: block;" *ngFor="let catRopaAccess of catRopaAccesoriosPesca">
+              <input
+              formControlName="ropaAccesoriosFishing"
+              type="radio"
+              name="ropaAccesoriosFishing"
+              [value]="catRopaAccess.value"
+              (change) = "ropaAccesoriosPescaManager(catRopaAccess.value)" 
+            />
+            {{catRopaAccess.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        
+        
+        <!--=========================================ROPA PESCA===========================================================================-->
+        <!--=========================================LINEAS===============================================================-->
+        <div id="lineasPesca" class="filtros-leftside" *ngIf="lineasPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingLineas" aria-expanded="true" aria-controls="categorias">
+          Lineas 
+          </a>
+          <div id="fishingLineas" class="collapse show" aria-labelledby="headingOne" data-parent="#lineasPesca">
+          <form [formGroup] = "formRadioLineasPesca">
+            <label style="display: block;" *ngFor="let linea of lineasPescaSub">
+              <input
+              formControlName="lineasFishing"
+              type="radio"
+              name="lineasFishing"
+              [value]="linea.value"
+              (change) = "lineasManager(linea.value)" 
+            />
+            {{linea.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        
+        <!--=========================================LINEAS===============================================================-->
+        <!--======================================SNORKEL===================================================================-->
+        <div id="snorkelPesca" class="filtros-leftside" *ngIf="snorkelPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingSnorkel" aria-expanded="true" aria-controls="categorias">
+          Snorkel 
+          </a>
+          <div id="fishingSnorkel" class="collapse show" aria-labelledby="headingOne" data-parent="#snorkelPesca">
+          <form [formGroup] = "formRadioSnorkelPesca">
+            <label style="display: block;" *ngFor="let snorkel of snorkelPescaSub">
+              <input
+              formControlName="snorkelFishing"
+              type="radio"
+              name="snorkelFishing"
+              [value]="snorkel.value"
+              (change) = "snorkelManager(snorkel.value)" 
+            />
+            {{snorkel.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+         <!--======================================SNORKEL===================================================================-->
+       <!--=========================================BUCEO=====================================================================-->
+       <div id="buceoPesca" class="filtros-leftside" *ngIf="buceoPesca">
+        <a class="boton-filtros" data-toggle="collapse" data-target="#fishingBuceo" aria-expanded="true" aria-controls="categorias">
+        Buceo 
+        </a>
+        <div id="fishingBuceo" class="collapse show" aria-labelledby="headingOne" data-parent="#buceoPesca">
+        <form [formGroup] = "formRadioBuceoPesca">
+          <label style="display: block;" *ngFor="let buceo of buceoPescaSub">
+            <input
+            formControlName="buceoFishing"
+            type="radio"
+            name="buceoFishing"
+            [value]="buceo.value"
+            (change) = "buceoManager(buceo.value)" 
+          />
+          {{buceo.name}}
+        </label>
+        </form>
+        </div>
+      </div>
+       
+       
+        <!--=========================================BUCEO=====================================================================-->
+        <!--===========================================================KAYAKS====================================================-->
+
+        <div id="kayaksPesca" class="filtros-leftside" *ngIf="kayaksPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingKayaks" aria-expanded="true" aria-controls="categorias">
+          Kayaks 
+          </a>
+          <div id="fishingKayaks" class="collapse show" aria-labelledby="headingOne" data-parent="#kayaksPesca">
+          <form [formGroup] = "formRadioKayaksPesca">
+            <label style="display: block;" *ngFor="let kayak of kayakPescaSub">
+              <input
+              formControlName="kayakFishing"
+              type="radio"
+              name="kayakFishing"
+              [value]="kayak.value"
+              (change) = "kayakManager(kayak.value)" 
+            />
+            {{kayak.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="kayaksCategoriaPesca" class="filtros-leftside" *ngIf="kayaksCatPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingKayaksCat" aria-expanded="true" aria-controls="categorias">
+          Categoría Kayaks 
+          </a>
+          <div id="fishingKayaksCat" class="collapse show" aria-labelledby="headingOne" data-parent="#kayaksCategoriaPesca">
+          <form [formGroup] = "formRadioKayaksCatPesca">
+            <label style="display: block;" *ngFor="let kayakCat of kayakCatPescaSub">
+              <input
+              formControlName="kayakCatFishing"
+              type="radio"
+              name="kayakCatFishing"
+              [value]="kayakCat.value"
+              (change) = "kayakCatManager(kayakCat.value)" 
+            />
+            {{kayakCat.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+        <!--===========================================================KAYAKS====================================================-->
+         <!--Caceria-->
+
+        <!--div class="filtros-leftside" *ngIf="categoriasCaceria">
+          <h2>Categorías Cacería</h2>
           <hr>
-        <div class="checkbox">
-          <input type="checkbox" id="tamaño-chico" name="chico" value="Chico">
-          <label for="tamaño-chico">1.75m</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="tamaño-mediano" name="chico" value="Chico">
-          <label for="tamaño-mediano">2.25m</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="tamaño-grande" name="chico" value="Chico">
-          <label for="tamaño-grande">3.0m</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="tamaño-extraGrande" name="chico" value="Chico">
-          <label for="tamaño-extraGrande">3.75m</label>
-        </div>
-
-        </div>
-
-        <!--<div class="filtros-leftside">
-          <h2>Color</h2>
-          <table style="width:100%">
-            <tr>
-              <th><div class="red">
-                <input class="red" type="checkbox" id="red" name="red" value="#ff0000">
-                <label for="red"></label>
-              </div></th>
-              <th><div class="yellow">
-                <input type="checkbox" id="yellow" name="yellow" value="#ffff00">
-                <label for="yellow"></label>
-              </div></th>
-              <th><div class="green">
-                <input type="checkbox" id="green" name="green" value="#40FF00">
-                <label for="green"></label>
-              </div></th>
-            </tr>
-            <tr>
-              <td> <div class="blue">
-                <input type="checkbox" id="blue" name="blue" value="#0101DF">
-                <label for="blue"></label>
-              </div></td>
-              <td><div class="orange">
-                <input type="checkbox" id="orange" name="orange" value="#FF8000">
-                <label for="orange"></label>
-              </div></td>
-              <td><div class="bluegreen">
-                <input type="checkbox" id="bluegreen" name="bluegreen" value="#00FFFF">
-                <label for="bluegreen"></label>
-              </div></td>
-            </tr>
-            <tr>
-              <td><div class="strongpink">
-                <input type="checkbox" id="strongpink" name="strongpink" value="#FF0080">
-                <label for="strongpink"></label>
-              </div></td>
-              <td><div class="grey">
-                <input type="checkbox" id="grey" name="grey" value="#585858">
-                <label for="grey"></label>
-              </div></td>
-              <td><div class="clearred">
-                <input type="checkbox" id="clearred" name="clearred" value="  ">
-                <label for="clearred"></label>
-              </div></td>
-            </tr>
-          </table>
-
+          <form [formGroup]="formCaceria"  novalidate>
+            <div *ngFor="let data of DataCaceria; let i=index">
+              <label>
+                <input type="checkbox" [value]="data.value"  (change)="onCheckboxChange($event)"/>
+                {{data.name}}
+              </label>
+            </div>
+            <input type="submit" value="Submit">
+          </form>
         </div>-->
-       
-        <div class="filtros-leftside">
-          <h2>Marca</h2>
-          <hr>
-        <div class="checkbox">
-          <input type="checkbox" id="abu-garcia" name="abu-garcia" value="abu-garcia">
-          <label for="abu-garcia">Abu Garcia</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="ande" name="ande" value="ande">
-          <label for="ande">Ande</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="berkley" name="berkley" value="berkley">
-          <label for="berkley">Berkley</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="bomber" name="bomber" value="bomber">
-          <label for="bomber">Bomber</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="buff" name="buff" value="buff">
-          <label for="buff">Buff</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="camillus" name="camillus" value="camillus">
-          <label for="camillus">Camillus</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="crossman" name="crosman" value="crosman">
-          <label for="crosman">Crosman</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="cuda" name="cuda" value="cuda">
-          <label for="cuda">Cuda</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="daiwa" name="daiwa" value="daiwa">
-          <label for="daiwa">Daiwa</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="doa" name="doa" value="doa">
-          <label for="doa">DOA</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="fathom" name="fathom" value="fathom">
-          <label for="fathom">Fathom</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="flambeau" name="flambeau" value="flambeau">
-          <label for="flambeau">Flambeau</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="gamo" name="gamo" value="gamo">
-          <label for="gamo">Gamo</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="imperium" name="imperium" value="imperium">
-          <label for="imperium">Imperium</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="afico" name="afico" value="afico">
-          <label for="afico">Afico</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="magbay" name="magbay" value="magbay">
-          <label for="magbay">Magbay</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="mendoza" name="mendoza" value="mendoza">
-          <label for="mendoza">Mendoza</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="mossy-oak" name="mossy-oak" value="mossy-oak">
-          <label for="mossy-oak">Mossy Oak</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="mustad" name="mustad" value="mustad">
-          <label for="mustad">Mustad</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="outdoor-cap" name="outdoor-cap" value="outdoor-cap">
-          <label for="outdoor-cap">Outdoor Cap</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="pelagic" name="pelagic" value="pelagic">
-          <label for="pelagic">Pelagic</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="penn" name="penn" value="penn">
-          <label for="penn">PENN</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="redhead" name="redhead" value="redhead">
-          <label for="redhead">Red Head</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="sea-sense" name="sea-sense" value="sea-sense">
-          <label for="sea-sense">Sea Sense</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="shakespeare" name="shakespeare" value="shakespeare">
-          <label for="shakespeare">Shakespeare</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="shimano" name="shimano" value="shimano">
-          <label for="shimano">Shimano</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="yellow-tail" name="yellow-tail" value="yellow-tail">
-          <label for="yellow-tail">Yellow Tail</label>
+
+        <div id="categoriasCaceria" class="filtros-leftside" *ngIf="categoriasCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#categorias" aria-expanded="true" aria-controls="categorias">
+            Categorias de Cacería
+          </a>
+          <div id="categorias" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriasCaceria">
+            <form [formGroup] = "formRadioCategoriaCaceria">
+              <label style="display: block;" *ngFor="let catCaceria of categoriasCaceriaFiltro;"> 
+                <input
+                formControlName="categoriasCaceria"
+                type="radio"
+                name="categoriasCaceria"
+                [value]="catCaceria.value"        
+                (change) = "catHuntingManager(catCaceria.value)"             
+              />
+              {{catCaceria.name}}
+            </label>
+            </form>
+
+          </div>
+        
         </div>
 
-        <div class="checkbox">
-          <input type="checkbox" id="yo-zuri" name="yo-zuri" value="yo-zuri">
-          <label for="yo-zuri">Yo-zuri</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="yukon_gear" name="yucon_gear" value="yukon_gear">
-          <label for="yukon_gear">Yukon Gear</label>
+
+        <div id="subRifles" class="filtros-leftside" *ngIf="subRifles">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subRiflesCaceria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Rifles
+          </a>
+          <div id="subRiflesCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subRifles">
+            <form [formGroup] = "formRadioSubRifles">
+              <label style="display: block;" *ngFor="let rifle of subcategoriaRifles;"> 
+                <input
+                formControlName="caceriaRifles"
+                type="radio"
+                name="caceriaRifles"
+                [value]="rifle.value"        
+                (change) = "subRifleManager(rifle.value)"             
+              />
+              {{rifle.name}}
+            </label>
+            </form>
+          </div>
         </div>
 
+
+        <div id="subRiflesAccesorios" class="filtros-leftside" *ngIf="subRiflesAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subRiflesAccesorios1" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Rifles
+          </a>
+          <div id="subRiflesAccesorios1" class="collapse show" aria-labelledby="headingOne" data-parent="#subRiflesAccesorios">
+            <form [formGroup] = "formRadioSubRiflesAccesorios">
+              <label style="display: block;" *ngFor="let rifleAccesorios of subcategoria2RiflesAccesorios;"> 
+                <input
+                formControlName="caceriaRiflesAccesorios"
+                type="radio"
+                name="caceriaRiflesAccesorios"
+                [value]="rifleAccesorios.value"        
+                (change) = "subRifleAccesoriosManager(rifleAccesorios.value)"             
+              />
+              {{rifleAccesorios.name}}
+            </label>
+            </form>
+          </div>
         </div>
-        
-        
+
+        <div id="subPistolas" class="filtros-leftside" *ngIf="subPistolas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subPistolasCaceria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Pistolas
+          </a>
+          <div id="subPistolasCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subPistolas">
+            <form [formGroup] = "formRadioSubPistolas">
+              <label style="display: block;" *ngFor="let pistolas of subcategoriaPistolas;"> 
+                <input
+                formControlName="caceriaPistolas"
+                type="radio"
+                name="caceriaPistolas"
+                [value]="pistolas.value"        
+                (change) = "subPistolaManager(pistolas.value)"             
+              />
+              {{pistolas.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="subAccesoriosPistolas" class="filtros-leftside" *ngIf="subAccesoriosPistolas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subAccesoriosPistolasCaceria" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Pistolas
+          </a>
+          <div id="subAccesoriosPistolasCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subAccesoriosPistolas">
+            <form [formGroup] = "formRadioSubAccesoriosPistolas">
+              <label style="display: block;" *ngFor="let accesoriosPistolas of subAccesorioscategoriaPistolas;"> 
+                <input
+                formControlName="caceriaAccesoriosPistolas"
+                type="radio"
+                name="caceriaAccesoriosPistolas"
+                [value]="accesoriosPistolas.value"        
+                (change) = "subAccesoriosPistolaManager(accesoriosPistolas.value)"             
+              />
+              {{accesoriosPistolas.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subArqueria" class="filtros-leftside" *ngIf="subArqueria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaArqueria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Arquería
+          </a>
+          <div id="subCaceriaArqueria" class="collapse show" aria-labelledby="headingOne" data-parent="#subArqueria">
+            <form [formGroup] = "formRadioSubArqueria">
+              <label style="display: block;" *ngFor="let arqueria of subcategoriaArqueria;"> 
+                <input
+                formControlName="caceriaArqueria"
+                type="radio"
+                name="caceriaArqueria"
+                [value]="arqueria.value"        
+                (change) = "subArqueriaManager(arqueria.value)"             
+              />
+              {{arqueria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subCuchilleria" class="filtros-leftside" *ngIf="subCuchilleria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaCuchilleria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Cuchillería
+          </a>
+          <div id="subCaceriaCuchilleria" class="collapse show" aria-labelledby="headingOne" data-parent="#subCuchilleria">
+            <form [formGroup] = "formRadioSubCuchilleria">
+              <label style="display: block;" *ngFor="let cuchilleria of subcategoriaCuchilleria;"> 
+                <input
+                formControlName="caceriaCuchilleria"
+                type="radio"
+                name="caceriaCuchilleria"
+                [value]="cuchilleria.value"        
+                (change) = "subCuchilleriaManager(cuchilleria.value)"             
+              />
+              {{cuchilleria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subAccesorios" class="filtros-leftside" *ngIf="subAccesoriosCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaAccesorios" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Accesorios
+          </a>
+          <div id="subCaceriaAccesorios" class="collapse show" aria-labelledby="headingOne" data-parent="#subAccesorios">
+            <form [formGroup] = "formRadioSubAccesoriosCaceria">
+              <label style="display: block;" *ngFor="let accesorios of subcategoriaAccesoriosCaceria;"> 
+                <input
+                formControlName="caceriaAccesorios"
+                type="radio"
+                name="caceriaAccesorios"
+                [value]="accesorios.value"        
+                (change) = "subAccesoriosCaceriaManager(accesorios.value)"             
+              />
+              {{accesorios.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subRopa" class="filtros-leftside" *ngIf="subRopaCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaRopa" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Ropa cacería
+          </a>
+          <div id="subCaceriaRopa" class="collapse show" aria-labelledby="headingOne" data-parent="#subRopa">
+            <form [formGroup] = "formRadioSubRopaCaceria">
+              <label style="display: block;" *ngFor="let ropaCaceria of subcategoriaRopaCaceria1;"> 
+                <input
+                formControlName="caceriaRopa"
+                type="radio"
+                name="caceriaRopa"
+                [value]="ropaCaceria.value"        
+                (change) = "subRopaCaceriaManager(ropaCaceria.value)"             
+              />
+              {{ropaCaceria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+
+
+
+
          
       </div>
       <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
        
         <div class="row">
           <!--Estilo nuevo del carrito-->
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoTienda of productosTienda; index as i; let index=i;">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoTienda of productosTienda | paginate: { 
+          itemsPerPage: currentSizeItemsPerPage,
+          currentPage: paginaActual,
+          totalItems: totalProductos };  index as i; let index = i">
             <div class="product-card">
               <div class="badge1" *ngIf="productoTienda.nuevo">Nuevo</div>
               <div class="badge2" *ngIf="productoTienda.destacado">Destacado</div>
               <div class="badge3" *ngIf="productoTienda.descuento">Desc {{productoTienda.descuento}}%</div>
               <div class="product-tumb">
-                  <img src="{{productoTienda.image[0].url}}" alt=""
+                  <img src="{{productoTienda.image[0].url}}"  (mouseover) = "productoTienda.image[0].url = productoTienda.imagenCambio" (mouseout) = "productoTienda.image[0].url = productoTienda.imagenPrincipal" alt=""
                   >
               </div>
               <div class="product-details">
-                  <span class="product-catagory">{{productoTienda.categoria}} {{productoTienda.marca}}</span>
-               
-                  <h4><a routerLink="/tienda/{{productoTienda.clasificacion}}/{{productoTienda.categoria}}/{{productoTienda.idProducto}}/{{productoTienda.nombre}}">{{productoTienda.nombre}}</a></h4>
-                  <div class="product-price">
-                    <h4 *ngIf="productoTienda.descuento"><span>  Precio:</span> ${{productoTienda.precio_antiguo}}</h4>
-                    <h5 *ngIf="productoTienda.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoTienda.precio}}</h5>
-                    <h3 id="precioNormal" *ngIf="productoTienda.descuento == 0"><span>Precio: </span>${{productoTienda.precio}}</h3>
-                    <button (click)="addWishList(productoTienda)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                </div>
-                  
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" (click)="openModal(productoTienda)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" (click) = "crearProducto(productoTienda)" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-     
-         <!--<div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="badge">Nuevo</div>
-            <div class="product-tumb">
-                <img src="/assets/imagenes/paginaInicial/carretes/029977_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-            </div>
-            <div class="product-details">
-                <span class="product-catagory">CARRETES Yellow Tail</span>
-             
-                <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                <div class="product-price">
-                  <h5>$230.98</h5>
-                <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-              </div>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                <div class="product-bottom-details">
-                    
-                   
-                </div>
-
-                  <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                  <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                 
+                <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
             
-            </div>
-        </div>
-    
-         </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
+                <h4><a routerLink="/tienda/{{productoTienda.idProducto}}/{{productoTienda.nombre}}">{{productoTienda.nombre | oracionMayusculas}}</a></h4>
+                <h4 *ngIf="productoTienda.descuento"> Precio:<span> {{productoTienda.precio_antiguo | currency}} </span> </h4>
+                <h5 *ngIf="productoTienda.descuento != 0; else precioNormal">Precio desc: <span> {{productoTienda.precio | currency}}</span> </h5>
+                
+                <h3 id="precioNormal" *ngIf="productoTienda.descuento == 0">Precio: <span>{{productoTienda.precio | currency}} </span></h3>
+            
+                
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
+                <div  class="pruebaBotones"> 
+                 <ul>
+                   <li>  <button (click)="addWishList(productoTienda)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                   
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                    
-              
-              </div>
+                 </ul>
+                
+
+               </div>
+               <div id="prueba{{i}}" class="pruebaBotones2">
+                   <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoTienda)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                   <button class="" type="button" (click) = "addCart(productoTienda)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                 
+
+               </div>
+               </div>
           </div>
-      
            </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042557_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042558_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042560_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042562_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042694_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042699_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-           <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="product-card">
-              <div class="badge">Nuevo</div>
-              <div class="product-tumb">
-                  <img src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
-                  onmouseout="this.src = '/assets/imagenes/paginaInicial/carretes/042554_1.png'">
-              </div>
-              <div class="product-details">
-                  <span class="product-catagory">CARRETES Yellow Tail</span>
-               
-                  <h4><a href="">CARRETE TORITO TO4000</a></h4>
-                  <div class="product-price">
-                    <h5>$230.98</h5>
-                  <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                </div>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-                  <div class="product-bottom-details">
-                      
-                     
-                  </div>
-
-                    <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                    <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                   
-              
-              </div>
-          </div>
-      
-           </div>
-      
-
-        </div>-->
-
-       
-       
-        
-
       </div>
-    
-    
+      <div class="row">
+        <div class="col-sm-8 offset-2">
+          <pagination-controls class="my-pagination"  *ngIf ="productosTienda"
+          (pageChange)="onPageChange($event)"
+           autoHide="true"
+           responsive="true"
+           previousLabel="Anterior"
+           nextLabel="Siguiente"
+          >
+  </pagination-controls>
+  
+        </div>
+  
+      </div>
     </div>
-
+  
 </div>
+

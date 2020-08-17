@@ -16,7 +16,7 @@
                     <a class="nav-link" routerLink="/lista-deseos">Lista de deseos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/carrito-compras">Carrito de compras</a>
+                  <a class="nav-link" routerLink="/carrito">Carrito de compras</a>
                 </li>
                 <li class="nav-item">
                   <a type="link" class="nav-link" routerLink="/preguntas-frecuentes">FAQ</a>
@@ -35,7 +35,7 @@
         <div class="col-lg-9 col-md-4 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                    <h1>{{usuario.nombre}} {{usuario.apellidos}}</h1>
+                    <h1>{{usuario.nombre | uppercase}} {{usuario.apellidos | uppercase}}</h1>
                     <dl class="detalles">
                         <dt><i class="fa fa-envelope" aria-hidden="true"></i> {{usuario.correo}}</dt>
                         <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{usuario.birthday}}</dt>

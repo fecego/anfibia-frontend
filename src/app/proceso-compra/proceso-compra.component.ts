@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../servicios/usuario.service';
 import { CarritoInfoService } from '../servicios/carrito-info.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-proceso-compra',
@@ -9,7 +10,7 @@ import { CarritoInfoService } from '../servicios/carrito-info.service';
 })
 export class ProcesoCompraComponent implements OnInit {
 
-  constructor(private usuarioDir: UsuarioService, private carrito: CarritoInfoService) { }
+  constructor(private usuarioDir: UsuarioService, private carrito: CarritoInfoService, private route: ActivatedRoute) { }
   public usuario:any = {}
   public carritoUsuario:any = {};
   public gastosEnvio:number;
@@ -17,6 +18,7 @@ export class ProcesoCompraComponent implements OnInit {
   public total:number = 0;
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     this.gastosEnvio = 200;
     this.usuario = this.usuarioDir.getUsuario();
     this.usuario = this.usuario[0];

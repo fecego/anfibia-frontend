@@ -11,33 +11,62 @@
         <div class="col-lg-6 col-md-16 col-sm-12 col-xs-12 form">
             <h3>No dudes en enviarnos un mensaje, nuestro objetivo es responderte antes de que pasen 24 horas hábiles.</h3>
                 <div class="card">
-                    <form >
-                        <div class="input-container">
-                            <input type="text" id="nombre" name="nombre" required="required" [(ngModel)] = "contacto.nombre"/>
-                            <label for="nombre">Nombre</label>
-                            <div class="bar"></div>
-                        </div>
+                    <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="inputGroup">      
+                            <input type="text"
+                            id="nombre"
+                            formControlName="nombre"  
+                            name="nombre"
+                            required />
+                            <span class="inputBar"></span>
+                            <label>Nombre</label>
+                            <span class="errorFormulario" *ngIf ="contactForm.get('nombre').value === '' && contactForm.get('nombre').touched">*Este campo es requerido</span>
+                           
+                           </div>
             
-                        <div class="input-container">
-                            <input type="email" id="email" name="email" required="required" [(ngModel)]="contacto.email"/>
-                            <label for="email">Email</label>
-                            <div class="bar"></div>
-                        </div>
+                           <div class="inputGroup">      
+                            <input type="text"
+                            id="email"
+                            formControlName="email"  
+                            name="email"
+                            required />
+                            <span class="inputBar"></span>
+                            <label>Email</label>
+                            <span class="errorFormulario" *ngIf ="contactForm.get('email').value === '' && contactForm.get('email').touched">*Este campo es requerido</span>
+                            <span class="errorFormulario" *ngIf="contactForm.get('email').errors?.email && contactForm.get('email').touched">*Error ingresa un correo con el formato de correo valido, correo@dominio.</span>
+                           </div>
             
-                        <div class="input-container">
-                            <input type="text" id="asunto" name="asunto" [(ngModel)] = "contacto.asunto" required="required"/>
-                            <label for="asunto">Asunto</label>
-                            <div class="bar"></div>
-                        </div>
+                           <div class="inputGroup">      
+                            <input type="text"
+                            id="asunto"
+                            formControlName="asunto"  
+                            name="asunto"
+                            required />
+                            <span class="inputBar"></span>
+                            <label>Asunto</label>
+                            <span class="errorFormulario" *ngIf ="contactForm.get('asunto').value === '' && contactForm.get('asunto').touched">*Este campo es requerido</span>
+                           
+                           </div>
                                 
-                        <div class="input-container mensaje">
+                        <div class="inputGroup mensaje">
                             <label for="mensaje">Mensaje</label>
-                            <textarea type="text" id="mensaje" name="mensaje" required="required" placeholder="Escribe tu mensaje" [(ngModel)]="contacto.mensaje"></textarea>
+                            <br>
+                            <textarea 
+                            type="text" 
+                            id="mensaje" 
+                            name="mensaje" 
+                            
+                            formControlName="mensaje">
+                        </textarea>
+                        <span class="errorFormulario" *ngIf ="contactForm.get('mensaje').value === '' && contactForm.get('mensaje').touched">*Este campo es requerido</span>
                             <div class="bar"></div>
                         </div>
             
                         <div class="button-container">
-                            <button (click) = "enviarMensaje(contacto)"><span>Enviar mensaje</span></button>
+                            <button 
+                            type="submit"
+                            [disabled] = "contactForm.status == 'INVALID'"
+                            ><span>Enviar mensaje</span></button>
                         </div>
                     </form>
                 </div>

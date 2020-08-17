@@ -13,6 +13,7 @@ export class MapaSitioComponent implements OnInit {
 
   ngOnInit() {
     AOS.init();
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
 }

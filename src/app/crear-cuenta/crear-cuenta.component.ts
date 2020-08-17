@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../servicios/usuarios.service';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators, AbstractControl  } from '@angular/forms';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -9,56 +11,82 @@ import { UsuariosService } from '../servicios/usuarios.service';
 })
 export class CrearCuentaComponent implements OnInit {
 
-  constructor(private route: Router, private _usuarios: UsuariosService) { }
+  constructor(private route: Router, private _usuarios: UsuariosService, private fb: FormBuilder) { }
   public usuario:any = {};
   public usuarios:Array<any> = [];
   public mensaje:any = {};
+  
+
+
+  public registerForm = this.fb.group({
+    userName: ['', Validators.required],
+    nombre: ['', Validators.required],
+    apellidoPaterno: ['', Validators.required],
+    apellidoMaterno:['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    passwords: this.fb.group({
+      password: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z1-9]{7,9}[A-Z]{1}')]],
+      passwordConfirmado: ['', Validators.required],
+    }, {validators: this.comparePasswords}),
+    
+    fechaNacimiento: ['', Validators.required],
+    terminosyCondiciones: ['', Validators.required],
+  });
+
+
   ngOnInit() {
+    console.log(this.registerForm);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  
    
 
   }
 
-  registrarse(datos:any){
-    var arregloEmails = []
-   this.usuarios = this._usuarios.getUsuarios();
-   this.usuarios.forEach((el) =>{
-    arregloEmails.push(el.email);
-    
-   })
-   var aver = arregloEmails.includes(datos.email);
-   if(aver == true){
-    console.log("El dato existe en el arreglo");
-    this.mensaje = {
-      message: "El email que intentas registrar ya se encuentra registrado, favor de ingresar otro email"
-    }
-    return this.mensaje;
-   }else{
-     console.log("El dato no existe en el arreglo");
-     this.mensaje = {
-       message : "Usuario Registrado con exito"
-     }
-     this.route.navigate['/anfibia-i'];
-     return this.mensaje;
-   }
-   
-
-   }
-
-   /*this.usuarios.forEach(element => {
-     if(element.email == datos.email){
-        this.mensaje = {
-          message: "Este correo ya se encuentra registrado"
-       }
-       return this.mensaje;
-     }
-     else{
-       this.usuarios.push(datos);
-       console.log(this.usuarios);
-       return this.mensaje = {
-         message: "El usuario se ha registrado con exito"
-       }
-     }
-   });*/
   
 
+
+  onSubmit(){
+    let passwordsVariables = this.registerForm.get('passwords').value;    
+    var usuario = {
+      userName: this.registerForm.value.userName,
+      name: this.registerForm.value.nombre,
+      apellidoPaterno: this.registerForm.value.apellidoPaterno,
+      apellidoMaterno: this.registerForm.value.apellidoMaterno,
+      email: this.registerForm.value.email,
+      password: passwordsVariables.password,
+      passwordConfirmado: passwordsVariables.passwordConfirmado,
+      birthday: this.registerForm.value.fechaNacimiento,
+      terminosyCondiciones: this.registerForm.value.terminosyCondiciones
+      
+    }
+    console.log("ESte es el json que vamos a mandar a la base de datos", usuario);
+    this.registerForm.patchValue({
+      userName: '',
+      nombre: '',
+      apellidoPaterno: '',
+      apellidoMaterno: '',
+      email: '',
+      password: '',
+      passwordConfirmado: '',
+      fechaNacimiento: '',
+      terminosyCondiciones:''
+    })
+  }
+
+
+
+
+
+  comparePasswords(group: FormGroup):{[s:string]: boolean} {
+    
+    let password =group.get('password').value;
+    let passwordConfirm = group.get('passwordConfirmado').value;
+    if(password !== passwordConfirm){
+      return {'notMatchPassword': true}
+    }
+
+
+  }
+
+ 
 }

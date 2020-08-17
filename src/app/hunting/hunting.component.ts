@@ -4,6 +4,7 @@ import { ProductosService } from '../servicios/productos.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ProductosModalComponent } from '../modals/productos-modal/productos-modal.component';
+import { ModalCarritoComponent } from '../modals/modal-carrito/modal-carrito.component';
 
 
 
@@ -96,14 +97,25 @@ export class HuntingComponent implements OnInit {
   public productosCaceria:Array<any> = [];
   public productosCaceriaNuevos: Array<any> = [];
   public productosCaceriaDestacados: Array<any> =[];
-
+  public productosCarrito:Array<any> = [];
 
   
 
   ngOnInit() {
-
-    
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    this.suma(1, 5, (resultado) =>{
+      if(resultado == 4){
+        console.log("El resultado es igual a 4");
+      }else{
+        console.log("El resultado no es 4");
+      }
+    })
+ 
     this.productosCaceria = this._productoCaceria.getProductos();
+    this.productosCaceria = this.productosCaceria.filter(producto =>{
+      return producto.clasificacion == 'Caceria';
+    })
+    this.getImage(this.productosCaceria);
     /*this.productosCaceriaNuevos = this.productosCaceria.filter((producto) =>{
       return producto.nuevo = true;
     })
@@ -121,12 +133,42 @@ export class HuntingComponent implements OnInit {
 
   }
 
+   suma(num1, num2, callback){
+    var resultado = num1 + num2;
+    callback(resultado);
+  }
+
+
+  public addCart(dato){
+    console.log(this.productosCarrito);
+    let datoInsertar = dato;
+    if(this.productosCarrito.includes(datoInsertar)){
+
+    }else{
+      this.productosCarrito.push(datoInsertar);
+      this.openModalCarrito(this.productosCarrito);
+      console.log(this.productosCarrito);
+    }
+  }
+
+  getImage(listaArreglo:any){
+    listaArreglo.forEach(productoCaceria =>{
+      productoCaceria.imagenPrincipal = productoCaceria.image[0].url;
+      if(productoCaceria.image[1]){
+        productoCaceria.imagenCambio = productoCaceria.image[1].url;
+      }else if(!productoCaceria.image[1]){
+        productoCaceria.imagenCambio = productoCaceria.imagenPrincipal;
+      }
+    });
+
+  }
+
   public openModal(datos) {
     const modalRef = this.modalProducto.open(ProductosModalComponent,
       {
         scrollable: true,
         windowClass: 'myCustomModalClass',
-        size: 'lg'
+        size: 'xl'
         // keyboard: false,
         // backdrop: 'static'
       });
@@ -141,5 +183,31 @@ export class HuntingComponent implements OnInit {
     }, (reason) => {
     });
   }
+
+
+
+  public openModalCarrito(datos){
+    const modalRef = this.modalProducto.open(ModalCarritoComponent,
+     {
+       scrollable: true,
+       windowClass: 'myCustomModalClass',
+       size: 'lg',
+       
+       // keyboard: false,
+       // backdrop: 'static'
+     });
+   
+   let productoModalCarrito = datos;
+   
+ 
+
+   modalRef.componentInstance.fromParent = datos;
+   modalRef.result.then((result) => {
+     console.log(result);
+   }, (reason) => {
+   });
+ }
+
+ 
 
 }

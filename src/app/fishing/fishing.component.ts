@@ -6,6 +6,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ProductosModalComponent } from '../modals/productos-modal/productos-modal.component';
+import { ModalCarritoComponent } from '../modals/modal-carrito/modal-carrito.component';
 @Component({
   selector: 'app-fishing',
   templateUrl: './fishing.component.html',
@@ -48,6 +49,7 @@ export class FishingComponent implements OnInit {
   public productosPesca: Array<any> = [];
   public productosPescaDestacados: Array<any> = [];
   public productosPescaNuevos:Array<any> = [];
+  public productosCarrito:Array<any> = [];
 
   slides = [
     {
@@ -113,9 +115,12 @@ export class FishingComponent implements OnInit {
 
 
   ngOnInit() {
-
+    window.scrollTo({top: 0, behavior: 'smooth'});
     this.productosPesca = this._productosPesca.getProductos();
-    
+    this.productosPesca = this.productosPesca.filter(producto =>{
+      return (producto.clasificacion == 'pesca');
+    })
+    this.getImage(this.productosPesca);
 
 
 
@@ -218,7 +223,7 @@ $(".item-5").mouseleave(function(){
       {
         scrollable: true,
         windowClass: 'myCustomModalClass',
-        size: 'lg'
+        size: 'xl'
         // keyboard: false,
         // backdrop: 'static'
       });
@@ -233,5 +238,54 @@ $(".item-5").mouseleave(function(){
     }, (reason) => {
     });
   }
+
+
+  public addCart(dato){
+    console.log(this.productosCarrito);
+    let datoInsertar = dato;
+    if(this.productosCarrito.includes(datoInsertar)){
+
+    }else{
+      this.productosCarrito.push(datoInsertar);
+      this.openModalCarrito(this.productosCarrito);
+      console.log(this.productosCarrito);
+    }
+  }
+
+  getImage(listaArreglo:any){
+    listaArreglo.forEach(productoPesca =>{
+      productoPesca.imagenPrincipal = productoPesca.image[0].url;
+      if(productoPesca.image[1]){
+        productoPesca.imagenCambio = productoPesca.image[1].url;
+      }else if(!productoPesca.image[1]){
+        productoPesca.imagenCambio = productoPesca.imagenPrincipal;
+      }
+    });
+
+  }
+
+
+  public openModalCarrito(datos){
+    const modalRef = this.modalProducto.open(ModalCarritoComponent,
+     {
+       scrollable: true,
+       windowClass: 'myCustomModalClass',
+       size: 'lg',
+       
+       // keyboard: false,
+       // backdrop: 'static'
+     });
+   
+   let productoModalCarrito = datos;
+   
+ 
+
+   modalRef.componentInstance.fromParent = datos;
+   modalRef.result.then((result) => {
+     console.log(result);
+   }, (reason) => {
+   });
+ }
+
 
 }

@@ -1,7 +1,26 @@
-<div>
+<div class="container-fluid inicioPesca">
+  <div class="row" >
+    
+    <div class="col-sm-4" >
+     <div class="letras-inicio">
+      <h1>PESCA</h1>
+      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos más nuevos adquiridos, así como también encontrarás nuestros productos destacados, los cuales son productos que otros pescadores han usado para volverse los mejores en su ramo, también encontrarás nuestras promociones.
+      </p>
+     </div>
+     
+    </div>
+    
+    <div class="col-sm-8" style="padding: 30px;">
+      <img src="/assets/imagenes/fishing/Marlin.png" alt=""  height="100%" width="100%" class="img-fluid">
+    </div>
+  
+  </div>
+  </div>
+<!--<div>
     <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" width="100%">
         <source src="assets/videos/anfibia.mp4" type="video/mp4">
     </video>
+  </div>-->
     <!--<div class="row texto-video">
         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
             <p>Vive la experiencia <span>ANFIBIA</span></p>
@@ -12,7 +31,7 @@
         </div>
     </div>-->
     
-</div>
+
 
 
 <!--<div class="container-fluid-asimetrico">
@@ -38,30 +57,32 @@
 
 <div class="container-fluid fondoI-pesca" >
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-12 image-background">
-
+    <div class="col-lg-8 col-md-8 col-sm-8 col-12 image-background" data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+      <img src="/assets/imagenes/fishing/68859093_2661196067226532_6899538083948003328_o.png" alt="">
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-12 texto-image-background"> 
       <h1>PESCADOR</h1>
       <hr>
       <p >Bienvenido a la tribu, tenemos todo lo que necesitas para convertirte en el mejor pescador, si lo que buscas es atrapar al pez más grande, somos tu mejor opción.</p>
       <div class="flex dark">
-          <a routerLink="/tienda/pesca" class="bttn-dark">Ir a la tienda</a>
+          <a routerLink="/tienda" [queryParams] ="{clasificacion: 'pesca'}" class="bttn-dark">Ir a la tienda</a>
         </div>
     </div>
   </div>
   <div class="row" style="padding-top: 20px;">
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
-      <h1>PESCA</h1>
-      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos más nuevos adquiridos, así como también encontrarás nuestros productos destacados, los cuales son productos que otros pescadores han usado para volverse los mejores en su ramo, también encontrarás nuestras promociones.
-      </p>
-    </div>
-    <div class="col-12 col-sm-8 col-md-8 col-lg-8 publicidad1">
-       
       
+      <p>Conoce nuestras promociones, tenemos productos en oferta que te podrían interesar, aventurate en nuestra tienda. </p>
+    </div>
+    <div class="col-12 col-sm-8 col-md-8 col-lg-8 publicidad1" data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+       <img src="/assets/imagenes/fishing/fishing20.jpg" alt="">
      
 
- </div>
+    </div>
 
  </div>
 </div>
@@ -201,7 +222,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
            <owl-carousel-o [options]="customOptions">
-             <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+             <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
                <div class="" >
                  <div class="product-card">
                  <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
@@ -209,26 +230,35 @@
                  <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
                 <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                      <div class="product-tumb">
-                         <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "changeImage(productoPesca.image[0].url)">
+                         <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
                      </div>
-                     <div class="product-details">
-                         <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
-                     
-                         <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
-                         <div class="product-price">
-                          <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
-                              <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
-                              <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
-                          <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                         
-                         </div>
-                         
-                         <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                         <div class="product-bottom-details"> 
-                         </div>
-                         <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                     </div>
+                      <div class="product-details">
+                <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+            
+                <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
+                <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
+                <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
+            
+                
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+               
+                <div class="pruebaBotones"> 
+                 <ul>
+                   <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                  
+                   
+                 </ul>
+                
+
+               </div>
+               <div class="pruebaBotones2">
+                   <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                   <button class="" type="button" (click) = "addCart(productoPesca)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                 
+
+               </div>
+               </div>
                  </div>
              </div>
              </ng-template>
@@ -245,91 +275,78 @@
    </div>
 
     <div class="container-fluid">
-       <div class="row" >
-           <div class="col-12 col-sm-12 col-md-6 col-lg-6 " style="padding: 1px;" data-aos="fade-up"
-           data-aos-easing="linear"
-           data-aos-duration="1000">
-           <div class="publicidad2">
-             <img src="/assets/imagenes/fishing/Anzuelos.jpg" class="img-fluid" alt="">
-            <!--<div class="text-publicidad2">
-               <h1><span>H</span>ooks</h1>
-               <p><span>C</span>ontamos con una gran variedad de <span>anzuelos</span>.</p>
-
-             </div>-->
-
-           </div>
-               
-               
-
-           </div>
-           <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
-           data-aos-easing="linear"
-           data-aos-duration="1000">
-            <div class="publicidad3">
-              <img src="/assets/imagenes/fishing/Short.jpg" class="img-fluid" alt="">
-              <!--<div class="text-publicidad3">
-                <h2><span>P</span>ara pescar <span>también se <br></span> necesita <span>estilo</span><br>, <span>nosotros</span> te complementamos</h2>
-                <h1><span>Som</span>breros de pesca</h1>
-                
- 
-              </div>-->
-
-            </div>
-                
-               
-
-           </div>
-        
-
-       </div>
-       <div class="row" >
-        <div class="col-12 col-sm-4 col-md-4 col-lg-4 " style="padding: 1px;" data-aos="fade-up"
+      <div class="row" >
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
         data-aos-easing="linear"
-        data-aos-duration="1000">
-        <div class="publicidad4">
+        data-aos-duration="1000" >
+        <div class="preprueba">
           <img src="/assets/imagenes/fishing/Daiwa-BG.jpg" alt="">
-          <!--<div class="text-publicidad4">
-            <h1>SHIM<span>A</span>NO</h1>
-            <h2>STELLA</h2>
-            <h3>FJ</h3>
+          <!--<div class="text-publicidad1">
+           <h1><span>W</span>ALTER</h1>
+           <h2><span>CREED</span></h2>
+           
           </div>-->
 
         </div>
-            
+        
+             
             
 
         </div>
-        <div class="col-12 col-sm-4 col-md-4 col-lg-4" style="padding: 1px;" data-aos="fade-up"
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding: 1px;" data-aos="fade-up"
         data-aos-easing="linear"
-        data-aos-duration="1000">
-         <div class="publicidad5">
-           <img src="/assets/imagenes/fishing/señuelos.jpg" class="img-fluid" alt="">
-          <!--<div class="text-publicidad5">
-            <h1><span>A</span>nzuelos</h1>
-            <h1><span>RAPALA</span></h1>
+        data-aos-duration="1000" >
+        <div class="preprueba">
+          <img src="/assets/imagenes/fishing/señuelos.jpg" alt="">
+          <!--<div class="text-publicidad1">
+           <h1><span>W</span>ALTER</h1>
+           <h2><span>CREED</span></h2>
+           
           </div>-->
 
-         </div>
+        </div>
+        
              
             
 
         </div>
      
-        <div class="col-12 col-sm-4 col-md-4 col-lg-4 " style="padding: 1px;" data-aos="fade-up"
+
+    </div>
+       <div class="row" >
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="1000">
-        <div class="publicidad6">
-          <img src="/assets/imagenes/fishing/proteus.jpg" class="img-fluid" alt="">
-          <!--<div class="text-publicidad6">
-            <h1>STELLA<span> FI</span></h1>
-            <h2>Gran <span>utilidad</span> y diseño</h2>
-
-          </div>-->
-
+      
+          <img src="/assets/imagenes/fishing/amarillo.jpg" alt="" > 
+  
+         
+            
+            
+  
         </div>
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+      
+          <img src="/assets/imagenes/fishing/ropapesca.jpg" alt="" > 
+  
+         
             
             
-
+  
+        </div>
+     
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+      
+          <img src="/assets/imagenes/fishing/pescador.jpg" alt="" > 
+  
+         
+            
+            
+  
         </div>
 
     </div>
@@ -358,7 +375,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                  <owl-carousel-o [options]="customOptions">
-                   <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+                   <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
                      <div class="" >
                        <div class="product-card">
                        <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
@@ -366,25 +383,34 @@
                        <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
                       <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                            <div class="product-tumb">
-                               <img src="{{productoPesca.image[0].url}}" alt="">
+                               <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
                            </div>
                            <div class="product-details">
-                               <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                            <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                        
+                            <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                            <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
+                            <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
+                            <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
+                        
+                            
+                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                            
-                               <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
-                               <div class="product-price">
-                                <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
-                              <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
-                              <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
-                                <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                            <div class="pruebaBotones"> 
+                             <ul>
+                               <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                              
                                
-                               </div>
-                               
-                               <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                               <div class="product-bottom-details"> 
-                               </div>
-                               <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                               <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                             </ul>
+                            
+            
+                           </div>
+                           <div class="pruebaBotones2">
+                               <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                               <button class="" type="button" (click) = "addCart(productoPesca)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                             
+            
+                           </div>
                            </div>
                        </div>
                    </div>
@@ -460,7 +486,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
             <div class="item item-1 ">
                 <div class="item-div">
                   
-                  <h2><a href="">Anzuelos</a></h2>
+                  <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'aguadulce'}">Agua Dulce</a></h2>
                   <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
                 </div>
                 
@@ -469,7 +495,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
             </div>
             <div class="item item-2">
                <div>
-                <h2><a href="">Cañas</a></h2>
+                <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'aguasalada'}">Agua Salada</a></h2>
                <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
                </div>
                 
@@ -478,7 +504,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
             </div>
             <div class="item item-3">
               <div>
-                <h2><a href="">Carretes</a></h2>
+                <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'accesorios'}">Accesorios</a></h2>
                 <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
               </div>
                 
@@ -487,7 +513,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
             <div class="item item-4">
                 
                <div>
-                <h2><a href="">Accesorios</a></h2>
+                <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'navegacion'}">Navegación</a></h2>
                 <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
                </div>
                
@@ -496,12 +522,48 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
             <div class="item item-5">
              
                 <div>
-                  <h2><a href="">Kayaks</a></h2>
+                  <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'ropa'}">Ropa</a></h2>
                 <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
                 </div>
                 
                
             </div>
+            <div class="item item-6">
+             
+              <div>
+                <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'lineas'}">Lineas</a></h2>
+              <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+              </div>
+              
+             
+          </div>
+          <div class="item item-7">
+             
+            <div>
+              <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'snorkel'}">Snorkel</a></h2>
+            <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+            </div>
+            
+           
+        </div>
+        <div class="item item-8">
+             
+          <div>
+            <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'buceo'}">Buceo</a></h2>
+          <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+          </div>
+          
+         
+      </div>
+      <div class="item item-9">
+             
+        <div>
+          <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'kayaks'}">Kayaks</a></h2>
+        <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+        </div>
+        
+       
+    </div>
         </div>
       </div>
 
@@ -648,7 +710,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <owl-carousel-o [options]="customOptions">
-           <ng-template carouselSlide *ngFor="let productoPesca of productosPescaDestacados; index as i; let index = i;">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
              <div class="" >
                <div class="product-card">
                <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
@@ -656,26 +718,35 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                <div class="badge3"*ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
                <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                    <div class="product-tumb">
-                       <img src="{{productoPesca.image[0].url}}" alt="" onmouseover="this.src = '/assets/imagenes/paginaInicial/carretes/042555_2.png'"
+                       <img src="{{productoPesca.image[0].url}}" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal"
                        >
                    </div>
                    <div class="product-details">
-                       <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                
+                    <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                    <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
+                    <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
+                    <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
+                
+                    
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                    
-                       <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
-                       <div class="product-price">
-
-                        <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
-                        <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
-                        <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
-                       <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-                       </div>
+                    <div class="pruebaBotones"> 
+                     <ul>
+                       <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                      
                        
-                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                       <div class="product-bottom-details"> 
-                       </div>
-                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     </ul>
+                    
+    
+                   </div>
+                   <div class="pruebaBotones2">
+                       <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="" type="button" (click) = "addCart(productoPesca)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                     
+    
+                   </div>
                    </div>
                </div>
            </div>
@@ -698,14 +769,26 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
     data-aos-easing="linear"
     data-aos-duration="1000">
     <div class="publicidad7" style="padding: 1px;">
-      <img src="/assets/imagenes/fishing/kayaks9.jpg" class="img-fluid" alt="">
-      <!--<div class="text-publicidad7">
-        <h1><span>K</span>AYAKS</h1>
-        <h1><span>L</span>OTUS</h1>
-        <p>Visita nuestra</p>
-        <p>Sección de Kayaks</p>
-        <h2>LO <span>M</span>EJOR</h2>
-      </div>-->
+      <img src="/assets/imagenes/fishing/pesca3.png" class="img-fluid" alt="">
+      <div class="text-publicidad7">
+        <h1><span>PELAGIC</span></h1>
+        <h1><span>R</span>OPA</h1>
+        <h1><span>DE</span> PESCA</h1>
+        <h1 style="margin-left: 80px;"><span>R</span>OPA</h1>
+       <div style="position: absolute; top: 10%; left: 60%; width: 220px;">
+        <!--<p>Contamos con una gran variedad de ropa de pesca deportiva,
+          si quieres tener estilo al pesca, Anfibia te prepará para verte bien</p>-->
+       </div>
+       <div style="position: absolute; top: 70%; left: 60%; width: 220px;">
+        <!--<p>Visita nuestra sección de ropa de pesca y selecciona el 
+          diseño que más te guste.
+        </p>-->
+       </div>
+          <h1><span>PELAGIC</span></h1>
+          <h1>ROPA</h1>
+          <h1>DE <span>PESCA</span></h1>
+        
+      </div>
     </div>
         
         
@@ -715,13 +798,60 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
     data-aos-easing="linear"
     data-aos-duration="1000">
      <div class="publicidad8">
-       <img src="/assets/imagenes/fishing/shimanorod.jpg" class="img-fluid" alt="">
+       <img src="/assets/imagenes/fishing/daiwaseagate.jpg" class="img-fluid" alt="">
        <!--<div class="text-publicidad8">
-         <h1>SHIMANO</h1> 
-         <p>CONOCE LA NUEVA</p>
-         <h2>CX<span>BEAST</span>MASTER</h2>
-         <h2>STC<span>S</span>PIN <span>270</span></h2>
+        <h1>D</h1>
        </div>-->
+       <div style="position: absolute; top: -5%; left: 5%; font-family: 'Anton', sans-serif; font-size: 130px; color: #000; " >
+         D
+       </div>
+       <!--<div style="position: absolute; top: -4%; left: 6%; font-family: 'Anton', sans-serif; font-size: 130px; color: transparent; -webkit-text-stroke-width: 4px;
+       -webkit-text-stroke-color: #000;">
+       D
+       </div>-->
+       <!--<div style="position: absolute; top: 10%; left: 14%; font-family: 'Anton', sans-serif; font-size: 50px; color: #000;">
+         AIWA
+       </div>-->
+       <div style="position: absolute; top: 11%; left: 14%; font-family: 'Anton', sans-serif; font-size: 50px; color: #000;">
+        AIWA
+      </div>
+      <!--<div style="position: absolute; top: 12%; left: 16%; font-family: 'Anton', sans-serif; font-size: 50px; color: transparent; -webkit-text-stroke-width: 4px;
+      -webkit-text-stroke-color: #000;">
+        AIWA
+      </div>-->
+      <!--<div style="position: absolute; top: 15%; left: 11%; font-family: 'Anton', sans-serif; font-size: 130px; color: #000;">
+        S
+      </div>-->
+      <div style="position: absolute; top: 16%; left: 12%; font-family: 'Anton', sans-serif; font-size: 130px; color: #000;">
+        S
+      </div>
+      <!--<div style="position: absolute; top: 17%; left: 13%; font-family: 'Anton', sans-serif; font-size: 130px; color: transparent;-webkit-text-stroke-width: 4px;
+      -webkit-text-stroke-color: #000;">
+        S
+      </div>-->
+      <!--<div style="position: absolute; top: 28%; left: 21%; font-family: 'Anton', sans-serif; font-size: 50px; color: #000;">
+        EAGEATE
+      </div>-->
+      <div style="position: absolute; top: 29%; left: 21%; font-family: 'Anton', sans-serif; font-size: 50px; color: #000;">
+        EAGEATE
+     </div>
+     <!--<hr style="position: absolute; top: 20%; left: 22%; background: #000; width: 200px; height: 3px;">
+     <hr style="position: absolute; top: 42%; left: 4%; background: #000; width: 200px; height: 3px;">-->
+     <div style="position: absolute; top: 23%; left: 6%; background: #04B4AE; height: 15px; width: 20px; line-height: 0.1em;">
+      
+     </div>
+     <div style="position: absolute; top: 11%; left: 25%; background: #04B4AE; width: 20px; height: 15px;">
+
+     </div>
+     <div style="position: absolute; top: 78%; left: 35%;">
+      <h1 style="color: #000;  font-family: 'Julius Sans One'; color: #000; font-size: 17px;"><span style="color: #04B4AE;  font-weight: bold;">C</span>onoce nuestros productos de <span style="color: #04B4AE;  font-weight: bold;">DAIWA</span>, uno de nuestros aliados en la Pesca.</h1>
+     </div>
+     <!--<div style="position: absolute; top: 30%; left: 23%; font-family: 'Anton', sans-serif; font-size: 50px; color: transparent;-webkit-text-stroke-width: 4px;
+     -webkit-text-stroke-color: #000;">
+      EAGEATE
+     </div>-->
+      
+      
      </div>
          
         
@@ -732,18 +862,24 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
     data-aos-easing="linear"
     data-aos-duration="1000">
      <div class="parallax-fishing">
-       <img src="/assets/imagenes/fishing/shimanoslx.jpg" alt="">
+       <img src="/assets/imagenes/fishing/daiwa.jpg" alt="">
       <div class="texto-parallax-fishing">
-        <h1>SHIMANO</h1>
+        <h1><span>A</span>NFIBIA</h1>
+        <hr style="position: absolute; top: 65%; width: 200px; height: 1px; background-color: #fff;">
+       
+        <!--<h1>SHIMANO</h1>
         <h2>SLX XT</h2>
         <h3><span>NUEVO</span></h3>
         <h4>CARRETE</h4>
         <p>Vive la <span>experiencía, </span></p>
-        <p>EXPERIMENTA EL NUEVO <span>SHIMANO</span> SLX</p>
+        <p>EXPERIMENTA EL NUEVO <span>SHIMANO</span> SLX</p>-->
         
     
       </div>
-
+      <div class="texto-parallax-fishing2">
+        <h2><span>C</span>ARRETES <span>S</span>TELLA</h2>
+        <hr style="position: absolute; top: 113%; width: 200px; height: 1px; background-color: #fff;">
+      </div>
 
      </div>
          
@@ -772,7 +908,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
           <hr>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <owl-carousel-o [options]="customOptions">
-           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca; index as i; let index = i;">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
              <div class="" >
                <div class="product-card">
                <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
@@ -780,25 +916,34 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
               <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                    <div class="product-tumb">
-                       <img src="{{productoPesca.image[0].url}}" alt="">
+                       <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
                    </div>
                    <div class="product-details">
-                       <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                
+                    <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                    <h4 *ngIf="productoPesca.descuento"> Precio: <span> {{productoPesca.precio_antiguo | currency}}  </span> </h4>
+                    <h5 *ngIf="productoPesca.descuento != 0; else precioNormal">Precio desc:<span>{{productoPesca.precio | currency}}</span> </h5>
+                    <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"> Precio: <span>{{productoPesca.precio | currency}}</span></h3>
+                
+                    
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                    
-                       <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
-                       <div class="product-price">
-                        <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
-                        <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
-                        <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
-                        <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                    <div class="pruebaBotones"> 
+                     <ul>
+                       <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                      
                        
-                       </div>
-                       
-                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                       <div class="product-bottom-details"> 
-                       </div>
-                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+                     </ul>
+                    
+    
+                   </div>
+                   <div class="pruebaBotones2">
+                       <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="" type="button" (click) = "addCart(productoPesca)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                     
+    
+                   </div>
                    </div>
                </div>
            </div>
@@ -825,7 +970,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
 
 </div>
      
-<div class="container-fluid" style="background-image: url('/assets/imagenes/fishing/fishingblue.jpg'); background-repeat: no-repeat;background-position: center; background-size: cover; height: 700px; margin-bottom: 100px;">
+<!--<div class="container-fluid" style="background-image: url('/assets/imagenes/fishing/fishingblue.jpg'); background-repeat: no-repeat;background-position: center; background-size: cover; height: 700px; margin-bottom: 100px;">
  <div class="row">
    <div class="col-sm-12">
     <div class="image-final">
@@ -833,7 +978,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
         <h1>PESCA</h1>
         <p>Nos encargamos de que nuestros pescadores obtengan siempre los mejores productos, siempre buscamos calidad en las herramientas que proporcionamos a nuestros pescadores,porque sabemos que el mejor cazador debe tener las mejores herramientas.</p>
         <div class="flex dark">
-          <a routerLink="/tienda/pesca" class="bttn-dark">Ir a la tienda</a>
+          <a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca'}" class="bttn-dark">Ir a la tienda</a>
         </div>
       </div>
 
@@ -843,7 +988,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
 
  </div>
   
-</div>      
+</div>-->
   
 
 

@@ -32,6 +32,7 @@ import { EnviosComponent } from './envios/envios.component';
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { LocalstoreComponent } from './localstore/localstore.component'
 
 
 
@@ -57,20 +58,26 @@ const routes: Routes = [
     ]
   },
   {path: 'anfibia-supervivencia', component: SurvivalComponent}, 
-  {path: 'ubicaciones', component: UbicacionComponent},
+  {path: 'ubicaciones', component: LocalstoreComponent},
   {path: 'blog', component: Blogv1Component}, 
   {path: 'proveedores', component: ProveedoresComponent}, 
+  {path: 'contactanos', component: ContactoComponent},
+ 
+  /*{path: 'tienda', component: StoreOnlineComponent, children:[
+   
+    {path: 'tienda/:clasificacion/:categoria', component: StoreOnlineComponent, },
+    {path: ':clasificacion', component: StoreOnlineComponent},
+  ]},*/
   {path: 'tienda', component: StoreOnlineComponent},
-  {path: 'contactanos', component: ContactoComponent}, 
-  {path: 'tienda/:clasificacion', component:StoreOnlineComponent},
-  {path: 'tienda/:clasificacion/:categoria', component: StoreOnlineComponent},
-  {path: 'tienda/:clasificacion/:categoria', component: StoreOnlineComponent},
-  {path: 'tienda/:clasificacion/:categoria/:id/:nombre', component: IndividualProductComponent},
+  {path: 'tienda/:id/:nombre', component: IndividualProductComponent},
+
+  
   {path: 'entrada', component: Entrada1Component}, 
   {path: 'lista-deseos', component: WishListComponent }, 
-  {path: 'carrito-compras', component: CarritoComprasComponent}, 
-  {path: 'proceso-compra', component: ProcesoCompraComponent},
-  {path: 'proceso-compra/:idCarrito', component: ProcesoCompraComponent},
+  {path: 'carrito', component: CarritoComprasComponent}, 
+  {path: 'compra', component: ProcesoCompraComponent},
+  
+  {path: 'carrito/compra/:idProducto/:nombre', component: ProcesoCompraComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: '**', component: NotPageFoundComponent} 
@@ -78,13 +85,16 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled'
-  })],
+  imports: [RouterModule.forRoot(routes
+    /*,{
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+    scrollOffset: [100, 100],
+  }*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, LocalstoreComponent]

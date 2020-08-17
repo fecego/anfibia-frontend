@@ -16,7 +16,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         margin-top: 50px;
         position: relative;
         text-align: center;
-        font-size: 80px;
+        font-size: 70px;
         font-family: 'Anton';
         color:black;
         letter-spacing: 0.1em;
@@ -24,7 +24,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inima', sans-serif;
         padding-left: 100px;
         padding-bottom: 20px;
     }
@@ -34,8 +34,9 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     }
 
     .texto h1{
-        font-size: 30px;
-        font-family: 'Anton';
+        font-size: 25px;
+        font-family: 'Meera Inima', sans-serif;
+        font-weight: bold;
         color:#042455;
     }
 

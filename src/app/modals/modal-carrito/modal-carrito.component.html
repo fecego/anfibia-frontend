@@ -1,0 +1,55 @@
+
+   
+    <div class="modal-body">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <div class="row" style="margin-bottom: 10px;">
+            <div class="col-sm-12">
+                <h4 class="modal-title" id="modal-basic-title">Mi carrito de compras</h4>
+                <hr>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4" *ngFor = "let producto of productoModalCarrito; index as i; let index = i;">
+                <div class="card">
+                    <div class="tumb">
+                        <div class="badge" *ngIf = "producto.nuevo">
+                            <h1>NUEVO</h1>
+                        </div>
+                        <div class="badge2" *ngIf = "producto.destacado">
+                            <h1>DESTACADO</h1>
+                        </div>
+                        <div class="badge3" *ngIf = "producto.descuento">
+                            <h1>{{producto.descuento}}% DESC</h1>
+                        </div>
+                        <img class="card-img-top" [attr.src]="producto.image[0].url" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                       <h5><a type="button" (click)="sendProducto(producto)">{{producto.nombre | oracionMayusculas}}</a></h5> 
+                       <!--<div>
+                           <h3>{{producto.categoria}} {{producto.marca}}</h3>
+                       </div>-->
+                      <div class="precios">
+                        <p *ngIf="producto.descuento">Precio: <span>{{producto.precio_antiguo | currency}}</span></p> 
+                        <p *ngIf="producto.descuento">Precio con Desc: {{producto.precio | currency}}.</p>
+                        <p *ngIf="!producto.descuento">Precio: {{producto.precio | currency}}</p>
+                      </div>
+                      
+                      <button class="boton-compra"><i class="fa fa-money" aria-hidden="true"></i>
+                        Comprar ahora</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <h1>Total: {{totalCompra | currency}}</h1>
+        <button class="botones-footer" (click)="sendStore()" ><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            Ir a la tienda</button>
+        <button class="botones-footer" (click)= "sendCarrito()"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Ir al carrito</button>
+      <button type="button" class="botones-footer" (click)="modal.close('Save click')">Cerrar</button>
+    </div>

@@ -1,7 +1,39 @@
-<div class="" style="margin-bottom: 0; padding-bottom: 0;">
-  <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" width="100%">
-    <source src="assets/videos/anfibia54.mp4"  type="video/mp4">
-  </video>
+<div class="container-fluid">
+ <div class="row" style="height: 550px;">
+   <!--<div class="col-sm-4">
+    <video class="videoP" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+      <source src="assets/videos/shimano55.mp4"  type="video/mp4">
+    </video>
+  
+   </div>-->
+   <div class="col-sm-4 backImageBegin">
+   
+  
+  </div>
+   <div class="col-sm-4 texto-videoPrueba" >
+    <h1><span style="color: #04B4AE;"></span>EMPIEZA TU AVENTURA CON NOSOTROS</h1>
+    <h2>Te ofrecemos una gran cantidad de herramientas que pueden complementar tu aventura, visita nuestras secciones.</h2>
+    <div class="botonesInicio">
+      <button  class="" type="button" (click)="fishingPage()">PESCADOR</button>
+     
+      <button class="" type="button" (click)="huntingPage()">CAZADOR</button>
+      
+    </div>
+  
+   </div>
+   <div class="col-sm-4 backImageBegin2">
+   
+  
+   </div>
+  
+
+ </div>
+ <div class="row">
+   <div class="col-sm-12" style="width: 100%; height: 300px;">
+        <video class="videoP" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+          <source src="assets/videos/anfibia53.mp4"  type="video/mp4">
+        </video>
+  </div>
   <!--<div class="imagen-video">
     <img src="/assets/imagenes/logos/logo-azul.png" alt="">
   </div>-->
@@ -113,8 +145,8 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
-          <div class="">
+        <ng-template carouselSlide *ngFor="let producto of productosNuevos | slice: 0:16; index as i; let index = i;">
+          <div class="" >
             
            
            
@@ -127,19 +159,32 @@
                 <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
               </div>
               <div class="product-details">
-                <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>    
-                <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
-                <div class="product-price">
-                  <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                  <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                  <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                  <button class="button1" (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                  
-                </div>  
+                <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+            
+                <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                <h4 *ngIf="producto.descuento">Precio: <span>{{producto.precio_antiguo | currency}}</span> </h4>
+                <h5 *ngIf="producto.descuento != 0; else precioNormal">Precio desc: <span>{{producto.precio | currency}}</span> </h5>
+                <h3 id="precioNormal" *ngIf="producto.descuento == 0">Precio: <span>{{producto.precio | currency}}</span></h3>
+            
+                
                 <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-              </div>
+               
+                <div class="pruebaBotones"> 
+                 <ul>
+                   <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true" [ngClass] ="{checkedWish: true}"></i></button></li>
+                  
+                   
+                 </ul>
+                
+
+               </div>
+               <div id="prueba{{i}}" class="pruebaBotones2" >
+                   <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                   <button class="" type="button" (click) = "addCart(producto)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                 
+
+               </div>
+               </div>
             </div>
           </div>
         </ng-template>   
@@ -222,18 +267,19 @@
       <a href="" routerLink="/tienda-online"><span>Visitar Tienda</span></a>
     </div>
   </div>-->
-  <div class="screen">
-    <div class="content button-slide">
-      <h1>ANFIBIA CACERÍA </h1>
-      <p>Encuentra lo necesarío para ser un cazador de la tribú.</p>
-      <a href="" routerLink="/tienda"><span>Visitar Tienda</span></a>
-    </div>
-  </div>
+
   <div class="screen">
     <div class="content button-slide">
       <h1>ANFIBIA PESCA</h1>
       <p>Encontrarás lo necesarío para tu aventura de pesca.</p>
-      <a href="" routerLink="/tienda"><span>Visitar Tienda</span></a>
+      <a href="" routerLink="/tienda" [queryParams] = "{clasificacion: 'pesca'}"><span>Visitar Tienda</span></a>
+    </div>
+  </div>
+  <div class="screen">
+    <div class="content button-slide">
+      <h1>ANFIBIA CACERÍA </h1>
+      <p>Encuentra lo necesarío para ser un cazador de la tribú.</p>
+      <a href="" routerLink="/tienda" [queryParams] = "{clasificacion: 'Caceria'}"><span>Visitar Tienda</span></a>
     </div>
   </div>
 </section>
@@ -263,7 +309,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <owl-carousel-o [options]="customOptions">
-              <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
+              <ng-template carouselSlide *ngFor="let producto of productosNuevos | slice: 0:16; index as i; let index = i;">
                 <div class="" >
                   <div class="product-card">
                     <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
@@ -274,18 +320,32 @@
                       <img [src]="producto.image[0].url"alt=""(mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
                     </div>
                     <div class="product-details">
-                      <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
-                      <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>           
-                      <div class="product-price">
-                        <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                        <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                        <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                        <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                      </div>             
-                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->           
-                      <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                      <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                    </div>
+                      <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                  
+                      <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                      <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                      <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                      <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+                  
+                      
+                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                     
+                      <div class="pruebaBotones"> 
+                       <ul>
+                         <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                        
+                         
+                       </ul>
+                      
+      
+                     </div>
+                     <div class="pruebaBotones2">
+                         <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="" type="button" (click) = "addCart(producto)">Añadir al<i class="fa fa-shopping-cart"></i> </button>
+                       
+      
+                     </div>
+                     </div>
                   </div>
                 </div>
               </ng-template>       
@@ -426,7 +486,7 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
+          <ng-template carouselSlide *ngFor="let producto of productosNuevos | slice: 0:16; index as i; let index = i;">
             <div class="" >
               <div class="product-card">
                 <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
@@ -437,19 +497,32 @@
                   <img [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
                 </div>
                 <div class="product-details">
-                  <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span> 
-                  <h4><a a routerLink = "/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
-                  <div class="product-price">
-                    <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                    <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                    <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                    <button href="" (click) ="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                  </div>
+                  <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+              
+                  <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                  <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                  <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                  <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+              
+                  
                   <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                  <div class="product-bottom-details"> </div>
-                  <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                  <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                </div>
+                 
+                  <div class="pruebaBotones"> 
+                   <ul>
+                     <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                    
+                     
+                   </ul>
+                  
+  
+                 </div>
+                 <div class="pruebaBotones2">
+                     <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                     <button class="" type="button" (click) = "addCart(producto)">Añadir al<i class="fa fa-shopping-cart"></i> </button>
+                   
+  
+                 </div>
+                 </div>
               </div>
             </div>
           </ng-template>
@@ -457,109 +530,7 @@
       </div>
     </div>
       
-    <div class="row">
-      <ul class="slides">
-        <input type="radio" name="radio-btn" id="img-1" checked />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide"></div>
-            <!--<div class="text-background-slide">
-              <h1 id="text-primero">AN</h1>
-              <h1 id="text-segundo">FI</h1>
-              <h1 id="text-tercero">BIA</h1>
-              <p><span>P</span>esca, <span>C</span>acería y <span>todo lo</span> que <span>n</span>ecesitas para la aventura</p>
-            </div>-->
-          </div>
-          <div class="nav">
-            <label for="img-4" class="prev">&#x2039;</label>
-            <label for="img-2" class="next">&#x203a;</label>
-          </div>
-        </li>
-        
-        <input type="radio" name="radio-btn" id="img-2" />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide2">
-              <!--<div class="text-background-slide2">   
-                <h1>GRAN</h1>
-                <h1>VARIEDAD</h1>
-                <h1>DE</h1>
-              </div>
-              <h2>CARRETES</h2>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-1" class="prev">&#x2039;</label>
-            <label for="img-3" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <input type="radio" name="radio-btn" id="img-3"/>
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide3">
-              <!--<div class="text-bakcground-slide3">
-                <h1>La <span>emoción</span></h1>  
-                <h1>de descubrir</h1>
-                <h1><span>Nuevos</span> retos.</h1>
-              </div>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-2" class="prev">&#x2039;</label>
-            <label for="img-4" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <input type="radio" name="radio-btn" id="img-4" />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide4">
-              <!--<div class="text-background-slide4">
-                <h1>Busca</h1>
-                <p>nuevos</p>
-                <h2>Destinos</h2>
-              </div>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-3" class="prev">&#x2039;</label>
-            <label for="img-1" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <!--<input type="radio" name="radio-btn" id="img-5" />
-        <li class="slide-container">
-          <div class="slide">
-            <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
-          </div>
-          <div class="nav">
-            <label for="img-4" class="prev">&#x2039;</label>
-            <label for="img-6" class="next">&#x203a;</label>
-          </div>
-        </li>-->
-          
-        <!--<input type="radio" name="radio-btn" id="img-6" />
-        <li class="slide-container">
-          <div class="slide">
-            <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
-          </div>
-          <div class="nav">
-            <label for="img-5" class="prev">&#x2039;</label>
-            <label for="img-1" class="next">&#x203a;</label>
-          </div>
-        </li>-->
-          
-        <li class="nav-dots">
-          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-          <!--<label for="img-5" class="nav-dot" id="img-dot-5"></label>
-          <label for="img-6" class="nav-dot" id="img-dot-6"></label>-->
-        </li>
-      </ul>
-    </div>
+   
     <!--Here--><!--Here too-->
   </div>
 </div>
@@ -653,9 +624,9 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <owl-carousel-o [options]="customOptions">
-              <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
+              <ng-template carouselSlide *ngFor="let producto of productosNuevos | slice: 0:16; index as i; let index = i;">
                 <div class="" >
-                  <div class="product-card">
+                  <div class="product-card" (mouseover)="showButtons(i)" (mouseout)="hideButtons(i)">
                     <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
                     <div class="badge2" *ngIf="producto.destacado">Destacado</div>
                     <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
@@ -665,18 +636,32 @@
                       <img [src]="producto.image[0].url"alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal" >
                     </div>
                     <div class="product-details">
-                      <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>   
-                      <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>    
-                      <div class="product-price">
-                        <h4 *ngIf="producto.descuento"><span>  Precio:</span> ${{producto.precio_antiguo}}</h4>
-                        <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{producto.precio}}</h5>
-                        <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                        <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                      </div> 
+                      <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                  
+                      <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                      <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                      <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                      <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+                  
+                      
                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                      <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                      <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                    </div>
+                     
+                      <div class="pruebaBotones"> 
+                       <ul>
+                         <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                        
+                         
+                       </ul>
+                      
+      
+                     </div>
+                     <div class="pruebaBotones2" id="prueba{{i}}">
+                         <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="" type="button" (click) = "addCart(producto)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                       
+      
+                     </div>
+                     </div>
                   </div>
                 </div>
               </ng-template>

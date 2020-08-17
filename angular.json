@@ -33,7 +33,8 @@
               "node_modules/animate.css/animate.min.css",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
-              "node_modules/ez-plus/css/jquery.ez-plus.css"
+              "node_modules/ez-plus/css/jquery.ez-plus.css",
+              "node_modules/mapbox-gl/src/css/mapbox-gl.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -41,7 +42,8 @@
               "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/aos/dist/aos.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/ez-plus/src/jquery.ez-plus.js"
+              "node_modules/ez-plus/src/jquery.ez-plus.js",
+              "node_modules/mapbox-gl/dist/mapbox-gl.js"
             ]
           },
           "configurations": {

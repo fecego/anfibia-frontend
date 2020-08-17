@@ -14,6 +14,7 @@ export class WishListComponent implements OnInit {
   constructor(private _productosLista: ProductosService) {}
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     this.listaDeseos = this._productosLista.getProductosWishList();
     this.listaProductosCarrito = this._productosLista.getProductoCarrito();
     console.log(this.listaDeseos);

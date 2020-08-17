@@ -1,612 +1,486 @@
+<div class="container-fluid menuNav">
+        <nav>
+                <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                </div>
+                <div class="navbar primerPiso" >
+                      <ul class="rightUl">
+                        
+                          <li>
+                                <div class="logo-image">
+                                        <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
+                                    </div>    
+                          </li>
+                        
+                      </ul>
+                      <ul class="centerUl">
+                        
+                        <li>
+                              <div class="texto-anfibia">
+                                   <h1>ANFIBIA</h1>
+                              </div>    
+                        </li>
+                      
+                    </ul>
+                      <ul class="justify-content-end span leftUl">      
+                        <div class="letrasLeft">
+                                <li>
+                                    <button id="busquedaButton" type="button" (click) = "openSearchBar()" ><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i></button>       
+                                </li>
+                                <li>
+                                  <button type="button" routerLink="/lista-deseos"><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i></button>
+                                       
+                                </li>
+                                <li>
+                                  <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i> </button>     
+                                </li>
+                                <li>
+                                  <button type="button" (click)="openModal()"><i class="fa fa-user-o icon-header" id="boton-perfil"></i></button>      
+                                </li>
+                                <li>
+                                  <button type="link" routerLink="/carrito"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i></button>      
+                                </li>
+                        </div>
+                      </ul>
+                      
 
-<div class="container-fluid" style="background: black; padding: 0; position: relative;">
-    <div class="container" style="max-width: 100%;">
-        <div class="navbar  navbar-expand-md flex-row flex-wrap" style="margin: 0;">
-           <button class=" navbar-toggler navbar-toggle order-1 order-xs-1 order-md-4" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars icon-navbar" aria-hidden="true"></i>
-            </button>
-       <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeader">
-           <ul class="navbar-nav justify-content-start flex-grow-1">
-               <li class="nav-item">
-                   <a class="navbar-brand logo-position" href="/">
-                       <div class="logo-image">
-                           <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
-                       </div>
-                   </a>
-               </li>
-               <!--<li class="nav-item">
-                   <form class="form-inline my-2 my-lg-0" style="padding-top: 3px; padding-left: 40px;">
-                       <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
-                       <button class="btn searchAnfibia my-2 my-sm-0" type="submit">Buscar</button>
-                   </form>
-   
-               </li>-->
-           </ul>
-           <ul class="navbar-nav justify-content-center flex-grow-1 menuHeaderV2">
-                <li class="nav-item">
-                    <div class="anfibia-title">
-                            <h3 style="margin-bottom: 0;">ANFIBIA</h3>
-                            
-                    </div>
-                </li>
-            </ul>  
-           <ul class="navbar-nav justify-content-end">
-               <div class="row ">
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 " style="height: 100%;">
-                       <button type="button"><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i><span>Búsqueda</span></button>
-                       <button type="button" routerLink="/lista-deseos" ><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i><span>Lista de deseos</span></button>
-                       <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i><span>Ubicaciones</span> </button>
-                       <button type="button" (click)="openModal()"><i class="fa fa-user-o icon-header" id="boton-perfil"></i><span>Usuario</span></button>
-                       <div class="dropdown-menu position-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mi perfil</a>
-                        <a class="dropdown-item" href="#">Mis pedidos</a>
-                        <a class="dropdown-item" href="#">Otras opciones</a>
-                       </div>
-                       <button type="link" routerLink="/carrito-compras"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i><span>Carrito</span></button>
-                   </div>
-               </div>
-              <div class="row" id="div-busqueda">
-                <div class="col-sm-12">
-                <div >
-                        <button id="button-cerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
-                        <div class="div-busqueda">
-                            <h1>Escribe aquí el nombre del producto que estas buscando.</h1>
-                            <input type="search" id="input-busqueda" placeholder="nombre del producto">
-                            <button id="boton-busquedas"><i class="fa fa-search" aria-hidden="true"></i></button>   
+                </div>
+                <div class="navbar segundoPiso" >
+                        <ul class="izquierda">
+                                <div class="clasificaciones" >
+                                <li style="width: 100%; height: 100%;">
+                                        <div style="width: 100%; height: 100%;" [ngClass] ="{'clasificacionesSeleccionado': pescaValor === true}">
+                                                <button   type="button" id="pescaClasificacion" (click)="showMenuRojo()">PESCA</button>        
+                                        </div>
+                                </li>
+                                <li style="width: 100%; height: 100%;">    
+                                        <div style="width: 100%; height: 100%;" [ngClass] ="{'clasificacionesSeleccionado': caceriaValor === true}">
+                                                <button  type="button" id="caceriaClasificacion" (click) = "showMenuAzul()">CACERÍA</button>
+                                        </div>
+                                        
+                                </li>
+                                </div>
+                        </ul>
+                        <ul class="derecha">
+                                <div class="otras-secciones" [ngClass] ="{'otherSectionSelected': otherSections === true}">
+                                        <li style="width: 100%; height: 100%;">
+                                                <button  type="button" id="caceriaClasificacion" (click) = "showMenuOtrasSecciones()">Más secciones</button>
+                                        </li>
+                                </div>
+                        </ul>
+                </div>
+                
+        </nav>
+
+        <div id="divRojo" class="divRojo row">
+            <div class="col-sm-12" *ngIf="pescaBandra == true;"> 
+                <div class="row" style="padding: 20px;"  >
+                      
+                        <div class="col-sm-6" id="pruebaColor">
+                              <div class="prueba" >
+                                <a type="button" (click)="goPesca()">PESCA</a>
+                                <h1>Categorías de Pesca</h1>
+                              </div>
+                             <ul id="categoriasPesca">
+                                     <li id="delay1">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#aguaDulce" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Agua Dulce</span></a>
+                                        
+                                        <div class="collapse multi-collapse" id="aguaDulce">
+                                                <div class="pruebaLinksRapidos">
+                                                      <ul>
+                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'cañas'}">Cañas</a></li>
+                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'carretes'}">Carretes</a></li>
+                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Combos</a></li>
+                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Señuelos</a></li>
+                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'accesorios'}">Accesorios</a></li>
+                                                      </ul>
+                                                </div>
+                                              </div>     
+                                        
+                                       
+                                     
+                                     </li>
+                                     <li id="delay2">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#aguaSalada" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Agua Salada</span></a>
+                                        <div class="collapse multi-collapse" id="aguaSalada">
+                                                <div class="pruebaLinksRapidos" >
+                                                        <ul>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'cañas'}">Cañas</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'carretes'}">Carretes</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'combos'}">Combos</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'señuelos'}">Señuelos</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'accesorios'}">Accesorios</a></li>
+                                                        </ul>
+                                                      
+        
+                               
+                                                </div>
+                                        </div>
+                                         
+                                         
+                                        </li>
+                                     <li id="delay3">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#lineas" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Líneas</span></a>
+                                        <div class="collapse multi-collapse" id="lineas">
+                                                <div class="pruebaLinksRapidos" >
+                                                        <ul> 
+                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'monofilamento'}">Monofilamento</a></li>
+                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'trenzadas'}">Trenzadas</a></li>
+                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'leaders'}">Leaders</a></li>
+                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'Flourocarbono'}">Flourocarbono</a></li>
+                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'reinales'}">Reinales</a></li>
+            
+                                                        </ul>    
+                                                    </div>
+                                        </div>
+                                      
+                                     
+                                     </li>
+                                     <li id="delay4">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#navegacion" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Navegación</span></a>
+                                        <div class="collapse multi-collapse" id="navegacion">
+                                                <div class="pruebaLinksRapidos">
+                                                        <ul> 
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'gps'}">GPS</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'brujulas'}">Brujulas</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'audio'}">Audio</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'electricos'}">Electricos</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'plomeria'}">Plomería</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'bombas'}">Bombas</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'iluminacion'}">Iluminación</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'motor'}">Motor</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'navegacion', navSub: 'accesorios'}">Accesorios</a></li>
+                
+                                                            </ul>     
+                                                 </div>  
+
+                                        </div>
+                                      
+                                        </li>
+                                     <li id="delay5">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#snorkel" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Snorkel</span></a>
+                                        <div class="collapse multi-collapse" id="snorkel">
+                                                <div class="pruebaLinksRapidos" >
+                                                        <ul>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Aletas</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'tubosnorkel'}">Tubo Snorkel</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'visores'}">Visores</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'gogles'}">Goggles</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'chalecos'}">Chalecos</a></li>
+                                                        </ul>
+                                                     </div>
+
+                                        </div>
+                                            
+                                        </li>
+                                     <li id="delay6">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#buceo" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Buceo</span></a>
+                                                <div class="collapse multi-collapse" id="buceo">
+                                                        <div class="pruebaLinksRapidos">
+                                                                <ul>
+                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Aletas</a></li>
+                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Arpones</a></li>
+                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Visores</a></li>
+                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Accesorios</a></li>
+                                                                </ul>
+                                                                      
+                                                              </div>
+                                                </div>
+                                             
+                                        </li>
+                                     <li id="delay7">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#ropa" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Ropa</span></a>
+                                        <div class="collapse multi-collapse" id="ropa">
+                                                <div class="pruebaLinksRapidos">
+                                                        <ul>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Jersey</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Short</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'trajedebaño'}">Traje de Baño</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'toallas'}">Toallas</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'gorras'}">Gorras</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'sombreros'}">Sombreros</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'lentes'}">Lentes</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'guantes'}">Guantes</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'buff'}">Buff</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'accesorios'}">Accesorios</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'almohadas'}">Almohadas</a></li>
+                                                        </ul>
+                                                     </div>
+
+                                        </div>     
+                                      
+                                        </li>
+                                     <li id="delay8">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#kayaks" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Kayaks</span></a>
+                                        <div class="collapse multi-collapse" id="kayaks">
+                                                <div class="pruebaLinksRapidos">
+                                                        <ul>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'remos'}">Remos</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'asiento'}">Asiento</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kataks', tipoKayaks: 'kayak'}">Kayak</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'portacañas'}">Porta cañas</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'accesorios'}">Accesorios</a></li>
+                                                        </ul>
+         
+                                                      </div>
+                                        </div>
+                                            
+                                        </li>
+                                     <li id="delay9">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#accesorios" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Accesorios</span></a>
+                                        <div class="collapse multi-collapse" id="accesorios">
+                                                <div class="pruebaLinksRapidos" >
+                                                        <ul>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'almacenamiento'}">Almacenamiento</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'arneses'}">Arneses de lucha</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'guantes'}">Guantes</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'ganchos'}">Ganchos</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'cuchilleria'}">Cuchillería</a></li>      
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'pinzas'}">Pinzas</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'mantenimiento'}">Mantenimento</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'basculas'}">Básculas</a></li>
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'termos'}">Termos/vasos</a></li>  
+                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'hieleras'}">Hieleras</a></li>
+                                                        </ul>
+                                                              
+                                                      </div>
+                                        </div>
+                                          
+                                            
+                                        </li>
+                                   
+                                           
+                             </ul>   
+                        </div>
+                        <div class="col-sm-6 menu-Imagen2">
+                                
                         </div>
                         
-        
+                      
+
                 </div> 
-                </div>
-
-              </div>
-              
-             
-           </ul>   
-       </div><!--/.nav-collapse -->
-       <div id="navbar" class="navbar-collapse collapse flex-row w-100 order-5 order-sm-5 order-md-1 menuHeaderV2">
-           <ul class="navbar-nav justify-content-start flex-grow-1">
-                   <li class="nav-item menu-area dropdown" routerLinkActive="active">
-                           <a class="nav-link"  id="mega-one"  
-                            aria-haspopup="true" aria-expanded="false" routerLink="anfibia-pesca" data-toggle="dropdown" >
-                           PESCA
-                           </a>
-                          <div class="dropdown-menu mega-area" aria-labelledby="mega-one">
-                              <div class="row">
-                                  <div class="col-sm-2">
-                                       <h5>AGUA DULCE</h5>
-                                       <div class="row">
-                                           <div class="col-sm-6 dropdown-item menu-design">
-                                                   <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Accesorios</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Carretes</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
-                                                   
-                                           </div>
-                                           <div class="col-sm-6 dropdown-item menu-design">
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Combos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Casting</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Señuelos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Blandos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Duros</a>
-                                                   <a id="item-header" href="" class="dropdown-item-categoria">Accesorios</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Anzuelos</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Granpines</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Destorcedores</a>
-                                                   <a id="item-header" href="" class="dropdown-item">Calcomanias</a>
-                                                   
-   
-                                           </div>
-                                           <!--<div class="col-sm-4">
-                                                 <div class="menu-imagen" style="height:300px">
-                                                        
-                                                 </div>  
-                                                   
-   
-                                           </div>-->
-   
-                                       </div>
-                                  </div>
-                                  <div class="col-sm-2">
-                                       <h5>AGUA SALADA</h5>
-                                       <div class="row">
-                                               <div class="col-sm-6 dropdown-item menu-design">
-                                                <a id="item-header" href="" class="dropdown-item-categoria ">CAÑAS</a>
-                                                <a id="item-header" href="" class="dropdown-item">Trolling</a>
-                                                <a id="item-header" href="" class="dropdown-item">Surft</a>
-                                                <a id="item-header" href="" class="dropdown-item">Jigging</a>
-                                                <a id="item-header" href="" class="dropdown-item">Popping</a>
-                                                <a id="item-header" href="" class="dropdown-item">Accesorios</a>
-                                                <a id="item-header" href="" class="dropdown-item-categoria">CARRETES</a>
-                                                <a id="item-header" href="" class="dropdown-item">Convencionales</a>
-                                                <a id="item-header" href="" class="dropdown-item">Spinning</a>
-                                                <a id="item-header" href="" class="dropdown-item">Jigging</a>
-                                                <a id="item-header" href="" class="dropdown-item">Trolling</a>
-                                                <a id="item-header" href="" class="dropdown-item">Mantenimiento</a>
-                                                <a id="item-header" href="" class="dropdown-item">Refacciones</a>
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-6 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">COMBOS</a>
-                                                       <a href="" class="dropdown-item">Surft</a>
-                                                       <a href="" class="dropdown-item">Trolling</a>
-                                                       <a href="" class="dropdown-item-categoria">SEÑUELOS</a>
-                                                       <a href="" class="dropdown-item">Off Shore</a>
-                                                       <a href="" class="dropdown-item">Duros</a>
-                                                       <a href="" class="dropdown-item">Blandos</a>
-                                                       <a href="" class="dropdown-item">Jigging</a>
-                                                       <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                       <a href="" class="dropdown-item">Faldas</a>
-                                                       <a href="" class="dropdown-item">Llamadores</a>
-                                                       <a href="" class="dropdown-item">Argollas</a>
-                                                       <a href="" class="dropdown-item">Ochos</a>
-                                                       <a href="" class="dropdown-item">Anzuelos</a>
-                                                       <a href="" class="dropdown-item">Red Recolectora</a>
-                                                       <a href="" class="dropdown-item">Calcomanias</a>
-                                                       
-       
-                                               </div>
-                                               <!--<div class="col-sm-4 dropdown-item menu-design">
-                                                      
-                                                       
-       
-                                               </div>-->
-       
-                                           </div>
-                                      
-                                  </div>
-                           
-                                  <div class="col-sm-2">
-                                        <h5>Accesorios</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Almacenamiento</a><br>
-                                                        <a href="" class="dropdown-item">Cajas</a>
-                                                        <a href="" class="dropdown-item">Maletas</a>
-                                                        
-                                                        <a href="" class="dropdown-item-categoria">Arneses de lucha</a><br>
-                                                        
-                                                </div>
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Ganchos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Cuchillería</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Pinzas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Mantenimiento</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Basculas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Termos/vasos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
-                                              
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-                                  <div class="col-sm-2">
-                                       <h5>Navegación</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">GPS</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Brújulas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Audio</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Eléctricos</a>
-                                                       <a href="" class="dropdown-item">Switches</a>
-                                                       <a href="" class="dropdown-item">Conectores</a>
-                                                       
-                                                       
-
-
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                                <a href="" class="dropdown-item">Fender</a>
-                                                <a href="" class="dropdown-item">Anclas</a>
-                                                <a href="" class="dropdown-item">Cuerdas</a>
-                                                <a href="" class="dropdown-item">Cornetas</a>
-                                                <a href="" class="dropdown-item">Silvatos</a>
-                                                <a href="" class="dropdown-item">Aireador Portatil</a>
-                                                <a href="" class="dropdown-item">Volantes</a>
-                                                <a href="" class="dropdown-item">Cepillos</a>
-                                                <a href="" class="dropdown-item">Cornamusas</a>
-                                                <a href="" class="dropdown-item">Tapones</a>
-                                                <a href="" class="dropdown-item">Remolque</a>
-                                                <a href="" class="dropdown-item">Mantenimiento</a>
-                                                       
-       
-                                               </div>
-                                               <div class="col-sm-4 dropdown-item menu-desing">
-                                                <a href="" class="dropdown-item-categoria">Plomería</a><br>
-                                                <a href="" class="dropdown-item-categoria">Bombas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Iluminación</a><br>
-                                                <a href="" class="dropdown-item-categoria">Motor</a><br> 
-
-                                               </div>
-                                             
-                                           </div>
-                                      
-                                  </div>
-                                  <div class="col-sm-2">
-                                        <h5>Ropa</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Jersey</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Short</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Traje de baño</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Toallas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Gorras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Sombreros</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
-                                                </div>
-                                                <div class="col-sm-6 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Buff</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                                        <a href="" class="dropdown-item">Cinturones</a>
-                                                        <a href="" class="dropdown-item">Correas</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Bolsos</a>
-                                                        <a href="" class="dropdown-item">Carteras</a>
-                                                        <a href="" class="dropdown-item">Llaveros</a>
-                                                        <a href="" class="dropdown-item">Cangureras</a>
-                                                        <a href="" class="dropdown-item-categoria">Almohadas</a><br>
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-
-                                   <div class="col-sm-2">
-                                        <h5>Líneas</h5>
-                                        <div class="row">
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Monofilamento</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Trenzadas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Leaders</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Fluorocarbono</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Reinales</a>
-                                                        
-                                                        
-        
-                                                </div>
-                                               <!--<div class="col-sm-8 dropdown-item menu-design">
-                                                 <img src="assets/imagenes/menu/anfibia.jpg" alt="" class="responsive" style="width: 100%; height:100%">
-                                                 
- 
-                                         </div>-->
-        
-                                            </div>
-                                   </div>
-                                  <div class="col-sm-2">
-                                       <h5>Snorkel</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                      
-                                                       <a href="" class="dropdown-item-categoria">Aletas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Tubo Snorkel</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Visores</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Googles</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Chalecos</a>
-                                                       
-                                                       
-       
-                                               </div>
-                                             
-       
-                                           </div>
-                                      
-                                  </div>
-                                  <div class="col-sm-2">
-                                       <h5>Buceo</h5>
-                                       <div class="row">
-                                               <div class="col-sm-4 dropdown-item menu-design">
-                                                       <a href="" class="dropdown-item-categoria">Aletas</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Arpones</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Visores</a><br>
-                                                       <a href="" class="dropdown-item-categoria">Accesorios</a><br>
-                                               </div>
-                                           </div>
-                                      
-                                  </div>
-                                 
-                                  <div class="col-sm-2">
-                                        <h5>Kayaks</h5>
-                                        <div class="row">
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Remos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Asientos</a><br>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4 dropdown-item menu-design">
-                                                        <a href="" class="dropdown-item-categoria">Kayak</a><br>
-                                                        <a href="" class="dropdown-item">Mini</a>
-                                                        <a href="" class="dropdown-item">Pesca</a>
-                                                        <a href="" class="dropdown-item">Tandem</a>
-                                                        <a href="" class="dropdown-item-categoria">Portacañas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                              
-                                                        
-        
-                                                </div>
-                                              
-        
-                                            </div>
-                                       
-                                   </div>
-                             
-   
-   
-                              </div>
-   
-                          </div>
-                       </li>
-                       <li class="nav-item dropdown menu-area">
-                               <a class="nav-link" href="#" id="mega-two"  
-                                aria-haspopup="true" aria-expanded="false" routerLink="anfibia-caceria" data-toggle="dropdown">
-                               CACERÍA
-                               </a>
-                              <div class="dropdown-menu mega-area" aria-labelledby="mega-two">
-                                  <div class="row">
-                                       <div class="col-sm-6">
-                                               <h5>Rifles</h5>
-                                              <div class="row">
-                                                  <div class="col-sm-4">
-                                                   <div class="menu-imagen2" style="height:300px">
-
-                                                   </div>
-   
-                                                  </div>
-                                                  <div class="col-sm-4">
-                                                   <a href="" class="dropdown-item-categoria">Diabolos Salva</a><br>
-                                                   <a href="" class="dropdown-item-categoria">CO2</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Resorte</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Nitropiston</a><br>
-                                                   <a href="" class="dropdown-item-categoria">PCP</a><br>
-                                                   <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                  </div>
-
-                                                  <div class="col-sm-4">
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                        <a href="" class="dropdown-item">Salva y Diábolos</a>
-                                                        <a href="" class="dropdown-item">Munición de acero</a>
-                                                        <a href="" class="dropdown-item">Diábolos</a>
-                                                        <a href="" class="dropdown-item">Tanques C02</a>
-                                                        <a href="" class="dropdown-item">Bombas de alta presión</a>
-                                                        <a href="" class="dropdown-item">Siluetas</a>
-                                                        <a href="" class="dropdown-item">Mantenimiento</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Porta Fusiles</a>
-                                                        <a href="" class="dropdown-item">Cartucheras</a>
-                                                        <a href="" class="dropdown-item">Fundas</a>
-                                                        <a href="" class="dropdown-item">Bastones de tiro</a>
-                                                        <a href="" class="dropdown-item">Miras</a>
-                                                        <a href="" class="dropdown-item">Cinta camuflaje</a>
-                                                        <a href="" class="dropdown-item">Colimadores</a>
-                                                       </div>
-   
-                                              </div>
-                                                   
-                                               
-                                              
-                                          </div>
-                                      <div class="col-sm-6 menu-design">
-                                           <h5>Pistolas</h5>
-                                           <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Diabolos Salva</a><br>
-                                                        <a href="" class="dropdown-item-categoria">CO2</a>
-                                                        
-
-                                                </div>
-                                                <div class="col-sm-">
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-                                                        <a href="" class="dropdown-item">Diabolos</a>
-                                                        <a href="" class="dropdown-item">Salva</a>
-                                                        <a href="" class="dropdown-item">Mantenimiento</a>
-                                                        <a href="" class="dropdown-item">Estuches</a>
-                                                        <a href="" class="dropdown-item">Fundas</a>
-                                                        <a href="" class="dropdown-item">Practica de tiro</a>
-                                                </div>
-
-                                           </div>
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                           <h5>Arquería</h5>
-                                           <a href="" class="dropdown-item-categoria">Arcos</a><br>
-                                           <a href="" class="dropdown-item-categoria">Bayestas </a><br>
-                                           <a href="" class="dropdown-item-categoria">Flechas</a>       
-                                          
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                           <h5>Cuchillería</h5>
-                                           <div class="row">
-                                              <div class="col-sm-6">
-                                                <a href="" class="dropdown-item-categoria">Cuchillos</a><br>
-                                                <a href="" class="dropdown-item-categoria">Navajas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Hachas</a><br>
-                                                <a href="" class="dropdown-item-categoria">Machetes</a><br>
-                                                <a href="" class="dropdown-item-categoria">Accesroios</a>
-                                                
-                                              </div>
-
-                                           </div>
-                                        
-                                      </div>
-                                      <div class="col-sm-4 menu-design">
-                                        <h5>Ropa</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Jerseys</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Playeras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Pantalones</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Chalecos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Gorras</a>
-                                                        
-
-                                                </div>
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Lentes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Buff</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Guantes</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Mascaras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Accesorios</a>
-
-                                                </div>
-
-                                        </div>
-
-
-                                   </div>
-                                   <div class="col-sm-4 menu-design">
-                                           <h5>Accesorios</h5>
-                                        <div class="row">
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Mochilas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Hieleras</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Termos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Bolsas para señuelos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Señuelos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Mallas</a>
-                                                        
-
-                                                </div>
-                                                <div class="col-sm-6">
-                                                        <a href="" class="dropdown-item-categoria">Llamadores</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Silllas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Cuerdas</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Bancos</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Calcomanias</a><br>
-                                                        <a href="" class="dropdown-item-categoria">Espiadero</a>
-
-                                                </div>
-
-                                        </div>
-
-                                   </div>
-                                     
-   
-   
-                                  </div>
-   
-                              </div>
-                           </li>
-                           <!--
-                                =====================================SUPERVIVENCIA-
-                                =====================================SUPERVIVENCIA 
-                                -
-                                =====================================SUPERVIVENCIA 
-                                <li class="nav-item dropdown menu-area">
-                                   <a class="nav-link" href="#" id="mega-three"  data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" routerLink="anfibia-supervivencia">
-                                   SUPERVIVENCÍA
-                                   </a>
-                                  <div class="dropdown-menu mega-area" aria-labelledby="mega-three">
-                                      <div class="row">
-                                           <div class="col-sm-6">
-                                                   <h5>Company Profile</h5>
-                                                  
-                                              </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>Market place we work</h5>
-                                               <a href="" class="dropdown-item">Themeforest</a>
-                                               <a href="" class="dropdown-item">Codester</a>
-                                               <a href="" class="dropdown-item">Creative Market</a>
-                                               <a href="" class="dropdown-item">Graphic River</a>
-                                          </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>IT consulting</h5>
-                                               <a href="" class="dropdown-item">Why consulting</a>
-                                               <a href="" class="dropdown-item">Consulting offering</a>
-                                               <a href="" class="dropdown-item">Delivery Excellence</a>
-                                              
-                                          </div>
-                                          <div class="col-sm-6 menu-design">
-                                               <h5>Something</h5>
-                                               <a href="" class="dropdown-item">Why consulting</a>
-                                               <a href="" class="dropdown-item">Consulting offering</a>
-                                               <a href="" class="dropdown-item">Delivery Excellence</a>
-                                          </div>
-                                         
-       
-       
-                                      </div>
-       
-                                  </div>
-                               </li>-->
-           </ul>
+            </div>
+          
            
-   
-           <ul class="navbar-nav justify-content-end flex-grow-1 ">
-                   <li class="nav-item dropdown menu-area">
-                           <a class="nav-link" href="#" id="mega-four"  data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                           Más secciones
-                           </a>
-                          <div class="dropdown-menu mega-area" aria-labelledby="mega-four">
-                              <div class="row">
-                                  <div class="col-sm-6">
-                                     <div class="row">
-                                        <div class="col-sm-12 menu-design">
-                                                <h5>Más de ANFIBIA</h5>
-                                                <a href="" class="dropdown-item" routerLink="tienda">Ir a la tienda</a>
-                                                <a href="" class="dropdown-item" routerLink="sobre-nosotros">Sobre nosotros</a>
-                                                <a href="" class="dropdown-item" routerLink="contactanos">Contáctanos</a>
-                                                <a href="" class="dropdown-item" routerLink="ubicaciones">Ubicaciones</a>
-                                                <a href="" class="dropdown-item" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
-                                               
-                                           </div>
-                                           <div class="col-sm-12 menu-design">
-                                                <h5>Otras secciones</h5>
-                                                <a href="" class="dropdown-item" routerLink="blog">Blog</a>
-                                                <a href="" class="dropdown-item" routerLink="proveedores">Proveedores</a>
-                                                <a href="" class="dropdown-item" routerLink="mapa-sitio">Mapa del sitio</a>
-                                                <a href="" class="dropdown-item" routerLink="perfil">Perfil</a>
-                                                <a href="" class="dropdown-item" routerLink="lista-deseos">Mi lista de deseos</a>
-                                                <a href="" class="dropdown-item" routerLink="carrito-compras">Mi Carrito</a>
-                                               
-                                           </div>
-                                           <div class="col-sm-12 menu-design">
-                                                <h5>Legales</h5>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-privacidad">Políticas de privacidad</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-compras">Políticas de compras</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-envios">Políticas de envíos</a>
-                                                <a href="" class="dropdown-item" routerLink="asuntos-legales/politicas-devoluciones">Políticas de devoluciones</a>
-                                           </div> 
-                                     </div>
+        </div>
 
-                                  </div>
-                                  <div class="col-sm-6">
-                                        <div class="row">
-                                        <div class="col-sm-12 menu-design">
-                                                <img src="assets/imagenes/Nosotros/montaña2.jpg" class="img-fluid responsive">
-                                        </div>
+        <div id="divAzul" class="divAzul row" >
+           <div class="col-sm-12" *ngIf="caceriaBandera == true;">
+                <div class="row" style="padding: 10px;">
+                    
+                        <div class="col-sm-6 menu-ImagenCaceria" style="height: 500px;">
+                                
+                        </div>
+                        <div class="col-sm-6"  >
+                                <div class="prueba" >
+                                   <a type="button" (click)="goCaceria()">Cacería</a>
+                                   <h1>Categorías de Cacería</h1>
+                                </div>
+                             <ul>
+                                <li id="delay1">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#rifles" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Rifles</span></a>
+                                        
+                                        <div class="collapse multi-collapse" id="rifles">
+                                                <div class="pruebaLinksRapidos">
+                                                      <ul>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'diabolos'}">Diabolos</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'salva'}">Salva</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'co2'}">CO2</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'resorte'}">Resorte</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'nitropiston'}">Nitropiston</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'pcp'}">PCP</a></li>
+                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'accesorios'}">Accesorios </a></li>
+                                                      </ul>
+                                                </div>
+                                              </div>     
+                                        
+                                       
+                                     
+                                     </li>
+                                     <li id="delay2">
+                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#pistolas" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Pistolas</span></a>
+                                        <div class="collapse multi-collapse" id="pistolas">
+                                                <div class="pruebaLinksRapidos" >
+                                                        <ul>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'diabolos'}">Diabolos Salva</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'co2'}">CO2</a></li>
+                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'accesorios'}">Accesorios</a></li>
+                                                        </ul>
+                                                      
         
+                               
+                                                </div>
                                         </div>
+                                         
+                                         
+                                        </li>
+                                        <li id="delay3">
+                                                <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#arqueria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Arquería</span></a>
+                                                <div class="collapse multi-collapse" id="arqueria">
+                                                        <div class="pruebaLinksRapidos" >
+                                                                <ul>
+                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'arcos'}">Arcos</a></li>
+                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'bayestas'}">Bayestas</a></li>
+                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'flechas'}">Flechas</a></li>
+                                                                     
+                                                                </ul>
+                                                              
+                
+                                       
+                                                        </div>
+                                                </div>
+                                                 
+                                                 
+                                                </li>
 
-                                  </div>
-                                 
-   
-   
-                              </div>
-   
-                          </div>
-                       </li>
-           </ul>  
-</div>
-</div>
-</div>
+                                                <li id="delay4">
+                                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#ropaCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Ropa</span></a>
+                                                        <div class="collapse multi-collapse" id="ropaCaceria">
+                                                                <div class="pruebaLinksRapidos" >
+                                                                        <ul>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'jersey'}">Jerseys</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'playeras'}">Playeras </a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'pantalones'}">Pantalones</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'chamarras'}">Chamarras</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'chalecos'}">Chalecos</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'gorras'}">Gorras</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'lentes'}">Lentes</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'buff'}">Buff</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'guantes'}">Guantes</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'mascaras'}">Máscaras</a></li>
+                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'accesorios'}">Accesroios</a></li>
+                                                                             
+                                                                        </ul>
+                                                                      
+                        
+                                               
+                                                                </div>
+                                                        </div>
+                                                         
+                                                         
+                                                        </li>
+                                                        <li id="delay5">
+                                                                <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#cuchilleriaCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Cuchillería</span></a>
+                                                                <div class="collapse multi-collapse" id="cuchilleriaCaceria">
+                                                                        <div class="pruebaLinksRapidos" >
+                                                                                <ul>
+                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'cuchillos'}">Cuchillos</a></li>
+                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'navajas'}">Navajas </a></li>
+                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'hachas'}">Hachas</a></li>
+                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'machetes'}">Machetes</a></li>
+                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'accesorios'}">Accesorios</a></li>
+                                                                                     
+                                                                                </ul>
+                                                                              
+                                
+                                                       
+                                                                        </div>
+                                                                </div>
+                                                                 
+                                                                 
+                                                                </li>
+                                                                <li id="delay5">
+                                                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#accesoriosCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Accesorios</span></a>
+                                                                        <div class="collapse multi-collapse" id="accesoriosCaceria">
+                                                                                <div class="pruebaLinksRapidos" >
+                                                                                        <ul>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'mochilas'}">Mochilas</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'hieleras'}">Hieleras </a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'termos'}">Termos</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'bolsasSeñuelos'}">Bolsas para señuelos</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'señuelos'}">Señuelos</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'llamadores'}">Llamadores</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'cuerdas'}">Cuerdas</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'bancos'}">Bancos</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'calcomanias'}">Calcomanías</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'mallas'}">Mallas</a></li>
+                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'espiadero'}">Espiadero</a></li>
+                                                                                             
+                                                                                        </ul>
+                                                                                      
+                                        
+                                                               
+                                                                                </div>
+                                                                        </div>
+                                                                         
+                                                                         
+                                                                        </li>
+                                     
+                                           
+                             </ul>   
 
-<!-- MODAL INICIO DE SESIÓN-->
+                        </div>
+
+                </div>
+           </div>    
+        </div>
+
+        <div id="divGreen" class="divGreen row">
+                <div class="col-sm-12" *ngIf="othersBandera == true;">
+                        <div class="row" style="padding: 10px;">
+                    
+                              
+                                <div class="col-sm-6">
+                                        <h1>Más de ANFIBIA</h1>
+                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="tienda">Ir a la tienda</a>
+                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="sobre-nosotros">Sobre nosotros</a>
+                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="contactanos">Contáctanos</a>
+                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="ubicaciones">Ubicaciones</a>
+                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
+        
+                                </div>
+                                <div class="col-sm-6" >
+                                        <h1>Otras secciones</h1>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="blog">Blog</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="proveedores">Proveedores</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="mapa-sitio">Mapa del sitio</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="perfil">Perfil</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="lista-deseos">Mi lista de deseos</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="carrito">Mi Carrito</a>
+                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="asuntos-legales">Asuntos legales</a>
+
+                                </div>
+        
+                        </div>
+                </div>    
+             </div>
+
+             <div class="busqueda">
+                     <div class="col-sm-12 searchStyle" *ngIf="busquedaT == true">
+                             <span class="cerrarModalBusqueda" (click)="cerrarSearchBar()">X</span>
+                             <label for="">¿Qué estas buscando?</label>
+                           <div style="display: block;">        
+                                <input type="search" name="filtroProductos" [(ngModel)] = "filtroProductos" placeholder="Escribe aquí..."> <i class="fa fa-search icon-header"  aria-hidden="true" title="Busqueda"></i> 
+                                <div class="row productosFiltrados" style="" *ngIf="filtroProductos !== ''">
+                                        <div class="col-sm-2" *ngFor="let prod of allProducts | filterMenu: filtroProductos | slice: 0:6">
+                                                <div class="imagenProductoFiltrado">
+                                                    <img src="{{prod.image[0].url}}" alt="" >    
+                                                </div>
+                                                <a type="button" (click) ="navigateMenu(prod)" style="text-decoration: none;"><h1>{{prod.nombre |oracionMayusculas }}</h1></a>
+                                                
+                                                
+                                                <h2><span>Precio: </span>{{prod.precio | currency}}</h2>
+                                        </div>
+                                        <div class="col-sm-12" *ngIf="(allProducts | filterMenu: filtroProductos).length > 0" >
+                                                <a type="button" class="linkVerMasProductos" (click)="seeMoreProducts(filtroProductos)">Ver más productos</a>
+                                        </div>
+                                        
+                                </div>
+                                <div class="row" *ngIf="(allProducts | filterMenu: filtroProductos).length === 0">
+                                        <div class="col-sm-12">   
+                                                <h1 style="padding-top: 30px; font-family: 'Meera Inima', sans-serif; font-size: 30px;">No se encontraron resultados de tu busqueda "{{filtroProductos}}"</h1>
+                                        </div>
+                                </div>
+                                
+                        </div>
+                     </div>
+
+             </div>
+
+    
+    
+   
+
+</div>

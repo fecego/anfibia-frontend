@@ -1,3 +1,73 @@
+.pruebaBotones ul li{
+  list-style: none;
+
+}
+
+.pruebaBotones{
+  position: absolute;
+  
+  height: 100%;
+  top: 0%;
+  right: 0%;
+}
+
+.pruebaBotones button{
+  border: none;
+  background: none;
+  color: none;
+  font-size: 20px;
+  
+}
+
+.pruebaBotones  i{
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+}
+
+
+.pruebaBotones  i:hover{
+  color: #ff0000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff0000;
+  transition: 0.5s;
+}
+
+.pruebaBotones2{
+  position: absolute;
+  top: 60%;
+  right: 5%;
+ 
+}
+
+.pruebaBotones2 button{
+  background: #fff;
+  border:none;
+  border-radius: 2px;
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 15px;
+  padding: 5px;
+  
+
+}
+
+.pruebaBotones2 button:hover{
+  background: #000;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+
+:host ::ng-deep .tabset1 a.nav-link {
+  color: #000;
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 20px;
+}
+
+:host ::ng-deep .tabset1 a.nav-link.active {
+  font-weight: bold;
+}
+
 .fijo div label{
     background: #000;
     color: #fff;
@@ -582,7 +652,7 @@ input[type='checkbox'] + label {
     color: black;
     text-decoration: underline;
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 20px;
+    font-size: 15px;
     color: #000;
     padding: 4px;
 }
@@ -603,12 +673,14 @@ input[type='checkbox'] + label {
   height: 550px;
   padding: 50px;
   background: #f0f0f0;
+ 
 
 }
 
 .top-section2 img{
   max-width: 100%;
   max-height: 100%;
+  z-index: 1;
 }
 
 .bottom-section2{
@@ -809,10 +881,10 @@ select{
 .product-card {
   width: 100%;
   position: relative;
-  box-shadow: 0 2px 7px #dfdfdf;
+  
   margin: 50px auto;
   background: #fafafa;
-  height: 550px;
+  height: auto;
   transition: all 200ms ease-in;
   transform: scale(1);
  
@@ -892,6 +964,8 @@ transform: scale(1.2);
 
 .product-details {
   padding: 30px;
+  background: #fff;
+ 
 }
 
 .product-catagory {
@@ -904,10 +978,31 @@ transform: scale(1.2);
   margin-bottom: 18px;
 }
 
+.product-details h4{
+  font-family: 'Meera Inima', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+.product-details h5{
+  font-family: 'Meera Inima', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+.product-details h3{
+  font-family: 'Meera Inima', sans-serif;
+  
+  font-size: 14px;
+  color: #000;
+}
+
 .product-details h4 a {
   font-weight: bold;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   color: #000000;
   text-decoration: none;
   transition: 0.3s;
@@ -960,8 +1055,7 @@ transform: scale(1.2);
   padding: 2px;
   text-decoration: line-through;
   color: #000;
-  position: absolute;
-  top: 82%;
+
 
   }
 
@@ -1011,6 +1105,7 @@ font-weight: bold;
   color: #000000;
   font-weight: 600;
   font-family: 'Prometo-Medium';
+
 }
 
 
@@ -1381,6 +1476,7 @@ Media query usado
     width: 70%;
     background: #f1f1f1;
     position: relative;
+    
 }
 
 .top-section2 img{

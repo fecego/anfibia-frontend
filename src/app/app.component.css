@@ -1,3 +1,6 @@
+
+
+
 @font-face {
   font-family: 'Prometo-Bold';
   src: url('/assets/fonts/Prometo/PrometoBold.otf');
@@ -74,6 +77,8 @@
   font-family: 'Prometo-x-bold-italic';
   src: url('/assets/fonts/Prometo/PrometoXBoldItalic.otf');
 }
+
+
 
 
 .btn-fit{

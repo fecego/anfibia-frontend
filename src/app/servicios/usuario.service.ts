@@ -11,9 +11,9 @@ export class UsuarioService {
 
   getUsuario(){
     return [{
-      nombre: 'KARLA',
-      apellidos: 'DIAZ SANCHEZ',
-      correo: 'dkarla404@gmail.com', 
+      nombre: 'Pablo',
+      apellidos: 'Escobar Gaviria',
+      correo: 'pabloescobar@gmail.com', 
       birthday: '31/Agosto/1997',
       direccion: [
         {

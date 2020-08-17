@@ -3,7 +3,88 @@
 <div class="container-fluid producto-inicio">
     <div class="row rutas" >
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 ruta">
-            <h1><a routerLink="/tienda">tienda</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}">{{productoIndividual.clasificacion}}</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}/{{productoIndividual.categoria}}">{{productoIndividual.categoria}}</a> / <a routerLink="/tienda/{{productoIndividual.clasificacion}}/{{productoIndividual.categoria}}/{{productoIndividual.idProducto}}/{{productoIndividual.nombre}}">{{productoIndividual.nombre}}</a></h1>
+            <h1>
+
+              <a routerLink="/tienda">TIENDA</a>
+              <a routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion}">/ {{productoIndividual.clasificacion | uppercase}}</a> 
+              <a *ngIf = "productoIndividual.clasificacion === 'pesca'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria}">/ {{productoIndividual.categoria | uppercase}}</a> 
+              <!--Subcategorías Agua DULCE y SALADA CAÑASS-->
+              <a *ngIf="productoIndividual.categoria === 'aguadulce'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1 | uppercase}} </a> 
+              <a *ngIf="productoIndividual.categoria === 'aguasalada'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1 | uppercase}} </a> 
+
+              <!--CAÑAS DE PESCAR SALADA Y DULCE-->
+              <a *ngIf="productoIndividual.categoria === 'aguasalada' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'cañas'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1, tipodeCanhas: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'aguadulce' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'cañas'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1, tipodeCanhas: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+              <!--CARRETES DE PESCAR SALADA Y DULCE-->
+              <a *ngIf="productoIndividual.categoria === 'aguasalada' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'carretes'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1, tipodeCarretes: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'aguadulce' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'carretes'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1, tipodeCarretes: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+
+              <!--ACCESORIOS DE PESCAR SALADA Y DULCE-->
+              <a *ngIf="productoIndividual.categoria === 'aguasalada' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1, tipodeAccesorios: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'aguadulce' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1, tipodeAccesorios: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+
+              <!--SEÑUELOS DE PESCAR SALADA Y DULCE-->
+              <a *ngIf="productoIndividual.categoria === 'aguasalada' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'señuelos'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1, tipodeSenhuelo: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'aguadulce' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'señuelos'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1, tipodeSenhuelo: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+              <!--COMBOS DE PESCAR SALADA Y DULCE-->
+              <a *ngIf="productoIndividual.categoria === 'aguasalada' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'combos'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguasalada: productoIndividual.subcategoria1, tipodeCombos: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'aguadulce' && productoIndividual.subcategoria2 !== '' && productoIndividual.subcategoria1 === 'combos'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1, tipodeCombos: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+
+              <!--ACCESORIOS-->
+              <a *ngIf="productoIndividual.clasificacion === 'pesca' && productoIndividual.categoria === 'accesorios' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipodeAccesorios: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1 | uppercase}}</a>
+              <a *ngIf="productoIndividual.clasificacion === 'pesca' && productoIndividual.categoria === 'accesorios' && productoIndividual.subcategoria2" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipodeAccesorios: productoIndividual.subcategoria1, tipoSubAccesorios: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+
+                 <!--NAVEGACION-->
+              <a *ngIf="productoIndividual.categoria === 'navegacion' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, navSub: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'navegacion' && productoIndividual.subcategoria1 === 'electricos'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, navSub: productoIndividual.subcategoria1, electricoSub: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'navegacion' && productoIndividual.subcategoria1 === 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, navSub: productoIndividual.subcategoria1, accesoriosSub: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+
+              <!--ROPA PESCA-->
+              
+              <a *ngIf="productoIndividual.clasificacion === 'pesca' && productoIndividual.categoria === 'ropa' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, navSub: productoIndividual.subcategoria1, tipoRopaPesca: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              <a *ngIf="productoIndividual.clasificacion === 'pesca' && productoIndividual.categoria === 'ropa' && productoIndividual.subcategoria1 === 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipoRopaPesca: productoIndividual.subcategoria1, tipoRopaPescaAccesorios: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+              <!--LINEAS-->
+              <a *ngIf="productoIndividual.categoria === 'lineas' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipoLineas: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              
+              <!--SNORKEL-->
+              <a *ngIf="productoIndividual.categoria === 'snorkel' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tiposSnorkel: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              <!--BUCEO-->
+              <a *ngIf="productoIndividual.categoria === 'buceo' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipoBuceo: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+
+              <!--KAYAKS-->
+              <a *ngIf="productoIndividual.categoria === 'kayaks' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, tipoKayaks: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+
+
+              <!--====================================================================CACERÍA===============================================================================-->
+              <!--==================RIFLES==================-->
+              <a *ngIf="productoIndividual.clasificacion === 'Caceria'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria}">/ {{productoIndividual.categoria| uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'rifles' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subRifles: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'rifles' && productoIndividual.subcategoria1 == 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subRifles: productoIndividual.subcategoria1, subRiflesAccesorios: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2 | uppercase}}</a>
+              
+
+              <!--=========================PISTOLAS========================-->
+              <a *ngIf="productoIndividual.categoria === 'pistolas' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subPistolas: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              <a *ngIf="productoIndividual.categoria === 'pistolas' && productoIndividual.subcategoria1 == 'accesorios'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subPistolas: productoIndividual.subcategoria1, subAccesoriosPistolas: productoIndividual.subcategoria2}">/ {{productoIndividual.subcategoria2| uppercase}}</a>
+             
+              <!--=========================ARQUERÍA=========================-->
+              <a *ngIf="productoIndividual.categoria === 'arqueria' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subArqueria: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              
+              <!--==========================CUCHILLERIA=========================================================-->
+              <a *ngIf="productoIndividual.categoria === 'cuchilleria' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subCuchilleria: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              
+              <!--==================================ACCESORIOS=======================================================0-->
+              <a *ngIf="productoIndividual.clasificacion === 'Caceria' && productoIndividual.categoria === 'accesorios' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subAccesoriosCaceria: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+              
+              <!--========================================ROPA==============================================================================-->
+              <a *ngIf="productoIndividual.clasificacion === 'Caceria' && productoIndividual.categoria === 'ropa' && productoIndividual.subcategoria1" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoriasCaceria: productoIndividual.categoria, subRopaCaceria: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1| uppercase}}</a>
+             
+            </h1>
         </div>
     </div>
 
@@ -11,7 +92,7 @@
         <div class="col-12 col-sm-12 col-md-8 col-lg-8" style="margin-top: 30px;">
             <div class="card2">
                 <div class="top-section2">
-                  <img id="image-container2" [attr.src]="productoIndividual.image[0].url">   
+                  <img id="image-container2" [attr.src]="productoIndividual.image[0].url" (mouseover) ="hoverZoom(productoIndividual.image[0].url)">   
                 </div>
                 <div class="bottom-section2">
                     <div class="nav2" *ngFor="let prod of productoIndividual.image; index as i; let index = i;">
@@ -32,7 +113,7 @@
             <h1>{{productoIndividual.nombre | uppercase}}</h1>
             <hr>
            <h2>SKU: {{productoIndividual.sku}}</h2>
-           <h2>PRECIO: <span>${{productoIndividual.precio}}</span></h2>
+           <h2>PRECIO: <span>{{productoIndividual.precio | currency}}</span></h2>
             
             <h3>Variaciones del producto</h3>
             <!--<div class="filtros-leftside">
@@ -118,23 +199,33 @@
               <input type="button" value="+" class="button-plus" data-field="quantity">
             </div>
             <button id="carrito-compras" class="botones-individual">Añadir al Carrito <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-            <button class="botones-individual">Añadir a la WishList <i class="fa fa-heart" aria-hidden="true"></i></button>
+            <button class="botones-individual">Añadir a la Lista de deseos <i class="fa fa-heart" aria-hidden="true"></i></button>
             <button class="botones-individual2">Comprar ahora <i class="fa fa-money" aria-hidden="true"></i></button>
         </div>   
     </div>
-    <div class="container">
+    <ngb-tabset class="tabset1">
+      <ngb-tab title="Descripción">
+        <ng-template ngbTabContent>
+       <div class="container">
         <div class="row descriptivo">
-            <hr>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <h1>{{productoIndividual.nombre}}</h1>
-                <h2>Descripción</h2>
-                <p>{{productoIndividual.descripcion}}</p>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
-                <img src="{{productoIndividual.image[0].url}}" alt="">
-            </div>
-        </div>
-        <div class="row valoraciones">
+          <hr>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+              <h1>{{productoIndividual.nombre | uppercase}}</h1>
+              <h2>Descripción</h2>
+              <p>{{productoIndividual.descripcion}}</p>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
+              <img src="{{productoIndividual.image[0].url}}" alt="">
+          </div>
+      </div>
+
+       </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Valoraciones y Reseñas">
+        <ng-template ngbTabContent>
+        <div class="container">
+          <div class="row valoraciones">
             <h1>Valoraciones y reseñas</h1>
             <hr>
             <div class="col-12 col-sm-8 col-sm-8 col-lg-8">
@@ -228,6 +319,14 @@
                 <hr>
             </div>
         </div>
+
+        </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+    <div class="container">
+     
+    
         <div class="row text-also">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <h1>También te podría interesar.</h1>
@@ -237,9 +336,9 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
            <owl-carousel-o [options]="customOptions">
-             <ng-template carouselSlide *ngFor="let producto of productosInteres; index as i; let index = i;">
+             <ng-template carouselSlide *ngFor="let producto of productosInteres | slice: 0:16; index as i; let index = i;">
                <div class="" >
-                 <div class="product-card">
+                 <div class="product-card" >
                  <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
                  <div class="badge2" *ngIf="producto.destacado">Destacado</div>
                  <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
@@ -250,22 +349,32 @@
                          >
                      </div>
                      <div class="product-details">
-                         <span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>
+                         <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
                      
-                         <h4><a routerLink="/tienda/{{producto.clasificacion}}/{{producto.categoria}}/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre}}</a></h4>
-                       
-                         <div class="product-price">
-                             <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> ${{producto.precio_antiguo}}</h4>
-                             <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> ${{producto.precio}}</h5>
-                             <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>${{producto.precio}}</h3>
-                             <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                         </div>
+                         <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                         <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                         <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                         <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+                     
                          
                          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                         
-                         <button class="product-links-wish" type="button" (click)="openModal(producto)">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
-                         <button class="product-links-bag" type="button" (click) = "addCart(producto)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-                       </div>
+                         <div id="prueba{{i}}"class="pruebaBotones"> 
+                          <ul>
+                            <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                           
+                            
+                          </ul>
+                         
+
+                        </div>
+                        <div class="pruebaBotones2">
+                            <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                            <button class="" type="button" (click) = "addCart(producto)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                          
+
+                        </div>
+                        </div>
                  </div>
              </div>
              </ng-template>

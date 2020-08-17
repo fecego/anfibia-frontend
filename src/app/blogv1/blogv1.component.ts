@@ -12,6 +12,7 @@ export class Blogv1Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     /*var granimInstance = new Granim({
     element: '#canvas-image-blending',
     direction: 'top-bottom',

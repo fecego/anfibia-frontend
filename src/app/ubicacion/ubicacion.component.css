@@ -86,6 +86,11 @@ Ipad Mini 2.4 Landscape--*/
   .border-derecha{
     border-right: 1px solid #848484;
   }
+
+
+  .contenedor-ubicacion button{
+  width: 100%;
+  }
   
   .contenedor-ubicacion{
       background: #fff;

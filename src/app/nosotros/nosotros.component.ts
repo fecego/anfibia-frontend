@@ -12,6 +12,7 @@ export class NosotrosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     /*var granimInstance = new Granim({
       element: '#canvas-basic',
       direction: 'diagonal',

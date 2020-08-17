@@ -74,7 +74,7 @@
 
     .nav-link {
         position: relative;
-        font-family: 'Anton';
+        font-family: 'Meera Inima', sans-serif;
         display: block;
         margin: 0;
         padding: 15px 30px;
@@ -88,7 +88,8 @@
     }
     
     .nav-link:hover{
-        border: 1px solid #163039;
+        background: #163039;
+        color: #fff;
     }
     .nav-link i{
         font-size: 30px; 
@@ -113,7 +114,8 @@
         background-size: 20px;
         cursor: pointer;
         font-size: 18px;
-        font-family: 'Anton';
+        font-family: 'Meera Inima', sans-serif;
+        font-weight: bolder;
     }
     
     .card .collapsed {

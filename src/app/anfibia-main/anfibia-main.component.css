@@ -1,3 +1,152 @@
+
+
+.videoP{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.botonesInicio{
+    
+    width: 100%;
+    padding-top: 30px;
+
+
+}
+
+.botonesInicio button{
+    border: 2px solid black;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #000;
+    background: #fff;
+    padding: 10px;
+    width: 48%;
+    padding-left: 0.1px;
+    margin-right: 3px;
+    transition: 0.5s;
+}
+
+.botonesInicio button:hover{
+    background: #000;
+    color: #fff;
+    
+}
+
+
+.backImageBegin{
+    background-image: url('/assets/imagenes/paginaInicial/PESCADOR.png');
+       background-position: bottom;
+       background-repeat: no-repeat;
+       background-size: 100% 100%;
+
+}
+
+
+
+.backImageBegin2{
+    background-image: url('/assets/imagenes/hunting/CACERIA5.png');
+       background-position: bottom;
+       background-repeat: no-repeat;
+       background-size: 100% 100%;
+
+}
+
+
+
+
+.texto-videoPrueba{
+    background: #fff;
+    padding: 50px;
+}
+
+.texto-videoPrueba h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    padding-top: 50px;
+    
+    
+}
+
+
+.texto-videoPrueba h2{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #000;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+
+.pruebaBotones ul li{
+    list-style: none;
+  
+  }
+  
+  .pruebaBotones{
+    position: absolute;
+    
+    height: 100%;
+    top: 0%;
+    right: 0%;
+  }
+  
+  .pruebaBotones button{
+    border: none;
+    background: none;
+    color: none;
+    font-size: 20px;
+    
+  }
+  
+  .pruebaBotones  i{
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  }
+  
+  
+  .pruebaBotones  i:hover{
+    color: #ff0000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ff0000;
+    transition: 0.5s;
+  }
+  
+  .pruebaBotones2{
+    position: absolute;
+    top: 60%;
+    right: 5%;
+   
+  }
+
+
+  
+  .pruebaBotones2 button{
+    background: #fff;
+    border:none;
+    border-radius: 2px;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    
+  
+  }
+  
+  .pruebaBotones2 button:hover{
+    background: #000;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+  }
+      
+    
+    
     /*Tablets horizontal*/
     @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
          .uno{
@@ -114,7 +263,7 @@
    
   }
 
-.heart-button{
+/*.heart-button{
     background: none;
     border: none;
     position: absolute;
@@ -132,12 +281,20 @@
   }
   
   .heart-button i:hover{
-    color: #ff0000;
+    color: ;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #ff0000;
     transition: 0.5s;
   
   }
+
+
+  .heart-buttonChecked i{
+    color: #ff0000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ff0000;
+  }*/
+
 #miModal{
     background-color: rgba(0, 0, 0, 0.4);
     background: rgba(0, 0, 0, 0.4);
@@ -1532,6 +1689,7 @@ background: rgba(0, 0, 0, 0.3);
         text-decoration: line-through;
         color: #000;
         position: absolute;
+        left: 6%;
         top: 82%;
     
         }
@@ -1554,6 +1712,7 @@ background: rgba(0, 0, 0, 0.3);
         padding: 2px;
         color: #000;
         position: absolute;
+        left: 6%;
         top: 82%;
     
         }
@@ -1853,7 +2012,7 @@ background: rgba(0, 0, 0, 0.3);
 .product-price{ 
     background: none;
     display: inline;
-    padding-left: 3px;
+    padding-left: 14px;
 }
 
 .product-price h5{
@@ -1867,12 +2026,12 @@ background: rgba(0, 0, 0, 0.3);
   -webkit-text-stroke-color: #000;
 }
 
-.product-price i:hover{
+/*.product-price i:hover{
   color: #ff0000;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff0000;
   transition: 0.5s;
-}
+}*/
 
 .product-price-btn {
   height: 103px;
@@ -1957,6 +2116,9 @@ background: rgba(0, 0, 0, 0.3);
        
       }
       
+
+
+      
       a.bttn {
         color: #FF0072;
         text-decoration: none;
@@ -2039,7 +2201,7 @@ background: rgba(0, 0, 0, 0.3);
         padding: 14px 0px;
         border-radius: 2px;
         position: relative;
-        z-index: 2;
+        z-index: 1;
         margin-bottom: 20px;
       }
 
@@ -2101,7 +2263,7 @@ background: rgba(0, 0, 0, 0.3);
         padding: 14px 4px;
         border-radius: 2px;
         position: relative;
-        z-index: 2;
+        z-index: 1;
         margin-bottom: 0px;
       }
       .bttn-dark2:before {
@@ -2299,10 +2461,10 @@ background: rgba(0, 0, 0, 0.3);
     .product-card {
         width: 100%;
         position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
+        
         margin: 50px auto;
         background: #fafafa;
-        height: 550px;
+        height: auto;
         transition: all 200ms ease-in;
         transform: scale(1);
        
@@ -2311,11 +2473,11 @@ background: rgba(0, 0, 0, 0.3);
     
     .product-card:hover{
         
-       /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         transition: all 300ms ease-in;
-        transform: scale(1.1);*/
+        
     }
     
     .badge1 {
@@ -2367,9 +2529,10 @@ background: rgba(0, 0, 0, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
+        background: #f0f0f0;
         height: 300px;
         padding: 50px;
-        background: #f0f0f0;
+       
     }
     
     .product-tumb img {
@@ -2383,7 +2546,7 @@ background: rgba(0, 0, 0, 0.3);
     .product-tumb img:hover {
       transition: all 300ms ease-in;
       transform: scale(1.2);
-    }*/
+    }
     
     .product-details {
         padding: 30px;
@@ -2395,35 +2558,66 @@ background: rgba(0, 0, 0, 0.3);
         font-weight: bolder;
         text-transform: uppercase;
         color: #000;
-        margin-bottom: 13px;
+        margin: 13px;
         font-family: 'Meera Inimai', sans-serif;
     }
     
-
-    .product-details h4 a {
-        font-weight: 500;
+    .product-details h4{
+        font-family: 'Meera Inima', sans-serif;
+       
+        font-size: 14px;
+        color: #000;
+      }
+    
+      .product-details h4 span{
+        font-weight: normal;
+        text-decoration: line-through;
+    }
+    
+      
+      
+      .product-details h5{
+        font-family: 'Meera Inima', sans-serif;
+        color: #000;
+        font-size: 14px;
+      
+      }
+    
+      .product-details h5 span{
+          color: red;
+          font-weight: bold;
+      }
+      
+      .product-details h3{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        color: #000;
+      }
+    
+     
+      
+      .product-details h4 a {
+        font-weight: bold;
         display: block;
-        margin-bottom: 18px;
-        text-transform: none;
+        margin-bottom: 10px;
         color: #000000;
         text-decoration: none;
         transition: 0.3s;
         font-size: 15px;
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: bolder;
-        
-    }
-    
-    .product-details h4 a:hover {
-        color: #000;
-    }
-    
-    .product-details p {
+        font-family: 'Meera Inima', sans-serif;
+      }
+      
+      .product-details h4 a:hover {
+        color: #162953;
+      }
+      
+      .product-details p {
         font-size: 15px;
         line-height: 22px;
         margin-bottom: 18px;
         color: #999;
-    }
+      }
+    
     
     .product-bottom-details {
         overflow: hidden;
@@ -2443,6 +2637,9 @@ background: rgba(0, 0, 0, 0.3);
         font-family: 'Prometo-Medium';
     }
     
+
+
+    /*Corazón MARCADO*/
     .product-price i{
       color: transparent;
       float: right;
@@ -2452,6 +2649,12 @@ background: rgba(0, 0, 0, 0.3);
     
     .product-price i:hover{
       color: #ff0000;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #ff0000;
+    }
+
+    .product-priceHeartChecked i{
+        color: #ff0000;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: #ff0000;
     }
@@ -2656,20 +2859,21 @@ background: rgba(0, 0, 0, 0.3);
 
     section .screen:hover{
         flex-grow: 5;
+       
         opacity: 1;
     }
 
     
 
     section .screen:nth-child(1){
-        background: url('/assets/imagenes/paginaInicial/Cazadores.jpg');
+        background: url('/assets/imagenes/paginaInicial/1.11.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         
     }
     section .screen:nth-child(2){
-        background: url('/assets/imagenes/paginaInicial/1.11.jpg');
+        background: url('/assets/imagenes/paginaInicial/Cazadores.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -2794,7 +2998,7 @@ background: rgba(0, 0, 0, 0.3);
         position: absolute;
     
           opacity: 0;
-        z-index: 9;
+        z-index: 1;
         cursor: pointer;
     
         transition: opacity .2s;
