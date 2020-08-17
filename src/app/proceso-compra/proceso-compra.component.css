@@ -215,6 +215,7 @@
 
     .pedido  {
         background-color: #DADADA;
+        max-height: 750px;
         margin-bottom: 50px;
         padding-bottom: 30px;
     }

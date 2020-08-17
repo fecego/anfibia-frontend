@@ -363,8 +363,9 @@ Ipad Mini 2.4 Landscape--*/
 .texto-img-inside{
     position: absolute;
     background: #fff;
+    top: 60%;
     width: 35%;
-    height: 90%;
+    height: 40%;
     
     
 }
@@ -374,7 +375,7 @@ Ipad Mini 2.4 Landscape--*/
     color: #000;
     font-size: 40px;
     text-align: center;
-    padding-top: 35%;
+    padding-top: 20%;
     
 }
 
@@ -383,7 +384,7 @@ Ipad Mini 2.4 Landscape--*/
     font-size: 15px;
     color: #000;
     text-align: center;
-    padding: 2px;
+    padding: 1px;
     
 }
 

@@ -73,6 +73,15 @@
   </div>
   <div class="row" style="padding-top: 20px;">
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
+<<<<<<< HEAD
+=======
+      <h1>PESCA</h1>
+      <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos nuevos, así como también encontrarás nuestros productos destacados, los cuales son productos que otros pescadores han usado para volverse los mejores en su rama, también encontrarás nuestras promociones.
+      </p>
+    </div>
+    <div class="col-12 col-sm-8 col-md-8 col-lg-8 publicidad1">
+       
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
       
       <p>Conoce nuestras promociones, tenemos productos en oferta que te podrían interesar, aventurate en nuestra tienda. </p>
     </div>
@@ -126,7 +135,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                         <div class="product-bottom-details"> 
                         </div>
-                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                     </div>
                 </div>
@@ -150,7 +159,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                         <div class="product-bottom-details">
                         </div>
-                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                     </div>
                 </div>
@@ -178,7 +187,7 @@
                            
                         </div>
       
-                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                          
                     
@@ -208,7 +217,7 @@
                            
                         </div>
       
-                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                          <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                           <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                          
                     
@@ -230,7 +239,29 @@
                  <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
                 <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                      <div class="product-tumb">
+<<<<<<< HEAD
                          <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
+=======
+                         <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "changeImage(productoPesca.image[0].url)">
+                     </div>
+                     <div class="product-details">
+                         <span class="product-catagory">{{productoPesca.categoria}} {{productoPesca.marca}}</span>
+                     
+                         <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre}}</a></h4>
+                         <div class="product-price">
+                          <h4 *ngIf="productoPesca.descuento"><span>  Precio:</span> ${{productoPesca.precio_antiguo}}</h4>
+                              <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio Desc: </span> ${{productoPesca.precio}}</h5>
+                              <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>${{productoPesca.precio}}</h3>
+                          <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                         
+                         </div>
+                         
+                         <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                         <div class="product-bottom-details"> 
+                         </div>
+                         <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
                      </div>
                       <div class="product-details">
                 <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
@@ -401,6 +432,7 @@
                                <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                               
                                
+<<<<<<< HEAD
                              </ul>
                             
             
@@ -411,6 +443,13 @@
                              
             
                            </div>
+=======
+                               <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                               <div class="product-bottom-details"> 
+                               </div>
+                               <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                               <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
                            </div>
                        </div>
                    </div>
@@ -609,7 +648,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
                     <div class="product-bottom-details"> 
                     </div>
-                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                      <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                 </div>
             </div>
@@ -636,7 +675,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                          
                       </div>
     
-                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                        
                   
@@ -666,7 +705,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                          
                       </div>
     
-                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                        
                   
@@ -696,7 +735,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                          
                       </div>
     
-                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rapida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                        <button class="product-links-wish" type="button" data-toggle="modal" data-target="#exampleModalCenter">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
                         <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
                        
                   
@@ -737,6 +776,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                        <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                       
                        
+<<<<<<< HEAD
                      </ul>
                     
     
@@ -747,6 +787,13 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                      
     
                    </div>
+=======
+                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       <div class="product-bottom-details"> 
+                       </div>
+                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
                    </div>
                </div>
            </div>
@@ -934,6 +981,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                        <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                       
                        
+<<<<<<< HEAD
                      </ul>
                     
     
@@ -944,6 +992,13 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
                      
     
                    </div>
+=======
+                       <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       <div class="product-bottom-details"> 
+                       </div>
+                       <button class="product-links-wish" type="button" (click)="openModal(productoPesca)">Vista Rápida <i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="product-links-bag" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
                    </div>
                </div>
            </div>
@@ -976,7 +1031,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
     <div class="image-final">
       <div class="back-color">
         <h1>PESCA</h1>
-        <p>Nos encargamos de que nuestros pescadores obtengan siempre los mejores productos, siempre buscamos calidad en las herramientas que proporcionamos a nuestros pescadores,porque sabemos que el mejor cazador debe tener las mejores herramientas.</p>
+        <p>Nos encargamos de que nuestros pescadores obtengan siempre los mejores productos, siempre buscamos calidad en las herramientas que proporcionamos a nuestros pescadores, porque sabemos que el mejor cazador debe tener las mejores herramientas.</p>
         <div class="flex dark">
           <a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca'}" class="bttn-dark">Ir a la tienda</a>
         </div>

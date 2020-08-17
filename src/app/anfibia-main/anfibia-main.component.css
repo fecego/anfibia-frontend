@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 .videoP{
     width: 100%;
@@ -146,11 +147,45 @@
   }
       
     
+=======
+    .categorias{
+        display: none;
+    }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .split{
+                display: none;
+            }
+
+            .categorias{
+                display: inline;
+            }
+            .categorias img{
+                margin-bottom: 30px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .split{
+                display: none;
+            }
+
+            .categorias{
+                display: inline;
+            }
+            .categorias img{
+                margin-bottom: 30px;
+            }
+        }
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
     
     /*Tablets horizontal*/
     @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
          .uno{
             margin-top: 400px;
+        }
+
+        .boton2 .bttn-dark{
+            margin-bottom: 20%;
         }
         
         .productyellow{
@@ -187,8 +222,62 @@
         .productyellow{
             margin-top: -80px !important;
         }
+    }
 
-        
+    /*Media query en celulares vertical*/
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+        .uno{
+            margin-top: 500px;
+        }
+        .boton2 .bttn-dark2{
+            margin-bottom: 20%;
+        }
+
+        .dos .boton2 .bttn-dark2{
+            margin-bottom: 150%;
+        }
+
+        .boton3 .bttn-dark{
+            margin-bottom: 180%;
+        }
+
+        .tres{
+            margin-top: -80%;
+        }
+
+        .slider{
+            margin-top: 90px;
+            margin-bottom: 90px;
+        }
+
+        .split{
+            height: 400px;
+        }
+    }
+    @media only screen and (max-width: 567px) and (min-width: 392px){
+        .uno{
+            margin-top: 500px;
+        }
+        .dos .boton2 .bttn-dark2{
+            margin-bottom: 120%;
+        }
+
+        .boton3 .bttn-dark{
+            margin-bottom: 170%;
+        }
+
+        .tres{
+            margin-top: -40%;
+        }
+
+        .slider{
+            margin-top: 90px;
+            margin-bottom: 90px;
+        }
+
+        .split{
+            height: 400px;
+        }
     }
 
 .texto-yellow{
@@ -206,7 +295,7 @@
             margin-bottom: -50px;
         }
         .fila2{
-            margin-top: -117px;
+            margin-top: -115px;
         }
     }
     /*Media query en tablets vertical*/
@@ -218,10 +307,30 @@
             margin-bottom: -10px;
         }
         .fila2{
-            margin-top: -203px;
+            margin-top: -202px;
         }
     }
 
+    /*Media query en celulares vertical*/
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+        .fotocazador{
+            margin-top: -900px;
+        }
+
+        .fila2{
+            margin-top: -155px;
+        }
+    }
+    @media only screen and (max-width: 567px) and (min-width: 392px){
+        .fotocazador{
+            margin-top: -500px;
+        }
+
+        .fila2{
+            margin-top: -175px;
+        }
+    }
+    
 #titulo-yellow{
     font-size: 90px;
     font-family: 'Anton', sans-serif;
@@ -856,6 +965,17 @@
         background: #fff;
         margin-top: 10%;
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .last-container-text{
+                margin-top: 0%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .last-container-text{
+                margin-top: 0%;
+            }
+        }
 
     .last-container-text h1{
         color: transparent;
@@ -929,6 +1049,14 @@
             .last-text-fit-top {
                 top: 10%;
                 left: 30%;
+            }
+        }
+        
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+           
+            .last-text-fit-top p{
+                font-size: 15px;
             }
         }
 
@@ -1071,6 +1199,27 @@
                 text-align: center;
             }
         }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .textos-iniciales p{
+                font-family: 'Meera Inimai', sans-serif;
+                font-size: 15px; 
+                padding-left: 20px; 
+                margin-top: 6%;
+                color: #000; 
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .textos-iniciales p{
+                font-family: 'Meera Inimai', sans-serif;
+                font-size: 15px; 
+                padding-left: 20px; 
+                margin-top: 6%;
+                color: #000; 
+                text-align: center;
+            }
+        }
 
     .textos-iniciales h3{
         text-align: center;
@@ -1093,6 +1242,20 @@
             .textos-iniciales h3{
                 margin-top: 70px;
                 font-size: 40px;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .textos-iniciales h3{
+                font-size: 40px;
+                margin-top: -120%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .textos-iniciales h3{
+                font-size: 40px;
+                margin-top: -120%;
             }
         }
 
@@ -1192,6 +1355,36 @@
             }
         }
 
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .fondo-imagen{
+                margin-top: 200px;
+                background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
+                /* Full height */
+                width: 100%;
+                height: 1500px;
+                max-height: 20%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .fondo-imagen{
+                margin-top: 200px;
+                background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
+                /* Full height */
+                width: 100%;
+                height: 1200px;
+                max-height: 30%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
     .publicidad-imagen1{
        
         /* Full height */
@@ -1216,7 +1409,6 @@
         /*Tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .publicidad-imagen1{
-                background-image: url('/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg');
                 /* Full height */
                 width: 100%;
                 height: 650px;
@@ -1232,11 +1424,38 @@
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .publicidad-imagen1{
                 margin-top: 50px;
-                background-image: url('/assets/imagenes/paginaInicial/Arashy-cover-pop2.jpg');
                 /* Full height */
                 width: 100%;
                 height: 520px;
                 max-height: 60%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen1{
+                margin-top: 100px;
+                /* Full height */
+                width: 100%;
+                height: 520px;
+                max-height: 100%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen1{
+                margin-top: 100px;
+                /* Full height */
+                width: 100%;
+                height: 520px;
+                max-height: 100%; 
                 background-repeat: no-repeat;
                 background-size:100% 100%;
                 background-position: center;
@@ -1307,7 +1526,6 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .publicidad-imagen2{
-                background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
                 /* Full height */
                 width: 100%;
                 height: 650px;
@@ -1322,7 +1540,6 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en tablets vertical*/
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .publicidad-imagen2{
-                background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
                 /* Full height */
                 width: 100%;
                 height: 390px;
@@ -1337,11 +1554,38 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en tablets vertical*/
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .publicidad-imagen2{
-                background-image: url('/assets/imagenes/paginaInicial/Rifle-PR9000W1.jpg');
+            
                 /* Full height */
                 width: 100%;
                 height: 650px;
                 max-height: 60%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen2{
+                margin-top: -13%;
+                /* Full height */
+                width: 100%;
+                height: 650px;
+                max-height: 100%; 
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                background-position: center;
+                /* Create the parallax scrolling effect */
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen2{
+                /* Full height */
+                width: 100%;
+                height: 650px;
+                max-height: 100%; 
                 background-repeat: no-repeat;
                 background-size:100% 100%;
                 background-position: center;
@@ -1373,7 +1617,6 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en tablets horizontal*/
         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .publicidad-imagen3{
-                background-image: url('/assets/imagenes/paginaInicial/Caña-ALLY1.jpg');
                  /* Full height */
                  width: 100%;
                  height: 650px;
@@ -1387,7 +1630,6 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en tablets vertical*/
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .publicidad-imagen3{
-                background-image: url('/assets/imagenes/paginaInicial/Caña-ALLY1.jpg');
                  /* Full height */
                  width: 100%;
                  height: 650px;
@@ -1396,6 +1638,32 @@ background: rgba(0, 0, 0, 0.3);
                  background-size: cover;
                  background-position: center;
             }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen3{
+                margin-top: -80%;
+                /* Full height */
+                width: 100%;
+                height: 650px;
+                max-height: 100%; 
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+           }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen3{
+                margin-top: -70%;
+                /* Full height */
+                width: 100%;
+                height: 650px;
+                max-height: 100%; 
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+           }
         }
             
 
@@ -1471,7 +1739,6 @@ background: rgba(0, 0, 0, 0.3);
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .publicidad-imagen10{
                 margin-top: 50px;
-                background-image: url('/assets/imagenes/paginaInicial/Stella.jpg');
                 /* Full height */
                 width: 100%;
                 height: 390px;
@@ -1483,7 +1750,37 @@ background: rgba(0, 0, 0, 0.3);
                 background-size: cover;
             }
         }
-        
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen10{
+                margin-top: 0px;
+                /* Full height */
+                width: 100%;
+                height: 390px;
+                max-height: 100%; 
+                padding: 0px;
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen10{
+                margin-top: 0px;
+                /* Full height */
+                width: 100%;
+                height: 390px;
+                max-height: 100%; 
+                padding: 0px;
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+   
     .publicidad-imagen4{
         /* Full height */
         width: 100%;
@@ -1510,6 +1807,40 @@ background: rgba(0, 0, 0, 0.3);
                 margin-bottom: 42%;
             }
         }
+        
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen4{
+                /* Full height */
+                width: 100%;
+                height: 450px;
+                max-height: 100%; 
+                padding: 0px;
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .boton{
+                margin-bottom: 48%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen4{
+                /* Full height */
+                width: 100%;
+                height: 450px;
+                max-height: 100%; 
+                padding: 0px;
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .boton{
+                margin-bottom: 38%;
+            }
+        }    
 
     .publicidad-imagen4 img{
         max-width: 100%;
@@ -1539,6 +1870,39 @@ background: rgba(0, 0, 0, 0.3);
                 margin-bottom: 20%;
             }
         } 
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen5{
+                margin-top: -18%;
+                /* Full height */
+                width: 100%;
+                padding: 0px;
+                height: 500px;
+                max-height: 100%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .botonu {
+                margin-bottom: 20%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen5{
+                margin-top: -4%;
+                /* Full height */
+                width: 100%;
+                padding: 0px;
+                height: 450px;
+                max-height: 100%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
 
 
     .publicidad-imagen5 img{
@@ -1571,6 +1935,25 @@ background: rgba(0, 0, 0, 0.3);
             }
         }
 
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .botonu1{
+                margin-bottom: 20%;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .publicidad-imagen6{
+                margin-top: -18%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .publicidad-imagen6{
+                margin-top: -4%;
+            }
+        }
+
     .publicidad-imagen6 img{
         width: 100%;
         max-height: 100%;
@@ -1599,6 +1982,13 @@ background: rgba(0, 0, 0, 0.3);
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .boton1 {
                 margin-bottom: 90% ;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .boton1 {
+                margin-bottom: 10% ;
             }
         }
    
@@ -1648,6 +2038,34 @@ background: rgba(0, 0, 0, 0.3);
             }
         }
 
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .fondo-imagen2{
+                background-image: url('/assets/imagenes/paginaInicial/Cazador-3.jpg');
+                /* Full height */
+                width: 100%;
+                height: 800px;
+                max-height: 40%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .fondo-imagen2{
+                background-image: url('/assets/imagenes/paginaInicial/Cazador-3.jpg');
+                /* Full height */
+                width: 100%;
+                height: 800px;
+                max-height: 45%; 
+                /* Create the parallax scrolling effect */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
     .texto-fondo-imagen2{
         position: absolute;
         top: 30%;
@@ -1674,7 +2092,6 @@ background: rgba(0, 0, 0, 0.3);
     .product-price h5{
         font-size: 17px;
         font-family: 'Meera Inimai', sans-serif;
-        
         color: #000;
         position: absolute;
         top: 82%;
@@ -1697,7 +2114,6 @@ background: rgba(0, 0, 0, 0.3);
     .product-price h4 span{
         font-size: 18px;
         font-family: 'Meera Inimai', sans-serif;
-        
         color: #000;
         
        
@@ -1714,7 +2130,55 @@ background: rgba(0, 0, 0, 0.3);
         position: absolute;
         left: 6%;
         top: 82%;
-    
+
+    }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .product-details{
+                margin-left: 15px;
+            }
+
+            .product-details .product-price span{
+                font-size: 18px;
+            }
+            .product-price h3{
+                font-size: 18px;
+                top: 75%;
+            }
+
+            .product-price h4{
+                font-size: 18px;
+                top: 75%;
+            }
+
+            .product-details .product-price h5{
+                font-size: 18px;
+                top: 78%;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .product-details{
+                margin-left: 15px;
+            }
+
+            .product-details .product-price span{
+                font-size: 18px;
+            }
+            .product-price h3{
+                font-size: 18px;
+                top: 75%;
+            }
+
+            .product-price h4{
+                font-size: 18px;
+                top: 75%;
+            }
+
+            .product-details .product-price h5{
+                font-size: 18px;
+                top: 78%;
+            }
         }
 
     .product-price h5{
@@ -1792,7 +2256,14 @@ background: rgba(0, 0, 0, 0.3);
 
 
     .imagen-publicidad2{
-        position:absolute;top: 40%;width:100%; max-width: 100%;  height: 700px; max-height: 100%; padding-top: 30px; margin-left: 0;
+        position:absolute;
+        top: 40%;
+        width:100%; 
+        max-width: 100%;  
+        height: 700px; 
+        max-height: 100%; 
+        padding-top: 30px; 
+        margin-left: 0;
     }
 
     .pi-left{
@@ -1820,6 +2291,18 @@ background: rgba(0, 0, 0, 0.3);
                  font-size: 50px;
              }
          }
+
+         /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .pi-left h2{
+                margin-top: 20px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .pi-left h2{
+                margin-top: 20px;
+            }
+        }
 
     .pi-left hr{
         background-color: #04B4AE;
@@ -2561,6 +3044,20 @@ background: rgba(0, 0, 0, 0.3);
         margin: 13px;
         font-family: 'Meera Inimai', sans-serif;
     }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .product-catagory {
+                margin-top: 15px;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .product-catagory {
+                margin-top: 15px;
+                font-size: 20px;
+            }
+        }
     
     .product-details h4{
         font-family: 'Meera Inima', sans-serif;
@@ -2604,6 +3101,7 @@ background: rgba(0, 0, 0, 0.3);
         text-decoration: none;
         transition: 0.3s;
         font-size: 15px;
+<<<<<<< HEAD
         font-family: 'Meera Inima', sans-serif;
       }
       
@@ -2612,6 +3110,31 @@ background: rgba(0, 0, 0, 0.3);
       }
       
       .product-details p {
+=======
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bolder;
+        
+    }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .product-details h4 a{
+                font-size: 17px;
+                margin-bottom: 0px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .product-details h4 a{
+                font-size: 17px;
+                margin-bottom: 0px;
+            }
+        }
+    
+    .product-details h4 a:hover {
+        color: #000;
+    }
+    
+    .product-details p {
+>>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
         font-size: 15px;
         line-height: 22px;
         margin-bottom: 18px;
@@ -2848,11 +3371,6 @@ background: rgba(0, 0, 0, 0.3);
         
     }
 
-
-
-
-
-
     section:hover .screen{
         opacity: 0.1;
     } 
@@ -2861,9 +3379,7 @@ background: rgba(0, 0, 0, 0.3);
         flex-grow: 5;
        
         opacity: 1;
-    }
-
-    
+    }    
 
     section .screen:nth-child(1){
         background: url('/assets/imagenes/paginaInicial/1.11.jpg');
@@ -2933,6 +3449,17 @@ background: rgba(0, 0, 0, 0.3);
         text-align: left;
         text-transform: none;
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .product-Title h1{
+                margin-top: 130px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .product-Title h1{
+                margin-top: 130px;
+            }
+        }
 
     .product-Title p{
         font-family: 'Prometo-thin';
@@ -2959,6 +3486,17 @@ background: rgba(0, 0, 0, 0.3);
         margin: 0 auto;
         position: relative;
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .slides{
+                padding-top: 200px;
+            }
+        }
+        @media only screen and (max-width: 567px) and (min-width: 392px){
+            .slides{
+                padding-top: 200px;
+            }
+        }
     
     .slides * {
         user-select: none;
@@ -3072,10 +3610,6 @@ background: rgba(0, 0, 0, 0.3);
 
   
   }
-
- 
-
-
 
     .slide:hover + .nav label { opacity: 0.5; }
     

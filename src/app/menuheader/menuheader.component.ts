@@ -70,6 +70,7 @@ export class MenuheaderComponent implements OnInit {
       console.log("This is anchogo",ancho_busqueda);
       console.log("Presionaste boton busqueda");
       
+      
      if(parseInt(ancho_busqueda) == 0){
       $("#div-busqueda").css("opacity", "1");
       $("#div-busqueda").animate({"width": "119%"});
@@ -80,10 +81,7 @@ export class MenuheaderComponent implements OnInit {
      }
      
     });
-    
-
- 
-
+  
 
     $("#button-cerrar").click(function(){
       var ancho_busqueda = $("#div-busqueda").css("height");
