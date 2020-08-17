@@ -1,10 +1,11 @@
 
-<<<<<<< HEAD
 
 .videoP{
+    position: absolute;
+    top: 0%;
+    left: 0%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 
@@ -47,7 +48,7 @@
 
 
 .backImageBegin2{
-    background-image: url('/assets/imagenes/hunting/CACERIA5.png');
+    background-image: url('/assets/imagenes/paginaInicial/caceria6.png');
        background-position: bottom;
        background-repeat: no-repeat;
        background-size: 100% 100%;
@@ -147,36 +148,6 @@
   }
       
     
-=======
-    .categorias{
-        display: none;
-    }
-        /*Media query en celulares vertical*/
-        @media only screen and (max-width: 390px) and (min-width: 321px){
-            .split{
-                display: none;
-            }
-
-            .categorias{
-                display: inline;
-            }
-            .categorias img{
-                margin-bottom: 30px;
-            }
-        }
-        @media only screen and (max-width: 567px) and (min-width: 392px){
-            .split{
-                display: none;
-            }
-
-            .categorias{
-                display: inline;
-            }
-            .categorias img{
-                margin-bottom: 30px;
-            }
-        }
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
     
     /*Tablets horizontal*/
     @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
@@ -3101,7 +3072,6 @@ background: rgba(0, 0, 0, 0.3);
         text-decoration: none;
         transition: 0.3s;
         font-size: 15px;
-<<<<<<< HEAD
         font-family: 'Meera Inima', sans-serif;
       }
       
@@ -3110,31 +3080,6 @@ background: rgba(0, 0, 0, 0.3);
       }
       
       .product-details p {
-=======
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: bolder;
-        
-    }
-        /*Media query en celulares vertical*/
-        @media only screen and (max-width: 390px) and (min-width: 321px){
-            .product-details h4 a{
-                font-size: 17px;
-                margin-bottom: 0px;
-            }
-        }
-        @media only screen and (max-width: 567px) and (min-width: 392px){
-            .product-details h4 a{
-                font-size: 17px;
-                margin-bottom: 0px;
-            }
-        }
-    
-    .product-details h4 a:hover {
-        color: #000;
-    }
-    
-    .product-details p {
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
         font-size: 15px;
         line-height: 22px;
         margin-bottom: 18px;

@@ -28,11 +28,13 @@
   
 
  </div>
- <div class="row">
-   <div class="col-sm-12" style="width: 100%; height: 300px;">
-        <video class="videoP" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
-          <source src="assets/videos/anfibia53.mp4"  type="video/mp4">
-        </video>
+ <div class="row" style="margin-top: 10px;">
+   <div class="col-sm-12" > 
+    <div style="width: 100%; height: 500px;  background-image: url('/assets/imagenes/paginaInicial/montaña.jpg'); margin: 10px; margin-top: 10px;">
+      <video class="videoP" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+        <source src="assets/videos/Video.mp4"  type="video/mp4">
+      </video>
+    </div>
   </div>
   <!--<div class="imagen-video">
     <img src="/assets/imagenes/logos/logo-azul.png" alt="">
@@ -146,16 +148,11 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <owl-carousel-o [options]="customOptions">
-<<<<<<< HEAD
         <ng-template carouselSlide *ngFor="let producto of productosNuevos | slice: 0:16; index as i; let index = i;">
           <div class="" >
             
            
            
-=======
-        <ng-template carouselSlide *ngFor="let producto of productosNuevos; index as i; let index = i;">
-          <div class="">
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
             <div class="product-card">
               <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
               <div class="badge2" *ngIf="producto.destacado">Destacado</div>
@@ -539,137 +536,10 @@
         </owl-carousel-o>
       </div>
     </div>
-<<<<<<< HEAD
       
    
-=======
-  </div>
-    
-<div class="row slider">
-  <ul class="slides">
-      <input type="radio" name="radio-btn" id="img-1" checked />
-      <li class="slide-container">
-        <div class="slide">
-          <div class="background-slide"></div>
-          <!--<div class="text-background-slide">
-            <h1 id="text-primero">AN</h1>
-            <h1 id="text-segundo">FI</h1>
-            <h1 id="text-tercero">BIA</h1>
-            <p><span>P</span>esca, <span>C</span>acería y <span>todo lo</span> que <span>n</span>ecesitas para la aventura</p>
-          </div>-->
-        </div>
-        <div class="nav">
-          <label for="img-4" class="prev">&#x2039;</label>
-          <label for="img-2" class="next">&#x203a;</label>
-        </div>
-      </li>
-     
-    <div class="row">
-      <ul class="slides">
-        <input type="radio" name="radio-btn" id="img-1" checked />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide"></div>
-            <!--<div class="text-background-slide">
-              <h1 id="text-primero">AN</h1>
-              <h1 id="text-segundo">FI</h1>
-              <h1 id="text-tercero">BIA</h1>
-              <p><span>P</span>esca, <span>C</span>acería y <span>todo lo</span> que <span>n</span>ecesitas para la aventura</p>
-            </div>-->
-          </div>
-          <div class="nav">
-            <label for="img-4" class="prev">&#x2039;</label>
-            <label for="img-2" class="next">&#x203a;</label>
-          </div>
-        </li>
-        
-        <input type="radio" name="radio-btn" id="img-2" />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide2">
-              <!--<div class="text-background-slide2">   
-                <h1>GRAN</h1>
-                <h1>VARIEDAD</h1>
-                <h1>DE</h1>
-              </div>
-              <h2>CARRETES</h2>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-1" class="prev">&#x2039;</label>
-            <label for="img-3" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <input type="radio" name="radio-btn" id="img-3"/>
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide3">
-              <!--<div class="text-bakcground-slide3">
-                <h1>La <span>emoción</span></h1>  
-                <h1>de descubrir</h1>
-                <h1><span>Nuevos</span> retos.</h1>
-              </div>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-2" class="prev">&#x2039;</label>
-            <label for="img-4" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <input type="radio" name="radio-btn" id="img-4" />
-        <li class="slide-container">
-          <div class="slide">
-            <div class="background-slide4">
-              <!--<div class="text-background-slide4">
-                <h1>Busca</h1>
-                <p>nuevos</p>
-                <h2>Destinos</h2>
-              </div>-->
-            </div>
-          </div>
-          <div class="nav">
-            <label for="img-3" class="prev">&#x2039;</label>
-            <label for="img-1" class="next">&#x203a;</label>
-          </div>
-        </li>
-          
-        <!--<input type="radio" name="radio-btn" id="img-5" />
-        <li class="slide-container">
-          <div class="slide">
-            <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
-          </div>
-          <div class="nav">
-            <label for="img-4" class="prev">&#x2039;</label>
-            <label for="img-6" class="next">&#x203a;</label>
-          </div>
-        </li>-->
-          
-        <!--<input type="radio" name="radio-btn" id="img-6" />
-        <li class="slide-container">
-          <div class="slide">
-            <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
-          </div>
-          <div class="nav">
-            <label for="img-5" class="prev">&#x2039;</label>
-            <label for="img-1" class="next">&#x203a;</label>
-          </div>
-        </li>-->
-          
-        <li class="nav-dots">
-          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-          <!--<label for="img-5" class="nav-dot" id="img-dot-5"></label>
-          <label for="img-6" class="nav-dot" id="img-dot-6"></label>-->
-        </li>
-      </ul>
-    </div>
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
     <!--Here--><!--Here too-->
-  </ul>
+ 
   </div>
 </div>
 
