@@ -32,7 +32,12 @@ import { EnviosComponent } from './envios/envios.component';
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+<<<<<<< HEAD
+import { LocalstoreComponent } from './localstore/localstore.component';
+import { TorneosComponent} from './torneos/torneos.component'
+=======
 import { LocalstoreComponent } from './localstore/localstore.component'
+>>>>>>> 4919efeb7ca5777e9f5ba26db28d6282f9e4b6c7
 
 
 
