@@ -32,11 +32,8 @@ import { EnviosComponent } from './envios/envios.component';
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
-<<<<<<< HEAD
-import { LocalstoreComponent } from './localstore/localstore.component'
-=======
-import { TorneosComponent } from './torneos/torneos.component';
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
+import { LocalstoreComponent } from './localstore/localstore.component';
+import { TorneosComponent} from './torneos/torneos.component'
 
 
 
@@ -102,8 +99,4 @@ export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-<<<<<<< HEAD
   PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, LocalstoreComponent]
-=======
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, TorneosComponent]
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794

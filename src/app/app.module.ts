@@ -18,16 +18,12 @@ import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos
 import { EditPerfilComponent } from './modals/edit-perfil/edit-perfil.component';
 import { NuevaDireccionComponent } from './modals/nueva-direccion/nueva-direccion.component';
 import { ModalInicioSesionComponent } from './modals/modal-inicio-sesion/modal-inicio-sesion.component';
-<<<<<<< HEAD
 import { ModalCarritoComponent } from './modals/modal-carrito/modal-carrito.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LocalstoreComponent } from './localstore/localstore.component';
 import { FilterMenuPipe } from './menuheader/filter-menu.pipe';
 import { OracionMayusculasPipe } from './pipes/oracion-mayusculas.pipe';
-=======
-import { TorneosComponent } from './torneos/torneos.component';
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
 
 /*import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';*/
 
@@ -36,11 +32,7 @@ import { TorneosComponent } from './torneos/torneos.component';
 @NgModule({
   declarations: [
     AppComponent, 
-<<<<<<< HEAD
     routingComponents, ProductosModalComponent, TerminosYCondicionesComponent, EditPerfilComponent, NuevaDireccionComponent, ModalInicioSesionComponent, ModalCarritoComponent, LocalstoreComponent, FilterMenuPipe, OracionMayusculasPipe
-=======
-    routingComponents, ProductosModalComponent, TerminosYCondicionesComponent, EditPerfilComponent, NuevaDireccionComponent, ModalInicioSesionComponent, TorneosComponent
->>>>>>> b4fcce64a1429fb475599907cc72e0ab06f71794
   ],
   entryComponents:[
     ProductosModalComponent, 
