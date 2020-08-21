@@ -29,13 +29,13 @@
         font-family: 'Anton';
         letter-spacing: 2px;
         text-transform: uppercase;
-        font-size: 150px;  
+        font-size: 80px;  
     }
 
     .texto p{
         margin-top: 45%;
         margin-left: 50px;
-        font-family: Meera;
+        font-family: 'Meera Inima', sans-serif;
     }
     /*--ENCABEZADO--*/
 
@@ -154,7 +154,7 @@
     }
 
     .contpesca h2 {
-        font-family: Meera;
+        font-family: 'Meera Inima', sans-serif;
         font-size: 25px;
         margin-top: 20px;
         text-align: center;
@@ -172,8 +172,10 @@
     }
 
     .contpesca p{
-        font-size: 18px;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 16px;
         text-align: center;
+
     }
 
     .contpesca{
@@ -249,7 +251,7 @@
         z-index: 1;
         margin-top: 40px;
         padding-left: -20px;
-        font-family: Meera;
+        font-family: 'Meera Inima', sans-serif;
         padding-top: 230px;
         text-align: center;
     }

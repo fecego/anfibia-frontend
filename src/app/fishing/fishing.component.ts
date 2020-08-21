@@ -15,9 +15,9 @@ import { ModalCarritoComponent } from '../modals/modal-carrito/modal-carrito.com
 export class FishingComponent implements OnInit {
 
   public customOptions: OwlOptions = {
-    items: 8,
+    items: 16,
     autoplay: true,
-    autoplayTimeout: 2500,
+    autoplayTimeout:2500,
     autoplayHoverPause: true,
     loop: true,
     mouseDrag: true,
@@ -25,7 +25,6 @@ export class FishingComponent implements OnInit {
     pullDrag: false,
     dots: true,
     margin: 30,
-    
     navSpeed: 2500,
     navText: ['ANTERIOR', 'SIGUIENTE'],
     responsive: {
