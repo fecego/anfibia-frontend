@@ -1,4 +1,47 @@
+.margin-most-sold{
+    margin-top: 30px;
+}
 
+
+.fila-video{
+    margin-top: 10px;
+    
+}
+
+.boton{
+    position: absolute; 
+    bottom: 15%; 
+    left: 25%;
+}
+
+
+
+.videoBackground{
+    width: 100%; 
+    height: 500px;  
+    background-image: url('/assets/imagenes/fishing/stella-carretes3.png');
+    background-repeat: repeat; 
+    background-size: cover;
+    margin: 10px; 
+    margin-top: 10px;
+}
+
+
+.divBegin{
+    height: 550px;
+}
+
+@media only screen and (max-width: 390px) and (min-width: 321px){
+    .divBegin{
+        height: auto;
+        
+    }
+
+    .videoBackground{
+        height: 350px;
+    }
+ 
+}
 
 .videoP{
     position: absolute;
@@ -47,6 +90,8 @@
 
 
 
+
+
 .backImageBegin2{
     background-image: url('/assets/imagenes/paginaInicial/caceria6.png');
        background-position: bottom;
@@ -57,6 +102,16 @@
 
 
 
+@media only screen and (max-width: 390px) and (min-width: 321px){
+   .backImageBegin{
+       height: 300px;
+   }
+
+   .backImageBegin2{
+       height: 300px;
+   }
+ 
+}
 
 .texto-videoPrueba{
     background: #fff;
@@ -81,6 +136,14 @@
     color: #000;
     text-align: center;
     padding-top: 10px;
+}
+
+@media only screen and (max-width: 390px) and (min-width: 321px){
+  .texto-videoPrueba{
+      
+      padding: 20px;
+  }
+ 
 }
 
 
@@ -142,8 +205,8 @@
   }
   
   .pruebaBotones2 button:hover{
-    background: #000;
-    color: #fff;
+    background: #A4A4A4;
+    color: #000;
     transition: 0.5s ease-in-out;
   }
       
@@ -160,7 +223,7 @@
         }
         
         .productyellow{
-            margin-top: -50px !important;
+            
         }
     }
 
@@ -191,15 +254,13 @@
         }
 
         .productyellow{
-            margin-top: -80px !important;
+           
         }
     }
 
     /*Media query en celulares vertical*/
     @media only screen and (max-width: 390px) and (min-width: 321px){
-        .uno{
-            margin-top: 500px;
-        }
+       
         .boton2 .bttn-dark2{
             margin-bottom: 20%;
         }
@@ -226,6 +287,7 @@
         }
     }
     @media only screen and (max-width: 567px) and (min-width: 392px){
+
         .uno{
             margin-top: 500px;
         }
@@ -285,8 +347,11 @@
     /*Media query en celulares vertical*/
     @media only screen and (max-width: 390px) and (min-width: 321px){
         .fotocazador{
-            margin-top: -900px;
+            margin-top: -1000px;
         }
+
+
+
 
         .fila2{
             margin-top: -155px;
@@ -301,6 +366,8 @@
             margin-top: -175px;
         }
     }
+
+
     
 #titulo-yellow{
     font-size: 90px;
@@ -1150,6 +1217,9 @@
         left: 50%;
     }
 
+    
+
+
     .textos-iniciales p{
         font-family: 'Meera Inimai', sans-serif;
         font-size: 17px; 
@@ -1157,6 +1227,22 @@
         margin-top: 6%;
         color: #000; 
         text-align: center;
+    }
+
+
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+    .textos-iniciales{
+        margin-top: 0;
+    }
+
+    .textos-iniciales h3{
+        padding: 5px;
+    }
+
+      .textos-iniciales p{
+          padding: 10px;
+      }
+     
     }
 
         /*Media query en tablets vertical*/
@@ -1179,6 +1265,7 @@
                 margin-top: 6%;
                 color: #000; 
                 text-align: center;
+                
             }
         }
         @media only screen and (max-width: 567px) and (min-width: 392px){
@@ -1314,22 +1401,15 @@
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .fondo-imagen{
                 margin-top: 30px;
-                background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
-                /* Full height */
-                width: 100%;
                 height: 800px;
-                max-height: 30%; 
-                /* Create the parallax scrolling effect */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                padding-top: 10px;
             }
         }
 
         /*Media query en celulares vertical*/
         @media only screen and (max-width: 390px) and (min-width: 321px){
             .fondo-imagen{
-                margin-top: 200px;
+                margin-top: 170px;
                 background-image: url('/assets/imagenes/paginaInicial/2cambiada.png');
                 /* Full height */
                 width: 100%;
@@ -1959,7 +2039,7 @@ background: rgba(0, 0, 0, 0.3);
         /*Media query en celulares vertical*/
         @media only screen and (max-width: 390px) and (min-width: 321px){
             .boton1 {
-                margin-bottom: 10% ;
+                margin-bottom: 20% ;
             }
         }
    
@@ -2106,9 +2186,8 @@ background: rgba(0, 0, 0, 0.3);
 
         /*Media query en celulares vertical*/
         @media only screen and (max-width: 390px) and (min-width: 321px){
-            .product-details{
-                margin-left: 15px;
-            }
+         
+            
 
             .product-details .product-price span{
                 font-size: 18px;
@@ -2249,6 +2328,10 @@ background: rgba(0, 0, 0, 0.3);
         max-height: 100%;
     }
 
+
+
+   
+
     .pi-left h2{
         font-family: 'Anton', sans-serif;
         font-size: 70px;
@@ -2267,6 +2350,13 @@ background: rgba(0, 0, 0, 0.3);
         @media only screen and (max-width: 390px) and (min-width: 321px){
             .pi-left h2{
                 margin-top: 20px;
+                font-size: 50px;
+               
+            }
+
+            .pi-left h1{
+              
+              
             }
         }
         @media only screen and (max-width: 567px) and (min-width: 392px){
@@ -2293,13 +2383,16 @@ background: rgba(0, 0, 0, 0.3);
          @media only screen and (max-width: 768px) and (min-width: 641px){
             .pi-left h1{
                 font-family: 'Meera Inimai', sans-serif;
-                font-size: 13px !important; 
+                font-size: 13px;  
                 padding-left: 20px; 
-                margin-top: 4% !important;
+                margin-top: 4%; 
                 color: #000; 
                 text-align: center;
             }
          }
+
+
+         
 
     /*.pi-left span{
         font-family:'Prometo-Medium';
@@ -2985,7 +3078,7 @@ background: rgba(0, 0, 0, 0.3);
         justify-content: center;
         background: #f0f0f0;
         height: 300px;
-        padding: 50px;
+        padding: 65px;
        
     }
     
@@ -3684,11 +3777,107 @@ Media query usado
 */
 @media screen and (max-width: 640px) and (min-width: 568px){
 
+ 
+
+    .publicidad-imagen5{
+        height: auto;
+    }
+
+    .publicidad-imagen6{
+        height: auto;
+    }
+
+
+    .publicidad-imagen2{
+        height: auto;
+    }
+
+    .publicidad-imagen3{
+        height: auto;
+    }
+
+    .boton3{
+        bottom: 0%;
+    }
+
+    .boton{
+        position: absolute; 
+        bottom: 5%;
+        left: 25%;
+      
+    }
+
+
+    .publicidad-imagen4{
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+
+
+    .publicidad-imagen10{
+       
+        /* Full height */
+        width: 100%;
+        height: auto;
+        max-height: 100%; 
+        
+    }
+
+
+
+    .divBegin{
+     height: 350px;
+    }
+
+    .backImageBegin{
+        height: 300px;
+    }
+ 
+    .backImageBegin2{
+        height: 300px;
+    }
+
+    .botonesInicio button{
+        font-size: 12px;
+        padding-left: 0px;
+        width: 100%;
+        padding-top: 4px;
+
+
+    }
+
+    .texto-videoPrueba{
+        height: auto;
+    }
+
+    .texto-videoPrueba h1{
+        padding-top: 0px;
+        font-size: 18px;
+    }
+
+    .texto-videoPrueba h2{
+        font-size: 12px;
+    }
+
+    .fila-video{
+        margin-top: 100px;
+    }
+
+    .videoBackground{
+        height: 300px;
+    }
+
+    .fondo-imagen{
+        height: 350px;
+    }
+
 
     .publicidad-inicial{
         height: auto;
         padding-bottom: 20px;
     }
+
        
     .pi-left{
         padding-right: 0;
@@ -3703,12 +3892,31 @@ Media query usado
     }
 
     .pi-left h1{
-        font-size: 20px;
+        font-size: 15px;
         padding-left: 20px; 
-        margin-top: 20%; 
+        margin-top: 15%;
+        color: #000; 
         
     }
 
+    .pi-left h2{
+        font-size: 45px;
+        
+    }
+
+    .fotocazador{
+        height: 350px;
+    }
+
+    .textos-iniciales h3{
+        font-size: 45px;
+    }
+
+    .textos-iniciales p{
+        font-size: 15px;
+    }
+
+   
    
 
     .product-Title h1{
@@ -3758,12 +3966,16 @@ Media query usado
         font-weight: bolder;
         text-align: center;
     }
+
+    section{
+        height: 70vh;
+    }
     
 
     section .screen .content{
         position: relative;
         width: 90%;
-        height: 45%;
+        height: 35%;
         background: #fff;
         padding: 20px;
         box-sizing: border-box;
@@ -3781,18 +3993,18 @@ Media query usado
 
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
         letter-spacing: 2px;
         font-size: 20px;
+        font-weight: bolder;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
-        font-size: 10px;
-        font-weight: bolder;
-        font-weight: bold;
+        font-size: 14px;
+   
     
     }
 
@@ -3888,10 +4100,31 @@ Black Berry  Z10 Portrait  -- Si lo afecta
 Iphone 7 Portrait
  */
  @media only screen and (max-width: 390px) and (min-width: 321px){
+
+   
+
+    .uno{
+        margin-top: 100px;
+    }
+
+    .videoBackground{
+        height: 300px;
+        width: 100%;
+
+    }
+
+
+
     .pi-left{
         padding-right: 0;
         padding-left: 0;
         text-align: left;
+    }
+
+
+    .pi-left h1{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
     }
 
     .pi-left img{
@@ -3901,13 +4134,9 @@ Iphone 7 Portrait
         max-height: 100%;
     }
 
-    .pi-left h1{
-        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 5%; color: #000; font-weight: bolder;
-    }
+  
 
-    .pi-left span{
-        font-family:'Prometo-Medium'; color: #000;
-    }
+  
 
     .publicidad-inicial{
         padding-top: 20px;
@@ -3918,9 +4147,15 @@ Iphone 7 Portrait
         background: #fff;
     }
 
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+        .textos-iniciales{
+            padding-bottom: 20px;
+        }
+    }
+
 
     .product-Title h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         padding-top: 20px;
         color: #000;
         font-size: 30px;
@@ -3951,7 +4186,7 @@ Iphone 7 Portrait
 
     .contenido-main h1{
         color: black;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Meera Inima', sans-serif;
         font-size: 20px;
         text-align: center;
         letter-spacing: 2px;
@@ -3959,10 +4194,9 @@ Iphone 7 Portrait
 
     .contenido-main p{
         color: black;
-        font-family: 'Prometo-Light';
-        font-size: 30px;
-        letter-spacing: 3px;
-        font-weight: bolder;
+        font-family: 'Anton', sans-serif;
+        font-size: 18px;
+        letter-spacing: 1px;
         text-align: center;
     }
 
@@ -3979,7 +4213,7 @@ Iphone 7 Portrait
 
     section .screen .content{
         position: relative;
-        width: 110px;
+        width: 150px;
         height: 200px;
         background: #fff;
         padding: 10px;
@@ -3998,18 +4232,18 @@ Iphone 7 Portrait
 
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
         letter-spacing: 2px;
         font-size: 18px;
+        font-weight: bold;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
         font-size: 13px;
-        font-weight: bolder;
-        font-weight: bold;
+       text-align: justify;
     
     }
 
@@ -4020,10 +4254,9 @@ Iphone 7 Portrait
         top: 85%;
         left:50%;
         transform: translate(-50%, -50%);
-        font-size: 15px;
+        font-size: 13px;
         text-transform: uppercase;
         text-decoration: none;
-        font-family: arial;
         background: #fff;
         border: 2px solid #000;
         padding: 4px;
@@ -4031,7 +4264,7 @@ Iphone 7 Portrait
         overflow: hidden;
         width: 80%;
         text-align: center;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inima', sans-serif;
   
     }
 
@@ -4149,6 +4382,57 @@ Surface Pro 3 Portrait
 */
 @media only screen and (min-width: 770px) and (max-width: 999px) {
 
+    .split{
+        height: 300px;
+    }
+    .publicidad-imagen10{
+        height: auto;
+    }
+
+    .publicidad-imagen4{
+        height: auto;
+    }
+
+    .publicidad-imagen11{
+        height: auto;
+    }
+
+
+    .uno{
+        margin-top: 50px;
+    }
+
+    .textos-iniciales h3{
+        font-size: 40px;
+    }
+
+    .textos-iniciales p{
+        font-size: 15px;
+    }
+
+    .divBegin{
+        height: auto;
+        
+        
+    }
+
+    .backImageBegin{
+        height: 500px;
+    }
+
+
+    .backImageBegin2{
+        height: 500px;
+    }
+
+    .fondo-imagen{
+        height: 500px;
+    }
+
+    .fondo-imagen2{
+        height: 600px;
+    }
+
     .pi-left{
         padding-right: 0;
         padding-left: 0;
@@ -4162,11 +4446,15 @@ Surface Pro 3 Portrait
     }
 
     .pi-left h1{
-        font-family: 'Prometo-Thin';font-size: 30px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
+        font-size: 15px;
+    }
+
+    .pi-left p{
+        font-size: 15px;
     }
 
     .pi-left span{
-        font-family:'Prometo-Medium'; color: #000;
+        font-weight: bold;
     }
 
     .publicidad-inicial{
@@ -4179,10 +4467,10 @@ Surface Pro 3 Portrait
     }
 
     .product-Title h1{
-        font-family: 'Prometo-x-bold';
-        padding-top: 20px;
+       
+       
         color: #000;
-        font-size: 60px;
+        font-size: 40px;
     }
 
     
@@ -4276,17 +4564,16 @@ Surface Pro 3 Portrait
 
 
     section .screen .content h1{
-        font-family: 'Prometo-x-bold';
-        color: black;
-        font-size: 20px;
+        
+        
+        font-size: 25px;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
-        color: black;
+      
+        
         font-size: 15px;
-        font-weight: bolder;
-        font-weight: bold;
+        
     
     }
 
@@ -4533,6 +4820,109 @@ kindlefire landscape -- Si lo afecta
 */
 @media only screen and (max-width: 768px) and (min-width: 641px){
 
+    .productyellow{
+        margin-top: 10px;
+    }
+
+    .publicidad-imagen5{
+        height: auto;
+    }
+
+    .publicidad-imagen6{
+        height: auto;
+    }
+
+    .publicidad-imagen10{
+        height: auto;
+        margin-bottom: 100px;
+       
+    }
+
+    .split{
+        height: 300px;
+    }
+
+
+    .product-tumb img{
+        padding: 30px;    
+    }
+
+    
+    .contenido-main p{
+        font-size: 40px;
+        font-family: 'Anton', sans-serif;
+    }
+
+    .contenido-main h1{
+        font-size: 35px;
+        font-family: 'Meera Inima', sans-serif;
+    }
+
+    .uno{
+        margin-top: 10px;
+    }
+
+    .pi-left h2{
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+
+    .pi-left h1{
+        font-size: 15px;
+        letter-spacing: 0px;
+    }
+
+
+    .textos-iniciales h3{
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+
+    .textos-iniciales p{
+        font-size: 15px;
+    }
+
+   .fondo-imagen{
+       height: 300px;
+   }
+
+   .fondo-imagen2{
+       height: 650px;
+   }
+
+    .texto-videoPrueba button{
+        font-size: 15px;
+    }
+
+    .texto-videoPrueba{
+        padding: 10px;
+
+    }
+
+
+    .texto-videoPrueba h1{
+        font-size: 25px;
+       
+    }
+
+
+    .texto-videoPrueba h2{
+        font-size: 15px;
+
+    }
+
+    .backImageBegin{
+        height: 400px;
+    }
+
+    .backImageBegin2{
+        height: 400px;
+    }
+
+    .divBegin{
+        height: auto;
+    }
+
     .pi-left{
         padding-right: 0;
         padding-left: 0;
@@ -4545,12 +4935,9 @@ kindlefire landscape -- Si lo afecta
         max-height: 100%;
     }
 
-    .pi-left h1{
-        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 20%; color: #000; font-weight: bolder;
-    }
-
+  
     .pi-left span{
-        font-family:'Prometo-Medium'; color: #000;
+        font-weight: bold;
     }
 
     .publicidad-inicial{
@@ -4583,28 +4970,7 @@ kindlefire landscape -- Si lo afecta
         max-width: 100%;
     }
 
-    .contenido-main{
-        background: white;
-        padding: 40px;
-    }
-
-    .contenido-main h1{
-        color: black;
-        font-family: 'Prometo-x-bold';
-        font-size: 50px;
-        text-align: center;
-        letter-spacing: 2px;
-    }
-
-    .contenido-main p{
-        color: black;
-        font-family: 'Prometo-Light';
-        font-size: 30px;
-        letter-spacing: 3px;
-        font-weight: bolder;
-        text-align: center;
-    }
-
+    
     section{
         position: relative;
         height: 80vh;
@@ -4627,19 +4993,16 @@ kindlefire landscape -- Si lo afecta
     }
 
     section .screen .content h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
-        letter-spacing: 2px;
+        font-weight: bold;
         font-size: 15px;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inima', sans-serif;
         color: black;
-        font-size: 15px;
-        font-weight: bolder;
-        font-weight: bold;
-    
+        font-size: 15px;    
     }
 
     .button-slide a{
@@ -4800,8 +5163,42 @@ kindlefire landscape -- Si lo afecta
 */
 @media only screen and (max-width: 567px) and (min-width: 392px){
 
-   
 
+
+
+    .product-tumb img{
+        padding: 30px;
+    }
+
+    .uno{
+        margin-top: 240px;
+    }
+
+    .divBegin{
+        height: auto;
+    }
+
+    .backImageBegin{
+        height: 400px;
+    }
+
+    .backImageBegin2{
+        height: 400px;
+    }
+
+    .videoBackground{
+        height: 300px;
+    }
+
+
+    
+
+
+
+
+
+
+    /*========================================================================*/
     .pi-left{
         padding-right: 0;
         padding-left: 0;
@@ -4815,8 +5212,12 @@ kindlefire landscape -- Si lo afecta
         max-height: 100%;
     }
 
+    .pi-left h2{
+        font-size: 40px;
+    }
+
     .pi-left h1{
-        font-family: 'Prometo-Thin';font-size: 20px; padding-left: 20px; margin-top: 5%; color: #000; font-weight: bolder;
+        font-size: 15px;
     }
 
     .pi-left span{
@@ -4833,12 +5234,7 @@ kindlefire landscape -- Si lo afecta
         
     }
 
-    .product-Title h1{
-        font-family: 'Prometo-x-bold';
-        padding-top: 20px;
-        color: #000;
-        font-size: 30px;
-    }
+   
 
     .product-card{
         width: 100%;
@@ -4890,20 +5286,17 @@ kindlefire landscape -- Si lo afecta
     }
 
     .contenido-main h1{
-        color: black;
-        font-family: 'Prometo-x-bold';
+
+       
         font-size: 28px;
-        text-align: center;
-        letter-spacing: 2px;
+     
     }
 
     .contenido-main p{
-        color: black;
-        font-family: 'Prometo-Light';
+     
+        
         font-size: 30px;
-        letter-spacing: 3px;
-        font-weight: bolder;
-        text-align: center;
+      
     }
 
     .contenido-main hr{
@@ -4942,18 +5335,14 @@ kindlefire landscape -- Si lo afecta
 
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
-        color: black;
-        letter-spacing: 1px;
+     
         font-size: 14px;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
-        color: black;
+
         font-size: 11px;
-        font-weight: bolder;
-        font-weight: bold;
+     
     
     }
 
@@ -5032,70 +5421,62 @@ kindlefire landscape -- Si lo afecta
 */
 @media only screen and (max-width: 568px) and (min-width: 502px){
 
-    .pi-left{
-        padding-right: 0;
-        padding-left: 0;
-        text-align: left;
+
+    .fotocazador{
+        height: auto;
     }
 
-    .pi-left img{
-        width: 100%;
-        height: 500px;
-        max-width: 100%; 
-        max-height: 100%;
+    .pi-left h2{
+        font-size: 45px;
     }
 
     .pi-left h1{
-        font-family: 'Prometo-Thin';
-        font-size: 25px;
-        padding-left: 20px; 
-        margin-top: 5%; 
-        color: #000; 
-        font-weight: bolder;
+      font-size: 15px;
     }
 
-    .pi-left span{
-        font-family:'Prometo-Medium';
-        color: #000;
+
+    .uno{
+        margin-top: 10px;
     }
 
     .publicidad-inicial{
-        padding-top: 20px;
-        padding-bottom: 10px; 
-        padding-left: 0; 
-        position: relative;
-        height: 1200px; 
-        
+        height: auto;
     }
 
-    .product-Title h1{
-        font-size: 40px;
+    .fondo-imagen{
+        height: 700px;
     }
 
-    .product-card{
-        width: 70%;
+    .fondo-imagen2{
+        height: 700px;
     }
 
-    .button-slide a{
-        font-size: 10px;
+    .botonesInicio button{
+        font-size:20px;
     }
 
-    .seccion-productos-extras h1{
-        font-size: 40px;
+    .texto-videoPrueba h1{
+        font-size: 35px;
     }
 
-    .wrapper{
-        width: 80%;
+    .texto-videoPrueba h2{
+        font-size: 20px;
     }
 
 
-    .contenido-main h1{
-        font-size: 25px;
-    }
+    .divBegin{
+        height: auto;
+       }
+       
+       .backImageBegin{
+           height: 800px;
+       }
+       
+       .backImageBegin2{
+           height: 800px;
+       }
 
-    .contenido-main hr{
-        background: none;
-    }
+   
 
 }
 
@@ -5106,6 +5487,146 @@ kindlefire landscape -- Si lo afecta
 Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){
+
+    .margin-most-sold{
+        margin-top: 60px;
+    }
+
+
+  
+
+    .last-text-fit h1{
+        font-size: 50px;
+    }
+
+    .last-text-fit p{
+        font-size: 15px;
+    }
+
+    .pi-left h2{
+        font-size: 30px;
+    }
+
+    .pi-left h1{
+        font-size: 13px;
+    }
+
+    .textos-iniciales h3{
+        font-size: 30px;
+    }
+
+
+    .textos-iniciales p{
+        font-size: 13px;
+    }
+
+    .uno{
+        margin-top: 10px;
+    }
+    .fondo-imagen2{
+        height: 350px;
+    }
+
+    
+      .publicidad-imagen5{
+        height: auto;
+    }
+
+    .publicidad-imagen6{
+        height: auto;
+    }
+
+
+    .publicidad-imagen2{
+        height: auto;
+    }
+
+    .publicidad-imagen3{
+        height: auto;
+    }
+
+    .boton3{
+        bottom: 0%;
+    }
+
+    .boton{
+        position: absolute; 
+        bottom: 5%;
+        left: 25%;
+      
+    }
+
+
+    .publicidad-imagen4{
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+
+
+    .publicidad-imagen10{
+       
+        /* Full height */
+        width: 100%;
+        height: auto;
+        max-height: 100%; 
+        
+    }
+
+
+
+    .divBegin{
+     height: auto;
+    }
+
+    .backImageBegin{
+        height: 300px;
+    }
+ 
+    .backImageBegin2{
+        height: 300px;
+    }
+
+    .botonesInicio button{
+        font-size: 12px;
+        padding-left: 0px;
+        width: 100%;
+        padding-top: 4px;
+
+
+    }
+
+    .texto-videoPrueba{
+        height: auto;
+    }
+
+    .texto-videoPrueba h1{
+        padding-top: 0px;
+        font-size: 18px;
+    }
+
+    .texto-videoPrueba h2{
+        font-size: 12px;
+    }
+
+    .fila-video{
+        margin-top: 100px;
+    }
+
+    .videoBackground{
+        height: 300px;
+    }
+
+    .fondo-imagen{
+        height: 350px;
+    }
+
+
+    .publicidad-inicial{
+      height: auto;
+        
+    }
+
 
     .pi-left{
         padding-right: 0;
@@ -5120,28 +5641,7 @@ Iphone 5 Portrait
         max-height: 100%;
     }
 
-    .pi-left h1{
-        font-family: 'Prometo-Thin';
-        font-size: 18px;
-        padding-left: 20px; 
-        margin-top: 5%; 
-        color: #000; 
-        font-weight: bolder;
-    }
-
-    .pi-left span{
-        font-family:'Prometo-Medium';
-        color: #000;
-    }
-
-    .publicidad-inicial{
-        padding-top: 20px;
-        padding-bottom: 10px; 
-        padding-left: 0; 
-        position: relative;
-        height: 800px; 
-        
-    }
+    
 
     .product-Title h1{
         font-size: 30px;
@@ -5198,24 +5698,24 @@ Iphone 5 Portrait
 
 
     section .screen .content h1{
-        font-family: 'Prometo-Medium';
-        color: black;
+        font-family: 'Meera Inima', sans-serif;
+        color: #000;
         letter-spacing: 1px;
         font-size: 14px;
     }
 
     section .screen .content p{
-        font-family: 'Prometo-Light';
-        color: black;
+        font-family: 'Meera Inima', sans-serif;
+        color: #000;
         font-size: 11px;
-        font-weight: bolder;
-        font-weight: bold;
+      
     
     }
 
     .button-slide a{
         font-size: 10px;
         padding: 4px;
+        font-family: 'Meera Inima', sans-serif;
     }
 
     .seccion-productos-extras h1{

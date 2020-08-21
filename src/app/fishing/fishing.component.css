@@ -6,6 +6,94 @@ Surface 3 Pro Landscape--,
 Ipad Pro Landscape--
 Ipad Mini 2.4 Landscape--*/
 
+.backDraw{
+    background-image: url('/assets/imagenes/fishing/ocean.jpg');
+    height: 750px; 
+    padding: 35px;
+}
+
+.product-details h4{
+    font-family: 'Meera Inima', sans-serif;
+   
+    font-size: 14px;
+    color: #000;
+  }
+
+  .product-details h4 span{
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+  
+  
+  .product-details h5{
+    font-family: 'Meera Inima', sans-serif;
+    color: #000;
+    font-size: 14px;
+  
+  }
+
+  .product-details h5 span{
+      color: red;
+      font-weight: bold;
+  }
+  
+  .product-details h3{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    color: #000;
+  }
+
+ 
+  
+  .product-details h4 a {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+    font-family: 'Meera Inima', sans-serif;
+  }
+  
+  .product-details h4 a:hover {
+    color: #162953;
+  }
+  
+  .product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+  }
+
+.product-Title h1{
+    font-family: 'Anton', sans-serif;
+    padding-top: 20px;
+    color: #000;
+    font-size: 40px;
+    text-align: left;
+    text-transform: none;
+}
+
+.product-Title p{
+    font-family: 'Prometo-thin';
+    color: #000;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.product-Title hr{
+    background: #04B4AE;
+    width: 20%;
+    height:3px;
+    margin-left: 0;
+    
+   
+}
+
 .pruebaBotones ul li{
     list-style: none;
   
@@ -47,6 +135,8 @@ Ipad Mini 2.4 Landscape--*/
     right: 5%;
    
   }
+
+
   
   .pruebaBotones2 button{
     background: #fff;
@@ -60,10 +150,122 @@ Ipad Mini 2.4 Landscape--*/
   }
   
   .pruebaBotones2 button:hover{
-    background: #000;
-    color: #fff;
+    background: #A4A4A4;
+    color: #000;
     transition: 0.5s ease-in-out;
   }
+
+.product-details {
+    padding: 30px;
+}
+
+.product-card {
+    width: 100%;
+    position: relative;
+    
+    margin: 50px auto;
+    background: #fafafa;
+    height: auto;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+   
+
+}
+
+.product-card:hover{
+    
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    transition: all 300ms ease-in;
+    
+}
+
+.badge1 {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-family: 'Meera Inimai', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    background: #000;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: none;
+}
+
+.badge2 {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: 700;
+    background: #ff0000;
+    color: #fff;
+    padding: 3px 10px;
+}
+
+
+
+.badge3 {
+    position: absolute;
+    right: 5px;
+    top: 47%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background-color: #000000;
+    
+    
+    padding: 3px 10px;
+}
+
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    height: 300px;
+    padding: 65px;
+   
+}
+
+.product-tumb img {
+
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+
+.product-tumb img:hover {
+  transition: all 300ms ease-in;
+  transform: scale(1.2);
+}
+
+.product-details {
+    padding: 30px;
+}
+
+.imageClass{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+
+.imageClass img{
+    width: 100%;
+    max-height: 100%;
+}
+
+
       
 
 .pruebaDos{
@@ -95,14 +297,17 @@ Ipad Mini 2.4 Landscape--*/
 .inicioImage{
     padding: 30px;
     background: #fff;
-    float: right;
+    
     
 }
 
-
-.fondoI-pesca{
-    background: #fff;
+.inicioImage img{
+    width: 100%;
+    height: 100%;
 }
+
+
+
 
 .inicioImage img{
     width: 70%;
@@ -363,9 +568,9 @@ Ipad Mini 2.4 Landscape--*/
 .texto-img-inside{
     position: absolute;
     background: #fff;
-    top: 60%;
+    top: 0%;
     width: 35%;
-    height: 40%;
+    height: 60%;
     
     
 }
@@ -384,7 +589,7 @@ Ipad Mini 2.4 Landscape--*/
     font-size: 15px;
     color: #000;
     text-align: center;
-    padding: 1px;
+    padding: 10px;
     
 }
 
@@ -870,7 +1075,7 @@ top: 85%;
    
    
     width: 100%;
-    height: 550px;
+    height: 650px;
   
     /* Create the parallax scrolling effect */
    
@@ -883,7 +1088,7 @@ top: 85%;
 
 .publicidad8{
     width: 100%;
-    height: 550px;
+    height: 650px;
 }
 
 .publicidad8 img{
@@ -1476,12 +1681,7 @@ html,body{
     height: 100%;
   }
   
-  .container{
-    padding: 0;
-    margin: 0 auto;
-    width: 1140px;
-    
-  }
+ 
   
   h1{
     position: relative;
@@ -1519,7 +1719,7 @@ html,body{
     .item h2 a{
         color: #fff;
         padding: 10px;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         position: absolute; 
         top: 35%;
         /*color: transparent;
@@ -1720,300 +1920,7 @@ html,body{
     }
   
 
-    
-    .product-card {
-        width: 100%;
-        position: relative;
-        
-        margin: 50px auto;
-        background: #fafafa;
-        height: auto;
-        transition: all 200ms ease-in;
-        
-       
-    
-    }
-    
-    .product-card:hover{
-       -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        transition: all 300ms ease-in;
-    
-    }
-    
-    .badge1 {
-        position: absolute;
-        left: 0;
-        top: 13px;
-        font-family: 'Meera Inimai', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 700;
-        background: #000;
-        color: #fff;
-        padding: 3px 10px;
-        border-radius: none;
-    }
-
-    .badge2 {
-        position: absolute;
-        left: 0;
-        top: 40px;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: 700;
-        background: #ff0000;
-        color: #fff;
-        padding: 3px 10px;
-    }
-
    
-
-    .badge3 {
-        position: absolute;
-        right: 5px;
-        top: 47%;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: 700;
-        color: #fff;
-        background-color: #000000;
-        
-        
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 300px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-    
-        max-width: 100%;
-        max-height: 100%;
-        transition: all 200ms ease-in;
-        transform: scale(1);
-    }
-    
-    .product-tumb img:hover {
-      transition: all 300ms ease-in;
-      transform: scale(1.2);
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: bolder;
-        text-transform: uppercase;
-        color: #000;
-        margin: 13px;
-        font-family: 'Meera Inimai', sans-serif;
-    }
-    
-    .product-details h4{
-        font-family: 'Meera Inima', sans-serif;
-        
-        font-size: 14px;
-        color: #000;
-      }
-      
-      .product-details h5{
-        font-family: 'Meera Inima', sans-serif;
-        
-        font-size: 14px;
-        color: #000;
-      }
-      
-      .product-details h3{
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 14px;
-        color: #000;
-      }
-      
-      .product-details h4 a {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 10px;
-        color: #000000;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 15px;
-        font-family: 'Meera Inima', sans-serif;
-      }
-      
-      .product-details h4 a:hover {
-        color: #162953;
-      }
-      
-      .product-details p {
-        font-size: 15px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-      }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        position: absolute;
-        top: 85%;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 20px;
-        color: #000000;
-        font-weight: 600;
-        font-family: 'Prometo-Medium';
-    }
-    
-    .product-price i{
-      color: transparent;
-      float: right;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #000;
-    }
-    
-    .product-price i:hover{
-      color: #ff0000;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #ff0000;
-    }
-    
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-        padding-left: 35px;
-        position: absolute;
-        top: 85%;
-        right: 10%;
-        
-    }
-    
-    .product-links a {
-        background: none;
-        color: #000000;
-        transition: 0.3s;
-        font-size: 17px;
-        padding: 5px;
-    }
-    
-    .product-links a:hover {
-        color: red;
-    }
-    
-    
-    .product-links-wish{
-        position: absolute;
-        bottom: 3%;
-        left: 3%;
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: bolder;
-        color: #000000;
-        border: 1px solid #000;
-        padding: 4px;
-        text-decoration: none;
-        font-size: 13px;
-        transition: 0.5s ease-in-out;
-        border-radius: 2px;
-        
-      }
-      
-      .product-links-wish:hover{
-        background: #000000;
-        color: #ffffff;
-      }
-      
-      
-      .product-links-bag {
-        position: absolute;
-        bottom: 3%;
-        right: 3%;
-        font-family: 'Meera Inimai', sans-serif;
-        font-weight: bolder;
-        font-size: 13px;
-        color: #000000;
-        border: 1px solid #000;
-        padding: 4px;
-        text-decoration: none;
-        transition: 0.5s ease-in-out;
-        border-radius: 2px;
-      }
-      
-      .product-links-bag:hover{
-        background: #000000;
-        color: #ffffff;
-      }
-
-    .product-links-bag2 {
-        position: absolute;
-        top: 85%;
-        right: 6%;
-        font-family: 'Prometo-Medium';
-        font-size: 13px;
-        color: #000000;
-        border: 1px solid #000000;
-        padding: 4px;
-        text-decoration: none;
-      }
-      
-      .product-links-bag2:hover{
-        background: #000000;
-        color: #ffffff;
-      }
-
-
-      .product-Title h1{
-        font-family: 'Anton', sans-serif;
-        padding-top: 20px;
-        padding-bottom: 0;
-        margin-bottom: 0;
-        color: #000;
-        font-size: 40px;
-        text-align: left;
-        text-transform: none;
-    }
-
-    .product-Title p{
-        font-family: 'Prometo-thin';
-        color: #000;
-        font-size: 17px;
-        text-align: center;
-        font-weight: bolder;
-    }
-
-    .product-Title hr{
-        background: #04B4AE;
-        width: 20%;
-        height: 2px;
-        margin-left: 0;
-       
-      
-       
-    }   
 
     .categorias-content{
         padding-top: 50px;
@@ -3031,231 +2938,7 @@ html,body{
     }
   
 
-    
-    .product-card {
-        width: 100%;
-        position: relative;
-        box-shadow: 0 2px 7px #dfdfdf;
-        margin: 50px auto;
-        background: #fafafa;
-        height: 550px;
-        transition: all 200ms ease-in;
-        transform: scale(1);
-       
-    
-    }
-    
-    .product-card:hover{
-       /* -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        transition: all 300ms ease-in;
-        transform: scale(1.1);*/
-    }
-    
-    .badge {
-        position: absolute;
-        left: 0;
-        top: 20px;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        background: #000;
-        color: #fff;
-        padding: 3px 10px;
-    }
-    
-    .product-tumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 300px;
-        padding: 50px;
-        background: #f0f0f0;
-    }
-    
-    .product-tumb img {
-    
-        max-width: 100%;
-        max-height: 100%;
-        transition: all 200ms ease-in;
-        transform: scale(1);
-    }
-    
-    .product-tumb img:hover {
-      transition: all 300ms ease-in;
-      transform: scale(1.2);
-    }
-    
-    .product-details {
-        padding: 30px;
-    }
-    
-    .product-catagory {
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 18px;
-    }
-    
-    .product-details h4 a {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        color: #000000;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 18px;
-        font-family: 'Prometo-Medium';
-    }
-    
-    .product-details h4 a:hover {
-        color: #162953;
-    }
-    
-    .product-details p {
-        font-size: 15px;
-        line-height: 22px;
-        margin-bottom: 18px;
-        color: #999;
-    }
-    
-    .product-bottom-details {
-        overflow: hidden;
-        position: absolute;
-        top: 85%;
-    }
-    
-    .product-bottom-details div {
-        float: left;
-        width: 50%;
-    }
-    
-    .product-price {
-        font-size: 20px;
-        color: #000000;
-        font-weight: 600;
-        font-family: 'Prometo-Medium';
-    }
-    
-    .product-price i{
-      color: #ffffff;
-      float: right;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #000;
-    }
-    
-    .product-price i:hover{
-      color: #ff0000;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #ff0000;
-    }
-    
-    
-    .product-price small {
-        font-size: 80%;
-        font-weight: 400;
-        text-decoration: line-through;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    
-    .product-links {
-        text-align: right;
-        padding-left: 35px;
-        position: absolute;
-        top: 85%;
-        right: 10%;
-        
-    }
-    
-    .product-links a {
-        background: none;
-        color: #000000;
-        transition: 0.3s;
-        font-size: 17px;
-        padding: 5px;
-    }
-    
-    .product-links a:hover {
-        color: red;
-    }
-    
-    
-    .product-links-wish{
-      position: absolute;
-      top: 92%;
-      left: 1%;
-      font-family: 'Prometo-Medium';
-      color: #000000;
-      border: 1px solid #000000;
-      padding: 4px;
-      text-decoration: none;
-      font-size: 12px;
-      
-    }
-    
-    .product-links-wish:hover{
-      background: #000000;
-      color: #ffffff;
-    }
-    
-    
-    .product-links-bag {
-      position: absolute;
-      top: 92%;
-   
-      right: 1%;
-      font-family: 'Prometo-Medium';
-      font-size: 12px;
-      color: #000000;
-      border: 1px solid #000000;
-      padding: 4px;
-      text-decoration: none;
-    }
-    
-    .product-links-bag:hover{
-      background: #000000;
-      color: #ffffff;
-    }
 
-    .product-links-bag2 {
-        position: absolute;
-        top: 85%;
-        right: 0%;
-        font-family: 'Prometo-Medium';
-        font-size: 13px;
-        color: #000000;
-        border: 1px solid #000000;
-        padding: 4px;
-        text-decoration: none;
-      }
-      
-      .product-links-bag2:hover{
-        background: #000000;
-        color: #ffffff;
-      }
-
-
-    .product-Title h1{
-        font-family: 'Prometo-x-bold';
-        padding-top: 20px;
-        color: #000;
-        font-size: 50px;
-        padding: 20px;
-    }
-
-    .product-Title hr{
-        background: #162953;
-        width: 20%;
-        height: 3px;
-        margin-left: 0;
-      
-       
-    }   
 
     .categorias-content{
         padding-top: 50px;
@@ -3667,10 +3350,7 @@ Iphone 7 Portrait
                 font-size: 30px;
             }
 
-            .product-card{
-                width: 90%;
-            }
-
+           
             .product-links-wish{
                 position: absolute;
                 top: 92%;
@@ -4118,9 +3798,7 @@ Surface Pro 3 Portrait
                 font-size: 30px;
             }
 
-            .product-card{
-                width: 70%;
-            }
+           
 
             .product-links-wish{
                 position: absolute;
@@ -4197,170 +3875,123 @@ Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){
 
+.product-Title h1{
+    font-size: 30px;
+}
 
-    .categorias-text h1{
-        font-size: 30px;
-    }
+.seccion-productos-extras h1{
+    font-size: 30px;
+}
 
-    .categorias-text span{
-        font-size: 30px;
-    }
 
-    .product-Title h1{
-        font-size: 30px;
-    }
+.preprueba{
+    height: 300px;
+}
 
-    .seccion-productos-extras h1{
-        font-size: 30px;
-    }
+.pruebaDos{
+    height: 220px;
+}
 
-    .bttn-dark{
-        font-size: 15px;
-    }
-
-    .texto-video{
-        position: absolute;
-        width: 90%;
-        top: 10%;
-        left: 7%;
-        padding: 20px;
-        opacity: 1;
-        
-    
-    }
-    
-    .texto-video h1{
-        color: white;
-        font-family: 'Prometo-Medium';
-        letter-spacing: 4px;
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 0px;
-    }
-    
-    .texto-video p{
-        color: white;
-        font-family: 'Prometo-Light';
-        letter-spacing: 4px;
-        font-size: 8px;
-        text-align: center;
-        padding-left: 2px;
-        margin-bottom: 0px;
-        padding-top: 0;
-    }
-    
-    .texto-video hr{
-        width: 35%;
-        margin-left: 0;
-        height: 5px;
-        background: white;
-    }
-    
-    
-    .texto-video h5{
-        font-family: 'Prometo-Light';
-        font-size: 8px;
-        color: white;
-        text-align: justify;
-        font-weight: bolder;
-    
-    }
-    
-    .texto-video span{
-        font-weight: bolder;
-        font-family: "Prometo-Medium";
-    }
-
-    .image-background{
-        
-        height: 300px;
-    
-    }
-    
-    .texto-image-background h1{
-        
-        padding-top: 20%;
-        text-align: center;
-    
-    }
-    
-    .texto-image-background p{
-       
-        font-size: 15px;
-    }
-
-    .product-card{
-        width: 80%;
-    }
-
-    .product-text h2{
-        font-size: 15px;
-    }
-
-    .product-price2 h5{
-        font-size: 15px;
-        top: 65%;
-    }
-
-    .wishlist-heart{
-        top: 73%;
-        right: 36%;
-    }
-
-    .product-links-bag2{
-        right: 8%;
-    }
-
-    .product-links-wish{
-        position: absolute;
-        top: 90%;
-        left: 5%;
-        font-family: 'Prometo-Medium';
-        color: #000000;
-        border: 1px solid #000000;
-        padding: 4px;
-        text-decoration: none;
-        font-size: 12px;
-        
-      }
-
-      .product-links-bag {
-        position: absolute;
-        top: 90%;
+ .div-letrasInicio{
+     height: 400px;
      
-        right: 2%;
-        font-family: 'Prometo-Medium';
-        font-size: 12px;
-        color: #000000;
-        border: 1px solid #000000;
-        padding: 4px;
-        text-decoration: none;
-      }
+ }
+  
+ .letras-inicio{
+     position: absolute;
+     top: 10%;
+     left: 0%;
+ }
 
 
-      .slide{
-          height: 250px;
-      }
+ .letras-inicio h1{
+     font-size: 50px;
+ }
 
-      .slide h1{
-          font-size: 15px;
-      }
+ .letras-inicio p{
+     font-size: 15px;
+ }
 
-      .slide p{
-          font-size: 10px;
-      }
+ .texto-image-background h1{
+     font-size: 50px;
+ }
+
+ .texto-image-background p{
+     font-size: 15px;
+ }
 
 
-      .gallery-wrap{
-          height: 50vh;
-      }
 
-      .item:hover h2 a{
-          font-size: 20px;
-          -webkit-text-stroke: 1px #fff;
-          transform: translate(20px, 35px);
-      }
+ .product-card{
+     width: 100%;
+ }
 
+ .categorias-text p{
+    font-size: 30px;
+ }
+
+ .categorias-text h1{
+     font-size: 25px;
+ }
+
+ .categorias-text span{
+     font-size: 25px;
+ }
+
+
+ .publicidad8{
+     height: 350px;
+ }
+
+ .publicidad7{
+     height: 350px;
+ }
+
+ .parallax-fishing{
+     height: 250px;
+ }
+
+
+ .texto-parallax-fishing{
+     font-size: 15px;
+ }
+
+ .backDraw{
+     height: 350px;
+ }
+
+ .img-inside{
+     height: 300px;
+ }
+
+ .texto-img-inside{
+    width: 50%;
+    height: 60%;
+
+ }
+
+ .texto-img-inside h1{
+     font-size: 20px;
+     margin-bottom: 2px;
+ }
+
+ .texto-img-inside h3{
+     font-size: 13px;
+     padding-top: 0px;
+ }
+
+ .gallery-wrap{
+     height: 30vh;
+ }
+
+ .item h2 a{
+     font-size: 20px;
+ }
+
+
+ .item:hover h2 a{
+     padding-left: 20px;
+ }
 
 }
 
