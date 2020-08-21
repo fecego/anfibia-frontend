@@ -100,4 +100,4 @@ export class AppRoutingModule { }
 export const routingComponents = [MenuheaderComponent, FooterComponent, AnfibiaMainComponent, MapaSitioComponent, CrearCuentaComponent, FishingComponent,
   HuntingComponent, PreguntasFrecuentesComponent, NosotrosComponent, AsuntosLegalesComponent, SurvivalComponent, UbicacionComponent, Blogv1Component, ProveedoresComponent,
   StoreOnlineComponent, ContactoComponent, IndividualProductComponent, Entrada1Component, WishListComponent, CarritoComprasComponent, ProcesoCompraComponent, NotPageFoundComponent, PoliticasPrivacidadComponent,
-  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, LocalstoreComponent]
+  PoliticasComprasComponent, PoliticasDevolucionesComponent, EnviosComponent, TerminosYCondicionesComponent, PerfilComponent, PedidosComponent, LocalstoreComponent, TorneosComponent]
