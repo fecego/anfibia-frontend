@@ -583,7 +583,7 @@ nav{
   }
 
   .menu-Imagen2{
-    background-image: url('/assets/imagenes/menu/NUEVA LETRAS.png');
+    background-image: url('/assets/imagenes/fishing/Agua dulce 2.jpg');
       
     /* Full height */
     width: 100%;
@@ -592,12 +592,12 @@ nav{
     /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
   }
 
 
   .menu-ImagenCaceria{
-    background-image: url('/assets/imagenes/menu/CACERIA2.png');
+    background-image: url('/assets/imagenes/hunting/Cazador.jpg');
       
     /* Full height */
     width: 100%;
@@ -605,5 +605,5 @@ nav{
     /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
   }
