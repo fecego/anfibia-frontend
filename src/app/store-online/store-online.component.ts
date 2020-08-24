@@ -1328,7 +1328,7 @@ export class StoreOnlineComponent implements OnInit {
 
 
           this.paginaActual = 1;
-          this.currentSizeItemsPerPage = 15;
+          this.currentSizeItemsPerPage = 30;
           this.totalProductos = this.productosTienda.length;
           
           this.productosTienda = this.productosTienda.filter(producto =>{
@@ -1390,7 +1390,7 @@ export class StoreOnlineComponent implements OnInit {
             
 
             this.paginaActual = 1;
-            this.currentSizeItemsPerPage = 9;
+            this.currentSizeItemsPerPage = 30;
             this.totalProductos = this.productosTienda.length;
         
             /*Let the modification of some values in the formGrup */
@@ -1436,7 +1436,7 @@ export class StoreOnlineComponent implements OnInit {
                 return producto.categoria == this.categoria;
               });
               this.paginaActual = 1;
-              this.currentSizeItemsPerPage = 9;
+              this.currentSizeItemsPerPage = 30;
               this.totalProductos = this.productosTienda.length;
   
               /*Filtro de categoria de agua dulce*/
@@ -1456,7 +1456,7 @@ export class StoreOnlineComponent implements OnInit {
                     return producto.subcategoria1 == this.subcategoriaAguaDulceFiltros;
                   });
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
                  
                   this.formRadioSubAguadulce.patchValue({
@@ -1655,7 +1655,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioSubAguasalada.patchValue({
@@ -1797,7 +1797,7 @@ export class StoreOnlineComponent implements OnInit {
                     return producto.subcategoria1 == this.subcategoriaFiltrosAccesorios
                   });
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioSubAccesorios.patchValue({
@@ -1818,7 +1818,7 @@ export class StoreOnlineComponent implements OnInit {
                         return producto.subcategoria2 == this.accesoriosFiltros
                       });
                       this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 9;
+                      this.currentSizeItemsPerPage = 30;
                       this.totalProductos = this.productosTienda.length;
   
                       this.formRadioSub2Accesorios.patchValue({
@@ -1862,7 +1862,7 @@ export class StoreOnlineComponent implements OnInit {
                     return producto.subcategoria1 == this.navegacionFiltros
                   });
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
                   this.formRadioCatbNavegacion.patchValue({
                     categorias1: this.navegacionFiltros
@@ -1951,7 +1951,7 @@ export class StoreOnlineComponent implements OnInit {
                         return producto.subcategoria2 == this.navAccesoriosFiltros
                       });
                       this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 9;
+                      this.currentSizeItemsPerPage =30;
                       this.totalProductos = this.productosTienda.length;
                 
                       this.formRadioNavegacionAccesorios.patchValue({
@@ -1995,7 +1995,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioRopaPesca.patchValue({
@@ -2016,7 +2016,7 @@ export class StoreOnlineComponent implements OnInit {
                       });
 
                       this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 9;
+                      this.currentSizeItemsPerPage = 30;
                       this.totalProductos = this.productosTienda.length;
   
                       this.formRadioAccesoriosRopaPesca.patchValue({
@@ -2058,7 +2058,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioLineasPesca.patchValue({
@@ -2099,7 +2099,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioSnorkelPesca.patchValue({
@@ -2154,7 +2154,7 @@ export class StoreOnlineComponent implements OnInit {
                     return producto.subcategoria1 == this.kayakFiltro
                   });
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
   
                   this.formRadioKayaksPesca.patchValue({
@@ -2174,7 +2174,7 @@ export class StoreOnlineComponent implements OnInit {
                         return producto.subcategoria2 == this.kayakCatFiltro
                       });
                       this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 9;
+                      this.currentSizeItemsPerPage = 30;
                       this.totalProductos = this.productosTienda.length;
   
                       this.formRadioKayaksCatPesca.patchValue({
@@ -2237,7 +2237,7 @@ export class StoreOnlineComponent implements OnInit {
             this.subAccesoriosCaceria = false;
             this.subRopaCaceria = false;
             this.paginaActual = 1;
-            this.currentSizeItemsPerPage = 9;
+            this.currentSizeItemsPerPage = 30;
             this.totalProductos = this.productosTienda.length;
             /*=============================================================================0*/
             
@@ -2261,7 +2261,7 @@ export class StoreOnlineComponent implements OnInit {
                 return producto.categoria == this.categoriasCaceria1
               });
               this.paginaActual = 1;
-              this.currentSizeItemsPerPage = 9;
+              this.currentSizeItemsPerPage = 30;
               this.totalProductos = this.productosTienda.length;
              
 
@@ -2303,7 +2303,7 @@ export class StoreOnlineComponent implements OnInit {
                     return producto.subcategoria1 == this.riflesFiltro
                   });
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
 
                   if(this.riflesFiltro =='accesorios'){
@@ -2316,7 +2316,7 @@ export class StoreOnlineComponent implements OnInit {
                       });
 
                       this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 9;
+                      this.currentSizeItemsPerPage = 30;
                       this.totalProductos = this.productosTienda.length;
                       this.formRadioSubRiflesAccesorios.patchValue({
                         caceriaRiflesAccesorios :this. subRiflesAccesoriosFiltro
@@ -2343,7 +2343,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
                   this.formRadioSubPistolas.patchValue({
                     caceriaPistolas: this.subcategoriaPistolasFiltros
@@ -2388,7 +2388,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
 
                   this.formRadioSubArqueria.patchValue({
@@ -2417,7 +2417,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
 
                   this.formRadioSubCuchilleria.patchValue({
@@ -2447,7 +2447,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
                   this.formRadioSubAccesoriosCaceria.patchValue({
                     caceriaAccesorios: this.subcategoriaAccesoriosFiltros
@@ -2474,7 +2474,7 @@ export class StoreOnlineComponent implements OnInit {
                   });
 
                   this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 9;
+                  this.currentSizeItemsPerPage = 30;
                   this.totalProductos = this.productosTienda.length;
                   this.formRadioSubRopaCaceria.patchValue({
                     caceriaRopa: this.subcategoriaRopaCaceriaFiltros
@@ -2524,7 +2524,7 @@ export class StoreOnlineComponent implements OnInit {
           this.datoEtiqueta = '';
           this.productosTienda = this._productosTienda.getProductos();
           this.paginaActual = 1;
-          this.currentSizeItemsPerPage = 15;
+          this.currentSizeItemsPerPage = 30;
           this.totalProductos = this.productosTienda.length;
           this.cambioImagen.value = 'vacio';
           this.getImage(this.productosTienda);

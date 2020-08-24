@@ -1204,6 +1204,12 @@ width: 10%;
 }
 
 .image-background{
+<<<<<<< HEAD
+=======
+background: url('/assets/imagenes/hunting/camuflaje.jpg');
+background-position: center;
+background-size: cover;
+>>>>>>> e93c57c07fa5a55ab7e3179e549ed7ef1a328edc
 height: 650px;
 padding: 0;
 margin-bottom: 90px;
@@ -1211,7 +1217,7 @@ margin-bottom: 90px;
 
 
 .image-background2{
-    background: url('/assets/imagenes/hunting/2.png');
+    background: url('/assets/imagenes/hunting/camuflaje.jpg');
     width: 100%;
 
     height: 550px;
