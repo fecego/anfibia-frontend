@@ -80,6 +80,12 @@ Ipad Mini 2.4 Landscape--*/
     font-size: 80px;
     text-align: center;
 }
+    /*RESPONSIVE TABLETS VERTICAL*/
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        .letras-inicio h1{
+            font-size: 60px;
+        }
+    }
 
 .letras-inicio p{
     font-family: 'Meera Inima', sans-serif;
@@ -88,7 +94,17 @@ Ipad Mini 2.4 Landscape--*/
     text-align: justify;
     padding: 10px;
 }
+    /*RESPONSIVE TABLETS VERTICAL*/
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        .letras-inicio p{
+            font-size: 13px;
+            padding: 0;
+        }
+    }
 
+.foto1{
+    align-self: flex-end;
+}
 
 .back-color{
     position: absolute;
@@ -1188,12 +1204,17 @@ width: 10%;
 }
 
 .image-background{
+<<<<<<< HEAD
+=======
 background: url('/assets/imagenes/hunting/camuflaje.jpg');
 background-position: center;
 background-size: cover;
+>>>>>>> e93c57c07fa5a55ab7e3179e549ed7ef1a328edc
 height: 650px;
-
+padding: 0;
+margin-bottom: 90px;
 }
+
 
 .image-background2{
     background: url('/assets/imagenes/hunting/camuflaje.jpg');
