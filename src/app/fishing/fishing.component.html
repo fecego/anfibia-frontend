@@ -1,5 +1,4 @@
 <div class="container-fluid inicioPesca">
-<<<<<<< HEAD
 
   <!--<div class="row" >
     
@@ -10,26 +9,14 @@
       </p>
      </div>
      
-=======
-  <div class="row" >  
-    <div class="col-sm-4" >
-      <div class="letras-inicio">
-        <h1>PESCA</h1>
-        <p>Te encuentras en la sección de Pesca de Anfibia, te mostraremos algunos de nuestros productos más nuevos adquiridos, así como también encontrarás nuestros productos destacados, los cuales son productos que otros pescadores han usado para volverse los mejores en su ramo, también encontrarás nuestras promociones.
-        </p>
-      </div>
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
     </div>
     
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 imageClass">
       <img src="/assets/imagenes/fishing/Marlin.png" alt="" class="img-fluid">
     </div>
-<<<<<<< HEAD
   
-  </div>-->
-=======
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
   </div>
+  </div>-->
 </div>
 
 <!--<div>
@@ -79,15 +66,9 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
   <!--<div class="row" style="padding-top: 20px;">
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1"  >
       
-=======
-  
-  <div class="row" style="padding-top: 20px;">
-    <div class="col-12 col-sm-4 col-md-4 col-lg-4 textos-publicidad1">
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
       <p>Conoce nuestras promociones, tenemos productos en oferta que te podrían interesar, aventurate en nuestra tienda. </p>
     </div>
     <div class="col-12 col-sm-8 col-md-8 col-lg-8 publicidad1" data-aos="fade-up"
@@ -95,12 +76,8 @@
       data-aos-duration="1000">
        <img src="/assets/imagenes/fishing/fishing20.jpg" alt="">
     </div>
-<<<<<<< HEAD
 
  </div>-->
-=======
-  </div>
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
 </div>
 
 <!--<section class="sec1">
@@ -280,12 +257,12 @@
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000">
-      <img src="/assets/imagenes/fishing/amarillo.jpg" alt="" > 
+      <img src="/assets/imagenes/fishing/Shimano-Ocea-Pluger.png" alt="" > 
     </div>
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000">
-      <img src="/assets/imagenes/fishing/ropapesca.jpg" alt="" > 
+      <img src="/assets/imagenes/fishing/stella-carretes3.png" alt=""> 
     </div>
      
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
@@ -319,7 +296,6 @@
                       <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
                       <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
                       <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
-<<<<<<< HEAD
                            <div class="product-tumb">
                                <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
                            </div>
@@ -397,67 +373,15 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
            <h3>
              Siempre hay nuevos lugares para ir a pescar, para cualquier pescador siempre hay un lugar nuevo, siempre un nuevo horizonte.
            </h3>
-=======
-                      <div class="product-tumb">
-                        <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
-                      </div>
-                      <div class="product-details">
-                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
-                        <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
-                        <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
-                        <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
-                        <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                        <div class="pruebaBotones"> 
-                          <ul>
-                            <li><button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                          </ul>
-                        </div>
-                        <div class="pruebaBotones2">
-                          <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                          <button class="" type="button" (click) = "addCart(productoPesca)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </ng-template>
-              </owl-carousel-o>
-            </div>
-          </div>
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
         </div>
       </div>
     </div>
-<<<<<<< HEAD
  
   </div>
  </div>-->
 
-=======
-    
-    <br>
-    <!--<div class="container-fluid" style=" background: rgb(1, 223, 215);background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%); ">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-          <ngx-slick-carousel class="carousel" 
-            #slickModal="slick-carousel" 
-            [config]="slideConfig" 
-            (init)="slickInit($event)"
-            (breakpoint)="breakpoint($event)"
-            (afterChange)="afterChange($event)"
-            (beforeChange)="beforeChange($event)">
-            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-              <img src="{{ slide.img }}" alt="" width="100%">
-              <h1>{{ slide.titulo}}</h1>
-              <p>{{slide.texto}}</p>
-            </div>
-          </ngx-slick-carousel>
-        </div>
-      </div>
-    </div>-->
->>>>>>> 2a768a53ee2e51c6b545e249cd14785b512b4c21
 
-    <div class="container-fluid" style="background-image: url('assets/imagenes/fishing/ocean.jpg'); height: 750px; padding: 35px;">
+    <!--<div class="container-fluid" style="background-image: url('assets/imagenes/fishing/ocean.jpg'); height: 750px; padding: 35px;">
       <div class="row">
         <div class="col-sm-12">
           <div class="img-inside">
@@ -469,7 +393,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="container-fluid categorias-content" >
       <div class="row">
