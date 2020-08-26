@@ -397,42 +397,43 @@
       transform: scale(1);
     }
 
-    /* QUINTA SECCIÓN: ULTIMA IMAGEN */
+    /*--------------------------------
+      QUINTA SECCIÓN: ÚLTIMA IMAGEN
+    ----------------------------------*/
     .sec2{
-        position: relative;
-        background: url('/assets/imagenes/Nosotros/hombre-c-rifle.jpg');
-        height: 500px;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
+      position: relative;
+      background: url('/assets/imagenes/Nosotros/hombre-c-rifle.jpg');
+      height: 500px;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .sec2 h4{
-        text-align: center;
-        font-family: 'Meera';
-        font-size: 80px;
-        padding-top: 150px;
-        color:white;
+      text-align: center;
+      font-family: 'Meera';
+      font-size: 80px;
+      padding-top: 150px;
+      color:white;
     }
-
-          @media only screen and (max-width: 700px) and (min-width: 392px){
-            .sec2 h4{
-              font-size: 70px;
-              padding-top: 100px;
-            }
-          }
+      @media only screen and (max-width: 700px) and (min-width: 392px){
+        .sec2 h4{
+          font-size: 70px;
+          padding-top: 100px;
+        }
+      }
           
-
     .half_background {
-        background: linear-gradient(to top, #076E67
-         30%, transparent 50%);
-        font-family: 'Prometo-Medium';
-        letter-spacing: 8px;
-        font-weight: bolder;
-
+      background: linear-gradient(to top, #076E67 30%, transparent 50%);
+      font-family: 'Prometo-Medium';
+      letter-spacing: 8px;
+      font-weight: bolder;
     }
-    
+
+    /*--------------------------------
+    ------------ACORDIÓN--------------
+    ----------------------------------*/
     .accordion {
       width: 100%;
       max-width: 1080px;
@@ -440,16 +441,16 @@
       overflow: hidden;
       margin: 50px auto;
     }
-          @media only screen and (max-width: 390px) and (min-width: 321px){
-            .accordion{
-              display: none;
-            }
-          }
-          @media only screen and (max-width: 567px) and (min-width: 392px){
-            .accordion{
-              display: none;
-            }
-          }
+      @media only screen and (max-width: 390px) and (min-width: 250px){
+        .accordion{
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 567px) and (min-width: 392px){
+        .accordion{
+          display: none;
+        }
+      }
     
     .accordion ul {
       width: 100%;
@@ -522,7 +523,6 @@
   
     .accordion ul li:nth-child(1) {
       background-image: url("/assets/imagenes/Nosotros/Montaña.png");
-      
     }
 
     .accordion ul li:nth-child(2) {
@@ -587,26 +587,31 @@
       -webkit-transform: translateX(0);
       transform: translateX(0);
     }
-  
-        @media screen and (max-width: 600px) {
-          body {
-            margin: 0;
-          }
-  
-          .accordion {
-            height: auto;
-          }
-    
-          .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
-            position: relative;
-            display: table;
-            table-layout: fixed;
-            width: 100%;
-            -webkit-transition: none;
-            transition: none;
-          }
+      @media screen and (max-width: 600px) {
+        body {
+          margin: 0;
         }
-
+        .accordion {
+          height: auto;
+        }    
+        .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
+          position: relative;
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+          -webkit-transition: none;
+          transition: none;
+        }
+      }
+  
+    .fotologo{
+      display: none;
+    }
+      @media only screen and (max-width: 600px) and (min-width: 250px){
+        .fotologo{
+          display: block;
+        }
+      }
 
 
 
