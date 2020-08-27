@@ -17,7 +17,7 @@ export class HuntingComponent implements OnInit {
 
 
   public customOptions: OwlOptions = {
-    items: 8,
+    items: 16,
     autoplay: true,
     autoplayTimeout: 2500,
     autoplayHoverPause: true,

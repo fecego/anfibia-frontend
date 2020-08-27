@@ -188,7 +188,7 @@ Ipad mini Landscape -- Si lo afecta
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
     border: 2px solid #000;
     padding: 10px;
@@ -348,7 +348,7 @@ Surface Pro 3 Portrait
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 12px;
     border: 2px solid #000;
     padding: 10px;
@@ -510,9 +510,9 @@ Surface Pro 3 Portrait
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
-    font-size: 20px;
-    border: 2px solid #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    border: 1px solid #000;
     padding: 10px;
     transition: 0.5s ease-in-out;
     width: 100%;
@@ -671,9 +671,9 @@ Media query usado
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 2px solid #000;
+    border: 1px solid #000;
     padding: 10px;
     transition: 0.5s ease-in-out;
     width: 100%;
@@ -823,6 +823,17 @@ Media query usado
     background: red;
   }
   
+  .botones-menu ul li button{
+    background: #F8F8F8;
+    color: #616161;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    text-align: left;
+  }
   
   
   
@@ -831,13 +842,7 @@ Media query usado
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
-    font-size: 15px;
-    border: 2px solid #000;
-    padding: 10px;
-    transition: 0.5s ease-in-out;
-    width: 100%;
-    text-align: left;
+    
     
   }
   
@@ -1002,7 +1007,7 @@ Iphone 7 Portrait
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
     border: 2px solid #000;
     padding: 15px;
@@ -1160,7 +1165,7 @@ Iphone 5 Portrait
   .botones-menu ul li button{
     background: #F8F8F8;
     color: #616161;
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
     border: 2px solid #000;
     padding: 10px;

@@ -19,8 +19,9 @@
   }
   
   a {
-    color: #404040;
+    color: #000;
     text-decoration: none;
+    font-family: 'Meera Inima', sans-serif;
   }
   
   a:hover {
@@ -52,12 +53,12 @@
   }
   
   .heading {
-    background: #000;
+    background: #fff;
     border-bottom: 1px solid #000;
     height: 60px;
     line-height: 60px;
     padding: 0 10px;
-    color: #fff;
+    color: #000;
     text-align: center;
    
   }
@@ -65,6 +66,7 @@
   .heading h1{
     font-size: 25px;
     font-family: 'Meera inima', sans-serif;
+    font-weight: bolder;
   }
   
   .listings {
@@ -154,3 +156,11 @@
   .pruebapopup{
     background: red;
   }
+
+
+  @media screen and (max-width: 640px) and (min-width: 568px){
+
+
+
+  }
+
