@@ -1,1869 +1,1801 @@
-/*Afecta Computadoras--
-laptops --
+/*Afecta Computadoras--laptops --
 Los siguientes modelos de tablets
  Nexus 10 Landscape--
 Surface 3 Pro Landscape--, 
 Ipad Pro Landscape--
 Ipad Mini 2.4 Landscape--*/
-
-
-.pruebaBotones ul li{
-    list-style: none;
-  
-  }
-  
-  .pruebaBotones{
-    position: absolute;
-    
-    height: 100%;
-    top: 0%;
-    right: 0%;
-  }
-  
-  .pruebaBotones button{
-    border: none;
-    background: none;
-    color: none;
-    font-size: 20px;
-    
-  }
-  
-  .pruebaBotones  i{
-    color: transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000;
-  }
-  
-  
-  .pruebaBotones  i:hover{
-    color: #ff0000;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ff0000;
-    transition: 0.5s;
-  }
-  
-  .pruebaBotones2{
-    position: absolute;
-    top: 60%;
-    right: 5%;
-   
-  }
-  
-  .pruebaBotones2 button{
-    background: #fff;
-    border:none;
-    border-radius: 2px;
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 15px;
-    padding: 5px;
-    
-  
-  }
-  
-  .pruebaBotones2 button:hover{
-    background: #000;
-    color: #fff;
-    transition: 0.5s ease-in-out;
-  }
-
-.letras-inicio{
-    position: absolute;
-    top: 30%;
-    left: 7%;
-}
-
-
-.letras-inicio h1{
-    font-family: 'Anton', sans-serif;
-    font-weight: bold;
-    color: #000;
-    font-size: 80px;
-    text-align: center;
-}
-    /*RESPONSIVE TABLETS VERTICAL*/
-    @media only screen and (max-width: 768px) and (min-width: 641px){
-        .letras-inicio h1{
-            font-size: 60px;
-        }
-    }
-
-.letras-inicio p{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 15px;
-    color: #000;
-    text-align: justify;
-    padding: 10px;
-}
-    /*RESPONSIVE TABLETS VERTICAL*/
-    @media only screen and (max-width: 768px) and (min-width: 641px){
-        .letras-inicio p{
-            font-size: 13px;
-            padding: 0;
-        }
-    }
-
-.foto1{
-    align-self: flex-end;
-}
-
-.back-color{
-    position: absolute;
-    top: 0;
-    right: 1%;
-    background: #fff;
-    margin-top: 30px;
-    height: 650px;
-    max-height: 100%;
-    width: 40%;
-    padding: 15px;
-    
-    
-}
-
-.back-color h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    color: #000;
-    padding-top: 190px;
-
-}
-
-.back-color p{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 17px;
-    text-align: center;
-    color: #000;
-    
-}
-
-
-.image-final{
-    margin-top: 40px;
-    background-image: url('/assets/imagenes/hunting/hunting2.jpg');
-    padding: 5px;
-    width: 100%;
-    height: 720px;
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    background-size: cover;
-    background-position: center center;   
-}
-
-
-
-
-.texto-img-inside{
-    position: absolute;
-    background: #fff;
-    width: 40%;
-    height: 80%;
-    left: 0%;
-}
-
-.texto-img-inside h1{
-    font-family: 'Anton', sans-serif;
-    color: #000;
-    font-size: 40px;
-    text-align: center;
-    padding-top: 25%;
-    
-    
-}
-
-.texto-img-inside h3{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 15px;
-    color: #000;
-    text-align: center;
-    padding: 2px;
-    
-}
-
-.img-inside{
-   
-    background-image: url('/assets/imagenes/hunting/hunting10.jpg');
-    width: 100%;
-
-    height: 750px;
-    max-height: 100%; 
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
  
 
-}
-
-
-.publicidad-imagen1{
-    
-    width: 100%;
-
-    height: 550px;
-    max-height: 100%; 
+    .pruebaBotones ul li{
+        list-style: none;
+    }
   
-    /* Create the parallax scrolling effect */
-
-
-}
-
-.publicidad-imagen1 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.text-publicidad1{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-
-
-.text-publicidad1 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 60px;
-    color: #000;
-    margin-bottom: 0;
-    line-height: 0.6em;
-
-}
-
-.text-publicidad1 h2{
-    font-family: 'Anton', sans-serif;
-    font-size: 60px;
-    padding-top: 0;
-    letter-spacing: 8px;
-    color:#000;
-    
-}
-
-
-.text-publicidad1 h4{
-    position: absolute;
-    top: 0%;
-    left: 100%;
-    font-family: 'Anton', sans-serif;
-    color: #fff;
-    letter-spacing: 3px;
-    font-size: 17px;
-
-}
-
-.text-publicidad1 span{
-    color: #FF8000;
-
-}
-
-
-.text-publicidad2{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-}
-
-.text-publicidad2 h1{
-    color: #fff;
-    font-family: 'Anton', sans-serif;
-    font-size: 70px;
-
-}
-
-
-.text-publicidad2 span{
-    color: #FF8000;
-}
-
-.text-publicidad2-second{
-    position: absolute;
-    top: 24%;
-    left: 20%;
-}
-
-.text-publicidad2-second h2{
-    font-family: 'Julius Sans One';
-    color: #fff;
-    line-height: 0.8em;
-}
-
-.text-publicidad2-second span{
-    color: #FF8000;
-    font-family: 'Anton', sans-serif;
-}
-
-
-.text-publicidad2-third{
-    position: absolute;
-    top: 70%;
-    left: 3%;
-}
-
-.text-publicidad2-third h1{
-    color: #fff;
-    font-size: 30px;
-}
-
-.text-publicidad2-third span{
-    color: #FF8000;
-}
-
-.publicidad-imagen2{   
-    width: 100%;
-    height: 550px;
-    max-height: 100%; 
-}
-
-.publicidad-imagen2 img{
-    width: 100%;
-    height: 100%;
-}
-
-.publicidad-imagen3{
-    width: 100%;
-    height: 480px;
-    max-height: 100%; 
-}
-
-.publicidad-imagen3 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.text-publicidad-imagen3{
-   position: absolute;
-   top: 50%;
-   left: 20%;
-}
-
-.text-publicidad-imagen3 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 30px;
-    line-height: 0.7em;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-
-.text-publicidad-imagen3 h2{
-    font-family: 'Anton', sans-serif;
-    color: #fff;
-    text-align: center;
-    font-size: 70px;
-}
-
-
-.text-publicidad-imagen3 span{
-    color: #FF8000;
-}
-
-.publicidad-imagen4{
-    
-    width: 100%;
-    height: 480px;
-    max-height: 100%;
-
-}
-
-.publicidad-imagen4 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-
-.text-publicidad-imagen5{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-
-.text-publicidad-imagen5 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 50px;
-    color: #fff;
-    line-height: 1em;
-    margin-bottom: 0px;
-}
-
-.text-publicidad-imagen5 h2{
-    font-family: 'Julius Sans One';
-    font-size: 30px;
-    color: #fff;
-    padding-top: 0px;
-}
-
-.text-publicidad-imagen5 span{
-    color: #FF8000;
-}
-
-
-.text-publicidad-imagen5 h2{
-
-}
-
-
-.text-publicidad-imagen4{
-    position: absolute;
-    top: 8%;
-}
-
-
-
-.text-publicidad-imagen4 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 70px;
-    line-height: 0.3em;
-    color: #FF8000;
-}
-
-.text-publicidad-imagen4 span{
-    color: transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #fff;
-    letter-spacing: 4px;
-}
-
-.publicidad-imagen5{
-    width: 100%;
-    height: 480px;
-    max-height: 100%; 
-}
-
-.publicidad-imagen5 img{
-    width: 100%;
-    height: 100%;
-}
-
-.publicidad-imagen6{
-    
-    width: 100%;
-
-    height: 550px;
-    max-height: 100%; 
+    .pruebaBotones{
+        position: absolute;
+        height: 100%;
+        top: 0%;
+        right: 0%;
+    }
   
-    /* Create the parallax scrolling effect */
-    
-
-}
-.publicidad-imagen6 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.text-publicidad-imagen6{
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-}
-
-
-.text-publicidad-imagen6 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 40px;
-    color: #000;
-    line-height: 0em;
-}
-
-.text-publicidad-imagen6 h2{
-    font-family: 'Julius Sans One';
-    font-weight: bolder;
-    font-size: 20px;
-    color: #000;
-    line-height: 0.1em;
-}
-
-
-
-.text-publicidad-imagen6 span{
-    color: #FF8000;
-    letter-spacing: 0em;
-}
-
-.publicidad-imagen7{
-    
-    width: 100%;
-
-    height: 550px;
-    max-height: 100%; 
-
-}
-
-.publicidad-imagen7 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.text-publicidad-imagen7{
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
-
-.text-publicidad-imagen7 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 40px;
-    color: #fff;
-    line-height: 0em;
-}
-
-.text-publicidad-imagen7 h2{
-    font-family: 'Julius Sans One';
-    font-size: 30px;
-    color: #fff;
-    line-height: 0.3em;
-}
-
-.text-publicidad-imagen7 span{
-    color: #FF8000;
-}
-
-.publicidad-imagen8{
-    
-    width: 100%;
-    height: 550px;
-    max-height: 100%; 
+    .pruebaBotones button{
+        border: none;
+        background: none;
+        color: none;
+        font-size: 20px;
+    }
   
-
-}
-
-.publicidad-imagen8 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.texto-publicidad8{
-    position: absolute;
-    top: 30%;
-    left: 30%;
-
-}
-
-.texto-publicidad8 h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 120px;
-    color: #FF8000;
-    line-height: 0.3em;
-
-}
-
-.texto-publicidad8 h2{
+    .pruebaBotones  i{
+        color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+    }
   
-    font-family: 'Anton', sans-serif;
-    font-size: 34px;
-    color: #fff;
+    .pruebaBotones  i:hover{
+        color: #ff0000;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #ff0000;
+        transition: 0.5s;
+    }
+  
+    .pruebaBotones2{
+        position: absolute;
+        top: 60%;
+        right: 5%;
+    }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .pruebaBotones2{
+                top: 47%;
+            }
+        }
+  
+    .pruebaBotones2 button{
+        background: #fff;
+        border:none;
+        border-radius: 2px;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+        padding: 5px;
+    }
+  
+    .pruebaBotones2 button:hover{
+        background: #000;
+        color: #fff;
+        transition: 0.5s ease-in-out;
+    }
+
+    .letras-inicio{
+        position: absolute;
+        top: 30%;
+        left: 7%;
+    }
+
+    .letras-inicio h1{
+        font-family: 'Anton', sans-serif;
+        font-weight: bold;
+        color: #000;
+        font-size: 80px;
+        text-align: center;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .letras-inicio h1{
+                font-size: 60px;
+            }
+        }
+
+    .letras-inicio p{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+        color: #000;
+        text-align: justify;
+        padding: 10px;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .letras-inicio p{
+                font-size: 13px;
+                padding: 0;
+            }
+        }
+
+    .foto1{
+        align-self: flex-end;
+    }
+
+    .back-color{
+        position: absolute;
+        top: 0;
+        right: 1%;
+        background: #fff;
+        margin-top: 30px;
+        height: 650px;
+        max-height: 100%;
+        width: 40%;
+        padding: 15px;
+    }
+
+    .back-color h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: #000;
+        padding-top: 190px;
+    }
+
+    .back-color p{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 17px;
+        text-align: center;
+        color: #000;
+    }
+
+    .image-final{
+        margin-top: 40px;
+        background-image: url('/assets/imagenes/hunting/hunting2.jpg');
+        padding: 5px;
+        width: 100%;
+        height: 720px;
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;   
+    }
+
+    .texto-img-inside{
+        position: absolute;
+        background: #fff;
+        width: 40%;
+        height: 80%;
+        left: 0%;
+    }
+
+    .texto-img-inside h1{
+        font-family: 'Anton', sans-serif;
+        color: #000;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 25%;
+    }
+
+    .texto-img-inside h3{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+        color: #000;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .img-inside{
+        background-image: url('/assets/imagenes/hunting/hunting10.jpg');
+        width: 100%;
+        height: 750px;
+        max-height: 100%; 
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .publicidad-imagen1{
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+        /*Create the parallax scrolling effect */
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .publicidad-imagen1{
+                width: 100%;
+                height: 500px;
+            }
+        }
+
+    .publicidad-imagen1 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-publicidad1{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+    }
+
+    .text-publicidad1 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        color: #000;
+        margin-bottom: 0;
+        line-height: 0.6em;
+    }
+
+    .text-publicidad1 h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        padding-top: 0;
+        letter-spacing: 8px;
+        color:#000;
+    }
+
+    .text-publicidad1 h4{
+        position: absolute;
+        top: 0%;
+        left: 100%;
+        font-family: 'Anton', sans-serif;
+        color: #fff;
+        letter-spacing: 3px;
+        font-size: 17px;
+    }
+
+    .text-publicidad1 span{
+        color: #FF8000;
+    }
+
+    .text-publicidad2{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+    
+    .text-publicidad2 h1{
+        color: #fff;
+        font-family: 'Anton', sans-serif;
+        font-size: 70px;
+    }
+
+    .text-publicidad2 span{
+        color: #FF8000;
+    }
+
+    .text-publicidad2-second{
+        position: absolute;
+        top: 24%;
+        left: 20%;
+    }
+
+    .text-publicidad2-second h2{
+        font-family: 'Julius Sans One';
+        color: #fff;
+        line-height: 0.8em;
+    }
+
+    .text-publicidad2-second span{
+        color: #FF8000;
+        font-family: 'Anton', sans-serif;
+    }
+
+    .text-publicidad2-third{
+        position: absolute;
+        top: 70%;
+        left: 3%;
+    }
+
+    .text-publicidad2-third h1{
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .text-publicidad2-third span{
+        color: #FF8000;
+    }
+
+    .publicidad-imagen2{   
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+    }
+
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .publicidad-imagen2{
+                width: 100%;
+                height: 500px;
+            }
+        }
+
+    .publicidad-imagen2 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .publicidad-imagen3{
+        width: 100%;
+        height: 480px;
+        max-height: 100%; 
+    }
+
+    .publicidad-imagen3 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-publicidad-imagen3{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+    }
+
+    .text-publicidad-imagen3 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 30px;
+        line-height: 0.7em;
+        margin-bottom: 0;
+        color: #fff;
+    }
+
+    .text-publicidad-imagen3 h2{
+        font-family: 'Anton', sans-serif;
+        color: #fff;
+        text-align: center;
+        font-size: 70px;
+    }
+
+    .text-publicidad-imagen3 span{
+        color: #FF8000; 
+    }
+
+    .publicidad-imagen4{
+        width: 100%;
+        height: 480px;
+        max-height: 100%;
+    } 
+
+    .publicidad-imagen4 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-publicidad-imagen5{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+    }
+
+    .text-publicidad-imagen5 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 50px;
+        color: #fff;
+        line-height: 1em;
+        margin-bottom: 0px;
+    }
+
+    .text-publicidad-imagen5 h2{
+        font-family: 'Julius Sans One';
+        font-size: 30px;
+        color: #fff;
+        padding-top: 0px;
+    }
+
+    .text-publicidad-imagen5 span{
+        color: #FF8000;
+    }
+
+    .text-publicidad-imagen4{
+        position: absolute;
+        top: 8%;
+    }
+
+    .text-publicidad-imagen4 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 70px;
+        line-height: 0.3em;
+        color: #FF8000;
+    }
+
+    .text-publicidad-imagen4 span{
+        color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #fff;
+        letter-spacing: 4px;
+    }
+
+    .publicidad-imagen5{
+        width: 100%;
+        height: 480px;
+        max-height: 100%; 
+    }
+
+    .publicidad-imagen5 img{
+        width: 100%;
+        height: 100%;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 600px){
+            .publicidad-imagen3{
+                height: 300px;
+            }
+            .publicidad-imagen4{
+                height: 300px;
+            }
+            .publicidad-imagen5{
+                height: 300px;
+            }
+        }
+
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .publicidad-imagen3{
+                height: 400px;
+            }
+            .publicidad-imagen4{
+                height: 400px;
+            }
+            .publicidad-imagen5{
+                height: 400px;
+            }
+        }
+
+    .publicidad-imagen6{    
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+            @media only screen and (max-width: 800px) and (min-width: 641px){
+                .publicidad-imagen6{
+                    width: 100%;
+                    height: 450px;
+                }
+            }
+
+    .publicidad-imagen6 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-publicidad-imagen6{
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+    }
+
+    .text-publicidad-imagen6 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #000;
+        line-height: 0em;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .text-publicidad-imagen6 h1{
+                margin-top: -30px;
+                font-size: 30px;
+            }
+        }
+
+    .text-publicidad-imagen6 h2{
+        font-family: 'Julius Sans One';
+        font-weight: bolder;
+        font-size: 20px;
+        color: #000;
+        line-height: 0.1em;
+    }
+
+    .text-publicidad-imagen6 span{
+        color: #FF8000;
+        letter-spacing: 0em;
+    }
+
+    .publicidad-imagen7{
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .publicidad-imagen7{
+                height: 450px;
+            }
+        }
+    
+    .publicidad-imagen7 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-publicidad-imagen7{
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+
+    .text-publicidad-imagen7 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        line-height: 0em;
+    }
+
+    .text-publicidad-imagen7 h2{
+        font-family: 'Julius Sans One';
+        font-size: 30px;
+        color: #fff;
+        line-height: 0.3em;
+    }
+
+    .text-publicidad-imagen7 span{
+        color: #FF8000;
+    }
+
+    .publicidad-imagen8{
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+    }
+
+    .publicidad-imagen8 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .texto-publicidad8{
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+
+    .texto-publicidad8 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 120px;
+        color: #FF8000;
+        line-height: 0.3em;
+    }
+
+    .texto-publicidad8 h2{ 
+        font-family: 'Anton', sans-serif;
+        font-size: 34px;
+        color: #fff;
+    }
+
+    .texto-publicidad8 h3{
+        font-family: 'Julius Sans One';
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .texto-publicidad8 h4{
+        font-family: 'Anton', sans-serif;
+        font-size: 23px;
+        color: #fff;
+    }
+
+    .texto-publicidad8 h5{
+        font-family: 'Anton', sans-serif;
+        font-size: 85px;
+        color: #FF8000;
+        letter-spacing: 3px;
+        line-height: 1em;
+    }
+
+    .texto-publicidad8 h6{
+        position: absolute;
+        top: 65%;
+        left: 55%;
+        font-family: 'Julius Sans One';
+        font-weight: bold;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .texto-publicidad8 span{
+        color: #FF8000;
+    }
+
+    .text-publicidad8-second{
+        position: absolute;
+        top: 30%;
+        left: 13%;
+    }
+
+    .text-publicidad8-second h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #FF8000;
+    }
+
+    .text-publicidad8-second h2{
+        position: absolute;
+        top: 12%;
+        left: 10%;
+        font-family: 'Anton', sans-serif;
+        font-size: 200px;
+        color: #fff;
+    }
+
+    .last-publicidad{
+        background-image: url('/assets/imagenes/hunting/montaña2.jpg');
+        width: 100%;
+        height: 550px;
+        max-height: 100%; 
+        /* Create the parallax scrolling effect */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
    
-}
+    .texto-publicidad2 h1{
+        font-family: 'Prometo-x-bold';
+        font-size: 80px;
+        color: #fff;
+        text-transform: none;
+        text-align: center;
+        margin-top: 20%;
+    }
 
+    .texto-publicidad2 p{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        font-size: 17px;
+        text-align: center;
+    }
 
+    .texto-publicidad2 a{
+        color: #000;
+        background: #fff;
+        font-family: 'Prometo-Medium';
+        padding: 10px;
+    }
 
-
-.texto-publicidad8 h3{
-    font-family: 'Julius Sans One';
-    font-size: 25px;
-    color: #fff;
-  
-}
-
-
-.texto-publicidad8 h4{
-    font-family: 'Anton', sans-serif;
-    font-size: 23px;
-    color: #fff;
-}
-
-.texto-publicidad8 h5{
-    font-family: 'Anton', sans-serif;
-    font-size: 85px;
-    color: #FF8000;
-    letter-spacing: 3px;
-    line-height: 1em;
-}
-
-.texto-publicidad8 h6{
-    position: absolute;
-    top: 65%;
-    left: 55%;
-    font-family: 'Julius Sans One';
-    
-    font-weight: bold;
-    font-size: 20px;
-    color: #fff;
-    
-}
-
-.texto-publicidad8 span{
-    color: #FF8000;
-}
-
-.text-publicidad8-second{
-    position: absolute;
-    top: 30%;
-    left: 13%;
-
-}
-
-.text-publicidad8-second h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 40px;
-    color: #FF8000;
-
-}
-
-.text-publicidad8-second h2{
-    position: absolute;
-    top: 12%;
-    left: 10%;
-    font-family: 'Anton', sans-serif;
-    font-size: 200px;
-    color: #fff;
-
-}
-
-.last-publicidad{
-    background-image: url('/assets/imagenes/hunting/montaña2.jpg');
-    width: 100%;
-
-    height: 550px;
-    max-height: 100%; 
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-   
-
-.texto-publicidad2 h1{
-    font-family: 'Prometo-x-bold';
-    font-size: 80px;
-    color: #fff;
-    text-transform: none;
-    text-align: center;
-    margin-top: 20%;
-}
-
-.texto-publicidad2 p{
-   color: #fff;
-   font-family: 'Prometo-Thin';
-   font-size: 17px;
-   text-align: center;
-}
-
-.texto-publicidad2 a{
-    color: #000;
-    background: #fff;
-    font-family: 'Prometo-Medium';
-    padding: 10px;
-}
-
-.product-price h4{
-    font-size: 14px;
-    font-family: 'Meera Inimai', sans-serif;
-    
-    padding: 2px;
-    text-decoration: line-through;
-    color: #000;
-    position: absolute;
-    top: 82%;
-
+    .product-price h4{
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        padding: 2px;
+        text-decoration: line-through;
+        color: #000;
+        position: absolute;
+        top: 82%;
     }
 
     .product-price h4 span {
- 
         display: inline-block;
         height: 50px;
         font-family: 'Meera Inimai', sans-serif;
         font-size: 12px;
         font-weight: bold;
-      }
+    }
       
-      .product-price h5 span{
-          font-family: 'Meera Inimai', sans-serif;
+    .product-price h5 span{
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 12px;
         color: #000;
         font-weight: bold;
-      }
+    }
       
-      .product-price h3 span{
-          font-family: 'Meera Inimai', sans-serif;
-          font-size: 12px;
-          color: #000;
-          font-weight: bold;
-      }
-
-
-.product-price h3{
-    font-size: 17px;
-    font-weight: bold;
-    font-family: 'Meera Inimai', sans-serif;
-    padding: 2px;
-    color: #000;
-    position: absolute;
-    top: 82%;
-
+    .product-price h3 span{
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 12px;
+        color: #000;
+        font-weight: bold;
     }
 
-.product-price h5{
-font-size: 17px;
-font-family: 'Meera Inimai', sans-serif;
-font-weight: bold;
-padding: 2px;
-color: #ff0000;
-position: absolute;
-top: 85%;
-
-}
-
-
-.product-price a{
-    position: absolute;
-    top: 3%;
-    right: 5%;
-}
-
-.product-price2{ 
-    background: none;
-    padding-left: 10px;
-    
-    padding-top: 2px;
-}
-
-.product-price2 h6{
-    color: #000;
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
-    font-size:17px;
-    padding-left: 10px;
-    position: absolute;
-    bottom: 15%;
-
+    .product-price h3{
+        font-size: 17px;
+        font-weight: bold;
+        font-family: 'Meera Inimai', sans-serif;
+        padding: 2px;
+        color: #000;
+        position: absolute;
+        top: 82%;
     }
 
-.product-price2 h4{
-    color: #000;
-    text-decoration: line-through;
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
-    font-size: 14px;
-    padding-left: 10px;
-    position: absolute;
-    bottom: 22%;
-}
+    .product-price h5{
+        font-size: 17px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
+        padding: 2px;
+        color: #ff0000;
+        position: absolute;
+        top: 85%;
+    }
 
-.product-price2 h5{
-    color: #ff0000;
-    font-family: 'Prometo-Medium';
-    font-size: 17px;
-    padding-left: 10px;
-    position: absolute;
-    bottom: 15%;
-}
+    .product-price a{
+        position: absolute;
+        top: 3%;
+        right: 5%;
+    }
 
-.slide{
-    height: 550px;
-}
+    .product-price2{ 
+        background: none;
+        padding-left: 10px;
+        padding-top: 2px;
+    }
 
+    .product-price2 h6{
+        color: #000;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size:17px;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 15%;
+    }
 
-.slide h1{
-    font-family: 'Prometo-x-bold';
-    font-size: 30px;
-    color: #000;
-    text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    .product-price2 h4{
+        color: #000;
+        text-decoration: line-through;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        font-size: 14px;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 22%;
+    }
 
-}
+    .product-price2 h5{
+        color: #ff0000;
+        font-family: 'Prometo-Medium';
+        font-size: 17px;
+        padding-left: 10px;
+        position: absolute;
+        bottom: 15%;
+    }
 
-.slide p{
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    font-size: 20px;
-    color: #000;
-    text-align: center;
-}
+    .slide{
+        height: 550px;
+    }
 
-.slick-slider {
-width: 98%;
-margin: 0;
-}
+    .slide h1{
+        font-family: 'Prometo-x-bold';
+        font-size: 30px;
+        color: #000;
+        text-align: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 
-.slick-slider img{
-  padding: 20px;
-  height: 98%;
-}
+    .slide p{
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 20px;
+        color: #000;
+        text-align: center;
+    }
 
-.nav-btn {
-height: 47px;
-position: absolute;
-width: 26px;
-cursor: pointer;
-top: 100px !important;
-}
+    .slick-slider {
+        width: 98%;
+        margin: 0;
+    }
 
-.prev-slide.slick-disabled,
-.next-slide.slick-disabled {
-pointer-events: none;
-opacity: 0.2;
-}
+    .slick-slider img{
+        padding: 20px;
+        height: 98%;
+    }
 
+    .nav-btn {
+        height: 47px;
+        position: absolute;
+        width: 26px;
+        cursor: pointer;
+        top: 100px !important;
+    }
 
+    .prev-slide.slick-disabled,
+    .next-slide.slick-disabled {
+        pointer-events: none;
+        opacity: 0.2;
+    }
 
-.prev-slide:hover {
-background-position: 0px -53px;
-}
+    .prev-slide:hover {
+        background-position: 0px -53px;
+    }
 
-.next-slide:hover {
-background-position: -24px -53px;
-}
+    .next-slide:hover {
+        background-position: -24px -53px;
+    }
 
+    .textos-publicidad1{
+        text-align: center;
+    }
 
-.textos-publicidad1{
-text-align: center;
+    .textos-publicidad1 h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 80px;
+        padding-top: 100px;
+        color: #000;
+    }
 
+    .textos-publicidad1 p{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        top: 50%;
+        padding: 10px;
+    }
 
-}
+    .publicidad1{
+        width: 100%;
+        height: 550px;
+        max-height: 100%;
+        max-width: 100%;
+        margin: 1px;
+        padding: 0;
+    }
 
-.textos-publicidad1 h1{
-font-family: 'Anton', sans-serif;
-font-size: 80px;
-padding-top: 100px;
-color: #000;
-}
+    .anuncio1{
+        background: url('/assets/imagenes/paginaInicial/gun1.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
 
-.textos-publicidad1 p{
-font-family: 'Meera Inima', sans-serif;
-font-size: 15px;
-color: #000;
-position: absolute;
-top: 50%;
-padding: 10px;
-}
+    .anuncio2{
+        background: url('/assets/imagenes/paginaInicial/adventure.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
 
-.publicidad1{
-width: 100%;
-height: 550px;
-max-height: 100%;
-max-width: 100%;
-margin: 1px;
-padding: 0;
-}
+    .anuncio3{
+        background: url('/assets/imagenes/paginaInicial/paisaje.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
 
+    .wrapper {
+        height: 200px;
+        width: 100%;
+        margin: 50px auto;
+        margin-bottom: 1px;
+        border-radius: 7px 7px 7px 7px;
+        background: black;
+    }
 
+    .wishlist-heart{
+        position: absolute;
+        right: 40%;
+        top: 85%;
+        color: #ffffff;
+        padding: 2px;
+        background: none;
+        border: none;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+    }
 
+    .wishlist-heart i:hover{
+        color: red;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: red;
+        transition: 0.5s;
+    }
 
+    .product-img {
+        float: left;
+        background: #f0f0f0;
+        width: 50%;
+        padding: 15px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .product-img img {
+        max-height: 100%;
+        max-width: 100%;
+    }
 
+    .product-info {
+        float: left;
+        height: 100%;   
+        width: 50%;
+        background-color: #ffffff;
+    }
 
+    .product-text {
+        height: 300px;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
 
-.anuncio1{
-background: url('/assets/imagenes/paginaInicial/gun1.jpg');
-background-size: cover;
-width: 100%;
-height: 100%;
-padding: 5px;
-}
+    .product-text h1 {  
+        margin: 0 0 0 18px;
+        padding-top: 20px;
+        font-size: 20px;
+        font-family: 'Prometo-Medium';
+    }
 
-.anuncio2{
-background: url('/assets/imagenes/paginaInicial/adventure.jpg');
-background-size: cover;
-width: 100%;
-height: 100%;
-padding: 5px;
-}
+    .product-text h2 {
+        margin: 0 0 0 18px;
+        padding-top: 8px;
+        font-size: 15px;
+        font-family: 'Prometo-Medium';
+        color: #000;
+    }
 
-.anuncio3{
-background: url('/assets/imagenes/paginaInicial/paisaje.jpg');
-background-size: cover;
-width: 100%;
-height: 100%;
-padding: 5px;
-}
-
-
-.wrapper {
-height: 200px;
-width: 100%;
-margin: 50px auto;
-margin-bottom: 1px;
-border-radius: 7px 7px 7px 7px;
-background: black;
-
-}
-
-.wishlist-heart{
-position: absolute;
-right: 40%;
-top: 85%;
-color: #ffffff;
-padding: 2px;
-background: none;
-border: none;
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: #000;
-
-}
-
-.wishlist-heart i:hover{
-color: red;
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: red;
-transition: 0.5s;
-}
-
-.product-img {
-float: left;
-background: #f0f0f0;
-width: 50%;
-padding: 15px;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.product-img img {
-
-max-height: 100%;
-
-max-width: 100%;
-}
-
-.product-info {
-float: left;
-height: 100%;
-width: 50%;
-background-color: #ffffff;
-}
-
-.product-text {
-height: 300px;
-width: 100%;
-height: 100%;
-background: transparent;
-}
-
-.product-text h1 {
-margin: 0 0 0 18px;
-padding-top: 20px;
-font-size: 20px;
-font-family: 'Prometo-Medium';
-}
-
-
-
-.product-text h2 {
-margin: 0 0 0 18px;
-padding-top: 8px;
-font-size: 15px;
-font-family: 'Prometo-Medium';
-color: #000;
-}
-
-.product-text h3 {
-    margin: 0 0 0 18px;
-    padding-top: 20px;
-    font-size: 13px;
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
-    color: #000;
-    text-transform: uppercase;
+    .product-text h3 {
+        margin: 0 0 0 18px;
+        padding-top: 20px;
+        font-size: 13px;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        color: #000;
+        text-transform: uppercase;
     }
     
+    .product-text p {
+        height: 125px;
+        margin: 0 0 0 38px;
+        font-family: 'Playfair Display', serif;
+        color: #8d8d8d;
+        line-height: 1.7em;
+        font-size: 15px;
+        font-weight: lighter;
+        overflow: hidden;
+    }
 
-.product-text p {
-height: 125px;
-margin: 0 0 0 38px;
-font-family: 'Playfair Display', serif;
-color: #8d8d8d;
-line-height: 1.7em;
-font-size: 15px;
-font-weight: lighter;
-overflow: hidden;
-}
+    .product-price{
+        padding-left: 14px;
+    }
 
-.product-price{
-padding-left: 14px;
-}
+    .product-price i{
+        color: transparent;
+        float: right;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+    }
 
-.product-price i{
-color: transparent;
-float: right;
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: #000;
-}
+    .product-price i:hover{
+        color: #ff0000;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #ff0000; 
+        transition: 0.5s;
+    }
 
-.product-price i:hover{
-color: #ff0000;
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: #ff0000;
-transition: 0.5s;
-}
+    .product-price-btn {
+        height: 103px;
+        width: 327px;
+        position: absolute;
+        top: 80%;
+    }
 
-.product-price-btn {
-height: 103px;
-width: 327px;
-position: absolute;
-top: 80%;
-}
+    .product-price-btn p {
+        display: inline-block;
+        position: absolute;
+        top: -13px;
+        height: 50px;
+        font-family: 'Prometo-Thin';
+        margin: 0 0 0 18px;
+        font-size: 20px;
+        color: #000000;
+        font-weight: 600;
+        font-family: 'Prometo-Medium';
+    }
 
-.product-price-btn p {
-display: inline-block;
-position: absolute;
-top: -13px;
-height: 50px;
-font-family: 'Prometo-Thin';
-margin: 0 0 0 18px;
-font-size: 20px;
-color: #000000;
-font-weight: 600;
-font-family: 'Prometo-Medium';
-}
+    .product-price span {
+        display: inline-block;
+        height: 50px;
+        font-family: 'Suranna', serif;
+        font-size: 34px;
+    }
 
-.product-price span {
+    .product-price-btn button {
+        border: none;
+        margin-top: 20px;
+        background: none;
+        margin-left: 10px;
+        color: #000;
+        font-size: 17px;
+        text-decoration: none;
+    }
 
-display: inline-block;
-height: 50px;
-font-family: 'Suranna', serif;
-font-size: 34px;
-}
+    .product-price-btn button:hover {
+        color: red;
+    }
 
-.product-price-btn button {
-border: none;
-margin-top: 20px;
-background: none;
-margin-left: 10px;
-color: #000;
-font-size: 17px;
-text-decoration: none;
-}
+    .seccion-productos-extras{
+        margin-top: 20px;
+    }
 
-.product-price-btn button:hover {
-color: red;
-}
+    .seccion-productos-extras h1{
+        font-family: 'Anton', sans-serif;
+        color: #000;
+        font-size: 40px;
+        text-transform: none;
+        text-align: left;
+        padding: 20px;
+        margin-bottom: 0;
+    }
 
+    .seccion-productos-extras hr{
+        height: 1px;
+        width: 20%;
+        margin-top: 0;
+        background-color: #FF8000;
+        margin-left: 0;
+    }
 
-.seccion-productos-extras{
-margin-top: 20px;
-}
+    .container-fluid-video{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background: black;
+    }   
 
-.seccion-productos-extras h1{
-    font-family: 'Anton', sans-serif;
-    color: #000;
-    font-size: 40px;
-    text-transform: none;
-    text-align: left;
-    padding: 20px;
-    margin-bottom: 0;
-}
+    .container-fluid video{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-.seccion-productos-extras hr{
-height: 1px;
-width: 20%;
-margin-top: 0;
-background-color: #FF8000;
-margin-left: 0;
-}
+    .texto-video{
+        position: absolute;
+        top: 35%;
+        left:10%;
+        padding: 10px;
+        opacity: 1;
+        background: none;
+        width: 80%;
+    }
 
-.container-fluid-video{
-position: relative;
-height: 100vh;
-width: 100%;
-overflow: hidden;
-background: black;
+    .texto-video h1{
+        color: #fff;
+        font-family: 'Prometo-Medium';
+        font-weight: bolder;
+        letter-spacing: 4px;
+        font-size: 150px;
+        text-align: center;
+    }
 
-}   
-.container-fluid video{
-margin: 0;
-padding: 0;
-position: absolute;
-padding: 0;
-margin: 0;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
+    .texto-video p{
+        color: #fff;
+        font-family: 'Prometo-Light';
+        font-weight: bolder;
+        letter-spacing: 2px;
+        font-size: 35px;
+        text-align: justify;
+        padding-left: 0px;
+        margin-bottom: 0px;
+        padding-top: 0;
+        text-align: center;
+    }
 
-.texto-video{
-position: absolute;
-top: 35%;
-left:10%;
-padding: 10px;
-opacity: 1;
-background: none;
-width: 80%;
+    .texto-video hr{
+        width: 35%;
+        margin-left:50%px;
+        height: 10px;
+        background: white;
+    }
 
-}
+    .texto-video h5{
+        font-family: 'Prometo-Light';
+        font-size: 25px;
+        color: #fff;
+        font-weight: bolder;
+        text-align: justify;
+        font-weight: bolder;    
+        text-align: center;
+    }
 
-.texto-video h1{
-color: #fff;
-font-family: 'Prometo-Medium';
-font-weight: bolder;
-letter-spacing: 4px;
-font-size: 150px;
-text-align: center;
-}
+    .texto-video span{
+        font-weight: bolder;
+        font-family: "Prometo-Medium";
+    }
 
-.texto-video p{
-color: #fff;
-font-family: 'Prometo-Light';
-font-weight: bolder;
-letter-spacing: 2px;
-font-size: 35px;
-text-align: justify;
-padding-left: 0px;
-margin-bottom: 0px;
-padding-top: 0;
-text-align: center;
-}
+    .a-categorias{
+        background: transparent;
+        border: 2px solid white;
+        color: white; 
+        font-family: 'Prometo-Medium';  
+        padding: 3px;
+        font-size: 40px;
+    }
 
-.texto-video hr{
-width: 35%;
-margin-left:50%px;
-height: 10px;
-background: white;
+    .hashtag-pesca{
+        background: black;
+    }
 
-}
+    .knokaut-text{
+        color: white;
+        font-family: 'Prometo-Medium';
+        background: url('/assets/imagenes/paginaInicial/gun3.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-size: 24vw;
+        text-align: center;
+    }
 
+    .knokaut-text2{
+        background: url('/assets/imagenes/hunting/hunting8.png');
+        font:bolder 400px 'Anton', sans-serif;
+        text-align:center;
+        background-size: contain;
+        line-height: 1em;   
+        width:100%;
+        background-clip:text;
+        -webkit-background-clip:text;
+        -webkit-text-stroke: #fff;
+        color:transparent;
+        padding: 60px;
+    }
 
-.texto-video h5{
-font-family: 'Prometo-Light';
-font-size: 25px;
-color: #fff;
-font-weight: bolder;
-text-align: justify;
-font-weight: bolder;
-text-align: center;
+    .hashtag-pesca hr{  
+        background: white;
+        height: 10px;
+        width: 10%;
+    }
 
-}
+    .image-background{
+        height: 650px;
+        padding: 0;
+        margin-bottom: 90px;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .image-background{
+                margin-bottom: 0px;
+            }
+        }
 
-.texto-video span{
-font-weight: bolder;
-font-family: "Prometo-Medium";
-}
+         /*Media query en celulares vertical*/
+         @media only screen and (max-width: 600px) and (min-width: 300px){
+            .image-background{
+                height: 180px;
+                margin-bottom: 0px;
+            }
+            
+        }
+        @media only screen and (max-width: 750px) and (min-width: 700px){
+            .image-background{
+                height: 350px;
+                margin-bottom: 0px;
+            }
+        }
 
-.a-categorias{
-background: transparent;
-border: 2px solid white;
-color: white; 
-font-family: 'Prometo-Medium';
-padding: 3px;
-font-size: 40px;
-}
-
-.hashtag-pesca{
-background: black;
-
-}
-
-.knokaut-text{
-color: white;
-font-family: 'Prometo-Medium';
-background: url('/assets/imagenes/paginaInicial/gun3.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;
-font-size: 24vw;
-text-align: center;
-}
-
-.knokaut-text2{
-
-    background: url('/assets/imagenes/hunting/hunting8.png');
    
 
-    font:                           bolder 400px 'Anton', sans-serif;
-    text-align:                     center;
-    background-size: contain;
-    line-height: 1em;   
-    width:                          100%;
-    background-clip:                text;
-    -webkit-background-clip:        text;
-    -webkit-text-stroke: #fff;
-    color:                          transparent;
-    padding: 60px;
+    .texto-image-background h1{
+        color: #000;
+        font-family: 'Anton', sans-serif;
+        padding-top: 50%;
+        text-align: center;
+        font-size: 70px;
+        margin-bottom: 0;
+    }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .texto-image-background h1{
+                padding-top: 20%;
+                font-size: 60px;;
+            }
+        }
 
-}
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .texto-image-background h1{
+                font-size: 50px;
+            }
+        }
 
-.hashtag-pesca hr{
-background: white;
-height: 10px;
-width: 10%;
-}
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 600px) and (min-width: 300px){
+            .texto-image-background h1{
+                color: #000;
+                font-family: 'Anton', sans-serif;
+                margin-top: 0%;
+                text-align: center;
+                font-size: 70px;
+                margin-bottom: 0;
+            }
+        }
+        @media only screen and (max-width: 750px) and (min-width: 700px){
+            .texto-image-background h1{
+                color: #000;
+                font-family: 'Anton', sans-serif;
+                padding-top: 40%;
+                text-align: center;
+                font-size: 70px;
+                margin-bottom: 0;
+            }
+        }
 
-.image-background{
-height: 650px;
-padding: 0;
-margin-bottom: 90px;
-}
-
-
-.image-background2{
-    background: url('/assets/imagenes/hunting/camuflaje.jpg');
-    width: 100%;
-
-    height: 550px;
-    max-height: 100%; 
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+    .texto-image-background hr{
+        width: 20%;
+        height: 1px;
+        background: #000;
     }
 
-.texto-image-background h1{
-color: #000;
-font-family: 'Anton', sans-serif;
-padding-top: 50%;
-text-align: center;
-font-size: 70px;
-margin-bottom: 0;
+    .texto-image-background p{
+        color: #000;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+    }
+     
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .texto-image-background{
+                margin-bottom: 100px;
+            }
+            .texto-image-background p{
+                font-size: 16px;
+                text-align: center;
+            }
+        }
 
-}
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 300px){
+            .texto-image-background{
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 750px) and (min-width: 392px){
+            .texto-image-background{
+                text-align: center;
+            }
+        }
+
+    .parallax-fishing{
+        background: url('/assets/imagenes/hunting/hunting11.jpg');
+        /*background-attachment: fixed;*/
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+    }
+
+    section{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .sec1{
+        background: url('/assets/imagenes/fishing/accesories2.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .sec2{
+        background: url('/assets/imagenes/fishing/accesories3.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .sec3{
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+    }
+
+    .skewedBox1{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-width: 100px 0 0 1400px;
+        border-color: transparent transparent transparent white;
+        border-style: solid;
+    }
+
+    .sec1 .skewedBox1 h1{
+        position: relative;
+        color: black;
+        font-family: 'Prometo-Medium';
+    }
+
+    .skewedBox2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
+        border-color: transparent transparent transparent #fff; 
+        border-style: solid;
+    }
+
+    .skewedBox3{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
+        border-color: transparent transparent transparent white;
+        border-style: solid;
+    }
+
+    .asimetrico1{
+        position: absolute;
+        height: 800px;
+        width: 90%; 
+        background: url('/assets/imagenes/fishing/accesories.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        top: 10%; 
+        left: 10%;
+    }
+
+    .asimetrico2{
+        position: absolute;
+        height: 300px; 
+        width: 25%; 
+        background:url('/assets/imagenes/paginaInicial/hunting.jpg'); 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        top: 10%; 
+        left: 35%;
+    }
+
+    .asimetrico3{
+        position: absolute;
+        height: 350px; 
+        width: 29%; 
+        background: url('/assets/imagenes/paginaInicial/camping.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; 
+        top: 10%; 
+        left: 65%;
+    }
+
+    .asimetrico4{
+        position: absolute;
+        height: 350px; 
+        width: 60%; 
+        background: #000;
+        top: 35%; 
+        left: 2%;
+    }
+
+    .asimetrico4 h1{
+        font-family: 'Prometo-x-bold';
+        font-size: 85px;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 0;
+        padding-bottom: 0px;
+    }
+
+    .asimetrico4 p{
+        font-family: 'Prometo-Thin';
+        font-size: 18px;
+        font-weight: bolder;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .asimetrico4 hr{
+        width: 20%;
+        height: 10px;
+        background: red;
+        margin-left: 40%;
+    }
+
+    .container-fluid-asimetrico{
+        position: relative;
+        background: #000;
+        height: 1000px; 
+        padding-top: 0; 
+        margin: 0;
+    }
+
+    .promocionesFishing{
+        padding: 5px;
+        position: relative;
+    }
+
+    .imagenPromocion{
+        width: 100%;
+        height:auto;
+        padding: 10px;
+    }
+
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
 
 
-.texto-image-background hr{
-    width: 20%;
-    height: 1px;
-    background: #000;
-}
+    h1{
+        position: relative;
+        margin-bottom: 45px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 44px;
+        text-transform: uppercase;
+        color: #424242;
+    }
 
-
-.texto-image-background p{
-color: #000;
-font-family: 'Meera Inima', sans-serif;
-font-size: 15px;
-}
-
-.parallax-fishing{
-background: url('/assets/imagenes/hunting/hunting11.jpg');
-/*background-attachment: fixed;*/
-background-position: center;
-background-size: cover;
-height: 500px;
-}
-
-section{
-position: relative;
-
-width: 100%;
-height: 100vh;
-overflow: hidden;
-
-}
-
-.sec1{
-
-background: url('/assets/imagenes/fishing/accesories2.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-
-}
-.sec2{
-background: url('/assets/imagenes/fishing/accesories3.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-
-}
-
-.sec3{
-background: url('/assets/imagenes/paginaInicial/camping.jpg');
-
-}
-
-.skewedBox1{
-position: absolute;
-bottom: 0;
-left: 0;
-border-width: 100px 0 0 1400px;
-border-color: transparent transparent transparent white;
-border-style: solid;
-}
-
-.sec1 .skewedBox1 h1{
-position: relative;
-color: black;
-font-family: 'Prometo-Medium';
-}
-
-
-.skewedBox2{
-
-position: absolute;
-top: 0;
-left: 0;
-border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
-border-color: transparent transparent transparent #fff;
-border-style: solid;
-
-}
-
-.skewedBox3{
-
-position: absolute;
-top: 0;
-left: 0;
-border-width:  0 0 100px 1400px;/*TOP LEFT BOTTOM RIGHT*/
-border-color: transparent transparent transparent white;
-border-style: solid;
-
-}
-
-.asimetrico1{
-position: absolute;
-height: 800px;
-width: 90%; 
-background: url('/assets/imagenes/fishing/accesories.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-top: 10%; 
-left: 10%;
-}
-
-.asimetrico2{
-position: absolute;
-height: 300px; 
-width: 25%; 
-background:url('/assets/imagenes/paginaInicial/hunting.jpg'); 
-background-repeat: no-repeat;
-background-size: cover;
-
-background-position: center;
-top: 10%; 
-left: 35%;
-}
-
-.asimetrico3{
-position: absolute;
-height: 350px; 
-width: 29%; 
-background: url('/assets/imagenes/paginaInicial/camping.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center; 
-top: 10%; 
-left: 65%;
-}
-
-.asimetrico4{
-position: absolute;
-height: 350px; 
-width: 60%; 
-background: #000;
-top: 35%; 
-left: 2%;
-}
-
-.asimetrico4 h1{
-font-family: 'Prometo-x-bold';
-font-size: 85px;
-color: #fff;
-text-align: center;
-padding: 10px;
-margin-bottom: 0;
-padding-bottom: 0px;
-
-
-
-}
-
-.asimetrico4 p{
-font-family: 'Prometo-Thin';
-font-size: 18px;
-font-weight: bolder;
-color: #fff;
-text-align: center;
-padding: 10px;
-
-
-}
-
-.asimetrico4 hr{
-width: 20%;
-height: 10px;
-background: red;
-margin-left: 40%;
-
-}
-
-.container-fluid-asimetrico{
-position: relative;
-background: #000;
-height: 1000px; 
-padding-top: 0; 
-margin: 0;
-
-}
-
-
-
-
-.promocionesFishing{
-padding: 5px;
-
-position: relative;
-}
-
-.imagenPromocion{
-width: 100%;
-height:auto;
-padding: 10px;
-}
-
-html,body{
-width: 100%;
-height: 100%;
-}
-
-.container{
-padding: 0;
-margin: 0 auto;
-width: 1140px;
-
-}
-
-h1{
-position: relative;
-margin-bottom: 45px;
-font-family: 'Oswald', sans-serif;
-font-size: 44px;
-text-transform: uppercase;
-color: #424242;
-}
-
-.gallery-wrap {
-display: flex;
-flex-direction: row;
-width: 100%;
-height: 80vh;
-position: relative;
-}
-
-.item {
-    flex: 1;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: none;
-    transition: flex 0.8s ease-in-out;
+    .gallery-wrap {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 80vh;
+        position: relative;
+    }
     
-}
+    .fotos-categorias{
+        display: none;
+    }
 
+    .item {
+        flex: 1;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: none;
+        transition: flex 0.8s ease-in-out;
+    }
 
-.item:hover{
-  flex: 7;
- 
-}
+    .item:hover{
+        flex: 7;
+    }
 
-.item h2 a{
-    color: #fff;
-    padding: 10px;
-    font-family: 'Prometo-x-bold';
-    position: absolute; 
-    top: 25%;
-    /*color: transparent;
-    -webkit-text-stroke: 4px #fff;*/
-    transition: 1s ease-in-out;
-    text-decoration: none;
-    font-size: 120px;
-    display: none;
-}
+    .item h2 a{
+        color: #fff;
+        padding: 10px;
+        font-family: 'Prometo-x-bold';
+        position: absolute; 
+        top: 25%;
+        /*color: transparent;
+        -webkit-text-stroke: 4px #fff;*/
+        transition: 1s ease-in-out;
+        text-decoration: none;
+        font-size: 120px;
+        display: none;
+    }
 
-.item:hover h2 a{
+    .item:hover h2 a{
+        padding-left: 120px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+    }
 
-    padding-left: 120px;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-}
+    .item h4{
+        color: #fff;
+        font-size: 25px;
+        padding: 10px;
+        position: absolute;
+        opacity: 0;
+        top: 20%;
+        font-family: 'Prometo-Thin';
+        text-align: justify;
+        left: 5%;
+        transition: 0.5s ease-in-out;
+    }
 
+    .item:hover h4{
+        opacity: 1;
+        top: 40%;
+    }
 
-.item h4{
-    color: #fff;
-    font-size: 25px;
-    padding: 10px;
-    position: absolute;
-    opacity: 0;
-    top: 20%;
-    font-family: 'Prometo-Thin';
-    text-align: justify;
-    left: 5%;
-    transition: 0.5s ease-in-out;
-}
+    .item h3{
+        color: #fff;
+        font-family: 'Prometo-Thin';
+        font-weight: bolder;
+        font-size: 30px;
+        position: absolute;
+        opacity: 0;
+        top: 60%;
+        transition: 0.5s ease-in-out;
+    }
 
-.item:hover h4{
-    opacity: 1;
-    top: 40%;
-}
+    .item:hover h3{
+        opacity: 1;
+        text-align: center;
+        transform: translate(100px,0);
+    }
 
+    .item button{
+        position: absolute;
+        opacity: 0;
+        bottom: 20%;
+    }
 
+    .item:hover button{
+        transition: 0.5s;
+        opacity: 1;
+        transform: translate(120px,0);
+    }
 
+    .item button{
+        color: #fff;
+        background: transparent;
+        border:2px solid #fff;
+        font-family: 'Prometo-Medium';
+        font-size: 25px;
+        padding: 10px; 
+        letter-spacing: 3px; 
+    }
 
-.item h3{
-    color: #fff;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    font-size: 30px;
-    position: absolute;
-    opacity: 0;
-    top: 60%;
-    transition: 0.5s ease-in-out;
-}
+    .item button:hover{
+        color: #000;
+        background: #fff;
+    }
 
-.item:hover h3{
-    
-    opacity: 1;
-    text-align: center;
-    transform: translate(100px,0);
-}
+    .texto-acordion{
+        color: #ffffff;
+        font-family: 'Prometo-Medium';
+        font-size: 20px;
+        position: relative;
+        width: 100%;
+        top: 90%;
+        opacity: 0;
+        transition: 1s ease-in-out;
+    }
 
-.item button{
-    position: absolute;
-    opacity: 0;
-    bottom: 20%;
+    .item:hover .texto-acordion{  
+        opacity: 1;
+        transform: translate(10px, -120px);
+    }
 
-}
+    .item-1 { 
+        background-image: url('/assets/imagenes/hunting/Rifles.png');
+    }
 
-.item:hover button{
-    transition: 0.5s;
-    opacity: 1;
-    transform: translate(120px,0);
-}
+    .item-1:hover{
+        filter: brightness(100%);
+    }
 
+    .item-2 { 
+        background-image: url('/assets/imagenes/hunting/Arquería.png');
+    }
 
-.item button{
-    color: #fff;
-    background: transparent;
-    border:2px solid #fff;
-    font-family: 'Prometo-Medium';
-    font-size: 25px;
-    padding: 10px; 
-    letter-spacing: 3px; 
-   
-}
+    .item-2:hover{
+        filter: brightness(100%);
+    }
 
-.item button:hover{
-    color: #000;
-    background: #fff;
-}
+    .item-3 { 
+        background-image: url('/assets/imagenes/hunting/Pistolas.png');
+    }
 
+    .item-3:hover{
+        filter: brightness(100%);
+    }
 
-.texto-acordion{
-    color: #ffffff;
-    font-family: 'Prometo-Medium';
-    font-size: 20px;
-    position: relative;
-    width: 100%;
-    top: 90%;
-    opacity: 0;
-    transition: 1s ease-in-out;
-}
+    .item-4 { 
+        background-image: url('/assets/imagenes/hunting/Cuchilleria.png');
+    }
 
-.item:hover .texto-acordion{
-   
-    opacity: 1;
-    transform: translate(10px, -120px);
-}
+    .item-4:hover{
+        filter: brightness(100%);
+    }
 
+    .item-5 { 
+        background-image: url('/assets/imagenes/hunting/Ropa.png');
+    }
 
-.item-1 { 
-background-image: url('/assets/imagenes/hunting/Rifles.png');
+    .item-5:hover{
+        filter: brightness(100%);
+    }
 
-}
-
-.item-1:hover{
-filter: brightness(100%);
-}
-
-.item-2 { 
-background-image: url('/assets/imagenes/hunting/Arquería.png');
-
-}
-
-.item-2:hover{
-filter: brightness(100%);
-}
-
-
-.item-3 { 
-background-image: url('/assets/imagenes/hunting/Pistolas.png');
-
-}
-
-.item-3:hover{
-filter: brightness(100%);
-}
-
-.item-4 { 
-background-image: url('/assets/imagenes/hunting/Cuchilleria.png');
-
-}
-
-.item-4:hover{
-filter: brightness(100%);
-}
-
-.item-5 { 
-background-image: url('/assets/imagenes/hunting/Ropa.png');
-
-}
-
-.item-5:hover{
-filter: brightness(100%);
-}
-
-.item-6 { 
-    background-image: url('/assets/imagenes/hunting/Accesorios.png');
-    
+    .item-6 { 
+        background-image: url('/assets/imagenes/hunting/Accesorios.png');
     }
     
     .item-5:hover{
-    filter: brightness(100%);
+        filter: brightness(100%);
     }
 
-.social{
-position: absolute;
-right: 35px;
-bottom: 0;
-}
-img{
-  display: block;
- 
-}
+    .social{
+        position: absolute;
+        right: 35px;
+        bottom: 0;
+    }
 
+    img{
+        display: block;
+    }
 
+    .product-card {
+        width: 100%;
+        position: relative;
+        margin: 50px auto;
+        background: #fafafa;
+        height: auto;
+        transition: all 200ms ease-in;
+        transform: scale(1);
+    }
 
-.product-card {
-    width: 100%;
-    position: relative;
-    
-    margin: 50px auto;
-    background: #fafafa;
-    height: auto;
-    transition: all 200ms ease-in;
-    transform: scale(1);
-   
+    .product-card:hover{
+        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        transition: all 300ms ease-in;
+    }
 
-}
+    .badge1{
+        position: absolute;
+        left: 0;
+        top: 13px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: #000;
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: none;
+        z-index: 1;
+    }
 
-.product-card:hover{
-    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    transition: all 300ms ease-in;
-    
-}
+    .badge2 {
+        position: absolute;
+        left: 0;
+        top: 40px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: #ff0000;
+        color: #fff;
+        padding: 3px 10px;
+        z-index: 1;
+    }
 
-.badge1 {
-    position: absolute;
-    left: 0;
-    top: 13px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: #000;
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: none;
-    z-index: 1;
-}
+    .badge3 {
+        position: absolute;
+        right: 5px;
+        top: 47%;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: 700;
+        color: #fff;
+        background-color: #000000;
+        padding: 3px 10px;
+    }
 
-.badge2 {
-    position: absolute;
-    left: 0;
-    top: 40px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: #ff0000;
-    color: #fff;
-    padding: 3px 10px;
-    z-index: 1;
-}
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 50px;
+        background: #f0f0f0;
+    }
 
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+        transition: all 200ms ease-in;
+        transform: scale(1);
+    }
 
+    .product-tumb img:hover {
+        transition: all 300ms ease-in;
+        transform: scale(1.2);
+    }
 
-.badge3 {
-    position: absolute;
-    right: 5px;
-    top: 47%;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: 'Meera Inimai', sans-serif;
-    font-weight: 700;
-    color: #fff;
-    background-color: #000000;
-    
-    
-    padding: 3px 10px;
-}
-.product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    padding: 50px;
-    background: #f0f0f0;
-}
+    .product-details {
+        padding: 30px;
+    }
 
-.product-tumb img {
+    .product-catagory {
+        display: block;
+        font-size: 12px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #000;
+        margin: 13px;
+        font-family: 'Meera Inimai', sans-serif;
+    }
 
-    max-width: 100%;
-    max-height: 100%;
-    transition: all 200ms ease-in;
-    transform: scale(1);
-}
+    .product-details h4{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        color: #000;
+    }
 
-.product-tumb img:hover {
-  transition: all 300ms ease-in;
-  transform: scale(1.2);
-}
+    .product-details h4 span{
+        font-weight: normal;
+        text-decoration: line-through;
+    }
 
-.product-details {
-    padding: 30px;
-}
+    .product-details h5{
+        font-family: 'Meera Inima', sans-serif;
+        color: #000;
+        font-size: 14px;
+    }
 
-.product-catagory {
-    display: block;
-    font-size: 12px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    color: #000;
-    margin: 13px;
-    font-family: 'Meera Inimai', sans-serif;
-}
-
-.product-details h4{
-    font-family: 'Meera Inima', sans-serif;
-   
-    font-size: 14px;
-    color: #000;
-  }
-
-  .product-details h4 span{
-    font-weight: normal;
-    text-decoration: line-through;
-}
-
+    .product-details h5 span{
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+    }
   
+    .product-details h3{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .product-details h4 a {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        color: #000000;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 15px;
+        font-family: 'Meera Inima', sans-serif;
+    }
   
-  .product-details h5{
-    font-family: 'Meera Inima', sans-serif;
-    color: #000;
-    font-size: 14px;
+    .product-details h4 a:hover {
+        color: #162953;
+    }
   
-  }
+    .product-details p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
 
-  .product-details h5 span{
-      color: red;
-      font-weight: bold;
-      font-size: 18px;
-  }
-  
-  .product-details h3{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 14px;
-    color: #000;
-  }
+    .product-bottom-details {
+        overflow: hidden;
+        position: absolute;
+        top: 85%;
+    }
 
- 
-  
-  .product-details h4 a {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-    color: #000000;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 15px;
-    font-family: 'Meera Inima', sans-serif;
-  }
-  
-  .product-details h4 a:hover {
-    color: #162953;
-  }
-  
-  .product-details p {
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 18px;
-    color: #999;
-  }
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
 
-.product-bottom-details {
-    overflow: hidden;
-    position: absolute;
-    top: 85%;
-}
+    .product-price {
+        font-size: 20px;
+        color: #000000;
+        font-weight: 600;
+        font-family: 'Prometo-Medium';
+    }
 
-.product-bottom-details div {
-    float: left;
-    width: 50%;
-}
+    .product-price i{
+        color: transparent;
+        float: right;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+    }
 
-.product-price {
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    font-family: 'Prometo-Medium';
-}
+    .product-price i:hover{
+        color: #ff0000;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #ff0000;
+    }
 
-.product-price i{
-  color: transparent;
-  float: right;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #000;
-}
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
 
-.product-price i:hover{
-  color: #ff0000;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #ff0000;
-}
+    .product-links {
+        text-align: right;
+        padding-left: 35px;
+        position: absolute;
+        top: 85%;
+        right: 10%;
+    }
 
-
-.product-price small {
-    font-size: 80%;
-    font-weight: 400;
-    text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.product-links {
-    text-align: right;
-    padding-left: 35px;
-    position: absolute;
-    top: 85%;
-    right: 10%;
-    
-}
-
-.product-links a {
-    background: none;
-    color: #000000;
-    transition: 0.3s;
-    font-size: 17px;
-    padding: 5px;
-}
+    .product-links a {
+        background: none;
+        color: #000000;
+        transition: 0.3s;
+        font-size: 17px;
+        padding: 5px;
+    }
 
 .product-links a:hover {
     color: red;
@@ -1936,7 +1868,7 @@ img{
     padding-bottom: 0;
     margin-bottom: 0;
     color: #000;
-    font-size: 40px;
+    font-size: 35px;
     text-align: left;
     text-transform: none;
 }
@@ -1954,9 +1886,19 @@ img{
     width: 20%;
     height: 2px;
     margin-left: 0;
-  
-   
 }   
+     /*Media query en celulares vertical*/
+    @media only screen and (max-width: 390px) and (min-width: 300px){
+        .product-Title hr{
+            width: 40%;
+        }
+    }
+
+    @media only screen and (max-width: 750px) and (min-width: 392px){
+        .product-Title hr{
+            width: 40%;
+        }
+    }   
 
 .categorias-content{
     padding-top: 50px;
@@ -1974,19 +1916,29 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
 
 
 
-.categorias-text h1{
-    text-align: center;
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 75px;
-    color: #000;
-    font-weight: bolder;
-    padding: 10px;
-    text-transform: none;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
+    .categorias-text h1{
+        text-align: center;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 75px;
+        color: #000;
+        font-weight: bolder;
+        padding: 10px;
+        text-transform: none;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 390px) and (min-width: 300px){
+            .categorias-text h1{
+                font-size: 40px;
+            }   
+        }
 
-}
-
+        @media only screen and (max-width: 750px) and (min-width: 392px){
+            .categorias-text h1{
+                font-size: 50px;
+            }     
+        }
 
 
 .categorias-text p{
@@ -1996,6 +1948,18 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
     font-size: 30px;
     color: #000;
 }
+     /*Media query en celulares vertical*/
+     @media only screen and (max-width: 390px) and (min-width: 300px){
+        .categorias-text p{
+            font-size: 25px;
+        }   
+    }
+
+    @media only screen and (max-width: 750px) and (min-width: 392px){
+        .categorias-text p{
+            font-size: 25px;
+        }     
+    }
 
 .categorias-text h3{
     text-align: center;
@@ -2036,9 +2000,23 @@ a.bttn-dark {
     width: 60%;
     text-align: center;
     margin-left: 20%;
-   
+}
+    /*Media query en celulares vertical*/
+    @media only screen and (max-width: 390px) and (min-width: 300px){
+        a.bttn-dark{
+            text-align: center;
+            margin-left: 0%;
+        }
+    }
 
-  }
+    @media only screen and (max-width: 750px) and (min-width: 392px){
+        a.bttn-dark{
+            text-align: center;
+            margin-left: 0%;
+            margin-bottom: 40px;
+        }
+    }
+
   a.bttn-dark:hover {
     color: #000;
 
@@ -3208,7 +3186,7 @@ img{
 }
 
 .product-Title hr{
-    background: #162953;
+    background: #FF8000;
     width: 20%;
     height: 3px;
     margin-left: 0;
@@ -3374,954 +3352,64 @@ a.bttn-dark {
 }
 
 
-
-
-/*Afecta Android phones LANDSCAPE
-HTC ONE Landscape -- Si lo afecta
-Samsung Galaxy S6 Landscape-- Si lo afecta
-Samsung Galaxy S6 Edge Landscape--Si lo afecta
-LG G5 Lansdscape -- Si lo afecta
-Afecta MISC
-BlackBerry z10  landscape
-Nexus 7 Portrait
-Kindle Fire Portrait 
-Media query usado
-@media screen and (max-width: 736px) and (min-width: 320px){}
-*/
-@media screen and (max-width: 640px) and (min-width: 568px){
-
-.texto-video{
-position: absolute;
-width: 90%;
-top:12%;
-left: 7%;
-padding:15px;
-opacity: 1;
-background: transparent;
-
-}
-
-.texto-video h1{
-
-letter-spacing: 4px;
-font-size: 90px;
-text-align: center;
-margin-bottom:0;
-padding-bottom: 0;
-}
-
-.texto-video p{
-
-letter-spacing: 2px;
-font-size: 17px;
-text-align: justify;
-padding-left: 1px;
-margin-bottom: 0px;
-padding-top: 10px;
-text-align: center;
-}
-
-
-
-.texto-video h5{
-
-font-size: 18px;
-color: white;
-text-align: justify;
-font-weight: bolder;
-text-align: center;
-
-}
-
-.image-background{
-height: 300px;
-}
-
-
-.texto-image-background h1{
-
-padding-top: 12%;
-text-align: center;
-font-size: 30px;
-
-}
-
-.texto-image-background p{
-
-font-size: 12px;
-}
-
-.bttn-dark{
-font-size: 12px;
-}
-
-.product-Title h1{
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.seccion-productos-extras h1{
-    font-size: 40px;
-}
-
-.product-text h2{
-    font-size: 13px;
-}
-
-.product-price2 h5{
-    font-size: 13px;
-    top: 68%;
-}
-
-.wishlist-heart{
-    position: absolute;
-    right: 35%;
-    top: 73%;
-    color: #ffffff;
-    padding: 2px;
-    background: none;
-    border: none;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000;
-    
-}
-
-.product-links-bag2{
-    right: 3%;
-}
-
-.slide{
-    height: 380px;
-}
-
-.slide h1{
-    font-size: 25px;
-}
-
-.slide p{
-    font-size: 15px;
-}
-
-
-.categorias-text h1{
-    font-size: 40px;
-}
-
-.categorias-text span{
-    font-size: 40px;
-  
-}
-
-.item:hover h2 a{
-    -webkit-text-stroke: 2px #fff;
-    font-size: 40px;
-}
-
-.product-Title h1{
-    font-size: 30px;
-}   
-
-.seccion-productos-extras h1{
-    font-size: 30px;
-}
-
-.gallery-wrap{
-    width: 97%;
-}
-
-}
-
-/*Celular Vertical*/
-/*Afecta 
-Android phones Portrait
-HTC ONE X Portrait  -- Si lo afecta
-Samsung Galaxy S6 Portrait -- Si lo afecta
-Samsung Galaxy S6 Edge Portrait -- Si lo afecta 
-LG G5 Porrait -- Si lo afecta 
-Black Berry  Z10 Portrait  -- Si lo afecta
-Iphone 7 Portrait
-*/
-@media only screen and (max-width: 390px) and (min-width: 321px){
-
-
-
-
-
-.texto-video{
-
-    position: absolute;
-    top: 10%;
-    left:10%;
-    padding: 10px;
-    opacity: 1;
-    background: none;
-    width: 80%;
-    
+/*Media query categorias de cacería*/
+@media only screen and (max-width: 600px) and (min-width: 300px){
+    .col-6{
+        padding: 1px;
     }
-    
-    .texto-video h1{
-    color: #fff;
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
-    letter-spacing: 4px;
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 0px;
+    .gallery-wrap{
+        display: none;
     }
-    
-    .texto-video p{
-    color: #fff;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    letter-spacing: 2px;
-    font-size: 11px;
-    text-align: justify;
-    padding-left: 0px;
-    margin-bottom: 0px;
-    padding-top: 0;
-    text-align: center;
+    .fotos-categorias{
+        display: block;
+        position: relative;
     }
-    
-    .texto-video hr{
-    width: 35%;
-    margin-left:50%px;
-    height: 10px;
-    background: white;
-    
-    }
-    
-    
-    .texto-video h5{
-    font-family: 'Prometo-Thin';
-    font-size: 11px;
-    color: #fff;
-    font-weight: bolder;
-    text-align: justify;
-    font-weight: bolder;
-    text-align: center;
-    
+    .fotos-categorias .img:hover{
+        opacity: 0.8;
+        transition: all 300ms ease-in;
     }
 
-    .image-background{
-        height: 300px;
+    .col-6 h3 {
+        position: absolute;
+        z-index: 2;
+        display: none;
     }
 
-    
-    .texto-image-background h1{
-        color: #000;
-        font-family: 'Prometo-Medium';
-        padding-top: 10%;
-        text-align: center;
-        
-        }
-        
-        .texto-image-background p{
-        color: #000;
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
-        font-size: 15px;
-        }
-
-        .product-Title h1{
-            font-size: 30px;
-        }
-
-        .product-card{
-            width: 90%;
-        }
-
-        .product-links-wish{
-            position: absolute;
-            top: 92%;
-            left: 5%;
-            font-family: 'Prometo-Medium';
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 4px;
-            text-decoration: none;
-            font-size: 16px;
-            
-          }
-
-          .product-links-bag {
-            position: absolute;
-            top: 92%;
-            right: 2%;
-            font-family: 'Prometo-Medium';
-            font-size: 16px;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 4px;
-            text-decoration: none;
-          }
-
-          .seccion-productos-extras h1{
-              font-size: 30px;
-          }
-
-          .wrapper{
-              width: 90%;
-          }
-
-          .product-text h2{
-            font-size: 15px;
-          }
-
-          .product-price2 h5{
-              font-size: 15px;
-          }
-          
-          .wishlist-heart{
-              right: 42%;
-          }
-
-          .product-links-bag2{
-              right: 8%;
-          }
-
-          .slide{
-              height: 250px;
-          }
-
-          .slide h1{
-              font-size: 20px;
-          }
-
-          .slide p{
-              font-size: 14px;
-          }
-
-
-          .categorias-text h1{
-              font-size: 35px;
-          }
-
-          .categorias-text span{
-              font-size: 35px;
-          }
-
-          .gallery-wrap{
-              height: 40vh;
-              width: 97%;
-          }
-
-          .item:hover h2 a{
-
-            font-size: 25px;
-            opacity: 1;
-            transform: translate(10px,50px);
-            letter-spacing: 2px;
-            -webkit-text-stroke: 1px #fff;
-            padding: 15px;
-            border-radius: 5px;
-            color: transparent;
-            text-decoration: none;
-           
-           
-        }
-
-}
-
-
-
-
-/*
-Afecta tablets Portrait
-Ipad Portrait -- Lo afecta como debé ser 
-Ipad Mini Portrait -- Lo afecta como debé ser 
-Esta afectando el iphone 7 plus Landscape
-iphone 7 Lanscape
-*/
-@media only screen and (max-width: 768px) and (min-width: 641px){
-
-.bttn-dark{
-    font-size: 15px;
-}
-
-.texto-video{
-    position: absolute;
-    top: 15%;
-    left: 12%;
-    padding: 20px;
-    opacity: 1;
-    background: transparent;
-    
-
-}
-
-.texto-video h1{
-    color: white;
-    font-family: 'Prometo-Medium';
-    letter-spacing: 4px;
-    font-size: 120px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
-
-.texto-video p{
-    color: white;
-    font-family: 'Prometo-Light';
-    letter-spacing: 4px;
-    font-size: 17px;
-    text-align: center;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-top: 0;
-}
-
-.texto-video hr{
-    width: 35%;
-    margin-left: 0;
-    height: 5px;
-    background: white;
-}
-
-
-.texto-video h5{
-    font-family: 'Prometo-Light';
-    font-size: 17px;
-    color: white;
-    text-align: justify;
-    font-weight: bolder;
-
-}
-
-.texto-video span{
-    font-weight: bolder;
-    font-family: "Prometo-Medium";
-}
-
-.image-background{
-    height: 500px;
-}
-
-.product-Title h1{
-   font-size: 40px;
-}
-
-.seccion-productos-extras h1{
-   font-size: 40px;
-}
-
-.product-text h2{
-font-size: 15px;
-}
-
-.product-price2 h5{
-font-size: 18px;
-top: 68%;
-}
-
-.wishlist-heart{
-   top: 74%;
-   right: 35%;
-}
-
-.slide{
-   height: 400px;
-   width: 97%;
-}
-
-.slide h1{
-   font-size: 25px;
-}
-
-.slide p{
-   font-size: 15px;
-}
-
-.categorias-text h1{
-   font-size: 50px;
-}
-
-.categorias-text span{
-   font-size: 50px;
-}
-
-.gallery-wrap{
-   height: 300px;
-   width: 97%;
-}
-
-.item:hover h2 a{
-transition: 0.5s;
-font-size: 50px;
-opacity: 1;
-transform: translate(40px, 40px);
-letter-spacing: 4px;
--webkit-text-stroke: 2px #fff;
-padding: 15px;
-border-radius: 5px;
-color: transparent;
-
-
-}
-
-}
-
-
-
-/*Media query tablets 
-Debería afectar 
-Nexus 10 Portrait
-Nexus 7 landscape
-Surface Pro 3 Portrait
-*/
-@media only screen and (min-width: 770px) and (max-width: 999px) {
-
-.bttn-dark{
-    font-size: 15px;
-}
-
-.texto-video{
-    position: absolute;
-    width: 90%;
-    top: 40%;
-    left: 7%;
-    padding: 20px;
-    opacity: 1;
-    
-
-}
-
-.texto-video h1{
-    color: white;
-    font-family: 'Prometo-Medium';
-    letter-spacing: 4px;
-    font-size: 110px;
-    text-align: center;
-    margin-bottom: 0px;
-}
-
-.texto-video p{
-    color: white;
-    font-family: 'Prometo-Light';
-    letter-spacing: 4px;
-    font-size: 20px;
-    text-align: center;
-    padding-left: 2px;
-    margin-bottom: 0px;
-    padding-top: 0;
-}
-
-.texto-video hr{
-    width: 35%;
-    margin-left: 0;
-    height: 5px;
-    background: white;
-}
-
-
-.texto-video h5{
-    font-family: 'Prometo-Light';
-    font-size: 20px;
-    color: white;
-    text-align: justify;
-    font-weight: bolder;
-
-}
-
-.texto-video span{
-    font-weight: bolder;
-    font-family: "Prometo-Medium";
-}
-
-.image-background{
-    
-    height: 500px;
-
-}
-
-.texto-image-background h1{
-    
-    padding-top: 50%;
-    text-align: center;
-
-}
-
-.texto-image-background p{
-   
-    font-size: 15px;
-}
-
-.product-links-wish{
-    position: absolute;
-    top: 90%;
-    left: 5%;
-    font-family: 'Prometo-Medium';
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 4px;
-    text-decoration: none;
-    font-size: 18px;
-    
-  }
-
-  .product-links-bag {
-    position: absolute;
-    top: 90%;
- 
-    right: 2%;
-    font-family: 'Prometo-Medium';
-    font-size: 18px;
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 4px;
-    text-decoration: none;
-  }
-
-
-  .slide{
-      height: 450px;
-  }
-
-  .slide h1{
-      font-size: 30px;
-  }
-
-  .slide p{
-      font-size: 15px;
-  }
-
-
-  .item:hover h2 a{
-      font-size: 60px;
-      -webkit-text-stroke: 2px #fff;
-  }
-
-}
-
-
-
-
-/*Afecta 
-Iphone 4 Landscape
-Iphone 7 plus portrait
-*/
-@media only screen and (max-width: 567px) and (min-width: 392px){
-.texto-video{
-    position: absolute;
-    top: 13%;
-    left:10%;
-    padding: 10px;
-    opacity: 1;
-    background: none;
-    width: 80%;
-    
-    }
-    
-    .texto-video h1{
-    color: #fff;
-    font-family: 'Prometo-Medium';
-    font-weight: bolder;
-    letter-spacing: 4px;
-    font-size: 40px;
-    text-align: center;
-    padding-bottom: 2px;
-    margin-bottom: 2px;
-    }
-    
-    .texto-video p{
-    color: #fff;
-    font-family: 'Prometo-Thin';
-    font-weight: bolder;
-    letter-spacing: 2px;
-    font-size: 13px;
-    text-align: justify;
-    padding-left: 0px;
-    margin-bottom: 0px;
-    padding-top: 0;
-    text-align: center;
-    }
-    
-    .texto-video hr{
-    width: 35%;
-    margin-left:50%px;
-    height: 10px;
-    background: white;
-    
-    }
-    
-    
-    .texto-video h5{
-    font-family: 'Prometo-Thin';
-    font-size: 13px;
-    color: #fff;
-    font-weight: bolder;
-    text-align: justify;
-    font-weight: bolder;
-    text-align: center;
-    
+    .col-6 h3 a{
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Prometo-x-bold';
+        font-size: 25px;
     }
 
-    .image-background{
-        height: 300px;
+    .col-6:hover h3{
+        display: block;
+        transition: all 3s ease-in;     
     }
 
-    .texto-image-background h1{
-        color: #000;
-        font-family: 'Prometo-Medium';
-        padding-top: 10%;
-        text-align: center;
-        
-        }
-        
-        .texto-image-background p{
-        color: #000;
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
-        font-size: 15px;
-        }
 
-        .product-Title h1{
-            font-size: 30px;
-        }
-
-        .product-card{
-            width: 70%;
-        }
-
-        .product-links-wish{
-            position: absolute;
-            top: 92%;
-            left: 5%;
-            font-family: 'Prometo-Medium';
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 4px;
-            text-decoration: none;
-            font-size: 14px;
-            
-          }
-
-          .product-links-bag {
-            position: absolute;
-            top: 92%;
-            right: 2%;
-            font-family: 'Prometo-Medium';
-            font-size: 14px;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 4px;
-            text-decoration: none;
-          }
-
-
-          .seccion-productos-extras h1{
-              font-size: 30px;
-          }
-
-          .wrapper{
-              width: 80%;
-          }
-
-          .slide{
-              height: 300px;
-          }
-
-          .slide h1{
-              font-size: 20px;
-          }
-
-          .slide p{
-              font-size: 12px;
-          }
-
-          .categorias-text h1{
-              font-size: 30px;
-          }
-
-          .categorias-text span{
-              font-size: 30px;
-          }
-
-          .gallery-wrap{
-              width: 97%;
-          }
-
-
-          .item:hover h2 a{
-              font-size: 30px;
-              -webkit-text-stroke: 2px #fff;
-          }
-
-          .product-links-bag2{
-              right: 14%;
-          }
-}
-
-
-/*Iphone 4 Portrait
-Iphone 5 Portrait
-*/
-@media only screen and (max-width: 320px){
-
-
-.categorias-text h1{
-    font-size: 30px;
-}
-
-.categorias-text span{
-    font-size: 30px;
-}
-
-.product-Title h1{
-    font-size: 30px;
-}
-
-.seccion-productos-extras h1{
-    font-size: 30px;
-}
-
-.bttn-dark{
-    font-size: 15px;
-}
-
-.texto-video{
-    position: absolute;
-    width: 90%;
-    top: 10%;
-    left: 7%;
-    padding: 20px;
-    opacity: 1;
     
-
-}
-
-.texto-video h1{
-    color: white;
-    font-family: 'Prometo-Medium';
-    letter-spacing: 4px;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 0px;
-}
-
-.texto-video p{
-    color: white;
-    font-family: 'Prometo-Light';
-    letter-spacing: 4px;
-    font-size: 8px;
-    text-align: center;
-    padding-left: 2px;
-    margin-bottom: 0px;
-    padding-top: 0;
-}
-
-.texto-video hr{
-    width: 35%;
-    margin-left: 0;
-    height: 5px;
-    background: white;
 }
 
 
-.texto-video h5{
-    font-family: 'Prometo-Light';
-    font-size: 8px;
-    color: white;
-    text-align: justify;
-    font-weight: bolder;
-
-}
-
-.texto-video span{
-    font-weight: bolder;
-    font-family: "Prometo-Medium";
-}
-
-.image-background{
-    
-    height: 300px;
-
-}
-
-.texto-image-background h1{
-    
-    padding-top: 20%;
-    text-align: center;
-
-}
-
-.texto-image-background p{
-   
-    font-size: 15px;
-}
-
-.product-card{
-    width: 80%;
-}
-
-.product-text h2{
-    font-size: 15px;
-}
-
-.product-price2 h5{
-    font-size: 15px;
-    top: 65%;
-}
-
-.wishlist-heart{
-    top: 73%;
-    right: 36%;
-}
-
-.product-links-bag2{
-    right: 8%;
-}
-
-.product-links-wish{
-    position: absolute;
-    top: 90%;
-    left: 5%;
-    font-family: 'Prometo-Medium';
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 4px;
-    text-decoration: none;
-    font-size: 12px;
-    
-  }
-
-  .product-links-bag {
-    position: absolute;
-    top: 90%;
- 
-    right: 2%;
-    font-family: 'Prometo-Medium';
-    font-size: 12px;
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 4px;
-    text-decoration: none;
-  }
 
 
-  .slide{
-      height: 250px;
-  }
-
-  .slide h1{
-      font-size: 15px;
-  }
-
-  .slide p{
-      font-size: 10px;
-  }
 
 
-  .gallery-wrap{
-      height: 50vh;
-  }
-
-  .item:hover h2 a{
-      font-size: 20px;
-      -webkit-text-stroke: 1px #fff;
-      transform: translate(20px, 35px);
-  }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,8 +4,20 @@
         position: absolute;
         top: 15%;
         left: 10%;
-
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .textos-imagen-blog{
+                left: 5%;
+            }
+        }
+
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 641px){
+            .textos-imagen-blog{
+                display: none;
+            }
+        }
 
     .textos-imagen-blog h1{
         font-family: 'Anton', sans-serif;
@@ -32,7 +44,6 @@
     }
 
     .imagen-blog{
-
         position: absolute;
         top: 20%;
         left: 40%;
@@ -44,8 +55,14 @@
         background-position: bottom;
         background-size: cover;
         background-repeat: no-repeat;
-        
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .imagen-blog{
+                left: 30%;
+            }
+        }
+
     .inicio-blog{
         height: 700px;
         
@@ -55,13 +72,24 @@
         margin-top: 20%;
         color: #000;
         text-align: left;
-
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .textos-blog{
+                
+            }
+        }
 
     .textos-blog h1{
         font-family: 'Anton', sans-serif;
         font-size: 80px;
     }
+         /*Media query en tablets horizontal*/
+         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+             .textos-blog h1{
+                 font-size: 60px;
+             }
+         }
 
     .textos-blog h2{
         font-family: 'Anton', sans-serif;
@@ -551,7 +579,7 @@
 
     /*-----Parallax-----*/
     .parallax-fishing{
-        background: url('/assets/imagenes/Blogv2/Lancha-con-muelle.jpg');
+        background: url('/assets/imagenes/Blogv2/publicidad2.jpg');
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
