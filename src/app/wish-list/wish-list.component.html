@@ -37,9 +37,9 @@
             </div>
         </div>
       
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-16" style="margin-top: 20px;">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12" style="margin-top: 20px;">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 tarj" *ngFor = "let productoLista of listaDeseos; index as i; let index = i;">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 tarj" *ngFor = "let productoLista of listaDeseos; index as i; let index = i;">
                     <button class="btn2" (click) = "removeElemento(productoLista, i)"><i class="fa fa-times"></i></button>
                     <div class="content">
                         <div class="content-overlay"></div>
@@ -49,12 +49,13 @@
                         </div>
                     </div>
                     <hr>
-                    <h3 style="font-size: 16px;">{{productoLista.nombre}}<br> {{productoLista.marca}}</h3>
+                    
+                    <h3 style="font-size: 15px;">{{productoLista.nombre}}<br> {{productoLista.marca}}</h3>
                     <div class="row carrito">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                             <span><b>${{productoLista.precio}}</b></span>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                             <button class="btn3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
                         </div>
                     </div>

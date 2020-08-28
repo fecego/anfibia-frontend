@@ -2,7 +2,7 @@
         font-family: 'Meera Inima', sans-serif;
 
     }
-            @media only screen and (max-width: 768px) and (min-width: 641px){
+            @media only screen and (max-width: 800px) and (min-width: 641px){
                 .help{
                     display: none;
                 }
@@ -11,7 +11,7 @@
                 }
             }
             /*Media query en celulares vertical*/
-            @media only screen and (max-width: 390px) and (min-width: 321px){
+            @media only screen and (max-width: 600px) and (min-width: 300px){
                 .help{
                     display: none;
                 }
@@ -20,7 +20,7 @@
                 }
             }
 
-            @media only screen and (max-width: 567px) and (min-width: 392px){
+            @media only screen and (max-width: 750px) and (min-width: 392px){
                 .help{
                     display: none;
                 }   
@@ -38,6 +38,20 @@
         color: black;
         letter-spacing: 0.1em;
     }
+        /*RESPONSIVE TABLETS VERTICAL*/
+        @media only screen and (max-width: 800px) and (min-width: 600px){
+            h1{
+                letter-spacing: 0em;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 600px) and (min-width: 300px){
+            h1{
+                letter-spacing: 0em;
+                font-size: 50px;
+            }
+        }
 
 
     .dos h2{
@@ -99,13 +113,13 @@
         margin-bottom: 50px;
     }
             /*Media query en celulares vertical*/
-            @media only screen and (max-width: 390px) and (min-width: 321px){
+            @media only screen and (max-width: 600px) and (min-width: 300px){
                 .col-xs-12{
                     width: 50%;
                 }
             }
 
-            @media only screen and (max-width: 567px) and (min-width: 392px){
+            @media only screen and (max-width: 750px) and (min-width: 392px){
                 .col-xs-12{
                     width: 50%;
                 }
@@ -137,14 +151,14 @@
                     display: inline;
                 }
             }
-            @media only screen and (max-width: 768px) and (min-width: 641px){
+            @media only screen and (max-width: 800px) and (min-width: 641px){
                 .btn3{
                     margin-left: 50px;
                     display: inline;
                 }
             }
             /*Media query en celulares vertical*/
-            @media only screen and (max-width: 390px) and (min-width: 321px){
+            @media only screen and (max-width: 600px) and (min-width: 300px){
                 .btn3{
                     margin-top: -30px;
                     margin-left: 100px;
@@ -152,10 +166,10 @@
                 }
             }
 
-            @media only screen and (max-width: 600px) and (min-width: 392px){
+            @media only screen and (max-width: 750px) and (min-width: 392px){
                 .btn3{
                     margin-top: -30px;
-                    margin-left: 140px;
+                    margin-left: 50px;
                     display: inline;
                 }
             }
@@ -175,6 +189,31 @@
         padding: 20px;
         background: #f0f0f0;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+            .content{
+                height: 200px;
+            }
+        }
+
+        /*Media query en tablets verticales*/
+        @media only screen and (max-width: 800px) and (min-width: 600px){
+            .content{
+                height: 200px;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 600px) and (min-width: 250px){
+            .content{
+                height: 200px;
+            }
+
+            .tarj h3{
+                font-size: 12px;
+            }
+        }
+
 
     .content img {
         max-width: 100%;
@@ -222,20 +261,20 @@
                     display: none;
                 }
             }
-            @media only screen and (max-width: 768px) and (min-width: 641px){
+            @media only screen and (max-width: 800px) and (min-width: 641px){
                 .content-details{
                     display: none;
                 }
             }
 
             /*Media query en celulares vertical*/
-            @media only screen and (max-width: 390px) and (min-width: 321px){
+            @media only screen and (max-width: 600px) and (min-width: 300px){
                 .content-details{
                     display: none;
                 }
             }
 
-            @media only screen and (max-width: 567px) and (min-width: 392px){
+            @media only screen and (max-width: 750px) and (min-width: 392px){
                 .content-details{
                     display: none;
                 }
