@@ -51,13 +51,13 @@
 
 <div class="container-fluid fondoI-pesca" >
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-12 image-background" data-aos="fade-up"
+    <div class="col-lg-8 col-md-8 col-sm-12 col-12 image-background" data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000">
       <img src="/assets/imagenes/fishing/68859093_2661196067226532_6899538083948003328_o.png" alt="">
     </div>
     
-    <div class="col-lg-4 col-md-4 col-sm-4 col-12 texto-image-background"> 
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12 texto-image-background"> 
       <h1>PESCADOR</h1>
       <hr>
       <p >Bienvenido a la tribu, tenemos todo lo que necesitas para convertirte en el mejor pescador, si lo que buscas es atrapar al pez más grande, somos tu mejor opción.</p>
@@ -262,7 +262,7 @@
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000">
-      <img src="/assets/imagenes/fishing/stella-carretes3.png" alt=""> 
+      <img src="/assets/imagenes/fishing/Alexis.jpg" alt=""> 
     </div>
      
     <div class="col-12 col-sm-4 col-md-4 col-lg-4 pruebaDos" style="padding: 1px;" data-aos="fade-up"
@@ -399,12 +399,12 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
       <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
           <p>ANFIBIA by FECEGO MARINA</p>
-          <h1>Categorías de <span>Pesca</span></h1>
+          <h1>Categorías de Pesca</h1>
           <hr>
         </div>
       </div>
     
-      <div class="row">
+      <div class="row" id="categoriasPesca-Accordion">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 categorias-text">
           <div class="gallery-wrap">
             <div class="item item-1 ">
@@ -466,6 +466,85 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
               <div>
                 <h2><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'kayaks'}">Kayaks</a></h2>
                 <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae nunc sed. Mattis rhoncus urna neque viverra justo nec. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id interdum velit laoreet id donec ultrices. Nisi scelerisque eu ultrices vitae auctor eu augue ut. </h4>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row " id="categoriasPesca-noAccordion">
+        <div class="col-12" >
+          <div class="row">
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/Agua-dulce.png" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'aguadulce'}">Agua Dulce</a></h1>
+              </div>
+            </div>
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/Agua Salada.jpg" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'aguasalada'}">Agua Salada</a></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" >
+          <div class="row">
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/navegacion.jpg" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'navegacion'}">Navegación</a></h1>
+              </div>
+            </div>
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/Snorkel.png" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'snorkel'}">Snorkel</a></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" >
+          <div class="row">
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/buceo.png" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'buceo'}">Buceo</a></h1>
+              </div>
+            </div>
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/Kayak.png" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'kayaks'}">Kayaks</a></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/accesorios.jpg" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'accesorios'}">Accesorios</a></h1>
+              </div>
+            </div>
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/ropa.jpg" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'ropa'}">Ropa</a></h1>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 turnColor" style="padding: 1px;">
+              <img src="assets/imagenes/fishing/lineas.jpg" alt="" width="100%" height="130px">
+              <div class="texto-imagen">
+                <h1><a routerLink="/tienda" [queryParams]="{clasificacion: 'pesca', categoria: 'lineas'}">Lineas</a></h1>
               </div>
             </div>
           </div>

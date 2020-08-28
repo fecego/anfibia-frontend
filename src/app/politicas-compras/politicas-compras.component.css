@@ -38,14 +38,12 @@ Ipad mini Landscape -- Si lo afecta
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+       
         font-size: 20px;
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+        
         font-size: 16px;
     }
 }
@@ -65,14 +63,12 @@ Surface Pro 3 Portrait
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+       
         font-size: 18px;
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+        
         font-size: 15px;
     }
 
@@ -95,13 +91,11 @@ Surface Pro 3 Portrait
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+       
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+       
     }
 }
 
@@ -126,14 +120,12 @@ Media query usado
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+        
         font-size: 20px;
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+       
         font-size: 15px;
     }
 }
@@ -153,14 +145,12 @@ Media query usado
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+        
         font-size: 18px;
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+     
         font-size: 15px;
     }
 
@@ -193,8 +183,7 @@ Iphone 7 Portrait
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+        
         font-size: 15px;
     }
 
@@ -212,14 +201,12 @@ Iphone 5 Portrait
     }
 
     .textos-asuntos-legales h4{
-        font-family: 'Prometo-Medium';
-        font-weight: bolder;
+       
         font-size: 18px;
     }
 
     .textos-asuntos-legales p{
-        font-family: 'Prometo-Thin';
-        font-weight: bolder;
+       
         font-size: 15px;
     }
 

@@ -19,13 +19,12 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         font-size: 70px;
         font-family: 'Anton';
         color:black;
-        letter-spacing: 0.1em;
     }
 
     .texto{
         font-size: 20px;
         font-family: 'Meera Inima', sans-serif;
-        padding-left: 100px;
+       
         padding-bottom: 20px;
     }
 
@@ -34,13 +33,14 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
     }
 
     .texto h1{
-        font-size: 25px;
+        font-size: 20px;
         font-family: 'Meera Inima', sans-serif;
         font-weight: bold;
         color:#042455;
     }
 
     a{
+        font-size: 13px;
         text-decoration: none;
         color: black;
     }
@@ -70,13 +70,13 @@ ipad landscape, Ipad mini Landscape.
         font-size: 80px;
         font-family: 'Anton';
         color:black;
-        letter-spacing: 0.1em;
+        
     }
 
     .texto{
         font-size: 20px;
         font-family: 'Meera';
-        padding-left: 100px;
+        
         padding-bottom: 20px;
     }
 
@@ -85,12 +85,13 @@ ipad landscape, Ipad mini Landscape.
     }
 
     .texto h1{
-        font-size: 30px;
+        font-size: 20px;
         font-family: 'Anton';
         color:#042455;
     }
 
     a{
+        font-size: 14px;
         text-decoration: none;
         color: black;
     }
@@ -104,7 +105,7 @@ ipad landscape, Ipad mini Landscape.
          "PAGINA ADAPTABLE A TABLETS VERTICAL"
 Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
 \*--------------------------------------------------------------*/
-@media screen and (max-width: 768px) and (min-width: 490px) {
+@media screen and (max-width: 640px) and (min-width: 568px) {
     .container-fluid{
         padding-bottom: 100px;
     }
@@ -127,7 +128,7 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
     .texto{
         font-size: 20px;
         font-family: 'Meera';
-        padding-left: 100px;
+        
         padding-bottom: 20px;
     }
 
@@ -136,12 +137,13 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
     }
 
     .texto h1{
-        font-size: 30px;
+        font-size: 20px;
         font-family: 'Anton';
         color:#042455;
     }
 
     a{
+        font-size: 15px;
         text-decoration: none;
         color: black;
     }
@@ -149,6 +151,17 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
     a:hover{
         color: #0A2D45;
     }
+}
+
+
+
+
+@media screen and (max-width: 640px) and (min-width: 568px){
+    .imagen h1{
+        letter-spacing: 0;
+    }
+
+
 }
 
 /*--------------------------------------------------------------*\
@@ -170,9 +183,9 @@ Iphone 4, 5, 7 PORTRAIT.
         position: relative;
         text-align: center;
         font-size: 80px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:black;
-        letter-spacing: 0.1em;
+    
     }
 
  
@@ -180,7 +193,7 @@ Iphone 4, 5, 7 PORTRAIT.
     .texto{
         font-size: 20px;
         font-family: 'Meera';
-        padding-left: 100px;
+        
         padding-bottom: 20px;
     }
 
@@ -189,12 +202,13 @@ Iphone 4, 5, 7 PORTRAIT.
     }
 
     .texto h1{
-        font-size: 30px;
+        font-size: 20px;
         font-family: 'Anton';
         color:#042455;
     }
 
     a{
+        font-size: 15px;
         text-decoration: none;
         color: black;
     }
@@ -210,13 +224,72 @@ Iphone 4, 5, 7 PORTRAIT.
       }  
 }
 
+/*Iphone 7 Landscape*/
+
+@media only screen and (max-width: 768px) and (min-width: 641px){
+
+    .container-fluid{
+        padding-bottom: 100px;
+    }
+
+    .img{
+        position: absolute;
+    }
+
+    .imagen h1{
+        margin-top: 50px;
+        position: relative;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'Anton', sans-serif;
+        color:black;
+    
+    }
+
+ 
+
+    .texto{
+        font-size: 20px;
+        font-family: 'Meera';
+        
+        padding-bottom: 20px;
+    }
+
+    hr{
+        width: 90%;
+    }
+
+    .texto h1{
+        font-size: 20px;
+        font-family: 'Anton';
+        color:#042455;
+    }
+
+    a{
+        font-size: 15px;
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+
+
+}
+
+
+
+
+
 /*--------------------------------------------------------------*\
                "PAGINA ADAPTABLE A CELULARES"
 Celulares Portrait.
 \*--------------------------------------------------------------*/
 @media (min-width: 320px) and (max-width: 480px) {
     .container-fluid{
-        padding-bottom: 100px;
+        padding-bottom: 20px;
     }
 
     .img{
@@ -230,13 +303,13 @@ Celulares Portrait.
         font-size: 50px;
         font-family: 'Anton';
         color:black;
-        letter-spacing: 0.1em;
+        
     }
 
     .texto{
         font-size: 20px;
         font-family: 'Meera';
-        padding-left: 50px;
+        
         padding-bottom: 20px;
     }
 
