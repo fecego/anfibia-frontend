@@ -1,19 +1,25 @@
 
-
     .textos-imagen-blog{
         position: absolute;
         top: 15%;
         left: 10%;
     }
         /*Media query en tablets horizontal*/
-        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        @media only screen and (max-width: 1200px) and (min-width: 768px)  and (orientation: landscape){
             .textos-imagen-blog{
                 left: 5%;
             }
         }
 
         /*RESPONSIVE TABLETS VERTICAL*/
-        @media only screen and (max-width: 800px) and (min-width: 641px){
+        @media only screen and (max-width: 768px) and (min-width: 576px){
+            .textos-imagen-blog{
+                display: none;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
             .textos-imagen-blog{
                 display: none;
             }
@@ -56,27 +62,78 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+
+    .fotoBlog{
+        display: none;
+    }
         /*Media query en tablets horizontal*/
-        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        @media only screen and (max-width: 1200px) and (min-width: 768px)  and (orientation: landscape){
             .imagen-blog{
                 left: 30%;
             }
         }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
+            .imagen-blog{
+                display: none;
+            }
+            .fotoBlog{
+                position: absolute;
+                display: block;
+                padding: 0px;
+                left: -10%;
+            }
+        }
+        /*Media query Fire*/
+        @media only screen and (max-width: 640px) and (min-width: 568px){
+            .imagen-blog{
+                display: none;
+            }
+            .fotoBlog{
+                position: absolute;
+                display: block;
+                padding: 0px;
+                left: -10%;
+            }
+        }
+
 
     .inicio-blog{
         height: 700px;
         
-    }
+    }   
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
+            .inicio-blog{
+                height: 650px;
+            }
+        }
     
+
+        
+
     .textos-blog{
         margin-top: 20%;
         color: #000;
         text-align: left;
     }
-        /*Media query en tablets horizontal*/
-        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 576px){
             .textos-blog{
-                
+                margin-left: -10%;
+            }
+        }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
+            .textos-blog{
+                margin-top: -60%;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 350px) and (min-width: 100px){
+            .textos-blog{
+                margin-top: -250px;
             }
         }
 
@@ -85,11 +142,18 @@
         font-size: 80px;
     }
          /*Media query en tablets horizontal*/
-         @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+         @media only screen and (max-width: 1200px) and (min-width: 768px)  and (orientation: landscape){
              .textos-blog h1{
-                 font-size: 60px;
-             }
-         }
+                font-size: 60px;
+            }
+        }
+
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
+            .textos-blog h1{
+                font-size: 60px;
+            }
+        }
 
     .textos-blog h2{
         font-family: 'Anton', sans-serif;
@@ -117,7 +181,9 @@
 
     }
 
-    /*-----TITULO-----*/
+    /*--------------------------------------
+    ----------------TÍTULO------------------ 
+    ----------------------------------------*/
     #canvas-image-blending {
         position: absolute;
         display: block;
@@ -272,13 +338,30 @@
         justify-content: space-around;
     }/*-----TITULO-----*/
     
-    /*-----ENTRADAS MAS RECIENTES-----*/
+
+    /*--------------------------------------
+    --------ENTRADAS MAS RECIENTES---------- 
+    ----------------------------------------*/
     .entradas h1{
         margin-top: 50px;
         margin-left: 50px;
         font-family: 'Anton';
         font-size: 50px;
     }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 576px) and (min-width: 320px){
+            .entradas h1{
+                font-size: 30px;
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+        }
+        /*Media query en celulares vertical*/
+        @media only screen and (max-width: 350px) and (min-width: 100px){
+             .entradas h1{
+                 margin-top: -40%;
+             }
+         }
 
     .entradas hr{
         position: relative;
@@ -287,7 +370,10 @@
         height: 2px;
     }/*-----ENTRADAS MAS RECIENTES-----*/
 
-    /*-----PRIMERAS ENTRADAS-----*/
+    
+    /*--------------------------------------
+    -----------PRIMERAS ENTRADAS------------ 
+    ----------------------------------------*/
     .m_b_30 {
         margin-bottom: 30px; 
     }
@@ -325,6 +411,14 @@
                 }
             }
 
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 350px) and (min-width: 100px){
+                .single-blog .thumb img{
+                    height: 500px;
+                    margin-bottom: 20PX;
+                }
+            }
+
     .single-blog .short_details {
         background: #fff;
         transition: all 300ms linear 0s;
@@ -351,6 +445,7 @@
 
     .single-blog .short_details a:hover {
         color: #0A2D45; 
+        text-decoration: none;
     }
 
     .single-blog .meta-bottom a i {
@@ -492,7 +587,7 @@
           
     .single-blog.style-three .thumb img {
         width: 100%;
-        height: 320px;
+        height: 335px;
         transition: all 300ms linear 0s;
     }
         
@@ -577,9 +672,12 @@
         } 
     }/*Estilo tres (ultima dos notas pequeñas)*/
 
-    /*-----Parallax-----*/
+
+    /*--------------------------------------
+    ---------------PARALLAX-----------------
+    ----------------------------------------*/
     .parallax-fishing{
-        background: url('/assets/imagenes/Blogv2/publicidad2.jpg');
+        background: url('/assets/imagenes/Blogv2/caza.jpg');
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
@@ -614,9 +712,18 @@
                     font-size: 80px;
                 }
             }
+            /*Media query en celulares vertical*/
+            @media only screen and (max-width: 350px) and (min-width: 100px){
+                .parallax h1{
+                    font-size: 80px;
+                }
+            }
     /*-----Parallax-----*/
 
-    /*-----Ultimas notas-----*/
+    
+    /*--------------------------------------
+    --------------ÚLTIMAS NOTAS------------- 
+    ----------------------------------------*/
     .area-padding {
         padding: 100px 0px;
         font-family: 'Prometo-light';
@@ -643,7 +750,7 @@
         height: 2px;
     }
 
-    /*-----Estilo cinco (Ultimas cuatro notas)-----*/
+    /*-----Estilo cinco (Ultimas tres notas)-----*/
     .single-blog .style-five {
         border: 6px solid #b9be7e;
         position: relative;
@@ -666,9 +773,27 @@
                 }
             }
 
+    .single-blog .short_details2 a {
+        color: #33353b;
+        font-weight: 600;
+        text-transform: capitalize; 
+    }
+        
+    .single-blog .short_details2 a:hover {
+ 
+        color: #0A2D45; 
+        text-decoration: none;
+    }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px)  and (orientation: landscape){
+            .single-blog .short_details2 a h4{
+                font-size: 13px;
+            }
+        }
+
     .single-blog.style-five .thumb img {
         width: 100%;
-        height: 500px;
+        height: 300px;
         transition: all 300ms linear 0s;
     }
    
@@ -721,7 +846,10 @@
         } 
     }/*-----Estilo cinco (Ultimas cuatro notas)-----*/
 
-    /*-----Subscricion al Blog-----*/ 
+    
+    /*--------------------------------------
+    -----------SUSCRIPCIÓN AL BLOG---------- 
+    ----------------------------------------*/
     .texto{
         position: absolute; 
         top: 10%; 
@@ -845,3 +973,18 @@
         background-color: #02add7;
         height: 5px;
     }/*-----Subscricion al Blog-----*/    
+
+
+    /*Media Query que desaparece el texto del encabezado en dispositivo moviles*/
+    /*Media query en celulares vertical*/
+    @media only screen and (max-width: 750px) and (min-width: 100px){
+        .textos-blog h1{
+            font-size: 70px;
+        }
+        .textos-blog h2 {
+            display: none;
+        }
+        .textos-blog h2 span {
+            display: none;
+        }
+    }

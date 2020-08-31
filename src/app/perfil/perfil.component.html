@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 menu">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-12 menu">
             <h2>Menu</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -32,7 +32,7 @@
             <hr>
         </div>
 
-        <div class="col-lg-9 col-md-4 col-sm-8 col-xs-12">
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <h1>{{usuario.nombre | uppercase}} {{usuario.apellidos | uppercase}}</h1>
@@ -49,10 +49,9 @@
             <hr>
 
             <div class="row perfil">
-                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 direcciones">
                     <h2><i class="fa fa-home" aria-hidden="true"></i> Direcciones</h2>
-                    <p>Puedes agregar y editar tu dirección aquí
-                        .</p>
+                    <p>Puedes agregar y editar tu dirección aquí.</p>
                    <div *ngFor="let direccion of usuario.direccion; index as i; let index = i;">
                     <ul class="direccion" >
                         <li><h2>Calle: <span>{{direccion.calle}}</span>, Numero: <span>{{direccion.numero}}</span>, Fraccionamiento <span>{{direccion.fraccionamiento}}</span></h2>   
@@ -60,7 +59,6 @@
                             <h2>Telefono: <span>{{direccion.telefono}}</span>, Codigo Postal: <span> {{direccion.codigoPostal}}</span></h2>
                             
                         </li>
-                        
                     </ul>
                     <button  (click) = "openModal(usuario, direccion)">Editar dirección</button>
                     <button (click) = "eliminarDireccion(usuario, direccion, i)">Eliminar dirección</button>
@@ -79,11 +77,11 @@
             </div>
             <hr>
             <div class="row perfil">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-5 col-sm-5 col-xs-12">
                     <h2><i class="fa fa-heart" aria-hidden="true"></i> Lista de deseos</h2>
                     <p>Mira tu lista de deseo.</p>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-7 col-sm-7 col-xs-12">
                     <a class="boton boton1" routerLink = "/lista-deseos">Ver mi lista de deseos</a>
                 </div>
             </div>
