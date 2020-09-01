@@ -4,8 +4,8 @@
             <h1>Carrito de compras</h1>
         </div>
     </div>
-    <div class="row">
-     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <div class="row" style="height: auto;">
+     <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productos" *ngFor = "let producto of listaCarrito; index as i; let index = i;">
                 <div class="content">
@@ -14,7 +14,7 @@
                             <img class="img-fluid" [attr.src] = "producto.image[0].url" alt="">
                         </div>
                         <div class="col-lg-9 col-md-6 col-sm-6 col-xs-6">
-                            <button (click)="eliminarProducto(producto, i)" class="eliminar"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            
                             <div class="product">
                                 <h2>{{producto.nombre}}</h2>
                                 <span>${{producto.precio}}</span>
@@ -22,11 +22,12 @@
                                 <h3>Marca: <span> {{producto.marca}}</span></h3>
                                 <div class="input-group">
                                     <!--<button (click) = "resta(cantidad)" type="button" value="-" class="button-minus" data-field="quantity">-</button>-->
-                                    <input  (click) = "cambios(producto)" type="number" step="1" max="" min="1" [attr.value]="cantidad" name="quantity" [(ngModel)] = "producto.cantidad"  class="quantity-field">
+                                    <input  (click) = "cambios(producto)" type="number" step="1" max="99" min="1" [attr.value]="cantidad" name="quantity" [(ngModel)] = "producto.cantidad"  >
                                     <!--<button (click) = "cantidadsuma(producto.cantidad)" type="button" value="+" class="button-plus" data-field="quantity">+</button>-->
                                 </div>
                             </div>
                             <h3 class="total">Total: <span> ${{producto.totalIndividual}}</span></h3>
+                            <button (click)="eliminarProducto(producto, i)" class="eliminar"><i class="fa fa-times" aria-hidden="true"></i></button>
                         </div>
     
                     </div>
@@ -36,9 +37,9 @@
          </div>
 
      </div>
-     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+     <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 pedido">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pedido">
                 <h4>Resumen del pedido</h4>
                 <div class="row" style="margin-bottom: 20px;">
                     <h3>¿Tienes un código de descuento?</h3>
@@ -93,9 +94,74 @@
             </div>
 
          </div>
+         
 
      </div>
 
       
     </div>
+    <div class="row also-interest">
+        <div class="col-sm-12">
+          <div class="container" style="position: relative;">
+            <div class="row text-also">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2>También te podría interesar.</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <owl-carousel-o [options]="customOptions">
+                 <ng-template carouselSlide *ngFor="let producto of productosInteres | slice: 0:16; index as i; let index = i;">
+                   <div class="" >
+                     <div class="product-card" >
+                     <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                     <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                     <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
+                     <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
+                     
+                         <div class="product-tumb">
+                            <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
+                         </div>
+                         <div class="product-details">
+                             <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                         
+                             <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                             <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                             <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                             <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+                         
+                             
+                             <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                            
+                             <div id="prueba{{i}}"class="pruebaBotones"> 
+                              <ul>
+                                <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                               
+                                
+                              </ul>
+                             
+    
+                            </div>
+                            <div class="pruebaBotones2">
+                                <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                                <button class="" type="button" (click) = "addCart(producto)"><i class="fa fa-shopping-cart"></i> </button>
+                              
+    
+                            </div>
+                            </div>
+                     </div>
+                 </div>
+                 </ng-template>
+                
+             </owl-carousel-o>
+     
+              </div>
+     
+            </div>
+        </div>
+  
+        </div>
+  
+      </div>
 </div>

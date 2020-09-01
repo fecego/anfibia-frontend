@@ -187,9 +187,18 @@ Ipad Mini 2.4 Landscape--*/
         /*RESPONSIVE TABLETS VERTICAL*/
         @media only screen and (max-width: 800px) and (min-width: 641px){
             .publicidad-imagen1{
-                width: 100%;
-                height: 500px;
+                height: auto;
             }
+        }
+
+
+        @media screen and (max-width: 640px) and (min-width: 568px){
+            .publicidad-imagen1{
+                height: auto;
+            }
+
+          
+
         }
 
     .publicidad-imagen1 img{
@@ -291,7 +300,13 @@ Ipad Mini 2.4 Landscape--*/
         @media only screen and (max-width: 800px) and (min-width: 641px){
             .publicidad-imagen2{
                 width: 100%;
-                height: 500px;
+                height: auto;
+            }
+        }
+
+        @media screen and (max-width: 640px) and (min-width: 568px){
+            .publicidad-imagen2{
+                height: auto;
             }
         }
 
@@ -306,10 +321,16 @@ Ipad Mini 2.4 Landscape--*/
         max-height: 100%; 
     }
 
-    .publicidad-imagen3 img{
-        width: 100%;
-        height: 100%;
+    @media screen and (max-width: 640px) and (min-width: 568px){
+        .publicidad-imagen3{
+            height: auto;
+        }
     }
+
+
+    
+
+ 
 
     .text-publicidad-imagen3{
         position: absolute;
@@ -342,15 +363,24 @@ Ipad Mini 2.4 Landscape--*/
         max-height: 100%;
     } 
 
-    .publicidad-imagen4 img{
-        width: 100%;
-        height: 100%;
+    @media screen and (max-width: 640px) and (min-width: 568px){
+        .publicidad-imagen3{
+            height: auto;
+        }
     }
+
+   
 
     .text-publicidad-imagen5{
         position: absolute;
         top: 30%;
         left: 10%;
+    }
+
+    @media screen and (max-width: 640px) and (min-width: 568px){
+        .publicidad-imagen5{
+            height: auto;
+        }
     }
 
     .text-publicidad-imagen5 h1{
@@ -397,10 +427,7 @@ Ipad Mini 2.4 Landscape--*/
         max-height: 100%; 
     }
 
-    .publicidad-imagen5 img{
-        width: 100%;
-        height: 100%;
-    }
+   
         /*RESPONSIVE TABLETS VERTICAL*/
         @media only screen and (max-width: 800px) and (min-width: 600px){
             .publicidad-imagen3{
@@ -519,17 +546,8 @@ Ipad Mini 2.4 Landscape--*/
         color: #FF8000;
     }
 
-    .publicidad-imagen8{
-        width: 100%;
-        height: 550px;
-        max-height: 100%; 
-    }
 
-    .publicidad-imagen8 img{
-        width: 100%;
-        height: 100%;
-    }
-
+  
     .texto-publicidad8{
         position: absolute;
         top: 30%;
@@ -1135,7 +1153,7 @@ Ipad Mini 2.4 Landscape--*/
     .image-background{
         height: 650px;
         padding: 0;
-        margin-bottom: 90px;
+        
     }
         /*RESPONSIVE TABLETS VERTICAL*/
         @media only screen and (max-width: 800px) and (min-width: 641px){
@@ -3392,6 +3410,301 @@ a.bttn-dark {
 }
 
 
+@media screen and (max-width: 640px) and (min-width: 568px){
+    .item h2 a{
+        font-size: 35px;
+    }
+
+    .publicidad-imagen6{
+        height: auto;
+    }
+
+    .publicidad-imagen7{
+        height: auto;
+    }
+
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+}
+
+
+@media only screen and (max-width: 390px) and (min-width: 321px){
+    .publicidad-imagen1{
+        height: auto;
+    }
+
+    .publicidad-imagen2{
+        height: auto;
+    }
+
+    .publicidad-imagen3{
+        height: auto;
+    }
+
+    .publicidad-imagen4{
+        height: auto;
+    }
+
+    .publicidad-imagen5{
+        height: auto;
+    }
+
+    .publicidad-imagen6{
+        height: auto;
+    }
+
+    .publicidad-imagen7{
+        height: auto;
+    }
+
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+}
+
+
+@media only screen and (min-width: 770px) and (max-width: 999px) {
+
+    .publicidad-imagen1{
+        height: auto;
+    }
+    
+    .publicidad-imagen2{
+        height: auto;
+    }
+    
+    .publicidad-imagen3{
+        height: auto;
+    }
+    
+    .publicidad-imagen4{
+        height: auto;
+    }
+    
+    .publicidad-imagen5{
+        height: auto;
+    }
+    
+    .publicidad-imagen6{
+        height: auto;
+    }
+    
+    .publicidad-imagen7{
+        height: auto;
+    }
+    
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+    .item h2 a{
+        font-size: 45px;
+    }
+
+    .gallery-wrap{
+        height: 400px;
+    }
+
+    .image-background{
+        padding-bottom: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 567px) and (min-width: 392px){
+    .publicidad-imagen1{
+        height: auto;
+    }
+    
+    .publicidad-imagen2{
+        height: auto;
+    }
+    
+    .publicidad-imagen3{
+        height: auto;
+    }
+    
+    .publicidad-imagen4{
+        height: auto;
+    }
+    
+    .publicidad-imagen5{
+        height: auto;
+    }
+    
+    .publicidad-imagen6{
+        height: auto;
+    }
+    
+    .publicidad-imagen7{
+        height: auto;
+    }
+    
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+    .item h2 a{
+        font-size: 45px;
+    }
+
+    .gallery-wrap{
+        height: 400px;
+    }
+
+    .image-background{
+        padding-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 320px){
+    .publicidad-imagen1{
+        height: auto;
+    }
+    
+    .publicidad-imagen2{
+        height: auto;
+    }
+    
+    .publicidad-imagen3{
+        height: auto;
+    }
+    
+    .publicidad-imagen4{
+        height: auto;
+    }
+    
+    .publicidad-imagen5{
+        height: auto;
+    }
+    
+    .publicidad-imagen6{
+        height: auto;
+    }
+    
+    .publicidad-imagen7{
+        height: auto;
+    }
+    
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+    .item h2 a{
+        font-size: 45px;
+    }
+
+    .gallery-wrap{
+        height: 400px;
+    }
+
+    .image-background{
+        padding-bottom: 10px;
+    }
+
+}
+
+
+@media only screen and (max-width: 568px) and (min-width: 502px){
+
+    .publicidad-imagen1{
+        height: auto;
+    }
+    
+    .publicidad-imagen2{
+        height: auto;
+    }
+    
+    .publicidad-imagen3{
+        height: auto;
+    }
+    
+    .publicidad-imagen4{
+        height: auto;
+    }
+    
+    .publicidad-imagen5{
+        height: auto;
+    }
+    
+    .publicidad-imagen6{
+        height: auto;
+    }
+    
+    .publicidad-imagen7{
+        height: auto;
+    }
+    
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+    .item h2 a{
+        font-size: 45px;
+    }
+
+    .gallery-wrap{
+        height: 400px;
+    }
+
+    .image-background{
+        padding-bottom: 10px;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 641px){
+
+    .publicidad-imagen1{
+        height: auto;
+    }
+    
+    .publicidad-imagen2{
+        height: auto;
+    }
+    
+    .publicidad-imagen3{
+        height: auto;
+    }
+    
+    .publicidad-imagen4{
+        height: auto;
+    }
+    
+    .publicidad-imagen5{
+        height: auto;
+    }
+    
+    .publicidad-imagen6{
+        height: auto;
+    }
+    
+    .publicidad-imagen7{
+        height: auto;
+    }
+    
+    .publicidad-imagen8{
+        height: auto;
+    }
+
+    .item h2 a{
+        font-size: 45px;
+    }
+
+    .gallery-wrap{
+        height: 400px;
+    }
+
+    .image-background{
+        padding-bottom: 10px;
+    }
+
+}
 
 
 

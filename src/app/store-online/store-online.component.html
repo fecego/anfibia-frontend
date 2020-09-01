@@ -7,7 +7,813 @@
     </div>
 
   </div>-->
-  <div class="row" style="padding: 10px;">
+
+  <div id="filtrosMenu" class="filtros-Menu">
+    <div style="width: 100%; max-height: 100%; overflow-y: scroll;">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 fijo filtros " id="filtros-smallMenu">
+        <h1>Filtros</h1>
+        <h1 style="position: absolute; top: 0%; right: 3%;cursor: pointer;" (click)="closeSmallMenu()">X</h1>
+        <hr>
+        <div id="clasificacion" class="filtros-leftside">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Clasificación
+          </a>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#clasificacion">
+              <form [formGroup] = "formRadioClasificacion">
+                <label style="display: block;" *ngFor="let clasificacion of clasificaciones;">
+                  <input
+                  formControlName="clasificaciones"
+                  type="radio"
+                  name="clasificaciones"
+                  [value]="clasificacion.value"
+                  [checked] = "clasificacion.isChecked == true"
+                  (change) = "clasificacionManager(clasificacion.value)"  
+                />
+                {{clasificacion.name}}
+              </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="marcasPesca" class="filtros-leftside" *ngIf="marcasPescaDIV">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingBrands" aria-expanded="true" aria-controls="fishingBrands">
+            Marcas de pesca
+          </a>
+            <div id="fishingBrands" class="collapse show" aria-labelledby="headingOne" data-parent="#marcasPesca">
+              <form [formGroup] = "formRadioMarcasPesca">
+                <label style="display: block;" *ngFor="let marcasp of marcasPesca;">
+                  <input
+                  
+                  formControlName="fishBrand"
+                  type="radio"
+                  name="fishBrand"
+                  [value]="marcasp.value"
+                  
+                  (change) = "marcasPManager(marcasp.value)"  
+                />
+                {{marcasp.name}}
+              </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="categoriasPesca" class="filtros-leftside" *ngIf="categoriasPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#categorias" aria-expanded="true" aria-controls="categorias">
+            Categorías de Pesca
+          </a>
+          <div id="categorias" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriasPesca">
+            <form [formGroup] = "formRadioCategoriaPesca">
+              <label style="display: block;" *ngFor="let catPesca of categoriasPescaFiltro;"> 
+                <input
+                formControlName="categoriasPesca"
+                type="radio"
+                name="categoriasPesca"
+                [value]="catPesca.value"        
+                (change) = "catFishManager(catPesca.value)"             
+              />
+              {{catPesca.name}}
+            </label>
+            </form>
+
+          </div>
+        
+        </div>
+      
+
+      
+
+       
+        <!--SUBCATEGORIAS AGUA DULCE -->
+        <div id="subCategoriasAguaDulce" class="filtros-leftside" *ngIf="subaguadulce">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subcatAguaDulce" aria-expanded="true" aria-controls="categorias">
+            Subcategorías Agua dulce
+          </a>
+          <div id="subcatAguaDulce" class="collapse show" aria-labelledby="headingOne" data-parent="#subCategoriasAguaDulce">
+          <form [formGroup] = "formRadioSubAguadulce">
+            <label style="display: block;" *ngFor="let subcatAguadulce of subcategoriasAguaDulce;">
+              <input
+              formControlName="aguadulceSub"
+              type="radio"
+              name="aguadulceSub"
+              [value]="subcatAguadulce.value"
+              (change) = "subAguadulceManager(subcatAguadulce.value)" 
+            />
+            {{subcatAguadulce.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id ="cañasAguaDulce" class="filtros-leftside" *ngIf="subaguadulceCanhas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#cañasaguadulce" aria-expanded="true" aria-controls="cañasAguaDulce">
+            Cañas de agua dulce
+          </a>
+          <div id="cañasaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#cañasAguaDulce">
+            <form [formGroup] = "formRadioSubAguadulceCanhas">
+              <label style="display: block;" *ngFor="let subcatAguaDulceCanha of subcategoriasAguaDulceCanhas;">
+                <input
+                formControlName="aguadulceSub2Canhas"
+                type="radio"
+                name="aguadulceSub2Canhas"
+                [value]="subcatAguaDulceCanha.value"
+                (change) = "subAguadulceCanhasManager(subcatAguaDulceCanha.value)" 
+              />
+              {{subcatAguaDulceCanha.name}}
+            </label>
+            </form>
+            </div>
+        </div>
+
+        <div id="carretesdeAguadulce" class="filtros-leftside" *ngIf="subAguaDulceCarretes">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#carretessaguadulce" aria-expanded="true" aria-controls="cañasAguaDulce">
+            Carretes de agua dulce
+          </a>
+          <div id="carretessaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#carretesdeAguadulce">
+          <form [formGroup] = "formRadioSubAguadulceCarretes">
+            <label style="display: block;" *ngFor="let subcatAguaDulceCarretes of subcategoriasAguaDulceCarretes;">
+              <input
+              formControlName="aguadulce2SubCarretes"
+              type="radio"
+              name="aguadulce2SubCarretes"
+              [value]="subcatAguaDulceCarretes.value"
+              (change) = "subAguaDulceCarrtesManager(subcatAguaDulceCarretes.value)" 
+            />
+            {{subcatAguaDulceCarretes.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div class="filtros-leftside" *ngIf="subAguaDulceCombos">
+          <h2>Combos de agua dulce</h2>
+          <hr>
+          <form [formGroup] = "formRadioAguaDulceCombos">
+            <label style="display: block;" *ngFor="let subcatAguadulceCombos of subcategoriasAguaDulceCombos;">
+              <input
+              formControlName="aguadulce2SubCombos"
+              type="radio"
+              name="aguadulce2SubCombos"
+              [value]="subcatAguadulceCombos.value"
+              (change) = "subAguaSaladaCombosManager(subcatAguadulceCombos.value)" 
+            />
+            {{subcatAguadulceCombos.name}}
+          </label>
+          </form>
+        </div>
+
+        <div class="filtros-leftside" *ngIf="subAguaDulceSenhuelos">
+          <h2>Señuelos de agua dulce</h2>
+          <hr>
+          <form [formGroup] = "formRadioAguaDulceSenhuelos">
+            <label *ngFor="let subcatAguadulceSenhuelo of subcategoriasAguaDulceSenhuelos;">
+              <input
+              formControlName="aguadulce2SubSenhuelos"
+              type="radio"
+              name="aguadulce2SubSenhuelos"
+              [value]="subcatAguadulceSenhuelo.value"
+              (change) = "subAguadulceSenhuelosManager(subcatAguadulceSenhuelo.value)" 
+            />
+            {{subcatAguadulceSenhuelo.name}}
+          </label>
+          </form>
+        </div>
+
+        <div id="accesoriosAguaDulce" class="filtros-leftside" *ngIf="subAguaDulceAccesorios">
+          <button class="boton-filtros" data-toggle="collapse" data-target="#accesoriosaguadulce" aria-expanded="true" aria-controls="accesorisaguadulce">
+            Accesorios de Agua dulce
+          </button>
+          <div id="accesoriosaguadulce" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosAguaDulce">
+            <form [formGroup] = "formRadioAguaDulceAccesorios">
+              <label style="display: block;" *ngFor="let subcatAguaDulceAccesorio of subcategoriasAguaDulceAccesorios;">
+                <input
+                formControlName="aguadulce2SubAccesorios"
+                type="radio"
+                name="aguadulce2SubAccesorios"
+                [value]="subcatAguaDulceAccesorio.value"
+                (change) = "subAguadulceAccesoriosManager(subcatAguaDulceAccesorio.value)" 
+              />
+              {{subcatAguaDulceAccesorio.name}}
+            </label>
+            </form>
+            </div>
+
+
+        </div>
+
+         <!--SUBCATEGORIAS AGUA DULCE -->
+       
+       
+
+
+        <!--=====================================AGUA SALADA FILTROS===================================================================== -->
+        <div id="subCategoriasAguaSalada" class="filtros-leftside" *ngIf="subaguasalada">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subcatAguaSalada" aria-expanded="true" aria-controls="categorias">
+            Subcategorías Agua salada
+          </a>
+          <div id="subcatAguaSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#subCategoriasAguaSalada">
+          <form [formGroup] = "formRadioSubAguasalada">
+            <label style="display: block;" *ngFor="let subaguasalada of subcategoriasAguasalada;">
+              <input
+              formControlName="aguasaladaSub"
+              type="radio"
+              name="aguasaladaSub"
+              [value]="subaguasalada.value"
+              (change) = "subAguasaladaManager(subaguasalada.value)" 
+            />
+            {{subaguasalada.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="canhasAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCanhas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#canhasSalada" aria-expanded="true" aria-controls="categorias">
+            Cañas de Agua salada
+          </a>
+          <div id="canhasSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#canhasAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCanhas">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCanha of subcategoriaAguaSaladaCanhas;">
+              <input
+              formControlName="aguasaladaCanhas"
+              type="radio"
+              name="aguasaladaCanhas"
+              [value]="subcatAguaSaladaCanha.value"
+              (change) = "subAguaSaladaCanhasManager(subcatAguaSaladaCanha.value)" 
+            />
+            {{subcatAguaSaladaCanha.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="carretesAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCarretes">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#carretesSalada" aria-expanded="true" aria-controls="categorias">
+            Carretes de Agua salada
+          </a>
+          <div id="carretesSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#carretesAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCarretes">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCarrete of subcategoriaAguaSaladaCarretes;">
+              <input
+              formControlName="aguasaladaCarretes"
+              type="radio"
+              name="aguasaladaCarretes"
+              [value]="subcatAguaSaladaCarrete.value"
+              (change) = "subAguaSaladaCarretesManager(subcatAguaSaladaCarrete.value)" 
+            />
+            {{subcatAguaSaladaCarrete.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="combosAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaCombos">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#combosSalada" aria-expanded="true" aria-controls="categorias">
+            Combos de Agua salada
+          </a>
+          <div id="combosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#combosAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaCombos">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaCombo of subcategoriaAguaSaladaCombos;">
+              <input
+              formControlName="aguasaladaCombos"
+              type="radio"
+              name="aguasaladaCombos"
+              [value]="subcatAguaSaladaCombo.value"
+              (change) = "subAguaSaladaCombosManager(subcatAguaSaladaCombo.value)" 
+            />
+            {{subcatAguaSaladaCombo.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="senhueloAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaSenhuelos">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#senhuelosSalada" aria-expanded="true" aria-controls="categorias">
+            Señuelos de Agua salada
+          </a>
+          <div id="senhuelosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#senhueloAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaSenhuelos">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaSenhuelo of subcategoriaAguaSaladaSenhuelos;">
+              <input
+              formControlName="aguasaladaSenhuelos"
+              type="radio"
+              name="aguasaladaSenhuelos"
+              [value]="subcatAguaSaladaSenhuelo.value"
+              (change) = "subAguaSaladaSenhueloManager(subcatAguaSaladaSenhuelo.value)" 
+            />
+            {{subcatAguaSaladaSenhuelo.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        <div id="accesoriosAguaSalada" class="filtros-leftside" *ngIf="subaguaSaladaAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#senhuelosSalada" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Agua salada
+          </a>
+          <div id="senhuelosSalada" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosAguaSalada">
+          <form [formGroup] = "formRadioSubSaladaAccesorios">
+            <label style="display: block;" *ngFor="let subcatAguaSaladaAccesorio of subcategoriaAguaSaladaAccesorios;">
+              <input
+              formControlName="aguasaladaAccesorios"
+              type="radio"
+              name="aguasaladaAccesorios"
+              [value]="subcatAguaSaladaAccesorio.value"
+              (change) = "subAguaSaladaAccesoriosManager(subcatAguaSaladaAccesorio.value)" 
+            />
+            {{subcatAguaSaladaAccesorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+         <!--=====================================AGUA SALADA FILTROS===================================================================== -->
+
+        <!--===============================================CATEGORÍAS DE ACCESORIOS=======================================================-->
+        <div id="subcategoriasAccesorios" class="filtros-leftside" *ngIf="subAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#accesoriosSub" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Accesorios
+          </a>
+          <div id="accesoriosSub" class="collapse show" aria-labelledby="headingOne" data-parent="#subcategoriasAccesorios">
+          <form [formGroup] = "formRadioSubAccesorios">
+            <label style="display: block;" *ngFor="let subcategoriaAccessorio of subcategoriasAccesorios">
+              <input
+              formControlName="accesoriosSub"
+              type="radio"
+              name="accesoriosSub"
+              [value]="subcategoriaAccessorio.value"
+              (change) = "subAguaSaladaAccesoriosManager(subcategoriaAccessorio.value)" 
+            />
+            {{subcategoriaAccessorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="subcategorias2Accesorios" class="filtros-leftside" *ngIf="subAccesoriosAlmacenamiento">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#accesorioAlmacenamientosSub" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Almacenamiento
+          </a>
+          <div id="accesorioAlmacenamientosSub" class="collapse show" aria-labelledby="headingOne" data-parent="#subcategorias2Accesorios">
+          <form [formGroup] = "formRadioSub2Accesorios">
+            <label style="display: block;" *ngFor="let subcategoria2Accessorio of subcategorias2Accesorios">
+              <input
+              formControlName="accesoriosSub2"
+              type="radio"
+              name="accesoriosSub2"
+              [value]="subcategoria2Accessorio.value"
+              (change) = "subAccesorios2Manager(subcategoria2Accessorio.value)" 
+            />
+            {{subcategoria2Accessorio.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+
+
+        
+        <!--===============================================CATEGORÍAS DE ACCESORIOS=======================================================-->
+        <!--===============================================NAVEGACIÓN================================================================================-->
+
+        <div id="categoriaNavegacion" class="filtros-leftside" *ngIf="catNavegacion">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionCat" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Navegación
+          </a>
+          <div id="navegacionCat" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriaNavegacion">
+          <form [formGroup] = "formRadioCatbNavegacion">
+            <label style="display: block;" *ngFor="let navegacionCategoria of navegacionCategorias">
+              <input
+              formControlName="categorias1"
+              type="radio"
+              name="categorias1"
+              [value]="navegacionCategoria.value"
+              (change) = "navegacionManager(navegacionCategoria.value)" 
+            />
+            {{navegacionCategoria.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        <div id="navegacionElectricos" class="filtros-leftside" *ngIf="navElectrico">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionElectrico" aria-expanded="true" aria-controls="categorias">
+            Electricos
+          </a>
+          <div id="navegacionElectrico" class="collapse show" aria-labelledby="headingOne" data-parent="#navegacionElectricos">
+          <form [formGroup] = "formRadioElectricosNavegacion">
+            <label style="display: block;" *ngFor="let elecCategoria of electricosCategoria">
+              <input
+              formControlName="elecC1"
+              type="radio"
+              name="elecC1"
+              [value]="elecCategoria.value"
+              (change) = "electricoManager(elecCategoria.value)" 
+            />
+            {{elecCategoria.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="accesoriosNavegacion" class="filtros-leftside" *ngIf="navAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#navegacionAccesorios" aria-expanded="true" aria-controls="categorias">
+            Accesorios de navegación
+          </a>
+          <div id="navegacionAccesorios" class="collapse show" aria-labelledby="headingOne" data-parent="#accesoriosNavegacion">
+          <form [formGroup] = "formRadioNavegacionAccesorios">
+            <label style="display: block;" *ngFor="let navAccCat of navAccesoriosCategoria">
+              <input
+              formControlName="accNavegacion"
+              type="radio"
+              name="accNavegacion"
+              [value]="navAccCat.value"
+              (change) = "accesoriosNavManager(navAccCat.value)" 
+            />
+            {{navAccCat.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+
+
+        <!--===============================================NAVEGACIÓN================================================================================-->
+        <!--=========================================ROPA PESCA===========================================================================-->
+        <div id="ropaPesca" class="filtros-leftside" *ngIf="ropaPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingClothes" aria-expanded="true" aria-controls="categorias">
+          Ropa de pesca
+          </a>
+          <div id="fishingClothes" class="collapse show" aria-labelledby="headingOne" data-parent="#ropaPesca">
+          <form [formGroup] = "formRadioRopaPesca">
+            <label style="display: block;" *ngFor="let catRopaP of catRopaPesca">
+              <input
+              formControlName="ropaFishing"
+              type="radio"
+              name="ropaFishing"
+              [value]="catRopaP.value"
+              (change) = "ropaPescaManager(catRopaP.value)" 
+            />
+            {{catRopaP.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="ropaPescaAccesorios" class="filtros-leftside" *ngIf="ropaPescaAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingClothesAccesories" aria-expanded="true" aria-controls="categorias">
+          Accesorios de ropa de pesca
+          </a>
+          <div id="fishingClothesAccesories" class="collapse show" aria-labelledby="headingOne" data-parent="#ropaPescaAccesorios">
+          <form [formGroup] = "formRadioAccesoriosRopaPesca">
+            <label style="display: block;" *ngFor="let catRopaAccess of catRopaAccesoriosPesca">
+              <input
+              formControlName="ropaAccesoriosFishing"
+              type="radio"
+              name="ropaAccesoriosFishing"
+              [value]="catRopaAccess.value"
+              (change) = "ropaAccesoriosPescaManager(catRopaAccess.value)" 
+            />
+            {{catRopaAccess.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+        
+        
+        <!--=========================================ROPA PESCA===========================================================================-->
+        <!--=========================================LINEAS===============================================================-->
+        <div id="lineasPesca" class="filtros-leftside" *ngIf="lineasPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingLineas" aria-expanded="true" aria-controls="categorias">
+          Lineas 
+          </a>
+          <div id="fishingLineas" class="collapse show" aria-labelledby="headingOne" data-parent="#lineasPesca">
+          <form [formGroup] = "formRadioLineasPesca">
+            <label style="display: block;" *ngFor="let linea of lineasPescaSub">
+              <input
+              formControlName="lineasFishing"
+              type="radio"
+              name="lineasFishing"
+              [value]="linea.value"
+              (change) = "lineasManager(linea.value)" 
+            />
+            {{linea.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        
+        <!--=========================================LINEAS===============================================================-->
+        <!--======================================SNORKEL===================================================================-->
+        <div id="snorkelPesca" class="filtros-leftside" *ngIf="snorkelPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingSnorkel" aria-expanded="true" aria-controls="categorias">
+          Snorkel 
+          </a>
+          <div id="fishingSnorkel" class="collapse show" aria-labelledby="headingOne" data-parent="#snorkelPesca">
+          <form [formGroup] = "formRadioSnorkelPesca">
+            <label style="display: block;" *ngFor="let snorkel of snorkelPescaSub">
+              <input
+              formControlName="snorkelFishing"
+              type="radio"
+              name="snorkelFishing"
+              [value]="snorkel.value"
+              (change) = "snorkelManager(snorkel.value)" 
+            />
+            {{snorkel.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+         <!--======================================SNORKEL===================================================================-->
+       <!--=========================================BUCEO=====================================================================-->
+       <div id="buceoPesca" class="filtros-leftside" *ngIf="buceoPesca">
+        <a class="boton-filtros" data-toggle="collapse" data-target="#fishingBuceo" aria-expanded="true" aria-controls="categorias">
+        Buceo 
+        </a>
+        <div id="fishingBuceo" class="collapse show" aria-labelledby="headingOne" data-parent="#buceoPesca">
+        <form [formGroup] = "formRadioBuceoPesca">
+          <label style="display: block;" *ngFor="let buceo of buceoPescaSub">
+            <input
+            formControlName="buceoFishing"
+            type="radio"
+            name="buceoFishing"
+            [value]="buceo.value"
+            (change) = "buceoManager(buceo.value)" 
+          />
+          {{buceo.name}}
+        </label>
+        </form>
+        </div>
+      </div>
+       
+       
+        <!--=========================================BUCEO=====================================================================-->
+        <!--===========================================================KAYAKS====================================================-->
+
+        <div id="kayaksPesca" class="filtros-leftside" *ngIf="kayaksPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingKayaks" aria-expanded="true" aria-controls="categorias">
+          Kayaks 
+          </a>
+          <div id="fishingKayaks" class="collapse show" aria-labelledby="headingOne" data-parent="#kayaksPesca">
+          <form [formGroup] = "formRadioKayaksPesca">
+            <label style="display: block;" *ngFor="let kayak of kayakPescaSub">
+              <input
+              formControlName="kayakFishing"
+              type="radio"
+              name="kayakFishing"
+              [value]="kayak.value"
+              (change) = "kayakManager(kayak.value)" 
+            />
+            {{kayak.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+        <div id="kayaksCategoriaPesca" class="filtros-leftside" *ngIf="kayaksCatPesca">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#fishingKayaksCat" aria-expanded="true" aria-controls="categorias">
+          Categoría Kayaks 
+          </a>
+          <div id="fishingKayaksCat" class="collapse show" aria-labelledby="headingOne" data-parent="#kayaksCategoriaPesca">
+          <form [formGroup] = "formRadioKayaksCatPesca">
+            <label style="display: block;" *ngFor="let kayakCat of kayakCatPescaSub">
+              <input
+              formControlName="kayakCatFishing"
+              type="radio"
+              name="kayakCatFishing"
+              [value]="kayakCat.value"
+              (change) = "kayakCatManager(kayakCat.value)" 
+            />
+            {{kayakCat.name}}
+          </label>
+          </form>
+          </div>
+        </div>
+
+
+
+        <!--===========================================================KAYAKS====================================================-->
+         <!--Caceria-->
+
+        <!--div class="filtros-leftside" *ngIf="categoriasCaceria">
+          <h2>Categorías Cacería</h2>
+          <hr>
+          <form [formGroup]="formCaceria"  novalidate>
+            <div *ngFor="let data of DataCaceria; let i=index">
+              <label>
+                <input type="checkbox" [value]="data.value"  (change)="onCheckboxChange($event)"/>
+                {{data.name}}
+              </label>
+            </div>
+            <input type="submit" value="Submit">
+          </form>
+        </div>-->
+
+        <div id="categoriasCaceria" class="filtros-leftside" *ngIf="categoriasCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#categorias" aria-expanded="true" aria-controls="categorias">
+            Categorias de Cacería
+          </a>
+          <div id="categorias" class="collapse show" aria-labelledby="headingOne" data-parent="#categoriasCaceria">
+            <form [formGroup] = "formRadioCategoriaCaceria">
+              <label style="display: block;" *ngFor="let catCaceria of categoriasCaceriaFiltro;"> 
+                <input
+                formControlName="categoriasCaceria"
+                type="radio"
+                name="categoriasCaceria"
+                [value]="catCaceria.value"        
+                (change) = "catHuntingManager(catCaceria.value)"             
+              />
+              {{catCaceria.name}}
+            </label>
+            </form>
+
+          </div>
+        
+        </div>
+
+
+        <div id="subRifles" class="filtros-leftside" *ngIf="subRifles">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subRiflesCaceria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Rifles
+          </a>
+          <div id="subRiflesCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subRifles">
+            <form [formGroup] = "formRadioSubRifles">
+              <label style="display: block;" *ngFor="let rifle of subcategoriaRifles;"> 
+                <input
+                formControlName="caceriaRifles"
+                type="radio"
+                name="caceriaRifles"
+                [value]="rifle.value"        
+                (change) = "subRifleManager(rifle.value)"             
+              />
+              {{rifle.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="subRiflesAccesorios" class="filtros-leftside" *ngIf="subRiflesAccesorios">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subRiflesAccesorios1" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Rifles
+          </a>
+          <div id="subRiflesAccesorios1" class="collapse show" aria-labelledby="headingOne" data-parent="#subRiflesAccesorios">
+            <form [formGroup] = "formRadioSubRiflesAccesorios">
+              <label style="display: block;" *ngFor="let rifleAccesorios of subcategoria2RiflesAccesorios;"> 
+                <input
+                formControlName="caceriaRiflesAccesorios"
+                type="radio"
+                name="caceriaRiflesAccesorios"
+                [value]="rifleAccesorios.value"        
+                (change) = "subRifleAccesoriosManager(rifleAccesorios.value)"             
+              />
+              {{rifleAccesorios.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subPistolas" class="filtros-leftside" *ngIf="subPistolas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subPistolasCaceria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Pistolas
+          </a>
+          <div id="subPistolasCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subPistolas">
+            <form [formGroup] = "formRadioSubPistolas">
+              <label style="display: block;" *ngFor="let pistolas of subcategoriaPistolas;"> 
+                <input
+                formControlName="caceriaPistolas"
+                type="radio"
+                name="caceriaPistolas"
+                [value]="pistolas.value"        
+                (change) = "subPistolaManager(pistolas.value)"             
+              />
+              {{pistolas.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="subAccesoriosPistolas" class="filtros-leftside" *ngIf="subAccesoriosPistolas">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subAccesoriosPistolasCaceria" aria-expanded="true" aria-controls="categorias">
+            Accesorios de Pistolas
+          </a>
+          <div id="subAccesoriosPistolasCaceria" class="collapse show" aria-labelledby="headingOne" data-parent="#subAccesoriosPistolas">
+            <form [formGroup] = "formRadioSubAccesoriosPistolas">
+              <label style="display: block;" *ngFor="let accesoriosPistolas of subAccesorioscategoriaPistolas;"> 
+                <input
+                formControlName="caceriaAccesoriosPistolas"
+                type="radio"
+                name="caceriaAccesoriosPistolas"
+                [value]="accesoriosPistolas.value"        
+                (change) = "subAccesoriosPistolaManager(accesoriosPistolas.value)"             
+              />
+              {{accesoriosPistolas.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subArqueria" class="filtros-leftside" *ngIf="subArqueria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaArqueria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Arquería
+          </a>
+          <div id="subCaceriaArqueria" class="collapse show" aria-labelledby="headingOne" data-parent="#subArqueria">
+            <form [formGroup] = "formRadioSubArqueria">
+              <label style="display: block;" *ngFor="let arqueria of subcategoriaArqueria;"> 
+                <input
+                formControlName="caceriaArqueria"
+                type="radio"
+                name="caceriaArqueria"
+                [value]="arqueria.value"        
+                (change) = "subArqueriaManager(arqueria.value)"             
+              />
+              {{arqueria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subCuchilleria" class="filtros-leftside" *ngIf="subCuchilleria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaCuchilleria" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Cuchillería
+          </a>
+          <div id="subCaceriaCuchilleria" class="collapse show" aria-labelledby="headingOne" data-parent="#subCuchilleria">
+            <form [formGroup] = "formRadioSubCuchilleria">
+              <label style="display: block;" *ngFor="let cuchilleria of subcategoriaCuchilleria;"> 
+                <input
+                formControlName="caceriaCuchilleria"
+                type="radio"
+                name="caceriaCuchilleria"
+                [value]="cuchilleria.value"        
+                (change) = "subCuchilleriaManager(cuchilleria.value)"             
+              />
+              {{cuchilleria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subAccesorios" class="filtros-leftside" *ngIf="subAccesoriosCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaAccesorios" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Accesorios
+          </a>
+          <div id="subCaceriaAccesorios" class="collapse show" aria-labelledby="headingOne" data-parent="#subAccesorios">
+            <form [formGroup] = "formRadioSubAccesoriosCaceria">
+              <label style="display: block;" *ngFor="let accesorios of subcategoriaAccesoriosCaceria;"> 
+                <input
+                formControlName="caceriaAccesorios"
+                type="radio"
+                name="caceriaAccesorios"
+                [value]="accesorios.value"        
+                (change) = "subAccesoriosCaceriaManager(accesorios.value)"             
+              />
+              {{accesorios.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+        <div id="subRopa" class="filtros-leftside" *ngIf="subRopaCaceria">
+          <a class="boton-filtros" data-toggle="collapse" data-target="#subCaceriaRopa" aria-expanded="true" aria-controls="categorias">
+            Subcategorías de Ropa cacería
+          </a>
+          <div id="subCaceriaRopa" class="collapse show" aria-labelledby="headingOne" data-parent="#subRopa">
+            <form [formGroup] = "formRadioSubRopaCaceria">
+              <label style="display: block;" *ngFor="let ropaCaceria of subcategoriaRopaCaceria1;"> 
+                <input
+                formControlName="caceriaRopa"
+                type="radio"
+                name="caceriaRopa"
+                [value]="ropaCaceria.value"        
+                (change) = "subRopaCaceriaManager(ropaCaceria.value)"             
+              />
+              {{ropaCaceria.name}}
+            </label>
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+         
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px; margin-bottom: 5px; z-index: 1;">
     <div class="col-xs-6 col-sm-12 barra-superior" 
     [ngClass] = "{'pesca': cambioImagen.value === 'pesca', 'caceria': cambioImagen.value === 'caceria',
     'vacio': cambioImagen.value === 'vacio', 'aguadulce': cambioImagen.value === 'aguadulce', 
@@ -35,23 +841,16 @@
       
       <!--<h2 *ngIf = "pClasificacion">De <span>{{pClasificacion}}</span><  /h2>
       <h2 *ngIf = "pCategoria">- {{pCategoria}}</h2>-->
-      <div>
-        <label for="filtro-superior">Ordena por: </label>
-      <select name="filtro-superior" id="filtro-superior">
-        <option value="low-price">Precio de más bajo a más alto</option>
-        <option value="high-price">Precio de más alto a más bajo</option>
-        <option value="Destacados">Destacados</option>
-        <option value="Más nuevos">Más nuevos</option>
-      </select>
-      </div>
-
+     
 
 
  
 
     </div>
 
-    <div class="col-xs-6 col-sm-6 links-rutas">
+    
+
+    <div class="col-xs-6 col-sm-12 links-rutas">
      
       <a routerLink ="/tienda">INICIO</a><a [routerLink] = "['/tienda']" [queryParams] = "{clasificacion: clasificacion}">/ {{clasificacion | uppercase}}</a>
       <a *ngIf="categoria" [routerLink]="['/tienda']"[queryParams] = "{clasificacion : clasificacion, categoria: categoria}">/ {{categoria | uppercase}}</a>
@@ -127,8 +926,35 @@
     
     </div>
   </div>
+  <div class="row" style="height: auto;">
+    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+      <div class="filtros-barra">
+        <button (click) ="despliegueMenu()"><i class="fa fa-bars" aria-hidden="true"></i> Filtros</button>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12" style="height: 50px; position: relative;">
+      <div class="order-filter">
+        <label for="filtro-superior">Ordena por: </label>
+      <select name="filtro-superior" id="filtro-superior">
+        <option value="low-price">Precio de más bajo a más alto</option>
+        <option value="high-price">Precio de más alto a más bajo</option>
+        <option value="Destacados">Destacados</option>
+        <option value="Más nuevos">Más nuevos</option>
+      </select>
+      </div>
+     
+ 
+
+    </div>
+
+
+
+  </div>
+
     <div class="row">
-      <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros ">
+      <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 fijo filtros " id="filtros">
         <h1>Filtros</h1>
         <hr>
         <div id="clasificacion" class="filtros-leftside">
@@ -927,7 +1753,7 @@
 
          
       </div>
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
        
         <div class="row">
           <!--Estilo nuevo del carrito-->
@@ -966,7 +1792,7 @@
                </div>
                <div id="prueba{{i}}" class="pruebaBotones2">
                    <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoTienda)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                   <button class="" type="button" (click) = "addCart(productoTienda)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                   <button class="" type="button" (click) = "addCart(productoTienda)"><i class="fa fa-shopping-cart"></i> </button>
                  
 
                </div>

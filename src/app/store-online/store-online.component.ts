@@ -1204,7 +1204,7 @@ export class StoreOnlineComponent implements OnInit {
   ngOnInit(){
     /*Animación de AOS*/
     AOS.init();
-    
+    $(".filtros-Menu").css("width","0%");
     /*Carga los productos en la vista y asigna las imagenes*/
 
     /*Carga las clasificaciones del RadioButton*/
@@ -2574,6 +2574,21 @@ export class StoreOnlineComponent implements OnInit {
         producto.imagenCambio = producto.imagenPrincipal;
       }
     });
+
+  }
+
+
+  despliegueMenu(){
+    console.log('Presionaste despliegue menu');
+    $(".filtros-Menu").animate({"width": "100%"},"fast");
+    $(".filtros-Menu").css("display", "block");
+  }
+
+
+  closeSmallMenu(){
+    console.log('Presionaste closeSmallMenu');
+    $(".filtros-Menu").animate({"width": "0%"},"fast");
+    $(".filtros-Menu").css("display", "none");
 
   }
 

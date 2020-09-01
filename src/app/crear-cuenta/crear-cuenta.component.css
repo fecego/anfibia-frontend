@@ -114,9 +114,8 @@
         text-align: center;
         position: relative;
         font-size: 60px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:black;
-        letter-spacing: 0.1em;
     }
         @media only screen and (max-width: 390px) and (min-width: 321px){
             .titulo h1{ 
@@ -124,9 +123,8 @@
                 position: relative;
                 text-align: center;
                 font-size: 35px;
-                font-family: 'Prometo-x-bold';
+                font-family: 'Anton', sans-serif;
                 color:black;
-                letter-spacing: 0.1em;
             }
         }   
 
@@ -416,8 +414,8 @@
     /*------------[FILA DE BENEFICIOS]------------*/
     .linea{
         border-left: 1px solid #DAD9D8;
-        height: 700px;
-        top: 50px;
+        height: auto;
+       
     }
         @media only screen and (max-width: 768px) and (min-width: 641px){
             .linea{
@@ -429,13 +427,13 @@
         }
 
     .beneficios h1{
-        margin: 0px 0px 20px -30px;
-        font-family: 'Anton';
-        padding-top: 70px;
+        
+        font-family: 'Anton', sans-serif;
+        
         
     }
     .beneficios {
-        margin-left: 130px;
+        margin-left: 20%;
         color: #757575;
         font-size: 18px;
         font-family: 'Meera';
@@ -450,12 +448,12 @@
             .linea{
                 border-left: 0px;
                 border-top: 1px solid #DAD9D8;
-                height: 700px;
+                height: auto;
                 top: 10px;
             }
 
             .beneficios h1{
-                margin: 0px 0px 20px 0px;
+               
                 font-family: 'Anton';
                 padding-top: 70px;
                 

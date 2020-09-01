@@ -87,7 +87,7 @@ Ipad Mini 2.4 Landscape--*/
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -463,21 +463,21 @@ Surface Pro 3 Portrait
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 18px;
     letter-spacing: 2px;
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
     letter-spacing: 2px;
   }
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -661,21 +661,21 @@ Surface Pro 3 Portrait
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     font-size: 14px;
   }
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -743,7 +743,7 @@ Surface Pro 3 Portrait
   
     .effect h5{
       color: white;
-      font-family: 'Prometo-Thin';
+      font-family: 'Meera Inima';
       letter-spacing: 2px;
       text-align: center;
       font-size: 20px;
@@ -861,22 +861,21 @@ Media query usado
   }
   
   .menu-footer h5{
-    color: white;
-    font-family: 'Prometo-x-bold';
+    color: #fff;
+    font-family: 'Anton', sans-serif;
     font-size: 15px;
-    letter-spacing: 2px;
+  
   }
   
   .menu-footer a{
-    color: white;
-    font-family: 'Prometo-Thin';
+  
     font-size: 13px;
   }
   
   .copyright p{
-    color: white;
-    font-family: 'Prometo-Thin';
+    color: #fff;
     letter-spacing: 2px;
+    text-align: center;
   }
   
   
@@ -934,7 +933,7 @@ Media query usado
   
     .effect h1{
       color: white;
-      font-family: 'Prometo-x-bold';
+      font-family: 'Anton',sans-serif;
       letter-spacing: 3px;
       text-align: center;
       font-size: 30px;
@@ -942,7 +941,7 @@ Media query usado
   
     .effect h5{
       color: white;
-      font-family: 'Prometo-Thin';
+      font-family: 'Meera Inima', sans-serif;
       letter-spacing: 2px;
       text-align: center;
       font-size: 15px;
@@ -1055,20 +1054,20 @@ Media query usado
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
   }
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'P';
     letter-spacing: 2px;
     text-align: center;
   }
@@ -1269,7 +1268,7 @@ Iphone 7 Portrait
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -1329,7 +1328,7 @@ Iphone 7 Portrait
   
     .effect h1{
       color: white;
-      font-family: 'Prometo-x-bold';
+      font-family: 'Anton', sans-serif;
       letter-spacing: 3px;
       text-align: center;
       font-size: 30px;
@@ -1337,7 +1336,7 @@ Iphone 7 Portrait
   
     .effect h5{
       color: white;
-      font-family: 'Prometo-Thin';
+      font-family: 'Meera Inima', sans-serif;
       letter-spacing: 2px;
       text-align: center;
       font-size: 20px;
@@ -1451,20 +1450,20 @@ Iphone 5 Portrait
   
   .menu-footer h5{
     color: white;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
   }
   
   .menu-footer a{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
   }
   
   .copyright p{
     color: white;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inima', sans-serif;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -1532,7 +1531,7 @@ Iphone 5 Portrait
   
     .effect h5{
       color: white;
-      font-family: 'Prometo-Thin';
+      font-family: 'Meera Inima', sans-serif;
       letter-spacing: 2px;
       text-align: center;
       font-size: 20px;

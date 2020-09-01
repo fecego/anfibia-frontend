@@ -121,15 +121,18 @@ img {
 
 .nav-item a{
     color: black;
+    font-size: 14px;
+    font-family: 'Meera Inima', sans-serif;
 }
 
 .menu p{
-    margin-left: 15px;
-    text-align: justify;
+    margin-left: 14px;
+    
 }
 
 .help li{
     margin-left: 15px;
+    font-size: 14px;
     list-style: none;
 }
 

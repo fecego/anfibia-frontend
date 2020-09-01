@@ -7,7 +7,7 @@
 <div class="modal-body">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12 col-lg-6">
          <div class="main-imgModal">
           <img id="imagen-principal" src="{{productoModal.image[0].url}}" alt="" >
          </div>
@@ -47,7 +47,7 @@
         </div>
       </div>
       
-      <div class="col-md-6 ml-auto modal-textos">
+      <div class="col-md-12 col-lg-6 ml-auto modal-textos">
         <button type="button" class="close close-button" data-dismiss="modal" (click)="closeModal('dismiss')">X</button>
         <h1>{{productoModal.nombre | uppercase}}</h1>
         <hr>

@@ -1,7 +1,14 @@
+.also-interest{
+  margin-top: 20px;
+}
+
+
 .pruebaBotones ul li{
   list-style: none;
 
 }
+
+
 
 .pruebaBotones{
   position: absolute;
@@ -56,6 +63,7 @@
   color: #fff;
   transition: 0.5s ease-in-out;
 }
+
 
 
 :host ::ng-deep .tabset1 a.nav-link {
@@ -202,23 +210,25 @@ input[type="number"] {
 }
 
 .valoraciones h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
     color: #000;
-    font-size: 45px;
+    font-size: 34px;
+    font-weight: bold;
 
 }
 
 .valoraciones h2{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bolder;
     color: #000;
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
 }
 
 
 .valoraciones h3{
     float: right; 
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
     color: #424242;
     font-size: 20px;
 }
@@ -810,6 +820,8 @@ select{
 
 .descriptivo{
     margin-top: 60px;
+    width: 100%;
+    height: auto;
 }
 
 .descriptivo h1{
@@ -833,25 +845,20 @@ select{
 }
 
 
-.descriptivo{
-    width: 100%;
-    max-width: 100%;
-    height: 400px;
-    
-
-}
 
 .descriptivo-inside{
-  display: flex;
   width: 100%;
-  max-height: 100%;
+  height: 370px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  
+
 }
 
 .descriptivo-inside img{
   
-  max-height: 100%;
+  height: 100%;
   max-width: 100%;
 }
 
@@ -863,13 +870,13 @@ select{
 
 .text-also h1{
     font-family: 'Anton', sans-serif;
-    font-size:45px;
+    font-size:30px;
     margin-top: 25px;
     color: #000;
 }
 
 .text-also hr{
-  width: 30%;
+  width: 10%;
   height: 2px;
   background: #04B4AE;
   margin-left: 0px;
@@ -940,21 +947,25 @@ select{
   
   padding: 3px 10px;
 }
+
+
 .product-tumb {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 300px;
-  padding: 50px;
+  padding: 85px;
   background: #f0f0f0;
+  
 }
 
 .product-tumb img {
 
   max-width: 100%;
-  max-height: 100%;
+  max-height: auto;
   transition: all 200ms ease-in;
   transform: scale(1);
+ 
 }
 
 .product-tumb img:hover {
@@ -1219,7 +1230,7 @@ transition: 0.5s;
 
 .fijo h1{
     font-family: 'Anton', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     color: #000;
     margin-top: 20px;
     text-align: left;
@@ -1229,7 +1240,7 @@ transition: 0.5s;
     font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000000; 
-    font-size: 17px; 
+    font-size: 15px; 
     text-align: left;
 }
 
@@ -1237,16 +1248,16 @@ transition: 0.5s;
     font-family: 'Meera Inima', sans-serif;
     font-weight: bolder;
     color: #000; 
-    font-size: 25px; 
+    font-size: 22px; 
     text-align: left;
     background: #D8D8D8;
     padding: 10px;
 }
 
 .fijo h4{
-  font-family: 'Anton', sans-serif;
-  
-  font-size: 20px;
+  font-family: 'Meera Inima', sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
   color: #000;
 }
 
@@ -1433,6 +1444,38 @@ Media query usado
 */
 @media screen and (max-width: 640px) and (min-width: 611px){
 
+
+  .text-also h1{
+    font-size: 23px;
+  }
+
+  .valoraciones h1{
+    font-size: 20px;
+
+  }
+
+  .valoraciones h2{
+    font-size: 18px;
+  }
+  
+
+  .valoraciones p{
+    font-size: 14px;
+  }
+
+  .descriptivo{
+    height: auto;
+  }
+
+  .descriptivo-inside{
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
   .product-links-wish{
     font-size: 13px;
     padding: 1px;
@@ -1530,26 +1573,24 @@ Iphone 7 Portrait
  @media only screen and (max-width: 390px) and (min-width: 321px){
 
 
+  .descriptivo h1{
+    font-size: 25px;
+  }
+
+  .descriptivo h2{
+    font-size: 20px;
+  }
+
+  .valoraciones h1{
+    font-size: 20px;
+  }
+
+
     .top-section2{
       height: 250px;
     }
 
-    .product-card{
-      width: 80%;
-      height: 500px;
-    }
-
-    .product-tumb{
-      height: 250px;
-    }
-
-    .product-links-wish{
-      font-size: 11px;
-    }
-
-    .product-links-bag{
-      font-size: 11px;
-    }
+   
 
     .descriptivo img{
       width: 85%;
@@ -1592,28 +1633,47 @@ Iphone 7 Portrait
  /*Kindle Fire Portrait 
 Nexus 7 Portrait*/
 @media screen and (max-width: 610px) and (min-width: 569px){
-   .descriptivo img{
-      width: 85%;
-      max-width: 100%;
-      height: 420px;
-      max-height: 100%;
+
+  
+  .descriptivo h1{
+    font-size: 24px;
   }
 
-  .product-card{
+  .descriptivo h2{
+    font-size: 18px;
+  }
+
+  .valoraciones h1{
+    font-size: 24px;
+  }
+
+  .fijo div label{
+    width: 20%;
+  }
+
+  .fijo div select{
+    width: 30%;
+  }
+
+  .botones-individual{
     width: 100%;
-    height: 475px;
   }
 
-  .product-tumb{
-    height: 250px;
+  .botones-individual2{
+    width: 100%;
   }
 
-  .product-links-wish{
-    font-size: 12px;
+  .descriptivo{
+    height: auto;
+
   }
 
-  .product-links-bag{
-    font-size: 12px;
+  .descriptivo-inside{
+    height: 300px;
+  }
+
+  .descriptivo-inside img{
+    height: 100%;
   }
 
 }
@@ -1622,29 +1682,50 @@ Nexus 7 Portrait*/
 Nexus 10 Portrait
 */
 @media only screen and (min-width: 770px) and (max-width: 870px) {
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
+
+  .descriptivo h1{
+    font-size: 24px;
+  }
+
+  .descriptivo h2{
+    font-size: 18px;
+  }
+
+  .valoraciones h1{
+    font-size: 24px;
+  }
+
+  .fijo div label{
+    width: 20%;
+  }
+
+  .fijo div select{
+    width: 30%;
+  }
+
+  .botones-individual{
+    width: 50%;
+  }
+
+  .botones-individual2{
+    width: 50%;
+  }
+
+  .descriptivo{
+    height: auto;
+
+  }
+
+  .descriptivo-inside{
     height: 300px;
-    max-height: 100%;
   }
 
-  .product-card{
-    width: 75%;
-    height: 475px;
+  .descriptivo-inside img{
+    height: 100%;
   }
 
-  .product-tumb{
-    height: 250px;
-  }
 
-  .product-links-wish{
-    font-size: 12px;
-  }
 
-  .product-links-bag{
-    font-size: 12px;
-  }
 
 
   .botones-individual{
@@ -1670,30 +1751,49 @@ Nexus 10 Portrait
 Surface Pro 3 Portrait
 */
 @media only screen and (min-width: 870px) and (max-width: 999px) {
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
+
+  .descriptivo h1{
+    font-size: 24px;
+  }
+
+  .descriptivo h2{
+    font-size: 18px;
+  }
+
+  .valoraciones h1{
+    font-size: 24px;
+  }
+
+  .fijo div label{
+    width: 20%;
+  }
+
+  .fijo div select{
+    width: 30%;
+  }
+
+  .botones-individual{
+    width: 50%;
+  }
+
+  .botones-individual2{
+    width: 50%;
+  }
+
+  .descriptivo{
+    height: auto;
+
+  }
+
+  .descriptivo-inside{
     height: 300px;
-    max-height: 100%;
   }
 
-  .product-card{
-    width: 75%;
-    height: 475px;
+  .descriptivo-inside img{
+    height: 100%;
   }
 
-  .product-tumb{
-    height: 250px;
-  }
-
-  .product-links-wish{
-    font-size: 12px;
-  }
-
-  .product-links-bag{
-    font-size: 12px;
-  }
-
+  
 
   .botones-individual{
     font-size: 16px;
@@ -1721,32 +1821,21 @@ ipad landscape  -- Si lo afecta
 Ipad mini Landscape -- Si lo afecta
 */
 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 400px;
-    max-height: 100%;
+
+
+
+  .descriptivo{
+    height: auto;
+
   }
 
-  .product-card{
-    width: 100%;
-    height: 475px;
+  .descriptivo-inside{
+    height: 300px;
   }
 
-  .product-tumb{
-    height: 235px;
+  .descriptivo-inside img{
+    height: 100%;
   }
-
-  .product-links-wish{
-    font-size: 11px;
-    padding: 2px;
-  }
-
-  .product-links-bag{
-    font-size: 11px;
-    padding: 2px;
-  }
-
 
   .botones-individual{
     font-size: 16px;
@@ -1776,48 +1865,67 @@ Ipad mini Landscape -- Si lo afecta
     Ipad Portrait -- Lo afecta como debé ser 
     Ipad Mini Portrait -- Lo afecta como debé ser 
     Esta afectando el iphone 7 plus Landscape
-    iphone 7 Lanscape
 */
-@media only screen and (max-width: 768px) and (min-width: 680px){
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 500px;
-    max-height: 100%;
-  }
+@media only screen and (max-width: 768px) and (min-width: 641px){
 
-  .product-card{
-    width: 100%;
-    height: 475px;
-  }
 
-  .product-tumb{
-    height: 235px;
+  .valoraciones h1{
+    font-size: 25px;
   }
-
-  .product-links-wish{
-    font-size: 13px;
-    padding: 2px;
-  }
-
-  .product-links-bag{
-    font-size: 13px;
-    padding: 2px;
-  }
-
 
   .botones-individual{
+    width: 70%;
     font-size: 16px;
     padding: 10px;
-    width: 60%;
-    
   }
 
   .botones-individual2{
+    width: 70%;
     font-size: 16px;
     padding: 10px;
-    width: 60%;
   }
+
+    .top-section2{
+    height: 430px;
+  }
+
+  .descriptivo h1{
+    font-size: 24px;
+  }
+
+  .descriptivo h2{
+    font-size: 18px;
+  }
+
+  .valoraciones h1{
+    font-size: 24px;
+  }
+
+  .fijo div label{
+    width: 20%;
+  }
+
+  .fijo div select{
+    width: 30%;
+  }
+
+
+  .descriptivo{
+    height: auto;
+
+  }
+
+  .descriptivo-inside{
+    height: 300px;
+  }
+
+  .descriptivo-inside img{
+    height: 100%;
+  }
+
+
+
+ 
 
   .input-group .button-minus,
 .input-group .button-plus,
@@ -1838,33 +1946,37 @@ Ipad mini Landscape -- Si lo afecta
     Iphone 4 Landscape
     Iphone 7 plus portrait
 */
-@media only screen and (max-width: 500px) and (min-width: 392px){
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 350px;
-    max-height: 90%;
+@media only screen and (max-width: 567px) and (min-width: 392px){
+
+
+  .descriptivo h1{
+    font-size: 25px;
   }
 
-  .product-card{
-    width: 79%;
-    height: 475px;
+  .descriptivo h2{
+    font-size: 22px;
   }
 
-  .product-tumb{
-    height: 235px;
+  .valoraciones h1{
+    font-size: 22px;
   }
 
-  .product-links-wish{
-    font-size: 14px;
-    padding: 2px;
+  .top-section2{
+    height: 450px;
   }
 
-  .product-links-bag{
-    font-size: 14px;
-    padding: 2px;
+  .descriptivo{
+    height: auto;
+
   }
 
+  .descriptivo-inside{
+    height: 300px;
+  }
+
+  .descriptivo-inside img{
+    height: 100%;
+  }
 
   .botones-individual{
     font-size: 16px;
@@ -1900,32 +2012,19 @@ Ipad mini Landscape -- Si lo afecta
 */
 @media only screen and (max-width: 568px) and (min-width: 502px){
 
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 450px;
-    max-height: 90%;
+ 
+  .descriptivo{
+    height: auto;
+
   }
 
-  .product-card{
-    width: 70%;
-    height: 475px;
+  .descriptivo-inside{
+    height: 300px;
   }
 
-  .product-tumb{
-    height: 235px;
+  .descriptivo-inside img{
+    height: 100%;
   }
-
-  .product-links-wish{
-    font-size: 17px;
-    padding: 6px;
-  }
-
-  .product-links-bag{
-    font-size: 17px;
-    padding: 6px;
-  }
-
 
   .botones-individual{
     font-size: 16px;
@@ -1961,16 +2060,13 @@ Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){
 
-  .nav2 img{
-    width: 50px;
-    height: 50px;
-  }
+.descriptivo h1{
+  font-size: 20px;
+}
 
 
-.card2{
-    width: 80%;
-    background: #f1f1f1;
-    position: relative;
+.descriptivo h2{
+  font-size: 17px;
 }
 
 .top-section2{
@@ -1983,31 +2079,7 @@ Iphone 5 Portrait
 
 }
 
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 250px;
-    max-height: 90%;
-  }
-
-  .product-card{
-    width: 100%;
-    height: 475px;
-  }
-
-  .product-tumb{
-    height: 235px;
-  }
-
-  .product-links-wish{
-    font-size: 13px;
-    padding: 1px;
-  }
-
-  .product-links-bag{
-    font-size: 13px;
-    padding: 1px;
-  }
+ 
 
 
   .botones-individual{
@@ -2037,78 +2109,12 @@ Iphone 5 Portrait
 
 
  .valoraciones h1{
-   font-size: 40px;
+   font-size: 18px;
  }
 
  .text-also h1{
-   font-size: 40px;
+   font-size: 30px;
  }
 }
 
 
-/*Iphone 7 Landscape*/
-@media only screen and (max-width: 679px) and (min-width: 641px){
-
-
-  .descriptivo img{
-    width: 100%;
-    max-width: 100%;
-    height: 450px;
-    max-height: 90%;
-  }
-
-  .product-card{
-    width: 100%;
-    height: 475px;
-  }
-
-  .product-tumb{
-    height: 235px;
-  }
-
-  .product-links-wish{
-    font-size: 12px;
-    padding: 1px;
-  }
-
-  .product-links-bag{
-    font-size: 12px;
-    padding: 1px;
-  }
-
-
-  .botones-individual{
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-    
-  }
-
-  .botones-individual2{
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-  }
-
-
-.input-group .quantity-field {
-  height: 50px;
-  width: 50px;
-  
-}
- .input-group .button-minus,
- .input-group .button-plus{
-  width: 10px;
- }
-
-
-
- .valoraciones h1{
-   font-size: 40px;
- }
-
- .text-also h1{
-   font-size: 40px;
- }
-
-}

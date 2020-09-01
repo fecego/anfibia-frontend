@@ -114,6 +114,93 @@
         letter-spacing: 0.1em;
     }
 
+
+    @media only screen and (min-width: 1025px) {
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+         }
+    }
+
+    @media only screen and (max-width: 320px){
+        h1{
+            letter-spacing: 0em;
+        }
+        .info{
+            margin: 10px;
+         }
+
+    }
+
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+           
+         }
+
+    }
+
+    @media only screen and (max-width: 567px) and (min-width: 392px){
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+         }
+
+    }
+
+    @media screen and (max-width: 640px) and (min-width: 568px){
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+         }
+
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+         }
+    }
+
+    @media only screen and (min-width: 770px) and (max-width: 999px) {
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+           margin-bottom: 20px;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        h1{
+            letter-spacing: 0em;
+        }
+
+        .info{
+            margin-bottom: 20px;
+         }
+    }
+
     h3{
         font-size: 18px;
         text-align: center;
@@ -305,7 +392,8 @@
     .info li{
         text-align: left;
         font-size: 20px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
+        color: #000;
         list-style: none;
     }
 
@@ -321,16 +409,18 @@
 
     h2{
         font-size: 16px;
-        font-style: oblique;
+        font-weight: bold;
+        color: #000;
     }
 
     p {
         margin: 0;
+        color: #000;
     }
 
     .tel li{
         font-size: 16px;
-        font-family: 'Prometo-light';
+        font-family: 'Meera Inima', sans-serif;
         list-style: none;
     }
 
