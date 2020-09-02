@@ -19,6 +19,12 @@
       color: black;
       letter-spacing: 0.1em;
     }
+      /*Media query en celulares vertical*/
+      @media only screen and (max-width: 1100px) and (min-width: 300px){
+        .titulo h1{
+          letter-spacing: 0em;
+        }
+      }
 
     .menu h2{
       margin-left: 0px;
@@ -27,21 +33,21 @@
       font-size: 20px;
       text-align: left;
     }
+    /*Media query en tablets horizontal*/
+    @media only screen and (max-width: 1000px) and (min-width: 768px){
+      .menu{
+        display: none;
+      }
+    }
       
     /*Media query en tablets vertical*/
-      @media only screen and (max-width: 768px) and (min-width: 641px){
+      @media only screen and (max-width: 768px) and (min-width: 567px){
         .menu{
           display: none;
         }
       }
     /*Media query en celulares vertical*/
-      @media only screen and (max-width: 390px) and (min-width: 321px){
-        .menu{
-          display: none;
-        }
-      }
-
-      @media only screen and (max-width: 567px) and (min-width: 392px){
+      @media only screen and (max-width: 567px) and (min-width: 320px){
         .menu{
           display: none;
         }
@@ -103,6 +109,12 @@
       padding: 10px;
       background: #F0F0F0;
     }
+      /*Media query en celulares vertical*/
+      @media only screen and (max-width: 576px) and (min-width: 300px){
+        .pedido .foto{
+          height: 200px;
+        }
+      }
 
     .pedido img{
       max-width: 90%;
@@ -139,7 +151,7 @@
     }
 
     /*Media query en tablets vertical*/
-      @media only screen and (max-width: 768px) and (min-width: 641px){
+      @media only screen and (max-width: 768px) and (min-width: 576px){
         .wrapper{
           margin-top: 50px;
           font-size: 15px;
@@ -147,22 +159,14 @@
           }
         }
     /*Media query en celulares vertical*/
-      @media only screen and (max-width: 390px) and (min-width: 321px){
+      @media only screen and (max-width: 576px) and (min-width: 320px){
         .wrapper{
           margin-left: 100px;
           margin-top: 50px;
         }
       }
 
-      @media only screen and (max-width: 567px) and (min-width: 392px){
-        .wrapper{
-          margin-left: 100px;
-          margin-top: 50px;
-        }
-      } 
-
     .envio{
-      
       align-self: center;
     }
 
