@@ -1,5 +1,7 @@
 
-    /*--ENCABEZADO--*/
+    /*---------------------------------
+    ------------ENCABEZADO-------------
+    -----------------------------------*/
     .foto{
         position: relative;
     }
@@ -7,16 +9,37 @@
     .foto1 img{
         margin-top: 0px;
         margin-left: -15px;
-        height: 600px;
+        height: 560px;
         position: absolute;
         z-index: -1;
+        width: 100%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .foto1 img{
+                height: 500px;
+            }
+        }
+        /*Media query en tablets vertical*/
+        @media only screen and (max-width: 768px) and (min-width: 576px){
+            foto1 img{
+                width: 50%;
+            }
+        }
 
     .foto2 img{
-        margin-left: 300px;
+        margin-left: 250px;
         margin-top: 130px;
         margin-bottom: 100px;
+        width: 75%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .foto2 img{
+                width: 85%;
+                margin-left: 200px;
+            }
+        }
 
     .texto h1{
         position: absolute;
@@ -29,16 +52,35 @@
         font-family: 'Anton';
         letter-spacing: 2px;
         text-transform: uppercase;
-        font-size: 80px;  
+        font-size: 130px;  
     }
+         /*Media query en tablets horizontal*/
+         @media only screen and (max-width: 1200px) and (min-width: 768px){
+             .texto h1{
+                 font-size: 110px;
+                 top: 20%;
+                 left: 45%;
+             }
+         }
 
     .texto p{
-        margin-top: 45%;
-        margin-left: 50px;
+        margin-top: 40%;
+        margin-left: 70px;
         font-family: 'Meera Inima', sans-serif;
     }
+         /*Media query en tablets horizontal*/
+         @media only screen and (max-width: 1200px) and (min-width: 768px){
+             .texto p{
+                 text-align: justify;
+                 margin-top: 50%;
+                 margin-left: 110px;
+             }
+         }
+
+
     /*--ENCABEZADO--*/
 
+    
     /*--BOTONES DE PESCA Y CACERÍA--*/
     .pesca{
         margin-left:20px ;
@@ -66,6 +108,12 @@
         height: 100%;
         width: 100%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .pesca .buttons{
+                margin-left: 100px;
+            }
+        }  
       
     .pesca .container {
         display: table-cell;
@@ -133,7 +181,7 @@
         color: black;
         letter-spacing: 3px;
         font-weight: 900;
-        transition: all 0.5s;
+        transition: all 0.5s; 
     }
 
     .btnfos-1:hover rect {
@@ -236,6 +284,12 @@
         width: 1348px;
         height: 650px;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .fondo{
+                width: 996px;
+            }
+        }
 
     .publicfoto img{
         z-index: 2;
@@ -255,6 +309,12 @@
         padding-top: 230px;
         text-align: center;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .textob{
+                padding-top: 150px;
+            }
+        }
 
     .textob h2{
         font-size: 50px;
@@ -268,6 +328,12 @@
         position: relative;
         margin-bottom: 100px;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .botonees{
+                width: 1020px;
+            }
+        }
 
     .botonees img{
         width: 35%;
