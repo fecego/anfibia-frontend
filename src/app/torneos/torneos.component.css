@@ -108,6 +108,12 @@
         height: 100%;
         width: 100%;
     }
+        /*Media query en tablets horizontal*/
+        @media only screen and (max-width: 1200px) and (min-width: 768px){
+            .pesca .buttons{
+                margin-left: 100px;
+            }
+        }  
       
     .pesca .container {
         display: table-cell;
