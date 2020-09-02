@@ -105,14 +105,14 @@ Ipad Mini 2.4 Landscape--*/
     align-items: center;
     justify-content: center;
     height: 300px;
-    padding: 50px;
+    padding: 80px;
     background: #f0f0f0;
 }
 
 .product-tumb img {
 
     max-width: 100%;
-    max-height: 100%;
+    max-height: auto;
     transition: all 200ms ease-in;
     transform: scale(1);
 }
