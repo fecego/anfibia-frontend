@@ -147,6 +147,15 @@ export class IndividualProductComponent implements OnInit {
     console.log("Se cargo el ngOnInit de IndividualProductComponent, a ver cuantas veces se recarga. ");
     /*Carga la lista del Servicio, es una instancia de la clase ProductosServices*/
     this.productosInteres = this._productos.getProductos();
+    this.productosInteres.forEach(producto =>{
+      producto.imagenPrincipal = producto.image[0].url;
+      if(producto.image[1]){
+        producto.imagenCambio = producto.image[1].url;
+      }else{
+        producto.image[1] = producto.imagenPrincipal;
+        producto.imagenCambio = producto.image[1];
+      }
+    });
     $('.product-card').css("visibility", "hidden");
     
      /*Funcion para cambio de imagenes en la vista de productos*/
@@ -253,8 +262,8 @@ export class IndividualProductComponent implements OnInit {
   hoverZoom(dato){
     console.log('Llamamos la función hoverZoom');
     $("#image-container2").data("zoom-image", dato).ezPlus({
-      zoomWindowFadeIn: 500,
-      zoomWindowFadeOut: 500,
+      zoomWindowFadeIn: 300,
+      zoomWindowFadeOut: 300,
       lensFadeIn: 500,
       lensFadeOut: 500,
       scrollZoom: true,

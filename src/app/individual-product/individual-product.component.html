@@ -89,7 +89,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-8 col-lg-8" style="margin-top: 30px;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8" style="margin-top: 30px;">
             <div class="card2">
                 <div class="top-section2">
                   <img id="image-container2" [attr.src]="productoIndividual.image[0].url" (mouseover) ="hoverZoom(productoIndividual.image[0].url)">   
@@ -106,7 +106,7 @@
                 </div>
               </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 fijo">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 fijo">
             <div> 
               <h4>{{productoIndividual.categoria | uppercase}} {{productoIndividual.marca | uppercase}}</h4>
             </div>
@@ -193,198 +193,208 @@
               </select>              
              </div>
             <br>
-            <div class="input-group">
+            <!--<div class="input-group">
               <input type="button" value="-" class="button-minus" data-field="quantity">
               <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
               <input type="button" value="+" class="button-plus" data-field="quantity">
-            </div>
+            </div>-->
             <button id="carrito-compras" class="botones-individual">Añadir al Carrito <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             <button class="botones-individual">Añadir a la Lista de deseos <i class="fa fa-heart" aria-hidden="true"></i></button>
             <button class="botones-individual2">Comprar ahora <i class="fa fa-money" aria-hidden="true"></i></button>
         </div>   
     </div>
-    <ngb-tabset class="tabset1">
-      <ngb-tab title="Descripción">
-        <ng-template ngbTabContent>
-       <div class="container">
-        <div class="row descriptivo">
-          <hr>
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-              <h1>{{productoIndividual.nombre | uppercase}}</h1>
-              <h2>Descripción</h2>
-              <p>{{productoIndividual.descripcion}}</p>
+    <div class="row">
+      <div class="col-sm-12">
+        <ngb-tabset class="tabset1">
+          <ngb-tab title="Descripción">
+            <ng-template ngbTabContent>
+           <div class="container">
+            <div class="row descriptivo">
+              <hr>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <h1>{{productoIndividual.nombre | uppercase}}</h1>
+                  <h2>Descripción</h2>
+                  <p>{{productoIndividual.descripcion}}</p>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
+                  <img src="{{productoIndividual.image[0].url}}" alt="">
+              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
-              <img src="{{productoIndividual.image[0].url}}" alt="">
+    
+           </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Valoraciones y Reseñas">
+            <ng-template ngbTabContent>
+            <div class="container">
+              <div class="row valoraciones">
+                <div class="col-sm-12">
+                  <h1>Valoraciones y reseñas</h1>
+                <hr>
+                </div>
+                <div class="col-12 col-sm-8 col-sm-8 col-lg-8">
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset><br><br>
+                    <h3>22-03-2020</h3>
+                    <h2>Lorem ipsum dolor sit ame</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <hr>
+                </div>
+                <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset><br><br>
+                    <h3>22-03-2020</h3>
+                    <h2>Lorem ipsum dolor sit ame</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <hr>
+                </div>
+                <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset><br><br>
+                    <h3>22-03-2020</h3>
+                    <h2>Lorem ipsum dolor sit ame</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <hr>
+                </div>
+                <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset><br><br>
+                    <h3>22-03-2020</h3>
+                    <h2>Lorem ipsum dolor sit ame</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <hr>
+                </div>
+                <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset><br><br>
+                    <h3>22-03-2020</h3>
+                    <h2>Lorem ipsum dolor sit ame</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <hr>
+                </div>
+            </div>
+    
+            </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+    <div class="row also-interest">
+      <div class="col-sm-12">
+        <div class="container" style="position: relative;">
+          <div class="row text-also">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <h1>También te podría interesar.</h1>
+                  <hr>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <owl-carousel-o [options]="customOptions">
+               <ng-template carouselSlide *ngFor="let producto of productosInteres | slice: 0:16; index as i; let index = i;">
+                 <div class="" >
+                   <div class="product-card" >
+                   <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                   <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                   <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
+                   <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
+                   
+                       <div class="product-tumb">
+                        <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
+                       </div>
+                       <div class="product-details">
+                           <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                       
+                           <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                           <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
+                           <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
+                           <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
+                       
+                           
+                           <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                          
+                           <div id="prueba{{i}}"class="pruebaBotones"> 
+                            <ul>
+                              <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                             
+                              
+                            </ul>
+                           
+  
+                          </div>
+                          <div class="pruebaBotones2">
+                              <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                              <button class="" type="button" (click) = "addCart(producto)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
+                            
+  
+                          </div>
+                          </div>
+                   </div>
+               </div>
+               </ng-template>
+              
+           </owl-carousel-o>
+   
+            </div>
+   
           </div>
       </div>
 
-       </div>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Valoraciones y Reseñas">
-        <ng-template ngbTabContent>
-        <div class="container">
-          <div class="row valoraciones">
-            <h1>Valoraciones y reseñas</h1>
-            <hr>
-            <div class="col-12 col-sm-8 col-sm-8 col-lg-8">
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset><br><br>
-                <h3>22-03-2020</h3>
-                <h2>Lorem ipsum dolor sit ame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8 col-lg-8">
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset><br><br>
-                <h3>22-03-2020</h3>
-                <h2>Lorem ipsum dolor sit ame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8 col-lg-8">
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset><br><br>
-                <h3>22-03-2020</h3>
-                <h2>Lorem ipsum dolor sit ame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8 col-lg-8">
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset><br><br>
-                <h3>22-03-2020</h3>
-                <h2>Lorem ipsum dolor sit ame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8 col-lg-8">
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset><br><br>
-                <h3>22-03-2020</h3>
-                <h2>Lorem ipsum dolor sit ame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-            </div>
-        </div>
+      </div>
 
-        </div>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
-    <div class="container">
-     
-    
-        <div class="row text-also">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <h1>También te podría interesar.</h1>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-           <owl-carousel-o [options]="customOptions">
-             <ng-template carouselSlide *ngFor="let producto of productosInteres | slice: 0:16; index as i; let index = i;">
-               <div class="" >
-                 <div class="product-card" >
-                 <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
-                 <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-                 <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
-                 <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
-                 
-                     <div class="product-tumb">
-                         <img [src]="producto.image[0].url"alt="" 
-                         >
-                     </div>
-                     <div class="product-details">
-                         <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
-                     
-                         <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
-                         <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
-                         <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
-                         <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
-                     
-                         
-                         <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                        
-                         <div id="prueba{{i}}"class="pruebaBotones"> 
-                          <ul>
-                            <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                           
-                            
-                          </ul>
-                         
-
-                        </div>
-                        <div class="pruebaBotones2">
-                            <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                            <button class="" type="button" (click) = "addCart(producto)">Añadir al carrito<i class="fa fa-shopping-cart"></i> </button>
-                          
-
-                        </div>
-                        </div>
-                 </div>
-             </div>
-             </ng-template>
-            
-         </owl-carousel-o>
- 
-          </div>
- 
-        </div>
     </div>
+  
 </div>
 
 

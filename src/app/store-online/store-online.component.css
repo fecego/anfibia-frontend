@@ -1,3 +1,8 @@
+.filtros-Menu{
+  display: none;
+}
+
+
 .pruebaBotones ul li{
   list-style: none;
 
@@ -46,7 +51,7 @@
   border:none;
   border-radius: 2px;
   font-family: 'Meera Inima', sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   padding: 5px;
   
 
@@ -765,13 +770,19 @@
   font-size: 15px;
 }
 
-.barra-superior div{
+.order-filter{
   position: absolute;
   right: 5%;
-  top: 105%;
-  margin-bottom: 20%  ;
-  font-family: 'Prometo-Medium';
+  font-family: 'Meera Inima', sans-serif;
   font-size: 15px;
+}
+
+.filtros-barra{
+  position: absolute;
+  right: 35%;
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 15px;
+  display: none;
 }
 
 input[type='checkbox'] + label {
@@ -1203,6 +1214,7 @@ input[type='checkbox'] + label {
 
 .filtros{
     padding-top: 15px;
+    padding-bottom: 30px;
     
 }
 
@@ -1657,32 +1669,70 @@ Samsung Galaxy S6 Edge Landscape--Si lo afecta
 LG G5 Lansdscape -- Si lo afecta
 Afecta MISC
 BlackBerry z10  landscape
+Kindle Fire Portrait
 Media query usado
 @media screen and (max-width: 736px) and (min-width: 320px){}
 */
-@media screen and (max-width: 640px) and (min-width: 611px){
+@media screen and (max-width: 640px) and (min-width: 568px){
+
+  .filtros{
+    padding-bottom: 200px;
+ 
+  }
+
+
+  .filtros-Menu{
+    width: 100%;
+    max-height: 100%;
+    background: #fff;
+    color: #000;
+    z-index: 999;
+    position: fixed;
+    overflow-y: scroll;
+  
+  }
+
+  .filtros-barra{
+    position: absolute;
+    left: 8%;
+    display: block;
+    
+  }
+
+  .order-filter{
+    
+  }
+
+  .filtros-barra button{
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+
+  #filtros{
+    display: none;
+  }
 
   
   .see-more{
     margin-bottom: 50px;
   }
+
+
   .barra-superior h1{ 
     color: #000;
-    font-family: 'Anton',sans-serif;
-    font-size: 50px;
+    font-family: 'Julius Sans One';
+    font-weight: bold;
+    font-size: 20px;
     
 }
 
 
-.filtros h1{
-  font-family: 'Prometo-x-bold';
-  font-size: 25px;
-  
-}
 
 
 .product-card{
-  height: 500px;
+  height: auto;
 }
 
 .product-tumb{
@@ -1715,59 +1765,8 @@ padding: 4px;
 
 
 
-/*Kindle Fire Portrait 
+/* 
 Nexus 7 Portrait*/
-@media screen and (max-width: 610px) and (min-width: 569px){
-
-
-  .see-more{
-    margin-bottom: 50px;
-  }
-  .barra-superior h1{ 
-    color: #000;
-    font-family: 'Prometo-x-bold';
-    font-size: 50px;
-    
-}
-
-.filtros h1{
-  font-family: 'Prometo-x-bold';
-  font-size: 25px;
-  
-}
-
-
-.product-card{
-  height: 450px;
-}
-
-.product-tumb{
-  height: 225px;
-}
-
-
-.product-links-wish{
-  font-size: 10px;
-  padding: 4px;
-  
-}
-
-
-
-
-.product-links-bag {
-font-size: 10px;
-padding: 4px;
-}
-
-.product-details h4 a {
-  font-size: 14px;
-}
-
-
-}
-
-
 
 /*Celular Vertical*/
 /*Afecta 
@@ -1780,6 +1779,46 @@ Black Berry  Z10 Portrait  -- Si lo afecta
 Iphone 7 Portrait
  */
  @media only screen and (max-width: 390px) and (min-width: 321px){
+
+
+  .filtros{
+    padding-bottom: 200px;
+  }
+
+  .filtros-Menu{
+    width: 100%;
+    max-height: 100%;
+    background: #fff;
+    color: #000;
+    z-index: 999;
+    position: fixed;
+    overflow-y: scroll;
+  
+  }
+
+  .filtros-barra{
+    position: relative;
+    left: 5%;
+    display: block;
+    
+    
+  }
+
+  .order-filter{
+    
+  }
+
+  .filtros-barra button{
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+
+  #filtros{
+    display: none;
+  }
+
 
   .heart-button{
     top: 23%;
@@ -1800,29 +1839,14 @@ Iphone 7 Portrait
   }
 
   .barra-superior h1{ 
-    font-size: 40px;
+    font-size: 20px;
+    font-family: 'Julius Sans One';
+    font-weight: bold;
 
     }
 
-  .product-links-wish{
-    padding: 5px;
-    font-size: 13px;
-  }
-
-  .product-links-bag{
-    padding: 5px;
-    font-size: 13px;
-  }
-
-  .product-card{
-    height: 500px;
-    width: 80%;
-  }
-
-  .product-tumb{
-    height: 250px;
-
-  }
+ 
+  
 
 
  }
@@ -1834,24 +1858,11 @@ ipad landscape  -- Si lo afecta
 Ipad mini Landscape -- Si lo afecta
 */
 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
-      .product-links-wish{
-          padding: 5px;
-          font-size: 12px;
+      #filtros{
+        display: block;
       }
 
-      .product-links-bag{
-        padding: 5px;
-        font-size: 12px;
-      }
-
-      .product-card{
-        height: 500px;
-      }
-
-      .product-tumb{
-        height: 250px;
-
-      }
+      
 
 }
 
@@ -1860,7 +1871,7 @@ Ipad mini Landscape -- Si lo afecta
 /*Media query tablets 
 Nexus 10 Portrait
 */
-@media only screen and (min-width: 770px) and (max-width: 870px) {
+@media only screen and (min-width: 770px) and (max-width: 999px) {
 
   .modal-content{
     width: 600px;
@@ -1895,155 +1906,78 @@ Nexus 10 Portrait
   }
 
   .barra-superior h1{
-    font-size: 40px;
+    font-size: 30px;
   }
 
-  .product-links-wish{
-    padding: 5px;
-    font-size: 14px;
-}
-
-.product-links-bag{
-  padding: 5px;
-  font-size: 14px;
-}
-
-.product-card{
-  height: 500px;
-}
-
-.product-tumb{
-  height: 250px;
-
-}
 
 
 }
 
-/*Nexus 7 landscape
+/*Media query tablets 
+Debería afectar 
+Nexus 10 Portrait
+Nexus 7 landscape
 Surface Pro 3 Portrait
 */
-@media only screen and (min-width: 870px) and (max-width: 999px) {
-  .modal-content{
-    width: 600px;
-    position: absolute;
-    left: 1px;
-    
-  }
-
-  .diferente-vistaImg{
-    height:60px;
-  }
-  
-  .heart-button{
-    top: 25%;
-  }
-
-  .see-more{
-    padding-bottom: 50px;
-  }
-
-
-  .modal-textos p{
-    font-size: 15px;
-
-  }
-  .main-imgModal{
-    height: 300px;
-  }
-
-  .modal-textos h1{
-    font-size: 25px;
+@media screen and (max-width: 640px) and (min-width: 568px){
+  #filtros{
+    display: none;
   }
 
   .barra-superior h1{
-    font-size: 40px;
+    font-size: 20px;
   }
 
-  .product-links-wish{
-    padding: 5px;
-    font-size: 14px;
-}
-
-.product-links-bag{
-  padding: 5px;
-  font-size: 14px;
-}
-
-.product-card{
-  height: 500px;
-  width: 85%;
-}
-
-.product-tumb{
-  height: 250px;
-
 }
 
 
-}
-
-
-/*
-    Afecta tablets Portrait
-    Ipad Portrait -- Lo afecta como debé ser 
-    Ipad Mini Portrait -- Lo afecta como debé ser 
-    Esta afectando el iphone 7 plus Landscape
-*/
-@media only screen and (max-width: 768px) and (min-width: 680px){
-
-  .see-more{
-    padding-bottom: 50px;
-  }
-
-  .product-links-wish{
-    padding: 3px;
-    font-size: 13px;
-}
-
-.product-links-bag{
-  padding: 3px;
-  font-size: 13px;
-}
-
-.product-card{
-  height: 500px;
-}
-
-.product-tumb{
-  height: 250px;
-
-}
-
-
-}
 
 
 /*Iphone 7 Landscape*/
-@media only screen and (max-width: 679px) and (min-width: 641px){
-  .see-more{
-    padding-bottom: 50px;
+@media only screen and (max-width: 768px) and (min-width: 641px){
+
+  .filtros{
+    padding-bottom: 200px;
+ 
   }
 
-  .product-links-wish{
-    padding: 3px;
-    font-size: 12px;
-}
 
-.product-links-bag{
-  padding: 3px;
-  font-size: 12px;
-}
+  .filtros-Menu{
+    width: 100%;
+    max-height: 100%;
+    background: #fff;
+    color: #000;
+    z-index: 999;
+    position: fixed;
+    overflow-y: scroll;
+  
+  }
 
-.product-card{
-  height: 450px;
-}
+  .filtros-barra{
+    position: relative;
+    left: 5%;
+    display: block;
+    
+  }
 
-.product-tumb{
-  height: 225px;
+  .order-filter{
+    
+  }
 
-}
+  .filtros-barra button{
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
 
+
+  #filtros{
+    display: none;
+  }
+
+  .barra-superior h1{
+    font-size: 20px;
+  }
 
 }
 
@@ -2052,49 +1986,48 @@ Surface Pro 3 Portrait
 Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){
-
-  
-  .heart-button{
-    top: 27%;
-   }
-
-.main-imgModal{
-  height: 200px;
-}
-
-.diferente-vistaImg{
-  padding: 0px;
-  margin: 0px;
-  height: 40px;
-}
-  .see-more{
-    padding-bottom: 50px;
-  }
-
   .barra-superior h1{ 
-    
-    font-size: 30px;
-    
+    font-size: 20px;
 }
 
-    .product-links-wish{
-      padding: 3px;
-      font-size: 15px;
-  }
 
-  .product-links-bag{
-    padding: 3px;
-    font-size: 15px;
-  }
+#filtros{
+  display: none;
+}
 
-  .product-card{
-    height: 450px;
-  }
+.filtros{
+  padding-bottom: 200px;
 
-  .product-tumb{
-    height: 225px;
+}
 
-  }
+
+.filtros-Menu{
+  width: 100%;
+  max-height: 100%;
+  background: #fff;
+  color: #000;
+  z-index: 999;
+  position: fixed;
+  overflow-y: scroll;
+
+}
+
+.filtros-barra{
+  position: relative;
+  right: 6%;
+  display: block;
+  
+}
+
+.order-filter{
+  
+}
+
+.filtros-barra button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
 
 }
@@ -2109,51 +2042,55 @@ Iphone 5 Portrait
 */
 @media only screen and (max-width: 500px) and (min-width: 392px){
 
+  
+  .filtros{
+    padding-bottom: 200px;
+ 
+  }
 
+
+  .filtros-Menu{
+    width: 100%;
+    max-height: 100%;
+    background: #fff;
+    color: #000;
+    z-index: 999;
+    position: fixed;
+    overflow-y: scroll;
+  
+  }
+
+  .filtros-barra{
+    position: relative;
+    left: 4%;
+    display: block;
+    
+  }
+
+  .order-filter{
+    
+  }
+
+  .filtros-barra button{
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
   .see-more{
     padding-bottom: 50px;
   }
 
-
   .barra-superior h1{ 
-    font-size: 30px;
-    
-}
-.product-links-wish{
-  padding: 3px;
-  font-size: 15px;
-}
-
-  
-
-  
-
-  .product-links-bag{
-    padding: 3px;
-    font-size: 15px;
+    font-size: 30px;  
   }
 
-  .product-card{
-    height: 450px;
+  #filtros{
+    display: none;
   }
 
-  .product-tumb{
-    height: 225px;
-
+  .barra-superior h1{
+    font-size: 25px;
   }
-
-  .product-card{
-    width: 78%;
-  }
-
-  @media only screen and (max-width: 480px) and (min-width: 420px){
-    .product-card{
-      width: 65%;
-    }
-
-  }
-  
-
 
 }
 
@@ -2169,31 +2106,58 @@ Iphone 5 Portrait
     padding-bottom: 50px;
   }
   .barra-superior h1{ 
-    font-size: 50px;
+    font-size: 30px;
+    
     
 }
-    .product-links-wish{
-      padding: 3px;
-      font-size: 17px;
-  }
 
-  .product-links-bag{
-    padding: 3px;
-    font-size: 17px;
-  }
+#filtros{
+  display: none;
+}
 
-  .product-card{
-    height: 450px;
-  }
+.filtros{
+  padding-bottom: 200px;
 
-  .product-tumb{
-    height: 225px;
+}
 
-  }
 
-  .product-card{
-    width: 62%;
-  }
+.filtros-Menu{
+  width: 100%;
+  max-height: 100%;
+  background: #fff;
+  color: #000;
+  z-index: 999;
+  position: fixed;
+  overflow-y: scroll;
+
+}
+
+.filtros-barra{
+  position: relative;
+  left: 4%;
+  display: block;
+  
+}
+
+.order-filter{
+  
+}
+
+.filtros-barra button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+
+}
+
+
+/*Iphone 7 plus portrait*/
+
+@media only screen and (max-width: 567px) and (min-width: 392px){
+
 
 
 }
