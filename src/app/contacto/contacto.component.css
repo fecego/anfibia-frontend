@@ -109,7 +109,7 @@
         position: relative;
         text-align: center;
         font-size: 80px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color: black;
     }
 
@@ -201,8 +201,8 @@
     }
 
     h3{
-        font-size: 18px;
-        text-align: center;
+        font-size: 16px;
+       font-family: 'Meera Inima', sans-serif;
     }
             /*Media query en celulares vertical*/
             @media only screen and (max-width: 390px) and (min-width: 321px){
@@ -391,7 +391,8 @@
     .info li{
         text-align: left;
         font-size: 20px;
-        font-family: 'Anton', sans-serif;
+        font-family: 'Meera Inima', sans-serif;
+        font-weight: bold;
         color: #000;
         list-style: none;
     }
@@ -431,7 +432,7 @@
         margin-top: 40px;
         margin-left: 180px;
         font-size: 20px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
     }
 
     section{

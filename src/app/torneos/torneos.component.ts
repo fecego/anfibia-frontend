@@ -34,6 +34,10 @@ export class TorneosComponent implements OnInit {
     
   }
 
+  zoomImage(){
+   console.log('Zooooooom');
+  }
+
  
   
 

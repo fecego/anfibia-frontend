@@ -5,34 +5,6 @@ Los siguientes modelos de tablets
 Surface 3 Pro Landscape--, 
 Ipad Pro Landscape--
 Ipad Mini 2.4 Landscape--*/
-
-
-/*Iphone 5 Landscape*/
-@media only screen and (max-width: 568px) and (min-width: 502px){
-    .pruebaDos{
-        height: auto;
-    }
-
-    .publicidad8{
-        height: auto;
-    }
-
-    .publicidad7{
-        height: auto;
-    }
-
-    .parallax-fishing{
-        height: auto;
-    }
-
-    .item:hover h2 a{
-        font-size: 25px;
-    }
-
-}
-
-
-
 #categoriasPesca-noAccordion{
     display: none;
 }
@@ -406,9 +378,24 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .preprueba{
-        background: red;
         width: 100%;
         height: 550px;
+    }
+
+    .preprueba h1{
+        color: #000;
+        font-family: 'Anton', sans-serif;
+        font-size: 35px;
+        text-align: center;
+        padding-top: 20%;
+    }
+
+    .preprueba p{
+        color: #000;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 15px;
+        text-align: center;
+        padding: 20px;
     }
 
     .preprueba img{
@@ -427,7 +414,7 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .fondoI-pesca{
-        background: #fff;
+        background: none;
     }
 
     .inicioImage img{
@@ -1189,7 +1176,7 @@ top: 85%;
    
    
     width: 100%;
-    height: 650px;
+    height: 550px;
   
     /* Create the parallax scrolling effect */
    
@@ -1202,7 +1189,7 @@ top: 85%;
 
 .publicidad8{
     width: 100%;
-    height: 650px;
+    height: 550px;
 }
 
 .publicidad8 img{
@@ -1568,12 +1555,17 @@ color: red;
 }
 
 .image-background{
- background: #fff;
+ background: none;
+ padding: 0;
+ height: 600px;
     
 }
 
 .image-background img{
    width: 100%;
+   height: 100%;
+   max-height: 100%;
+  
 }
 
 .texto-image-background h1{
@@ -1595,6 +1587,15 @@ color: red;
     font-size: 15px;
 }
 
+
+.texto-image-background2 p{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    padding-top: 50%;
+    font-size: 15px;
+    
+}
+
 .texto-image-background hr{
     width: 20%;
     height: 1px;
@@ -1606,7 +1607,7 @@ color: red;
 
        
         width: 100%;
-        height: 650px;
+        height: 550px;
       
         /* Create the parallax scrolling effect */
         
@@ -2015,7 +2016,7 @@ html,body{
   }
 
   .item-9 { 
-    background-image: url('/assets/imagenes/fishing/Kayak.png');
+    background-image: url('/assets/imagenes/fishing/navegacion.jpg');
     
   }
 
@@ -4080,6 +4081,31 @@ Iphone 5 Portrait
 
 }
 
+
+
+/*Iphone 5 Landscape*/
+@media only screen and (max-width: 568px) and (min-width: 502px){
+    .pruebaDos{
+        height: auto;
+    }
+
+    .publicidad8{
+        height: auto;
+    }
+
+    .publicidad7{
+        height: auto;
+    }
+
+    .parallax-fishing{
+        height: auto;
+    }
+
+    .item:hover h2 a{
+        font-size: 25px;
+    }
+
+}
 
 
 

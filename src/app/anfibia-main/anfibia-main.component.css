@@ -28,7 +28,7 @@
 
 
 .divBegin{
-    height: 550px;
+    height: 650px;
 }
 
 
@@ -71,7 +71,7 @@
 
 
 .backImageBegin{
-    background-image: url('/assets/imagenes/paginaInicial/PESCADOR.png');
+    background-image: url('/assets/imagenes/fishing/pescadorInicio.png');
        background-position: bottom;
        background-repeat: no-repeat;
        background-size: cover;
@@ -83,7 +83,7 @@
 
 
 .backImageBegin2{
-    background-image: url('/assets/imagenes/paginaInicial/caceria6.png');
+    background-image: url('/assets/imagenes/hunting/cazadorInicio.png');
        background-position: bottom;
        background-repeat: no-repeat;
        background-size: cover;
@@ -2831,14 +2831,11 @@ background: rgba(0, 0, 0, 0.3);
     .product-card {
         width: 100%;
         position: relative;
-        
         margin: 50px auto;
-        background: #fafafa;
+        background: #fff;
         height: auto;
         transition: all 200ms ease-in;
         transform: scale(1);
-       
-    
     }
     
     .product-card:hover{

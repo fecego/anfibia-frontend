@@ -314,16 +314,35 @@ font-family: 'Julius Sans One';
 
 
 .pruebaLinksRapidos a{
-    color: #848484;
+    color: #000;
     font-family: 'Meera Inima', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 16px;
+    
     text-decoration: none;
     line-height: 0.8em;
     padding-left: 0;
 }
 
 .pruebaLinksRapidos a:hover{
+    color: #000;
+}
+
+
+.pruebaLinksRapidosSub2 a{
+    color: #848484;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 16px;
+    
+    text-decoration: none;
+    line-height: 0.8em;
+    padding-left: 18px;
+    
+
+
+}
+
+
+.pruebaLinksRapidosSub2 a:hover{
     color: #000;
 }
 
