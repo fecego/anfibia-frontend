@@ -11,7 +11,7 @@
         <div class="col-lg-6 col-md-16 col-sm-12 col-xs-12 form">
             <h3>No dudes en enviarnos un mensaje, nuestro objetivo es responderte antes de que pasen 24 horas hábiles.</h3>
                 <div class="card">
-                    <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <form  [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
                         <div class="inputGroup">      
                             <input type="text"
                             id="nombre"
@@ -65,6 +65,7 @@
                         <div class="button-container">
                             <button 
                             type="submit"
+                            #buttonContacto
                             [disabled] = "contactForm.status == 'INVALID'"
                             ><span>Enviar mensaje</span></button>
                         </div>
@@ -75,15 +76,16 @@
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 info">
             <div class="row">
                 <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Sucursal San Rafael</li>
+                    <p><b>Sucursal San Rafael, Veracruz</b></p>
                     <hr>
-                    <h3>Anfibia Outdoor Experience by Fecego Marina</h3>
+                    <p><b>Anfibia Outdoor Experience by Fecego Marina</b></p>
                     <p>Salvador Díaz Mirón No 5, Col. Centro 93620, San Rafael, Veracruz.</p>
                     <p><b>Horarios:</b> Lunes a Viernes de 08:00 am a 14:00 pm y 16:00 pm a 20:00 pm</p>
                     <p>Sabados de 08:00 am a 13:30 pm </p>
                     <div class="tel">
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> (232) 324 9060 Ext. 123</li>
-                        <li><i class="fa fa-whatsapp" aria-hidden="true"></i> 232 123 4350</li>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> (232) 324 9060 Ext. 123</p>
+                        <p><i class="fa fa-whatsapp" aria-hidden="true"></i> 232 123 4350</p>
+                     
                     </div>
                     
                    
@@ -92,15 +94,15 @@
 
                 </div>
                 <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12" style="padding-top: 10px;">
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Sucursal Mérida</li>
+                    <p><b>Sucursal Mérida</b></p>
                     <hr>
-                    <h3>Anfibia Outdoor Experience</h3>
+                    <p><b>Anfibia Outdoor Experience</b></p>
                     <p>Av. Andrés García Lavín No. 301, Interior 2 Col. San Ramón Norte Mérida, Yucatán. C.P. 97117</p>
                     <p><b>Horarios:</b> Lunes a Viernes de 08:00 am a 14:00 pm y 16:00 pm a 20:00 pm</p>
                     <p>Sabados de 08:00 am a 13:30 pm </p>
                     <div class="tel">
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> (999) 912 7453</li>
-                        <li><i class="fa fa-whatsapp" aria-hidden="true"></i> </li>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> (999) 912 7453</p>
+                        <p><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
                     </div>
 
                 </div>

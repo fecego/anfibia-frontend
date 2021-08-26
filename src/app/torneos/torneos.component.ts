@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 
 @Component({
   selector: 'app-torneos',
@@ -10,6 +11,7 @@ export class TorneosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    scrollToTop();
     $("#pesca").hide();
     $("#caceria").hide();
     $("#content").hide();

@@ -1,29 +1,75 @@
-.modal-badge-nuevo{
-  position: absolute;
-  top: 2px;
-  left: 0px;
-  
+
+
+.disabledBottonCart{
+  color: #999;
 }
 
-.modal-badge-nuevo h1{
-  background: #000;
-  color: #fff;
+.modal-badge-N h2{
   font-family: 'Meera Inima', sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 5px;
+  font-size: 18px;
+  color: #000;
 }
+
+
+
+.modal-badge-N{
+  float: left;
+  margin-right: 10px;
+}
+
+.modal-badge-D h2{
+  font-family: 'Meera Inima', sans-serif;
+  font-size: 18px;
+
+  color: #000;
+
+}
+
+
+
+.modal-badge-nuevo{
+  position: absolute;
+  top: 12%;
+  right: 3%;
+  font-family: 'Meera Inima', sans-serif;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: #000;
+  padding: 3px 10px;
+  border-radius: none;
+  z-index: 1;
+  font-weight: bold;
+}
+
+
 
 .modal-badge-destacado{
   position: absolute;
-  top:5%;
-  left: 0px;
-  
+  top: 12%;
+  right: 16%;
+  font-family: 'Meera Inima', sans-serif;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  padding: 3px 10px;
+  border-radius: none;
+  z-index: 1;
 }
 
-.modal-badge-destacado h1{
-  background: #ff0000;
-  color: #fff;
+
+
+.modal-badge-descuento{
+  position: absolute;
+  top: 3%;
+  left: 35%;
+}
+
+.modal-badge-descuento h2{
+  
+  color: #000;
   font-family: 'Meera Inima', sans-serif;
   font-weight: bold;
   font-size: 15px;
@@ -66,6 +112,14 @@
     transition: 0.5s;
   
   }
+
+
+  .product-priceHeartChecked i{
+    color: #ff0000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff0000;
+}
+
 #miModal{
     background-color: rgba(0, 0, 0, 0.4);
     background: rgba(0, 0, 0, 0.4);
@@ -92,7 +146,7 @@
       justify-content: center;
       height: 400px;
       padding: 50px;
-      background: #f0f0f0;
+      background: #FFF;
   }
   
   .main-imgModal img{
@@ -115,7 +169,7 @@
     align-items: center;
     justify-content: center;
     height: 100px;
-    background: #f0f0f0;
+    background: #fff;
   }
   
   .diferente-vistaImg img{
@@ -143,8 +197,9 @@
   
   .modal-textos h1{
     color: #000;
-    font-family: 'Anton', sans-serif;
-    font-size: 25px;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
   }
   
   .modal-textos hr{
@@ -167,7 +222,6 @@
     font-weight: bold;
     font-size: 25px;
     color: #000;
-    text-decoration: line-through;
     padding: 10px;
   }
 
@@ -237,7 +291,7 @@
     bottom: 1%;
     left: 1%;
     font-family: 'Meera Inima', sans-serif;
-    font-weight: bold;
+  
     color: #000000;
     border: 1px solid #000000;
     padding: 10px;

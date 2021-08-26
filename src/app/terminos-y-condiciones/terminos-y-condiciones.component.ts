@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 
 @Component({
   selector: 'app-terminos-y-condiciones',
@@ -10,6 +11,8 @@ export class TerminosYCondicionesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    scrollToTop();
   }
+
 
 }

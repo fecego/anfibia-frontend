@@ -40,20 +40,19 @@
             Marcas de pesca
           </a>
             <div id="fishingBrands" class="collapse show" aria-labelledby="headingOne" data-parent="#marcasPesca">
-              <form [formGroup] = "formRadioMarcasPesca">
-                <label style="display: block;" *ngFor="let marcasp of marcasPesca;">
-                  <input
-                  
-                  formControlName="fishBrand"
-                  type="radio"
-                  name="fishBrand"
-                  [value]="marcasp.value"
-                  
-                  (change) = "marcasPManager(marcasp.value)"  
-                />
-                {{marcasp.name}}
-              </label>
-            </form>
+                <form [formGroup] = "formRadioMarcasPesca">
+                  <label style="display: block;" *ngFor="let marcasp of marcasPesca;">
+                    <input
+                    formControlName="fishBrand"
+                    type="radio"
+                    name="fishBrand"
+                    [value]="marcasp.value"
+                    
+                    (change) = "marcasPManager(marcasp.value)"  
+                  />
+                  {{marcasp.name}}
+                </label>
+              </form>
             </div>
         </div>
 
@@ -926,6 +925,9 @@
     
     </div>
   </div>
+
+
+
   <div class="row" style="height: auto;">
     <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
       <div class="filtros-barra">
@@ -934,7 +936,7 @@
 
     </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12" style="height: 50px; position: relative;">
+    <!--<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12" style="height: 50px; position: relative;">
       <div class="order-filter">
         <label for="filtro-superior">Ordena por: </label>
       <select name="filtro-superior" id="filtro-superior">
@@ -947,7 +949,7 @@
      
  
 
-    </div>
+    </div>-->
 
 
 
@@ -1754,53 +1756,94 @@
          
       </div>
       <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <h1 style="font-family: 'Meera Inimai', sans-serif; font-size: 16px; text-align: left;">Se han encontrado <span>{{cantidadProductos}}</span> resultados.</h1>
+          </div>
+
+        </div>
        
         <div class="row">
-          <!--Estilo nuevo del carrito-->
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4" *ngFor="let productoTienda of productosTienda | paginate: { 
-          itemsPerPage: currentSizeItemsPerPage,
-          currentPage: paginaActual,
-          totalItems: totalProductos };  index as i; let index = i">
+         
+          <!--Estilo nuevo del carrito, These is gonna change-->
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let productoTienda of productosTienda">
             <div class="product-card">
-              <div class="badge1" *ngIf="productoTienda.nuevo">Nuevo</div>
+              <div class="badge1" *ngIf="productoTienda.newProduct">Nuevo</div>
               <div class="badge2" *ngIf="productoTienda.destacado">Destacado</div>
-              <div class="badge3" *ngIf="productoTienda.descuento">Desc {{productoTienda.descuento}}%</div>
-              <div class="product-tumb">
-                  <img src="{{productoTienda.image[0].url}}"  (mouseover) = "productoTienda.image[0].url = productoTienda.imagenCambio" (mouseout) = "productoTienda.image[0].url = productoTienda.imagenPrincipal" alt=""
-                  >
+              <h1>{{productoTienda.clasificacion}}</h1>
+              <!--<div class="badge3" *ngIf="productoTienda.descuento">Desc {{productoTienda.descuento}}%</div>-->
+              <div class="product-tumb" [ngClass] = "{'product-tumb-gif': productoTienda.isLoading == true}"  >
+                  <!--<img src="{{productoTienda.image[0].url}}"  (mouseover) = "productoTienda.image[0].url = productoTienda.imagenCambio" (mouseout) = "productoTienda.image[0].url = productoTienda.imagenPrincipal" alt=""
+                  >-->
               </div>
               <div class="product-details">
                 <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
             
-                <h4><a routerLink="/tienda/{{productoTienda.idProducto}}/{{productoTienda.nombre}}">{{productoTienda.nombre | oracionMayusculas}}</a></h4>
-                <h4 *ngIf="productoTienda.descuento"> Precio:<span> {{productoTienda.precio_antiguo | currency}} </span> </h4>
-                <h5 *ngIf="productoTienda.descuento != 0; else precioNormal">Precio desc: <span> {{productoTienda.precio | currency}}</span> </h5>
+               <!--<div>
+                   <h4 *ngIf="producto.descuento"><span>{{producto.precio_antiguo | currency}}</span> </h4>
+               </div>
+               
+                <div> 
+                   <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                </div>-->
+                <div>
+                   <h3 id="precioNormal"><span>{{productoTienda.precio | currency}}</span></h3>
+                   
+                </div>
+                <div>
+                   <h4><a routerLink="/tienda/{{productoTienda.id}}/{{productoTienda.nombre}}">{{productoTienda.nombre | oracionMayusculas}}</a></h4>
+                  
+                  </div>
                 
-                <h3 id="precioNormal" *ngIf="productoTienda.descuento == 0">Precio: <span>{{productoTienda.precio | currency}} </span></h3>
-            
-                
+               
                 <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                
-                <div  class="pruebaBotones"> 
-                 <ul>
-                   <li>  <button (click)="addWishList(productoTienda)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                  
-                   
-                 </ul>
-                
-
-               </div>
-               <div id="prueba{{i}}" class="pruebaBotones2">
+                <div class="pruebaBotones"> 
+                  <button (click)="addWishList(productoTienda, $event)" *ngIf = "!productoTienda.isLoading" [ngClass] = "{'product-priceHeartChecked': productoTienda.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                  <div *ngIf = "productoTienda.isLoading == true">
+                    <app-spinner-small></app-spinner-small>
+                  </div>
+               
+                </div>
+               <div class="pruebaBotones2">
                    <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoTienda)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                   <button class="" type="button" (click) = "addCart(productoTienda)"><i class="fa fa-shopping-cart"></i> </button>
+                   <button class="" type="button" [disabled] = "productoTienda.existencia === 0 || productoTienda.existencia === null || productoTienda.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoTienda.existencia === 0 || productoTienda.existencia === null || productoTienda.isLoadingCart == true}" (click) = "addCartElement(productoTienda, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
                  
 
                </div>
-               </div>
+           </div>
           </div>
            </div>
       </div>
-      <div class="row">
+    
+
+
+      <!--Se añade la paginaciòn y ademàs se manejan los botones de prev y next PAge-->
+    
+        
+
+      <div class="row rowPagination">
+        <p>Paginas a pintar {{arrayNumberPages}}</p>
+        <p>Numero total de paginas  {{totalPaginas}}</p>
+        <div class="col-sm-12" style="height: auto; margin:auto; text-align: center;">
+
+            <button class="btnPrevandNext" type="link" (click) = "prevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            
+            <div class="paginationP" *ngFor="let pages of arrayNumberPages">
+                
+                <a [routerLink] = "['/tienda']"  [queryParams] = "{pagina: pages}" queryParamsHandling="merge">{{pages}}</a>
+              
+            </div>
+            <button class="btnPrevandNext" type="link" (click) = "nextPage()"> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+
+      </div>
+     
+      
+
+      <!--This is gonna be deleted-->
+      <!--<div class="row">
         <div class="col-sm-8 offset-2">
           <pagination-controls class="my-pagination"  *ngIf ="productosTienda"
           (pageChange)="onPageChange($event)"
@@ -1813,7 +1856,7 @@
   
         </div>
   
-      </div>
+      </div>-->
     </div>
   
 </div>

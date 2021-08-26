@@ -115,14 +115,57 @@ Ipad Mini 2.4 Landscape--*/
         -webkit-text-stroke-color: #ff0000;
         transition: 0.5s;
     }
+
+
+    .product-priceHeartChecked i{
+        color: #ff0000;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #ff0000;
+    }
   
     .pruebaBotones2{
+        background: #ffffff;
+        opacity: 0;
         position: absolute;
-        top: 60%;
-        right: 5%;
-    }
-        /*Media query en tablets horizontal*/
-        @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+        top: 33%;
+        right:3%;
+        transition: 0.3s;
+        display: inline-block;
+      }
+    
+      .product-card:hover .pruebaBotones2{
+          opacity: 1;
+          position: absolute;
+          top: 49%;
+         
+          
+      } 
+    
+    
+        
+    
+      
+      .pruebaBotones2 button{
+        background: none;
+        margin-bottom: 1px;
+        border:none;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        padding: 7px;
+        
+      
+      }
+
+      .pruebaBotones2 button:hover{
+        background: #000;
+        color: #fff;
+        transition: 0.5s ease-in-out;
+      }
+
+
+
+    /*Media query en tablets horizontal*/
+    @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
             .pruebaBotones2{
                 top: 47%;
             }
@@ -133,7 +176,7 @@ Ipad Mini 2.4 Landscape--*/
         border:none;
         border-radius: 2px;
         font-family: 'Meera Inima', sans-serif;
-        font-size: 17px;
+        font-size: 14px;
         padding: 5px;
     }
   
@@ -1103,11 +1146,10 @@ Ipad Mini 2.4 Landscape--*/
     }
 
     .seccion-productos-extras hr{
-        height: 1px;
-        width: 20%;
-        margin-top: 0;
-        background-color: #FF8000;
-        margin-left: 0;
+        background: #FF8000;
+    width: 20%;
+    height: 2px;
+    margin-left: 0;
     }
 
     .container-fluid-video{
@@ -1717,7 +1759,6 @@ Ipad Mini 2.4 Landscape--*/
         width: 100%;
         position: relative;
         margin: 50px auto;
-        background: #fafafa;
         height: auto;
         transition: all 200ms ease-in;
         transform: scale(1);
@@ -1730,53 +1771,112 @@ Ipad Mini 2.4 Landscape--*/
         transition: all 300ms ease-in;
     }
 
-    .badge1{
+    .badge1 {
         position: absolute;
         left: 0;
-        top: 13px;
-        text-transform: uppercase;
-        font-size: 13px;
+        top: 4px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        font-size: 12px;
         font-weight: 700;
-        background: #000;
-        color: #fff;
+        color: #000;
         padding: 3px 10px;
-        border-radius: none;
-        z-index: 1;
+        
+        
     }
 
     .badge2 {
         position: absolute;
-        left: 0;
-        top: 40px;
-        text-transform: uppercase;
-        font-size: 13px;
+        left: 28%;
+        top: 4px;
+        
+        font-size: 12px;
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: 700;
-        background: #ff0000;
-        color: #fff;
+        color:#000;
         padding: 3px 10px;
-        z-index: 1;
     }
+
+   
 
     .badge3 {
         position: absolute;
-        right: 5px;
-        top: 47%;
+        right: 10px;
+        bottom: 14%;
         text-transform: uppercase;
         font-size: 14px;
         font-family: 'Meera Inimai', sans-serif;
         font-weight: 700;
-        color: #fff;
-        background-color: #000000;
+        color: #000;
+        border-left: 1px solid #000;
         padding: 3px 10px;
     }
+
+    .aguaSaladaBackground{
+        background: #58FAD0;
+      }
+      
+      .aguaDulceBackground{
+        background:#81F7F3;
+      }
+      
+      .lineasBackground{
+        background:#A9F5F2;
+      }
+      
+      .embarcacionesBackground{
+        background:#00FFFF;
+      }
+      
+      .buceorecBackground{
+        background:#58FA58;
+      }
+      
+      .ropaBackground{
+        background:#2EFE9A;
+      }
+      
+      .accesoriosBackground{
+        background: #2EFE9A;
+      }
+      
+      .riflesBackground{
+        background: #F7D358;
+      }
+      
+      .pistolasBackground{
+        background: #F4FA58;
+      }
+      
+      .arqueriaBackground{
+        background: #F7FE2E;
+      }
+      
+      .mantenimientoBackground{
+        background: #FAAC58;
+      }
+      
+      .ropaCaceriaBackground{
+        background: #FFBF00;
+      }
+      
+      .cuchilleriaBackground{
+        background: #FACC2E;
+      }
+      
+      .accesoriosCaceriaBackground{
+        background: #FFFF00;
+      }
+
 
     .product-tumb {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 300px;
-        padding: 80px;
-        background: #f0f0f0;
+        height: 250px;
+        padding: 40px;
+        background: #FFFFFF;
+       
     }
 
     .product-tumb img {
@@ -1807,13 +1907,13 @@ Ipad Mini 2.4 Landscape--*/
 
     .product-details h4{
         font-family: 'Meera Inima', sans-serif;
-        font-size: 14px;
+        font-size: 12px;
         color: #000;
     }
 
     .product-details h4 span{
         font-weight: normal;
-        text-decoration: line-through;
+        text-decoration: none;
     }
 
     .product-details h5{
@@ -1830,18 +1930,19 @@ Ipad Mini 2.4 Landscape--*/
   
     .product-details h3{
         font-family: 'Meera Inima', sans-serif;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: bold;
         color: #000;
     }
 
     .product-details h4 a {
-        font-weight: bold;
+        font-weight: normal;
         display: block;
         margin-bottom: 10px;
         color: #000000;
         text-decoration: none;
         transition: 0.3s;
-        font-size: 15px;
+        font-size: 13px;
         font-family: 'Meera Inima', sans-serif;
     }
   
@@ -1977,12 +2078,13 @@ Ipad Mini 2.4 Landscape--*/
 
 
   .product-Title h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
     padding-top: 20px;
     padding-bottom: 0;
     margin-bottom: 0;
     color: #000;
-    font-size: 35px;
+    font-size: 25px;
     text-align: left;
     text-transform: none;
 }
@@ -2578,9 +2680,10 @@ margin-top: 20px;
 }
 
 .seccion-productos-extras hr{
-height: 2px;
-width: 100%;
-background-color: #FF8000;
+    background: #FF8000;
+    width: 20%;
+    height: 2px;
+    margin-left: 0;
 }
 
 .container-fluid-video{
@@ -3088,7 +3191,7 @@ img{
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
-    background: #fafafa;
+    
     height: 550px;
     transition: all 200ms ease-in;
     transform: scale(1);
@@ -3122,7 +3225,7 @@ img{
     justify-content: center;
     height: 300px;
     padding: 50px;
-    background: #f0f0f0;
+    background: #FFF;
 }
 
 .product-tumb img {
@@ -3152,14 +3255,14 @@ img{
 }
 
 .product-details h4 a {
-    font-weight: 500;
+    font-weight: normal;
     display: block;
     margin-bottom: 18px;
     text-transform: uppercase;
     color: #000000;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 18px;
+    font-size: 13px;
     font-family: 'Prometo-Medium';
 }
 
@@ -3292,10 +3395,10 @@ img{
 
 
 .product-Title h1{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Meera Inima', sans-serif;
     padding-top: 20px;
     color: #000;
-    font-size: 50px;
+    font-size: 25px;
     padding: 20px;
 }
 

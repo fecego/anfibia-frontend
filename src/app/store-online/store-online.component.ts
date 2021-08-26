@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  AfterViewInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import * as AOS from 'aos';
-import Typed from 'typed.js';
-import * as $ from 'jquery';
+//import Typed from 'typed.js';
+//import * as $ from 'jquery';
 import { ProductosService } from "../servicios/productos.service";
 import { ActivatedRoute,Router, Params, Data } from '@angular/router';
 import { productosCarrito } from "./productosCarrito";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ProductosModalComponent } from '../modals/productos-modal/productos-modal.component';
+import { ModalInicioSesionComponent } from '../modals/modal-inicio-sesion/modal-inicio-sesion.component';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { query } from '@angular/animations';
 import { NgxSpinnerService } from "ngx-spinner";
-import { element } from 'protractor';
+//import { element } from 'protractor';
 import { ModalCarritoComponent } from '../modals/modal-carrito/modal-carrito.component';
+import {productoClass} from '../modelos/productos';
+import  {scrollToTop} from '../modulosAnfibia/prueba';
+import { Observable, Observer, Subscription, fromEvent, of, from, interval, concat, throwError} from 'rxjs';
+import { concatMap, filter, map, shareReplay, switchMap, tap, delay, mergeMap, mapTo, merge, catchError, finalize, exhaustMap} from 'rxjs/operators';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 
 @Component({
@@ -20,16 +25,21 @@ import { ModalCarritoComponent } from '../modals/modal-carrito/modal-carrito.com
   templateUrl: './store-online.component.html',
   styleUrls: ['./store-online.component.css']
 })
-export class StoreOnlineComponent implements OnInit {
+export class StoreOnlineComponent implements AfterViewInit, OnInit {
 
   /*Variables para almacenar los datos que se pintan en la plantilla de Store*/
-  public productosTienda:Array<any> = [];
+  public productosTienda:any = [];
+  public pages:number;
+  public cantidadProductos:number;
   public productosCarrito:Array<any> = [];
   public productosClasificacion:Array<any> = [];
   public pClasificacion:string;
   public multipleLista:Array<any> = [];
   public pCategoria:string;
- 
+  public clasificacionShow;
+  public totalPaginas;
+  @ViewChildren('referButton', {read: ElementRef}) botonesWish: QueryList<ElementRef>
+  @ViewChildren('referButtonCompra', {read: ElementRef}) botonesAddCart: QueryList<ElementRef>
 
   /*Cambio de color*/
 
@@ -58,7 +68,7 @@ export class StoreOnlineComponent implements OnInit {
   public subaguaSaladaCombos:boolean = false;
   public subaguaSaladaSenhuelos:boolean = false;
   public subaguaSaladaAccesorios:boolean = false;
-
+  public filter1:Array<any> = [];
   /*Accesorios*/
   public subAccesorios:boolean = false;
   public subAccesoriosAlmacenamiento: boolean = false;
@@ -284,7 +294,13 @@ export class StoreOnlineComponent implements OnInit {
   public paginaActual = 1;
   public totalProductos:number;
   public currentSizeItemsPerPage:number = 15;
+  public paginacionQuery:number;
 
+
+
+  public isAutheticated = false;
+  private userSubs:Subscription;
+  public arrayNumberPages = [];
 
 
 
@@ -332,28 +348,28 @@ export class StoreOnlineComponent implements OnInit {
 
   Data: Array<any> = [
     { name: 'Pesca', value: 'pesca', isChecked: false},
-    { name: 'Cacería', value: 'Caceria', isChecked:false}, 
+    { name: 'Cacería', value: 'caceria', isChecked:false}, 
   ];
 
 
   DataPesca:Array<any> = [
-    {name: 'Agua Dulce', value:'aguadulce', isChecked: false},
-    {name: 'Agua Salada', value: 'aguasalada', isChecked: false},
-    {name: 'Accesorios', value: 'accesorios', isChecked: false},
-    {name: 'Navegación', value: 'navegacion', isChecked: false},
-    {name: 'Ropa', value: 'ropa', isChecked: false},
+    {name: 'Agua Dulce', value:'adulce', isChecked: false},
+    {name: 'Agua Salada', value: 'asalad', isChecked: false},
+    {name: 'Accesorios', value: 'acceso', isChecked: false},
+    {name: 'Navegación', value: 'navega', isChecked: false},
+    {name: 'Ropa', value: 'ropaxx', isChecked: false},
     {name: 'Lineas', value: 'lineas', isChecked: false},
-    {name: 'Snorkel', value: 'snorkel', isChecked: false},
-    {name: 'Buceo', value: 'buceo', isChecked: false}, 
+    {name: 'Snorkel', value: 'snorke', isChecked: false},
+    {name: 'Buceo', value: 'buceox', isChecked: false}, 
     {name: 'Kayaks', value: 'kayaks', isChecked: false}
   ];
   /*Subcategorias Pesca filtro 2 */
   DataSubAguadulce:Array<any> = [
-    {name: 'Cañas', value: 'cañas'},
-    {name: 'Carretes', value: 'carretes'},
-    {name: 'Combos', value: 'combos'},
-    {name: 'Señuelos', value: 'señuelos'},
-    {name: 'Accesorios', value: 'accesorios'}
+    {name: 'Cañas', value: 'canasd'},
+    {name: 'Carretes', value: 'carred'},
+    {name: 'Combos', value: 'combod'},
+    {name: 'Señuelos', value: 'senued'},
+    {name: 'Accesorios', value: 'accesd'}
   ];
 
   /*Subcategorias PEsca filtro 2*/
@@ -673,7 +689,7 @@ export class StoreOnlineComponent implements OnInit {
 
 
   
-  constructor(private _productosTienda: ProductosService,  private modal: NgbModal, private route: ActivatedRoute, private router:Router, private fb: FormBuilder, private spinner: NgxSpinnerService) { 
+  constructor(private _productosTienda: ProductosService,  private modal: NgbModal, private route: ActivatedRoute, private router:Router, private fb: FormBuilder, private spinner: NgxSpinnerService, private userStatus: UsuariosService, private modalInicio: NgbModal) { 
  
     
     
@@ -880,8 +896,9 @@ export class StoreOnlineComponent implements OnInit {
 
   clasificacionManager(dato){
     console.log(dato);
-    this.clasificacion = dato
-    this.router.navigate(['tienda'],{queryParams: {clasificacion: this.clasificacion}});
+    this.clasificacion = dato;
+    this._productosTienda.subjectUrlN.next(1);
+    this.router.navigate([],{relativeTo: this.route, queryParams: {clasificacion: this.clasificacion}});
   }
 
   marcasPManager(dato){
@@ -1200,15 +1217,17 @@ export class StoreOnlineComponent implements OnInit {
 
 
   
-
+  
   ngOnInit(){
     /*Animación de AOS*/
+
     AOS.init();
+    this.spinner.show()
     $(".filtros-Menu").css("width","0%");
     /*Carga los productos en la vista y asigna las imagenes*/
 
     /*Carga las clasificaciones del RadioButton*/
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToTop();
     this.subcategoriasAguasalada = this.DataSubAguasalada;
     this.clasificaciones = this.Data;
     this.categoriasPescaFiltro = this.DataPesca;
@@ -1228,8 +1247,8 @@ export class StoreOnlineComponent implements OnInit {
     this.subcategoriaAguaSaladaSenhuelos = this.Data2SeñuelosAguaSalada;
     this.subcategoriaAguaSaladaAccesorios = this.Data2AccesoriosAguaSalada;
     this.subcategorias2Accesorios = this.Data2AccesoriosAlmacenamiento;
-   
-
+    
+    
     /*Accesorios*/
 
     this.subcategoriasAccesorios = this.DataAccesorios;
@@ -1266,9 +1285,25 @@ export class StoreOnlineComponent implements OnInit {
     this.subcategoriaRopaCaceria1 = this.DataCaceriaRopa;
     this.subAccesorioscategoriaPistolas = this.DataPistolasAccesorios;
     console.log("Son las clasifiaciones", this.clasificaciones);
+
+    this.userSubs = this.userStatus.isLoggedIn.subscribe(user => {
+      console.log(user)
+      this.isAutheticated = !!user,
+      console.log('This is the value of this.isAu', this.isAutheticated);
+     
+  })
+
+
     /*Cada que se inicia el Componente, atrapa los queryParams para usarlos para los filtros */
     this.route.queryParams.subscribe(
       (queryParams: Params) =>{
+        console.log('Estos son los queryParams', queryParams);
+
+        this.filter1 = Object.values(queryParams)[2];
+
+        console.log('value filter 1', this.filter1);
+
+
         this.categoria = queryParams['categoria'];
         this.clasificacion = queryParams['clasificacion'];
         this.busqueda = queryParams['busqueda'];
@@ -1282,15 +1317,19 @@ export class StoreOnlineComponent implements OnInit {
         this.subcategoriaFiltrosSenhuelos = queryParams['tipodeSenhuelo'];
         this.subcategoriaFiltrosAccesorios = queryParams['tipodeAccesorios'];
 
+
+
         /*Filtros de agua Salada*/
         this.subcategoriaAguaSaladaFiltros = queryParams['subcategoriaAguasalada'];
+
+
 
 
         /*Filtros ACCESORIOS */
         this.accesoriosFiltros = queryParams['tipoSubAccesorios'];
         
 
-        /*Filtros Navegación*/
+        /*Filtros Navegación*/  
         this.navegacionFiltros = queryParams['navSub'];
         this.electricosFiltros = queryParams['electricoSub'];
         this.navAccesoriosFiltros = queryParams['accesoriosSub'];
@@ -1320,1214 +1359,410 @@ export class StoreOnlineComponent implements OnInit {
         this.subcategoriaAccesoriosFiltros = queryParams['subAccesoriosCaceria'];
         this.subcategoriaRopaCaceriaFiltros = queryParams['subRopaCaceria'];
         this.subcategoriaAccesoriosPistolasFiltros = queryParams['subAccesoriosPistolas'];
-        console.log('Este es el valor que me llega de la URL', this.subcategoriaFiltrosCarretes);
-        /*this.subcategoriaAguasaladaFiltros = queryParams['subcategoriaAguasalada']*/
-        if(this.clasificacion){
-          window.scrollTo({top: 0, behavior: 'smooth'});
-          this.productosTienda = this._productosTienda.getProductos();
+
+        /*Here begins everything*/
+        //this.paginacionQuery = queryParams['pagina'];
 
 
-          this.paginaActual = 1;
-          this.currentSizeItemsPerPage = 30;
-          this.totalProductos = this.productosTienda.length;
+        this.categoria = queryParams['categoria'];
+        this.clasificacion = queryParams['clasificacion'];
+
+        const queryParamsR = queryParams;
+        console.log('This are the  query params params', queryParamsR);
+        if(queryParams['pagina']){
+          this.paginacionQuery = queryParams['pagina'];
+        }else{
+          this.paginacionQuery = 1;
+        }
+
+    
+
+        /*Si no existe clasificación ni categoria,  y solo existe la paginación*/
+    if(this.paginacionQuery && !this.clasificacion && !this.categoria && !this.filter1){
+         
           
-          this.productosTienda = this.productosTienda.filter(producto =>{
-            return producto.clasificacion == this.clasificacion;
+        scrollToTop();
+         //when there is pagination number in existence you must add that number to the paginacion Subject which takes the control of the pagination button next and Prev
+         this._productosTienda.subjectUrlN.next(this.paginacionQuery);
+
+
+
+         const elementosInfo = this._productosTienda.getProductos_tiendaPages(this.paginacionQuery).subscribe(respuesta => {
+           this.cantidadProductos = respuesta.cantidadProductos.count;
+           this.totalPaginas = respuesta.pages;
+           this.arrayNumberPages = respuesta.paginasToPrint;
+           this.productosTienda = respuesta.productos.map(x => x.json_build_object);
+
+
+           console.log(this.cantidadProductos, this.totalPaginas, this.arrayNumberPages, this.productosTienda);
+           this.spinner.hide(); 
+         });
+
+         this.formRadioClasificacion.patchValue({
+          clasificaciones: ''
+         });
+         this.categoriasPesca = false;
+         /*const prod = elementosInfo.pipe(map(x => x.productos))
+         const productos = prod.pipe(map(x => Object.values(x).map(x => x['json_build_object']))).subscribe(
+          respuesta => {
+            this.productosTienda = respuesta;
+            console.log('This is thisproductos', respuesta) 
+            this.spinner.hide();
+
           });
-          this.getImage(this.productosTienda);
-          this.datoEtiqueta = this.clasificacion;
-          var arrayPesca = [];
-          this.cambioImagen.value = 'pesca';
+
+         const cantidadProductos = elementosInfo.pipe(map(x => x.cantidadProductos)).subscribe(
+          respuesta => {
+            this.cantidadProductos = respuesta.count;
+            console.log(this.cantidadProductos);
+          });
+
+          const ObservablePages = elementosInfo.pipe(map(x => x.pages)).subscribe(
+            respuesta => {
+              this.pages = respuesta;
+              this.arrayNumberPages = [];
+              console.log(this.pages);
+              for(let i = 1; i <= this.pages; i++){
+                this.arrayNumberPages.push(i);
+                //console.log('This is the number of pages', this.arrayNumberPages);
+              }
+
+            });
+
+            const ObservablePagesToPrint = elementosInfo.pipe(map(x => x.paginasToPrint)).subscribe(
+              respuesta => {
+                this.arrayNumberPages = respuesta;
+                console.log('=====================Me ejecuto cuando tiene paginacion============5 elements array', respuesta);
+  
+              });*/
+
+
+
+
+    }/*Si no existe la categoría  pero si existe la clasificacion y la paginación*/
+    else if(this.paginacionQuery && this.clasificacion && !this.categoria && !this.filter1){
+      scrollToTop();
+      console.log('Hay paginacion query y clasificacion we debes hacer algo, algo nuevo xD', this.paginacionQuery, this.clasificacion);
+      const observableByClasificacion = this._productosTienda.getProductosBy_clasificacion(this.clasificacion, this.paginacionQuery);
+      /*const observableProductos = observableByClasificacion.pipe(map(x => x['productos'].map(x => x['json_build_object']))).subscribe(x => 
+        {
+          this.productosTienda = x
+          this.spinner.hide();
+        });*/
+
+      /*const observableCantidadProductos = observableByClasificacion.pipe(map(x => x['totalProductos'][0].count)).subscribe(x => {
+        this.cantidadProductos = x
+        console.log('this is the cantidadProductos', this.cantidadProductos)
+      });*/
+
+      const observablePaginasToRender = observableByClasificacion.pipe(map(x => x)).subscribe(x => {
+        //Asignaciòn de valores
+
+
+        this.clasificacionShow = x.clasificacion;
+        this.totalPaginas = x.totalPaginas;
+        this.cantidadProductos = x.totalProductos[0].count;
+        this.productosTienda = x.productos.map(x => x.json_build_object)
+        console.log('This is productosTienda', this.productosTienda);
+        this.arrayNumberPages = x.paginasToRender;
+        
+
+        //Asigna el valor obteniedo al formulario
+        this.formRadioClasificacion.patchValue({
+          clasificaciones: this.clasificacion
+        });
+        if(this.clasificacionShow == 'pesca'){
           this.categoriasPesca = true;
-          this.marcasPescaDIV = true;
           this.categoriasCaceria = false;
-          this.subAguaDulceCarretes = false;
-          this.subaguadulce = false;
+        }else if(this.clasificacionShow == 'caceria'){
+          this.categoriasCaceria = true;
+          this.categoriasPesca = false;
+        }
+        //Esconde el spinner de carga
+        this.spinner.hide();
+      });
+      this.categoriasPesca = false;
+      this.formRadioCategoriaPesca.patchValue({
+        categoria: ''
+      });
+  
+
+
+      /*si existe la paginación, la clasificación y la categoria*/
+    }else if(this.paginacionQuery && this.clasificacion && this.categoria && !this.filter1){
+      scrollToTop();
+      console.log('hay paginacion query, clasificacion y categoria');
+      this._productosTienda.getProductosBy_clasificacionAndCategoria(this.clasificacion, this.categoria, this.paginacionQuery).subscribe(
+        respuesta => {
+          console.log(respuesta);
+
+
+          this.cantidadProductos = respuesta.totalProductos;
+          this.totalPaginas = respuesta.totalPaginas;
+          this.arrayNumberPages = respuesta.paginasToRender;
+          this.productosTienda = respuesta.productos.map(x => x.json_build_object);
+          this.spinner.hide();
+          
+
+
+
+
+
+
+
+        });
+
+        if(this.categoria == 'adulce'){
+          this.subaguadulce = true;
           this.subaguasalada = false;
-          this.subaguadulceCanhas = false;
-          this.subAguaDulceCarretes = false;
-          this.subaguasalada = false;
-          this.subAguaDulceCombos = false;
-          this.subAguaDulceSenhuelos = false;
-          this.subAguaDulceAccesorios = false;
-          this.subaguaSaladaCanhas = false;
-          this.subaguaSaladaCarretes = false;
-          this.subAguaDulceCombos = false;
-          this.subaguaSaladaCombos = false;
-          this.subaguaSaladaSenhuelos = false;
-          this.navAccesorios = false;
-          this.subaguaSaladaAccesorios = false;
-          this.subAccesoriosAlmacenamiento = false;
-          this.subAccesorios = false;
-          this.catNavegacion = false; 
-          this.navElectrico = false;
-          this.subAccesorios = false; 
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
           this.ropaPesca = false;
           this.ropaPescaAccesorios = false;
-          this.lineasPesca = false;
-          this.snorkelPesca = false;
           this.buceoPesca = false;
-          this.kayaksCatPesca = false;
+          this.lineasPesca = false;
+        }else if(this.categoria == 'asalad'){
+          this.subaguadulce = false;
+          this.subaguasalada = true;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
           this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
+
+        }else if(this.categoria == 'navega'){
+          this.subaguadulce = false;
           this.subaguasalada = false;
-          this.subaguaSaladaCarretes = false;
-          this.subaguaSaladaSenhuelos = false;
-          this.subaguaSaladaAccesorios = false;
-          this.subAguaDulceCombos = false;
-          this.subAguaDulceSenhuelos = false;
-          this.subAguaDulceAccesorios = false;
-          this.subRifles = false;
-          this.subRiflesAccesorios = false;
-          this.subAccesoriosPistolas = false;
-          this.subRifles = false;
-          this.subPistolas = false;
-          this.subRiflesAccesorios = false;
-          this.subArqueria = false;
-          this.subCuchilleria = false;
-          this.subAccesoriosCaceria = false;
-          this.subRopaCaceria = false;
-          if(this.clasificacion == 'pesca'){
-            
+          this.catNavegacion = true;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
 
-            this.paginaActual = 1;
-            this.currentSizeItemsPerPage = 30;
-            this.totalProductos = this.productosTienda.length;
-        
-            /*Let the modification of some values in the formGrup */
-            this.formRadioClasificacion.patchValue({
-              clasificaciones: this.clasificacion, 
-              // formControlName2: myValue2 (can be omitted)
-            });
-            this.formRadioCategoriaPesca.patchValue({
-              categoriasPesca: ''
-            });
+        }else if(this.categoria == 'snorke'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = true;
+          this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
 
-            this.formRadioSubAguadulce.patchValue({
-              aguadulceSub:''
-            });
+        }else if(this.categoria == 'kayaks'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = true;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
 
-            this.formRadioMarcasPesca.patchValue({
-              fishBrand: ''
-            });
+        }else if(this.categoria == 'ropaxx'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
+          this.ropaPesca = true;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
 
-          
-  
-            /*if(this.filtroMarcasPesca){
-  
-              this.productosTienda = this.productosTienda.filter(producto =>{
-                return producto.marca == this.filtroMarcasPesca;
-              });
-  
-              this.formRadioMarcasPesca.patchValue({
-                fishBrand: this.filtroMarcasPesca 
-                // formControlName2: myValue2 (can be omitted)
-              });
-  
-            }*/
-  
-            /*Si la ruta se le anexa un queryParam de categoria, se empieza a ejecutar esta sección*/
-            
-            /* FILTRO DE CATEGORÍA */
-  
-            if(this.categoria){
-              
-              this.datoEtiqueta = this.categoria;
-              this.productosTienda = this.productosTienda.filter(producto =>{
-                return producto.categoria == this.categoria;
-              });
-              this.paginaActual = 1;
-              this.currentSizeItemsPerPage = 30;
-              this.totalProductos = this.productosTienda.length;
-  
-              /*Filtro de categoria de agua dulce*/
-              if(this.categoria == 'aguadulce'){
-             
-                this.cambioImagen.value = 'aguadulce';
-                this.subaguadulce = true;
-                
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria 
-                  // formControlName2: myValue2 (can be omitted)
-                });
-                if(this.subcategoriaAguaDulceFiltros){
-                  this.datoEtiqueta = this.subcategoriaAguaDulceFiltros;
-                  console.log('Este es el subcategoria1', this.subcategoriaAguaDulceFiltros);
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaAguaDulceFiltros;
-                  });
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-                 
-                  this.formRadioSubAguadulce.patchValue({
-                    aguadulceSub: this.subcategoriaAguaDulceFiltros
-                  });
-  
-                  /*this.formRadioSubAguadulceCanhas.patchValue({
-                    aguadulceSub2Canhas: ''
-                  });*/
-  
-                  this.formRadioSubAguadulceCarretes.patchValue({
-                    aguadulce2SubCarretes: ''
-                  });
-  
-                  this.formRadioAguaDulceAccesorios.patchValue({
-                    aguadulce2SubAccesorios: ''
-                  });
-  
-                  this.formRadioSubAccesorios.patchValue({
-                    accesoriosSub: ''
-                  });
-  
-  
-                  /*FILTRO DE SUBCATEGORIA 1 AGUA DULCE-CAÑAS, CARRETES, COMBOS, SEÑUELOS, ACCESORIOS*/
-                  if(this.subcategoriaAguaDulceFiltros == 'cañas'){
-                    this.cambioImagen.value = this.subcategoriaAguaDulceFiltros;
-                    this.subaguadulceCanhas = true;
-                    this.subAguaDulceCarretes = false;
-                    this.subAguaDulceCombos = false;
-                    this.subAguaDulceSenhuelos = false;
-                    this.subAguaDulceAccesorios = false;
-                    if(this.subcategoriaFiltrosCanhas){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosCanhas;
-                      });
-                      this.formRadioSubAguadulceCanhas.patchValue({
-                        aguadulceSub2Canhas: this.subcategoriaFiltrosCanhas
-                      });
-  
-                  
-                    }
-  
-                  }else if(this.subcategoriaAguaDulceFiltros == 'carretes'){
-                    this.cambioImagen.value = 'carretes';
-                    this.subaguadulceCanhas = false;
-                    this.subAguaDulceCarretes = true;
-                    this.subAguaDulceCombos = false;
-                    this.subAguaDulceSenhuelos = false;
-                    this.subAguaDulceAccesorios = false;
-                    console.log('Entre al filtro de carretes');
-                    if(this.subcategoriaFiltrosCarretes){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosCarretes;
-                      });
-                      this.formRadioSubAguadulceCarretes.patchValue({
-                        aguadulce2SubCarretes: this.subcategoriaFiltrosCarretes
-                      });
-                    }
-  
-                  }else if(this.subcategoriaAguaDulceFiltros == 'señuelos'){
-                    this.cambioImagen.value = 'señuelos';
-                    this.subaguadulceCanhas = false;
-                    this.subAguaDulceCarretes = false;
-                    this.subAguaDulceCombos = false;
-                    this.subAguaDulceSenhuelos = true;
-                    this.subAguaDulceAccesorios = false;
-                    console.log('Entre al filtro de señuelos');
-                    if(this.subcategoriaFiltrosSenhuelos){
-                      this.productosTienda = this.productosTienda.filter(producto => {
-                        return producto.subcategoria2 == this.subcategoriaFiltrosSenhuelos;
-                      });
-                    }
-                  } 
-                  else if(this.subcategoriaAguaDulceFiltros == 'combos'){
-                    this.cambioImagen.value = 'combos';
-                    this.subAguaDulceCombos = true;
-                    this.subaguadulceCanhas = false;
-                    this.subAguaDulceCarretes = false;
-                    this.subAguaDulceSenhuelos = false;
-                    this.subAguaDulceAccesorios = false;
-                    console.log('Entre al filtro de combos');
-                    if(this.subcategoriaFiltrosCombos){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 = this.subcategoriaFiltrosCombos;
-                      });
-                      this.formRadioAguaDulceCombos.patchValue({
-                        aguadulce2SubCombos: this.subcategoriaFiltrosCombos
-                      });
-                    } 
-                  }else if(this.subcategoriaAguaDulceFiltros == 'accesorios'){
-                    this.cambioImagen.value = 'accesorios';
-                    this.subAguaDulceCombos = false;
-                    this.subaguadulceCanhas = false;
-                    this.subAguaDulceCarretes = false;
-                    this.subAguaDulceSenhuelos = false;
-                    this.subAguaDulceAccesorios = true;
-                    console.log('Entre al filtro de accesorios');
-                    if(this.subcategoriaFiltrosAccesorios){
-                      console.log('Este valor', this.subcategoriaFiltrosAccesorios);
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosAccesorios
-                      });
-                      console.log(this.productosTienda);
-                      this.formRadioAguaDulceAccesorios.patchValue({
-                        aguadulce2SubAccesorios: this.subcategoriaFiltrosAccesorios
-                      });
-  
-                    }
-                }
-                  
-                  
-                  
-                  
-                  /*else if(this.subcategoriaAguaDulceFiltros == 'señuelos'){
-                    this.subAguaDulceCombos = false;
-                    this.subaguadulceCanhas = false;
-                    this.subAguaDulceCarretes = false;
-                    this.subAguaDulceSenhuelos = true;
-                    this.subAguaDulceAccesorios = false;
-                    console.log('Entre al filtro de señuelos');
-                    if(this.subcategoriaFiltrosSenhuelos){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 = this.subcategoriaFiltrosSenhuelos;
-                      });
-                      this.formRadioAguaDulceSenhuelos.patchValue({
-                        aguadulce2SubSenhuelos: this.subcategoriaFiltrosSenhuelos
-                      });
-                    }
-  
-                    }*/
-                 
-               
-  
-                  /*console.log('Si existe una subcategoria', this.subcategoriaAguadulce);
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaAguadulce; 
-                  });
-                  console.log(this.productosTienda);
-                  if(this.subcategoriaAguadulce == 'cañas'){
-                    this.subaguadulceCanhas = true;
-                    console.log('La subcategoria 1 es cañas');
-                
-                  }*/
-                }else{
-                  console.log('No existe ningun valor de subcategoria1');
-                }
-  
-                /*Filtro de categoría de Agua Salada*/
-  
-              }else if(this.categoria == 'aguasalada'){
-                
-                console.log("Estamos en el agua salada we");
-                this.cambioImagen.value = 'aguasalada';
-                this.subaguasalada = true;
-                this.subaguadulce = false;
-                this.subaguaSaladaCanhas = false;
-                this.subaguaSaladaCarretes = false;
-                this.subaguaSaladaCombos = false;
-                this.subaguaSaladaSenhuelos = false;
-                this.subaguaSaladaAccesorios = false;
-                this.subAccesoriosAlmacenamiento = false;
-                this.subAccesorios = false;
-  
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-  
-                this.formRadioSubAguasalada.patchValue({
-                  aguasaladaSub: ''
-                });
-  
-                this.formRadioSubSaladaCanhas.patchValue({
-                  aguasaladaCanhas: ''
-                });
-  
-                this.formRadioSubSaladaCarretes.patchValue({
-                  aguasaladaCarretes: ''
-                });
-  
-                this.formRadioSubSaladaCombos.patchValue({
-                  aguasaladaCombos: ''
-                });
-  
-                this.formRadioSubSaladaSenhuelos.patchValue({
-                  aguasaladaSenhuelos: ''
-                });
-  
-                this.formRadioSubSaladaAccesorios.patchValue({
-                  aguasaladaAccesorios: ''
-                });
-  
-  
-                if(this.subcategoriaAguaSaladaFiltros){
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaAguaSaladaFiltros;
-                  });
+        }else if(this.categoria == 'acceso'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = true;
+          this.buceoPesca = false;
+          this.lineasPesca = false;
 
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioSubAguasalada.patchValue({
-                    aguasaladaSub: this.subcategoriaAguaSaladaFiltros
-                  });
-  
-               
-                  if(this.subcategoriaAguaSaladaFiltros == 'cañas'){
-                    this.cambioImagen.value = "cañasAguaSalada";
-                    this.datoEtiqueta = this.subcategoriaAguaSaladaFiltros;
-                    this.subaguaSaladaCanhas = true;
-                    this.subaguaSaladaCarretes = false;
-                    this.subaguaSaladaCombos = false;
-                    this.subaguaSaladaSenhuelos = false;
-                    this.subaguaSaladaAccesorios = false;
-  
-                    if(this.subcategoriaFiltrosCanhas){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosCanhas;
-                      });
-  
-                      this.formRadioSubSaladaCanhas.patchValue({
-                        aguasaladaCanhas: this.subcategoriaFiltrosCanhas
-                      });
-                    }
-  
-                  }
-                  
-                  else if(this.subcategoriaAguaSaladaFiltros == 'carretes'){
-                
-                   this.cambioImagen.value = "carretesAguaSalada"
-                   this.datoEtiqueta = this.subcategoriaAguaSaladaFiltros;
-                   this.subaguaSaladaCarretes = true;
-                   this.subaguaSaladaCanhas = false;
-                   this.subaguaSaladaCombos = false;
-                   this.subaguaSaladaSenhuelos = false;
-                   this.subaguaSaladaAccesorios = false;
-  
-  
-                   if(this.subcategoriaFiltrosCarretes){
-                    console.log("Aqui estoy en el filtro de carretes salada");
-                    this.productosTienda = this.productosTienda.filter(producto =>{
-                      return producto.subcategoria2 == this.subcategoriaFiltrosCarretes
-                    });
-  
-                    this.formRadioSubSaladaCarretes.patchValue({
-                      aguasaladaCarretes: this.subcategoriaFiltrosCarretes
-                    });
-                  }
-                   
-                  }else if(this.subcategoriaAguaSaladaFiltros == 'combos'){
-                    console.log('Soy un combo de agua salada');
-                    this.cambioImagen.value = "combosAguaSalada"
-                    this.datoEtiqueta = this.subcategoriaAguaSaladaFiltros;
-                    this.subaguaSaladaCarretes = false;
-                    this.subaguaSaladaCanhas = false;
-                    this.subaguaSaladaCombos = true;
-                    this.subaguaSaladaSenhuelos = false;
-                    this.subaguaSaladaAccesorios = false;
-                    if(this.subcategoriaFiltrosCombos){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosCombos
-                      });
-                      
-                      this.formRadioSubSaladaCombos.patchValue({
-                        aguasaladaCombos: this.subcategoriaFiltrosCombos
-                      });
-                   
-                    }
-  
-                  }else if(this.subcategoriaAguaSaladaFiltros == 'señuelos'){
-                    console.log('Soy un señuelo de agua salada');
-                    this.cambioImagen.value = "senhuelosAguaSalada"
-                    this.datoEtiqueta = this.subcategoriaAguaSaladaFiltros;
-                    this.subaguaSaladaCarretes = false;
-                    this.subaguaSaladaCanhas = false;
-                    this.subaguaSaladaCombos = false;
-                    this.subaguaSaladaSenhuelos = true;
-                    this.subaguaSaladaAccesorios = false;
-                    if(this.subcategoriaFiltrosSenhuelos){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosSenhuelos
-                      });
-                      this.formRadioSubSaladaSenhuelos.patchValue({
-                        aguasaladaSenhuelos: this.subcategoriaFiltrosSenhuelos
-                      });
-  
-                    }
-  
-  
-                  }else if(this.subcategoriaAguaSaladaFiltros == 'accesorios'){
-                    console.log('Soy un accesorio de agua salada');
-                    this.cambioImagen.value = "senhuelosAguaSalada"
-                    this.datoEtiqueta = this.subcategoriaAguaSaladaFiltros;
-                    this.subaguaSaladaCarretes = false;
-                    this.subaguaSaladaCanhas = false;
-                    this.subaguaSaladaCombos = false;
-                    this.subaguaSaladaSenhuelos = false;
-                    this.subaguaSaladaAccesorios = true;
-                    if(this.subcategoriaFiltrosAccesorios){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaFiltrosAccesorios
-                      });
-  
-                      this.formRadioSubSaladaAccesorios.patchValue({
-                        aguasaladaAccesorios: this.subcategoriaFiltrosAccesorios
-                      });
-  
-                    }
-                  }
-  
-  
-  
-                }
-  
-  
-  
-  
-  
-  
-  
-              }/*Filtro de Accesorios Pesca*/
-              else if(this.categoria == 'accesorios'){
-                console.log('Es la categoría accesorios ');
-                this.subAccesorios = true;
-                this.subAccesoriosAlmacenamiento = false;
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-                this.formRadioSubAccesorios.patchValue({
-                  accesoriosSub: ''
-                });
-  
-              
-  
-                if(this.subcategoriaFiltrosAccesorios){
-  
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaFiltrosAccesorios
-                  });
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioSubAccesorios.patchValue({
-                    accesoriosSub: this.subcategoriaFiltrosAccesorios
-                  });
-  
-                  this.formRadioSub2Accesorios.patchValue({
-                    accesoriosSub2: ''
-                  });
-  
-  
-  
-                  if(this.subcategoriaFiltrosAccesorios == 'almacenamiento'){
-                    this.subAccesoriosAlmacenamiento = true;
-  
-                    if(this.accesoriosFiltros){
-                      this.productosTienda = this.productosTienda.filter(producto => {
-                        return producto.subcategoria2 == this.accesoriosFiltros
-                      });
-                      this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 30;
-                      this.totalProductos = this.productosTienda.length;
-  
-                      this.formRadioSub2Accesorios.patchValue({
-                        accesoriosSub2: this.accesoriosFiltros
-                      });
-                    }
-  
-  
-                  }
-                  
-  
-                  
-  
-  
-                }
-  
-              
-              }
-              /*Filtro de Navegación Pesca*/
-              else if(this.categoria == 'navegacion'){
-                this.cambioImagen.value = 'navegacion';
-                console.log('Es la categoría navegación');
-                this.catNavegacion = true;
-                this.subAccesorios = false;
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-            
-            
-                this.formRadioCatbNavegacion.patchValue({
-                  categorias1: ''
-                });
-  
-                if(this.navegacionFiltros){
-       
-                  console.log('Aqui estamos en navegacion');
-                  this.datoEtiqueta = this.navegacionFiltros;
-                  this.cambioImagen.value = this.navegacionFiltros;
-                  console.log(this.navegacionFiltros);
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.navegacionFiltros
-                  });
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-                  this.formRadioCatbNavegacion.patchValue({
-                    categorias1: this.navegacionFiltros
-                  });
-            
-                  this.formRadioElectricosNavegacion.patchValue({
-                    elecC1: ''
-                  });
-            
-                  this.formRadioNavegacionAccesorios.patchValue({
-                    accNavegacion: ''
-                  });
-            
-                  if(this.navegacionFiltros == 'gps'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'brujulas'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'audio'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'electricos'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.navElectrico = true;
-                    if(this.electricosFiltros){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.electricosFiltros;
-                      });
-                
-                      this.formRadioElectricosNavegacion.patchValue({
-                        elecC1: this.electricosFiltros
-                      });
-            
-                  }
-                }else if(this.navegacionFiltros == 'plomeria'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'bombas'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'iluminacion'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'motor'){
-                    console.log('Estamos en: ', this.navegacionFiltros);
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    this.cambioImagen.value = this.navegacionFiltros;
-            
-            
-            
-                  }else if(this.navegacionFiltros == 'accesorios'){
-                    console.log('Entre aqui en accesorios puta madreee');
-                    this.cambioImagen.value = 'navegacionAccesorios';
-                    this.datoEtiqueta = this.navegacionFiltros;
-                    
-                    this.navAccesorios = true;
-                    if(this.navAccesoriosFiltros){
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.navAccesoriosFiltros
-                      });
-                      this.paginaActual = 1;
-                      this.currentSizeItemsPerPage =30;
-                      this.totalProductos = this.productosTienda.length;
-                
-                      this.formRadioNavegacionAccesorios.patchValue({
-                        accNavegacion: this.navAccesoriosFiltros
-                      });
-                
-                    }
-            
-                  }
-            
-                }
-              }
-  
-  
-  
-  
-  
-  
-              
-             
-              
-         
-              /*Filtro de ropa Pesca*/
-              else if(this.categoria == 'ropa'){
-                this.cambioImagen.value = 'ropa';
-                this.datoEtiqueta = this.categoria;
-                console.log('Es la categoría de ropa we');
-                this.ropaPesca = true;
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-  
-                this.formRadioRopaPesca.patchValue({
-                  ropaFishing: ''
-                });
-  
-                if(this.ropaPescaFiltro){
-                  this.datoEtiqueta = this.ropaPescaFiltro;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.ropaPescaFiltro
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioRopaPesca.patchValue({
-                    ropaFishing: this.ropaPescaFiltro
-                  });
-                  if(this.ropaPescaFiltro == 'accesorios'){
-                    
-                    this.ropaPescaAccesorios = true;
-                    
-                    this.formRadioAccesoriosRopaPesca.patchValue({
-                      ropaAccesoriosFishing: ''
-                    });
-  
-                    if(this.ropaPescaAccesoriosFiltros){
-                      this.datoEtiqueta = this.ropaPescaAccesoriosFiltros;
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.ropaPescaAccesoriosFiltros
-                      });
-
-                      this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 30;
-                      this.totalProductos = this.productosTienda.length;
-  
-                      this.formRadioAccesoriosRopaPesca.patchValue({
-                        ropaAccesoriosFishing: this.ropaPescaAccesoriosFiltros
-                      });
-  
-                    }
-  
-                  }
-                }
-  
-              }
-              
-              
-              
-              
-              
-              
-              
-              /*Filtro de Lineas*/
-              else if(this.categoria =='lineas'){
-                this.cambioImagen.value  = this.categoria;
-                this.datoEtiqueta = this.categoria;
-                this.lineasPesca = true;
-                console.log('Es la categoría lineas');
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-                
-                this.formRadioLineasPesca.patchValue({
-                  lineasFishing: ''
-                });
-  
-                if(this.lineasFiltro){
-                  this.datoEtiqueta = this.lineasFiltro;
-                  this.lineasPesca = true;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.lineasFiltro
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioLineasPesca.patchValue({
-                    lineasFishing:this.lineasFiltro
-                  });
-  
-                }
-  
-              }
-              
-              
-              
-              
-              
-              
-              /*Filtro de Snorkel Pesca*/
-              else if(this.categoria == 'snorkel'){
-                console.log('Es la cateoría snorkel');
-                this.datoEtiqueta = this.categoria;
-                this.cambioImagen.value = this.categoria;
-  
-                
-                this.snorkelPesca = true;
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-  
-                this.formRadioSnorkelPesca.patchValue({
-                  snorkelFishing: ''
-                });
-  
-                if(this.snorkelFiltro){
-                  this.datoEtiqueta = this.snorkelFiltro;
-                 
-             
-                  this.productosTienda = this.productosTienda.filter(producto => {
-                    return producto.subcategoria1 == this.snorkelFiltro
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioSnorkelPesca.patchValue({
-                    snorkelFishing: this.snorkelFiltro
-                  });
-  
-                }
-              }
-              
-              
-              
-              
-              /*Filtro de Buceo Pesca*/
-              else if(this.categoria == 'buceo'){
-                this.cambioImagen.value = this.categoria;
-                this.buceoPesca = true;
-                console.log('Es la categoria buceo');
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-  
-                this.formRadioBuceoPesca.patchValue({
-                  buceoFishing: ''
-                });
-  
-                if(this.buceoFiltro){
-                  this.datoEtiqueta = this.buceoFiltro;
-                
-                  this.formRadioBuceoPesca.patchValue({
-                    buceoFishing: this.buceoFiltro
-                  });
-                }
-               
-              }
-              
-               /*Filtro de Kayaks*/
-              else if(this.categoria == 'kayaks'){
-                this.kayaksPesca = true;
-                this.cambioImagen.value = this.categoria;
-                console.log('Estas son los kayaks');
-                this.formRadioCategoriaPesca.patchValue({
-                  categoriasPesca: this.categoria
-                });
-  
-                this.formRadioKayaksPesca.patchValue({
-                  kayakFishing: ''
-                });
-  
-                if(this.kayakFiltro){
-                  this.datoEtiqueta = this.kayakFiltro;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.kayakFiltro
-                  });
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-  
-                  this.formRadioKayaksPesca.patchValue({
-                    kayakFishing: this.kayakFiltro
-                  });
-  
-                  this.formRadioKayaksCatPesca.patchValue({
-                    kayakCatFishing: ''
-                  });
-  
-                  if(this.kayakFiltro == 'kayaks'){
-                    
-                    this.kayaksCatPesca = true;
-                    if(this.kayakCatFiltro){
-                      this.datoEtiqueta = this.kayakCatFiltro;
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.kayakCatFiltro
-                      });
-                      this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 30;
-                      this.totalProductos = this.productosTienda.length;
-  
-                      this.formRadioKayaksCatPesca.patchValue({
-                        kayakCatFishing: this.kayakCatFiltro
-                      });
-                    }
-  
-  
-                  }
-  
-                }
-              }
-  
-              /*Esta sección se ejecuta cuando no se tiene ninguna categoria*/
-            }else{
-              this.formRadioCategoriaPesca.patchValue({
-                categoriasPesca:null, 
-                // formControlName2: myValue2 (can be omitted)
-              });
-  
-              console.log('There is not category selected');
-            }
-
-
-
-
-          }else if(this.clasificacion == 'Caceria'){
-            
-            
-            /*Elementos que se bloquean de PESCA al entrar a Cacería*/
-            this.categoriasPesca = false;
-            this.marcasPescaDIV = false;
-            this.categoriasCaceria = false;
-            this.categoriasPesca = false;
-            this.subaguadulce = false;
-            this.subaguadulceCanhas = false;
-            this.subAguaDulceCarretes = false;
-            this.marcasPescaDIV = false;
-            this.subaguaSaladaCanhas = false;
-            this.catNavegacion = false;
-            this.navElectrico = false;
-            this.navAccesorios = false;
-            this.ropaPescaAccesorios = false;
-            this.ropaPesca = false;
-            this.lineasPesca = false;
-            this.snorkelPesca = false;
-            this.buceoPesca = false;
-            this.kayaksCatPesca = false;
-            this.kayaksPesca = false;
-            this.subaguasalada = false;
-            this.subaguaSaladaCarretes = false;
-            this.subaguaSaladaSenhuelos = false;
-            this.subaguaSaladaAccesorios = false;
-            this.subAguaDulceCombos = false;
-            this.subAguaDulceSenhuelos = false;
-            this.subAguaDulceAccesorios = false;
-            this.subPistolas = false;
-            this.subRiflesAccesorios = false;
-            this.subArqueria = false;
-            this.subAccesoriosCaceria = false;
-            this.subRopaCaceria = false;
-            this.paginaActual = 1;
-            this.currentSizeItemsPerPage = 30;
-            this.totalProductos = this.productosTienda.length;
-            /*=============================================================================0*/
-            
-            this.categoriasCaceria = true;
-            this.cambioImagen.value = 'caceria'
-             /*Permite la modificación del controlador de elementos en el FormGroup */
-            this.formRadioClasificacion.patchValue({
-              clasificaciones: this.clasificacion, 
-              // formControlName2: myValue2 (can be omitted)
-            });
-
-            this.formRadioCategoriaCaceria.patchValue({
-              categoriasCaceria: ''
-            });
-
-            if(this.categoriasCaceria1){
-              this.datoEtiqueta = this.categoriasCaceria1;
-              this.cambioImagen.value = this.categoriasCaceria1;
-              
-              this.productosTienda = this.productosTienda.filter(producto =>{
-                return producto.categoria == this.categoriasCaceria1
-              });
-              this.paginaActual = 1;
-              this.currentSizeItemsPerPage = 30;
-              this.totalProductos = this.productosTienda.length;
-             
-
-              this.formRadioCategoriaCaceria.patchValue({
-                categoriasCaceria: this.categoriasCaceria1
-              });
-
-
-              this.formRadioSubRifles.patchValue({
-                caceriaRifles: ''
-              });
-
-              this.formRadioSubPistolas.patchValue({
-                caceriaPistolas: ''
-              });
-
-              if(this.categoriasCaceria1 == 'rifles'){
-                
-                this.subRifles = true;
-                this.subPistolas = false;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = false;
-                this.subCuchilleria = false;
-                this.subAccesoriosCaceria = false;
-                this.subRopaCaceria = false;
-                if(this.riflesFiltro){
-                  this.datoEtiqueta = this.riflesFiltro;
-                  this.cambioImagen.value = this.riflesFiltro;
-                  this.formRadioSubRifles.patchValue({
-                    caceriaRifles: this.riflesFiltro
-                  });
-
-                  this.formRadioSubRiflesAccesorios.patchValue({
-                    caceriaRiflesAccesorios : ''
-                  });
-
-                  console.log('Me llega este valor we', this.riflesFiltro);
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.riflesFiltro
-                  });
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-
-                  if(this.riflesFiltro =='accesorios'){
-                    this.cambioImagen.value = 'accesoriosCaceria'
-                    this.subRiflesAccesorios = true;
-                    if(this.subRiflesAccesoriosFiltro){
-                      this.datoEtiqueta = this.subRiflesAccesoriosFiltro;
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subRiflesAccesoriosFiltro
-                      });
-
-                      this.paginaActual = 1;
-                      this.currentSizeItemsPerPage = 30;
-                      this.totalProductos = this.productosTienda.length;
-                      this.formRadioSubRiflesAccesorios.patchValue({
-                        caceriaRiflesAccesorios :this. subRiflesAccesoriosFiltro
-                      })
-
-                    }
-                  }
-                }
-
-
-
-              }else if(this.categoriasCaceria1 == 'pistolas'){
-                this.subRifles = false;
-                this.subPistolas = true;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = false;
-                this.subCuchilleria = false;
-                this.subAccesoriosCaceria = false;
-                this.subRopaCaceria = false;
-                if(this.subcategoriaPistolasFiltros){
-                  this.datoEtiqueta = this.subcategoriaPistolasFiltros;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaPistolasFiltros
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-                  this.formRadioSubPistolas.patchValue({
-                    caceriaPistolas: this.subcategoriaPistolasFiltros
-                  });
-                  console.log('Si ando en pistolas');
-                  if(this.subcategoriaPistolasFiltros == 'accesorios'){
-                    this.subAccesoriosPistolas = true;
-                    this.formRadioSubAccesoriosPistolas.patchValue({
-                      caceriaAccesoriosPistolas: ''
-                    });
-
-                    if(this.subcategoriaAccesoriosPistolasFiltros){
-                      this.datoEtiqueta = this.subcategoriaAccesoriosPistolasFiltros;
-                      this.productosTienda = this.productosTienda.filter(producto =>{
-                        return producto.subcategoria2 == this.subcategoriaAccesoriosFiltros
-                      });
-                      this.formRadioSubAccesoriosPistolas.patchValue({
-                        caceriaAccesoriosPistolas: this.subcategoriaAccesoriosPistolasFiltros
-                      });
-
-                    }
-                  }
-
-                }
-
-              }else if(this.categoriasCaceria1 == 'arqueria'){
-                this.subRifles = false;
-                this.subPistolas = false;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = true;
-                this.subCuchilleria = false;
-                this.subAccesoriosCaceria = false;
-                this.subRopaCaceria = false;
-                this.formRadioSubArqueria.patchValue({
-                  caceriaArqueria: ''
-                });
-                if(this.subcategoriaArqueriaFiltros){
-                  this.datoEtiqueta = this.subcategoriaArqueriaFiltros;
-                  this.cambioImagen.value = this.subcategoriaArqueriaFiltros;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaArqueriaFiltros
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-
-                  this.formRadioSubArqueria.patchValue({
-                    caceriaArqueria: this.subcategoriaArqueriaFiltros
-                  });
-                }
-
-
-              }else if(this.categoriasCaceria1 == 'cuchilleria'){
-                
-                this.subRifles = false;
-                this.subPistolas = false;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = false;
-                this.subCuchilleria = true;
-                this.subAccesoriosCaceria = false;
-                this.subRopaCaceria = false;
-
-                this.formRadioSubCuchilleria.patchValue({
-                  caceriaCuchilleria: ''
-                });
-                if(this.subcategoriaCuchilleriaFiltros){
-                  this.datoEtiqueta = this.subcategoriaCuchilleriaFiltros;
-                  this.productosTienda = this.productosTienda.filter( producto =>{
-                    return producto.subcategoria1 == this.subcategoriaCuchilleriaFiltros
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-
-                  this.formRadioSubCuchilleria.patchValue({
-                    caceriaCuchilleria: this.subcategoriaCuchilleriaFiltros
-                  });
-                }
-                
-
-
-              }else if(this.categoriasCaceria1 == 'accesorios'){
-                this.cambioImagen.value = 'accesoriosCaceria';
-                this.subRifles = false;
-                this.subPistolas = false;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = false;
-                this.subCuchilleria = false;
-                this.subAccesoriosCaceria = true;
-                this.subRopaCaceria = false;
-
-                this.formRadioSubAccesoriosCaceria.patchValue({
-                  caceriaAccesorios: ''
-                });
-                if(this.subcategoriaAccesoriosFiltros){
-                  this.datoEtiqueta = this.subcategoriaAccesoriosFiltros;
-                  this.productosTienda = this.productosTienda.filter( producto =>{
-                    return producto.subcategoria1 == this.subcategoriaAccesoriosFiltros
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-                  this.formRadioSubAccesoriosCaceria.patchValue({
-                    caceriaAccesorios: this.subcategoriaAccesoriosFiltros
-                  });
-
-                }
-                
-
-              }else if(this.categoriasCaceria1 == 'ropa'){
-                this.subRifles = false;
-                this.subPistolas = false;
-                this.subRiflesAccesorios = false;
-                this.subArqueria = false;
-                this.subCuchilleria = false;
-                this.subAccesoriosCaceria = false;
-                this.subRopaCaceria = true;
-                this.formRadioSubRopaCaceria.patchValue({
-                  caceriaRopa: ''
-                });
-                if(this.subcategoriaRopaCaceriaFiltros){
-                  this.datoEtiqueta = this.subcategoriaRopaCaceriaFiltros;
-                  this.productosTienda = this.productosTienda.filter(producto =>{
-                    return producto.subcategoria1 == this.subcategoriaRopaCaceriaFiltros
-                  });
-
-                  this.paginaActual = 1;
-                  this.currentSizeItemsPerPage = 30;
-                  this.totalProductos = this.productosTienda.length;
-                  this.formRadioSubRopaCaceria.patchValue({
-                    caceriaRopa: this.subcategoriaRopaCaceriaFiltros
-                  });
-
-                }
-
-
-              }
-
-            }
-            
-          }
-
-        
-
-          /*Esta seccción se ejecuta cuando no se tiene ninguna clasificación ni ninguna otra información*/
-
-        }else if(this.busqueda){
-          this.datoEtiqueta = this.busqueda;
-          this.cambioImagen.value = "busqueda";
-          console.log(this.busqueda);
-          let productosCoincidencia = [];
-          this.productosTienda = this._productosTienda.getProductos();
-          this.productosTienda.forEach(elemento =>{
-              console.log(elemento.nombre.toLowerCase().indexOf(this.busqueda) > -1);
-              if(elemento.clasificacion.toLowerCase().indexOf(this.busqueda) > -1 || elemento.nombre.toLowerCase().indexOf(this.busqueda) > -1 || elemento.categoria.toLowerCase().indexOf(this.busqueda) > -1
-              || elemento.subcategoria1.toLowerCase().indexOf(this.busqueda) > -1 || elemento.subcategoria2.toLowerCase().indexOf(this.busqueda) > -1 ){
-                productosCoincidencia.push(elemento);
-              }
-              
-              /*if(elemento.nombre.toLowerCase().indexOf(this.busqueda.toLowerCase()) > -1){
-                console.log(elemento);
-              }*/
-              
-          })
-          console.log("=============================ESTOS SON LOS PRODUCTOS QUE QUERIAS====================================");
-          console.log(productosCoincidencia);
-          this.productosTienda = productosCoincidencia;
-          this.getImage(this.productosTienda);
-        
+        }else if(this.categoria == 'buceox'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = true;
+          this.lineasPesca = false;
+        }else if(this.categoria == 'lineas'){
+          this.subaguadulce = false;
+          this.subaguasalada = false;
+          this.catNavegacion = false;
+          this.snorkelPesca = false;
+          this.kayaksPesca = false;
+          this.ropaPesca = false;
+          this.ropaPescaAccesorios = false;
+          this.buceoPesca = false;
+          this.lineasPesca = true;
         }
+
+        this.categoriasPesca = true;
+
+        this.formRadioClasificacion.patchValue({
+          clasificaciones: this.clasificacion
+        })
+
+        this.formRadioCategoriaPesca.patchValue({
+          categoriasPesca: this.categoria
+        });
+
+
+
+
+
+
+      /*Si se rcibe el parametro de busqueda*/
+    }else if(this.paginacionQuery && this.clasificacion && this.categoria && this.filter1){
+      console.log('supp existe el filtro 1 so aqui tienes que hacer lo que se hace cuando existe un filtro 1========================')
+      this._productosTienda.getProductosBy_filter1(this.clasificacion, this.categoria, this.filter1, this.paginacionQuery).subscribe(respuesta =>
+        {
+          console.log(respuesta);
+
+
+          this.cantidadProductos = respuesta.cantidadProductos;
+          this.totalPaginas = respuesta.totalPaginas;
+          this.arrayNumberPages = respuesta.paginasToPrint;
+          this.productosTienda = respuesta.productos.map(x => x.json_build_object);
+          this.spinner.hide();
+
+        })
+
+        this.formRadioClasificacion.patchValue({
+          clasificaiones: this.clasificacion
+        })
+
+    }
+    
+    else if(this.busqueda){ 
+      scrollToTop();
+      this.datoEtiqueta = this.busqueda;
+      this.cambioImagen.value = "busqueda";
+      console.log(this.busqueda);
+      
+      const f = this._productosTienda.getProductosBySearch(this.busqueda).pipe(map(x => x))
+      const c = f.pipe(map(x => Object.values(x)));
+      this.productosTienda = c.pipe(map(x => x.map(x => x['json_build_object'])));
+      this.spinner.hide();
+
+  
+      
+      //this.getImage(this.productosTienda);
+      
+
+      /**/
+    }else if(queryParams = {}){
+      scrollToTop();
+      //When there is not info you must execute the subject to be in 1
+      console.log('Es ejecutado cuando no existe ningun queryParam en la URL');
+
+     
+      //this._productosTienda.subjectUrlN.subscribe(x => console.log('this is something you need to run', x));
+      /*Here is the beginning of the store*/
+    
+      this.datoEtiqueta = '';
+      /*this._productosTienda.getProductos().subscribe(res =>{
+        console.log(res['rows']);
+        /*this.productosTienda = res['rows']
+      },err => console.log(err)
+    );*/
+          this.paginacionQuery = 1;
+          
+          this._productosTienda.subjectUrlN.next(this.paginacionQuery);
+          /*Same observable with shareReplay comparten la misma solicitud*/
+          const ObservableProductosT= this._productosTienda.getProductos_tienda().pipe(map(x => x.productos));
+
+          const ObservableFinalPT = ObservableProductosT.pipe(map(x => Object.values(x).map(x => x['json_build_object']))).subscribe(
+            respuesta => {
+              this.productosTienda = respuesta;
+              console.log('This is thisproductos', this.productosTienda) 
+              this.spinner.hide();
+            });
+
+
+          const ObservableCantidadProductos = this._productosTienda.getProductos_tienda().pipe(map(x => x.cantidadProductos)).subscribe(
+            respuesta => {
+              this.cantidadProductos = respuesta.count;
+              console.log(this.cantidadProductos);
+            });
+
+
+          /*const ObservablePages = this._productosTienda.getProductos_tienda().pipe(map(x => x.pages)).subscribe(
+            respuesta => {
+              this.pages = respuesta;
+              this.arrayNumberPages = [];
+              console.log(this.pages);
+              for(let i = 1; i <= this.pages; i++){
+                this.arrayNumberPages.push(i);
+                console.log('This is the number of pages', this.arrayNumberPages);
+              }
+
+            });*/
+
+
+
+            
+            const ObservablePagesToPrint = this._productosTienda.getProductos_tienda().pipe(map(x => x.paginasToPrint)).subscribe(
+              respuesta => {
+                this.arrayNumberPages = respuesta;
+                console.log('=================================5 elements array', this.arrayNumberPages);
+  
+              });
+
+
+
+
+
+              
+            
+              //const d = f.pipe(x => x.map(x => x['json_build_object'])).subscribe(respuesta => console.log('This is the respuesta', respuesta));
+              //const c = this.productosTienda.pipe(map(x =>Object.values(x).map(x => x['json_build_object'])));
+               
+              
+              //this.productosTienda.pipe(map(x => x.map(x => x['json_build_object'])));
+            
+              
+
+             /*this._productosTienda.getProductos_tienda().subscribe(respuesta => {
+              this.productosTienda = respuesta.productos;
+              this.productosTienda.pipe(map(x => Object.values(x)));
+              this.productosTienda.pipe(map(x => x.map(x => x['json_build_object'])))
+              this.cantidadProductos = respuesta.cantidadProductos;
+              this.pages = respuesta.pages;
+
+              console.log('this is the fucking respuesta', respuesta.cantidadProductos, respuesta.pages, respuesta.productos);
+              this.spinner.hide();
+
+            });*/
+         
+            //const f = this._productosTienda.getProductos_tienda().pipe(map(x => x))
+            //const c = f.pipe(map(x => Object.values(x)));
+            //this.productosTienda = c.pipe(map(x => x.map(x => x['json_build_object'])));
+            //this.spinner.hide();
+      
+         
+          
         
-        else{
+         
         
-       
-          this.datoEtiqueta = '';
-          this.productosTienda = this._productosTienda.getProductos();
           this.paginaActual = 1;
           this.currentSizeItemsPerPage = 30;
-          this.totalProductos = this.productosTienda.length;
+          //this.totalProductos = this.productosTienda.length;
           this.cambioImagen.value = 'vacio';
-          this.getImage(this.productosTienda);
+          //this.getImage(this.productosTienda);
           this.categoriasCaceria = false;
           this.categoriasPesca = false;
           this.subaguadulce = false;
@@ -2561,6 +1796,24 @@ export class StoreOnlineComponent implements OnInit {
         }
       });
     }
+
+
+    ngAfterViewInit(){
+      /*setTimeout(() => {
+        this.botonesWish.forEach(elemento => fromEvent(elemento.nativeElement, 'click').pipe(exhaustMap(x => 
+            this.addWishList(x['target']['parentElement']['value'])
+          )).subscribe(x => console.log('This is x', x)));
+    
+       }, 4000)
+    
+    
+       setTimeout(() => {
+         this.botonesAddCart.forEach(elemento => fromEvent(elemento.nativeElement, 'click').pipe(exhaustMap(x => 
+              this.addCartElement(x['target']['parentElement']['value'])
+            )).subscribe(x => console.log('this is x ', x)));
+       }, 4000)*/
+    
+    }
     
 
 
@@ -2575,6 +1828,159 @@ export class StoreOnlineComponent implements OnInit {
       }
     });
 
+  }
+
+
+
+  prevPage(){
+    console.log('Here is prevPage imprime la pagina');
+    let value;
+    this._productosTienda.subjectUrlN.subscribe(x => 
+      value = x  
+    ); 
+    let prevPage;
+    if(value == 1){
+      prevPage = 1;
+    }else{
+      prevPage = value - 1;
+    }
+    this._productosTienda.subjectUrlN.next(prevPage);
+    this.router.navigate(["/tienda"], {queryParams: {pagina: prevPage}, queryParamsHandling: 'merge'});
+    /*this._productosTienda.subjectUrlN.subscribe(urlValue => {
+      const changeValueLess = urlValue - 1;
+      this._productosTienda.subjectUrlN.next(changeValueLess);
+      console.log('this is the value of the url', changeValueLess);
+      this.router.navigate(['/tienda', {pagina: changeValueLess}]);
+    });*/
+    
+
+  }
+
+
+  nextPage(){
+    /*Validar que la siguiente pagina sea menor a la cantidad de paginas que el usuario mando*/
+    console.log('Here is nextPage, imprime la');
+    let nextVal;
+    this._productosTienda.subjectUrlN.subscribe(x =>{
+      console.log('this is something new value for nextPage', x); 
+      nextVal = x
+      //console.log('this is the nextVal', nextVal);
+    });
+
+
+
+   
+    //const nextPage = parseInt(nextVal) + 1;
+    if(nextVal == this.totalPaginas){
+      this._productosTienda.subjectUrlN.next(this.totalPaginas);
+      this.router.navigate(['/tienda'], {relativeTo: this.route, queryParams: {pagina: this.totalPaginas}, queryParamsHandling: 'merge'});
+    }else{
+      const nextPage = parseInt(nextVal) + 1;
+      this._productosTienda.subjectUrlN.next(nextPage);
+      this.router.navigate(['/tienda'], {relativeTo: this.route, queryParams: {pagina: nextPage}, queryParamsHandling: 'merge'});
+    }
+
+
+    /*console.log('New value', nextPage);
+    console.log('This is paginas value', this.totalPaginas)
+    this._productosTienda.subjectUrlN.next(nextPage);
+    if(nextPage == this.totalPaginas){
+      this.router.navigate(['/tienda'], {queryParams: {pagina: this.totalPaginas}});
+    }else{
+      this.router.navigate(['/tienda'], {queryParams: {pagina: nextPage}});
+    }*/
+    /*this._productosTienda.subjectUrlN.subscribe(urlValue => 
+      {
+        const changeValue = urlValue + 1;
+        console.log('this is the value next page', changeValue);
+        this._productosTienda.subjectUrlN.next(changeValue);
+        this.router.navigate(['/tienda', {pagina: changeValue}]);
+      });*/
+     
+
+  }
+
+
+   public addWishList(dato, e){
+    if(this.isAutheticated){
+      console.log('Hey Im in addWishList, you are going to send', dato, e.target);
+      const usuarioIdentificador = 1;
+      console.log('Este es el identificador del dato', dato);
+      dato.isLoading = true;
+      
+        Observable.create(observer => {
+          observer.next(e.target)
+        }).pipe(exhaustMap(x => 
+            this._productosTienda.postProducto_wishList(dato, usuarioIdentificador)
+          )).subscribe(x => {
+            if(x.statusCode == 200){
+              dato.fullHeart = true;
+              setTimeout(() => {
+                dato.isLoading = false;
+              }, 4000)
+            }else if(x.statusCode == 409){
+              dato.fullHeart = false;
+              setTimeout(() => {
+                dato.isLoading = false;
+
+              }, 4000);
+            }
+  
+            }, error => {
+              console.log(error);
+              dato.fullHeart = false;
+              dato.isLoading = false;
+            })
+   
+      //return this._productosLista.postProducto_wishList(dato, usuarioIdentificador);
+    }else{
+      console.log('Se desplegara el modal de Inicio de Sesión');
+      const modalRef = this.modalInicio.open(ModalInicioSesionComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+        size: 'md'
+        // keyboard: false,
+        // backdrop: 'static'
+      });
+    }
+    
+  }
+  
+  addCartElement(dato, event){
+    if(this.isAutheticated){
+      console.log('This is the dato that I want to add to the cart', dato, event.target);
+      const usuarioIdentificador = 1;
+      dato.isLoadingCart = true;
+     
+        Observable.create(observer => {
+          observer.next(event.target)
+        }).pipe(exhaustMap(x => 
+          this._productosTienda.postProducto_cartList(dato, usuarioIdentificador) 
+        )).subscribe(x => {
+          console.log(x);
+          dato.isLoadingCart = false;
+  
+        }, error => {
+          console.log(error);
+          dato.isLoadingCart = false;
+        });
+      
+    
+      //return this._productosLista.postProducto_cartList(dato, usuarioIdentificador);
+      //this.openModalCarrito(usuarioIdentificador);
+    }else{
+      console.log('Se desplegara el modal de Inicio de Sesión');
+      const modalRef = this.modalInicio.open(ModalInicioSesionComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+        size: 'md'
+        // keyboard: false,
+        // backdrop: 'static'
+      });
+
+    }
   }
 
 
@@ -2649,17 +2055,8 @@ export class StoreOnlineComponent implements OnInit {
     });
   }
 
-  public addCart(dato){
-    console.log(this.productosCarrito);
-    let datoInsertar = dato;
-    if(this.productosCarrito.includes(datoInsertar)){
 
-    }else{
-      this.productosCarrito.push(datoInsertar);
-      this.openModalCarrito(this.productosCarrito);
-      console.log(this.productosCarrito);
-    }
-  }
+
 
   public openModalCarrito(datos){
     const modalRef = this.modal.open(ModalCarritoComponent,

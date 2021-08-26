@@ -4,8 +4,54 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:ssr": "ng run anfibiaFecego:serve-ssr",
+    "serve:ssr": "node dist/anfibiaFecego/server/main.js",
+    "build:ssr": "ng build --prod && ng run anfibiaFecego:server:production",
+    "prerender": "ng run anfibiaFecego:prerender"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@angular/animations": "^11.2.3",
+    "@angular/cli": "^11.2.2",
+    "@angular/common": "^11.2.3",
+    "@angular/compiler": "^11.2.3",
+    "@angular/compiler-cli": "^11.2.3",
+    "@angular/core": "^11.2.3",
+    "@angular/forms": "^11.2.3",
+    "@angular/localize": "^11.2.3",
+    "@angular/platform-browser": "^11.2.3",
+    "@angular/platform-browser-dynamic": "^11.2.3",
+    "@angular/platform-server": "^11.2.14",
+    "@angular/router": "^11.2.3",
+    "@ng-bootstrap/ng-bootstrap": "^9.0.2",
+    "@nguniversal/express-engine": "^11.2.0",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
+    "angularx-social-login": "^3.5.7",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.6.0",
+    "crypto-js": "^4.0.0",
+    "express": "^4.15.2",
+    "ez-plus": "^1.2.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "mapbox-gl": "^2.1.1",
+    "ngx-owl-carousel-o": "^5.0.0",
+    "ngx-pagination": "^5.0.0",
+    "ngx-slick-carousel": "^0.5.1",
+    "ngx-spinner": "^10.0.1",
+    "rxjs": "^6.6.6",
+    "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.0.1",
+    "zone.js": "^0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1102.2",
+    "@nguniversal/builders": "^11.2.0",
+    "@types/crypto-js": "^4.0.1",
+    "@types/express": "^4.17.0",
+    "@types/jquery": "^3.5.5"
+  }
 }

@@ -1,0 +1,114 @@
+<div class="container">
+
+
+    <!--Respuesta negativa por parte del Servidor y la API-->
+
+    <div class="row fail-buy" *ngIf="respuestaFallida == true">
+      
+        <div class="col-sm-6 offset-3">
+            
+            <div>
+                <h1> <img src="assets/imagenes/final-process/failed.png" alt="">¡Ha ocurrido un error!</h1>
+               
+            </div>
+
+            <p>Lo sentimos tu compra no puede ser procesa en este momento, te sugerimos intentarlo más tarde o comunicarte con nostros por medio de nuestra sección de 
+                de <a href="">contactanos</a>, así como también a nuestros numeros de atención al cliente.
+            </p>
+            <p>En <b>Anfibia</b>, estamos para apoyarte con cualquier problema que tengas al realizar tu compra o cualquier duda que tengas sobre el proceso de compra.
+            </p>
+            <p>En la parte inferior te mostramos nuestra información de contacto para cualquier duda o aclaración que necesites.</p>
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"> </i> <span> 2299132260</span></li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"> </i> <span> Salvador Díaz Mirón 3, Centro, 93620 San Rafael, Ver.</span> </li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span> adrian.alvarado@fecego.com</span></li>
+            </ul>
+
+
+            <div class="row">
+                <a routerLink = "/compra"><p>Volver a intentar el pago</p></a>
+                
+               
+
+            </div>
+        </div>
+       
+
+    </div>
+    <hr>
+    <div class="row success-buy" *ngIf="respuestaExitosa == true">
+        <div class="col-sm-6 offset-3">
+            <div>
+                
+                <h1><img src="assets/imagenes/final-process/success.png" alt=""> ¡Compra exitosa!</h1>
+            </div>
+            <p>Tu pago ha sido registrado con exito, gracias por tu compra, 
+                en breve empezaremos el proceso de envio de tu pedido, nos pondremos en contacto para darte más detalles sobre el proceso.
+
+            </p>
+            <p>Te hemos enviado un email a tu correo electronico, en caso de que no se te haya mandado nada o tengas algún problema con tu compra, envianos un mensaje,
+                a través de nuestra sección de <a routerLink ="/contactanos">contactanos</a>, o contactanos de forma directa.
+            </p>
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"> </i> <span> 2299132260</span></li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"> </i> <span> Salvador Díaz Mirón 3, Centro, 93620 San Rafael, Ver.</span> </li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span> adrian.alvarado@fecego.com</span></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="row success-buy" *ngIf="respuestaRechazada == true">
+        <div class="col-sm-6 offset-3">
+            <div>
+                
+                <h1><img src="assets/imagenes/final-process/failed.png" alt=""> ¡PAGO RECHAZADO!</h1>
+            </div>
+            <p>Lo sentimos tu compra no puede ser procesa en este momento, te sugerimos intentarlo más tarde o comunicarte con nostros por medio de nuestra sección de 
+                de <a routerLink="/contactanos">contactanos</a>, así como también a nuestros numeros de atención al cliente.
+            </p>
+            <p>En <b>Anfibia</b>, estamos para apoyarte con cualquier problema que tengas al realizar tu compra o cualquier duda que tengas sobre el proceso de compra.
+            </p>
+            <p>En la parte inferior te mostramos nuestra información de contacto para cualquier duda o aclaración que necesites.</p>
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"> </i> <span> 2299132260</span></li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"> </i> <span> Salvador Díaz Mirón 3, Centro, 93620 San Rafael, Ver.</span> </li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span> adrian.alvarado@fecego.com</span></li>
+            </ul>
+
+
+            <div class="row">
+                <a routerLink = "/compra"><p>Volver a intentar el pago</p></a>
+                
+               
+
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="row success-buy" *ngIf="respuestaEspera == true">
+        <div class="col-sm-6 offset-3">
+            <div>
+                
+                <h1><img src="assets/imagenes/final-process/questionmark.png" alt=""> ¡Compra en espera!</h1>
+            </div>
+            <p>Tu pago sigue en proceso, pero esta demorando más de lo normal en ser procesado , 
+                en cuanto quede completado el proceso nos pondremos en contacto contigo.
+
+            </p>
+            <p>Se te enviára un email a tu correo electronico, en caso de que no se te haya mandado nada o tengas algún problema con tu compra, envianos un mensaje,
+                a través de nuestra sección de <a routerLink ="/contactanos">contactanos</a>, o contactanos de forma directa.
+            </p>
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"> </i> <span> 2299132260</span></li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"> </i> <span> Salvador Díaz Mirón 3, Centro, 93620 San Rafael, Ver.</span> </li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span> adrian.alvarado@fecego.com</span></li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+

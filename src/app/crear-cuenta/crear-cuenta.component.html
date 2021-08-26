@@ -117,37 +117,75 @@
 <br>
 <br>-->
 
-<div class="container ">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 titulo">
-            <h1>Crea una cuenta</h1>
-        </div>  
-    </div>
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 texto">
-            <h2>Con su cuenta de Anfibia, disfrute de envíos y devoluciones gratis, un pago más rápido<br> y una experiencia de compra más personalizada.</h2>
-        </div>  
-    </div>
-    <div class="row" style="margin-bottom: 10px;">
-        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 titulos-formularios">
-            <h3><b>Crea una cuenta con:</b> </h3>
-            <a href="#" title="Facebook" class="btn btn-facebook btn-social btn-lg"><i class="fa fa-facebook"></i>Iniciar sesión usando Facebook</a>
-            <a href="#" title="Google" class="btn btn-google btn-social btn-lg"><i class="fa fa-google"></i>Iniciar sesión usando Google</a>
-
-            <h3><b>O con tu Email:</b> </h3>
-
-        </div>
-
-    </div>
+<div class="container-fluid">
     
-    <div class="row">
+    
+    <!--<div class="row success-exist" *ngIf="dataSucces">
+        <h1><i class="fa fa-check-circle" aria-hidden="true"></i> 
+            {{dataSucces.mensaje}}</h1>
+    </div>-->
 
-        
+    <div class="row">
         <div class="col-sm-12">
-            
                <div class="row">
-                   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 10px;">
-                       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" #f="ngForm">
+                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding: 50px;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 titulo">
+                            <h1>Crea una cuenta</h1>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 texto">
+                            <h2>Disfruta de comprár en Anfibia, creando tu cuenta.</h2>
+                        </div>  
+                    </div>
+
+
+                    <div class="row error-exist" *ngIf="mensajeErrorFB != null">
+                        <div class="col-sm-12">
+                            <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 
+                
+                                {{mensajeErrorFB}}</h1>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" style="margin-bottom: 10px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 titulos-formularios">
+                            <h3><b>Crea una cuenta con:</b> </h3>
+                            <!--<button (click) = "signOut()">Boton de pruebas desloggin</button>-->
+                            <!--<button (click) = "signInWithFB()">Iniciar sesiòn con facebook</button>-->
+                            <!--<button (click) = "signOut()">Deslogearse</button>
+                            <button (click) = "openModalToLogin()">Iniciar sesión usando facebook.</button>-->
+                            <!--Iniciar sesiòn con redes sociales Angularx-social-login-->
+                            <a type="button" (click) = "openModalToLogin()" title="Facebook" class="btn btn-facebook btn-social btn-lg"><i class="fa fa-facebook"></i>Iniciar sesión usando Facebook.</a>
+                            <a type="button" (click) = "signinWithGoogle()" class="btn btn-google btn-social btn-lg"><i class="fa fa-google"></i>Iniciar sesión usando Google</a>
+                                
+                 
+                                
+                            
+                           
+                            <h3><b>O con tu Email:</b> </h3>
+                
+                        </div>
+                
+                    </div>
+                    <div class="row error-exist" *ngIf="mensajeError && !dataSucces">
+                        <div class="col-sm-12">
+                            <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 
+                
+                                {{mensajeError}}</h1>
+
+                        </div>
+                    </div>
+
+
+                   
+
+
+                       <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)" #f="ngForm">
                         <div class="row">
                            
                             <div class="col-sm-6">
@@ -186,11 +224,37 @@
                                     <span class="errorFormulario" *ngIf="registerForm.get('email').errors?.email && registerForm.get('email').touched">*Error, ingresa un correo con el formato de correo valido, correo@dominio</span>
                                 </div>
 
+                                <div class="inputGroup">      
+                                    <input type="text"
+                                    id="phoneNumber"
+                                    formControlName="phoneNumber"  
+                                    name="phoneNumber"
+                                     required />
+                                    <span class="inputBar"></span>
+                                    <label>Telefono (Celular)</label>
+                                    <span class="errorFormulario" *ngIf ="registerForm.get('phoneNumber').value === '' && registerForm.get('phoneNumber').touched">*Este campo es requerido</span>
+                                    <span class="errorFormulario" *ngIf="registerForm.get('phoneNumber').errors?.pattern && registerForm.get('phoneNumber').touched">*Error, ingresa un numero con el formato de Telefono valido, ejemplo:  2222 22 22 22</span>
+                                </div>
 
-                              
-                                
-                           
-                                 </div>
+                                <div class=""> 
+                                    <label style="font-family: 'Meera Inima', sans-serif;" for="male"><input type="radio"
+                                        value="H" 
+                                        id="gender" 
+                                        name="gender" 
+                                        formControlName="gender"> Hombre</label>
+                                    
+                                        
+                                </div>
+                                <div class="">
+                                    <label style="font-family: 'Meera Inima', sans-serif;" for="female"> <input type="radio"
+                                        value="M" 
+                                        id="gender" 
+                                        name="gender" 
+                                        formControlName="gender"> Mujer</label>
+
+                                </div>
+                               
+                                </div>
  
                             </div>
                             <div class="col-sm-6">
@@ -225,7 +289,7 @@
                                     <span class="inputBar"></span>
                                     <label>Contraseña</label>
                                     <span class="errorFormulario" *ngIf ="registerForm.get('passwords.password').value === '' && registerForm.get('passwords.password').touched">*Este campo es requerido</span>
-                                    <span class="errorFormulario" *ngIf ="registerForm.get('passwords.password').errors?.pattern">Tu contraseña debe empezar con una letra mayuscula, tener 7 a 9 caracteres y terminar con una letra Mayuscula.</span>
+                                    <span class="errorFormulario" *ngIf ="registerForm.get('passwords.password').errors?.pattern">Tu contraseña debe contener 1.- Minimo una letra MAYUSCULA, 2.- Minimo un simbolo, 3.- Minimo debe contener 8 caracteres.</span>
                                 </div>
                                 <div class="inputGroup">      
                                     <input type="password"
@@ -264,7 +328,7 @@
                                     formControlName="terminosyCondiciones"  
                                     name="terminosyCondiciones"
                                     
-                                      /> He leido y acepto los <a routerLink="/asuntos-legales">términos y condiciones de uso</a> de la información del sitio web de ANFIBIA</label>
+                                      /> He leido y acepto los <a routerLink="/asuntos-legales">Términos y condiciones de uso</a> de la información del sitio web de ANFIBIA</label>
                                 </div>
                                 <span  class="errorFormulario" *ngIf="registerForm.get('terminosyCondiciones').value === false">*Debes estar de acuerdo con nuestros terminos y condiciones.</span>
                               
@@ -272,11 +336,13 @@
                             <div class="col-sm-12">
                                 <div class="button-container">
                                     <button type="submit"
+                                    #registerButton
                                     [disabled] = "registerForm.status === 'INVALID' || registerForm.get('terminosyCondiciones').value === false"
                                     ><span>Registrarse</span></button>
                                 </div>
 
                             </div>
+                            
 
                         </div>
 
@@ -285,20 +351,20 @@
                 
 
                    </div>
-                   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 linea">
-                    <div class="beneficios">
-                        <h1>Beneficios</h1>
-                        <i class="fa fa-credit-card-alt"></i> Pagos más rapidos.
-                        <hr style="border: 0px;">
-                        <i class="fa fa-truck"></i> Envios y devoluciones gratis.
-                        <hr style="border: 0px;">
-                        <i class="fa fa-shopping-bag"></i> Una experiencia de compra más personalizada.
-                        <hr style="border: 0px;">
-                        <i class="fa fa-bell"></i> Notificaciones de ofertas especiales.
-                        <hr style="border: 0px;">
-                        <p>*Solo registro con correo electronico.</p>
+                   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 linea backgroundNext" >
+                        <div class="beneficios">
+                            <!--<h1>Beneficios</h1>
+                            <i class="fa fa-credit-card-alt"></i> Pagos más rapidos.
+                            <hr style="border: 0px;">
+                            <i class="fa fa-truck"></i> Envios y devoluciones gratis.
+                            <hr style="border: 0px;">
+                            <i class="fa fa-shopping-bag"></i> Una experiencia de compra más personalizada.
+                            <hr style="border: 0px;">
+                            <i class="fa fa-bell"></i> Notificaciones de ofertas especiales.
+                            <hr style="border: 0px;">
+                            <p>*Solo registro con correo electronico.</p>-->
+                        </div>
                     </div>
-                </div>
                  
                    
 

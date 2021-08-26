@@ -1,0 +1,85 @@
+
+/*=======================================Compra fallida================================================================*/
+.fail-buy{
+    padding: 50px;
+}
+
+.fail-buy h1{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.fail-buy a{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+}
+
+
+
+.fail-buy p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    padding: 25px;
+    text-align: justify;
+}
+
+.fail-buy img{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+/*========================================Compra Exitosa==========================================================*/
+.success-buy{
+    padding: 50px;
+}
+
+.success-buy a{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+}
+
+
+.success-buy h1{
+    color: #000;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.fail-buy ul{
+    list-style: none;
+}
+
+.success-buy ul{
+    list-style: none;
+}
+
+
+
+
+
+.success-buy p{
+    font-family: 'Meera Inima', sans-serif;
+   
+    font-size: 15px;
+    padding: 25px;
+    text-align: justify;
+}
+
+
+.success-buy span{
+    font-size: 15px;
+    font-family: 'Meera Inima', sans-serif;
+}
+
+.success-buy img{
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,207 @@
+.inputGroup {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .inputGroup label {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-family: Trebuchet MS;
+    color: #000;
+    font-weight: 500;
+    
+  }
+  
+  .inputGroup input,
+  .inputGroup textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    left: 25px;
+    padding: 5px;
+    font-family: Trebuchet MS;
+    background: none;
+    color: #000;
+  }
+  
+  .inputGroup input:focus ~ label,
+  .inputGroup input:valid ~ label,
+  .inputGroup textarea:focus ~ label,
+  .inputGroup textarea:valid ~ label {
+    top: -20px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+  }
+  
+  .inputGroup input:focus ~ .inputBar:before,
+  .inputGroup input:focus ~ .inputBar:after,
+  .inputGroup textarea:focus ~ .inputBar:before,
+  .inputGroup textarea:focus ~ .inputBar:after {
+    width: 100%;
+  }
+  
+  .inputGroup textarea {
+    height: 100px;
+    width: 280px;
+    overflow: auto;
+    resize: none;
+  }
+  
+  .inputGroup .inputBar {
+    position: relative;
+    display: block;
+    width: 290px;
+  }
+  .contenedor-imagen{
+     background-image: url('/assets/imagenes/login/ocean.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+     height: 500px;
+  }
+  
+  
+  
+  .inputGroup .inputBar:before,
+  .inputGroup .inputBar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    background: white;
+    height: 2px;
+    transition: all 0.2s ease;
+  }
+  
+  .inputGroup .inputBar:after {
+    right: 50%;
+  }
+  
+  .inputGroup .inputBar:before {
+    left: 50%;
+  }
+
+
+
+
+  /*=====================================================================================================*/
+
+  .button-container {
+      
+    text-align: center;
+}
+
+.button-container button {
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background: 0;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    
+    overflow: hidden;
+    transition: .3s ease;
+}
+  
+.button-container button span {
+    position: relative;
+    z-index: 1;
+    color: #a39688;
+    transition: .3s ease;
+}
+
+.button-container button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background: #0D7D90;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    transition: .3s ease;
+}
+  
+.button-container button:hover, .button-container button:active,  .button-container button:focus {
+    border-color: #0D7D90;
+}
+  
+.button-container button:hover span, .button-container button:active span,  .button-container button:focus span {
+    color: #0D7D90;
+}
+  
+.button-container button:active span, .button-container button:focus span {
+    color: #ffffff;
+}
+  
+.button-container button:active:before, .button-container button:focus:before {
+    opacity: 1;
+    -webkit-transform: scale(10);
+    transform: scale(10);
+}
+
+
+/*====================================================================================*/
+
+.error-response{
+    background: #F8E0EC;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.error-response h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    color: #FF0040; 
+    
+}
+
+
+.errorFormulario{
+    font-size: 12px;
+    color: rgb(243, 17, 17);
+    font-family: 'Meera Inima', sans-serif;
+    background: rgb(248, 230, 230);
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0em;
+    padding: 5px;
+   
+}
+
+
+.error-message{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    color: rgb(243, 17, 17);
+    background: rgb(248, 230, 230);
+    padding: 4px;
+}
+
+
+.success-message{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    color: #0B6121;
+    background: #BCF5A9;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}

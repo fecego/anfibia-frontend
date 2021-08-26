@@ -45,7 +45,7 @@ Ipad Mini 2.4 Landscape--*/
 
   .textos-anfibia h2{
     font-family: 'Meera Inima', sans-serif;
-    font-size: 20px;
+    font-size: 14px;
   }
 
 
@@ -152,8 +152,9 @@ Ipad Mini 2.4 Landscape--*/
   
   
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;  
-    font-size: 40px; 
+    font-family: 'Meera Inimai', sans-serif; 
+    font-weight: bold; 
+    font-size: 20px; 
     text-align: center; 
     color: #000; 
     padding-top: 35%;
@@ -162,9 +163,8 @@ Ipad Mini 2.4 Landscape--*/
   
   .texto-parallax span{
     color: #04B4AE; 
-    font-family: 'Anton', sans-serif;
-    font-weight: bold; 
-    font-size: 40px; 
+    font-family: 'Meera Inimai', sans-serif;
+ ; 
   }
 
   .texto-parallax p{
@@ -926,7 +926,7 @@ Ipad mini Landscape -- Si lo afecta
   
   .proveedores-brand h3{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 60px; 
+    font-size: 30px; 
     color: #000;
     text-align: center;
     padding-bottom: 0px;
@@ -935,7 +935,7 @@ Ipad mini Landscape -- Si lo afecta
   
   .proveedores-brand h1{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 80px; 
+    font-size: 30px; 
     color: #000; 
     text-align: center; 
     margin-top: 0px;
@@ -1694,18 +1694,24 @@ Surface Pro 3 Portrait
 
 
   .texto-parallax{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     position: absolute; 
     background: #fff;
-    width: 50%;
-    height: 60%;
+    width: 60%;
+    height: 70%;
     padding-left: 0;
     padding: 10px;
   }
 
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
     color: #000;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .texto-parallax h1 span
@@ -1769,16 +1775,16 @@ Surface Pro 3 Portrait
   
   .proveedores-brand h3{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 40px; 
+    font-size: 30px; 
     color: #000;
     text-align: center;
     padding-bottom: 0px;
-    font-weight: bolder;
+    
   }
   
   .proveedores-brand h1{
-    font-family: 'Anton', sans-serif; 
-    font-size: 60px; 
+    font-family: 'Meera Inimai', sans-serif; 
+    font-size: 30px; 
     color: #000; 
     text-align: center; 
     margin-top: 0px;
@@ -2542,18 +2548,24 @@ Surface Pro 3 Portrait
 
 
   .texto-parallax{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute; 
     background: #fff;
-    width: 50%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
     padding-left: 0;
     padding: 10px;
   }
 
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
     color: #000;
     font-size: 20px;
+    font-weight: bold;
   }
 
   .texto-parallax h1 span
@@ -2617,20 +2629,18 @@ Surface Pro 3 Portrait
   
   .proveedores-brand h3{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 30px; 
+    font-size: 25px; 
     color: #000;
     text-align: center;
     padding-bottom: 0px;
-    font-weight: bolder;
   }
   
   .proveedores-brand h1{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 50px; 
+    font-size: 25px; 
     color: #000; 
     text-align: center; 
     margin-top: 0px;
-    font-weight: bolder;
   }
 
   .proveedores-brand span{
@@ -3397,13 +3407,13 @@ Media query usado
     width: 50%;
     height: 40%;
     padding-left: 0;
-    padding: 10px;
+    padding: 20px;
   }
 
   .texto-parallax h1{
     font-family: 'Anton', sans-serif;
     color: #000;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .texto-parallax h1 span
@@ -4231,16 +4241,21 @@ Media query usado
 @media only screen and (max-width: 567px) and (min-width: 392px){
 
   .texto-parallax{
+    display: flex;
+    flex-direction: column;
     position: absolute; 
     background: #fff;
-    width: 50%;
-    height: 40%;
+    width: 80%;
+    height: 70%;
     padding-left: 0;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
     color: #000;
     font-size: 20px;
   }
@@ -5215,18 +5230,24 @@ Iphone 7 Portrait
   
   
   .texto-parallax{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute; 
     background: #fff;
-    width: 50%;
-    height: 50%;
+    width: 90%;
+    height: 70%;
     padding-left: 0;
     padding: 10px;
   }
 
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
     color: #000;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   .texto-parallax h1 span
@@ -5917,18 +5938,24 @@ Iphone 5 Portrait
 
 
   .texto-parallax{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     position: absolute; 
     background: #fff;
-    width: 50%;
-    height: 40%;
+    width: 70%;
+    height: 60%;
     padding-left: 0;
     padding: 10px;
   }
 
   .texto-parallax h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
     color: #000;
     font-size: 20px;
+    font-weight: bold;
   }
 
   .texto-parallax h1 span
@@ -6002,11 +6029,10 @@ Iphone 5 Portrait
   
   .proveedores-brand h1{
     font-family: 'Meera Inima', sans-serif; 
-    font-size: 38px; 
+    font-size: 30px; 
     color: #000; 
     text-align: center; 
     margin-top: 0px;
-    font-weight: bolder;
   }
 
   .proveedores-brand span{

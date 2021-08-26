@@ -1,3 +1,62 @@
+.backgroundNext{
+    background-image: url('/assets/imagenes/paginaInicial/fishing3.jpeg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.error-exist{
+    background: #F8E0EC;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 20px;
+
+}
+
+
+.beneficios{
+    background: red;
+}
+
+
+.error-exist h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #FF0040; 
+}
+
+
+.error-exist i{
+    font-size: 20px;
+
+}
+
+.success-exist{
+    background: #CEF6CE;
+    width: 50%;
+    text-align: center;
+    padding: 30px;
+
+}
+
+.success-exist h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #21610B; 
+}
+
+
+.success-exist i{
+    font-size: 20px;
+
+}
+
+
+
+
 .titulos-formularios h3{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -18,11 +77,11 @@
     left: 5px;
     pointer-events: none;
     transition: all 0.3s ease;
-    font-size: 16px;
-    font-family: Trebuchet MS;
-    color: #000;
+    font-size: 14px !important;
+    font-family: 'Meera Inimai', sans-serif;
+    color: black;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: none;
   }
   
   .inputGroup input,
@@ -33,7 +92,7 @@
     border-bottom: 1px solid #757575;
     left: 25px;
     padding: 5px;
-    font-family: Trebuchet MS;
+    font-family: 'Meera Inima', sans-serif;
     background: none;
     color: #000;
   }
@@ -45,6 +104,7 @@
     top: -20px;
     transition: all 0.3s ease;
     font-size: 13px;
+    font-family: 'Meera Inima', sans-serif;
   }
   
   .inputGroup input:focus ~ .inputBar:before,
@@ -102,7 +162,8 @@
 }
     
     .container{
-        font-family: 'Meera';
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
     }
 
     .img{
@@ -113,7 +174,7 @@
         margin-top: 30px;
         text-align: center;
         position: relative;
-        font-size: 60px;
+        font-size: 40px;
         font-family: 'Anton', sans-serif;
         color:black;
     }
@@ -142,9 +203,9 @@
             .texto h2{
                 margin-top: 10px;
                 position: relative;
-                text-align: center;
-                font-size: 12px !important;
-                font-family: 'Meera';
+                text-align: justify;
+                font-size: 14px !important;
+                font-family: 'Meera Inima', sans-serif;
                 color: black;
             }
         }
@@ -154,9 +215,9 @@
         margin-top: 20px;
         text-align: center;
         position: relative;
-        text-align: center;
-        font-size: 16px;
-        font-family: 'Meera';
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Meera Inima', sans-serif;
         color: black;
     }
 
@@ -180,7 +241,7 @@
         background-color: #3b5998;
         width: 85%;
         font-size: 15px;
-        font-family: 'Meera';
+        font-family: 'Meera Inima', sans-serif;
         margin: 0 30px 10px;
         text-align: center !important; 
     }
@@ -190,7 +251,7 @@
                 background-color: #3b5998;
                 width: 95%;
                 font-size: 13px;
-                font-family: 'Meera';
+                font-family: 'Meera Inima', sans-serif;
                 margin: 0 0px 10px;
                 text-align: center !important; 
             }
@@ -227,7 +288,7 @@
         background-color: #dc4a38;
         width: 85%;
         font-size: 15px;
-        font-family: 'Meera';
+        font-family: 'Meera Inima', sans-serif;
         margin: 0 30px 10px;
         text-align: center !important; 
     }
@@ -237,7 +298,7 @@
                 background-color: #dc4a38;
                 width: 95%;
                 font-size: 13px;
-                font-family: 'Meera';
+                font-family: 'Meera Inima', sans-serif;
                 margin: 0 0px 10px;
                 text-align: center !important; 
             } 
@@ -364,7 +425,6 @@
         font-size: 18px;
         font-weight: 600;
         line-height: 1;
-        text-transform: uppercase;
         overflow: hidden;
         transition: .3s ease;
     }
@@ -436,7 +496,7 @@
         margin-left: 20%;
         color: #757575;
         font-size: 18px;
-        font-family: 'Meera';
+        font-family: 'Meera Inima', sans-serif;
     }
 
     .beneficios p{
@@ -462,7 +522,7 @@
                 margin-left: 20px;
                 color: #757575;
                 font-size: 18px;
-                font-family: 'Meera';
+                font-family: 'Meera Inima', sans-serif;
             }
         
             .beneficios p{
@@ -489,7 +549,7 @@
                 margin-left: 20px;
                 color: #757575;
                 font-size: 18px;
-                font-family: 'Meera';
+                font-family: 'Meera Inima', sans-serif;
             }
         
             .beneficios p{
@@ -498,3 +558,35 @@
             }
         }
     /*----------[FIN FILA DE BENEFICIOS]----------*/   
+    @media only screen and (max-width: 567px) and (min-width: 392px){
+
+        .backgroundNext{
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 390px) and (min-width: 321px){
+
+        .backgroundNext{
+            display: none;
+            background: red;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 768px) and (min-width: 641px){
+        .backgroundNext{
+            display: none;
+            background: red;
+        }
+
+
+    }
+
+    @media only screen and (max-width: 320px){
+        .backgroundNext{
+            display: none;
+          }
+    }

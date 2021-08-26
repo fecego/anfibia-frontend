@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Granim from 'granim';
+//import * as Granim from 'granim';
 import * as jQuery from 'jquery';
 
 @Component({

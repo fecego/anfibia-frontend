@@ -1,0 +1,56 @@
+.modalEstilo{
+   height: 500px;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    
+    padding: 10px;
+
+}
+
+.flex-item{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+}
+
+.flex-item h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.flex-item p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.flex-item button{
+    background: none;
+    color: #000;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Meera Inimai', sans-serif;
+    border-bottom: 1px solid black;
+    border-radius: 1px;
+    transition: 0.5s ease-in-out;
+}
+
+
+.text-fish{
+    margin-top: 10%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+

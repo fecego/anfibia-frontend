@@ -1,18 +1,141 @@
+.linea h2{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.linea p{
+    margin-left: 14px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+}
+  
+  
+  .nav{
+    margin-left: 25px;
+}
+
+.nav-item a{
+    color: black;
+    font-size: 14px;
+    font-family: 'Meera Inimai', sans-serif;
+}
+
+.sourcessLess{
+    padding: 20px;
+    font-family: 'Meera Inimai', sans-serif;
+
+}
+
+.sourcessLess h1{
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.sourcessLess p{
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
+
+
+.mensajeError{
+    color: #000;
+    
+}
+
+.mensajeError h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 280px;
+    text-align: center;
+}
+
+.mensajeError h2{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+
+
+.mensajeError p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+.not-logged h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #000;
+  }
+
+.selectedAddress div h2{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 15px;
+}
+
+
+.pruebaData p{
+    font-family: 'Meera Inimai', sans-serif;
+    
+}
+
+
+.no-Address h5{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    color: #000;
+ 
+}
+
+
+.no-Address h3{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 13px;
+    color: #000;
+    font-weight: normal;    
+}
+
+
+.style-eLinks{
+    color: #000;
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 17px;
+  
+    
+}
+
+.style-eLinks a{
+    color: #000;
+    padding-right: 30px;
+   
+}
+
+
+
+    
     .d-flex a{
         color: #000;
-        font-family: 'Meera Inima', sans-serif;
+        font-family: 'Meera Inimai', sans-serif;
         text-decoration: underline;
     }
     
     
     .container-fluid{
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
     }
 
     .container{
         margin-bottom: 100px;
         margin-top: 100px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
     }
 
     .regresar{
@@ -32,11 +155,12 @@
     }
 
     .titulo h1{
-        text-transform: uppercase;
-        font-size: 30px;
-        letter-spacing: 2px;
-        font-family: 'Anton';
+        
+        font-size: 22px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
         margin-bottom: 20px;
+        color: #000;
     }
 
     .informacion{
@@ -45,33 +169,70 @@
         margin-right: 40px;
     }
 
+    .informacion h1{
+        font-size: 15px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
+
+    }
+
+    .informacion h1 span{
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+
     .informacion h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
-        margin-top: 15px;
+        font-size: 20px;
+        /*text-transform: uppercase;*/
+        font-family: 'Meera Inimai', sans-serif;
+        margin-top: 17px;
+        font-weight: normal;
+        
     }
 
     .informacion h3{
-        font-size: 17px;
+        font-family: 'Meera Inimai', sans-serif;
+        color: #000;
+        font-size: 15px;
+        font-weight: normal;
     }
 
     .informacion p{
         font-size: 15px;
+        color: #000;
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
+        line-height: 0.1em;
+       
+    }
+
+    .informacion p span{
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: normal;
+
     }
 
     .informacion button{
         padding: 0;
         color: black;
-        font-size: 20px;
+        font-size: 16px;
         border: 0;
         background: transparent !important;
+        padding-left: 10px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        text-decoration: underline;
+        transition: 0.5s;
     }
+
+
+  
 
     .btn-ldireccion {
         color: black;
         font-size: 15px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif ;
         text-align: right !important; 
         text-decoration: none;
        
@@ -91,7 +252,7 @@
         background-color: #393939;
         width: 100%;
         font-size: 15px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         text-align: center !important; 
     }
     
@@ -115,10 +276,12 @@
     }
 
     .pago h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
+        font-size: 22px;
+    /*text-transform: uppercase;*/
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
         margin-top: 15px;
+        color: #000;
     }
 
     .pago h3{
@@ -214,8 +377,8 @@
 
 
     .pedido  {
-        background-color: #DADADA;
-        max-height: 750px;
+        background-color: #FAFAFA;
+        max-height: auto;
         margin-bottom: 50px;
         padding-bottom: 30px;
     }
@@ -239,20 +402,21 @@
             }
 
     .pedido h2{
-        font-size: 25px;
-        text-transform: uppercase;
-        font-family: 'Anton';
+        font-size: 20px;
+        /*text-transform: uppercase;*/
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: bold;
         margin-top: 15px;
     }
 
     .pedido h3{
         font-size: 16px;
-        text-transform: uppercase;
+        /*text-transform: uppercase;*/
         font-family: 'Anton';
     }
 
     .pedido h5{
-        font-size: 18px; 
+        font-size: 16px; 
     }
         /*Media query en celulares vertical*/
         @media only screen and (max-width: 390px) and (min-width: 321px){
@@ -268,7 +432,7 @@
         }
 
     .pedido h6{
-        font-size: 18px; 
+        font-size: 16px; 
         text-align: right !important;
     }
     
@@ -301,12 +465,7 @@
         border-top: 1px solid #393939;
     }
 
-    .pedido h4{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-family: 'Prometo-medium';
-        margin: 30px 0 -20px 0;
-    }
+   
 
     .pedido .foto{
         position: relative;
@@ -317,7 +476,7 @@
         justify-content: center;
         height: 100px;
         padding: 10px;
-        background: #ABB2B9;
+        background: #F2F2F2;
         margin-top: 45px;
         margin-left: 20px;
     }
@@ -331,12 +490,32 @@
     }
 
     .pedido .detalles dt{
-        font-size: 15px;
-        text-align: left;
+      
     }
 
     .pedido p{
         font-size: 12px;
+    }
+
+
+    .detalles h1{
+        font-size: 17px;
+        
+        color: #000;
+
+
+    }
+
+    .detalles p{
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        line-height: 0.1em;
+        color: #000;
+    }
+
+    .detalles span{
+        font-family: 'Meera Inimai', sans-serif;
+        font-weight: normal;
     }
 
 

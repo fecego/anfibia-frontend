@@ -1,6 +1,27 @@
+    <div class="modal-body " style="margin: 0%; padding: 0%">
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <div class="row">
+            <div class="col-sm-6 background-ModalC">
+           
 
+            </div>
+           <div class="col-sm-6 background-Modal">
+               <div class="succes-response">
+                
+                   <h1><img src="assets/imagenes/final-process/success.png">Email enviado</h1>
+                   <p>Enviamos un email al correo con el que te has registrado, por favor abre el enlace que se te mando para finalizar el proceso de registro de tu cuenta Anfibia.</p>
+
+               </div>
+
+           </div>
+          
+
+        </div>
+    </div>
    
-    <div class="modal-body">
+    <!--<div class="modal-body">
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -13,35 +34,39 @@
 
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" *ngFor = "let producto of productoModalCarrito; index as i; let index = i;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" *ngFor = "let producto of productoModalCarrito | async; index as i; let index = i;">
                 <div class="card">
                     <div class="tumb">
-                        <div class="badge" *ngIf = "producto.nuevo">
-                            <h1>NUEVO</h1>
+                        <div class="badge1" *ngIf = "producto.nuevo">
+                            Nuevo
                         </div>
                         <div class="badge2" *ngIf = "producto.destacado">
-                            <h1>DESTACADO</h1>
-                        </div>
-                        <div class="badge3" *ngIf = "producto.descuento">
-                            <h1>{{producto.descuento}}% DESC</h1>
-                        </div>
-                        <img class="" [attr.src]="producto.image[0].url" alt="Card image cap">
-                    </div>
+                            Destacado
+                        </div>-->
+                        
+                        <!--<img class="" [attr.src]="producto.image[0].url" alt="Card image cap">-->
+                    <!--</div>
                     <div class="card-body">
-                       <h5><a type="button" (click)="sendProducto(producto)">{{producto.nombre | oracionMayusculas}}</a></h5> 
+                        <div class="precios">
+                            <p><span>{{producto.precio_producto | currency}}</span></p> -->
+                            <!--<p *ngIf="producto.descuento != 0; else precioNormal">Precio con Desc: <span style="color: red; text-decoration: none;">{{producto.precio | currency}}</span></p>
+                            
+                            <p id="precioNormal" *ngIf="producto.descuento == 0">Precio: <span style="text-decoration: none;">{{producto.precio | currency}} </span></p>
+                            <div class="badge3" *ngIf = "producto.descuento">
+                                {{producto.descuento}}% DESC
+                            </div>-->
+                        <!--</div>
+                       <h1><a type="button" (click)="sendProducto(producto)">{{producto.nombre_producto | oracionMayusculas}}</a></h1> -->
                        <!--<div>
                            <h3>{{producto.categoria}} {{producto.marca}}</h3>
                        </div>-->
-                      <div class="precios">
-                        <p *ngIf="producto.descuento">Precio: <span>{{producto.precio_antiguo | currency}}</span></p> 
-                        <p *ngIf="producto.descuento">Precio con Desc: {{producto.precio | currency}}.</p>
-                        <p *ngIf="!producto.descuento">Precio: {{producto.precio | currency}}</p>
-                      </div>
+                     
+                     
                       
-                      <button class="boton-compra"><i class="fa fa-money" aria-hidden="true"></i>
-                        Comprar ahora</button>
-                    </div>
-                  </div>
+                    <!--</div>-->
+                    <!--<button class="boton-compra"><i class="fa fa-money" aria-hidden="true"></i>
+                        Comprar ahora</button>-->
+                 <!-- </div>
             </div>
         </div>
     </div>
@@ -52,4 +77,4 @@
         <button class="botones-footer" (click)= "sendCarrito()"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             Ir al carrito</button>
       <button type="button" class="botones-footer" (click)="modal.close('Save click')">Cerrar</button>
-    </div>
+    </div>-->

@@ -24,11 +24,11 @@ Ipad Mini 2.4 Landscape--*/
 
 
 
-.botones-menu ul li button{
-  background: #F8F8F8;
+.botones-menu button{
+  background: #fff;
   color: #616161;
   font-family: 'Meera Inima', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   padding: 15px;
   transition: 0.5s ease-in-out;
@@ -37,7 +37,7 @@ Ipad Mini 2.4 Landscape--*/
   
 }
 
-.botones-menu ul li button:hover{
+.botones-menu button:hover{
   background: #163039;
   color: #fff;
 }
@@ -67,7 +67,7 @@ Ipad Mini 2.4 Landscape--*/
 .letrasAndLogos p{
     color: #000;
     font-family: 'Meera Inima', sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     letter-spacing: 0px;
 }
@@ -168,7 +168,7 @@ Ipad mini Landscape -- Si lo afecta
 */
 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
 
-
+  
 
   .botones-menu ul li{
     display: block;
@@ -190,7 +190,7 @@ Ipad mini Landscape -- Si lo afecta
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 2px solid #000;
+    border:none;
     padding: 10px;
     transition: 0.5s ease-in-out;
     width: 100%;
@@ -331,41 +331,43 @@ Surface Pro 3 Portrait
 */
 @media only screen and (min-width: 770px) and (max-width: 999px) {
 
-  .botones-menu ul li{
-    display: block;
-    margin: 2px;
-  
-  }
+
   
   .active{
     background: red;
   }
   
+
+  .botones-menu{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 2px;
+  }
   
  
   
   
-  .botones-menu ul li button{
+  .botones-menu button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
-    font-size: 12px;
-    border: 2px solid #000;
+    font-size: 14px;
+    border:none;
     padding: 10px;
     transition: 0.5s ease-in-out;
-    width: 100%;
     text-align: left;
     
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu  button:hover{
     background: #163039;
     color: #fff;
   }
   
   
   
-  .botones-menu ul li button:focus{
+  .botones-menu button:focus{
     background: #163039;
     color: #fff;
   }
@@ -380,7 +382,7 @@ Surface Pro 3 Portrait
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Anton', sans-serif;
       font-size: 120px;
       text-align: center;
       letter-spacing: 6px;
@@ -388,7 +390,7 @@ Surface Pro 3 Portrait
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
       font-size: 20px;
       text-align: center;
       letter-spacing: 0px;
@@ -493,41 +495,36 @@ Surface Pro 3 Portrait
 */
 @media only screen and (max-width: 768px) and (min-width: 641px){
 
-  .botones-menu ul li{
-    display: block;
-    margin: 2px;
+
   
+  
+  .botones-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   
-  .active{
-    background: red;
-  }
   
-  
-  
-  
-  
-  .botones-menu ul li button{
+  .botones-menu button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 14px;
-    border: 1px solid #000;
+    border: none;
     padding: 10px;
     transition: 0.5s ease-in-out;
-    width: 100%;
     text-align: left;
     
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu button:hover{
     background: #163039;
     color: #fff;
   }
   
   
   
-  .botones-menu ul li button:focus{
+  .botones-menu button:focus{
     background: #163039;
     color: #fff;
   }
@@ -541,16 +538,16 @@ Surface Pro 3 Portrait
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
-      font-size: 120px;
+      font-family: 'Anton', sans-serif;
+      font-size: 90px;
       text-align: center;
       letter-spacing: 6px;
   }
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
-      font-size: 20px;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 18px;
       text-align: center;
       letter-spacing: 0px;
   }
@@ -658,29 +655,30 @@ Media query usado
 @media screen and (max-width: 736px) and (min-width: 320px){}
 */
 @media screen and (max-width: 640px) and (min-width: 568px){
-  .botones-menu ul li{
-    display: block;
-    margin: 2px;
-  
+
+  .botones-menu{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
+
+
+
   
-  .active{
-    background: red;
-  }
-  
-  .botones-menu ul li button{
+  .botones-menu button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 1px solid #000;
-    padding: 10px;
+    border: none;
     transition: 0.5s ease-in-out;
-    width: 100%;
+    
     text-align: left; 
+    padding: 10px;
+    margin: 4px;
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu button:hover{
     background: #163039;
     color: #fff;
   }
@@ -700,7 +698,7 @@ Media query usado
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Anton', sans-serif;
       font-size: 90px;
       text-align: center;
       letter-spacing: 6px;
@@ -708,7 +706,7 @@ Media query usado
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
       font-size: 20px;
       text-align: center;
       letter-spacing: 0px;
@@ -813,25 +811,23 @@ Media query usado
     Iphone 7 plus portrait
 */
 @media only screen and (max-width: 567px) and (min-width: 392px){
-  .botones-menu ul li{
-    display: block;
-    margin: 2px;
+ 
   
+  .botones-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  
-  .active{
-    background: red;
-  }
-  
-  .botones-menu ul li button{
+
+
+  .botones-menu  button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 2px solid #000;
+    border: none;
     padding: 10px;
     transition: 0.5s ease-in-out;
-    width: 100%;
     text-align: left;
   }
   
@@ -839,21 +835,21 @@ Media query usado
   
   
   
-  .botones-menu ul li button{
+  .botones-menu button{
     background: #F8F8F8;
     color: #616161;
     
     
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu button:hover{
     background: #163039;
     color: #fff;
   }
   
   
   
-  .botones-menu ul li button:focus{
+  .botones-menu button:focus{
     background: #163039;
     color: #fff;
   }
@@ -868,7 +864,7 @@ Media query usado
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Anton', sans-serif;
       font-size: 70px;
       text-align: center;
       letter-spacing: 6px;
@@ -876,7 +872,7 @@ Media query usado
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
       font-size: 20px;
       text-align: center;
       letter-spacing: 0px;
@@ -1004,28 +1000,28 @@ Iphone 7 Portrait
   }
   
   
-  .botones-menu ul li button{
+  .botones-menu  button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 2px solid #000;
+    border: none;
     padding: 15px;
     transition: 0.5s ease-in-out;
-    width: 90%;
+    width: 100%;
     text-align: left;
     
     
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu  button:hover{
     background: #163039;
     color: #fff;
   }
   
   
   
-  .botones-menu ul li button:focus{
+  .botones-menu button:focus{
     background: #163039;
     color: #fff;
   }
@@ -1040,7 +1036,7 @@ Iphone 7 Portrait
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Anton', sans-serif;
       font-size: 60px;
       text-align: center;
       letter-spacing: 2px;
@@ -1048,7 +1044,7 @@ Iphone 7 Portrait
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
       font-size: 15px;
       text-align: center;
       letter-spacing: 0px;
@@ -1150,37 +1146,27 @@ Iphone 7 Portrait
 Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){  
-  .botones-menu ul li{
-    display: block;
-    margin: 2px;
-    padding-left: 0px;
-    margin-left: 0px;
-  
-  }
-  
-  .active{
-    background: red;
-  }
+ 
 
-  .botones-menu ul li button{
+  .botones-menu button{
     background: #F8F8F8;
     color: #616161;
     font-family: 'Meera Inima', sans-serif;
     font-size: 15px;
-    border: 2px solid #000;
+    border: none;
     padding: 10px;
     transition: 0.5s ease-in-out;
     width: 100%;
     text-align: left;
   }
   
-  .botones-menu ul li button:hover{
+  .botones-menu button:hover{
     background: #163039;
     color: #fff;
   }
   
 
-  .botones-menu ul li button:focus{
+  .botones-menu button:focus{
     background: #163039;
     color: #fff;
   }
@@ -1195,7 +1181,7 @@ Iphone 5 Portrait
   
   .letrasAndLogos h1{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Anton', sans-serif;
       font-size: 50px;
       text-align: center;
       letter-spacing: 2px;
@@ -1203,7 +1189,7 @@ Iphone 5 Portrait
   
   .letrasAndLogos p{
       color: #000;
-      font-family: 'Prometo-Medium';
+      font-family: 'Meera Inimai', sans-serif;
       font-size: 15px;
       text-align: center;
       letter-spacing: 0px;

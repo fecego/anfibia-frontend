@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UsuarioService {
 
   constructor(private http:HttpClient) { }
-
+  public api = "https://localhost:4000";
 
   getUsuario(){
     return [{
@@ -49,4 +49,10 @@ export class UsuarioService {
       ]
     }]
   }
+
+
+  postUSer(dato){
+    return this.http.post(`${this.api}/user/posteo`, {'clientId': 1, '_id': dato._id});
+  }
+
 }

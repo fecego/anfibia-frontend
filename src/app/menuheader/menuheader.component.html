@@ -1,800 +1,1036 @@
-<div class="container-fluid menuNav">
-        <nav>
-                <div class="hamburger">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                </div>
-                <div class="navbar primerPiso" >
-                      <ul class="rightUl">
-                        
-                          <li>
-                                <div class="logo-image">
-                                        <a href="" routerLink="/anfibia-i"><img src="assets/imagenes/logos/solo-triangulo.png" class="img-fluid responsive"></a>
-                                    </div>    
-                          </li>
-                        
-                      </ul>
-                      <ul class="centerUl">
-                        
-                        <li>
-                              <div class="texto-anfibia">
-                                   <h1>ANFIBIA</h1>
-                              </div>    
-                        </li>
-                      
-                    </ul>
-                      <ul class="justify-content-end span leftUl">      
-                        <div class="letrasLeft">
-                                <li>
-                                    <button id="busquedaButton" type="button" (click) = "openSearchBar()" ><i class="fa fa-search icon-header" id="boton-busqueda" aria-hidden="true" title="Busqueda"></i></button>       
-                                </li>
-                                <li>
-                                  <button type="button" routerLink="/lista-deseos"><i class="fa fa-heart-o icon-header" id="boton-deseos" aria-hidden="true" title="Lista de deseos"></i></button>
-                                       
-                                </li>
-                                <li>
-                                  <button type="button" routerLink="/ubicaciones"><i class="fa fa-map-marker icon-header" id="boton-ubicaciones" aria-hidden="true" title="Ubicaciones"></i> </button>     
-                                </li>
-                                <li>
-                                  <button type="button" (click)="openModal()"><i class="fa fa-user-o icon-header" id="boton-perfil"></i></button>      
-                                </li>
-                                <li>
-                                  <button type="link" routerLink="/carrito"><i class="fa fa-cart-plus icon-header" id="boton-carrito" aria-hidden="true" title="Carrito de compras"></i></button>      
-                                </li>
-                        </div>
-                      </ul>
-                      
+<nav>
+	<div class="flex-c">
+		<div class="itemC">
+			<!--<p> <i class="fa fa-mobile" aria-hidden="true"></i> 2299132260</p>-->
+			<a routerLink = "/anfibia-i"><img src="assets/imagenes/Logo/LogoCopia.png"></a>
+		</div>
+		<div class="itemC2">
+			<p><i class="fa fa-envelope-o" aria-hidden="true"></i> contacto@anfibia.mx</p>
+		</div>	
+		<div class="itemC3">
+			<a href=""><i class="fa fa-facebook"></i></a><a href=""><i class="fa fa-instagram"></i></a>
+			
+		</div>	
+	</div>
+	<div class="flex-container">
+		<div class="flex-itemLogo">
+			<!--<img src="solo-triangulo.png">-->
+			<h1>ANFIBIA</h1>
+		</div>
+		<div class="flex-itemUl">
+		   <ul class="nav-links">
+			
+			<li><button id="menu-pesca">Pesca</button></li>
+			<li><button id="menu-caceria">Cacería</button></li>
+			<li><button id="menu-secciones">Más secciones </button></li>
+		  </ul>
+			
+		</div>
+		<div class="flex-itemUl">
+			<ul class="nav-links">
+				<li><button id="menu-search"><i class="fa fa-search" aria-hidden="true"></i></button></li>
+				<li><button id="menu-wish" (click) = "deseosRouting()"><i class="fa fa-heart-o" aria-hidden="true"></i></button></li>
+				<li>
+					<button id="menu-cart" (click) = "carritoRouting()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+					<div class="closeDivMenuR" *ngIf="isAutheticated == true && productosCarritoView && productosCarritoView?.length > 0">
+						{{productosCarritoView.length}}
+					</div>
+				</li>
+				<!--<li *ngIf="isAutheticated == true && productosCarritoView && productosCarritoView?.length > 0"><p>({{productosCarritoView.length}})</p></li>-->
+				<li><button id="menu-located" (click) = "ubicacionRouting()"><i class="fa fa-map-marker" aria-hidden="true"></i></button></li>
+				<li><button id="menu-profile" (click) = "perfilRouting()"><i class="fa fa-user-o" aria-hidden="true"></i></button></li>
+				
+			</ul>
+			<div class="responsiveMenu">
+				<button id="menu-searchRes"><i class="fa fa-search" aria-hidden="true"></i></button>
+				<button id="menuR-bars"><i class="fa fa-bars" aria-hidden="true"></i></button>
+			</div>
+			
+		</div>
+		
+			
+			
+	
+	
+		
+	</div>
 
-                </div>
-                <div class="navbar segundoPiso" >
-                        <ul class="izquierda">
-                                <div class="clasificaciones" >
-                                <li style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%;" [ngClass] ="{'clasificacionesSeleccionado': pescaValor === true}">
-                                                <button   type="button" id="pescaClasificacion" (click)="showMenuRojo()">PESCA</button>        
-                                        </div>
-                                </li>
-                                <li style="width: 100%; height: 100%;">    
-                                        <div style="width: 100%; height: 100%;" [ngClass] ="{'clasificacionesSeleccionado': caceriaValor === true}">
-                                                <button  type="button" id="caceriaClasificacion" (click) = "showMenuAzul()">CACERÍA</button>
-                                        </div>
-                                        
-                                </li>
-                                </div>
-                        </ul>
-                        <ul class="derecha">
-                                <div class="otras-secciones" [ngClass] ="{'otherSectionSelected': otherSections === true}">
-                                        <li style="width: 100%; height: 100%;">
-                                                <button  type="button" id="caceriaClasificacion" (click) = "showMenuOtrasSecciones()">Más secciones</button>
-                                        </li>
-                                </div>
-                        </ul>
-                </div>
-                
-        </nav>
 
-        <div id="divRojo" class="divRojo row">
-            <div class="col-sm-12" *ngIf="pescaBandra == true;"> 
-                <div class="row" style="padding: 20px;"  >
-                        <div class="col-sm-6" id="pruebaColor">
-                              <div class="prueba" >
-                                <a type="button" (click)="goPesca()">PESCA</a>
-                                <h1>Categorías de Pesca</h1>
-                              </div>
-                             <ul id="categoriasPesca">
-                                     <li id="delay1">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#aguaDulce" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Agua Dulce</span></a>
-                                        
-                                        <div class="collapse multi-collapse" id="aguaDulce">
-                                                <div class="pruebaLinksRapidos">
-                                                      <ul>
-                                                        <li><a type="button" data-toggle="collapse" data-target="#aguaDulceCañas" aria-expanded="false" aria-controls="multiCollapseExample2">Cañas</a></li>
-                                                        <div class="collapse multi-collapse" id="aguaDulceCañas">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                       
-                                                                      <ul>
-                                                                       
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Spinning</a></li>
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Casting</a></li>
-                                                                        
-                                                                      </ul>
-                                                                </div>
-                                                              </div>  
-                                                        <li><a type="button" data-toggle="collapse" data-target="#aguaDulceCarretes" aria-expanded="false" aria-controls="multiCollapseExample2">Carretes</a></li>
-                                                        <div class="collapse multi-collapse" id="aguaDulceCarretes">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                       
-                                                                      <ul>
-                                                                       
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Spinning</a></li>
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Casting</a></li>
-                                                                        
-                                                                      </ul>
-                                                                </div>
-                                                              </div>  
-                                                        <li><a type="button" data-toggle="collapse" data-target="#aguaDulceCombos" aria-expanded="false" aria-controls="multiCollapseExample2">Combos</a></li>
-                                                        <div class="collapse multi-collapse" id="aguaDulceCombos">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                       
-                                                                      <ul>
-                                                                       
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Spinning</a></li>
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Casting</a></li>
-                                                                        
-                                                                      </ul>
-                                                                </div>
-                                                              </div> 
-                                                        <li><a type="button" data-toggle="collapse" data-target="#aguaDulceSeñuelos" aria-expanded="false" aria-controls="multiCollapseExample2">Señuelos</a></li>
-                                                        <div class="collapse multi-collapse" id="aguaDulceSeñuelos">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                      <ul>
-                                                                       
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Blandos</a></li>
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Duros</a></li>
-                                                                        
-                                                                      </ul>
-                                                                </div>
-                                                              </div>
-                                                      </ul>
-                                                </div>
-                                              </div>     
-                                        
-                                       
-                                     
-                                     </li>
-                                     <li id="delay2">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#aguaSalada" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Agua Salada</span></a>
-                                        <div class="collapse multi-collapse" id="aguaSalada">
-                                                <div class="pruebaLinksRapidos" >
-                                                        <ul>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#aguaSaladaCañas" aria-expanded="false" aria-controls="multiCollapseExample2">Cañas</a></li>
-                                                                <div class="collapse multi-collapse" id="aguaSaladaCañas">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Surft</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Trolling</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Jigging</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Popping</a></li>
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#aguaSaladaCarretes" aria-expanded="false" aria-controls="multiCollapseExample2">Carretes</a></li>
-                                                                <div class="collapse multi-collapse" id="aguaSaladaCarretes">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Convencionales</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Spinning</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Jigging</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Trolling</a></li>
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#aguaSaladaCombos" aria-expanded="false" aria-controls="multiCollapseExample2">Combos</a></li>
-                                                                <div class="collapse multi-collapse" id="aguaSaladaCombos">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Surft</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Trolling</a></li>
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#aguaSaladaSeñuelos" aria-expanded="false" aria-controls="multiCollapseExample2">Señuelos</a></li>
-                                                                <div class="collapse multi-collapse" id="aguaSaladaSeñuelos">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Blandos</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'señuelos'}">Duros</a></li>
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'offshore'}">OffShore</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'jigs'}">Jigs</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguasalada', subcategoriaAguasalada: 'cucharas'}">Cucharas     </a></li>
-                                                        </ul>
-                                                      
-        
-                               
-                                                </div>
-                                        </div>
-                                         
-                                         
-                                        </li>
-                                     <li id="delay3">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#lineas" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Líneas</span></a>
-                                        <div class="collapse multi-collapse" id="lineas">
-                                                <div class="pruebaLinksRapidos" >
-                                                        <ul> 
-                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'monofilamento'}">Monofilamento</a></li>
-                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'trenzadas'}">Trenzadas</a></li>
-                                                            <li><a type="button" data-toggle="collapse" data-target="#lineasLeaders" aria-expanded="false" aria-controls="multiCollapseExample2">Leaders</a></li>
-                                                            <div class="collapse multi-collapse" id="lineasLeaders">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                      <ul>
-                                                                       
-                                                                        <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Mono</a></li>
-                                                                       
-                                             
-                                                                      </ul>
-                                                                </div>
-                                                              </div>
-                                                            
-                                                            
-                                                            <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'lineas', tipoLineas: 'Flourocarbono'}">Flourocarbono</a></li>
-                                                            
-            
-                                                        </ul>    
-                                                    </div>
-                                        </div>
-                                      
-                                     
-                                     </li>
-                                    <li id="delay4">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#navegacion" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Embarcaciones</span></a>
-                                        <div class="collapse multi-collapse" id="navegacion">
-                                                <div class="pruebaLinksRapidos">
-                                                        <ul> 
-                                                                <li><a type="button" data-toggle="collapse" data-target="#motores" aria-expanded="false" aria-controls="multiCollapseExample2">Motores</a></li>
-                                                                <div class="collapse multi-collapse" id="motores">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">2 Tiempos</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">4 Tiempos</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Accesorios</a></li>
-                                                                               
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                
-                                                                <li><a type="button" data-toggle="collapse" data-target="#navegacionSub" aria-expanded="false" aria-controls="multiCollapseExample2">Navegación</a></li>
-                                                                <div class="collapse multi-collapse" id="navegacionSub">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Brujulas</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">GPS</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Eco sondas</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Plotters</a></li>
-                                                                               
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#accesoriosSubPesca" aria-expanded="false" aria-controls="multiCollapseExample2">Accesorios</a></li>
-                                                                <div class="collapse multi-collapse" id="accesoriosSubPesca">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Electrónicos</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Lanchas</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Remolques</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Hieleras</a></li>
-                                                                               
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                        </ul>     
-                                                 </div>  
+	<!--====================================Menu responsivo=========================================-->
+	<div class="flex-containerResponsive" id="containerResponsiveMenu">
+		<div class="item-containerResponsive">
+			<button class="closeMenu" id="closeMenu"><i class="fa fa-times" aria-hidden="true"></i></button>
+			
+			<!--<button class="pruebaCircule">AAM</button>-->
+			<div *ngIf="isAutheticated && usuarioPruebaR else templateNotLogged">
+				<a>{{usuarioPruebaR.name}} {{usuarioPruebaR.lastName}}</a>
+				<a>{{usuarioPruebaR.email}}</a>
+			</div>
+			<ng-template #templateNotLogged>
+				<a routerLink = "/login">Ir al login</a>
+			</ng-template>
 
-                                        </div>
-                                      
-                                        </li>
-                                     <!--<li id="delay5">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#snorkel" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Snorkel</span></a>
-                                        <div class="collapse multi-collapse" id="snorkel">
-                                                <div class="pruebaLinksRapidos" >
-                                                        <ul>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'aletas'}">Aletas</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'tubosnorkel'}">Tubo Snorkel</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'visores'}">Visores</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'gogles'}">Goggles</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'chalecos'}">Chalecos</a></li>
-                                                        </ul>
-                                                     </div>
+		</div>
+	
+		<div class="item-ContainerMisOpciones" *ngIf="isAutheticated == true">
+			<a routerLink = "/lista-deseos"><i class="fa fa-heart-o" aria-hidden="true"></i> Mi lista de deseos</a>
+			<a routerLink = "/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi carrito de compras</a>
+			<a routerLink = "/pedidos">Mis pedidos</a>
+			<a routerLink = "/perfil"><i class="fa fa-user-o" aria-hidden="true"></i> Mi perfil</a>
+			<hr>
+			<!--<ul>
+				<li><p>Mi lista de deseos</p></li>
+				<li><p>Mi carrito de compras</p></li>
+				<li><p>Mis pedidos</p></li>
+				<li><p>Mi perfi</p></li>
+			</ul>-->
+			
+		</div>
+		
+		<div class="item-containerResponsive2">
+			<button id="expandSeccionPesca">Pesca <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+			<button id="expandSeccionCaceria">Cacería <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+			<hr>
+		</div>
+		
+		<hr>
+		<div class="item-ContainerSecciones">
+				<a routerLink = "/tienda">Tienda</a>
+				<a routerLink = "/sobre-nosotros">Sobre nosotros</a>
+				<a routerLink = "contactanos"><i class="fa fa-envelope-o" aria-hidden="true"></i>  Conctanos</a>
+				<a routerLink = "/ubicaciones"><i class="fa fa-map-marker" aria-hidden="true"></i>  Ubicaciones</a>
+				<a routerLink = "/preguntas-frecuentes"><i class="fa fa-question" aria-hidden="true"></i>  Preguntas frecuentes</a>
+				<a routerLink = "/blog">Blog</a>
+				<a routerLink = "/torneos"><i class="fa fa-trophy" aria-hidden="true"></i>  Torneos</a>
+				<a routerLink = "proveedores">Proveedores</a>
+				<a routerLink = "/mapa-sitio"><i class="fa fa-sitemap" aria-hidden="true"></i>  Mapa del sitio</a>
+				<a routerLink = "asuntos-legales"><i class="fa fa-gavel" aria-hidden="true"></i>  Asuntos legales</a>
+				<hr>
+				<!--checar si -->
+				<a *ngIf="isAutheticated" type="button" (click) = "logOut()">Cerrar sesión</a>
+		</div>
+		
+			<!--Inicia el menú de Pesca-->
+			<!--<div class="item-containerResponsivePesca">
+			<div>
+					<h3><a href="">Agua dulce</a></h3>
+					<ul>
+						<li><a href="">Cañas</a></li>
+						<li><a href="">Carretes</a></li>
+						<li><a href="">Combos</a></li>
+						<li><a href="">Señuelos</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Agua salada</a></h3>
+					<ul>
+						<li><a href="">Cañas</a></li>
+						<li><a href="">Carretes</a></li>
+						<li><a href="">Combos</a></li>
+						<li><a href="">Señuelos</a></li>
+						<li><a href="">Offshore</a></li>
+						<li><a href="">Jigs</a></li>
+						<li><a href="">Cucharas</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Lineas</a></h3>
+					<ul>
+						<li><a href="">Monifilamento</a></li>
+						<li><a href="">Trenzados</a></li>
+						<li><a href="">Leaders</a></li>
+						<li><a href="">Flourocarbono</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Embarcaciones</a></h3>
+					<ul>
+						<li><a href="">Motores</a></li>
+						<li><a href="">Navegación</a></li>
+						<li><a href="">Accesorios</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Buceo y recreación</a></h3>
+					<ul>
+						<li><a href="">Aletas</a></li>
+						<li><a href="">Visores</a></li>
+						<li><a href="">Gogles</a></li>
+						<li><a href="">Snorkles</a></li>
+						<li><a href="">Pesca submarina</a></li>
+						<li><a href="">Chaleco</a></li>
+						<li><a href="">Kayaks</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					<ul>
+						<li><a href="">Camisas/jerseys</a></li>
+						<li><a href="">Pantalon/shorts</a></li>
+						<li><a href="">Gorras y Buffs</a></li>
+						<li><a href="">Lentes</a></li>
+						<li><a href="">Guantes</a></li>
+						<li><a href="">Accesorios</a></li>
+						<li><a href="">Sandalias/zapatos</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Accesorios</a></h3>
+					<ul>
+						<li><a href="">Almacen</a></li>
+						<li><a href="">Fundas para carretes</a></li>
+						<li><a href="">Pelea y manejo</a></li>
+						<li><a href="">Portacañas</a></li>
+						<li><a href="">Calcomanias</a></li>
+						<li><a href="">Varios</a></li>
+						<li><a href="">Anzuelos</a></li>
+						<li><a href="">Terminal Tackle</a></li>
+						<li><a href="">Herramientas</a></li>
+						<li><a href="">Mantenimiento</a></li>
+						<li><a href="">Vasos y termos</a></li>
+					</ul>
+				</div>
+			</div>-->
 
-                                        </div>
-                                            
-                                        </li>-->
-                                     <li id="delay6">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#buceo" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Buceo y Recreación</span></a>
-                                                <div class="collapse multi-collapse" id="buceo">
-                                                        <div class="pruebaLinksRapidos">
-                                                                <ul>
-                                                                 <li><a type="button" data-toggle="collapse" data-target="#buceoAletas" aria-expanded="false" aria-controls="multiCollapseExample2">Aletas</a></li>
-                                                                 <div class="collapse multi-collapse" id="buceoAletas">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Buceo</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Snorkel</a></li>
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'visores'}">Visores</a></li>
-                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'goggles'}">Goggles</a></li>
-                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'snorkel'}">Snorkels</a></li>
-                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'pesca-submarina'}">Pesca submarina</a></li>
-                                                                 <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'snorkel', tiposSnorkel: 'chalecos'}">Chalecos</a></li>
-                                                                 <li><a type="button" data-toggle="collapse" data-target="#kayaksPesca" aria-expanded="false" aria-controls="multiCollapseExample2">Kayaks</a></li>
-                                                                 <div class="collapse multi-collapse" id="kayaksPesca">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Recreacional</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Pesca</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Accesorios</a></li>
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                </ul>
-                                                                      
-                                                              </div>
-                                                </div>
-                                             
-                                        </li>
-                                     <li id="delay7">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#ropa" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Ropa</span></a>
-                                        <div class="collapse multi-collapse" id="ropa">
-                                                <div class="pruebaLinksRapidos">
-                                                        <ul>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Camisas/Jerseys</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Pantalon/Shorts</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'trajedebaño'}">Gorras y Buffs</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'toallas'}">Lentes</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'gorras'}">Guante</a></li>
-                                                                <li><a type="button" data-toggle="collapse" data-target="#accesoriosRopaPesca" aria-expanded="false" aria-controls="multiCollapseExample2">Accesorios</a></li>
-                                                                <div class="collapse multi-collapse" id="accesoriosRopaPesca">
-                                                                        <div class="pruebaLinksRapidosSub2">
-                                                                              <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Almohadas</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Llaveros</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Cordones</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Funda p/lentes</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Chums</a></li>
-                                                                                <li><a routerLink = "/tienda" type="button" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'aguadulce', subcategoriaAguadulce: 'combos'}">Cinturones</a></li>
-                                                                               
-                                                     
-                                                                              </ul>
-                                                                        </div>
-                                                                      </div>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'lentes'}">Sandalias/Zapatos</a></li>
-                                                         
-                                                        </ul>
-                                                     </div>
+			<!--Termina el menú de Pesca-->
+			
 
-                                        </div>     
-                                      
-                                        </li>
-                                     <!--<li id="delay8">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#kayaks" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Kayaks</span></a>
-                                        <div class="collapse multi-collapse" id="kayaks">
-                                                <div class="pruebaLinksRapidos">
-                                                        <ul>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'remos'}">Remos</a></li>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'asiento'}">Asiento</a></li>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kataks', tipoKayaks: 'kayak'}">Kayak</a></li>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'portacañas'}">Porta cañas</a></li>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'kayaks', tipoKayaks: 'accesorios'}">Accesorios</a></li>
-                                                        </ul>
-         
-                                                      </div>
-                                        </div>
-                                            
-                                        </li>-->
-                                     <li id="delay9">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#accesorios" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Accesorios</span></a>
-                                        <div class="collapse multi-collapse" id="accesorios">
-                                                <div class="pruebaLinksRapidos" >
-                                                        <ul>
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosAlmacenaje" aria-expanded="false" aria-controls="multiCollapseExample2">Almacenaje</a></li>
-                                                         <div class="collapse multi-collapse" id="accesoriosAlmacenaje">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Cajas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Maletas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'trajedebaño'}">Estuches</a></li>
-                                                                
-                                                                         
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div> 
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'fundas-carretes'}">Fundas p/carretes</a></li>
-                                                         
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosPeleyManejo" aria-expanded="false" aria-controls="multiCollapseExample2">Pelea y Manejo</a></li>
-                                                         <div class="collapse multi-collapse" id="accesoriosPeleyManejo">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Arnes</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Ganchos</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Redes recolectoras</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Guantes para pelear</a></li>
-                                       
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div>
-                                                       
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'portacañas'}">Porta cañas</a></li>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'calcomanias'}">Calcomanías</a></li>      
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosVarios" aria-expanded="false" aria-controls="multiCollapseExample2">Varios</a></li>
-                                                         <div class="collapse multi-collapse" id="accesoriosVarios">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Descamador</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Aireador</a></li>
-                                       
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'anzuelos'}">Anzuelos</a></li>
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosTerminalTackle" aria-expanded="false" aria-controls="multiCollapseExample2">Terminal Tackle</a></li>
-                                                         <div class="collapse multi-collapse" id="accesoriosTerminalTackle">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Argollas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Grapas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Destorcedor</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Reynales</a></li>
-                                       
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div>
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosHerramientas" aria-expanded="false" aria-controls="multiCollapseExample2">Herramientas</a></li>  
-                                                         <div class="collapse multi-collapse" id="accesoriosHerramientas">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Cuchillería</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Pinzas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Basculas</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Sujetadores</a></li>
-                                       
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div>
-                                                         <li><a type="button" data-toggle="collapse" data-target="#accesoriosMantenimiento" aria-expanded="false" aria-controls="multiCollapseExample2">Mantenimiento</a></li>
-                                                         <div class="collapse multi-collapse" id="accesoriosMantenimiento">
-                                                                <div class="pruebaLinksRapidosSub2">
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Grasa</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Aceites</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'jersey'}">Guías</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'ropa', tipoRopaPesca: 'short'}">Puntas</a></li>
-                                       
-                                                                        </ul>
-                                                                     </div>
-                
-                                                        </div>
-                                                         <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'pesca', categoria: 'accesorios', tipodeAccesorios: 'vasos-termos'}">Vasos y termos</a></li>
-                                                        
-                                                        </ul>
-                                                              
-                                                      </div>
-                                        </div>
-                                          
-                                            
-                                        </li>
-                                   
-                                           
-                             </ul>   
-                        </div>
-                        <div class="col-sm-6 menu-Imagen2">
-                                
-                        </div>
-                        
-                      
+		<!--<div class="item-containerResponsiveCaceria">
+				<div>
+					<h3><a href="">Rifles</a></h3>
+					<ul>
+						<li><a href="">Salva</a></li>
+						<li><a href="">CO2</a></li>
+						<li><a href="">Resortes</a></li>
+						<li><a href="">Nitropiston</a></li>
+						<li><a href="">PCP</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Mantenimiento</a></h3>
+					<ul>
+						<li><a href="">Aceite</a></li>
+						<li><a href="">Grasa</a></li>
+						<li><a href="">Limpieza</a></li>
+						<li><a href="">Pavones</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3>Accesorios</h3>
+					<ul>
+						<li><a href="">Almacenaje</a></li>
+						<li><a href="">Municiones</a></li>
+						<li><a href="">Tanques</a></li>
+						<li><a href="">Señuelos</a></li>
+						<li><a href="">Refacciones</a></li>
+						<li><a href="">Llamadores</a></li>
+						<li><a href="">Espiaderos</a></li>
+						<li><a href="">Cuerda</a></li>
+						<li><a href="">Mallas</a></li>
+						<li><a href="">Bancos/silla</a></li>
+						<li><a href="">Opticos</a></li>
+						<li><a href="">Maletas/Mochilas</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Pistolas</a></h3>
+					<ul>
+						<li><a href="">Salva</a></li>
+						<li><a href="">CO2</a></li>
+						<li><a href="">PCP</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Arquería</a></h3>
+					<ul>
+						<li><a href="">Arcos</a></li>
+						<li><a href="">Bayestas</a></li>
+						<li><a href="">Flechas</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Cuchillería</a></h3>
+					<ul>
+						<li><a href="">Cuchillo</a></li>
+						<li><a href="">Navaja</a></li>
+						<li><a href="">Hachas</a></li>
+						<li><a href="">Machetes</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					<ul>
+						<li><a href="">Playeras</a></li>
+						<li><a href="">Pantalones</a></li>
+						<li><a href="">Chamarras</a></li>
+						<li><a href="">Chalecos</a></li>
+						<li><a href="">Gorras</a></li>
+						<li><a href="">Lentes</a></li>
+						<li><a href="">Buff/Mascara</a></li>
+						<li><a href="">Guantes</a></li>
+						<li>
+							<p><a href="">Accesorios</a></p>
+							<ul>
+								<li><a href="">Cordones</a></li>
+								<li><a href="">Fundas p/lentes</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			
+			
+		</div>-->
+		
+		<div class="flex-containerResponsivePesca" id="containerPescaSecciones">
+			<div class="pruebaPadding">
+				<div>
+					<button id="backArrow"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>
+					<h3><a href="">Agua dulce</a></h3>
+					
+						<a href="">Cañas</a>
+						<a href="">Carretes</a>
+						<a href="">Combos</a>
+						<a href="">Señuelos</a>
+				</div>
+				<div>
+					<h3><a href="">Agua salada</a></h3>
+					<a href="">Cañas</a>
+					<a href="">Carretes</a>
+					<a href="">Combos</a>
+					<a href="">Señuelos</a>
+					<a href="">Offshore</a>
+					<a href="">Jigs</a>
+					<a href="">Cucharas</a>
+				</div>
+				<div>
+					<h3><a href="">Lineas</a></h3>
+					
+						<a href="">Monifilamento</a>
+						<a href="">Trenzados</a>
+						<a href="">Leaders</a>
+						<a href="">Flourocarbono</a>
+				
+				</div>
+				<div>
+					<h3><a href="">Embarcaciones</a></h3>
+					
+						<a href="">Motores</a>
+						<a href="">Navegación</a>
+						<a href="">Accesorios</a>
+			
+				</div>
+				<div>
+					<h3><a href="">Buceo y recreación</a></h3>
+					
+						<a href="">Aletas</a>
+						<a href="">Visores</a>
+						<a href="">Gogles</a>
+						<a href="">Snorkles</a>
+						<a href="">Pesca submarina</a>
+						<a href="">Chaleco</a>
+						<a href="">Kayaks</a>
+					
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					
+						<a href="">Camisas/jerseys</a>
+						<a href="">Pantalon/shorts</a>
+						<a href="">Gorras y Buffs</a>
+						<a href="">Lentes</a>
+						<a href="">Guantes</a>
+						<a href="">Accesorios</a>
+						<a href="">Sandalias/zapatos</a>
+					
+				</div>
+				<div>
+					<h3><a href="">Accesorios</a></h3>
+						<a href="">Almacen</a>
+						<a href="">Fundas para carretes</a>
+						<a href="">Pelea y manejo</a>
+						<a href="">Portacañas</a>
+						<a href="">Calcomanias</a>
+						<a href="">Varios</a>
+						<a href="">Anzuelos</a>
+						<a href="">Terminal Tackle</a>
+						<a href="">Herramientas</a>
+						<a href="">Mantenimiento</a>
+						<a href="">Vasos y termos</a>
+				</div>
+			</div>	
+			
+		</div>
+		<div class="flex-containerResponsiveCaceria" id="containerCaceriaSecciones">
+			<div class="pruebaPadding">
+				<div>
+					<button id="backArrowCaceria"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>	
+					<h3><a href="">Rifles</a></h3>
+					
+						<a href="">Salva</a>
+						<a href="">CO2</a>
+						<a href="">Resortes</a>
+						<a href="">Nitropiston</a>
+						<a href="">PCP</a>
+				</div>
+				<div>
+					<h3><a href="">Mantenimiento</a></h3>
+					
+						<a href="">Aceite</a>
+						<a href="">Grasa</a>
+						<a href="">Limpieza</a>
+						<a href="">Pavones</a>
+				</div>
+				<div>
+					<h3><a href="">Accesorios</a></h3>
+						<a href="">Almacenaje</a>
+						<a href="">Municiones</a>
+						<a href="">Tanques</a>
+						<a href="">Señuelos</a>
+						<a href="">Refacciones</a>
+						<a href="">Llamadores</a>
+						<a href="">Espiaderos</a>
+						<a href="">Cuerda</a>
+						<a href="">Mallas</a>
+						<a href="">Bancos/silla</a>
+						<a href="">Opticos</a>
+						<a href="">Maletas/Mochilas</a>
+				</div>
+				<div>
+					<h3><a href="">Pistolas</a></h3>
+						<a href="">Salva</a>
+						<a href="">CO2</a>
+						<a href="">PCP</a>
+				</div>
+				<div>
+					<h3><a href="">Arquería</a></h3>
+						<a href="">Arcos</a>
+						<a href="">Bayestas</a>
+						<a href="">Flechas</a>
+				</div>
+				<div>
+					<h3><a href="">Cuchillería</a></h3>
+					
+						<a href="">Cuchillo</a>
+						<a href="">Navaja</a>
+						<a href="">Hachas</a>
+						<a href="">Machetes</a>
+					
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					
+						<a href="">Playeras</a>
+						<a href="">Pantalones</a>
+						<a href="">Chamarras</a>
+						<a href="">Chalecos</a>
+						<a href="">Gorras</a>
+						<a href="">Lentes</a>
+						<a href="">Buff/Mascara</a>
+						<a href="">Guantes</a>	
+						<div>
+							<a href="">Accesorios</a>
+							<ul style="list-style: none;">
+								<li><a href="">Cordones</a></li>
+								<li><a href="">Fundas p/lentes</a></li>
+							</ul>
+						</div>				
+				</div>
+			</div>
+		</div>
 
-                </div> 
-            </div>
-          
-           
-        </div>
 
-        <div id="divAzul" class="divAzul row" >
-           <div class="col-sm-12" *ngIf="caceriaBandera == true;">
-                <div class="row" style="padding: 10px;">
-                    
-                        <div class="col-sm-6 menu-ImagenCaceria" style="height: 500px;">
-                                
-                        </div>
-                        <div class="col-sm-6"  >
-                                <div class="prueba" >
-                                   <a type="button" (click)="goCaceria()">Cacería</a>
-                                   <h1>Categorías de Cacería</h1>
-                                </div>
-                             <ul>
-                                <li id="delay1">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#rifles" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Rifles</span></a>
-                                        
-                                        <div class="collapse multi-collapse" id="rifles">
-                                                <div class="pruebaLinksRapidos">
-                                                      <ul>
-                                                       
-                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'salva'}">Salva</a></li>
-                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'co2'}">CO2</a></li>
-                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'resorte'}">Resorte</a></li>
-                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'nitropiston'}">Nitropiston</a></li>
-                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'rifles', subRifles: 'pcp'}">PCP</a></li>
-                                                  
-                                                      </ul>
-                                                </div>
-                                              </div>     
-                                        
-                                       
-                                     
-                                     </li>
-                                     <li id="delay2">
-                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#pistolas" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Pistolas</span></a>
-                                        <div class="collapse multi-collapse" id="pistolas">
-                                                <div class="pruebaLinksRapidos" >
-                                                        <ul>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'diabolos'}">Salva</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'co2'}">CO2</a></li>
-                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'pistolas', subPistolas: 'accesorios'}">PCP</a></li>
-                                                        </ul>
-                                                      
-        
-                               
-                                                </div>
-                                        </div>
-                                         
-                                         
-                                        </li>
-                                        <li id="delay3">
-                                                <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#arqueria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Arquería</span></a>
-                                                <div class="collapse multi-collapse" id="arqueria">
-                                                        <div class="pruebaLinksRapidos" >
-                                                                <ul>
-                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'arcos'}">Arcos</a></li>
-                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'bayestas'}">Bayestas</a></li>
-                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'flechas'}">Flechas</a></li>
-                                                                     
-                                                                </ul>
-                                                              
-                
-                                       
-                                                        </div>
-                                                </div>
-                                                 
-                                                 
-                                                </li>
+		
+	</div>
 
-                                                <li id="delay20">
-                                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#mantenimientoCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Mantenimiento</span></a>
-                                                        <div class="collapse multi-collapse" id="mantenimientoCaceria">
-                                                                <div class="pruebaLinksRapidos" >
-                                                                        <ul>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'arcos'}">Aceite</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'bayestas'}">Grasa</a></li>
-                                                                                <li><a type="button" data-toggle="collapse" data-target="#limpieza" aria-expanded="false" aria-controls="multiCollapseExample2">Limpieza</a></li>
-                                                                                <div class="collapse multi-collapse" id="limpieza">
-                                                                                        <div class="pruebaLinksRapidosSub2" >
-                                                                                                <ul>
-                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'arcos'}">Paños</a></li>
-                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'bayestas'}">Toallas</a></li>
-                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'flechas'}">Escobillones</a></li>
-                                                                                                     
-                                                                                                </ul>
-                                                                                              
-                                                
-                                                                       
-                                                                                        </div>
-                                                                                </div>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'arqueria', subArqueria: 'flechas'}">Pavones</a></li>
-                                                                             
-                                                                        </ul>
-                                                                      
-                        
-                                               
-                                                                </div>
-                                                        </div>
-                                                         
-                                                         
-                                                        </li>
+	<div class="responsiveSearch" id="responsiveSearch">
+			<div class="responsiveItem1">
+				<div>
+					<label>¿Que producto estas buscando?</label>
+					<input type="text" name="" #buscadorProductosResponsive><i class="fa fa-search" aria-hidden="true"></i>
+				</div>
+			</div>
+			<div class="responsiveItem2">
+				<div class="resConvence">
+					<div class="wishDivResponsive" *ngFor="let product of allProducts | slice: 0:12">
+						<div *ngIf="!product.mensajeError else respuestaNegativa">
+							<div class="imageProductVQBusquedaResponsive">
+								<!--<img src="052823.png">-->
+							</div>
+							<div class="textInsideR">
+								<h3>{{product.precio | currency}}</h3>
+								<a routerLink = "/tienda/{{product.id}}/{{product.nombre}}"><span>{{product.nombre | oracionMayusculas}}</span></a>
+							</div>
+						</div>
+						<ng-template #respuestaNegativa >
+							<div class="mensajeError">
+								<h1>No se encontraron resultados de tu busqueda, te sugerimos realizar una nueva busqueda en base al nombre, sku, o modelo del producto.</h1>
+							</div>
+							
+						</ng-template>
+					</div>	
+				</div>
+				
 
-                                                <li id="delay4">
-                                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#ropaCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Ropa</span></a>
-                                                        <div class="collapse multi-collapse" id="ropaCaceria">
-                                                                <div class="pruebaLinksRapidos" >
-                                                                        <ul>
-                                                                               
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'playeras'}">Playeras </a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'pantalones'}">Pantalones</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'chamarras'}">Chamarras</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'chalecos'}">Chalecos</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'gorras'}">Gorras</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'lentes'}">Lentes</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'buff'}">Buff/Mascaras</a></li>
-                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'guantes'}">Guantes</a></li>
-                                                                                <li><a type="button" data-toggle="collapse" data-target="#accesoriosCaceria" aria-expanded="false" aria-controls="multiCollapseExample2">Accesorios</a></li>
-                                                                                <div class="collapse multi-collapse" id="accesoriosCaceria">
-                                                                                        <div class="pruebaLinksRapidosSub2" >
-                                                                                                <ul>
-                                                                                                       
-                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'playeras'}">Cordones </a></li>
-                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'ropa', subRopaCaceria: 'pantalones'}">Fundas p/lentes</a></li>
-                                                                            
-                                                                                                </ul>
-                                                                                              
-                                                
-                                                                       
-                                                                                        </div>
-                                                                                </div>
-                                                                        
-                                                                        </ul>
-                                                                      
-                        
-                                               
-                                                                </div>
-                                                        </div>
-                                                         
-                                                         
-                                                        </li>
-                                                        <li id="delay5">
-                                                                <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#cuchilleriaCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Cuchillería</span></a>
-                                                                <div class="collapse multi-collapse" id="cuchilleriaCaceria">
-                                                                        <div class="pruebaLinksRapidos" >
-                                                                                <ul>
-                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'cuchillos'}">Cuchillos</a></li>
-                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'navajas'}">Navajas </a></li>
-                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'hachas'}">Hachas</a></li>
-                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'machetes'}">Machetes</a></li>
-                                                                                  
-                                                                                     
-                                                                                </ul>
-                                                                              
-                                
-                                                       
-                                                                        </div>
-                                                                </div>
-                                                                 
-                                                                 
-                                                                </li>
-                                                                <li id="delay5">
-                                                                        <a class="pruebaCategoria" type="button" data-toggle="collapse" data-target="#accesoriosCaceria" aria-expanded="false" aria-controls="multiCollapseExample2"><span>Accesorios</span></a>
-                                                                        <div class="collapse multi-collapse" id="accesoriosCaceria">
-                                                                                <div class="pruebaLinksRapidos" >
-                                                                                        <ul>
-                                                                                                <li><a type="button" data-toggle="collapse" data-target="#accesoriosCaceriaSubAlmacenaje" aria-expanded="false" aria-controls="multiCollapseExample2">Almacenaje</a></li>
-                                                                                                <div class="collapse multi-collapse" id="accesoriosCaceriaSubAlmacenaje">
-                                                                                                        <div class="pruebaLinksRapidosSub2" >
-                                                                                                                <ul>
-                                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'cuchillos'}">Estuches</a></li>
-                                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'navajas'}">Fundas </a></li>
-                                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'hachas'}">Cartucheras</a></li>
-                                                                                                        
-                                                                                                                  
-                                                                                                                     
-                                                                                                                </ul>
-                                                                                                              
-                                                                
-                                                                                       
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'hieleras'}">Municiones </a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'termos'}">Tanques</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'bolsasSeñuelos'}">Señuelos</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'señuelos'}">Refacciones</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'llamadores'}">Llamadores</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'cuerdas'}">Espiaderos</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'bancos'}">Cuerdas</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'calcomanias'}">Mallas</a></li>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'mallas'}">Bancos/Sillas</a></li>
-                                                                                                <li><a type="button" data-toggle="collapse" data-target="#accesoriosCaceriaSubOpticos" aria-expanded="false" aria-controls="multiCollapseExample2">Opticos</a></li>
-                                                                                                <div class="collapse multi-collapse" id="accesoriosCaceriaSubOpticos">
-                                                                                                        <div class="pruebaLinksRapidosSub2" >
-                                                                                                                <ul>
-                                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'cuchillos'}">Binoculares</a></li>
-                                                                                                                        <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'cuchilleria', subCuchilleria: 'navajas'}">Miras </a></li>
-                                                                                                                       
-                                                                                                        
-                                                                                                                  
-                                                                                                                     
-                                                                                                                </ul>
-                                                                                                              
-                                                                
-                                                                                       
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                                <li><a routerLink = "/tienda" (click)="closeMenu()" [queryParams]= "{clasificacion: 'Caceria', categoriasCaceria: 'accesorios', subAccesoriosCaceria: 'espiadero'}">Maletas/mochilas</a></li>
-                                                                                        </ul>
-                                                                                      
-                                        
-                                                               
-                                                                                </div>
-                                                                        </div>
-                                                                         
-                                                                         
-                                                                        </li>
-                                     
-                                           
-                             </ul>   
+			</div>
 
-                        </div>
+			<div class="seeMoreProductos" *ngIf="errorCodeExist == false">
+				<a type="button" (click) = "seeMoreProducts()">Ver más productos</a>
+			
+			</div>
+		
+		
+				<button  class="closeDivMenuR" id="closeMenuSearchResponsive"><i class="fa fa-times" aria-hidden="true"></i></button>
 
-                </div>
-           </div>    
-        </div>
+			
+		</div>
+		
 
-        <div id="divGreen" class="divGreen row">
-                <div class="col-sm-12" *ngIf="othersBandera == true;">
-                        <div class="row" style="padding: 10px;">
-                    
-                              
-                                <div class="col-sm-6">
-                                        <h1>Más de ANFIBIA</h1>
-                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="tienda">Ir a la tienda</a>
-                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="sobre-nosotros">Sobre nosotros</a>
-                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="contactanos">Contáctanos</a>
-                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="ubicaciones">Ubicaciones</a>
-                                                <a class="dropdown-item" (click)="closeMenu()" routerLink="preguntas-frecuentes">Preguntas frecuentes</a>
 
-        
-                                </div>
-                                <div class="col-sm-6" >
-                                        <h1>Otras secciones</h1>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="blog">Blog</a>
-                                        <a class="dropdown-item" (click)="closeMenu()" routerLink="torneos">Torneos</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="proveedores">Proveedores</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="mapa-sitio">Mapa del sitio</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="perfil">Perfil</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="lista-deseos">Mi lista de deseos</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="carrito">Mi Carrito</a>
-                                        <a  class="dropdown-item" (click)="closeMenu()" routerLink="asuntos-legales">Asuntos legales</a>
 
-                                </div>
-        
-                        </div>
-                </div>    
-             </div>
+	<!--WishList-->
+	<div id="wishDivContainer" class="wishDiv">
 
-             <div class="busqueda">
-                     <div class="col-sm-12 searchStyle" *ngIf="busquedaT == true">
-                             <span class="cerrarModalBusqueda" (click)="cerrarSearchBar()">X</span>
-                             <label for="">¿Qué estas buscando?</label>
-                           <div style="display: block;">        
-                                <input type="search" name="filtroProductos" [(ngModel)] = "filtroProductos" placeholder="Escribe aquí..."> <i class="fa fa-search icon-header"  aria-hidden="true" title="Busqueda"></i> 
-                                <div class="row productosFiltrados" style="" *ngIf="filtroProductos !== ''">
-                                        <div class="col-sm-2" *ngFor="let prod of allProducts | filterMenu: filtroProductos | slice: 0:6">
-                                                <div class="imagenProductoFiltrado">
-                                                    <img src="{{prod.image[0].url}}" alt="" >    
-                                                </div>
-                                                <a type="button" (click) ="navigateMenu(prod)" style="text-decoration: none;"><h1>{{prod.nombre |oracionMayusculas }}</h1></a>
-                                                
-                                                
-                                                <h2><span>Precio: </span>{{prod.precio | currency}}</h2>
-                                        </div>
-                                        <div class="col-sm-12" *ngIf="(allProducts | filterMenu: filtroProductos).length > 0" >
-                                                <a type="button" class="linkVerMasProductos" (click)="seeMoreProducts(filtroProductos)">Ver más productos</a>
-                                        </div>
-                                        
-                                </div>
-                                <div class="row" *ngIf="(allProducts | filterMenu: filtroProductos).length === 0">
-                                        <div class="col-sm-12">   
-                                                <h1 style="padding-top: 30px; font-family: 'Meera Inima', sans-serif; font-size: 30px;">No se encontraron resultados de tu busqueda "{{filtroProductos}}"</h1>
-                                        </div>
-                                </div>
-                                
-                        </div>
-                     </div>
+		<div class="not-products" *ngIf="isAutheticated == true && productoWishPreview?.length == 0">
+			<h1>No has agregado ningún producto</h1>
+			<p>Tu lista de deseos se encuentra vacía, te sugerimos visitar nuestra tienda para que empieces equiparte con nuestros productos.</p>
+			<button>Ir a la lista de deseos</button>
+			
+		</div>
 
-             </div>
 
-    
-    
-   
+		<div class="not-loggin" *ngIf="isAutheticated == false">
+			<h1>No te encuentras loggeado</h1>
+			<p>Te sugerimos ingresar con tu cuenta Anfibia, para poder agregar productos a tu lista de deseos.</p>
+			<button>Ir al login</button>
+			
+		</div>
+		<div *ngIf="isAutheticated == true">	
+			<div class="wishDivItem" *ngFor="let product of productoWishPreview">
+				<div class="imageProductVQ">
+					<img src="">
+				</div>
+				<h1>{{product.precio | currency}}</h1>
+				<p>{{product.nombre | oracionMayusculas}}</p>
+				<!--<h2>Modelo Artemisa</h2>-->
+				
+				<button (click)="addCartElement(product, $event)">Añadir al carrito</button>
+			</div>
+		
+		<!--<div style="background: red;justify-content: center; align-items: center;" *ngIf="isLoadingWishProducts == true">
+			<img style="position: absolute; top: 25%; right: 35%; width: 100px; height: 100px;"  src='assets/imagenes/gif/Gif-Anfibia_5.gif' />
 
-</div>
+
+		</div>-->
+
+	</div>
+
+		<!--<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="046614.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+			<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Añadir al carrito</button>
+			
+		</div>
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="046613.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+			<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Añadir al carrito</button>
+
+		</div>
+			
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="042698.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+			<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Añadir al carrito</button>
+			
+		</div>
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="042976.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+			<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Añadir al carrito</button>
+
+		</div>
+			
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="043225.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+			<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Añadir al carrito</button>
+			
+		</div>-->
+		
+		<!--<div class="wishDivItem">
+			<h1>Here goes an Image</h1>
+			<p>Here goes the name of the product</p>
+			<p>Here goes the price</p>
+			<button>Here goes the button</button>
+			
+		</div>
+
+		<div class="wishDivItem">
+			<h1>Here goes an Image</h1>
+			<p>Here goes the name of the product</p>
+			<p>Here goes the price</p>
+			<button>Here goes the button</button>
+			
+		</div>
+		<div class="wishDivItem">
+			<h1>Here goes an Image</h1>
+			<p>Here goes the name of the product</p>
+			<p>Here goes the price</p>
+			<button>Here goes the button</button>
+			
+		</div>
+		<div class="wishDivItem">
+			<h1>Here goes an Image</h1>
+			<p>Here goes the name of the product</p>
+			<p>Here goes the price</p>
+			<button>Here goes the button</button>
+			
+		</div>-->
+		
+	</div>
+
+
+
+
+	<!--Carrito-->
+	<div id="carritoDivContainer" class="carritoDiv">
+
+
+
+
+		<!--Get fired when we have made a purchase and there are not elements in productosCarritoView-->
+		<div class="not-products" *ngIf="isAutheticated == true && mensajeError">
+			<h1>No has agregado ningún producto</h1>
+			<p>{{mensajeError}}</p>
+		</div>
+
+
+		<!--Cuando no has agregado ningun producto y no tienes ningun carrito, al iniciar-->
+		<div class="not-products" *ngIf = "isAutheticated == true && productosCarritoView?.length == 0">
+			<h1>No has agregado ningún producto</h1>
+			<p>Tu carrito de compras se encuentra vacío, te sugerimos visitar nuestra tienda para que empieces a equiparte con nuestros productos</p>
+			
+		</div>
+
+
+		<div class="not-loggin" *ngIf="isAutheticated == false">
+			<h1>No te encuentras loggeado</h1>
+			<p>Te sugerimos ingresar con tu cuenta Anfibia, para poder añadir productos a tu carrito de compras.</p>
+			<button>Ir al login</button>
+			
+		</div>
+
+		<!--Si el usuario se autentico y tiene productos-->
+		<div style="height: 340px; position: relative; overflow: auto;">
+			<div *ngIf ="isAutheticated == true && productosCarritoView?.length > 0">
+				<div class="wishDivItem" *ngFor = "let producto of productosCarritoView">
+					<div class="imageProductVQ">
+						<img src="">
+					</div>
+					<h1>{{producto.precio_producto | currency}}</h1>
+						<!--<h2>Modelo Artemisa</h2>-->
+					<p>{{producto.nombre_producto | oracionMayusculas}}</p>
+					<button (click) = "previewProduct(producto)">Vista previa</button>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="totalCompraH" *ngIf="productosCarritoView?.length > 0">
+			<h1>Total: <span>{{totalCompra | currency}}</span></h1>
+			<button (click) = "goToCart()">Ir al carrito de compras</button>
+		</div>
+	</div>
+		<!--<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="445051.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+				<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Comprar ahora</button>
+			<hr>
+		</div>
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="030368.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+				<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Comprar ahora</button>
+			<hr>
+		</div>
+			
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="037634.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+				<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Comprar ahora</button>
+			<hr>
+		</div>
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="037626.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+				<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Comprar ahora</button>
+			<hr>
+		</div>
+			
+		<div class="wishDivItem">
+			<div class="imageProductVQ">
+				<img src="043225.png">
+			</div>
+			<h1>Carrete Silver King XVII</h1>
+				<h2>Modelo Artemisa</h2>
+			<p>$1500.20</p>
+			<button>Comprar ahora</button>
+			<hr>
+		</div>-->
+		
+	
+
+	<!--Perfil-->
+	<div id="perfilDivContainer" class="perfilDiv">
+		<div class="perfilNotLogged" *ngIf="isAutheticated == false">
+			<h1>No te encuentras loggeado</h1>
+			<p>Te sugerimos ingresar con tu cuenta anfibia para poder ingresar y empezar a disfrutar de los beneficios de ser un usuario de Anfibia</p>
+			 
+		</div>
+		<div class="insideSearchDiv" *ngIf="isAutheticated == true && usuarioPruebaR">
+			<!--div class="perfilInside">
+				<button class="pruebaCircule"></button>
+			</div>-->
+			<div class="perfilInside2">
+				<h2>{{usuarioPruebaR.name}} {{usuarioPruebaR.lastName}}</h2>
+				<p>{{usuarioPruebaR.email}}</p>
+			
+				<hr>
+			</div>
+
+			<div class="perfilInside3">
+				<ul>
+					<li><a routerLink = "lista-deseos">Mi lista de deseos</a></li>
+					<li><a routerLink = "carrito">Mi carrito de compras</a></li>
+					<li><a routerLink = "pedidos">Mis pedidos</a></li>
+					<li><a routerLink = "perfil">Mi perfil</a></li>
+					<!--Boton para cerrar sesión-->
+					<li><a type="button" (click) = "logOut()">Cerrar sesión</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+	<!---->
+	<div class="pescaDiv" id="pescaDivContainer">
+		<div class="insidePesca">
+			<div class="itemPesca0">
+				<img src="assets/imagenes/menu/fishing2.jpg" alt="">
+			</div>
+			<div class="itemPesca1">
+				<div>
+					<button (click) = "pescaRouting()">Pesca</button>
+					<h3><a href="">Agua dulce</a></h3>
+					<ul>
+						<li><a href="">Cañas</a></li>
+						<li><a href="">Carretes</a></li>
+						<li><a href="">Combos</a></li>
+						<li><a href="">Señuelos</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Agua salada</a></h3>
+					<ul>
+						<li><a href="">Cañas</a></li>
+						<li><a href="">Carretes</a></li>
+						<li><a href="">Combos</a></li>
+						<li><a href="">Señuelos</a></li>
+						<li><a href="">Offshore</a></li>
+						<li><a href="">Jigs</a></li>
+						<li><a href="">Cucharas</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Lineas</a></h3>
+					<ul>
+						<li><a href="">Monifilamento</a></li>
+						<li><a href="">Trenzados</a></li>
+						<li><a href="">Leaders</a></li>
+						<li><a href="">Flourocarbono</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Embarcaciones</a></h3>
+					<ul>
+						<li><a href="">Motores</a></li>
+						<li><a href="">Navegación</a></li>
+						<li><a href="">Accesorios</a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="itemPesca2">
+				<div>
+					<h3><a href="">Buceo y recreación</a></h3>
+					<ul>
+						<li><a href="">Aletas</a></li>
+						<li><a href="">Visores</a></li>
+						<li><a href="">Gogles</a></li>
+						<li><a href="">Snorkles</a></li>
+						<li><a href="">Pesca submarina</a></li>
+						<li><a href="">Chaleco</a></li>
+						<li><a href="">Kayaks</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					<ul>
+						<li><a href="">Camisas/jerseys</a></li>
+						<li><a href="">Pantalon/shorts</a></li>
+						<li><a href="">Gorras y Buffs</a></li>
+						<li><a href="">Lentes</a></li>
+						<li><a href="">Guantes</a></li>
+						<li><a href="">Accesorios</a></li>
+						<li><a href="">Sandalias/zapatos</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Accesorios</a></h3>
+					<ul>
+						<li><a href="">Almacen</a></li>
+						<li><a href="">Fundas para carretes</a></li>
+						<li><a href="">Pelea y manejo</a></li>
+						<li><a href="">Portacañas</a></li>
+						<li><a href="">Calcomanias</a></li>
+						<li><a href="">Varios</a></li>
+						<li><a href="">Anzuelos</a></li>
+						<li><a href="">Terminal Tackle</a></li>
+						<li><a href="">Herramientas</a></li>
+						<li><a href="">Mantenimiento</a></li>
+						<li><a href="">Vasos y termos</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="caceriaDiv" id="caceriaDivContainer">
+		<div class="insideCaceria">
+			<div class="itemCaceria0">
+				<img src="assets/imagenes/menu/Cazador.png" alt="">
+				
+			</div>
+			<div class="itemCaceria1">
+				<div>
+					<button (click) = "caceriaRouting()">Cacería</button>
+					<h3><a href="">Rifles</a></h3>
+					<ul>
+						<li><a href="">Salva</a></li>
+						<li><a href="">CO2</a></li>
+						<li><a href="">Resortes</a></li>
+						<li><a href="">Nitropiston</a></li>
+						<li><a href="">PCP</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Mantenimiento</a></h3>
+					<ul>
+						<li><a href="">Aceite</a></li>
+						<li><a href="">Grasa</a></li>
+						<li><a href="">Limpieza</a></li>
+						<li><a href="">Pavones</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Accesorios</a></h3>
+					<ul>
+						<li><a href="">Almacenaje</a></li>
+						<li><a href="">Municiones</a></li>
+						<li><a href="">Tanques</a></li>
+						<li><a href="">Señuelos</a></li>
+						<li><a href="">Refacciones</a></li>
+						<li><a href="">Llamadores</a></li>
+						<li><a href="">Espiaderos</a></li>
+						<li><a href="">Cuerda</a></li>
+						<li><a href="">Mallas</a></li>
+						<li><a href="">Bancos/silla</a></li>
+						<li><a href="">Opticos</a></li>
+						<li><a href="">Maletas/Mochilas</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="itemCaceria2">
+				<div>
+					<h3><a href="">Pistolas</a></h3>
+					<ul>
+						<li><a href="">Salva</a></li>
+						<li><a href="">CO2</a></li>
+						<li><a href="">PCP</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Arquería</a></h3>
+					<ul>
+						<li><a href="">Arcos</a></li>
+						<li><a href="">Bayestas</a></li>
+						<li><a href="">Flechas</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Cuchillería</a></h3>
+					<ul>
+						<li><a href="">Cuchillo</a></li>
+						<li><a href="">Navaja</a></li>
+						<li><a href="">Hachas</a></li>
+						<li><a href="">Machetes</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3><a href="">Ropa</a></h3>
+					<ul>
+						<li><a href="">Playeras</a></li>
+						<li><a href="">Pantalones</a></li>
+						<li><a href="">Chamarras</a></li>
+						<li><a href="">Chalecos</a></li>
+						<li><a href="">Gorras</a></li>
+						<li><a href="">Lentes</a></li>
+						<li><a href="">Buff/Mascara</a></li>
+						<li><a href="">Guantes</a></li>
+						<li>
+							<p><a href="">Accesorios</a></p>
+							<ul>
+								<li><a href="">Cordones</a></li>
+								<li><a href="">Fundas p/lentes</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<div class="searchDiv" id="searchDivContainer">
+		<div class="searchForm">
+
+
+			<label for="search">¿Que producto estas buscando?</label>
+			<!--<p>Ingresa el nombre o el sku, o el modelo, categoria o subcategoria del producto que estas buscando para poder generar un resultado.</p>-->
+			<div style="display: inline;">
+				<input type="search" id="search" #buscadorProductos name="" placeholder="Puedes ingresar el nombre, el modelo o el SKU del producto que estas buscando..."><i class="fa fa-search" aria-hidden="true"></i>
+			</div>
+		
+				<div class="flex-containerBusqueda" *ngIf= "allProducts?.length > 0">
+					<div class="wishDivItemPruebaBusqueda" *ngFor = "let product of allProducts | slice: 0:12">
+						<div *ngIf="!product.mensajeError else respuestaNegativa">
+							<div class="imageProductVQBusqueda">
+								<!--<img src="">-->
+							</div>
+							<div class="textInside">
+								<h3>{{product.precio | currency}}</h3>
+								<a routerLink="/tienda/{{product.id}}/{{product.nombre}}"><span>{{product.nombre | oracionMayusculas}}</span></a>
+							</div>
+							<!--<div style="position: absolute; top: 30%; right: 50%;" *ngIf ="searchLoading">
+								<app-spinner-medium>
+		
+								</app-spinner-medium>
+							</div>-->
+							
+						</div>
+						<ng-template #respuestaNegativa>
+							<div class="mensajeError">
+								<h1>No se encontraron resultados de tu busqueda, te sugerimos realizar una nueva busqueda en base al nombre, sku, o modelo del producto.</h1>
+							</div>
+						</ng-template>
+						
+						
+					</div>
+					<div style="position: absolute; top: 22%; right: 40%;" *ngIf ="searchLoading">
+						<img src='assets/imagenes/gif/Gif-Anfibia_5.gif' />
+					</div>
+				
+					
+				
+					
+					
+				</div>
+				
+				
+				
+				
+		
+
+
+		
+			<div class="seeMoreProductos" *ngIf="errorCodeExist == false">
+				<button (click) = "seeMoreProducts()">Ver más productos</button>
+			</div>
+
+		</div>
+		
+	</div>
+	<div class="moreSectionsDiv" id="moreSectionsDivContainer">
+		<div class="moreSectionDivS">
+			<div class="itemSection1">
+				<img src="assets/imagenes/menu/1.jpg" alt="">
+			</div>
+			<div class="itemSection2">
+			<ul>
+				<li><a routerLink = "/tienda">Tienda</a></li>
+				<li><a routerLink = "/sobre-nosotros">Sobre nosotros</a></li>
+				<li><a routerLink = "/contactanos">Contactanos</a></li>
+				<li><a routerLink = "/ubicaciones">Ubicaciones</a></li>
+				<li><a routerLink = "/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+				<li><a routerLink = "/blog">Blog</a></li>
+				<li><a routerLink = "/torneos">Torneos</a></li>
+				<li><a routerLink = "/proveedores">Proveedores</a></li>
+				<li><a routerLink = "/mapa-sitio">Mapa del sitio</a></li>
+				<li><a routerLink = "/asuntos-legales">Asuntos legales</a></li>
+			</ul>
+			
+		</div>
+
+
+		</div>
+		
+		
+	</div>
+
+
+
+
+
+</nav>

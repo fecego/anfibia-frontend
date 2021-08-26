@@ -16,11 +16,13 @@ Ipad Mini 2.4 Landscape--*/
     .textos-asuntos-legales h4{
         font-family: 'Meera Inima', sans-serif;
         font-weight: bold;
+        font-size: 16px;
         
     }
 
     .textos-asuntos-legales p{
         font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
     }
 }
 

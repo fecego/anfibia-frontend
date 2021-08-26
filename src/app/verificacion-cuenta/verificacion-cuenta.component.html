@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+       <div class="offset-3 col-sm-6 success-message" *ngIf = "mensaje && !mensajeError">
+            <div class="div-success">
+                <div style="display: flex; justify-content: center">
+                    <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+                </div>
+                <h1>{{successTitle}}</h1>
+                <p>{{mensaje}}, <a routerLink="/login">Ir al Login</a></p>
+            
+            </div>
+       </div>
+    <div class="offset-3 col-sm-6 error-message" *ngIf = "!mensaje && mensajeError">
+        
+        <div class="div-error">
+            <div style="display: flex; justify-content: center">
+                <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+            </div>
+            <h1>{{errorTitle}}</h1>
+            <p>{{mensajeError}}</p>
+        </div>
+        <div *ngIf="generateLink == true">
+            <a routerLink = "/cuenta-active">Generar enlace de activación</a>
+        </div>
+
+        <div *ngIf="crearCuenta == true">
+            <a routerLink = "/crear-cuenta">Registrarse</a>
+        </div>
+        
+       </div>
+
+    </div>
+
+</div>

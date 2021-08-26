@@ -1,628 +1,2056 @@
-.linkVerMasProductos{
-    color: #000; 
-    font-family: 'Meera Inima', sans-serif; 
-    font-size: 17px; 
-    text-decoration: none;
+.closeDivMenuR{
+  background: red;
+  color: #fff;
+  font-family: 'Meera Inimai', sans-serif;
+  font-size: 10px;
+  border: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  line-height: 19px;
+  text-align: center;
+  position: absolute;
+  top: 9%;
+  right: 4.1%;
+
 }
 
+/*.closeDivMenuR p{
 
-.imagenProductoFiltrado{
-    width: 100%; 
-    height: 180px; 
-    background: #F2F2F2;
-    justify-content: center; 
-    align-items: center;
-    padding: 30px;
-}
-
-.imagenProductoFiltrado img{
-    width:70%;
-    height: 100%;
-    
-}
-
-.productosFiltrados {
-    padding-top: 20px;
-}
-
-.productosFiltrados h1{
-    font-family: 'Julius Sans One';
-    font-weight: bold; 
-    font-size: 14px; 
-    text-align: center; 
-    padding-top: 8px; 
-    color: #000;
-}
-
-.productosFiltrados h2{
-    font-family: 'Julius Sans One';
-    font-size: 14px;
-    text-align: center; 
-    line-height: 0.4em;
-}
-
-
-.productosFiltrados span{
-    color: #000;
-    font-family: 'Julius Sans One';
-    font-weight: bold;
-}
-
-.icon-header{
-    cursor: pointer;
-}
-.searchStyle{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 30px;
-    color: #000;
-    text-align: center;
-    margin-top: 20px;
-    
-}
-
-.searchStyle label{
-    text-align: left;
-}
-
-.searchStyle input{
-    border: none;
-    border-bottom: 2px solid #000;
-    width: 50%;
-    z-index: 2;
-   
-}
-
-.searchStyle input[type="search"]{
-    font-family: 'Julius Sans One';
-    font-size: 20px;
-}
-
-
-.searchStyle ::placeholder {
-font-size: 25px;
-font-family: 'Julius Sans One';
-
-  }
-
-
-.cerrarModalBusqueda{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 20px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.busqueda{
-    width: 80%; 
-    background: #fff;
-    position: fixed; 
-    top:19vh;
-    z-index: 1000;
-    max-height: 500px; /* supply current height here */
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-
-
-.menuNav{
-    padding: 0px; 
-    z-index: 999;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    
-}
-
-
-
-.divAzul{
-    width: 80%; 
-    background: #fff;
-    position: fixed; 
-    z-index: 2;
-    max-height: 500px; /* supply current height here */
-    overflow: hidden;
-    overflow-y: scroll;
-    float: right;
-}
-
-
-
-/*.divAzul a{
-    font-family: 'Anton', sans-serif;   
-    font-size: 80px;
-    letter-spacing: 5px;
-    -webkit-text-stroke: #000;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 2px;
-    text-decoration: none;
-    transition: 0.4s ease-in-out;
-    background: linear-gradient(to right, #000, #000 50%, #fff 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 365ms ease;
-    text-decoration: none; 
-
-}**/
-
-.divAzul a:hover{
-    background-position: 0 100%;
-    
-    
-}
-
-.divAzul p{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 17px;
-    color: #000;
-    line-height: 1.2em;
-    
-}
-
-.divAzul ul li{
-    list-style: none;
-}
-
-
-.divAzul h1{
-    
-    font-family: 'Anton', sans-serif;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-    
-}
-
-/*.divAzul h1{
-    font-family: 'Anton', sans-serif;
-    font-weight: bold;
-    color: #000;
-}
-
-.divAzul ul li{
-    list-style: none;
-}
-
-.divAzul ul li a{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 20px;
-    
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-text-stroke: #000;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 1px;
-}
-
-.divAzul ul li a:hover{
-    -webkit-text-fill-color: #000;
 }*/
 
 
-
-
-.divGreen{
-    width: 80%;
-    background: #fff; 
-    max-height: 500px; 
-    z-index: 2;
-    max-height: 500px;
-    position: fixed;
-
+ul{
+    padding-top: 10px;
+  }
+  
+  
+  nav{
     
-    overflow: hidden;
-    right: 0%;
-   
-
     
+  }
+
+  .mensajeError{
+    text-align: center;
+    width: 1000px;
+    background: #fff;;
+  }
+
+  
+  
+
+  .mensajeError h1  {
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+
+  }
 
 
 
- 
-}
 
-.divGreen h1{
-    font-family: 'Anton', sans-serif;
-    font-size: 20px;
+  .wishDivItemPruebaBusqueda h3{
+    font-size: 13px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+  }
+  
+  .wishDivItemPruebaBusqueda a span{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
     color: #000;
+    text-align: left;
+  }
+  
+  
+  .wishDivItemPruebaBusqueda a:hover{
+    color: #04B4AE;
+    text-decoration: none;
+  }
+  
+  
+  .wishDivItemPruebaBusqueda p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 18px;
+    color: #000;
+  }
+  
+  
+  .wishDivItemPruebaBusqueda .imageProductVQBusqueda{
+    width: 100%;
+    height: 230px;
+    background: #FAFAFA;
+  }
+  
+  
+  .wishDivItemPruebaBusqueda .imageProductVQBusqueda img{
+    width:100%;
+    height: 100%;
+    padding: 50px;
+    justify-content: center;
+  
+  }
+  
+  .seeMoreProductos a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .seeMoreProductos a:hover{
+    text-decoration: none;
+    color: #000;
+  }
 
-}
+  .errorMessage{
+    padding: 20px;
+  }
 
-.divGreen a{
+  .errorMessage h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+  }
+  
+  
+  .flex-containerBusqueda{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+    justify-content: flex-start;
+  
+  }
+  
+  .wishDivItemPruebaBusqueda{
+  
+    width: 200px;
+    background: #fff;
+    height: 350px;
+    margin: 2px; 
+  }
+  
+  .wishDivItemPruebaBusqueda .textInside{
+    padding: 20px;
+  }
+  
+  .textInside{
+    text-align: left;
+    line-height: 0.8em;
+  }
+
+  .itemSection2 ul li a{
+    transition: all 0.3s ease-in-out;
+  }
+
+  .itemSection2 ul li a:hover{
+    padding-left: 10px;
+    text-decoration: none;
+    color: #04B4AE;
+  }
+  
+  
+  .pruebaCircule{
+      background: #04B4AE;
+      border: none;
+      height: 100px;
+      width: 100px;
+      padding: 20px;
+      border-radius: 50px;
+      margin-bottom: 7px;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      cursor: default;
+    }
+  
+  
+  .flex-c{
+    background: #fff;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    border-bottom: 1px solid #D8D8D8;
+    align-content: center;
+    padding-top: 6px;
+  }
+  
+  
+  .itemC{
+    flex: 1;
+  
+  
+  
+  }
+  
+  
+  .itemC img{
+      width: 15%;
+      height: 15%;
+      padding-left: 4px;
+      padding-bottom: 2px;
+  }
+  
+  .itemC p{
+   color: #000;
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+    text-align: center
+  
+  }
+  
+  .itemC2{
+    flex:1;
+    text-align: center;
+  }
+  
+  .itemC2 p{
+    color: #000;
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    
+  }
+  
+  .itemC3{
+    flex: 1;
+    text-align: center;
+  
+  }
+  
+  .itemC3 i{
+  
+    padding: 2px;
+    color: #000;
+    font-size: 16px;
+  }
+  
+  
+  
+  
+  .flex-container{
+    display: flex;
+  
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border-bottom: 1px solid #D8D8D8;
+  }
+  
+  
+  .flex-itemLogo{
+    flex: 1;
+    width: 100%;
+    height: auto;
+    
+    
+  
+  }
+  
+  .flex-itemLogo h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+  
+    color: #000;
+    text-align: center;
+  
+  }
+  
+  .flex-itemLogo img{
+    width: 13%;
+    height: 13%;
+  
+  }
+  
+  
+  .flex-itemLogo a{
+    color: #fff;
+    font-family: 'Anton', sanns-serif;
+    font-size: 28px;
+    color: #fff;
+    padding-left: 20px;
+    text-decoration: none;
+  }
+  
+  .flex-itemLogo a:hover{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  
+  .flex-itemUl{
+    flex: 1;
+    text-align: right;
+    
+  }
+  
+  
+  .flex-itemUl ul li button{
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    padding-right: 10px;
+    transition: all 0.5s ease-in-out;
+
+  }
+  
+  
+  
+  
+  .flex-itemUl ul li button i{
+    font-size: 14px;
+  }
+  
+  
+  
+  
+  
+  
+  .flex-itemUl .nav-links{
+    display: inline-flex;
+    list-style: none;
+    
+   
+  }
+  
+  
+  .flex-itemUl li{
+   
+  }
+  
+  
+  
+  .nav-links li button{
+    display: flex;
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-family: "Meera Inimai", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  
+  
+  }
+
+
+  
+  
+  .nav-links .dropdown-menu-deseos{
+    list-style: none;
+    position: absolute;
+    right: 150px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  
+  }
+  
+  .nav-links .dropdown-menu-deseos:hover{
+    
+    opacity: 1;
+  }
+  
+  
+  .nav-links .dropdown-menu-carrito{
+    background: green;
+    list-style: none;
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    
+  }
+  
+  
+  .nav-links .dropdown-menu-carrito:hover{
+    opacity: 1;
+  }
+  
+  
+  
+  /*Wish Container: Contenedor de elementos de lista de deseos*/
+  
+  
+  
+  
+  .carritoDiv{
+      width: 300px;
+      height: 0;
+      overflow:auto;
+      position: absolute;
+      right: 5%;  
+      z-index: 1000;
+      transition: 0.3s ease-in-out;
+  
+  }
+
+  .totalCompraH{
+    background: #fff;
+   
+  }
+
+  .totalCompraH h1{
+    font-size: 22px;
+    font-family: 'Anton', sans-serif;
+    
+    padding: 10px;
+  }
+
+  .totalCompraH span{
+    font-size: 22px;
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bolder;
+    
+  }
+
+  .totalCompraH button{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    width:94%;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    margin: 4px;
+  }
+  
+  
+  /*Estado inicial*/
+  .wishDiv{
+    width: 300px;
+    height: 0;
+    overflow:scroll;
+    position: absolute;
+    right: 7%;  
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+  
+  
+   
+  
+  }
+   
+   .wishDivLeave{
+    width: 300px;
+    height: 0px;  
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    transition: all 0.3s ease; 
+    
+   }
+  
+  .perfilDiv{
+    background: #fff;
+    width: 300px;
+    height: 0;
+    overflow-x:hidden;
+    position: absolute;
+    right: 1%;
+    z-index: 1000;
+    transition: 0.1s ease-in-out;
+  
+    
+  
+  
+  }
+
+
+  .perfilNotLogged{
+    padding: 20px;
+  }
+
+
+  .perfilNotLogged h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .perfilNotLogged p{
     font-family: 'Meera Inima', sans-serif;
     font-size: 13px;
-    line-height: 0.8em;
-    color:  #848484;
-}
+  }
 
-.divGreen a:hover{
-    color: #000;
-}
-
-.divRojo{
-    width: 80%; 
-    background: #fff;
-    position: fixed; 
-    z-index: 99;
-    max-height: 500px; /* supply current height here */
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-.prueba a{
-    font-family: 'Anton', sans-serif;   
-    font-size: 60px;
-    letter-spacing: 5px;
-    -webkit-text-stroke: #000;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 2px;
-    text-decoration: none;
-    transition: 0.4s ease-in-out;
-    background: linear-gradient(to right, #000, #000 50%, #fff 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 365ms ease;
-    text-decoration: none;  
-
-}
-
-.pruebaCategoria{
-    font-family: 'Meera Inima', sans-serif;   
-    font-size: 30px;
-    font-weight: bolder;
-    letter-spacing: 3px;
-    -webkit-text-stroke: #000;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 1px;
-    text-decoration: none;
-    transition: 0.4s ease-in-out;
-    background: linear-gradient(to left, #000, #000 50%, #fff 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 365ms ease;
-    text-decoration: none;  
-    border: none;
-    margin-bottom: 4px;
-}
-
-
-.pruebaCategoria:focus{
-    border: none;
-}
-
-.divRojo a:hover{
-    background-position: 0 100%;
-}
-
-.pruebaLinksRapidos ul{
-    margin-left: 0;
-    padding-left: 0;
-}
-
-
-.pruebaLinksRapidos a{
-    color: #000;
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 16px;
-    
-    text-decoration: none;
-    line-height: 0.8em;
-    padding-left: 0;
-}
-
-.pruebaLinksRapidos a:hover{
-    color: #000;
-}
-
-
-.pruebaLinksRapidosSub2 a{
-    color: #848484;
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 16px;
-    
-    text-decoration: none;
-    line-height: 0.8em;
-    padding-left: 18px;
-    
-
-
-}
-
-
-.pruebaLinksRapidosSub2 a:hover{
-    color: #000;
-}
-
-.divRojo p{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 17px;
-    color: #000;
-    line-height: 1.2em;
-    
-}
-
-.divRojo h1{
-    font-family: 'Anton', sans-serif;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-}
-
-.divRojo ul li{
-    list-style: none;
-}
-
-/*.divRojo ul li a{
-    font-family: 'Meera Inima', sans-serif;
-    font-size: 20px;
-    
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-text-stroke: #000;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 1px;
-}
-
-.divRojo ul li a:hover{
-    -webkit-text-fill-color: #000;
-}
-*/
-
-.prueba2 ul li a {
-    color: red;
-}
-
-
-.rightUl{
-    
-    list-style: none;
-    width: 15%;
-    height: 100%;
-}
-.logo-image{
-    width: 60px;
-    height: 60px;
-    border-radius: 0%;
-    overflow: hidden;
-    margin-top: 10px;
-   
-}
-
-.centerUl{
-    list-style: none;
-    width: 15%;
-    height: 100%;
-    
-    padding: 0;
-    margin: 0;
-}
-
-.texto-anfibia {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    font-family: 'Anton', sans-serif;
-    font-size: 30px;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.logo-image a{
-    list-style: none;
-}
-
-nav{
-    height: 19vh;
-    background: #000;
-    padding: 0%;
-}
-
-.navbar{
-    width: 100%;
-    height: 50%; 
-    padding: 0;
-    margin: 0;
-      
-}
-
-.primerPiso{
-   border-bottom: 2px solid #fff;
-}
-
-
-.segundoPiso{
-
-}
-
-.izquierda{
   
-    width: 50%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.clasificaciones{
-    display: flex;
-    list-style: none;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-   
-    
-}
-
-.clasificaciones button{
-    font-family: 'Meera Inima', sans-serif;
-    font-weight: bolder;
-    background: none;
-    border: none;
-    outline: none;
-    color: #fff;
-    
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    transition: 0.4s ease-in-out;
-}
-
-.clasificacionesSeleccionado button {
-    background: #fff;
-    color: #000;
-    
-    
-    
-}
-
-.otras-secciones button{
-    font-family: 'Meera Inima', sans-serif;
-    background: none;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-}
-
-.otherSectionSelected button{
-    background: #fff;
-    color: #000;
-    
-    
-    
-}
-
-
-.derecha{
-    display: flex;
-    width: 50%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    margin-right: 0;
-   
-}
-
-.otras-secciones{
-    display: flex;
-    list-style: none;
-    
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    
-
-}
-
-.otras-secciones a{
+  .insideSearchDiv{
+    padding: 5px;
+  }
   
-    font-family: 'Julius Sans One';
-    color: #fff;
+  .perfilInside{
+    padding: 40px;
+    align-items: center;
+  
+  }
+  
+  .perfilInside h2{
+    font-family: 'Meera Inimai', sans-serif;
     font-weight: bold;
-    text-decoration: none;
-   
-
-
-}
-
-
-.leftUl{
+    font-size: 18px;
+  }
+  
+  .perfilInside p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+  }
+  
+  
+  .perfilInside2{
+    padding: 20px;
+  }
+  
+  .perfilInside2 h2{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  
+  .perfilInside2 p{
+     font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+  
+  }
+  
+  
+  .perfilInside3{
+    padding: 20px;
+  }
+  
+  .perfilInside3 ul{
+    list-style: none;
+    padding: 0;
+  }
+  
+  .perfilInside3 li a{
+    color:#000;
+  }
+  
+  
+  .moreSectionsDiv{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: #fff;
+      height: 0;
+      position: absolute;
+      transition: 0.3s;
+      overflow-x:hidden;
+      z-index: 1000;
+  
+  }
+  
+  .democlass{
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    width: 300px;
+    height: 500px;
+    overflow:scroll;
+    overflow-x:hidden;
+    position: absolute;
+    right: 22%;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #FFF;
     
-    width: 40%;
+  }
+  
+  .democlassPesca{
+    background: purple;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    overflow-x:hidden;
+    right: 60px;
+    transition: all 0.3s;
+  }
+  
+  
+  
+  .democlasssCarrito{
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    width: 300px;
+    height: 500px;
+    overflow:scroll;
+    overflow-x:hidden;
+    position: absolute;
+    right: 18%;
+    transition: 0.3s;
+    border: 1px solid #FFF;
+  
+  }
+  
+  
+  
+  
+  
+  .democlassPerfil{
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    width: 300px;
+    height: auto;
+    
+    position: absolute;
+    right: 11%;
+    transition: 0.3s;
+    border: 1px solid #FFF;
+  
+  }
+  
+  
+  .democlassLeave{
+    height: 0;
+    display: none
+  
+  }
+  
+  
+  
+  
+  
+  
+  .pescaDiv{
+    background: #fff;
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    z-index: 1000;
+    overflow-x: hidden;
+    transition: 0.3s ease-in-out;  
+  }
+  
+  
+  .insidePesca{
+    padding: 20px;
+    overflow:scroll;
+    overflow-x:hidden;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
     
+  
+  }
+  
+  .itemPesca0{
+    flex: 1;
     
-}
+    height: auto;
+  }
+  
+  
+  .itemPesca0 img{
+    width: 100%;
+    height: auto;
+  }
+  
+  .itemPesca1{
+    flex: 1;
+    padding: 25px;
+  
+  }
 
-.leftUl i{
-    font-size: 20px;
+
+  .itemPesca1 button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #000;
+    border: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    transition: 0.3s ease-in-out;
+  }
+
+
+  .itemPesca1 button:hover{
+    padding-left: 10px;
+    color: #04B4AE;
+  }
+  
+  .itemPesca1 h3 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    transition: 0.5s;
+  }
+  
+  .itemPesca1 h3 a:hover{
+    text-decoration: none;
+    padding-left: 10px;
+    color: #04B4AE;
+  }
+  
+  
+  .itemPesca1 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 15px;
+    color: #000;
     line-height: 1em;
-}
-
-.letrasLeft{
-    display: flex;
+  }
+  
+  .itemPesca1 a:hover{
+    color: #0B0B3B;
+    text-decoration: none;
+  }
+  
+  
+  .itemPesca1 ul{
+    padding: 0;
+  }
+  
+  .itemPesca1 ul li{
     list-style: none;
+    line-height: 1.2em;
+    padding: 0;
+  }
+
+  .itemPesca1 ul li a{
+    transition: all 0.3s ease-in-out;
+  }
+
+  .itemPesca1 ul li a:hover{
+    padding-left: 10px;
+    color: #04B4AE;
+  }
+
+
+  
+  .itemPesca2{
+    flex:1;
+    padding: 25px;
+  
+  }
+  
+  
+  .itemPesca2 ul{
+    padding: 0;
+  }
+  
+  .itemPesca2 ul li{
+    list-style: none;
+    line-height: 1.2em;
+    padding: 0px;
+  }
+
+
+  .itemPesca2 ul li a{
+    transition: all 0.3s ease-in-out;
+
+  }
+
+
+  .itemPesca2 ul li a:hover{
+    color: #04B4AE;
+    padding-left: 10px;
+    text-decoration: none;
+  }
+  
+  
+  .itemPesca2 a{
+     font-family: 'Meera Inimai', sans-serif;
+    font-size: 15px;
+    color: #000;
+    line-height: 1em;
+  }
+  
+  
+  
+  
+  
+  .itemPesca2 div h3 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    transition: 0.3s ease-in-out;
+
+  }
+
+  .itemPesca2 div h3 a:hover{
+    text-decoration: none;
+    color: #04B4AE;
+    padding-left: 10px;
+  }
+  
+  
+  .caceriaDiv{
+    background: #fff;
     width: 100%;
-    height: 100%;
-    background: red;
-    margin-left: 60%;
+    height: 0px;
+    position: absolute;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  
+  }
+  
+  
+  .insideCaceria{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
     
-}
+   
+  }
+  
+  
+  .itemCaceria0{
+    flex: 1;
+    height: auto;
+  }
+  
+  
+  .itemCaceria0 img{
+    width: 100%;
+    height: auto;
+  
+  }
+  
+  
+  
+  .itemCaceria1 ul{
+    padding: 0;
+  }
+  
+  .itemCaceria1 ul li{
+    list-style: none;
+    line-height: 1.2em;
+    padding: 0px;
+  
+  }
 
 
-
-.letrasLeft button{
-    background: #000;
-    width: 40px;
-    height: 100%;
-    outline: none;
+  .itemCaceria1 button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #000;
     border: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    transition: 0.3s ease-in-out;
+  }
+
+
+  .itemCaceria1 button:hover{
+    padding-left: 10px;
+    color: #04B4AE;
+  }
+
+
+  .itemCaceria1 ul li a{
+    transition: all 0.3s ease-in-out;
+  }
+
+  .itemCaceria1 ul li a:hover{
+    color: #04B4AE;
+    padding-left: 10px;
+    text-decoration: none;
+
+  }
+  
+  
+  .itemCaceria1 a{
+     font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    color: #000;
+  }
+
+
+  .itemCaceria2 ul li a{
+    transition: all 0.3s ease-in-out;
+  }
+
+  .itemCaceria2 ul li a:hover{
+    color: #04B4AE;
+    padding-left: 10px;
+    text-decoration: none;
+
+  }
+
+
+  
+  
+  .itemCaceria1 h3 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .itemCaceria1{
+    flex: 1;
+    padding: 25px;
+  
+  }
+  
+  .itemCaceria2{
+    flex: 1;
+    padding: 25px;
+  }
+  
+  .itemCaceria2 ul{
+    padding: 0;
+  }
+  
+  
+  .itemCaceria2 ul li{
+    list-style: none;
+    line-height: 1.2em;
+    padding: 0px;
+  
+  }
+  
+  
+  .itemCaceria2 a{
+     font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .itemCaceria2 h3 a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+  
+  }
+  
+  .itemCaceria2 
+  
+  
+  .democlasssCaceria{
+    background: #FFF;
+    width: 90%;
+    height: 500px;
+    position: absolute;
+    right: 60px;
+     overflow:scroll;
+    overflow-x:hidden;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .democlasSearch{
+    background: red;
+    width: 90%;
+    height: 500px;
+    position: absolute;
+    right: 60px;
+    
+  }
+  
+  
+  
+  
+  .pruebaStylePerfil{
+     width: 50px;
+     height: 50px;
+     background: #04B4AE;
+     border-radius: 50%;
+  
+   
+  
+  }
+  
+  .pruebaStylePerfil p{
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+  }
+  
+  
+  .wishDivItem{
+    background: #fff;
+    padding: 30px;
+  
+  
+  }
+  
+  .wishDivItem h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    color: #000;
+  }
+
+  .wishDivItem a:hover{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  
+  .wishDivItem p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 13px;
+    text-align: left;
+    line-height: 10px;
+  }
+  
+  .wishDivItem button{
+    text-align: center;
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    background: #000;
+    color: #fff;
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+  }
+  
+  
+  
+  
+  
+  .wishDivItem h2{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 13px;
     color: #A4A4A4;
   
-}
-
-.letrasLeft button:hover{
+  }
+  
+  .wishDivItem .imageProductVQ{
+    height: auto;
+    width:100%;
+  
     
-    color: #fff;
-}
+  }
+  
+  
+  .wishDivItem .imageProductVQ img{
+    background: #fff;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .not-loggin{
+    background: #fff;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .not-loggin h1{
+    font-family: 'Meera Inimai', sans-serif;
+    
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+  }
+  
+  .not-loggin p{
+    font-family: 'Meera Inimai', sans-serif;
+    color: #000;
+    font-size: 13px;
+  }
+  
+  .not-loggin button{
+    font-family: 'Meera Inimai', sans-serif;
+    color: #000;
+    background: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+  
+  }
+  
+  
+  
+  
+  
+  
+  .not-products{
+    background: #fff;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .not-products h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    color: #000;
+    font-size: 19px;
+  }
+  
+  .not-products p{
+    font-family: 'Meera Inimai', sans-serif;
+    color: #000;
+    font-size: 13px;
+  }
+  
+  
+  .not-products button{
+    font-family: 'Meera Inimai', sans-serif;
+    color: #000;
+    background: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  
+  .moreSectionDivS{
+    display: flex;
+    flex: wrap;
+    flex-direction: row;
+    padding: 20px; 
+    justify-content: space-between;
+    align-items: center 
+  
+  }
+  
+    .itemSection1{
+      flex: 1;
+    }
+  
+    .itemSection2{
+      flex: 1;
+    }
+  
+  .moreSectionDivS ul{
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+  .moreSectionDivS li a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 16px;
+    color: #000;
+  
+  }
+  
+  .pruebaDeColores{
+    height: 2000px; 
+    /*background-image: url('huntingwoods.jpg');*/
+  }
+  
+  
+  
+  
+  .searchDiv{
+    background: #fff;
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    overflow-x: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  
+  
+  .searchForm{
+    padding: 50px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .searchForm label{
+    
+    display: block;
+  }
+  
+  
+  .searchForm label{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .searchForm p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+  
+  }
+  
+  
+  .searchForm input{
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 0;
+    margin: auto;
+    transition: 0.3s ease-in-out;
+  }
+  
+  
+  
+  
+  .searchForm input:focus{
+    border:none;
+    border-bottom: 1px solid #000;
+  }
+  
+  
+  .searchForm i{
+    font-size: 19px;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  .flex-containerResponsive{
+    display: none;
+  }
+  
+  
+  .flex-containerResponsivePesca{
+    display: none;
+  }
+  
+  
+  
+    .responsiveMenu{
+      display: none;
+    }
+  
+  
+    .responsiveSearch{
+      display: none;
+    }
+  
+  @media screen and (max-width: 640px) and (min-width: 568px){
+    .flex-itemUl .nav-links{
+      background: red;
+    }
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 640px) and (min-width:250px) {
 
 
 
+    
+  .mensajeError{
+    text-align: center;
+    width: 640px;
+    background: #fff;;
+  }
 
 
 
-.justify-content-end span{
+    .responsiveItem1{
+      height: auto;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+  
+  
+    .responsiveItem3{
+      padding: 30px;
+      justify-content: center;
+      text-align: center;
+      
+    }
+  
+    .responsiveItem3 a{
+      color: #000;
+    }
+  
+    .responsiveItem3 a:hover{
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    
+  .resConvence{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .textInsideR{
+    padding: 10px;
+    line-height: 1em;
+    
+  }
+
+
+  .textInsideR h3{
+    font-size: 13px;
+   font-family: 'Meera Inimai', sans-serif;
+   font-weight: bold;
+ 
+ }
+ 
+ .textInsideR a span{
+   font-family: 'Meera Inimai', sans-serif;
+   font-size: 12px;
+   font-weight: 400;
+   color: #000;
+   text-align: left;
+   transition: 0.3s ease-in-out;
+ 
+ }
+
+ .textInsideR a{
+   transition: 0.3s ease-in-out;
+ }
+ 
+ .textInsideR a:hover{
+   text-decoration: none;
+ }
+
+ 
+ 
+ .textInsideR a span:hover{
+   text-decoration: none;
+   color: #04B4AE;
+   }
+
+  .itemCon1{
+    flex: 1;
+    width: 50%;
+    height: 200px;
+    margin:2px;
+    background: green;
+  }
+
+
+  .wishDivResponsive{
+
+    width: 150px;
+    background: #fff;
+    margin: 2px;
+    height: 270px;  
+
+
+  }
+
+  .wishDivResponsive .imageProductVQBusquedaResponsive{
+    background: #F2F2F2;
+    width: 100%;
+    height: 150px;
+  }
+
+
+
+  .wishDivResponsive .imageProductVQBusquedaResponsive img{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+
+    .searchDiv{
+      z-index: 1000;
+    }
+  
+    .pruebaCircule{
+      background: #04B4AE;
+      border: none;
+      height: 100px;
+      width: 100px;
+      padding: 20px;
+      border-radius: 50px;
+      margin-bottom: 15px;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      cursor: default;
+    }
+  
+  
+  
+  
+    
+  
+  
+    .closeDivMenuR{
+      background: #0B615E;
+      border: none;
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      position: absolute;
+      bottom: 0;
+      right: 3%;
+    }
+  
+  
+    
+  
+    .responsiveMenu{
+      display: block;
+    }
+  
+    .responsiveMenu button{
+      display: inline;
+      background: #fff;
+      border: none;
+      padding: 5px;
+      font-size: 18px;
+      font-weight: normal;
+      transition: 0.3s all ease-in-out;
+  
+    }
+  
+    .responsiveMenu button:hover{
+      color: #04B4AE;
+    }
+  
+  
+  
+  
+  .flex-containerResponsive{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: absolute;
+    width: 0;
+    overflow-x: hidden;
+    height: auto;
+    z-index: 1000;
+    background: #fff;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .item-containerResponsive{
+    background: #fff;
+  
+  }
+
+  .item-containerResponsive a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 17px;
+    color: #000;
+    display: block;
+    line-height: 1.8em;
+    transition: 0.3s ease-in-out;
+     padding: 15px;
+
+  }
+
+  .item-containerResponsive a:hover{
+    background: #F2F2F2;
+    text-decoration: none;
+    color: #000;
+
+  }
+
+
+  
+  
+  
+  .item-ContainerMisOpciones{
+    background: #fff;
+  
+  }
+  
+  
+  
+  
+  .item-ContainerMisOpciones a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 17px;
+    color: #000;
+    display: block;
+    line-height: 1.8em;
+    transition: 0.3s ease-in-out;
+     padding: 15px;
+  }
+  
+  
+  .item-ContainerMisOpciones a:hover{
+    background: #F2F2F2;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  
+  .item-containerResponsive h1{
+    font-family: 'Meera Inimai', sans-serif;
+    font-weight: bold;
+    color: #000;
+    font-size: 25px;
+  }
+  
+  .item-containerResponsive p{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 14px;
+    color: #000;
+  
+  }
+  
+  .item-containerResponsive2{
+    background: #fff;
+    line-height: 1.8em;
+    border-right: 4px solid #000;
+  
+  }
+  
+  .item-containerResponsive2 button{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 17px;
+    color: #000;
+    display: block;
+    padding: 15px;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  
+  
+  
+  
+  
+  .item-containerResponsive2 button i{
+    margin-left: 20px;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  
+  .item-containerResponsive2 button:hover{
+    background: #F2F2F2;
+    text-decoration: none;
+  }
+  
+  .item-containerResponsive2 button:hover i{
+    margin-left: 200px;
+    color: #000;
+  }
+  
+  
+  
+  .item-containerResponsive3{
+    background: green;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .flex-itemUl .nav-links{
+    display: none;
+  }
+  
+  
+  .flex-container{
+    position: relative;
+  }
+  
+  .flex-itemUl{
+    background: #fff;
+    margin-right: 0;
+    justify-content: flex-end;
+  
+    height: auto;
+  }
+  
+  
+  
+  
+  .item-containerResponsivePesca{
+    background: green;
+  }
+  
+  
+  .item-containerResponsiveCaceria{
+    background: blue;
+  }
+  
+  
+  
+  .item-ContainerSecciones{
+    background: #fff;
+  
+  
+  }
+  
+  
+  .item-ContainerSecciones a{
+    font-family: 'Meera Inimai', sans-serif;
+    font-size: 17px;
     display: block;
     color: #000;
-    line-height: 0.1em;
-    font-family: 'Julius Sans One';
-    font-weight: bolder;
-    font-size: 12px;
-    line-height: 1.4em;
+    padding: 15px;
   }
-
-  .menu-Imagen2{
-    background-image: url('/assets/imagenes/menu/Agua dulce 2.png');
+  
+  
+  
+  .item-ContainerSecciones a:hover{
+     background: #F2F2F2;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  
+  
+  .flex-containerResponsivePesca{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 0%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    transition: 0.3s ease-in-out;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  
+    .flex-containerResponsivePesca button{
+      background: #fff;
+      padding: 15px;
+      border: none;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 17px;
+      width: 100%;
+      text-align: left;
+    }
+  
+    .flex-containerResponsivePesca button:hover{
+      background: #F2F2F2;  
+    }
+  
+  
+    .pruebaPadding{
+      padding: 20px;
+    }
+  
+    
+    .flex-containerResponsivePesca div h3 a{
+      color: #000;
+      display: block;
+      font-family: 'Meera Inimai', sans-serif;
+      font-weight: bold;
+      font-size: 28px;
+  
+    }
+  
+  
+    .flex-containerResponsivePesca a{
+      display: block;
+      color: #000;
+      padding: 15px;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 17px;
+    }
+  
+  
+    .flex-containerResponsivePesca a:hover{
+      text-decoration: none;
+      color: #000;
+      background: #F2F2F2;
+    }
+  
+  
+  
+  
+    /*Responsive Cacería*/
+  
+  
+    .flex-containerResponsiveCaceria{
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 0%;
+        height: auto;
+        position: absolute;
+        right: 0;
+        transition: 0.3s ease-in-out;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+  
+  
+    .flex-containerResponsiveCaceria div h3 a{
+      color: #000;
+      display: block;
+      font-family: 'Meera Inimai', sans-serif;
+      font-weight: bold;
+      font-size: 28px;
+  
+    }
+  
+    .flex-containerResponsiveCaceria a{
+      display: block;
+      color: #000;
+      padding: 15px;
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 17px;
+    }
+  
+  
+    .flex-containerResponsiveCaceria a:hover{
+         text-decoration: none;
+          color: #000;
+          background: #F2F2F2;
+    }
+  
+  
+  
+    .flex-containerResponsiveCaceria button{
+       background: #fff;
+        padding: 15px;
+        border: none;
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 17px;
+        width: 100%;
+        text-align: left;
+    }
+  
+    .flex-containerResponsiveCaceria button:hover{
+       background: #F2F2F2; 
+    }
+  
+  
+    .closeMenu{
+      background: #f2f2f2;
+      position: absolute;
+      bottom: 0%;
+      right: 2%;
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      border: none;
+      font-size: 18px;
+      z-index: 1000;
+    }
+  
+  
+    .closeMenuPrueba{
+      position: fixed;
+      border: 1px solid #000;
+      border-radius: 45%;
+      padding: 20px;
+    }
+  
+  
+    .responsiveSearch{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background: #fff;
+      height: auto;
+      width: 0;
+      overflow-x:hidden; 
+      position: absolute;
+      left: 0;
+      transition: 0.3s ease-in-out;
+       justify-content: center;
+       z-index: 1000;
+    }
+  
+  
+    .responsiveSearch label{
+      display: block;
+      padding: 10px;
+  
+    }
+  
+    .responsiveSearch label{
+      font-family: 'Meera Inimai', sans-serif;
+      font-size: 20px;
       
-    /* Full height */
-    width: 100%;
-    height: 600px;
-    max-height: 100%; 
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    }
+  
+    .responsiveSearch input{
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid #000;
+    }
+  
+  
+    .responsiveSearch i{
+      cursor: pointer;
+    }
+  
+  
+    .itemC img{
+      width: 30%;
+      height: 30%;
+      padding-left: 4px;
+      padding-bottom: 2px;
   }
-
-
-  .menu-ImagenCaceria{
-    background-image: url('/assets/imagenes/menu/Cazador.png');
+  
+  
+  
+  }
+  
+  @media screen and (max-width: 1024px) and (min-width: 1000px){
+    .flex-itemLogo{
+      flex: 1;
+    }
+  
+  
+    .flex-itemUl{
+      flex: 2;
+    }
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 999px) and (min-width:770px) {
+   
+      .flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+  
+      }
+  
+  
+      .flex-itemLogo{
+        flex: 1;
+      }
+  
+  
+  
+      .flex-itemUl{
+        flex: 2;
+      }
+  
+  
+  
+  
+      .flex-itemUl ul li button{
+        font-size: 14px;
+      }
+  
+  
+  
+  
+  }
+     
+  
+  
+  
+  
+  
+    @media screen and (max-width: 768px) and (min-width: 641px){
+    
+  
       
-    /* Full height */
-    width: 100%;
-    max-height: 100%; 
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  
+  
+     .flex-itemUl ul li button{
+      font-size: 13px;
+     }
+  
+  
+  
+  
+  
+  
+  
+     .flex-itemLogo{
+        flex: 1;
+      }
+  
+  
+  
+      .flex-itemUl{
+        flex: 3;
+      }
+  
+    
+  
+  
+    .moreSectionsDiv{
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+     
+    }
+  
+    .itemSection1{
+      flex: 1;
+      
+    }
+  
+    .itemSection1 img{
+      width: 100%;
+      height: 100%;
+    }
+  
+  
+    .itemSection2{
+      flex: 1;
+      padding: 30px;
+    }
+
+ 
+  
+  
+  
   }
+  
+  
+  
+  @media screen and (max-width: 568px) and (min-width: 502px){
+    .flex-itemUl .nav-links{
+      background: purple;
+    }
+  }
+  
+  
+  
+  
+  
+  @media screen and (max-width: 567px) and (min-width: 392px){
+  
+   .flex-itemUl .nav-links{
+    background: red;
+  }
+  
+  .itemC{
+      flex: 1;
+    }
+  
+  
+    .itemC img{
+        width: 50%;
+        height: 50%;
+        padding-left: 4px;
+        padding-bottom: 2px;
+  
+    }
+  
+    .itemC2{
+      flex: 1;
+    }
+  
+    .itemC2 p{
+      font-size: 14px;
+    }
+  
+    .itemC3{
+      flex: 1;
+    }
+  
+  
+  }
+  
+  /*Celular Portrait*/
+  @media screen and (max-width: 390px) and (min-width: 321px){
+     .flex-itemUl .nav-links{
+      background: red;
+    }
+  
+    .itemC{
+      flex: 1;
+    }
+  
+  
+    .itemC img{
+        width: 50%;
+        height: 50%;
+        padding-left: 4px;
+        padding-bottom: 2px;
+  
+    }
+  
+    .itemC2{
+      flex: 1;
+    }
+  
+    .itemC2 p{
+      font-size: 14px;
+    }
+  
+    .itemC3{
+      flex: 1;
+    }
+  
+  
+  
+  }
+  
+  
+  @media screen and (max-width: 320px){
+  
+  }
+  
+  
+  
+  
+  
+  
+  /*@media screen and (max-width: 390px) and (min-width: 321px) {
+    .flex-itemLogo{
+    display: none;
+  }
+  
+  
+  .flex-itemUl .nav-links{
+    display: none;
+  }
+  
+  .responsiveMenu{
+      display: block;
+    }
+  
+    .responsiveMenu button{
+      display: inline;
+      background: #fff;
+      border: none;
+      padding: 5px;
+      font-size: 25px;
+  
+    }
+  
+  
+  }*/
+  

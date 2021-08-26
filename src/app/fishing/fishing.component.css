@@ -13,7 +13,7 @@ Ipad Mini 2.4 Landscape--*/
     width: 100%;
     position: relative;
     margin: 50px auto;
-    background: #fafafa;
+    
     height: auto;
     transition: all 200ms ease-in;
     transform: scale(1);
@@ -32,53 +32,52 @@ Ipad Mini 2.4 Landscape--*/
 .badge1 {
     position: absolute;
     left: 0;
-    top: 13px;
-    text-transform: uppercase;
-    font-size: 13px;
+    top: 4px;
+    font-family: 'Meera Inimai', sans-serif;
+   
+    font-size: 12px;
     font-weight: 700;
-    background: #000;
-    color: #fff;
+    color: #000;
     padding: 3px 10px;
-    border-radius: none;
-    z-index: 1;
+    
+    
 }
 
 .badge2 {
     position: absolute;
-    left: 0;
-    top: 40px;
-    text-transform: uppercase;
-    font-size: 13px;
+    left: 28%;
+    top: 4px;
+    font-size: 12px;
+    font-family: 'Meera Inimai', sans-serif;
     font-weight: 700;
-    background: #ff0000;
-    color: #fff;
+    color:#000;
     padding: 3px 10px;
-    z-index: 1;
 }
 
 
 
 .badge3 {
     position: absolute;
-    right: 5px;
-    top: 47%;
+    left: 15%;
+    top: 25%;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Meera Inimai', sans-serif;
     font-weight: 700;
-    color: #fff;
-    background-color: #000000;
-    
-    
+    color: #000;
     padding: 3px 10px;
+
 }
+
+
+
 .product-tumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    padding: 80px;
-    background: #f0f0f0;
+    height: 250px;
+    padding: 45px;
+    background: #fff;
 }
 
 .product-tumb img {
@@ -111,13 +110,13 @@ Ipad Mini 2.4 Landscape--*/
 .product-details h4{
     font-family: 'Meera Inima', sans-serif;
    
-    font-size: 14px;
+    font-size: 13px;
     color: #000;
   }
 
   .product-details h4 span{
     font-weight: normal;
-    text-decoration: line-through;
+    /*text-decoration: line-through;*/
 }
 
   
@@ -132,7 +131,7 @@ Ipad Mini 2.4 Landscape--*/
   .product-details h5 span{
       color: red;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
   }
   
   .product-details h3{
@@ -144,19 +143,20 @@ Ipad Mini 2.4 Landscape--*/
  
   
   .product-details h4 a {
-    font-weight: bold;
+    font-weight: normal;
     display: block;
     margin-bottom: 10px;
     color: #000000;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Meera Inima', sans-serif;
   }
   
   .product-details h4 a:hover {
     color: #162953;
   }
+  
   
   .product-details p {
     font-size: 15px;
@@ -192,6 +192,12 @@ Ipad Mini 2.4 Landscape--*/
 
 .product-price i:hover{
   color: #ff0000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff0000;
+}
+
+.product-priceHeartChecked i{
+    color: #000;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff0000;
 }
@@ -345,27 +351,53 @@ Ipad Mini 2.4 Landscape--*/
         -webkit-text-stroke-color: #ff0000;
         transition: 0.5s;
     }
+
+
+    .product-priceHeartChecked i{
+        color: #ff0000;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #ff0000;
+    }
   
+   
     .pruebaBotones2{
+        background: #ffffff;
+        
+        opacity: 0;
         position: absolute;
-        top: 60%;
-        right: 5%; 
-    }
-  
-    .pruebaBotones2 button{
-        background: #fff;
-        border:none;
-        border-radius: 2px;
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 15px;
-        padding: 5px;
-    }
-  
-    .pruebaBotones2 button:hover{
+        top: 32%;
+        right:3%;
+        transition: 0.3s;
+      }
+    
+      .product-card:hover .pruebaBotones2{
+          opacity: 1;
+          position: absolute;
+          top: 49%;
+
+          
+      }
+
+      .pruebaBotones2 button:hover{
         background: #000;
         color: #fff;
         transition: 0.5s ease-in-out;
-    }
+      }
+    
+    
+        
+    
+      
+      .pruebaBotones2 button{
+        background: none;
+        margin-bottom: 1px;
+        border:none;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        padding: 7px;
+        
+      
+      }
       
     .pruebaDos{
         height: 500px;
@@ -1409,13 +1441,13 @@ color: red;
 }
 
 .seccion-productos-extras h1{
-    font-family: 'Anton', sans-serif;
-    color: #000;
-    font-size: 40px;
-    text-transform: none;
-    text-align: left;
-    padding: 20px;
-    margin-bottom: 0;
+    font-family: 'Meera Inima', sans-serif;
+        font-weight: bold;
+        padding-top: 20px;
+        color: #000;
+        font-size: 25px;
+        text-align: left;
+        text-transform: none;
     }
 
 .seccion-productos-extras hr{
@@ -2125,18 +2157,19 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
       
       .product-details h3{
         font-family: 'Meera Inima', sans-serif;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: bolder;
         color: #000;
       }
       
       .product-details h4 a {
-        font-weight: bold;
+        font-weight: normal;
         display: block;
         margin-bottom: 10px;
         color: #000000;
         text-decoration: none;
         transition: 0.3s;
-        font-size: 15px;
+        font-size: 13px;
         font-family: 'Meera Inima', sans-serif;
       }
       
@@ -2273,12 +2306,11 @@ background: linear-gradient(245deg, rgba(174,0,221,1) 37%, rgba(221,0,0,1) 79%);
 
 
       .product-Title h1{
-        font-family: 'Anton', sans-serif;
+        font-family: 'Meera Inima', sans-serif;
+        font-weight: bold;
         padding-top: 20px;
-        padding-bottom: 0;
-        margin-bottom: 0;
         color: #000;
-        font-size: 40px;
+        font-size: 25px;
         text-align: left;
         text-transform: none;
     }
@@ -2477,6 +2509,8 @@ kindlefire landscape --Its affected
 
 */
 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+
+    
 
   
     .product-price h5{

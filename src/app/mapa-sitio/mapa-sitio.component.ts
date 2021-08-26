@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AotSummaryResolver } from '@angular/compiler';
 import * as AOS from 'aos';
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 
 @Component({
   selector: 'app-mapa-sitio',
@@ -13,7 +14,7 @@ export class MapaSitioComponent implements OnInit {
 
   ngOnInit() {
     AOS.init();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToTop();
   }
 
 }

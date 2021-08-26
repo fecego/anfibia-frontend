@@ -1,0 +1,27 @@
+
+            <div class="modal-header texto-Title">
+                <h5>Selecciona una nueva dirección</h5>
+                <button type="button" class="close" (click)="closeModal('dismiss')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    
+                </div>
+                <div class="card card-body text-address" [ngClass] = "{'cambioColor': data.default == true }" *ngFor = "let data of usuarios | async">
+                    <p>Calle: <span>{{data.street}}</span></p>
+                    <p>Numero: <span>{{data.number}}</span></p>
+                    <p>Colonia/Fraccionamiento: <span>{{data.neighborhood}}</span></p>
+                    <p>Municipio:  <span>{{data.municipality}}</span></p>
+                    <p>CP: <span>{{data.cp}}</span></p>
+                    <p>Referencías: <span>{{data.reference}}</span></p>
+                    <p>Telefono: <span>{{data.phone}}</span></p>
+                   <div class="back-button">
+                     <button 
+                     #referButtonSelectedAddress
+                     value="{{data.sequential}}"
+                     >
+                        Seleccionar</button>
+                   </div>
+                </div>
+                                  
+            </div>

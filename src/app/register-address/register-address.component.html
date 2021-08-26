@@ -1,0 +1,239 @@
+<div class="container">
+    <div class="row not-logged" *ngIf="!isAutheticated" >
+       <div class="col-sm-12">
+        <h1>No te encuentras loggeado, para visitar esta sección, debes ser un usuario registrado, te invitamos a que te logges,
+            <a routerLink="/login">Ir al Login</a>
+        </h1>
+       </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px" *ngIf="isAutheticated">
+        <div class="col-sm-8 offset-2">
+            <div class="title-address"> 
+                <h5>Formulario de Registro de direcciones</h5>   
+                <p>Agrega tus direcciones en este formulario, además elige como predeterminada tu dirección si es la que vas a usar 
+                    para recibir tus pedidos.
+                </p>
+            </div>
+            <div class="modal-body">
+                <div class="card card-body">
+                    <form [formGroup] ="newAddresForm" (ngSubmit)="saveNewAddress()">
+                    <!--<div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text"
+                                 class="form-control"
+                                id="nombre"
+                                value="{{newAddresForm.nombre}}"
+                                formControlName = "nombre"
+                                name="nombre"
+                                aria-describedby="nombre"
+                                disabled
+                                > 
+                                <span class="errorFormulario" *ngIf ="newAddresForm.get('nombre').value === '' && newAddresForm.get('nombre').touched" >*Este campo es requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="apellido">Apellidos</label>
+                                <input type="text"
+                                 class="form-control"
+                                id="apellido" 
+                                name="apellidos"
+                                value="{{newAddresForm.apellidos}}"
+                                formControlName = "apellidos" 
+                                aria-describedby="apellidos" 
+                                disabled
+                                > 
+                            
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                               
+                                <!--<input type="text"
+                                 class="" 
+                                 id="street"
+                                 name="street" 
+                                 formControlName = "street" 
+                                 aria-describedby="calle">
+                                 <span class="inputBar"></span>
+                                 <label for="direccion">Calle</label>-->
+                                <!--==================================-->
+                                <input type="text"
+                                id="street"
+                                formControlName="street"  
+                                name="street"
+                                required />
+                                <span class="inputBar"></span>
+                                <label>Calle</label>
+
+
+                                 <span class="errorFormulario" *ngIf ="newAddresForm.get('street').value === '' && newAddresForm.get('street').touched" >*Este campo es requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                               
+                                <input type="text"
+                                 id="neighborhood" 
+                                 name = "neighborhood"
+                                 formControlName = "neighborhood" 
+                                  required/> 
+                                 <span class="inputBar"></span>
+                                 <label for="neighborhood">Colonia</label>
+                                 <span class="errorFormulario" *ngIf ="newAddresForm.get('neighborhood').value === '' && newAddresForm.get('neighborhood').touched" >*Este campo es requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                               
+                                <input type="text" 
+                                id="number"
+                                name="number" 
+                                formControlName = "number" 
+                                required/>
+                                <span class="inputBar"></span>
+                                <label for="number">Número</label> 
+                                <span class="errorFormulario" *ngIf ="newAddresForm.get('number').value === '' && newAddresForm.get('number').touched" >*Este campo es requerido.</span>
+                                <span class="errorFormulario" *ngIf ="newAddresForm.get('number').errors?.pattern" >*Solo se aceptan numeros.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                                <input type="text"
+                                 id="postalCode" 
+                                 name = "postalCode"
+                                 formControlName = "postalCode" 
+                                 required/> 
+                                 <span class="inputBar"></span>
+                                 <label for="postalCode">Código Postal</label>
+                                 <span class="errorFormulario" *ngIf ="newAddresForm.get('postalCode').value === '' && newAddresForm.get('postalCode').touched" >*Este campo es requerido.</span>
+                                 <span class="errorFormulario" *ngIf ="newAddresForm.get('postalCode').errors?.pattern" >*Solo se aceptan 5 numeros, formato de Codigo Postal.</span>
+            
+                                </div>
+                        </div>
+                    </div>
+            
+                   
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">  
+                                <label for="inputState">Estado</label>
+                                <select id="inputState"
+                                name="state" 
+                                formControlName  = "state" 
+                                class="form-control" 
+                                >
+            
+                                    <option *ngFor = "let estado of estados | async; index as i; let index = i" [value]="estado.stateSeq">{{estado.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="country">Pais</label>
+                                <input type="text" 
+                                class="form-control" 
+                                id="country" 
+                                aria-describedby="country" 
+                                formControlName = "country" 
+                              
+            
+                                > 
+                                <!--<span class="errorFormulario" *ngIf ="newAddresForm.get('pais').value === '' && newAddresForm.get('pais').touched" >*Este campo es requerido</span>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                               
+                                <input type="text"
+                                  id="municipality"
+                                  placeholder=""
+                                  name="municipality" 
+                                  formControlName = "municipality"
+                                  required
+                                  /> 
+                                  <span class="inputBar"></span>
+                                  <label for="municipio">Municipio</label>
+                                  <span class="errorFormulario" *ngIf ="newAddresForm.get('municipality').value === '' && newAddresForm.get('municipality').touched" >*Este campo es requerido</span>
+                            </div>
+                        </div>
+            
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                              
+                                <input type="text"
+                                 class=""
+                                  id="phone"
+                                  aria-describedby="phone" 
+                                  placeholder=""
+                                  name="phone" 
+                                  formControlName = "phone"
+                                  required
+                                  /> 
+                                  <span class="inputBar"></span>
+                                  <label for="phone">Telefono</label>
+                                  <span class="errorFormulario" *ngIf ="newAddresForm.get('phone').value === '' && newAddresForm.get('phone').touched" >*Este campo es requerido</span>
+                                  <span class="errorFormulario" *ngIf ="newAddresForm.get('phone').errors?.pattern" >*Solo se aceptan 10 numeros, formato de telefono.</span>
+                                </div>
+                        </div>
+            
+                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                            <div class="inputGroup">
+                                
+                                <input type="text"
+                                 class=""
+                                  id="reference"
+                                  aria-describedby="reference" 
+                                  placeholder=""
+                                  name="reference" 
+                                  formControlName = "reference"
+                                  required
+                                  /> 
+                                  <span class="inputBar"></span>
+                                  <label for="reference">Referencias</label>
+                                  <span class="errorFormulario" *ngIf ="newAddresForm.get('reference').value === '' && newAddresForm.get('reference').touched" >*Este campo es requerido</span>
+                            </div>
+                        </div>
+                       
+                        <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                            <input style="margin-left: 5px;"
+                             class="form-check-input"
+                              type="checkbox"
+                              value="" 
+                              id="direccionPrincipal"
+                        
+                              name="direccionPrincipal"
+                              formControlName= "direccionPrincipal">
+            
+                            <label style="margin-left: 20px;" class="form-check-label" for="defaultCheck1">Marcar como dirección predeterminada.</label>
+                            <!--<span class="errorFormulario" *ngIf ="newAddresForm.get('direccionPrincipal').value === false && newAddresForm.get('direccionPrincipal').touched" >*Este campo es requerido</span>-->
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                        <button class="button boton2" type="submit" [disabled] = "newAddresForm.status === 'INVALID' || newAddresForm.get('direccionPrincipal').value === false">Guardar dirección</button>
+                    </div>-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 button-container" >
+                        <button class="" 
+                        #referButtonAddAddress
+                        [disabled] = "newAddresForm.status === 'INVALID'"
+                        [disabled] = "newAddresForm.get('street').value === '' || newAddresForm.get('neighborhood').value === '' || newAddresForm.get('number').value === '' || newAddresForm.get('postalCode').value === '' 
+                        || newAddresForm.get('state').value === '' || newAddresForm.get('country').value === '' || newAddresForm.get('municipality').value === '' || newAddresForm.get('phone').value === '' || newAddresForm.get('reference').value === ''
+                        "
+                        type="submit">Guardar dirección</button>
+                    </div>
+                </form>
+                </div>                        
+            </div>
+            
+
+        </div>
+
+    </div>
+
+</div>

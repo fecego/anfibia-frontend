@@ -21,7 +21,7 @@
      section .content h1{
          font-size: 350px;
          letter-spacing: 20px; 
-         font-family: 'Prometo-x-bold'; 
+         font-family: 'Meera Inima', sans-serif; 
          text-align: center; 
          color: transparent;
          line-height: 1em;
@@ -39,7 +39,7 @@
      
      .content h2{
          font-size: 35px; 
-         font-family: 'Prometo-Medium'; 
+         font-family: 'Meera Inima', sans-serif; 
          font-weight: bolder;
          text-align: center; 
          color: #000;
@@ -47,25 +47,26 @@
      
      .content h4{
          font-size: 18px; 
-         font-family: 'Prometo-Medium'; 
+         font-family: 'Meera Inima', sans-serif; 
          text-align: center; 
          color: #000;
-         font-weight: bolder;
      }
      
      .boton-not-found{
          border: 2px solid #000; 
          color: #000; 
-         font-family: 'Prometo-Medium'; 
+         font-family: 'Meera Inima', sans-serif; 
          padding: 5px; 
          font-size: 20px;
          background:none;
          margin-top: 40px;
-         font-weight: bolder;
+         transition: 0.4s;
+         
      }
      
      .boton-not-found:hover{
-         
+         color: #fff;
+         background: #000;
      }
      
      section .content hr{

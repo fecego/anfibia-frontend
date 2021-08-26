@@ -1,7 +1,7 @@
-<div class="container-fluid">
-    <div class="row">
+<div class="container">
+    <div class="row" style="height: auto; margin-bottom: 60px;">
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 menu">
-            <h2>Menu</h2>
+            <h2>Menú</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/perfil">Mi perfil</a>
@@ -13,33 +13,60 @@
                     <a class="nav-link" routerLink="/pedidos">Mis pedidos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/lista-deseos">Lista de deseos</a>
+                    <a class="nav-link" routerLink="/carrito">Mi carrito</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/carrito">Carrito de compras</a>
+                    <a class="nav-link" routerLink="/lista-deseos">Mi lista de deseos</a>
                 </li>
                 <li class="nav-item">
                   <a type="link" class="nav-link" routerLink="/preguntas-frecuentes">FAQ</a>
                 </li>
             </ul>
             <hr>
-            <h2>¿Necesitas ayuda?</h2>
-            <p>Si tiene alguna pregunta o necesita ayuda con su cuenta, puede contactarnos para ayudarlo.</p>
-            <div class="help">
-                <li><i class="fa fa-envelope-o"></i> Loremipsum@gmail.com</li>
-                <li><i class="fa fa-phone"></i> 0180098746535</li>
-            </div>
+            <h2>¿Necesitas ayuda? </h2>
+            <p>Si necesitas ayuda con algún proceso, puedes contactarnos a travez de nuestra sección de contacto o 
+                puedes comunicarte directamente con nosotros por medio de la siguiente información:
+            </p>
+            <ul class="infoBasic">
+                <li> <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> fecego@fecego.com</p></li>
+                <li> <p> <i class="fa fa-mobile" aria-hidden="true"></i> 2299132256</p></li>
+            </ul>
+
+
+           
+           
+          
             <hr>
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-            <div class="row">
-                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                    <h1>{{usuario.nombre | uppercase}} {{usuario.apellidos | uppercase}}</h1>
-                    <dl class="detalles">
-                        <dt><i class="fa fa-envelope" aria-hidden="true"></i> {{usuario.correo}}</dt>
-                        <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{usuario.birthday}}</dt>
-                    </dl>
+            <div class="row not-logged" *ngIf="!isAutheticated">
+                <div class="col-sm-12">
+                    <h1>No te encuentras loggeado, si deseas tener una mejor experiencia como usuario en Anfibia, te recomendamos que te loggees.
+                        <a routerLink="/login">Ir al Login</a>
+                    </h1>
+
+                </div>
+            </div>
+            <div class="row not-logged" *ngIf="mensajeError">
+                <div class="col-sm-12">
+                    <h1>
+                        {{mensajeError}}
+                    </h1>
+
+                </div>
+            </div>
+
+            <div class="row" *ngIf="isAutheticated && !mensajeError">
+           
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 informacion-User">
+                    <h1>{{userName}}</h1>
+                    <h2><i class="fa fa-envelope" aria-hidden="true"></i> <span>{{email}}</span></h2>
+                    <h2><i class="fa fa-birthday-cake" aria-hidden="true"></i> <span>{{birthday}}</span></h2>
+                    <!--<dl class="detalles">
+                        <dt><i class="fa fa-envelope" aria-hidden="true"></i>  <span>{{email | async}}</span></dt>
+                        <dt><i class="fa fa-birthday-cake" aria-hidden="true"></i>  <span>{{birthday | async}}</span></dt>
+                    </dl>-->
                 </div>
                
                 <!--<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -48,35 +75,77 @@
             </div>
             <hr>
 
-            <div class="row perfil">
-                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 direcciones">
+            <div class="row perfil" *ngIf="isAutheticated && !mensajeError">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 direcciones">
                     <h2><i class="fa fa-home" aria-hidden="true"></i> Direcciones</h2>
-                    <p>Puedes agregar y editar tu dirección aquí.</p>
-                   <div *ngFor="let direccion of usuario.direccion; index as i; let index = i;">
-                    <ul class="direccion" >
-                        <li><h2>Calle: <span>{{direccion.calle}}</span>, Numero: <span>{{direccion.numero}}</span>, Fraccionamiento <span>{{direccion.fraccionamiento}}</span></h2>   
-                            <h2>Municipio: <span>{{direccion.municipio}}</span>, Estado: <span>{{direccion.estado}}</span>, País <span>{{direccion.pais}}</span></h2>
-                            <h2>Telefono: <span>{{direccion.telefono}}</span>, Codigo Postal: <span> {{direccion.codigoPostal}}</span></h2>
-                            
-                        </li>
-                    </ul>
-                    <button  (click) = "openModal(usuario, direccion)">Editar dirección</button>
-                    <button (click) = "eliminarDireccion(usuario, direccion, i)">Eliminar dirección</button>
-                    <hr>
-                   </div>     
+                    <p>Bienvenido <span style="font-weight: bold;">{{name}} {{lastName}}</span></p>
+                    <ol>
+                        <li><p [ngClass] = "{'WhenIs3Address': userAddress?.length == 3}">En esta sección podrás agregar hasta 3 direcciones, una vez que tengas 3 direcciones, el botón será desactivado, para su reactivación deberás eliminar una dirección,
+                            esto con el objetivo de evitar problemas.    
+                        </p></li>
+                        <li><p>Deberás seleccionar una dirección predeterminada, esto para que podamos enviar tus pedidos, y evitar problemas más adelante.</p></li>
+                        <li><p>También desde aquí podrás acceder de forma rapida a tu información personal, como tus pedidos, tu carrito, tus deseos, etc</p></li>
+                        <li><p>Disfruta de la Experiencía ANFIBIA, en caso de tener alguna duda o problema, puedes enviarnos un correo a travez de la sección de <a routerLink = "/contactanos">contactanos</a>, o podrás contactarnos con la inforamción que se 
+                        se muestra en la sección izquierda.
+                        </p></li>
+                    </ol>
+              
                     
-                   
                 </div>
+                <div class="col-sm-8 offset-2" style="border-left: 1px solid #F2F2F2;">
+                    <div>
+                        <!--<button type="link" class="boton boton1" *ngIf = "userAddress?.length < 3" (click) = "openModalNuevaDireccion(idUser)"><i class="fa fa-plus" aria-hidden="true"></i>-->
+                            <button type="link" class="boton boton1" *ngIf = "userAddress?.length < 3" routerLink= "/register-address"><i class="fa fa-plus" aria-hidden="true"></i> 
+                            Agregar nueva dirección</button>
+                    </div>
+                    <div *ngIf = "userAddress?.length > 0"> 
+                        <div *ngFor="let userA of userAddress; index as i; let index = i;" [ngClass] = "{'selectedAddress': userA.default === true}">
+                         <h1 *ngIf = "userA.default === true" >Dirección predeterminada</h1>
+                         
+
+                         <ul class="direccion">
+                             <li><h2>Calle: <span>{{userA.street}}</span></h2></li> 
+                             <li><h2>Numero: <span>{{userA.number}}</span></h2></li>
+                             <li><h2>Fraccionamiento: <span>{{userA.neighborhood}}</span></h2></li>
+                             <li><h2>Municipio: <span>{{userA.municipality}}</span></h2></li>
+                             <li><h2>Estado: <span>{{userA.estado}}</span></h2></li> 
+                             <li><h2> País: <span>{{userA.country}}</span></h2></li>
+                             <li><h2>Telefono: <span>{{userA.phone}}</span></h2></li>
+                             <li><h2> Codigo Postal: <span>{{userA.cp}}</span></h2></li>
+                             <li><h2>Referencias: <span>{{userA.reference}}</span> </h2></li>
+                             
+                         </ul>
+                         <button class="botonEditarAndDelete"  (click) = "openModal(userA)">Editar dirección</button>
+                         <button *ngIf ="!userA.isDeleting" class="botonEditarAndDelete"  (click) = "deleteAddress(userA)">Eliminar dirección</button><app-spinner-small *ngIf="userA.isDeleting"></app-spinner-small>
+                         
+                         <hr>
+                        </div>     
+                     </div>
+                     <div class="no-data" *ngIf = "userAddress?.length == null">
+                        <hr>
+                        <p>No has agregado ninguna dirección, te recomendamos agregar al menos una dirección y seleccionarla como predeterminada, 
+                            esto para continuar con el proceso de tu compra de forma exitosa.
+                        </p>
+                        <hr>
+                    </div>
+
+                </div>
+                
                 <!-- Trigger the modal with a button -->
-                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    <button class="boton boton1" (click) = "openModalNuevaDireccion(usuario.nombre, usuario.apellidos)">Agregar nueva dirección</button>
-                </div>
+              
         
                  <!-- Modal -->
               
             </div>
+           
+           
+            
+
+
+
+
             <hr>
-            <div class="row perfil">
+            <!--<div class="row perfil">
                 <div class="col-lg-8 col-md-5 col-sm-5 col-xs-12">
                     <h2><i class="fa fa-heart" aria-hidden="true"></i> Lista de deseos</h2>
                     <p>Mira tu lista de deseo.</p>
@@ -84,7 +153,7 @@
                 <div class="col-lg-4 col-md-7 col-sm-7 col-xs-12">
                     <a class="boton boton1" routerLink = "/lista-deseos">Ver mi lista de deseos</a>
                 </div>
-            </div>
+            </div>-->
             <hr>
         </div>
     </div>

@@ -16,13 +16,50 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!--<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-hashes' https://connect.facebook.net/en_US/sdk.js https://apis.google.com/;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    img-src 'self' data: https://raw.githubusercontent.com https://cdn0.iconfinder.com;
+    connect-src http://localhost:4000 http://localhost:4200;
+    frame-src https://accounts.google.com/;
+    font-src https://fonts.google.com https://fonts.gstatic.com http://localhost:4200">-->
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body style="padding-top: 19vh;">
+<body>
   <app-root></app-root>
   
   <meta charset="utf-8">
   
- 
+  <!--<script type="text/javascript">
+    window.addEventListener("message", receiveMessage, false);
+    function receiveMessage(event) {
+        if (event.origin != "https://test.ipg-online.com")
+            return;
+        var elementArr = event.data.elementArr;
+        forwardForm(event.data, elementArr);
+    }
+
+    function forwardForm(responseObj, elementArr) {
+        var newForm = document.createElement("form");
+        newForm.setAttribute('method',"post");
+        newForm.setAttribute('action',responseObj.redirectURL);
+        newForm.setAttribute('id',"newForm");
+        newForm.setAttribute('name',"newForm");
+        document.body.appendChild(newForm);
+        for(var i = 0 ; i < elementArr.length; i++) {
+            var element = elementArr[i];
+            var input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", element.name);
+            input.setAttribute("value", element.value);
+            document.newForm.appendChild(input);
+        }
+        document.newForm.submit();
+    }
+    </script>-->
+
+
 </body>
 </html>

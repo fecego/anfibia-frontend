@@ -11,12 +11,8 @@
          <div class="main-imgModal">
           <img id="imagen-principal" src="{{productoModal.image[0].url}}" alt="" >
          </div>
-         <div class="modal-badge-nuevo">
-           <h1 *ngIf ="productoModal.nuevo">NUEVO</h1>
-         </div>
-         <div class="modal-badge-destacado">
-          <h1 *ngIf ="productoModal.destacado">DESTACADO</h1>
-         </div>
+         
+        
          <div class="row" style="padding-top: 10px;">
           <div class="col-12 col-sm-12">
               <div class="row">
@@ -49,13 +45,16 @@
       
       <div class="col-md-12 col-lg-6 ml-auto modal-textos">
         <button type="button" class="close close-button" data-dismiss="modal" (click)="closeModal('dismiss')">X</button>
-        <h1>{{productoModal.nombre | uppercase}}</h1>
+        <div class="modal-badge-N" *ngIf ="productoModal.nuevo"><h2>Nuevo</h2></div>
+        <div class="modal-badge-D" *ngIf ="productoModal.destacado"><h2>Destacado</h2></div>
+        <h1>{{productoModal.nombre | oracionMayusculas}}</h1>
         <hr>
-        <div class="row" style="padding-top: 20px;">
+        <div class="row" style="padding-top: 30px;">
           <div class="col-sm-12">
-            <h4 *ngIf="productoModal.descuento">Precio: <span>{{productoModal.precio_antiguo | currency}}</span></h4>
-            <h5 *ngIf="productoModal.descuento != 0; else precioNormal">Precio Desc: <span>{{productoModal.precio | currency}}</span> </h5>
-            <h3 id="precioNormal" *ngIf="productoModal.descuento == 0">Precio: <span> {{productoModal.precio | currency}}</span></h3>
+            <h4>Precio: <span>{{productoModal.precio | currency}}</span></h4>
+           
+            <!--<h5 *ngIf="productoModal.descuento != 0; else precioNormal">Precio Desc: <span>{{productoModal.precio | currency}}</span> </h5>
+            <h3 id="precioNormal" *ngIf="productoModal.descuento == 0">Precio: <span> {{productoModal.precio | currency}}</span></h3>-->
             <h4></h4>
             <div class="basic-info">
               <h4>{{productoModal.categoria | uppercase}} </h4>
@@ -63,16 +62,18 @@
             </div>
             <h5>Descripción</h5>
             <p>{{productoModal.descripcion}}.</p>
-            <a class="see-more" routerLink = "/tienda/{{productoModal.idProducto}}/{{productoModal.nombre}}" (click) = "closeModal()">Ver más</a>
+            <a class="see-more" routerLink = "/tienda/{{productoModal.id}}/{{productoModal.nombre}}" (click) = "closeModal()">Ver más</a>
 
 
            
              
              
           </div>
-          <button class="product-links-bag2" type="button">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
-          <button class="heart-button"><a href=""><i class="fa fa-heart" aria-hidden="true"></i></a></button>
-         
+          <button class="product-links-bag2" type="button" [disabled] = "productoModal.existencia === 0 || productoModal.existencia === null || productoModal.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoModal.existencia === 0 || productoModal.existencia === null || productoModal.isLoadingCart == true}" value="{{productoModal.id}}" (click) = "addCartElement(productoModal, $event)">Añadir al carrito <i class="fa fa-shopping-cart"></i> </button>
+          <button value= "{{productoModal.id}}" *ngIf = "!productoModal.isLoading" (click)="addWishList(productoModal, $event)" [ngClass] = "{'product-priceHeartChecked': productoModal.fullHeart == true}" class="heart-button"><i class="fa fa-heart" aria-hidden="true"></i></button>
+          <div class="heart-button" *ngIf = "productoModal.isLoading == true">
+            <app-spinner-small></app-spinner-small>
+          </div>
         </div>
       </div>
     </div>

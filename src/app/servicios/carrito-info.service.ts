@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoInfoService {
 
-  constructor() { }
+
+  public api = "https://localhost:4000";
+
+
+  constructor(private http:HttpClient) { }
 
   getInfoCarrito(){
     return [{
@@ -146,13 +153,17 @@ export class CarritoInfoService {
       
         },
         
-  
-    
-        
-
-
       ]
     }]
   }
+
+
+
+  getCategorias_pesca(dato){
+    return this.http.get(`${this.api}/categorias/${dato}`);
+  }
+
+
+
 
 }

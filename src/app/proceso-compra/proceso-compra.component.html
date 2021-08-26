@@ -1,34 +1,251 @@
-<div class="container-fluid">
+<div class="container">
+    
     <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 linea">
+            <h2>Menú</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/perfil">Mi perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/tienda">Tienda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/carrito">Mi carrito</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/pedidos">Mis pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/preguntas-frecuentes">FAQ</a>
+                </li>
+            </ul>
+            <hr>
+            <h2>¿Necesitas ayuda? </h2>
+            <p>Si necesitas ayuda con algún proceso, puedes contactarnos a travez de nuestra sección de contacto o 
+                puedes comunicarte directamente con nosotros por medio de la siguiente información:
+            </p>
+            <div class="infoBasic">
+                 <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> fecego@fecego.com</p>
+                <p> <i class="fa fa-mobile" aria-hidden="true"></i> 2299132256</p>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12 mensajeError" *ngIf="mensajeError && isAutheticated">
+            <h2>Error, información no encontrada</h2>
+            <h1>404</h1>
+            <p>{{mensajeError}}</p>
+
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12" *ngIf="!isAutheticated">
+            
+            <p>No te encuentras loggeado, para poder ver el contenido de esta sección, es necesario que te loggees,
+                <a routerLink="/login">Ir al Login</a>
+            </p>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12" *ngIf="pagoProcess">
+            <iframe name="myFrame" width="100%" height="600px" style="border: none;"></iframe>
+        </div>
+
+
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12" *ngIf="!mensajeError && isAutheticated">
+           <div class="row">
+               <div class="col-lg-7 col-md-8 col-sm-12 col-12 titulo">
+                  <h1>Información del Envío</h1>
+                  <div class="informacion" >
+                    <!--MODAL DE ENTREGRAS-->
+                   
+        
+                   <div *ngIf = "addressesData?.length === 1">
+                    <div class="selectedAddress"  *ngFor = "let data of addressesData">
+                        <div>
+                            <h2>El pedido será enviado a la siguiente dirección que fue definida como predeterminada, 
+                                te sugerimos que revises dicha información, una vez confirmada, puedes completar tu compra, 
+                                presionando el Boton "Completar Compra", puedes editar tu dirección presionando el botón editar.
+                            </h2>
+                            <!--<div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
+                            </div>--> 
+                        
+                        <div>
+                            <h1>Cliente: <span>{{nameData}} {{lastNameData}}</span></h1>
+            
+                        </div>
+                        <h3><b>Dirección de envío</b></h3>
+                        <div>
+                            <p>Calle: <span>{{data.street}}</span></p>
+                            <p>Numero: <span>{{data.number}}</span></p>
+                            <p>Colonia/Fraccionamiento: <span>{{data.neighborhood}}</span></p>
+                            <p>Municipio:  <span>{{data.municipality}}</span></p>
+                            <p>CP: <span>{{data.cp}}</span></p>
+                            <p>Referencías: <span>{{data.reference}}</span></p>
+                            <p>Telefono: <span>{{data.phone}}</span></p>
+                        </div>
+                        
+                        <div class="style-eLinks">
+                            <a type="button" (click) = "editar_selected_address(data)">Editar dirección</a> 
+                        </div>
+                        </div>
+            
+                        
+                       </div>
+        
+                   </div>
+                   <div class="no-Address" *ngIf = "addressesData?.length !== 1">
+                    <h5>Debes agregar al menos una dirección y marcarla como predeterminada para poder continuar con el proceso de compra,
+                        esta dirección será a la cual el pedido será enviado, de otra forma el proceso de Compra no podrá ser finalizado. </h5>
+                        <h3>1.- Presiona el enlace "Agregar dirección".</h3>
+                        <h3>2.- Ingresa los datos que te son solicitados.</h3>
+                        <h3>3.- Marca la casilla "Marcar como predeterminada", esta será la casilla que indicará a donde debemos enviar el producto.</h3>
+                        <h3>4.- Presiona continuar "CONTINUAR CON LA COMPRA", si no haz agregado ninguna dirección no podrás visualizar dicho botón par continuar con el proceso.</h3>                
+                         <div class="botonesDirecciones">
+                             <button type="button" *ngIf = "addressFullData?.length < 3" class="addAddress_new" (click) = "add_Address_modal()">Agregar dirección</button>  <button class="addAddress_new" *ngIf="addressFullData?.length >= 1" type="button" (click)="openModal()">Seleccionar una nueva dirección</button>
+                         </div>
+     
+                </div>
+               </div>
+           </div>
+
+           <div class="col-lg-5 col-md-4 col-sm-12 col-xs-12 pedido">
+            <h2>Resumen del pedido</h2>
+            <hr>
+            <div class="row" *ngFor = "let infCarrito of cartData">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h5>Total del pedido: {{infCarrito.total | currency}} </h5>
+                    <h5>Envio: </h5>
+                    <h5><b>Total</b> {{infCarrito.total | currency}}</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <!--<h6>{{infCarrito.total | currency}}</h6>
+                    <h6>{{infCarrito.total | currency}}</h6>
+                    <h6><b>{{infCarrito.total | currency}}</b></h6>-->
+                </div>
+            </div>
+            <hr style="background: #fff; height: 1px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!--<a href="#demo" class="boton" data-toggle="collapse" aria-expanded="true">Simple collapsible</a>
+                <div id="demo" class="collapse"></div>-->
+                
+               
+           
+                <div class="row pruebaData">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p>Al hacer click en COMPLETAR LA COMPRA aceptas nuestros <a href="">Términos y Condiciones.</a></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button (click) = "modifyValue()" type="submit" form="checkoutform"  *ngIf="addressesData?.length === 1" class="btn btn-info" >Completar compra</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+    </div>
+
+    <!--<div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 regresar">
             <a routerLink="/carrito-compras"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al carrito de compras</a>
         </div>
-    </div>
+    </div>-->
 </div>
-
-<div class="container">
+<!--<div class="container" *ngIf="!isAutheticated">
     <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 titulo">
-            <h1>Mi información</h1>
+        <div class="col-sm-12">
+            
+                <p>No te encuentras loggeado, para poder ver el contenido de esta sección, es necesario que te loggees,
+                    <a routerLink="/login">Ir al Login</a>
+                </p>
+        </div>
+
+    </div>
+
+</div>-->
+
+<!--<div class="container" *ngIf="pagoProcess">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="sourcessLess">
+                <h1>Formulario de Pago</h1>
+                <p>A continuación puedes ingresar tu información de pago dentro de nuestro formulario, tus datos estarán protegidos una vez realizada tu compra, para más información acerca del proceso puedes visitar nuestra sección de <a routerLink="/asuntos-legales">Asuntos legales</a>, 
+                    en la sección posterior te mostramos tu información de envio, que es al lugar donde va dirigido tu pedido, los detalles de tu pedido y el total de tu compra.
+                </p>
+        
+            </div>
         </div>
     </div>
+    <div class="col-sm-12">
+        <iframe name="myFrame" width="100%" height="600px" style="border: none;"></iframe>
+    </div>
+</div>-->
+
+<div class="container" *ngIf="!mensajeError">
+   
+
+   
+    <!--<div class="row" *ngIf="isAutheticated">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 titulo">
+            <h1>Información del Envío</h1>
+        </div>
+    </div>-->
     <!--INFORMACIÓN DEL CLIENTE-->
-    <div class="row">
+    <!--<div class="row" *ngIf="isAutheticated">-->
         <!--DIRECCIONES-->
-        <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 informacion">
+        <!--<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 informacion" >-->
             <!--MODAL DE ENTREGRAS-->
-            <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
-            </div>  
-            <h2>Envío</h2>
-            <h3><b>Tipo de envío</b></h3>
-            <p>Entrega estándar (5-7 días, $100.00)</p>
-            <h3><b>Dirección de envío</b></h3>
-            <p>{{usuario.nombre}} {{usuario.apellidos}}, {{usuario.direccion[0].calle}} #{{usuario.direccion[0].numero}}, Fraccionamiento: {{usuario.direccion[0].fraccionamiento}}, {{usuario.direccion[0].codigoPostal}}, 
-            {{usuario.direccion[0].municipio}}, {{usuario.direccion[0].estado}}, {{usuario.direccion[0].pais}}.<br>+{{usuario.direccion[0].telefono}}</p>
-            <div class="d-flex justify-content-end">
-                <a routerLink="/perfil">Agregar una nueva dirección</a>
-            </div>
+           
+
+           <!--<div *ngIf = "addressesData?.length === 1">
+            <div class="selectedAddress"  *ngFor = "let data of addressesData">
+                <div>
+                    <h2>El pedido será enviado a la siguiente dirección que fue definida como predeterminada, 
+                        te sugerimos que revises dicha información, una vez confirmada, puedes completar tu compra, 
+                        presionando el Boton "Completar Compra", puedes editar tu dirección presionando el botón editar.
+                    </h2>-->
+                    <!--<div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
+                    </div>--> 
+                
+                <!--<div>
+                    <h1>Cliente: <span>{{nameData}} {{lastNameData}}</span></h1>
+    
+                </div>
+                <h3><b>Dirección de envío</b></h3>
+                <div>
+                    <p>Calle: <span>{{data.street}}</span></p>
+                    <p>Numero: <span>{{data.number}}</span></p>
+                    <p>Colonia/Fraccionamiento: <span>{{data.neighborhood}}</span></p>
+                    <p>Municipio:  <span>{{data.municipality}}</span></p>
+                    <p>CP: <span>{{data.cp}}</span></p>
+                    <p>Referencías: <span>{{data.reference}}</span></p>
+                    <p>Telefono: <span>{{data.phone}}</span></p>
+                </div>
+                
+                <div class="style-eLinks">
+                    <a type="button" (click) = "editar_selected_address(data)">Editar dirección</a> 
+                </div>
+                </div>
+    
+                
+               </div>
+
+           </div>
+           <div class="no-Address" *ngIf = "addressesData?.length !== 1">
+               <h5>Debes agregar al menos una dirección y marcarla como predeterminada para poder continuar con el proceso de compra,
+                   esta dirección será a la cual el pedido será enviado, de otra forma el proceso de Compra no podrá ser finalizado. </h5>
+                   <h3>1.- Presiona el enlace "Agregar dirección".</h3>
+                   <h3>2.- Ingresa los datos que te son solicitados.</h3>
+                   <h3>3.- Marca la casilla "Marcar como predeterminada", esta será la casilla que indicará a donde debemos enviar el producto.</h3>
+                   <h3>4.- Presiona continuar "CONTINUAR CON LA COMPRA", si no haz agregado ninguna dirección no podrás visualizar dicho botón par continuar con el proceso.</h3>                
+                    <div class="botonesDirecciones">
+                        <button type="button" *ngIf = "addressFullData?.length < 3" class="addAddress_new" (click) = "add_Address_modal()">Agregar dirección</button>  <button class="addAddress_new" *ngIf="addressFullData?.length >= 1" type="button" (click)="openModal()">Seleccionar una nueva dirección</button>
+                    </div>
+
+           </div>
+        </div>-->
+           
             <!--AGREGAR UNA NUEVA DIRECCIÓN-->
             <!--<div class="collapse" id="collapseExample">
                 <div class="card card-body">
@@ -133,171 +350,141 @@
             <!--AGREGAR UNA NUEVA DIRECCIÓN-->
             
             <!--PAGOS-->
-            <div class="col-lg-12 col-md-8 col-sm-12 col-xs-12 pago">
-                <!--MODAL DE PAGOS-->
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
-                </div>  
-                <h2>información de pago</h2>
-                <div class="pagoos">
-                    <div id="myGroup1" class="container col-lg-12 col-xs-6">
-                        <p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"> Pago con tarjeta </button>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"> Pago con transferencia </button>
-                        </p>
-                        <!--Pago con tarjeta
-                        <div id="collapseExample1" class="collapse" data-parent="#myGroup1">
-                            <div class="card card-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="num">Número de tarjeta:</label>
-                                                <input type="text" class="form-control" id="num" placeholder="XXXX XXXX XXXX XXXX">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="nombre">Nombre</label>
-                                                <input type="text" class="form-control" id="nombre">
-                                            </div>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label>Fecha de expiración:</label>
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="dia" placeholder="Día">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="año" placeholder="Año">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <label for="seg">Número de seguridad</label>
-                                                <input type="text" class="form-control" id="seg" placeholder="CCV">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>-->
-                        <!--Pago con transferencia-->
-                        <div id="collapseExample2" class="collapse" data-parent="#myGroup1">
-                            <div class="card card-body">
-                                <dl class="">
-                                    <dt>CUENTA BANAMEX</dt>
-                                    <dt>Ventas en líne FECEGO</dt>
-                                    <dt>Suc. 6505</dt>
-                                    <dt>CTA: 683731</dt>
-                                    <dt>Cuenta interbancaria: 002891650506837318</dt>
-                                </dl>
-                                <p><b>IMPORTANTE:</b> Antes de realizar cualquier pago es primordial que te confirmemos la disponibilidad de los productos.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--PAGOS-->
-            </div>  
-
-            <!-- MODAL DE INFORMACIÓN DE ENVIO-->
-            <div class="modal fade" id="myModal3" role="dialog">
-                <div class="modal-dialog">  
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button style="padding-right: 10px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h1>ENTREGAS2</h1>
-                            <hr>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
            
-            <!-- MODAL DE INFORMACIÓN DE PAGOS-->
-            <div class="modal fade" id="myModal2" role="dialog">
-                <div class="modal-dialog">  
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button style="padding-right: 10px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h1>ENTREGASfsdsdsd</h1>
-                            <hr>                   
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--DIRECCIONES-->
         
 
         <!--INFORMACIÓN SOBRE EL PEDIDO QUE SE REALIZO-->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pedido">
-            <h2>Pedido</h2>
+        <!--<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pedido">
+            <h2>Resumen del pedido</h2>
             <hr>
-            <div class="row">
+            <div class="row" *ngFor = "let infCarrito of cartData">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <h5>Total del pedido: </h5>
-                    <h5>Envio:</h5>
-                    <h5><b>Total</b></h5>
+                    <h5>Total del pedido: {{infCarrito.total | currency}} </h5>
+                    <h5>Envio: </h5>
+                    <h5><b>Total</b> {{infCarrito.total | currency}}</h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <h6>${{totalParcial}}</h6>
-                    <h6>${{gastosEnvio}}</h6>
-                    <h6><b>${{total}}</b></h6>
+                    <h6>{{infCarrito.total | currency}}</h6>
+                    <h6>{{infCarrito.total | currency}}</h6>
+                    <h6><b>{{infCarrito.total | currency}}</b></h6>
                 </div>
             </div>
+            <hr style="background: #fff; height: 1px;">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <!--<a href="#demo" class="boton" data-toggle="collapse" aria-expanded="true">Simple collapsible</a>
-                <div id="demo" class="collapse"></div>-->
-                <h4>detalles del pedido</h4>
-                <div class="row" *ngFor = "let prodCarrito of carritoUsuario.productos">
-                    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 foto">
-                        <img class="img-fluid" [attr.src]="prodCarrito.image[0].url" alt="">
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                        <dl class="detalles">
-                            <dt>{{prodCarrito.nombre}}</dt>
-                            <dt>${{prodCarrito.precio}}</dt>                                                 
-                            <dt>Cantidad: {{prodCarrito.cantidad}}</dt>
-                            <!--<dt>Color: Negro</dt>-->
-                            <dt>Total: {{prodCarrito.totalProductoIndividual}}</dt>
-                        </dl>
-                    </div>
-                    <hr>
-                </div>
+                <a href="#demo" class="boton" data-toggle="collapse" aria-expanded="true">Simple collapsible</a>
+                <div id="demo" class="collapse"></div>
+                
                
            
-                <div class="row">
+                <div class="row pruebaData">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p>Al hacer click en COMPLETAR LA COMPRA aceptas nuestros <a href="">Términos y Condiciones.</a></p>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <button type="button" class="btn btn-info" routerLink="/pedidos">COMPLETAR LA COMPRA</button>
+                        <button (click) = "modifyValue()" type="submit" form="checkoutform"  *ngIf="addressesData?.length === 1" class="btn btn-info" >Completar compra</button>
                     </div>
                 </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!--INFORMACIÓN SOBRE EL PEDIDO QUE SE REALIZO-->
     </div>
+    <div class="row" *ngIf="isAutheticated">
+        <h4>Detalles del pedido</h4>
+                <div class="col-sm-12" *ngFor = "let producto of productosData">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 foto">
+                            <!--<img class="img-fluid" [attr.src]="prodCarrito.image[0].url" alt="">-->
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                            <dl class="detalles">
+                                <dt><h1>{{producto.nombre | oracionMayusculas}}</h1></dt>
+                                <dt><p>Precio/Individual: <span>{{producto.precio | currency}}</span></p></dt>                                                 
+                                <dt><p>Cantidad: <span>{{producto.cantidad}}</span></p></dt>
+                                <dt><p>Total Individual: <span>{{producto.total | currency}}</span></p></dt>
+                                <!--<dt><p>Total: <span>{{producto.total}}</span></p></dt>-->
+                                <!--<dt>Color: Negro</dt>-->
+                                <!--<dt><p>Total: <span>{{producto.totalIndividual | currency}}</span></p></dt>-->
+                            </dl>
+                        </div>
+                    </div>
+                   
+                    <hr>
+                </div>
+
+    </div>
+   
 </div>
 
 
+<!--================================================REDIRECT TO EXPRESSJS ===============================================================================-->
+                                                                                    
+<form id="checkoutform" ngNoForm target="myFrame" method="post" [action]="'https://test.ipg-online.com/connect/gateway/processing'">
+    <input  type="hidden" name="checkoutoption" value="simpleForm">
+    <input  type="hidden" name="txntype" value="sale">
+    <input  type="hidden" name="timezone" value="America/Mexico_City">
+    <input  type="hidden" name="txndatetime" value="{{timetransaction}}">
+    <input  type="hidden" name="hash_algorithm" value="SHA256">
+    <input  type="hidden" name="hash" value="{{hashCrypto}}">
+    <input  type="hidden" name="storename" value="3910046">
+    <input  type="hidden" name="currency" value="484">
+    <input  type="hidden" name="chargetotal" value="{{totalCarrito}}">
+    <input  type="hidden" name="responseSuccessURL" value="http://localhost:4000/pagoRecibido/getPayment/{{cartIdentificador}}">
+    <input  type="hidden" name="responseFailURL" value="http://localhost:4000/pagoRecibido/getPayment/{{cartIdentificador}}">
+    <input  type="hidden" name="hostURI" value="http://localhost:4200/pagoRecibido">
+    <input type="hidden" name="customerid" value="{{customerId}}">
+</form>
+<!--<input type="submit" value="Submit">-->
+<!--===================================REDIRECT TO ANGULAR PAGE================================================================================-->
+
+<!--<form id="checkoutform" ngNoForm target="myFrame" method="post" [action]="'https://test.ipg-online.com/connect/gateway/processing'">
+    <input  type="hidden" name="checkoutoption" value="simpleForm">
+    <input  type="hidden" name="txntype" value="sale">
+    <input  type="hidden" name="timezone" value="America/Mexico_City">
+    <input  type="hidden" name="txndatetime" value="{{timetransaction}}">
+    <input  type="hidden" name="hash_algorithm" value="SHA256">
+    <input  type="hidden" name="hash" value="{{hashCrypto}}">
+    <input  type="hidden" name="storename" value="3910046">
+    <input  type="hidden" name="currency" value="484">
+    <input  type="hidden" name="chargetotal" value="135.04">
+    <input  type="hidden" name="responseSuccessURL" value="http://localhost:4200/compra-completada">
+    <input  type="hidden" name="responseFailURL" value="http://localhost:4200/compra-completada">
+    <input  type="hidden" name="hostURI" value="http://localhost:4200/pagoRecibido">
+</form>-->
 
 
 
+
+   
+
+
+
+<script>
+    window.addEventListener("message", receiveMessage, false);
+function receiveMessage(event) {
+ if (event.origin != "https://test.ipg-online.com") /*update this url when switch
+to production*/
+ return;
+ var elementArr = event.data.elementArr;
+ forwardForm(event.data, elementArr);
+}
+function forwardForm(responseObj, elementArr) {
+ var newForm = document.createElement("form");
+ newForm.setAttribute('method', 'post');
+ newForm.setAttribute('action', responseObj.redirectURL);
+ newForm.setAttribute('id', 'newForm');
+ newForm.setAttribute('name', 'newForm');
+ document.body.appendChild(newForm);
+ for (var i = 0; i < elementArr.length; i++) {
+ var element = elementArr[i];
+ var input = document.createElement('input');
+ input.setAttribute('type', 'hidden');
+ input.setAttribute('name', element.name);
+ input.setAttribute('value', element.value);
+ document.newForm.appendChild(input);
+ }
+ document.newForm.submit();
+}
+</script>

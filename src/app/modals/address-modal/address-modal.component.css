@@ -1,0 +1,79 @@
+
+.back-button{
+    background: transparent; 
+    width: 20%; 
+    height: 40px; 
+    position: absolute; 
+    bottom: 3%; 
+    right: 5%;
+   
+    
+}
+
+
+.back-button button{
+    background: transparent;
+    width: 100%; 
+    height: 100%;
+    border: none;
+    color: #000;
+    transition: 0.5s;
+    
+}
+
+.back-button button:hover{
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+.cambioColor{
+    background: #FAFAFA;
+    transition: 0.5s;
+
+}
+
+.card-body:hover{
+    background: #FAFAFA;
+}
+
+
+
+
+
+
+
+
+.prueba{
+    background: red;
+    width: 100%;
+    height: 10px;
+}
+
+.texto-Title{
+    font-family: 'Meera Inima', sans-serif;
+    padding-left: 10px;
+}
+
+.texto-Title h5{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.text-address{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #000;
+    line-height: 0.3em;
+}
+
+.text-address p{
+    font-weight: bold;
+}
+
+.text-address span{
+    font-weight: normal;
+}

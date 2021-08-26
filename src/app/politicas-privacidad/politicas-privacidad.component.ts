@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 
 @Component({
   selector: 'app-politicas-privacidad',
@@ -10,6 +11,7 @@ export class PoliticasPrivacidadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    scrollToTop();
   }
 
 }

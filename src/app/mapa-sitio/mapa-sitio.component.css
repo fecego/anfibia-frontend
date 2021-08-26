@@ -17,6 +17,7 @@ Surface 3 Pro Landscape, Ipad landscape, Ipad mini 2,4 landcape.
         position: relative;
         text-align: center;
         font-size: 70px;
+        
         font-family: 'Anton';
         color:black;
     }
@@ -75,7 +76,7 @@ ipad landscape, Ipad mini Landscape.
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         
         padding-bottom: 20px;
     }
@@ -119,15 +120,15 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
         margin-top: 50px;
         position: relative;
         text-align: center;
-        font-size: 80px;
-        font-family: 'Anton';
+        font-size: 60px;
+        font-family: 'Anton', sans-serif;
         color:black;
         letter-spacing: 0.1em;
     }
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         
         padding-bottom: 20px;
     }
@@ -138,7 +139,7 @@ Afecta Android phones LANDSCAPE, Nexus 7 Portrait, Ipad Portrait.
 
     .texto h1{
         font-size: 20px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:#042455;
     }
 
@@ -192,7 +193,7 @@ Iphone 4, 5, 7 PORTRAIT.
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         
         padding-bottom: 20px;
     }
@@ -250,7 +251,7 @@ Iphone 4, 5, 7 PORTRAIT.
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         
         padding-bottom: 20px;
     }
@@ -261,7 +262,7 @@ Iphone 4, 5, 7 PORTRAIT.
 
     .texto h1{
         font-size: 20px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:#042455;
     }
 
@@ -287,7 +288,7 @@ Iphone 4, 5, 7 PORTRAIT.
                "PAGINA ADAPTABLE A CELULARES"
 Celulares Portrait.
 \*--------------------------------------------------------------*/
-@media (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 320px){  
     .container-fluid{
         padding-bottom: 20px;
     }
@@ -301,14 +302,14 @@ Celulares Portrait.
         position: relative;
         text-align: center;
         font-size: 50px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:black;
         
     }
 
     .texto{
         font-size: 20px;
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
         
         padding-bottom: 20px;
     }
@@ -319,7 +320,7 @@ Celulares Portrait.
 
     .texto h1{
         font-size: 30px;
-        font-family: 'Anton';
+        font-family: 'Anton', sans-serif;
         color:#042455;
     }
 
@@ -331,4 +332,54 @@ Celulares Portrait.
     a:hover{
         color: #0A2D45;
     }
+}
+
+
+@media only screen and (max-width: 567px) and (min-width: 392px){
+    .container-fluid{
+        padding-bottom: 20px;
+    }
+
+    .img{
+        position: absolute;
+    }
+
+    .imagen h1{
+        margin-top: 50px;
+        position: relative;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Anton', sans-serif;
+        color:black;
+        
+    }
+
+    .texto{
+        font-size: 20px;
+        font-family: 'Meera Inimai', sans-serif;
+        
+        padding-bottom: 20px;
+    }
+
+    hr{
+        width: 90%;
+    }
+
+    .texto h1{
+        font-size: 30px;
+        font-family: 'Anton', sans-serif;
+        color:#042455;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: #0A2D45;
+    }
+
+
+
 }

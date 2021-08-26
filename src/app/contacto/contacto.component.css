@@ -9,11 +9,11 @@
     left: 5px;
     pointer-events: none;
     transition: all 0.3s ease;
-    font-size: 16px;
+    font-size: 14px;
     font-family: Trebuchet MS;
     color: #000;
     font-weight: 500;
-    text-transform: uppercase;
+    
   }
   
   .inputGroup input,
@@ -84,7 +84,7 @@
 .errorFormulario{
     font-size: 12px;
     color: rgb(243, 17, 17);
-    font-family: 'Meera Inima', sans-serif;
+    font-family: 'Meera Inimai', sans-serif;
     background: rgb(248, 230, 230);
     margin-top: 0;
     margin-bottom: 0;
@@ -96,7 +96,7 @@
 
 
     .container{
-        font-family: 'Meera';
+        font-family: 'Meera Inimai', sans-serif;
     }
 
     img{
@@ -201,8 +201,9 @@
     }
 
     h3{
-        font-size: 16px;
-       font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+       font-family: 'Meera Inimai', sans-serif;
+       color: #000;
     }
             /*Media query en celulares vertical*/
             @media only screen and (max-width: 390px) and (min-width: 321px){
@@ -341,7 +342,7 @@
         font-size: 18px;
         font-weight: 600;
         line-height: 1;
-        text-transform: uppercase;
+       
         overflow: hidden;
         transition: .3s ease;
 
@@ -391,7 +392,7 @@
     .info li{
         text-align: left;
         font-size: 20px;
-        font-family: 'Meera Inima', sans-serif;
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bold;
         color: #000;
         list-style: none;
@@ -416,12 +417,14 @@
     p {
         margin: 0;
         color: #000;
+        font-size: 14px;
     }
 
     .tel li{
-        font-size: 16px;
-        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
         list-style: none;
+        font-weight: normal;
     }
 
     .tel i{

@@ -9,13 +9,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 menu">
-            <h2>Menu</h2>
+            <h2>Menú</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/perfil">Mi perfil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/tienda">Tienda</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/carrito">Mi carrito</a>
                 </li> 
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/lista-deseos">Lista de deseos</a>
@@ -28,8 +31,8 @@
             <h2>¿Necesitas ayuda?</h2>
             <p>Si tiene alguna pregunta o necesita ayuda con su cuenta, puede contactarnos para ayudarlo.</p>
             <div class="help">
-                <li><i class="fa fa-envelope-o"></i> Loremipsum@gmail.com</li>
-                <li><i class="fa fa-phone"></i> 0180098746535</li>
+                <li><p><i class="fa fa-envelope-o"></i> Loremipsum@gmail.com</p></li>
+                <li><p><i class="fa fa-phone"></i> 0180098746535</p></li>
             </div>
             <hr>
         </div>
@@ -37,23 +40,74 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 pedido">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                            <h2>Su pedido llega entre el 14 y 18 de Febrero.</h2>
-                            <h3>Anfibia está preparando tu paquete.</h3>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foto">
-                                    <img class="img-fluid" src="/assets/imagenes/CarritoCompras/2.png" alt="">
+                    <div class="row not-logged" *ngIf="!isAutheticated">
+                        <h1>No te encuentras loggeado, para poder ver el contenido de esta sección, es necesario que te loggees,
+                            <a routerLink="/login">Ir al Login</a>
+                        </h1>
+
+                    </div>
+                    <div class="row"  *ngIf="isAutheticated">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h2>Esta sección te presenta tu historial de compras.</h2>
+                          
+
+                            <hr>
+                            <!--DESDE AQUI EMPIEZA EL ITERADOR DE ELEMENTOS-->
+                        <div *ngIf = "(cartProducts | async)?.length > 0">
+                            <div class="row" *ngFor="let infoPrueba of cartProducts | async">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-title">
+                                    <p><span>Fecha de la compra: </span>{{infoPrueba.created}}</p>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                    <dl class="detalles">
-                                        <a href="">CARRETE STINGRAY ST7000</a>
-                                        <dt>$1,500.00 x 2 unidades</dt>
-                                        <dt>Número de guía: 1408983467</dt>
-                                    </dl>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <!--<th></th>-->
+                                                        <th><h1>ID</h1></th>
+                                                        <th><h1>Nombre</h1></th>
+                                                        <th><h1>Precio</h1></th>
+                                                        <th><h1>Cantidad</h1></th>
+                                                        <th><h1>Total Individual</h1></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let producto of infoPrueba.productos">
+                                                        <!--<td><img src="" alt=""></td>-->
+                                                        <td><p>{{producto.id}}</p></td>
+                                                        <td><p><a routerLink="/tienda/{{producto.id}}/{{producto.nombre}}">{{producto.nombre}}</a></p></td>
+                                                        <td><p>{{producto.precio}}</p></td>
+                                                        <td><p>{{producto.cantidad}}</p></td>
+                                                        <td><p>{{producto.totalIndividual}}</p></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                   
                                 </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-title">
+                                    <p><span>Total de la compra: </span> {{infoPrueba.total}}</p>
+
+                                </div>
+                                <div>
+                                    
+                                   
+                                </div>
+                                <hr>
+                               
                             </div>
-                            <div class="row">
+                        </div>
+                        <div class="no-shopping" *ngIf = "(cartProducts | async)?.length == null">
+                            <h1>No haz realizado ningúna compra en estos momentos, te sugerimos que visites nuestra tienda en linea.
+                                <a routerLink = "/tienda">Tienda</a>
+                            </h1>
+                        </div>
+                            <!--<div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foto">
                                     <img class="img-fluid" src="/assets/imagenes/CarritoCompras/3.png" alt="">
                                 </div>
@@ -64,23 +118,193 @@
                                         <dt>Número de guía: 1408983467</dt>
                                     </dl>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 envio">
-                            <div id="content">
-                                <div class="wrapper">
-                                    <ul class="step-progress">
-                                      <li class="step-progress-item is-done"><strong>En preparación</strong></li>
-                                      <li class="step-progress-item"><strong>En camino</strong></li>
-                                      <li class="step-progress-item"><strong>Entregado</strong></li>
-                                    </ul>
-                                  </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
               </div>
 
         </div>
+      
+
     </div>
+    
 </div>
+<div class="container-fluid">
+    <div class="row also-interest">
+        <div class="col-sm-12">
+          <div class="" style="position: relative;">
+            <div class="row text-also">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2>También te podría interesar.</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productsPrueba | async as productsPruebas; else isLoading">
+               <owl-carousel-o [options]="customOptions">
+                 <ng-template carouselSlide *ngFor="let producto of productsPrueba | async | slice: 0:16; index as i; let index = i;">
+                   <div class="" >
+                     <div class="product-card" >
+                     <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                     <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                     <div class="badge3" *ngIf="producto.existencia === null || producto.existencia === 0">PRODUCTO AGOTADO</div>
+                     <!--<div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>-->
+                     <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
+                     
+                     <div class="product-tumb">
+                       <!--<img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">-->
+                     </div>
+                     <div class="product-details">
+                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                    
+                       <!--<div>
+                           <h4 *ngIf="producto.descuento"><span>{{producto.price | currency}}</span> </h4>
+                       </div>
+                       
+                        <div> 
+                           <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                        </div>-->
+                        <div>
+                           <h3><span>{{producto.precio | currency}}</span><span style="font-size: 12px;"> {{producto.unidad}}</span></h3>
+                        </div>
+                        <div>
+                           <h4><a routerLink="/tienda/{{producto.id}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                        </div>
+                        
+                       
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       
+                        <div class="pruebaBotones"> 
+                        
+                             <!--Añade el producto a la lista de deseos-->
+                             <button (click)="addWishList(producto, $event)" *ngIf="!producto.isLoading" [ngClass] = "{'product-priceHeartChecked': producto.fullHeart == true}" ><i class="fa fa-heart" aria-hidden="true"></i></button>
+                             <div *ngIf = "producto.isLoading == true">
+                                <app-spinner-small></app-spinner-small>
+                              </div>
+                           
+                         
+                        
+        
+                       </div>
+                       <div class="pruebaBotones2">
+
+                        <!--Añade el producto al carrito de compras-->
+                           <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                           <button class="" type="button" [disabled] = "producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true}" (click) = "addCartElement(producto, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                         
+        
+                       </div>
+                   </div>
+                     </div>
+                 </div>
+                 </ng-template>
+                
+             </owl-carousel-o>
+     
+              </div>
+              <ng-template #isLoading>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  
+                  <div>
+                     <app-spinner-small>
+                     
+                     </app-spinner-small>
+                  </div>
+                   Cargando productos...
+                 </div>
+               </ng-template>
+     
+            </div>
+        </div>
+  
+        </div>
+  
+      </div>
+      <div class="row also-interest">
+        <div class="col-sm-12">
+          <div class="" style="position: relative;">
+            <div class="row text-also">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2>Productos más populares.</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productsPrueba | async as productsPruebasPedidos; else isLoadingMasPopulares">
+               <owl-carousel-o [options]="customOptions">
+                 <ng-template carouselSlide *ngFor="let producto of productsPrueba | async | slice: 0:16; index as i; let index = i;">
+                   <div class="" >
+                     <div class="product-card" >
+                     <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                     <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                     <div class="badge3" *ngIf="producto.existencia === null || producto.existencia === 0">PRODUCTO AGOTADO</div>
+                     <!--<div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>-->
+                     <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
+                     
+                    <div class="product-tumb">
+                       <!--<img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">-->
+                     </div>
+                     <div class="product-details">
+                        <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                    
+                       <!--<div>
+                           <h4 *ngIf="producto.descuento"><span>{{producto.price | currency}}</span> </h4>
+                       </div>
+                       
+                        <div> 
+                           <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                        </div>-->
+                        <div>
+                           <h3><span>{{producto.precio | currency}}</span><span style="font-size: 12px;"> {{producto.unidad}}</span></h3>
+                        </div>
+                        <div>
+                           <h4><a routerLink="/tienda/{{producto.id}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
+                        </div>
+                        
+                       
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                       
+                        <div class="pruebaBotones">  
+                          <button (click)="addWishList(producto, $event)" *ngIf ="!producto.isLoading" [ngClass] = "{'product-priceHeartChecked': producto.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>                          
+                          <div *ngIf = "producto.isLoading == true">
+                            <app-spinner-small></app-spinner-small>
+                          </div>
+                        </div>
+                       <div class="pruebaBotones2">
+                           <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                           <button class="" type="button" [disabled] = "producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true}"  (click) = "addCartElement(producto, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                         
+        
+                       </div>
+                   </div>
+                     </div>
+                 </div>
+                 </ng-template>
+                
+             </owl-carousel-o>
+     
+              </div>
+              <ng-template #isLoadingMasPopulares>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  
+                  <div>
+                     <app-spinner-small>
+                     
+                     </app-spinner-small>
+                  </div>
+                   Cargando productos...
+                 </div>
+               </ng-template>
+     
+            </div>
+        </div>
+  
+        </div>
+  
+      </div>
+
+</div>
+
+

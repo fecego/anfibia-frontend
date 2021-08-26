@@ -1,4 +1,9 @@
-
+    .card-body p{
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+    }
+    
+    
     .container {
         margin-top: 50px;
         font-family: 'Meera';
@@ -86,7 +91,7 @@
         border-radius: 0;
         color: #616161;
         transition: background-color .2s ease;
-        font-size: 20px;
+        font-size: 16px;
         background: #F8F8F8;
     }
     
@@ -116,9 +121,10 @@
         background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
         background-size: 20px;
         cursor: pointer;
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Meera Inima', sans-serif;
         font-weight: bolder;
+        color: #000;
     }
     
     .card .collapsed {

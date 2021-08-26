@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Mapboxgl from 'mapbox-gl';
-import * as Granim from 'granim';
-import { BrowserStack } from 'protractor/built/driverProviders';
+//import * as Granim from 'granim';
+//import { BrowserStack } from 'protractor/built/driverProviders';
 
 
 
@@ -26,7 +26,7 @@ export class UbicacionComponent implements OnInit{
   ngOnInit() {
     
 
-    var granimInstance = new Granim({
+    /*var granimInstance = new Granim({
       element: '#canvas-basic',
       direction: 'left-right',
       isPausedWhenNotInView: true,
@@ -39,7 +39,7 @@ export class UbicacionComponent implements OnInit{
               ]
           }
       }
-  });
+  });*/
     
 
   

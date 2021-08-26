@@ -1,6 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators, AbstractControl  } from '@angular/forms';
+import { PerfilService, } from '../../servicios/perfil.service';
+import { Observable, Observer, Subscription, fromEvent, of, from, interval, concat, throwError} from 'rxjs';
+import { concatMap, filter, map, shareReplay, switchMap, tap, delay, mergeMap, mapTo, merge, catchError, finalize, exhaustMap} from 'rxjs/operators';
+
 
 
 @Component({
@@ -10,51 +14,56 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, AbstractCon
 })
 export class EditPerfilComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder) { }
+  constructor(public activeModal: NgbActiveModal, private fb: FormBuilder, private perfilS:PerfilService) { }
   @Input() fromParent;
+  @ViewChild('referenceButtonEditarAddress') buttonEditarAddress: ElementRef;
   public usuario:Array<any> = [];
-  public estados:Array<any> = [
-    "Aguascalientes","Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México",
-    "Coahuila de Zaragoza", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "México",
-    "Michoacán de Ocampo", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", 
-    "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz de Ignacio de la Llave", "Yucatán", "Zacatecas"
-  ]
+  public estados:Observable<any>
 
 
-  
+  public editAddress;
   public newAddresForm = this.fb.group({
-    nombre: ['', Validators.required],
-    apellidos: ['', Validators.required],
-    calle: ['', Validators.required],
-    colonia: ['', Validators.required],
-    numero: ['', [Validators.required, Validators.pattern('[0-9]+')]],
-    codigoPostal: ['', [Validators.required, Validators.pattern('[0-9]{5}')]],
-    pais: ['México', Validators.required],
-    estado: ['', Validators.required],
-    municipio: ['', Validators.required],
-    direccionPrincipal: ['', Validators.required]
+  
+    street: ['', Validators.required],
+    neighborhood: ['', Validators.required],
+    number: ['', [Validators.required, Validators.pattern('[0-9]{1,10}')]],
+    postalCode: ['', [Validators.required, Validators.pattern('[0-9]{5}')]],
+    country: [{value: 'México', disabled: true}, Validators.required],
+    state: ['', Validators.required],
+    municipality: ['', Validators.required],
+    direccionPrincipal: ['', Validators.required],
+    reference: ['', Validators.required],
+    phone: ['', [Validators.required, Validators.pattern('[0-9]{10}')]]
   })
   
   
 
   ngOnInit(): void {
-    this.estados;
+    this.estados = this.perfilS.getStates();
     console.log("Recibira la información del usario");
     this.usuario = this.fromParent;
     console.log("ESta es la información que recibo del usuario", this.usuario);
     this.newAddresForm.patchValue({
-      nombre: this.usuario['nombre'],
-      apellidos: this.usuario['apellidos'],
-      calle: this.usuario['calle'],
-      colonia: this.usuario['fraccionamiento'],
-      numero: this.usuario['numero'],
-      codigoPostal: this.usuario['codigoPostal'],
-      pais: this.usuario['pais'],
-      estado: this.usuario['estado'],
-      municipio: this.usuario['municipio'],
-      direccionPrincipal: this.usuario['direccionPrincipal']
+      
+      street: this.usuario['street'],
+      neighborhood: this.usuario['neighborhood'],
+      number: this.usuario['number'],
+      postalCode: this.usuario['postalCode'],
+      country: this.usuario['country'],
+      state: this.usuario['stateSeq'],
+      municipality: this.usuario['municipality'],
+      direccionPrincipal: this.usuario['direccionPrincipal'],
+      reference: this.usuario['reference'],
+      phone: this.usuario['phone']
     });
 
+  }
+
+
+
+
+  ngAfterViewInit(){
+    fromEvent(this.buttonEditarAddress.nativeElement, 'click').pipe(exhaustMap(() => this.editDireccion())).subscribe()
   }
 
   closeModal() {
@@ -68,24 +77,30 @@ export class EditPerfilComponent implements OnInit {
 
 
   editDireccion(){
-    console.log("Estos son los nuevos datos que quiero editar",this.newAddresForm.get('municipio').value);
-    this.newAddresForm.patchValue({
-      calle: this.newAddresForm.get('calle').value,
-      municipio: this.newAddresForm.get('municipio').value
-    });
-
-    console.log(this.newAddresForm.value)
-    this.closeModal();
-  }
-
-  editarDireccion(dato){
-    
-    console.log("Este es el dato que vamos a editar", dato);
-  }
-
-  nuevaDireccion(dato){
    
-    console.log("Este es el objeto que vamos a insertar en la base de datos", dato)
+  
+      this.editAddress = {
+        street: this.newAddresForm.value.street,
+        neighborhood: this.newAddresForm.value.neighborhood,
+        number: this.newAddresForm.value.number,
+        postalCode: this.newAddresForm.value.postalCode,
+        country: 1,
+        state: this.newAddresForm.value.state,
+        municipality: this.newAddresForm.value.municipality,
+        direccionPrincipal: this.newAddresForm.value.direccionPrincipal,
+        reference: this.newAddresForm.value.reference,
+        phone: this.newAddresForm.value.phone,
+        sequential: this.fromParent.sequential
+
+      }
+  
+      console.log('Esto es lo que vamos a enviar con el boton de editar', this.editAddress);
+      this.closeModal();
+      return this.perfilS.editAddress(this.editAddress);
+    
+      
   }
+
+ 
 
 }

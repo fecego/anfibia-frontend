@@ -254,9 +254,9 @@ buildLocationList(data) {
     });
     link.innerHTML = prop.businessName;
     link.style.color = '#000000';
-    link.style.fontFamily = 'Julius Sans One';
+    link.style.fontFamily = 'Arial';
     link.style.fontWeight = 'bolder'
-    link.style.fontSize = '17px';
+    link.style.fontSize = '14px';
     link.style.color = '#000';
     link.style.cursor = 'pointer';
     link.style.textDecoration = 'none';

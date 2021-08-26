@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as Granim from 'granim';
+//import * as Granim from 'granim';
 import * as AOS from 'aos';
-
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 @Component({
   selector: 'app-nosotros',
   templateUrl: './nosotros.component.html',
@@ -12,7 +12,7 @@ export class NosotrosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToTop();
     /*var granimInstance = new Granim({
       element: '#canvas-basic',
       direction: 'diagonal',

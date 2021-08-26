@@ -1,12 +1,81 @@
-.perfil button{
+.loading-position{
+    position: absolute;
+    top: 1%;
+    right: 4%;
+}
+
+
+.infoBasic{
+    list-style: none;
+}
+
+
+
+.not-logged h1{
     font-family: 'Meera Inima', sans-serif;
+    color: #000;
     font-size: 15px;
-    text-align: center;
+    font-weight: normal;
+}
+
+
+.botonEditarAndDelete{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 17px;
     color: #000;
     background: none;
     border: none;
-    text-decoration: underline;
+   transition: 0.3s;
+   margin-left: 2pxs;
 }
+
+.botonEditarAndDelete:hover{
+    border-bottom: 1px solid black;
+}
+
+
+.WhenIs3Address{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    background: #FAFAFA;
+   
+}
+
+.no-data h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 17px;
+   
+}
+
+
+
+.informacion-User span{
+    padding-left: 10px;
+}
+
+
+.informacion-User h2{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 17px;
+    text-transform: none;
+    color: #000;
+
+}
+
+.selectedAddress{
+    border: 1px solid#D8D8D8;
+    background:#FAFAFA;
+}
+
+
+.perfil h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
 
 .perfil ul{
     list-style-type: none;
@@ -18,17 +87,39 @@
     
     font-weight: bold;
     text-transform: none;
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
+}
+
+.direccion{
+    
+    padding: 20px;
+}
+
+
+.direccion h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 5px;
+
 }
 
 .direccion ul li{
     list-style-type: none;
+    line-height: 0.1em;
+    
 }
 
 .perfil h2 span{
     font-family: 'Meera Inima',sans-serif;
     font-weight: normal;
+    color: #000;
+}
+
+.perfil p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
     color: #000;
 }
 
@@ -59,8 +150,9 @@
                                    
 h1{
     text-align: left;
-    font-family: 'Anton', sans-serif;
-    font-size: 50px;
+    font-family: 'Meera Inima', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
     margin-top: 80px;
     color: #000;
 }
@@ -88,16 +180,19 @@ img {
 
 .detalles{
     font-size: 16px;
+    font-family: 'Meera Inima', sans-serif;
     text-align: left;
+    font-weight: normal;
 }
 
 .perfil{
     margin-top: 60px;
     margin-bottom: 60px;
+    
 }
 
 .boton {
-    font-family: 'Anton';
+    font-family: 'Meera Inima', sans-serif;
     border: none;
     width: 100%;
     color: white;
@@ -131,9 +226,13 @@ img {
 .menu h2{
     margin-left: 0px;
     margin-top: 0px;
-    font-family: 'Anton';
-    font-size: 20px;
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
     text-align: left;
+    text-transform: none;
+    color: #000;
+
 }
 
 .nav-item a{
@@ -144,14 +243,11 @@ img {
 
 .menu p{
     margin-left: 14px;
-    
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
 }
 
-.help li{
-    margin-left: 15px;
-    font-size: 14px;
-    list-style: none;
-}
+
 
 .menu{
     border-right: 1px solid #DAD9D8;

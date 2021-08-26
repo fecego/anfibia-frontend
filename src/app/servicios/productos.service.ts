@@ -1,181 +1,368 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, Observer, Subscription, fromEvent, of, from, interval, concat, throwError, BehaviorSubject, Subject} from 'rxjs';
+import { concatMap, filter, map, shareReplay, switchMap, tap, delay, mergeMap, mapTo, merge, catchError, finalize, pairwise} from 'rxjs/operators';
+import { Router, RoutesRecognized, NavigationEnd, NavigationStart} from '@angular/router'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
 
-  /*const api = 'http://localhost:300';*/
+  public api = "https://localhost:4000";
 
-  constructor(private http:HttpClient) { 
+
+
+  public subjectRefresh = new Subject<void>();
+  public subjectRefreshPrueba = new BehaviorSubject<boolean>(null);
+  public subjectRefreshWishList = new BehaviorSubject<boolean>(null);
+  public subjectRefreshCartList = new BehaviorSubject<boolean>(null);
+  public subjectUrlNumber = new BehaviorSubject<number>(null);
+
+
+
+
+
+  public urlPrevious:any;
+  public urlAfter:any;
+  public behaviorRoute = new BehaviorSubject<any>(null);
+  public behaviorRouteCurrent = new BehaviorSubject<any>(null);
+
+  /*Creamos un behavior Subject que guardara el estado para generar la compra, empezara con valor null.*/
+  public BehaviorsubjectRefresCarritoCompras = new BehaviorSubject<boolean>(null);
+  public behSubCompraCompletada = new BehaviorSubject<boolean>(null);
+
+  constructor(private http:HttpClient, private router: Router) { 
+
 
   }
 
-  getProductoCarrito(){
-    return[
-      
-      {
-        sku: 12821,
-        idProducto: 192,
-        nombre: "Caña Senna",
-        modelo: "SENS662M",
-        clasificacion: "pesca",
-        cantidad: 1,
-        categoria: "cañas",
-        subcategoria1: "aguadulce",
-        subcategoria2: "spinning",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
-    },
-      {
-        sku: 12821,
-        idProducto: 198,
-        nombre: "Cañas Jigging Agua Salada",
-        modelo: "ALCS501XH",
-        clasificacion: "pesca",
-        categoria: "cañas",
-        cantidad: 2,
-        subcategoria1: "Spinning",
-        subcategoria2: "Spinning",
-        marca: "Yellow Tail",
-        precio: 100.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029324_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029324_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029324_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029324_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 6,
-          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña para pesca vertical, fabricada en TC24T la cual combina poder con flexibilidad, para un mejor trabajo con señuelos de alto peso y grandes capturas, todos sus componentes son de la marca ALPS."
+
+  get subjectUrlN(){
+    return this.subjectUrlNumber;
+  }
+
+
+  get subjectRefreshWish(){
+    return this.subjectRefreshWishList;
+  }
+
+
+  get subjectRefreshCartListS(){
+    return this.subjectRefreshCartList;
+  }
+
+
+  getLasRoute(){
+    return this.router.events.pipe(filter(e => e instanceof NavigationEnd), pairwise());
+  }
+
+  /*Llamadas para la sección de Inicio Productos*/
+
+  getValorCompra(){
+    return localStorage.getItem('valorCompra');
+  }
+
+
+  getPurchase(){
+    return localStorage.getItem('purchaseP');
+  }
+
+
+
+  getProductos_API_Nuevos(){
+    return this.http.get(`${this.api}/nuevos`)
+  }
+
+  getProductos_API_Destacados(){
+    return this.http.get(`${this.api}/destacados`)
+  }
+
+  getProductos_API_Mas_vendidos(){
+    return this.http.get(`${this.api}/masVendidos`)
+  }
+
+
+  getProductos_API_YellowTail(){
+    return this.http.get(`${this.api}/yellowTail`)
+  }
+
+
+  /*Llamadas para la sección de pesca*/
+
+  getProductosPesca_API_Nuevos(){
+    return this.http.get(`${this.api}/pesca/nuevos`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  getProductosPesca_API_Destacados(){
+    return this.http.get(`${this.api}/pesca/destacados`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  getProductosPesca_API_MasVendidos(){
+    return this.http.get(`${this.api}/pesca/masVendidos`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  getProductosPesca_API_YellowTail(){
+    return this.http.get(`${this.api}/pesca/yellowTail`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  /*Llamadas para la sección de Cacería*/
+
+
+  getProductosCaceria_API_Nuevos(){
+    return this.http.get(`${this.api}/caceria/nuevos`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  getProductosCaceria_API_Destacados(){
+    return this.http.get(`${this.api}/caceria/destacados`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+  getProductosCaceria_API_MasVendidos(){
+    return this.http.get(`${this.api}/caceria/masVendidos`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+
+  /*Llamadas para las acciones de la tienda*/
+  
+  getProductos_tienda():Observable<any>{
+    console.log('Entramos a tienda raro')
+    return this.http.get(`${this.api}/tiendaPrueba/dataTienda`).pipe(
+      shareReplay(),
+      catchError(error => throwError(error))
+    );
+  } 
+
+
+  getProductos_tiendaPages(pagina):Observable<any>{
+    console.log('This is getProductos_tiendaPages', pagina)
+    return this.http.get(`${this.api}/tiendaPrueba/dataTienda/${pagina}`).pipe(
+      shareReplay(),
+      catchError(error => throwError(error))
+    )
+  }
+
+  /*Llamada para producto Individual*/
+
+  getProductos_Individual(id){
+    console.log('This is the ID', id);
+    return this.http.get(`${this.api}/productoIndividual/${id}`);
+  }
+
+
+  /*Llamada para lista de deseos, estas peticiones deberán contener el usuarioId para poder realizar las peticiones Individules*/
+
+  getProductosBySearch(dato){
+    console.log('This is the dato', dato)
+    return this.http.get(`${this.api}/searchProduct/${dato}`);
+  }
+
+
+  getProductosBy_clasificacion(clasificacion, paginacion):Observable<any>{
+    console.log('this is some data i get', clasificacion, paginacion);
+    return this.http.get(`${this.api}/pruebatienda/${clasificacion}/${paginacion}`);
     
-    },
-    {
-      sku: 12821,
-      idProducto: 365,
-      nombre: "Carrete Silver King SK100",
-      modelo: "SK100",
-      clasificacion: "pesca",
-      cantidad: 3,
-      categoria: "carretes",
-      subcategoria1: "Spinning",
-      subcategoria2: "Spinning",
-      marca: "Yellow Tail",
-      precio: 300.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/042552_1.png"
-      },
-      {
-        idProducto: 132,
-        secuencial: 2,
-        url: "/assets/imagenes/paginaInicial/productos/042552_2.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: true,
-      descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
-  
-  },
-    {
-      sku: 12821,
-      idProducto: 287,
-      nombre: "Carrete Silver King SK200",
-      modelo: "SK200",
-      cantidad: 4,
-      clasificacion: "pesca",
-      categoria: "carretes",
-      subcategoria1: "Spinning",
-      subcategoria2: "",
-      marca: "Yellow Tail",
-      precio: 200.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/042554_1.png"
-      },
-      {
-        idProducto: 132,
-        secuencial: 2,
-        url: "/assets/imagenes/paginaInicial/productos/042554_2.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: true,
-      descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
-  
   }
 
-    ]
 
+
+  getProductosBy_filter1(clasificacion, categoria, filter1, paginacion):Observable<any>{
+    return this.http.get(`${this.api}/filter1F/${clasificacion}/${categoria}/${filter1}/${paginacion}`).pipe(
+      catchError(error => throwError(error))
+    );
   }
 
- 
+
+  getProductosBy_clasificacionAndCategoria(clasificacion, categoria, paginacion):Observable<any>{
+    console.log('this is some data i get', clasificacion, categoria, paginacion);
+    return this.http.get(`${this.api}/categoriaFiltro/${clasificacion}/${categoria}/${paginacion}`).pipe(
+      catchError(error => throwError(error))
+    )}
+
+
+
+
+
+  getProductosLista_deseos(dato){
+    return this.http.get(`${this.api}/wishList/getDeseos/${dato}`).pipe(
+      catchError(error => throwError(error))
+    );
+  }
+
+
+  removeElementoLista_deseos(datoP, usuarioIdentificador){
+    console.log('Recibi', datoP, usuarioIdentificador);
+    console
+    const dato = {
+      usuario_id: usuarioIdentificador,
+      id: datoP.id
+    }
+    console.log(dato.usuario_id, dato.id)
+    return this.http.delete(`${this.api}/wishList/eliminarProducto/${dato.usuario_id}/${dato.id}`).pipe(
+      tap(() => {
+        this.subjectRefresh.next();
+        this.subjectRefreshPrueba.next(true);
+        this.subjectRefreshWishList.next(true);
+      })
+    )
+  }
+
+
+  /*Llamadas del carrito de compras*/
+
+    getProductos_carrito():Observable<any>{
+      return this.http.get<any>(`${this.api}/carrito/getCarrito`).pipe(
+        //map(x => x.productos.map(x => x.json_build_object)),
+        catchError(error => throwError(error)),
+        //map(x => x[0]['json_build_object']),
+        shareReplay(),
+        //catchError(this.handleError)
+      );
+    }
+
+    getProductos_carrito2():Observable<any>{
+      return this.http.get(`${this.api}/carrito/getCarrito`).pipe(
+        catchError(error => throwError(error)),
+        shareReplay()
+        //catchError(this.handleError)
+      );
+    }
+
+
+
+   
+
+
+   
+    
+    /*BOTONES DE ADD WISHLIST*/
+
+    
+
+
+
+    /*EL METODO POST PRODUCTO_WISHLIST 
+    Realiza la petición post al servidor, inserta el dato, pero también ejecuta un tap, 
+    tap (que sirve para ejecutar acciones colaterales) para emitir valores gracias al método next del Subject.
+    EL SUBJECT lo que hará será almacenar el ultimo valor emitido que se le pase a este mismo, eso se hará asignandole un valor a travez del 
+    behaviorS
+
+    */
+    postProducto_wishList(dato, id){
+
+      return this.http.post(`${this.api}/addWishtList/prueba`, {'_id': dato.id, 'idUser': id}).pipe(
+        tap(() => {
+          this.subjectRefresh.next();
+          this.subjectRefreshPrueba.next(true);
+          this.subjectRefreshWishList.next(true);
+      }),
+        catchError(error => throwError(error => {
+          console.log(error);
+        })),
+       
+
+      );
+    }
+
+    get behaviorS(){
+      return this.subjectRefresh;
+    }
+
+    /*BOTONES DE ADD TO CART_LIST*/
+    postProducto_cartList(dato, dato2){
+      console.log('This is the dato and the dato2', dato, dato2);
+      return this.http.post(`${this.api}/addCart/prueba2`, {'clientId':dato2, 'id_producto': dato.id, 'precio': dato.precio, 'cantidad_prod': dato.cantidad_prod}).pipe(
+        catchError(error => throwError(error)),
+        tap(() => {
+          this.subjectRefresh.next();
+          this.subjectRefreshPrueba.next(true);
+          this.subjectRefreshWishList.next(true);
+          this.subjectRefreshCartList.next(true);
+        })
+      );
+    }
+
+
+    updatePrecioCarrito(valor, producto){
+      console.log('This is the dato', valor);
+      return this.http.put(`${this.api}/updateProducto/productPerprice`, {'cantidad': valor, 'idProduct': producto.id_producto, 'precio': producto.precio_producto})
+      .pipe(
+        tap(() => {
+          this.subjectRefresh.next();
+        })      
+      );
+    }
+
+
+    postProductoNow(datoProducto){
+      console.log('Llego al postProductoNow', datoProducto);
+      const cantidad = parseInt(datoProducto.cantidad)
+      console.log('This is cantidad', typeof(cantidad), cantidad);
+      return this.http.post(`${this.api}/addCartNow/buyNow/`, {'id_producto': datoProducto.id, 'cantidad_producto': cantidad, 'precio': datoProducto.precio});
+    }
+
+
+
+
+    postProductoPrueba(dato){
+      console.log('Acabo de recibir este dato', dato);
+      return this.http.post(`${this.api}/addCartPrueba/pruebaI`,{'id_producto': dato, 'clientId': 1, 'cartId': 2});
+    }
+
+
+    insertTotalCart(total, carrito){
+      console.log(total, carrito);
+      return this.http.put(`${this.api}/carrito/insertTotales`, {'total': total, 'idCarrito': carrito});
+    }
+
+
+
+    removeElemento_carritoCompras(dato){
+      return this.http.delete(`${this.api}/carrito/deleteElemento/${dato.id_carrito}/${dato.id_producto}`).pipe(
+        tap(() => { 
+          this.subjectRefresh.next();
+          this.subjectRefreshPrueba.next(true);
+          this.subjectRefreshCartList.next(true);
+      })
+      );
+    }
+
+    move_from_cart_to_wish(dato){
+      console.log('Got this información', dato);
+      return this.http.delete(`${this.api}/carrito/moveWishList/${dato.id_carrito}/${dato.id_producto}`).pipe(
+        tap(() => {
+          this.subjectRefresh.next();
+          this.subjectRefreshPrueba.next(true);
+          this.subjectRefreshWishList.next(true);
+          this.subjectRefreshCartList.next(true);
+      })
+      );
+    }
+
+
+    
+
+    getProductosPedidos(){
+      //console.log('This is the ID', id);
+      return this.http.get(`${this.api}/pedidos/carritos/`);
+
+    }
 
   getProductosWishList(){
     return [
@@ -363,16 +550,63 @@ export class ProductosService {
     ]
   }
 
+
+  /*getProductos(){
+    return this.http.get(`${this.api}/nuevos`);
+  }*/
+
+
   getProductos(){
      return [
       {
+        sku: 1051892,
+        id: 1051892,
+        nombre: "Kraken bait 300lx800lv",
+        categoria: "aguasalada",
+        clasificacion: "pesca",
+        subcategoria1: 'señuelos',
+        cantidad:1,
+        modelo: "SENS662M",
+        subcategoria2: 'jigging',
+        marca: "magtrack",
+        precio: 2252.00,
+        precio_antiguo: 145000.30,
+        image: [{
+          idProducto:2,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/037503_01.jpg",
+         
+        },
+        {
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/037504_01.jpg"
+        },
+        {
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/033911_01.jpg"
+        },
+        {
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/052732_04.jpg"
+        }
+      ],
+        descuento: 30,
+        nuevo: true,
+        destacado: false,
+        descripcion: "El MagTrak presenta un diseño que permite que el señuelo nade recto y debajo de la superficie a velocidades de hasta 20 nudos.Señuelo Wahoo MagTrak ™ de alta velocidad:Cuerpo dinámico de 10 pulgadas con diseño para nadar de una manera que reproduce pequeños wahooTecnología HookMag con anzuelos de acero inoxidable serie 10/0 Sin problemas a altas velocidades, no se requiere plomo troleador o profundizador.",
+        existencia: 10
+      },
+      {
         sku: 12821,
-        idProducto: 6597787788,
-        nombre: "Ropa Jersey Caceria",
+        id: 6597787788,
+        nombre: "Visor silicon Ltv -004",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "ropa",
+        categoria: "aguadulce",
         subcategoria1: "jersey",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -381,43 +615,29 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/033930_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/033931_01.jpg"
+        }
        ],
-        descuento: 0,
+        descuento: 40,
         nuevo: true,
-        destacado: true,
+        destacado: false,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
       {
         sku: 12821,
-        idProducto: 6577878988,
-        nombre: "Ropa Caceria playeras",
+        id: 6577878988,
+        nombre: "Caña hilo trolling 5-6ft",  
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "ropa",
+        categoria: "lineas",
         subcategoria1: "playeras",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -426,43 +646,29 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/036638_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/037063_01.jpg"
+        }
        ],
         descuento: 0,
-        nuevo: true,
+        nuevo: false,
         destacado: true,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
       {
         sku: 12821,
-        idProducto: 65712212788,
-        nombre: "accesorios mallas",
+        id: 65712212788,
+        nombre: "Jersey Escamas dama XL",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "accesorios",
+        categoria: "embarcaciones",
         subcategoria1: "mallas",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -471,44 +677,43 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/032155_01 copia 3.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/038745_01 copia 3.jpg"
+        
         },
         {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/052927_03.jpg"
+       
         },
         {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/052927_04.jpg"
+       
+        }
        ],
         descuento: 0,
-        nuevo: true,
-        destacado: true,
+        nuevo: false,
+        destacado: false,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
        
       {
         sku: 12821,
-        idProducto: 9776,
-        nombre: "accesorios   termos",
+        id: 9776,
+        nombre: "Google fat nat300",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "accesorios",
+        categoria: "buceorec",
         subcategoria1: "termos",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -517,43 +722,35 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/043005_02.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/043005_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/045332_03.jpg"
+        }
+        
        ],
-        descuento: 0,
-        nuevo: true,
+        descuento: 70,
+        nuevo: false,
         destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
+        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. ",
+        existencia: 10
+        
+      },
       {
         sku: 12821,
-        idProducto: 88899,
-        nombre: "accesorios  caceria hieleras",
+        id: 88899,
+        nombre: "Descorc Crane 3/0 225lb",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "accesorios",
+        categoria: "ropa",
         subcategoria1: "hieleras",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -562,39 +759,36 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/038755_01 copia 3.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/038755_02 copia 3.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/048795_03.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/048795_04.jpg"
+        }
+      
        ],
         descuento: 0,
         nuevo: true,
         destacado: true,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
       {
         sku: 12821,
-        idProducto: 766,
-        nombre: "accesorios caceria  mochilas",
+        id: 766,
+        nombre: "Kayak mini rojo, negro/gris",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
@@ -607,43 +801,30 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/043395_01 copia.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/043396_01 copia.jpg"
+        }
+        
        ],
         descuento: 0,
-        nuevo: true,
+        nuevo: false,
         destacado: true,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
       {
         sku: 12821,
-        idProducto: 87655,
-        nombre: "Cuchilleria  machetes",
+        id: 87655,
+        nombre: "Jersey Marlin Cab",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "cuchilleria",
+        categoria: "aguadulce",
         subcategoria1: "machetes",
         subcategoria2: "",
         marca: "Yellow Tail",
@@ -652,2128 +833,647 @@ export class ProductosService {
         image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/pruebas/051406_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/pruebas/051407_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/052976_03.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
+          idProducto: 762,
+          secuencial: 1,
+          url: "/assets/imagenes/JPGconfondo/052976_04.jpg"
+        }
        ],
-        descuento: 0,
-        nuevo: true,
+        descuento: 10,
+        nuevo: false,
         destacado: true,
+        existencia: 10,
         descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
     },
       {
         sku: 12821,
-        idProducto: 2368,
-        nombre: "Cuchilleria  navajas",
+        id: 2368,
+        nombre: "Kayak mini Cab verde/rojo/negro",
         modelo: "SENS662M",
         clasificacion: "Caceria",
         cantidad: 1,
-        categoria: "cuchilleria",
+        categoria: "aguasalada",
         subcategoria1: "navajas",
         subcategoria2: "",
         marca: "Yellow Tail",
         precio: 500.00,
         precio_antiguo: 1000.00,
-        image: [{
+        image: [
+        {
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/053430_01.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 98792,
-        nombre: "cuchilleria  cuchillos",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "cuchilleria",
-        subcategoria1: "cuchillo",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/053430_03.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 191212122,
-        nombre: "Arqueria  bayestas",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "arqueria",
-        subcategoria1: "bayestas",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
+          url: "/assets/imagenes/JPGconfondo/053430_04.jpg"
         },
         {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 196552,
-        nombre: "Arqueria arcos",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "arqueria",
-        subcategoria1: "arcos",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
           idProducto: 762,
           secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-
-      {
-        sku: 12821,
-        idProducto: 97778999,
-        nombre: "Accesorios de Rifles cartucheras",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "accesorios",
-        subcategoria2: "cartucheras",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-
-      {
-        sku: 12821,
-        idProducto: 12121,
-        nombre: "Accesorios de Rifles mantenimiento",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "accesorios",
-        subcategoria2: "mantenimiento",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 1922,
-        nombre: "Accesorios de Rifles salvaydiabolos",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "accesorios",
-        subcategoria2: "salvaydiabolos",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 19882,
-        nombre: "Accesorios de Rifles salvaydiabolos",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "accesorios",
-        subcategoria2: "salvaydiabolos",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 197882,
-        nombre: "Rifle de Nitropiston",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "nitropiston",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 177892,
-        nombre: "Rifle de CO2",
-        modelo: "SENS662M",
-        clasificacion: "Caceria",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "co2",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-      {
-        sku: 12821,
-        idProducto: 187892,
-        nombre: "Rifle de Diabolos",
-        modelo: "SENS662M",
-        clasificacion: "pesca",
-        cantidad: 1,
-        categoria: "rifles",
-        subcategoria1: "diabolos",
-        subcategoria2: "",
-        marca: "Yellow Tail",
-        precio: 500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-
-    },
-
-      {
-        sku: 464289,
-        idProducto: 17792,
-        nombre: "Kayaks ",
-        modelo: "",
-        subcategoria1: "kayaks",
-        subcategoria2: "tandem",
-        clasificacion: "pesca",
-        categoria: "kayaks",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
+          url: "/assets/imagenes/JPGconfondo/053430_05.jpg"
         }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 177892,
-        nombre: "Kayaks mini",
-        modelo: "",
-        subcategoria1: "kayaks",
-        subcategoria2: "mini",
-        clasificacion: "pesca",
-        categoria: "kayaks",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 1762,
-        nombre: "Kayaks remos",
-        modelo: "",
-        subcategoria1: "remos",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "kayaks",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-       
-      {
-        sku: 464289,
-        idProducto: 1998000002,
-        nombre: "Ropa de Pesca lineas reinales",
-        modelo: "",
-        subcategoria1: "reinales",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "lineas",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 54434343499,
-        nombre: "Ropa de Pesca lineas fluorocarbono",
-        modelo: "",
-        subcategoria1: "fluorocarbono",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "lineas",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 7474643333,
-        nombre: "Ropa de Pesca lineas leaders",
-        modelo: "",
-        subcategoria1: "leaders",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "lineas",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 98727322222,
-        nombre: "Ropa de Pesca lineas trenzadas",
-        modelo: "",
-        subcategoria1: "trenzadas",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "lineas",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 422746492,
-        nombre: "Ropa de Pesca lineas monofilamento",
-        modelo: "",
-        subcategoria1: "monofilamento",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "lineas",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 876592,
-        nombre: "Ropa de Pesca Accesorios Cinturones",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "cinturones",
-        clasificacion: "pesca",
-        categoria: "ropa",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 57822,
-        nombre: "Ropa de Pesca Jersey ",
-        modelo: "",
-        subcategoria1: "jersey",
-        subcategoria2: "cuerdas",
-        clasificacion: "pesca",
-        categoria: "ropa",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 186121292,
-        nombre: "Categoría Navegación ",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "cuerdas",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto:98712192,
-        nombre: "Categoría Navegación subcategoria accesorios ",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "fender",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 877777,
-        nombre: "Categoría Navegación subcategoria motor",
-        modelo: "",
-        subcategoria1: "motor",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 6666,
-        nombre: "Categoría Navegación subcategoria iluminación",
-        modelo: "",
-        subcategoria1: "iluminacion",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 11,
-        nombre: "Categoría Navegación subcategoria Bombas ",
-        modelo: "",
-        subcategoria1: "bombas",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 88899,
-        nombre: "Categoría Navegación subcategoria Plomería ",
-        modelo: "",
-        subcategoria1: "plomeria",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 196325282,
-        nombre: "Categoría Navegación subcategoria electricos conectores",
-        modelo: "",
-        subcategoria1: "electricos",
-        subcategoria2: "conectores",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 191212312,
-        nombre: "Categoría Navegación subcategoria electricos ",
-        modelo: "",
-        subcategoria1: "electricos",
-        subcategoria2: "switches",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 18892,
-        nombre: "Categoría Navegación Subcategoria Audio ",
-        modelo: "",
-        subcategoria1: "audio",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "Categoría Navegación subcategoria brujulas",
-        modelo: "",
-        subcategoria1: "brujulas",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "Categoría Navegación GPS ",
-        modelo: "",
-        subcategoria1: "gps",
-        subcategoria2: "",
-        clasificacion: "pesca",
-        categoria: "navegacion",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-    
-      {
-        sku: 464289,
-        idProducto: 9872,
-        nombre: "CATEGORIA ACCESORIO ALMACENAMIENTO MALETAS",
-        modelo: "",
-        subcategoria1: "almacenamiento",
-        subcategoria2: "maletas",
-        clasificacion: "pesca",
-        categoria: "accesorios",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 64647192,
-        nombre: "CATEGORIA ACCESORIO ALMACENAMIENTO",
-        modelo: "",
-        subcategoria1: "almacenamiento",
-        subcategoria2: "cajas",
-        clasificacion: "pesca",
-        categoria: "accesorios",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIO DE AGUA SALADA CALCOMANIAS",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "calcomanias",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIO DE AGUA SALADA RED RECOLECTORA",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "redRecolectora",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIO DE AGUA SALADA ANZUELOS",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "anzuelos",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIO DE AGUA SALADA OCHOS",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "ocho",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIO DE AGUA SALADA ARGOLLAS",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "argollas",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "ACCESORIOS DE AGUA SALADA LLAMADORES",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "llamadores",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-      {
-        sku: 464289,
-        idProducto: 19736352,
-        nombre: "ACCESORIO DE AGUA SALADA FALDA",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "faldas",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "Protector MEDIANO COMBO AGUA SALADA",
-        modelo: "",
-        subcategoria1: "combos",
-        subcategoria2: "surft",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 192,
-        nombre: "Protector MEDIANO COMBO AGUA DULCE",
-        modelo: "",
-        subcategoria1: "combos",
-        subcategoria2: "trolling",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 464289,
-        idProducto: 19087472,
-        nombre: "Protector mediano 10005 Yellow",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "granpines",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        marca: "cushit",
-        precio: 667.00,
-        precio_antiguo: 663.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/021770- Cush It.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "¡Seamos realistas, buenas cañas de pescar, carretes, línea y aparejos no son baratos! Entonces, ¿por qué arriesgaría su costosa caña de pescar y señuelos por la borda, que nunca se volverá a ver, cuando puede agregar fácilmente esta espuma premium asequible, liviana, fácil de poner y quitar Cush-it para proporcionar comodidad y tranquilidad ... e incluso mejorar tu pesca!"
-      },
-
-      {
-        sku: 465289,
-        idProducto: 182,
-        nombre: "Portacañas BRH negro",
-        modelo: "",
-        subcategoria1: "accesorios",
-        subcategoria2: "granpines",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        marca: "berkley",
-        precio: 393.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/003662- portacañas.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "Soporte para cañas en fibra y totalmente inoxidable, ideal para nuestras embarcaciones. 100% ajustable en posición y giro con bloqueo de seguridad. Posibilidad de montaje sobre rail y regala (lateral y horizontal).."
-      },
-      {
-        sku: 12341,
-        idProducto: 132,
-        nombre: "Pistola CO2 S&W M&P 40",
-        modelo: "OA581R30S",
-        subcategoria1: "diabolos",
-        subcategoria2: "",
-        clasificacion: "Caceria",
-        categoria: "pistolas",
-        marca: "s&w",
-        precio: 1485.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/037505.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "Esta Pistola CO2 es una muy buena opción si buscas algo económico, modelo réplica y fácil de disparar. Incluye riel táctico en el cañón para montura de accesorios y el cargador es totalmente hecho de metal."
-      },
-      {
-        sku: 12821,
-        idProducto: 11292192,
-        nombre: "Caña Senna",
-        modelo: "SENS662M",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        subcategoria1: "cañas",
-        subcategoria2: "trolling",
-        marca: "yellowtail",
-        precio: 795.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029319_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029319_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029319_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029319_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029319_5.png"
-        },
-       ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
-    
-    },
-    {
-      sku: 12341,
-      idProducto: 132,
-      nombre: "Pistola Colt Phyton",
-      modelo: "OA581R30S",
-      subcategoria1: "salva",
-      subcategoria2: "",
-      clasificacion: "Caceria",
-      categoria: "pistolas",
-      marca: "umarex",
-      precio: 1529.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/037506.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "El revólver Airguns Colt Python hecha de metal (full metal), fabricada por Umarex bajo licencia Colt es una verdadera réplica revolver de fuego. Detalles como el peso, potencia, precisión y estética del arma hacen que este revolver sea una buena opción de compra para la práctica de tiro deportivo. Si eres amante de los revolvers esta es una que debes de tener en tu colección."
-    },
-      {
-        sku: 12821,
-        idProducto: 198,
-        nombre: "Cañas Jigging Agua Salada",
-        modelo: "ALCS501XH",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        subcategoria1: "cañas",
-        subcategoria2: "popping",
-        marca: "yellowtail",
-        precio: 3835.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/029324_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/029324_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/029324_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/029324_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 6,
-          url: "/assets/imagenes/paginaInicial/productos/029324_5.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña para pesca vertical, fabricada en TC24T la cual combina poder con flexibilidad, para un mejor trabajo con señuelos de alto peso y grandes capturas, todos sus componentes son de la marca ALPS."
-    
-    },
-    
-      {
-        sku: 12821,
-        idProducto: 378,
-        nombre: "Caña Tortuga Spinning",
-        modelo: "TORS561MH",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        subcategoria1: "cañas",
-        subcategoria2: "casting",
-        marca: "yellowtail",
-        precio: 4532.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/041833_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/041833_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/041833_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/041833_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/041833_5.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 6,
-          url: "/assets/imagenes/paginaInicial/productos/041833_6.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
-    
-    },
-    {
-      sku: 12341,
-      idProducto: 132,
-      nombre: "Pistola CO2 Umarex TDP45",
-      modelo: "OA581R30S",
-      subcategoria1: "co2",
-      subcategoria2: "",
-      clasificacion: "Caceria",
-      categoria: "pistolas",
-      marca: "umarex",
-      precio: 1107.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/041910.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "Modelo básico e ideal para los fanáticos del CO2 y los que se quieran iniciar en el tiro 4.5mm por su fácil manejo, atractivo diseño, ergonómica y relación calidad precio. La carga de Co2 y el cargador de bola son de fácil cambio y el modo de tiro de doble acción  permite un disparo rápido, también dispone de un raíl Picatinny por si se quiere instalar accesorio para tiro practico."
-    },
-
-    {
-      sku: 184781,
-      idProducto: 1292,
-      nombre: "Carrete Laguna LAG4000",
-      modelo: "OA581R30S",
-      subcategoria1: "carretes",
-      subcategoria2: "spinning", 
-      clasificacion: "pesca",
-      categoria: "aguadulce",
-      marca: "daiwa",
-      precio: 1057.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/030532.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "Nuevo marco compuesto ligero rediseñado y placa lateral, Mango barrido de 90 mm para menos tambaleo, mejor sensación y potencia de bobinado, Perilla de mango suave en forma de I, Sistema de 6 rodamientos (5BB + 1RB) ,Magforce Cast Control, Compuesto fácil de ajustar arrastre de estrellas, Mango barrido de 90 mm para menos oscilación, mejor sensación y potencia de enrollamiento, arrastre de estrella compuesto fácil de ajustar."
-    },
-      {
-        sku: 12821,
-        idProducto: 365,
-        nombre: "Carrete Silver King SK100",
-        modelo: "SK100",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        subcategoria1: "carretes",
-        subcategoria2: "jigging",
-        marca: "yellowtail",
-        precio: 4532.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/042552_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/042552_2.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
-    
-    },
-    {
-      sku: 12341,
-      idProducto: 132,
-      nombre: "Pistola CO2 H&K USP",
-      modelo: "OA581R30S",
-      subcategoria1: "salva",
-      subcategoria2: "",
-      clasificacion: "Caceria",
-      categoria: "pistolas",
-      marca: "h&k",
-      precio: 1603.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/037504.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "pistola de co2 semiautomatica con unos grandes acabados en cuerpo metalico y fibra de polimero. Esta pistola de co2 logra una velocidad de salida del balin de 130 m/s con balines bola. El funcionamiento de la pistola de co2 Hk es con cargas de gas de 12 gramos, ideal para descargar el cargador de 22 disparos del que dispone esta magnifica pistola de co2."
-    },
-      {
-        sku: 12821,
-        idProducto: 287,
-        nombre: "Carrete Silver King SK200",
-        modelo: "SK200",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        subcategoria1: "carretes",
-        subcategoria2: "casting",
-        marca: "yellowtail",
-        precio: 4632.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/042554_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/042554_2.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación. Incluyen cubierta protectora de neopreno."
-    
-    },
-      {
-        sku: 12821,
-        idProducto: 176,
-        nombre: "Carrete Silver King SK500",
-        modelo: "SK500",
-        clasificacion: "pesca",
-        categoria: "aguasalada",
-        subcategoria1: "carretes",
-        subcategoria2: "spinning",
-        marca: "yellowtail",
-        precio: 4964.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/042558_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/042558_2.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Carrete tipo convencional ideal para jigging, con cuerpo de aluminio. Cuenta con 11 baleros de acero resistentes a la corrosión. Excelente recuperación."
-    
-    },
-    {
-      sku: 12341,
-      idProducto: 132,
-      nombre: "Pistola Bereta APX",
-      modelo: "OA581R30S",
-      subcategoria1: "co2",
-      subcategoria2: "",
-      clasificacion: "Caceria",
-      categoria: "pistolas",
-      marca: "pietrobaretta",
-      precio: 2090.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/041910.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "La Pistola Beretta APX Blow back de postas esta fabricada de metal solo el carro, cañón externo e interno y solo las cachas están fabricadas de polímero especial ABS,y un riel Picatinny para laser. Esta pistola tiene un realismo impresionante, desde sus materiales hasta su funcionamiento, sin duda una de las armas más codiciadas por todos los conocedores. Se puede cortar el carro como una arma de verdad, con sistema de Blow back en el disparo. Con una capacidad con cargador de clip de 19 tiros. Pistola de Co2 Semiautomática."
-    },
-      {
-        sku: 12821,
-        idProducto: 195,
-        nombre: "Caña Holbox Spinning HO-S-531MH",
-        modelo: "HO-S-531MH",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        subcategoria1: "cañas",
-        subcategoria2: "spinning",
-        marca: "yellowtail",
-        precio: 2733.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/045854_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/045854_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/045854_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/045854_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/045854_5.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña para jiggin fabricada en TC24T y un acabado en espiral que le brinda mayor resistencia a la hora del enganche. Ideal para capturas de mediano peso."
-    
-    },
-      {
-        sku: 12821,
-        idProducto: 400,
-        nombre: "Caña Oahu Trolling Convencional OA58130S FUJI",
-        modelo: "OA58130S FUJI",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        subcategoria1: "cañas",
-        subcategoria2: "casting",
-        marca: "yellowtail",
-        precio: 2655.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/048072_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/048072_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/048072_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/048072_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/048072_5.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 6,
-          url: "/assets/imagenes/paginaInicial/productos/048072_6.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 7,
-          url: "/assets/imagenes/paginaInicial/productos/048072_7.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caña de trolleo para agua salada ideal para la pesca del sábalo, atún, pez vela y especies medianas. "
-    
-    },
-    {
-      sku: 12341,
-      idProducto: 132,
-      nombre: "Pistola CO2 Bereta Elite II",
-      modelo: "OA581R30S",
-      subcategoria1: "salva",
-      subcategoria2: "",
-      clasificacion: "Caceria",
-      categoria: "pistolas",
-      marca: "pietrobaretta",
-      precio: 1791.00,
-      precio_antiguo: 1000.00,
-      image: [{
-        idProducto: 762,
-        secuencial: 1,
-        url: "/assets/imagenes/paginaInicial/productos/036635.png"
-      }
-    ],
-      descuento: 0,
-      nuevo: true,
-      destacado: false,
-      descripcion: "Con un cargador de 19 tiros, dispara municiones de acero calibre .177 a una velocidad de 410 pps (Es de las más potentes del mercado). Con su accesibilidad en el precio, potencia y diseño de réplica real la convierten en una excelente opción para iniciar en el tiro deportivo.."
-    },
-    
-      {
-        sku: 12341,
-        idProducto: 1872,
-        nombre: "Caña Oahu Trolling Convencional OA581R30S",
-        modelo: "OA581R30S",
-        subcategoria1: "cañas",
-        subcategoria2: "trolling",
-        clasificacion: "pesca",
-        categoria: "aguadulce",
-        marca: "yellowtail",
-        precio: 3341.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/048072_1.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/048072_2.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/048072_3.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/048072_4.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 5,
-          url: "/assets/imagenes/paginaInicial/productos/048072_5.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 6,
-          url: "/assets/imagenes/paginaInicial/productos/048072_6.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 7,
-          url: "/assets/imagenes/paginaInicial/productos/048072_7.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Relleno de polietileno expandible cómodo y de alta densidad, puede aumentar la flotabilidad del chaleco salvavidas en el agua. Composición de poliéster duradero para uso prolongado. Elaborado en un color brillante para su fácil ubicación. Cierre reforzado con protector y broche de ajuste lateral para obtener mayor confort, así como broches inferiores para mejor ajuste. Cuenta con una bolsa frontal multipropósito. Capacidad de 60 kg."
-      },
-      {
-        sku: 12341,
-        idProducto: 501,
-        nombre: "Chaleco Salvavidas para Kayak",
-        clasificacion: "pesca",
-        categoria: "snorkel",
-        subcategoria1: 'chalecos',
-        subcategoria2: '',
-        marca: "yellowtail",
-        precio: 1500.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 132,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/IMG_9826.png"
-        },
-        {
-          idProducto: 132,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/IMG_9840.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Relleno de polietileno expandible cómodo y de alta densidad, puede aumentar la flotabilidad del chaleco salvavidas en el agua. Composición de poliéster duradero para uso prolongado. Elaborado en un color brillante para su fácil ubicación. Cierre reforzado con protector y broche de ajuste lateral para obtener mayor confort, así como broches inferiores para mejor ajuste. Cuenta con una bolsa frontal multipropósito. Capacidad de 60 kg."
-      },
-      {
-        sku: 12341,
-        idProducto: 132,
-        nombre: "Pistola CO2 Revolver S&W R8",
-        modelo: "OA581R30S",
-        subcategoria1: "co2",
-        subcategoria2: "",
-        clasificacion: "Caceria",
-        categoria: "pistolas",
-        marca: "h&k",
-        precio: 1603.00,
-        precio_antiguo: 1000.00,
-        image: [{
-          idProducto: 762,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/036636.png"
-        }
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: false,
-        descripcion: "pistola de co2 semiautomatica con unos grandes acabados en cuerpo metalico y fibra de polimero. Esta pistola de co2 logra una velocidad de salida del balin de 130 m/s con balines bola. El funcionamiento de la pistola de co2 Hk es con cargas de gas de 12 gramos, ideal para descargar el cargador de 22 disparos del que dispone esta magnifica pistola de co2."
-      },
-      {
-        sku: 459341,
-        idProducto: 765,
-        nombre: "Caja para pesca 6201-06",
-        categoria: "accesorios ",
-        clasificacion: "pesca",
-        subcategoria1: 'almacenamiento', 
-        subcategoria2: 'cajas', 
-        marca: "plano",
-        precio: 14010.00,
-        precio_antiguo: 529.00,
-        image: [{
-          idProducto: 134,
-          secuencial:1,
-          url:"/assets/imagenes/paginaInicial/productos/031708.png"
-        }
-       
-      ],
-        descuento: 0,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Caja de pesca 1 bandeja, Divisiones ajustables que permite de 7 a 13 divisiones, 2 compartimientos en la parte superior, Seguro con arillo de metal, 2 Entradas para candado"
-      },
      
-    
-      {
-        sku: 12341,
-        idProducto: 7121265,
-        nombre: "Rifle PCP M16",
-        categoria: "rifles",
-        clasificacion: "Caceria",
-        subcategoria1: 'diabolos',
-        subcategoria2: '',
-        marca: "blackmoose",
-        precio: 14010.00,
-        precio_antiguo: 2000.00,
-        image: [{
-          idProducto: 134,
-          secuencial:1,
-          url:"/assets/imagenes/paginaInicial/productos/051275.png"
-        },
-        {
-          idProducto: 134,
-          secuencial:2,
-          url:"/assets/imagenes/paginaInicial/productos/051275.png"
-        }
-    
-      ],
-        descuento: 0,
+       ],
+        descuento: 5,
         nuevo: true,
         destacado: true,
-        descripcion: "Este rifle PCP bull barrel viene con la nueva acción de palanca lateral, desarrollado para tiradores exigentes.Encontrarán lo que se espera de un rifle de aire de gama alta destacada: precisión, largo alcance y confiabilidad."
-      },
-      {
-        sku: 12341,
-        idProducto: 873,
-        nombre: "Rifle PR900W",
-        categoria: "rifles",
-        subcategoria1: 'nitropiston',
-        subcategoria2:'', 
-        clasificacion: "Caceria",
-        marca: "blackmoose",
-        precio: 5400.00,
-        precio_antiguo: 2000.00,
-        image: [{
-          idProducto:135,
-          secuencial:1,
-          url: "/assets/imagenes/paginaInicial/productos/051272.png"
-        },
-        {
-          idProducto:135,
-          secuencial:1,
-          url: "/assets/imagenes/paginaInicial/productos/051272.png"
-        }
-      ],
-        descuento: 30,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Potencia extrema, precisión, terminaciones de calidad y tecnología de punta son las principales características de estos nuevos modelos.Al ser un rifle regulado, todos sus disparos mantienen la misma velocidad promedio de 950 y 1000 FPS aproximadamente."
-      },
-      {
-        sku: 12341,
-        idProducto: 872,
-        nombre: "Rifle BP P15",
-        categoria: "rifles",
-        subcategoria1: 'piston',
-        subcategoria2: '', 
-        clasificacion: "Caceria",
-        marca: "blackmooose",
-        precio: 16358.00,
-        precio_antiguo: 2000.00,
-        image: [{
-          idProducto: 136,
-          secuencial: 1, 
-          url: "/assets/imagenes/paginaInicial/productos/051280.png"
-        },
-        {
-          idProducto: 136,
-          secuencial: 2, 
-          url: "/assets/imagenes/paginaInicial/productos/051280.png"
-        }
-      ],
-        descuento: 30,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Potencia extrema, precisión, terminaciones de calidad y tecnología de punta son las principales características de estos nuevos modelos.Al ser un rifle regulado, todos sus disparos mantienen la misma velocidad promedio de 950 y 1000 FPS aproximadamente."
-      
-      },
-      {
-        sku: 865771,
-        idProducto: 764,
-        nombre: "Caja para pesca 3952-10",
-        categoria: "accesorios ",
-        subcategoria1: 'almacenamiento', 
-        subcategoria2: 'cajas', 
-        clasificacion: "pesca",
-        marca: "plano",
-        precio: 2252.00,
-        precio_antiguo: 1224.00,
-        image: [{
-          idProducto:2,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/025039.png",
-        }
-      ],
-        descuento: 30,
-        nuevo: true,
-        destacado: true,
-        descripcion: "Organizador de doble cubierta, ofrece almacenamiento a granel junto con las opciones de compartimentación para satisfacer sus necesidades específicas. Medidas: 11.4”x 14.5”x 6.5"
+        existencia: 10,
+        descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
 
-      },
-      {
-        sku: 12341,
-        idProducto: 1,
-        nombre: "Señuelo Plomero",
-        categoria: "aguasalada",
-        clasificacion: "pesca",
-        subcategoria1: 'señuelos',
-        subcategoria2: 'offshore', 
-        marca: "magbay",
-        precio: 1250.50,
-        precio_antiguo: 2000.00,
-        image: [{
-          idProducto:1,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/magbay/050956.png",
-         
-        },{
-          idProducto:1,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/magbay/050957.png",
-        },
-        {
-          idProducto:1,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/magbay/050958.png",
-        },
-        {
-          idProducto:1,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/magbay/050955.png",
-        }
-      ],
-        descuento: 30,
-        nuevo: true,
-        destacado: true,
-        descripcion: 'Con un peso de más de 1 lb con ojos que cambian de color, el señuelo el Plomero High Speed es un absoluto Wahoo Slayer. Su peso en la cabeza garantiza una inmersión profunda y una atracción de Trolling rápida que el Wahoo simplemente no puede resistir.'
-      },
-      {
-        sku: 12341,
-        idProducto: 2,
-        nombre: "Señuelo Mag Trak",
-        categoria: "aguasalada",
-        clasificacion: "pesca",
-        subcategoria1: 'señuelos',
-        subcategoria2: 'jigging',
-        marca: "magtrack",
-        precio: 2252.00,
-        precio_antiguo: 2000.00,
-        image: [{
-          idProducto:2,
-          secuencial: 1,
-          url: "/assets/imagenes/paginaInicial/productos/magtrack/050976.png",
-         
-        },{
-          idProducto:2,
-          secuencial: 2,
-          url: "/assets/imagenes/paginaInicial/productos/magtrack/050977.png",
-        },
-        {
-          idProducto:2,
-          secuencial: 3,
-          url: "/assets/imagenes/paginaInicial/productos/magtrack/050978.png",
-        },
-        {
-          idProducto:2,
-          secuencial: 4,
-          url: "/assets/imagenes/paginaInicial/productos/magtrack/050979.png",
-        }
-    
-      ],
-        descuento: 30,
-        nuevo: true,
-        destacado: true,
-        descripcion: "El MagTrak presenta un diseño que permite que el señuelo nade recto y debajo de la superficie a velocidades de hasta 20 nudos.Señuelo Wahoo MagTrak ™ de alta velocidad:Cuerpo dinámico de 10 pulgadas con diseño para nadar de una manera que reproduce pequeños wahooTecnología HookMag con anzuelos de acero inoxidable serie 10/0 Sin problemas a altas velocidades, no se requiere plomo troleador o profundizador."
-
-      }
-    ]
+    },
+     
+  ]
   }
+
+
+
+  getProductosNoB(){
+    return [
+     {
+       sku: 1051892,
+       id: 1051892,
+       nombre: "Señuelo Mag Trak",
+       categoria: "aguasalada",
+       clasificacion: "pesca",
+       subcategoria1: 'señuelos',
+       subcategoria2: 'jigging',
+       marca: "magtrack",
+       precio: 2252.00,
+       precio_antiguo: 124500.00,
+       image: [{
+        idProducto: 762,
+        secuencial: 1,
+        url: "/assets/imagenes/PNGsinfondo/043398_01.png"
+      },
+      {
+        idProducto: 762,
+        secuencial: 1,
+        url: "/assets/imagenes/PNGsinfondo/043398_01.png"
+      }
+     ],
+       descuento: 30,
+       nuevo: true,
+       destacado: true,
+       descripcion: "El MagTrak presenta un diseño que permite que el señuelo nade recto y debajo de la superficie a velocidades de hasta 20 nudos.Señuelo Wahoo MagTrak ™ de alta velocidad:Cuerpo dinámico de 10 pulgadas con diseño para nadar de una manera que reproduce pequeños wahooTecnología HookMag con anzuelos de acero inoxidable serie 10/0 Sin problemas a altas velocidades, no se requiere plomo troleador o profundizador.",
+       existencia: 10
+     },
+     {
+       sku: 12821,
+       id: 6597787788,
+       nombre: "Ropa Jersey Caceria",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "aguadulce",
+       subcategoria1: "jersey",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/051039_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 6577878988,
+       nombre: "Ropa Caceria playeras",  
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "lineas",
+       subcategoria1: "playeras",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/049812_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 65712212788,
+       nombre: "accesorios mallas",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "embarcaciones",
+       subcategoria1: "mallas",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/046894_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+      
+     {
+       sku: 12821,
+       id: 9776,
+       nombre: "accesorios   termos",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "buceorec",
+       subcategoria1: "termos",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/044611_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+       
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. ",
+       existencia: 10
+       
+     },
+     {
+       sku: 12821,
+       id: 88899,
+       nombre: "accesorios  caceria hieleras",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "ropa",
+       subcategoria1: "hieleras",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/043410_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+     
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 766,
+       nombre: "accesorios caceria  mochilas",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "accesorios",
+       subcategoria1: "mochilas",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+       
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 87655,
+       nombre: "Cuchilleria  machetes",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "aguadulce",
+       subcategoria1: "machetes",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/043406_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 2368,
+       nombre: "Cuchilleria  navajas",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "aguasalada",
+       subcategoria1: "navajas",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/043403_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+    
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 98792,
+       nombre: "cuchilleria  cuchillos",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "lineas",
+       subcategoria1: "cuchillo",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/JPGconfondo/043398_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/JPGconfondo/043406_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 20,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 191212122,
+       nombre: "Arqueria  bayestas",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "embarcaciones",
+       subcategoria1: "bayestas",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/043391_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 196552,
+       nombre: "Arqueria arcos",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "buceorec",
+       subcategoria1: "arcos",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       existencia: 30,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+
+     {
+       sku: 12821,
+       id: 97778999,
+       nombre: "Accesorios de Rifles cartucheras",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "ropa",
+       subcategoria1: "accesorios",
+       subcategoria2: "cartucheras",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 14,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+
+     {
+       sku: 12821,
+       id: 12121,
+       nombre: "Accesorios de Rifles mantenimiento",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "accesorios",
+       subcategoria1: "accesorios",
+       subcategoria2: "mantenimiento",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 1922,
+       nombre: "Accesorios de Rifles salvaydiabolos",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "aguadulce",
+       subcategoria1: "accesorios",
+       subcategoria2: "salvaydiabolos",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [
+         {
+           idProducto: 132,
+           secuencial: 2,
+           url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+         },
+         {
+           idProducto: 762,
+           secuencial: 1,
+           url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+         }
+      
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 19882,
+       nombre: "Accesorios de Rifles salvaydiabolos",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "aguasalada",
+       subcategoria1: "accesorios",
+       subcategoria2: "salvaydiabolos",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 5,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 197882,
+       nombre: "Rifle de Nitropiston",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "lineas",
+       subcategoria1: "nitropiston",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       existencia: 10,
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   },
+     {
+       sku: 12821,
+       id: 177892,
+       nombre: "Rifle de CO2",
+       modelo: "SENS662M",
+       clasificacion: "Caceria",
+       cantidad: 1,
+       categoria: "buceorec",
+       subcategoria1: "co2",
+       subcategoria2: "",
+       marca: "Yellow Tail",
+       precio: 500.00,
+       precio_antiguo: 1000.00,
+       image: [{
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042555_01.jpg"
+       },
+       {
+         idProducto: 762,
+         secuencial: 1,
+         url: "/assets/imagenes/PNGsinfondo/042556_01.jpg"
+       }
+      ],
+       descuento: 0,
+       nuevo: true,
+       destacado: true,
+       existencia: 10,
+       descripcion: "Caña de spinning para pesca en agua dulce, ideal para lances con señuelos de peso mediano, fabricada en TC24T que le brinda una característica para lograr grandes capturas. "
+
+   }
+ ]
+ }
 
 
   getProductosPesca(){

@@ -1,3 +1,41 @@
+.rowPagination{
+  margin-bottom: 10px;
+}
+
+
+.paginationP{
+  display: inline-block; 
+  font-size: 14px;
+  background: none; 
+  margin: 4px;
+  border: none; 
+  text-align: center;
+  width:auto; 
+  height: auto;
+  text-decoration: none;
+}
+
+
+
+.btnPrevandNext{
+  background: none;
+  margin: 2px;
+  border: none;
+  text-align: center;
+  width:auto; 
+  height: auto;
+}
+
+
+.paginationP a{
+  color: #000;
+  font-family:'Meera Inimai', sans-serif;
+  font-size: 14px;
+  padding: 8px;
+
+}
+
+
 .filtros-Menu{
   display: none;
 }
@@ -38,28 +76,46 @@
   transition: 0.5s;
 }
 
+
+.product-priceHeartChecked i{
+  color: #ff0000;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #ff0000;
+}
+
+
 .pruebaBotones2{
+  background: transparent;
+  opacity: 0;
+  z-index: 1;
   position: absolute;
-  top: 60%;
-  right: 5%;
+  top: 30%;
+  right: 3%;
+  transition: 0.3s;
   
- 
+}
+
+.product-card:hover .pruebaBotones2{
+    opacity: 1;
+    position: absolute;
+    top: 49%;
+    right: 3%;
+
 }
 
 .pruebaBotones2 button{
-  background: #fff;
+  background: none;
+  margin-bottom: 1px;
   border:none;
-  border-radius: 2px;
   font-family: 'Meera Inima', sans-serif;
-  font-size: 17px;
-  padding: 5px;
-  
+  font-size: 14px;
+  padding: 7px;
 
 }
 
 .pruebaBotones2 button:hover{
-  background: #aaa;
-  color: #000;
+  background: #000;
+  color: #fff;
   transition: 0.5s ease-in-out;
 }
 
@@ -88,6 +144,7 @@
   font-weight: bold;
   text-align: left;
   line-height: 2.5em;
+  text-decoration: none;
 }
 
 
@@ -593,8 +650,7 @@
   
 }
 
-#miModal .modal-content img{  
-}
+
 
 .diferente-vistaImg{
   padding-top: 8px;
@@ -1260,7 +1316,7 @@ input[type=checkbox]{
     position: relative;
     
     margin: 50px auto;
-    background: #fafafa;
+    background: #fff;
     height: auto;
     transition: all 200ms ease-in;
     transform: scale(1);
@@ -1280,54 +1336,116 @@ input[type=checkbox]{
 .badge1 {
   position: absolute;
   left: 0;
-  top: 13px;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  background: #000;
-  color: #fff;
+  top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
   padding: 3px 10px;
   border-radius: none;
   z-index: 1;
+  font-family: 'Meera Inima', sans-serif;
 }
 
 .badge2 {
   position: absolute;
-  left: 0;
-  top: 40px;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  background: #ff0000;
-  color: #fff;
+  left: 25%;
+  top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
   padding: 3px 10px;
   z-index: 1;
+  font-family: 'Meera Inima', sans-serif;
 }
-
 
 .badge3 {
   position: absolute;
-  right: 5px;
-  top: 47%;
+  right: 8px;
+  bottom: 14%;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Meera Inimai', sans-serif;
   font-weight: 700;
-  color: #fff;
-  background-color: #000000;
-  
-  
+  color: #000;
+ 
   padding: 3px 10px;
 }
+
+.aguaSaladaBackground{
+  background: #A9F5F2;
+}
+
+.aguaDulceBackground{
+  background: #A9E2F3;
+}
+
+.lineasBackground{
+  background:#A9D0F5;
+}
+
+.embarcacionesBackground{
+  background: #A9F5BC;
+}
+
+.buceorecBackground{
+  background:#A9A9F5;
+}
+
+.ropaBackground{
+  background:#BCA9F5;
+}
+
+.accesoriosBackground{
+  background: #F6E3CE;
+}
+
+.riflesBackground{
+  background:#F5F6CE;
+}
+
+.pistolasBackground{
+  background: #F6E3CE;
+}
+
+.arqueriaBackground{
+  background: #F6D8CE;
+}
+
+.mantenimientoBackground{
+  background: #F5A9A9;
+}
+
+.ropaCaceriaBackground{
+  background: #BCF5A9;
+}
+
+.cuchilleriaBackground{
+  background: #CEE3F6;
+}
+
+.accesoriosCaceriaBackground{
+  background: #E2A9F3;
+}
+
 
 .product-tumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    padding: 50px;
-    background: #f0f0f0;
+    height: 250px;
+    padding: 43px;
+    background: #FFF;
 }
+
+.product-tumb-gif{
+  background: url('/assets/imagenes/gif/heart.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+
+
 
 .product-tumb img {
 
@@ -1357,8 +1475,7 @@ input[type=checkbox]{
 
 .product-details h4{
   font-family: 'Meera Inima', sans-serif;
-  
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
 }
 
@@ -1386,7 +1503,8 @@ input[type=checkbox]{
 
 .product-details h3{
   font-family: 'Meera Inima', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   color: #000;
 }
 
@@ -1395,13 +1513,13 @@ input[type=checkbox]{
 
 
 .product-details h4 a {
-  font-weight: bold;
+  font-weight: normal;
   display: block;
   margin-bottom: 10px;
   color: #000000;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 13px;
   font-family: 'Meera Inima', sans-serif;
 }
 
@@ -1656,9 +1774,6 @@ font-weight: bold;
   
 }
 
-.myCheckbox input:checked + span {
-
-}
 
 
 
@@ -1699,9 +1814,7 @@ Media query usado
     
   }
 
-  .order-filter{
-    
-  }
+
 
   .filtros-barra button{
     border: none;
@@ -1755,7 +1868,7 @@ padding: 4px;
 }
 
 .product-details h4 a {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 
@@ -1804,9 +1917,7 @@ Iphone 7 Portrait
     
   }
 
-  .order-filter{
-    
-  }
+ 
 
   .filtros-barra button{
     border: none;
@@ -1960,9 +2071,7 @@ Surface Pro 3 Portrait
     
   }
 
-  .order-filter{
-    
-  }
+
 
   .filtros-barra button{
     border: none;
@@ -2019,9 +2128,6 @@ Iphone 5 Portrait
   
 }
 
-.order-filter{
-  
-}
 
 .filtros-barra button{
   border: none;
@@ -2067,10 +2173,7 @@ Iphone 5 Portrait
     
   }
 
-  .order-filter{
-    
-  }
-
+ 
   .filtros-barra button{
     border: none;
     background: none;
@@ -2139,9 +2242,6 @@ Iphone 5 Portrait
   
 }
 
-.order-filter{
-  
-}
 
 .filtros-barra button{
   border: none;

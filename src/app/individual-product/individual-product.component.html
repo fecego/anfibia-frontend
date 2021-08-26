@@ -1,12 +1,34 @@
 
 
-<div class="container-fluid producto-inicio">
-    <div class="row rutas" >
+<div class="container producto-inicio">
+    <div class="row" *ngIf="mensajeError != null">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 mensajeE">
+              <div class="posicionError">
+                <!--<img src="/assets/imagenes/paginaInicial/anzuelo404.png" alt="">-->
+                <h3>Error, no encontrado</h3>
+                <h2>404</h2>
+                <h1>{{mensajeError}} <a routerLink="/tienda">tienda</a> </h1> 
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row rutas"  *ngIf ="mensajeError == null">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 ruta">
             <h1>
 
               <a routerLink="/tienda">TIENDA</a>
               <a routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion}">/ {{productoIndividual.clasificacion | uppercase}}</a> 
+              
+              <!--SE definen las rutas rapidas de compra para volver a la tienda o sus categorias, etc..-->
               <a *ngIf = "productoIndividual.clasificacion === 'pesca'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria}">/ {{productoIndividual.categoria | uppercase}}</a> 
               <!--Subcategorías Agua DULCE y SALADA CAÑASS-->
               <a *ngIf="productoIndividual.categoria === 'aguadulce'" routerLink="/tienda" [queryParams] = "{clasificacion: productoIndividual.clasificacion, categoria: productoIndividual.categoria, subcategoriaAguadulce: productoIndividual.subcategoria1}">/ {{productoIndividual.subcategoria1 | uppercase}} </a> 
@@ -88,32 +110,32 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="mensajeError == null">
         <div class="col-12 col-sm-12 col-md-12 col-lg-8" style="margin-top: 30px;">
             <div class="card2">
                 <div class="top-section2">
-                  <img id="image-container2" [attr.src]="productoIndividual.image[0].url" (mouseover) ="hoverZoom(productoIndividual.image[0].url)">   
+                  <!--<img id="image-container2" [attr.src]="productoIndividual.image[0].url" (mouseover) ="hoverZoom(productoIndividual.image[0].url)">-->   
                 </div>
                 <div class="bottom-section2">
-                    <div class="nav2" *ngFor="let prod of productoIndividual.image; index as i; let index = i;">
-                        <img  (click) = "chamgeImage(prod.url)" id="imagen1" [attr.src]="prod.url" alt="prueba1">
-                        <!--<img id="imagen2" src="/assets/imagenes/paginaInicial/carretes/042562_1.png" alt="prueba2">
-                        <img id="imagen3" src="/assets/imagenes/paginaInicial/carretes/042694_1.png" alt="prueba3">
-                        <img id="imagen4" src="/assets/imagenes/paginaInicial/carretes/042695_1.png" alt="prueba4">
-                        <img id="imagen5" src="/assets/imagenes/paginaInicial/carretes/042699_1.png" alt="prueba5">
-                        <img id="imagen6" src="/assets/imagenes/paginaInicial/carretes/042554_1.png" alt="prueba6">-->
-                    </div>
+                    <!--<div class="nav2" *ngFor="let prod of productoIndividual.image; index as i; let index = i;">
+                    
+                          <img  (click) = "chamgeImage(prod.url)"  [attr.src]="prod.url" >
+                        
+
+                    </div>-->
                 </div>
               </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-4 fijo">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 fijo" >
             <div> 
-              <h4>{{productoIndividual.categoria | uppercase}} {{productoIndividual.marca | uppercase}}</h4>
+              <!--<h4>{{productoIndividual.categoria | uppercase}} {{productoIndividual.marca | uppercase}}</h4>-->
+              <h4>CARRETES YELLOW TAIL</h4>
+            
             </div>
-            <h1>{{productoIndividual.nombre | uppercase}}</h1>
+            <h1>{{productoIndividual.nombre | oracionMayusculas}}</h1>
             <hr>
-           <h2>SKU: {{productoIndividual.sku}}</h2>
-           <h2>PRECIO: <span>{{productoIndividual.precio | currency}}</span></h2>
+           <h2>sku: {{productoIndividual.sku}}</h2>
+           <h2>Precio: <span>{{productoIndividual.precio | currency}}</span></h2>
             
             <h3>Variaciones del producto</h3>
             <!--<div class="filtros-leftside">
@@ -192,18 +214,26 @@
                 <option value="">Rojo</option>
               </select>              
              </div>
+             <div>
+              <!--<p>Ingresa la cantidad de piezas que quieres añadir a tu carrito.</p>-->
+              <label for="prodQuantity">Cantidad </label ><input #prodQuantity id="prodQuantity" type="number" (ngModelChange) = "cambios($event, producto)" type="number" step="1" max="99" min="1" [attr.value]="cantidad" name="quantity">
+             </div>
             <br>
+
+
+             
             <!--<div class="input-group">
               <input type="button" value="-" class="button-minus" data-field="quantity">
               <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
               <input type="button" value="+" class="button-plus" data-field="quantity">
             </div>-->
-            <button id="carrito-compras" class="botones-individual">Añadir al Carrito <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-            <button class="botones-individual">Añadir a la Lista de deseos <i class="fa fa-heart" aria-hidden="true"></i></button>
-            <button class="botones-individual2">Comprar ahora <i class="fa fa-money" aria-hidden="true"></i></button>
+            <button id="carrito-compras" class="botones-individual"  (click) = "addCartElement(productoIndividual, $event)">Añadir al Carrito <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            <button type="button" (click) = "addWishList(productoIndividual, $event)" class="botones-individual">Añadir a la Lista de deseos <i class="fa fa-heart" aria-hidden="true"></i></button>
+            <button class="botones-individual2" (click) = "buyNow(productoIndividual, $event)">Comprar ahora <i class="fa fa-money" aria-hidden="true"></i></button>
         </div>   
     </div>
-    <div class="row">
+  
+    <div class="row" *ngIf="mensajeError == null">
       <div class="col-sm-12">
         <ngb-tabset class="tabset1">
           <ngb-tab title="Descripción">
@@ -216,8 +246,8 @@
                   <h2>Descripción</h2>
                   <p>{{productoIndividual.descripcion}}</p>
               </div>
-              <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside">
-                  <img src="{{productoIndividual.image[0].url}}" alt="">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside2">
+                  <!--<img src="{{productoIndividual.image[0].url}}" alt="">-->
               </div>
           </div>
     
@@ -328,74 +358,312 @@
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
-      </div>
-    </div>
-    <div class="row also-interest">
-      <div class="col-sm-12">
-        <div class="container" style="position: relative;">
-          <div class="row text-also">
-              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                  <h1>También te podría interesar.</h1>
+
+
+
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+          <li [ngbNavItem]="1">
+            <a ngbNavLink>Descripción</a>
+            <ng-template ngbNavContent>
+              <div class="container">
+                <div class="row descriptivo">
                   <hr>
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                      <h1>{{productoIndividual.nombre | uppercase}}</h1>
+                      <h2>Descripción</h2>
+                      <p>{{productoIndividual.descripcion}}</p>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 descriptivo-inside2">
+                      <!--<img src="{{productoIndividual.image[0].url}}" alt="">-->
+                  </div>
               </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <owl-carousel-o [options]="customOptions">
-               <ng-template carouselSlide *ngFor="let producto of productosInteres | slice: 0:16; index as i; let index = i;">
-                 <div class="" >
-                   <div class="product-card" >
-                   <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
-                   <div class="badge2" *ngIf="producto.destacado">Destacado</div>
-                   <div class="badge3" *ngIf="producto.descuento">{{producto.descuento}}% Desc</div>
-                   <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->
-                   
-                       <div class="product-tumb">
-                        <img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">
-                       </div>
-                       <div class="product-details">
-                           <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
-                       
-                           <h4><a routerLink="/tienda/{{producto.idProducto}}/{{producto.nombre}}">{{producto.nombre | oracionMayusculas}}</a></h4>
-                           <h4 *ngIf="producto.descuento"><span>  Precio Original: </span> {{producto.precio_antiguo | currency}}</h4>
-                           <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{producto.precio | currency}}</h5>
-                           <h3 id="precioNormal" *ngIf="producto.descuento == 0"><span>Precio: </span>{{producto.precio | currency}}</h3>
-                       
-                           
-                           <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-                          
-                           <div id="prueba{{i}}"class="pruebaBotones"> 
-                            <ul>
-                              <li>  <button (click)="addWishList(producto)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                             
-                              
-                            </ul>
-                           
-  
-                          </div>
-                          <div class="pruebaBotones2">
-                              <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                              <button class="" type="button" (click) = "addCart(producto)"><i class="fa fa-shopping-cart"></i> </button>
-                            
-  
-                          </div>
-                          </div>
-                   </div>
+        
                </div>
-               </ng-template>
-              
-           </owl-carousel-o>
-   
-            </div>
-   
-          </div>
-      </div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <a ngbNavLink>Valoraciones y Reseñas</a>
+            <ng-template ngbNavContent>
+              <div class="container">
+                <div class="row valoraciones">
+                  <div class="col-sm-12">
+                    <h1>Valoraciones y reseñas</h1>
+                  <hr>
+                  </div>
+                  <div class="col-12 col-sm-8 col-sm-8 col-lg-8">
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset><br><br>
+                      <h3>22-03-2020</h3>
+                      <h2>Lorem ipsum dolor sit ame</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <hr>
+                  </div>
+                  <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset><br><br>
+                      <h3>22-03-2020</h3>
+                      <h2>Lorem ipsum dolor sit ame</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <hr>
+                  </div>
+                  <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset><br><br>
+                      <h3>22-03-2020</h3>
+                      <h2>Lorem ipsum dolor sit ame</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <hr>
+                  </div>
+                  <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset><br><br>
+                      <h3>22-03-2020</h3>
+                      <h2>Lorem ipsum dolor sit ame</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <hr>
+                  </div>
+                  <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset><br><br>
+                      <h3>22-03-2020</h3>
+                      <h2>Lorem ipsum dolor sit ame</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <hr>
+                  </div>
+              </div>
+      
+              </div>
+            </ng-template>
+          </li>
+         
+        </ul>
+        
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
 
       </div>
-
     </div>
+  
   
 </div>
+<div class="container-fluid">
+  <div class="row also-interest">
+    <div class="col-sm-12">
+        <div class="row text-also">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>Productos relacionados.</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="products_related | async as productRelated; else isLoadingRelated">
+           <owl-carousel-o [options]="customOptions">
+             <ng-template carouselSlide *ngFor="let producto of products_related | async | slice: 0:16; index as i; let index = i;">
+               <div class="" >
+                <div class="product-card">
+                  <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                  <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                  <div class="badge3" *ngIf="producto.existencia === null || producto.existencia === 0">PRODUCTO AGOTADO</div>
+                 
+                  <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->      
+                  <div class="product-tumb">
+                    <!--<img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">-->
+                  </div>
+                  <div class="product-details">
+                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                
+                   <!--<div>
+                       <h4 *ngIf="producto.descuento"><span>{{producto.price | currency}}</span> </h4>
+                   </div>
+                   
+                    <div> 
+                       <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                    </div>-->
+                    <div>
+                       <h3><span>{{producto.precio | currency}}</span><span style="font-size: 12px;"> {{producto.unidad}}</span></h3>
+                    </div>
+                    <div>
+                       <h4><a (click)="pruebaD(producto)">{{producto.nombre | oracionMayusculas}}</a></h4>
+                    </div>
+                    
+                   
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                   
+                    <div class="pruebaBotones"> 
+                       <button (click)="addWishList(producto, $event)" *ngIf = "!producto.isLoading" [ngClass] = "{'product-priceHeartChecked': producto.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                       <div *ngIf = "producto.isLoading == true">
+                        <app-spinner-small></app-spinner-small>
+                      </div>
+                    </div>
 
+
+
+                   <div class="pruebaBotones2">
+                    <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                    <button class="" [disabled] = "producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true}" type="button" (click) = "addCartElement(producto, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                  
+ 
+                </div>
+               </div>
+                </div>
+             </div>
+             </ng-template>
+            
+         </owl-carousel-o>
+ 
+          </div>
+          <ng-template #isLoadingRelated>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              
+              <div>
+                 <app-spinner-small>
+                 
+                 </app-spinner-small>
+              </div>
+               Cargando productos...
+             </div>
+           </ng-template>
+ 
+        </div>
+   
+
+    </div>
+
+  </div>
+  <div class="row also-interest">
+    <div class="col-sm-12">
+        <div class="row text-also">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>También te podría interesar.</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12ze col-sm-12 col-xs-12" *ngIf="products_also_interested | async as productRelated; else isLoadingInterested">
+           <owl-carousel-o [options]="customOptions">
+             <ng-template carouselSlide *ngFor="let producto of products_also_interested | async | slice: 0:16; index as i; let index = i;">
+               <div class="" >
+                <div class="product-card">
+                  <div class="badge1" *ngIf="producto.nuevo">Nuevo</div>
+                  <div class="badge2" *ngIf="producto.destacado">Destacado</div>
+                  <div class="badge3" *ngIf="producto.existencia === null || producto.existencia === 0">PRODUCTO AGOTADO</div>
+                 
+                  <!--<div class="badge3" *ngIf="producto.descuento">Desc {{producto.descuento}}%</div>-->      
+                  <div class="product-tumb">
+                    <!--<img id="principalProducto"  [attr.src]="producto.image[0].url" alt="" (mouseover) = "producto.image[0].url = producto.imagenCambio" (mouseout) = "producto.image[0].url = producto.imagenPrincipal">-->
+                  </div>
+                  <div class="product-details">
+                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                
+                   <!--<div>
+                       <h4 *ngIf="producto.descuento"><span>{{producto.price | currency}}</span> </h4>
+                   </div>
+                   
+                    <div> 
+                       <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                    </div>-->
+                    <div>
+                       <h3><span>{{producto.precio | currency}}</span><span style="font-size: 12px;"> {{producto.unidad}}</span></h3>
+                    </div>
+                    <div>
+                       <h4><a type="button" (click)="pruebaD(producto)">{{producto.nombre | oracionMayusculas}}</a></h4>
+                    </div>
+                    
+                   
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                   
+                    <div class="pruebaBotones"> 
+                         <button (click)="addWishList(producto, $event)" [ngClass] = "{'product-priceHeartChecked': producto.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                         <div *ngIf = "producto.isLoading == true">
+                            <app-spinner-small></app-spinner-small>
+                        </div>
+                      
+                      </div>
+                   <div class="pruebaBotones2">
+                       <button style="margin-right: 2px " class="" type="button" (click)="openModal(producto)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                       <button class="" [disabled] = "producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true"  [ngClass] = "{'disabledBottonCart': producto.existencia === 0 || producto.existencia === null || producto.isLoadingCart == true}" type="button" (click) = "addCartElement(producto, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                     
+    
+                   </div>
+               </div>
+                </div>
+             </div>
+             </ng-template>
+            
+         </owl-carousel-o>
+ 
+          </div>
+          <ng-template #isLoadingInterested>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              
+              <div>
+                 <app-spinner-small>
+                 
+                 </app-spinner-small>
+              </div>
+               Cargando productos...
+             </div>
+           </ng-template>
+ 
+        </div>
+
+
+    </div>
+
+  </div>
+  
+
+</div>
 
 

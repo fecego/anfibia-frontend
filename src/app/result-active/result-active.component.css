@@ -1,0 +1,28 @@
+.resultAction{
+    height: 500px;
+}
+
+.themargin{
+    margin-top: 25%;
+}
+
+
+.resultAction h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: justify;
+
+}
+
+.resultAction p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.resultAction a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}

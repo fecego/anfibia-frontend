@@ -1,0 +1,553 @@
+.not-count p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 14px;
+}
+
+.error-response{
+    background: #F8E0EC;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.error-response h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+    color: #FF0040; 
+    
+}
+
+.error-response a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 15px;
+}
+
+
+.error-response i{
+    font-size: 20px;
+}
+
+
+.titulos-formularios h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-family: 'Meera Inima', sans-serif;
+    color: #000;
+}
+
+
+.inputGroup {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .inputGroup label {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-family: Trebuchet MS;
+    color: #000;
+    font-weight: 500;
+    
+  }
+  
+  .inputGroup input,
+  .inputGroup textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    left: 25px;
+    padding: 5px;
+    font-family: Trebuchet MS;
+    background: none;
+    color: #000;
+  }
+  
+  .inputGroup input:focus ~ label,
+  .inputGroup input:valid ~ label,
+  .inputGroup textarea:focus ~ label,
+  .inputGroup textarea:valid ~ label {
+    top: -20px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+  }
+  
+  .inputGroup input:focus ~ .inputBar:before,
+  .inputGroup input:focus ~ .inputBar:after,
+  .inputGroup textarea:focus ~ .inputBar:before,
+  .inputGroup textarea:focus ~ .inputBar:after {
+    width: 100%;
+  }
+  
+  .inputGroup textarea {
+    height: 100px;
+    width: 280px;
+    overflow: auto;
+    resize: none;
+  }
+  
+  .inputGroup .inputBar {
+    position: relative;
+    display: block;
+    width: 290px;
+  }
+  .contenedor-imagen{
+     background-image: url('/assets/imagenes/login/ocean.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+     height: 500px;
+  }
+  
+  
+  
+  .inputGroup .inputBar:before,
+  .inputGroup .inputBar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    background: white;
+    height: 2px;
+    transition: all 0.2s ease;
+  }
+  
+  .inputGroup .inputBar:after {
+    right: 50%;
+  }
+  
+  .inputGroup .inputBar:before {
+    left: 50%;
+  }
+  
+ 
+  
+
+.errorFormulario{
+    font-size: 12px;
+    color: rgb(243, 17, 17);
+    font-family: 'Meera Inima', sans-serif;
+    background: rgb(248, 230, 230);
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0em;
+    padding: 5px;
+   
+}
+    
+    .container{
+        font-family: 'Meera Inima', sans-serif;
+    }
+
+    .img{
+        position: absolute;
+    }
+
+    .titulo h1{
+        margin-top: 30px;
+        text-align: center;
+        position: relative;
+        font-size: 60px;
+        font-family: 'Anton', sans-serif;
+        color:black;
+    }
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .titulo h1{ 
+                margin-top: 20px;
+                position: relative;
+                text-align: center;
+                font-size: 35px;
+                font-family: 'Anton', sans-serif;
+                color:black;
+            }
+        }   
+
+        @media only screen and (max-width: 320px){
+            .titulo h1{
+                margin-top: 20px;
+                position: relative;
+                text-align: center;
+                font-size: 25px;
+                font-family: 'Anton';
+                color:black;
+                letter-spacing: 0.1em;
+            }
+
+            .texto h2{
+                margin-top: 10px;
+                position: relative;
+                text-align: center;
+                font-size: 12px !important;
+                font-family: 'Meera Inima', sans-serif;
+                color: black;
+            }
+        }
+    
+
+    .texto h2{
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Meera Inima', sans-serif;
+        color: black;
+    }
+
+    .formulario{
+        margin-top: 10px;
+    }
+    .formulario h3{
+        padding-top: 50px;
+        font-size: 15px;
+    }
+
+    .check{
+        margin: 0 30px 20px;
+        font-size: 15px;
+    }
+
+    /*----------[BOTONES REDES SOCIALES]----------*/
+    /*[Facebook]*/
+    .btn-facebook {
+        color: #fff;
+        background-color: #3b5998;
+        width: 85%;
+        font-size: 15px;
+        font-family: 'Meera Inima', sans-serif;
+        margin: 0 30px 10px;
+        text-align: center !important; 
+    }
+        @media only screen and (max-width: 320px){
+            .btn-facebook {
+                color: #fff;
+                background-color: #3b5998;
+                width: 95%;
+                font-size: 13px;
+                font-family: 'Meera Inima', sans-serif;
+                margin: 0 0px 10px;
+                text-align: center !important; 
+            }
+        }
+    
+    .btn-social {
+        position: relative;
+        padding-left: 44px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .btn-social:hover {
+        color: #eee;
+    }
+    
+    .btn-social :first-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        padding: 7px;
+        font-size: 1.6em;
+        text-align: center;
+        border-right: 1px solid rgba(0,0,0,0.2);
+    }
+
+    /*[Google]*/
+    .btn-google {
+        color: #fff;
+        background-color: #dc4a38;
+        width: 85%;
+        font-size: 15px;
+        font-family: 'Meera Inima', sans-serif;
+        margin: 0 30px 10px;
+        text-align: center !important; 
+    }
+        @media only screen and (max-width: 320px){
+            .btn-google {
+                color: #fff;
+                background-color: #dc4a38;
+                width: 95%;
+                font-size: 13px;
+                font-family: 'Meera Inima', sans-serif;
+                margin: 0 0px 10px;
+                text-align: center !important; 
+            } 
+        }
+    
+    .btn-social {
+        position: relative;
+        padding-left: 44px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .btn-social:hover {
+        color: #eee;
+    }
+    
+    .btn-social :first-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        padding: 7px;
+        font-size: 1.6em;
+        text-align: center;
+        border-right: 1px solid rgba(0,0,0,0.2);
+    }
+    /*----------[FIN BOTONES REDES SOCIALES]----------*/
+
+
+
+    /*----------[FORMULARIO REGISTRO]----------*/
+    /*[Card] */
+    .card{
+        border: none;
+    }
+    .card .input-container {
+        position: relative;
+        
+    }
+
+    .card .input-container input {
+        outline: none;
+        z-index: 0;
+        position: relative;
+        background: none;
+        width: 100%;
+        height: 60px;
+        border: 0;
+        color: #212121;
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 0px;
+    }
+
+    .card .input-container input:focus ~ label {
+        color: #9d9d9d;
+        -webkit-transform: translate(-12%, -50%) scale(0.75);
+        transform: translate(-12%, -50%) scale(0.75);
+    }
+    
+    .card .input-container input:focus ~ .bar:before, .card .input-container input:focus ~ .bar:after {
+        width: 50%;
+    }
+
+    .card .input-container input:valid ~ label {
+        color: #9d9d9d;
+        -webkit-transform: translate(-12%, -30%) scale(0.75);
+        transform: translate(-12%, -50%) scale(0.75);
+    }
+
+    .card .input-container label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #757575;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 100px;
+        transition: 0.2s ease;
+    }
+
+    .card .input-container .bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #757575;
+        width: 100%;
+        height: 1px;
+      }
+    
+    .card .input-container .bar:before, .card .input-container .bar:after {
+        content: '';
+        position: absolute;
+        background: #0D7D90;
+        width: 0;
+        height: 2px;
+        transition: .2s ease;
+    }
+      
+    .card .input-container .bar:before {
+        left: 50%;
+    }
+      
+    .card .input-container .bar:after {
+        right: 50%;
+    }
+      
+    .button-container {
+      
+        text-align: center;
+    }
+
+    .button-container button {
+        outline: 0;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        background: 0;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        
+        overflow: hidden;
+        transition: .3s ease;
+    }
+      
+    .button-container button span {
+        position: relative;
+        z-index: 1;
+        color: #a39688;
+        transition: .3s ease;
+    }
+    
+    .button-container button:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        background: #0D7D90;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin: -15px 0 0 -15px;
+        opacity: 0;
+        transition: .3s ease;
+    }
+      
+    .button-container button:hover, .button-container button:active,  .button-container button:focus {
+        border-color: #0D7D90;
+    }
+      
+    .button-container button:hover span, .button-container button:active span,  .button-container button:focus span {
+        color: #0D7D90;
+    }
+      
+    .button-container button:active span, .button-container button:focus span {
+        color: #ffffff;
+    }
+      
+    .button-container button:active:before, .button-container button:focus:before {
+        opacity: 1;
+        -webkit-transform: scale(10);
+        transform: scale(10);
+    }
+    /*----------[FIN FORMULARIO REGISTRO]----------*/
+
+
+    /*------------[FILA DE BENEFICIOS]------------*/
+    .linea{
+        border-left: 1px solid #DAD9D8;
+        height: auto;
+       
+    }
+        @media only screen and (max-width: 768px) and (min-width: 641px){
+            .linea{
+                border-left: 0px;
+                border-top: 1px solid #DAD9D8;
+                height: 700px;
+                top: 50px;
+            }
+        }
+
+    .beneficios h1{
+        
+        font-family: 'Anton', sans-serif;
+        
+        
+    }
+    .beneficios {
+        margin-left: 20%;
+        color: #757575;
+        font-size: 18px;
+        font-family: 'Meera Inima', sans-serif;
+    }
+
+    .beneficios p{
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+        @media only screen and (max-width: 390px) and (min-width: 321px){
+            .linea{
+                border-left: 0px;
+                border-top: 1px solid #DAD9D8;
+                height: auto;
+                top: 10px;
+            }
+
+            .beneficios h1{
+               
+                font-family: 'Anton';
+                padding-top: 70px;
+                
+            }
+            .beneficios {
+                margin-left: 20px;
+                color: #757575;
+                font-size: 18px;
+                font-family: 'Meera Inima', sans-serif;
+            }
+        
+            .beneficios p{
+                margin-left: 10px;
+                font-size: 14px;
+            }
+        }
+        
+        @media only screen and (max-width: 320px){
+            .linea{
+                border-left: 0px;
+                border-top: 1px solid #DAD9D8;
+                height: 700px;
+                top: 50px;
+            }
+
+            .beneficios h1{
+                margin: 0px 0px 20px 0px;
+                font-family: 'Anton';
+                padding-top: 70px;
+                
+            }
+            .beneficios {
+                margin-left: 20px;
+                color: #757575;
+                font-size: 18px;
+                font-family: 'Meera Inima', sans-serif;
+            }
+        
+            .beneficios p{
+                margin-left: 10px;
+                font-size: 14px;
+            }
+        }
+    /*----------[FIN FILA DE BENEFICIOS]----------*/   
+
+
+
+    @media screen and (max-width: 640px) and (min-width: 568px){
+        .inputGroup label{
+            font-size: 14px;
+        }
+
+
+    }

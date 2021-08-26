@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 @Component({
   selector: 'app-preguntas-frecuentes',
   templateUrl: './preguntas-frecuentes.component.html',
@@ -12,7 +12,7 @@ export class PreguntasFrecuentesComponent implements OnInit {
   }
 
   ngOnInit() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    scrollToTop();
   }
 
   

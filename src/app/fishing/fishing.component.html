@@ -1,3 +1,11 @@
+<!--<div *ngIf ="isAutheticated">
+  <h1>El usuario esta autenticado.</h1>
+</div>
+<div *ngIf = "!isAutheticated">
+  <h1>El usuario no esta autenticado.</h1>
+</div>-->
+
+
 <div class="container-fluid inicioPesca">
 
   <!--<div class="row" >
@@ -60,7 +68,7 @@
     <div class="col-lg-5 col-md-4 col-sm-12 col-12 texto-image-background"> 
       <h1>PESCADOR</h1>
       <hr>
-      <p >Bienvenido a la tribu, tenemos todo lo que necesitas para convertirte en el mejor pescador, si lo que buscas es atrapar al pez más grande, somos tu mejor opción.</p>
+      <p >Bienvenido, tenemos todo lo que necesitas para convertirte en el mejor pescador, si lo que buscas es atrapar al pez más grande, somos tu mejor opción.</p>
       <div class="flex dark">
         <a routerLink="/tienda" [queryParams] ="{clasificacion: 'pesca'}" class="bttn-dark">Ir a la tienda</a>
       </div>
@@ -104,11 +112,9 @@
 </section>-->
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="container" >
       <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
         <div class="col-sm-12 product-Title">
-          <h1>Productos nuevos</h1>
+          <h1>Productos Nuevos</h1>
           <hr>
         </div>
         <!--<div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let productoPesca of productosPesca; index as i; let index = i;" >
@@ -203,46 +209,77 @@
       </div>
       
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productosPesca_Nuevos | async as productosPescaN; else isLoading">
           <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
+            <ng-template carouselSlide *ngFor="let productoPesca of productosPesca_Nuevos | async | slice: 0:16; index as i; let index = i;">
               <div class="" >
                 <div class="product-card">
                   <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
                   <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-                  <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+                  <div class="badge3" *ngIf="productoPesca.existencia === null || productoPesca.existencia === 0">PRODUCTO AGOTADO</div>
                   <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                   <div class="product-tumb">
-                    <img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
+                    <!--<img id = "imagenProducto-main" [attr.src]="productoPesca.image[0].url" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">-->
                   </div>
                   
-                  <div class="product-details">
-                    <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
-                    <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
-                    <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
-                    <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
-                    <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
-               
-                    <div class="pruebaBotones"> 
-                      <ul>
-                        <li><button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                      </ul>
-                    </div>
-                    
-                    <div class="pruebaBotones2">
-                      <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                      <button class="" type="button" (click) = "addCart(productoPesca)"><i class="fa fa-shopping-cart"></i> </button>
-                    </div>
-                  </div>
+                 
+                    <div class="product-details">
+                      <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
+                  
+                     <!--<div>
+                         <h4 *ngIf="producto.descuento"><span>{{producto.precio_antiguo | currency}}</span> </h4>
+                     </div>
+                     
+                      <div> 
+                         <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                      </div>-->
+                      <div>
+                         <h3 id="precioNormal"><span>{{productoPesca.precio | currency}}</span><span style="font-size: 12px;"> {{productoPesca.unidad}}</span></h3>
+                      </div>
+                      <div>
+                         <h4><a routerLink="/tienda/{{productoPesca.id}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                      </div>
+                      
+                     
+                      <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
+                     
+                      <div class="pruebaBotones"> 
+                           <ul>
+                             <li><button (click)="addWishList(productoPesca, $event)" *ngIf ="!productoPesca.isLoading" [ngClass] = "{'product-priceHeartChecked': productoPesca.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                             <div *ngIf = "productoPesca.isLoading == true">
+                              <app-spinner-small></app-spinner-small>
+                            </div>
+                            </ul>
+                     </div>
+
+                     
+                     <div class="pruebaBotones2">
+                         <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
+                         <button class="" type="button" [disabled] = "productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true}" (click) = "addCartElement(productoPesca, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
+                       
+
+                     </div>
+                 </div>
+                  
                 </div>
               </div>
             </ng-template>
           </owl-carousel-o>
         </div>
+        <ng-template #isLoading>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+            <div>
+               <app-spinner-small>
+               
+               </app-spinner-small>
+            </div>
+             Cargando productos...
+           </div>
+         </ng-template>
       </div>
-    </div>
-  </div>
+   
+ 
 </div>
 
 <div class="container-fluid">
@@ -294,51 +331,56 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="container" style="position: relative;">
-      <div class="row">
         <div class="col-sm-12 seccion-productos-extras">     
-          <h1>Productos destacados</h1>
+          <h1>Productos Destacados</h1>
           <hr>
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productosPesca_Destacados | async as productosPescaD; else isLoadingDestacados">
               <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
+                <ng-template carouselSlide *ngFor="let productoPesca of productosPesca_Destacados | async | slice: 0:16; index as i; let index = i;">
                   <div class="">
                     <div class="product-card">
                       <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
                       <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-                      <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+                      <div class="badge3" *ngIf="productoPesca.existencia === null || productoPesca.existencia === 0">PRODUCTO AGOTADO</div>
+                      <!--<div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>-->
                       <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                            <div class="product-tumb">
-                               <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
+                              <!--<img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">-->
                            </div>
                            <div class="product-details">
                             <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
                         
-                            <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
-                            <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
-                            <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
-                            <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
-                        
+                           <!--<div>
+                               <h4 *ngIf="producto.descuento"><span>{{producto.precio_antiguo | currency}}</span> </h4>
+                           </div>
+                           
+                            <div> 
+                               <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                            </div>-->
+                            <div>
+                               <h3 id="precioNormal"><span>{{productoPesca.precio | currency}}</span><span style="font-size: 12px;"> {{productoPesca.unidad}}</span></h3>
+                            </div>
+                            <div>
+                               <h4><a routerLink="/tienda/{{productoPesca.id}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                            </div>
                             
+                           
                             <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                            
                             <div class="pruebaBotones"> 
-                             <ul>
-                               <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                              
-                               
-                             </ul>
-                            
-            
-                           </div>
+                                 <button (click)="addWishList(productoPesca, $event)" [ngClass] = "{'product-priceHeartChecked': productoPesca.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                                 <div *ngIf = "productoPesca.isLoading == true">
+                                    <app-spinner-small></app-spinner-small>
+                                </div>
+                            </div>
                            <div class="pruebaBotones2">
                                <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                               <button class="" type="button" (click) = "addCart(productoPesca)"><i class="fa fa-shopping-cart"></i> </button>
+                               <button class="" type="button" [disabled] = "productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true}" (click) = "addCartElement(productoPesca, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
                              
-            
+      
                            </div>
-                           </div>
+                       </div>
                        </div>
                    </div>
                    </ng-template>
@@ -346,13 +388,24 @@
                </owl-carousel-o>
        
                 </div>
+                <ng-template #isLoadingDestacados>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                    <div>
+                       <app-spinner-small>
+                       
+                       </app-spinner-small>
+                    </div>
+                     Cargando productos...
+                   </div>
+                 </ng-template>
        
               </div>
  </div>
 
-  </div>
+  
 
-</div>
+
 </div>
 <div class="row" >
   <div class="col-sm-12 col-sm-6 col-md-6 col-lg6" style="padding: 1px; background-image: url('/assets/imagenes/fishing/fishing20.jpeg'); background-size: 100% 100%; height: 550px; width: 100%;"data-aos="fade-up"
@@ -592,8 +645,6 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
     
     <div class="container-fluid">
       <div class="row">
-        <div class="container" style="margin-top: 30px;">
-          <div class="row">
             <div class="col-sm-12 product-Title">
               <h1>Productos más vendidos</h1>
               <hr>
@@ -695,46 +746,54 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
 
       </div>
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productosPesca_Destacados | async as productosPescaD; else isLoadingMasVendidos">
          <owl-carousel-o [options]="customOptions">
-           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca_masVendidos | async | slice: 0:16; index as i; let index = i;">
              <div class="" >
                <div class="product-card">
                <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
                <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-               <div class="badge3"*ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+               <div class="badge3" *ngIf="productoPesca.existencia === null || productoPesca.existencia === 0">PRODUCTO AGOTADO</div>
+               <!--<div class="badge3"*ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>-->
                <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                    <div class="product-tumb">
-                       <img src="{{productoPesca.image[0].url}}" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal"
-                       >
+                       <!--<img src="{{productoPesca.image[0].url}}" alt="" (mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal"
+                       >-->
                    </div>
                    <div class="product-details">
                     <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
                 
-                    <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
-                    <h4 *ngIf="productoPesca.descuento"><span>  Precio Original: </span> {{productoPesca.precio_antiguo | currency}}</h4>
-                    <h5 *ngIf="productoPesca.descuento != 0; else precioNormal"><span>Precio de Lista: </span> {{productoPesca.precio | currency}}</h5>
-                    <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"><span>Precio: </span>{{productoPesca.precio | currency}}</h3>
-                
+                   <!--<div>
+                       <h4 *ngIf="producto.descuento"><span>{{producto.precio_antiguo | currency}}</span> </h4>
+                   </div>
+                   
+                    <div> 
+                       <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                    </div>-->
+                    <div>
+                       <h3 id="precioNormal"><span>{{productoPesca.precio | currency}}</span><span style="font-size: 12px;"> {{productoPesca.unidad}}</span></h3>
+                    </div>
+                    <div>
+                       <h4><a routerLink="/tienda/{{productoPesca.id}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                    </div>
                     
+                   
                     <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                    
                     <div class="pruebaBotones"> 
-                     <ul>
-                       <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                         <button (click)="addWishList(productoPesca, $event)" [ngClass] = "{'product-priceHeartChecked': productoPesca.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                         <div *ngIf = "productoPesca.isLoading == true">
+                            <app-spinner-small></app-spinner-small>
+                        </div>
                       
-                       
-                     </ul>
-                    
-    
-                   </div>
+                    </div>
                    <div class="pruebaBotones2">
                        <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                       <button class="" type="button" (click) = "addCart(productoPesca)"><i class="fa fa-shopping-cart"></i> </button>
+                       <button class="" type="button" [disabled] = "productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true}" (click) = "addCartElement(productoPesca, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
                      
-    
+
                    </div>
-                   </div>
+               </div>
                </div>
            </div>
            </ng-template>
@@ -742,11 +801,20 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
        </owl-carousel-o>
 
         </div>
+        <ng-template #isLoadingMasVendidos>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+            <div>
+               <app-spinner-small>
+               
+               </app-spinner-small>
+            </div>
+             Cargando productos...
+           </div>
+         </ng-template>
 
       </div>
-  </div>
-
-  </div>
+  
 
 </div>
 
@@ -845,50 +913,61 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
 
 
   
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12 product-Title">
           <h1>Productos Yellow Tail</h1>
           <hr>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="productosPesca_Destacados | async as productosPescaD; else isLoadingYellowTail">
          <owl-carousel-o [options]="customOptions">
-           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca | slice: 0:16; index as i; let index = i;">
+           <ng-template carouselSlide *ngFor="let productoPesca of productosPesca_yellowTail | async | slice: 0:16; index as i; let index = i;">
              <div class="" >
                <div class="product-card">
                <div class="badge1" *ngIf="productoPesca.nuevo">Nuevo</div>
                <div class="badge2" *ngIf="productoPesca.destacado">Destacado</div>
-               <div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>
+               <div class="badge3" *ngIf="productoPesca.existencia === null || productoPesca.existencia === 0">PRODUCTO AGOTADO</div>
+               <!--<div class="badge3" *ngIf="productoPesca.descuento">{{productoPesca.descuento}}% DESC</div>-->
               <!--<div class="badge3" *ngIf="productoPesca.descuento">Desc {{productoPesca.descuento}}%</div>-->
                    <div class="product-tumb">
-                       <img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">
+                       <!--<img src="{{productoPesca.image[0].url}}" alt=""(mouseover) = "productoPesca.image[0].url = productoPesca.imagenCambio" (mouseout) = "productoPesca.image[0].url = productoPesca.imagenPrincipal">-->
                    </div>
                    <div class="product-details">
                     <!--<span class="product-catagory">{{producto.categoria}} {{producto.marca}}</span>-->
                 
-                    <h4><a routerLink="/tienda/{{productoPesca.clasificacion}}/{{productoPesca.categoria}}/{{productoPesca.idProducto}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
-                    <h4 *ngIf="productoPesca.descuento"> Precio: <span> {{productoPesca.precio_antiguo | currency}}  </span> </h4>
-                    <h5 *ngIf="productoPesca.descuento != 0; else precioNormal">Precio desc:<span>{{productoPesca.precio | currency}}</span> </h5>
-                    <h3 id="precioNormal" *ngIf="productoPesca.descuento == 0"> Precio: <span>{{productoPesca.precio | currency}}</span></h3>
-                
+                   <!--<div>
+                       <h4 *ngIf="producto.descuento"><span>{{producto.precio_antiguo | currency}}</span> </h4>
+                   </div>
+                   
+                    <div> 
+                       <h5 *ngIf="producto.descuento != 0; else precioNormal"><span>{{producto.precio | currency}}</span> <span style="color: red; font-size: 12px; font-weight: bold;">{{producto.descuento}}% Desc</span>  </h5>
+                    </div>-->
+                    <div>
+                       <h3 id="precioNormal"><span>{{productoPesca.precio | currency}}</span><span style="font-size: 12px;"> {{productoPesca.unidad}}</span></h3>
+                    </div>
+                    <div>
+                       <h4><a routerLink="/tienda/{{productoPesca.id}}/{{productoPesca.nombre}}">{{productoPesca.nombre | oracionMayusculas}}</a></h4>
+                    </div>
                     
+                   
                     <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>-->
                    
                     <div class="pruebaBotones"> 
-                     <ul>
-                       <li>  <button (click)="addWishList(productoPesca)"><i class="fa fa-heart" aria-hidden="true"></i></button></li>
-                      
+                     
+                        <button (click)="addWishList(productoPesca, $event)" [ngClass] = "{'product-priceHeartChecked': productoPesca.fullHeart == true}"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                        <div *ngIf = "productoPesca.isLoading == true">
+                          <app-spinner-small></app-spinner-small>
+                        </div>
                        
-                     </ul>
-                    
-    
+                                         
+
                    </div>
                    <div class="pruebaBotones2">
                        <button style="margin-right: 2px " class="" type="button" (click)="openModal(productoPesca)"><i class="fa fa-eye" aria-hidden="true" ></i></button>
-                       <button class="" type="button" (click) = "addCart(productoPesca)"><i class="fa fa-shopping-cart"></i> </button>
+                       <button class="" type="button" [disabled] = "productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true" [ngClass] = "{'disabledBottonCart': productoPesca.existencia === 0 || productoPesca.existencia === null || productoPesca.isLoadingCart == true}" (click) = "addCartElement(productoPesca, $event)">Añadir al <i class="fa fa-shopping-cart"></i> </button>
                      
-    
+
                    </div>
-                   </div>
+               </div>
                </div>
            </div>
            </ng-template>
@@ -898,6 +977,17 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
         </div>
 
       </div>
+      <ng-template #isLoadingYellowTail>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          
+          <div>
+             <app-spinner-small>
+             
+             </app-spinner-small>
+          </div>
+           Cargando productos...
+         </div>
+       </ng-template>
          
           
          
@@ -905,7 +995,7 @@ background: linear-gradient(90deg, rgba(1, 223, 215) 50%, rgba(1, 223, 215) 50%)
           </div>
   
       </div>
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding: 1px;" data-aos="fade-up"
           data-aos-easing="linear"

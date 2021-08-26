@@ -4,25 +4,150 @@
 </div>
 
 <div class="modal-body">
-<h1>BIENVENIDO A LA <span>TRIBU</span></h1>
-        <form>
-          <h2>Inicio de Sesión</h2>
-            <input id="Usuario" name="Usuario" type="name" placeholder="Nombre de Usuario" [(ngModel)] = "usuario.nombre">
-            <input id="Contraseña" name="Contraseña" type="password" placeholder="Contraseña" [(ngModel)] = "usuario.contrasena">
-            <div class="row">
-                <!--<div class="col-lg-5" >
-                        <div class="form-check" style="margin-left: 40%;">
-                                <input  type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label style="color: white;" class="form-check-label" for="exampleCheck1">Recuérdame</label>
-                        </div>
+        <div class="container">
+                <!--<div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 titulo">
+                        <h1>Acceso Anfibia</h1>
+                    </div>  
                 </div>-->
-                <div class="col-lg-12">
-                        <a style="margin-left: 40%; color: white;" routerLink = "/olvidaste-contraseña"><u>¿Olvidaste la contraseña?</u></a>
+                
+                <!--<div class="row" style="margin-bottom: 10px;">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 titulos-formularios">
+                        <h3><b>Crea una cuenta con:</b> </h3>
+                        <a href="#" title="Facebook" class="btn btn-facebook btn-social btn-lg"><i class="fa fa-facebook"></i>Iniciar sesión usando Facebook</a>
+                        <a href="#" title="Google" class="btn btn-google btn-social btn-lg"><i class="fa fa-google"></i>Iniciar sesión usando Google</a>
+            
+                        <h3><b>O con tu Email:</b> </h3>
+            
+                    </div>
+            
+                </div>-->
+                
+                <div class="row">
+            
+                    <!--======================================================Aquí es donde empieza el LOGIN=======================================================================-->
+                    <div class="" style="height: auto; margin-top: 30px; margin-bottom: 30px;">
+            
+                           <div class="row"  style="margin-top: 60px;">
+                            <div class="offset-2 col-sm-8" style="display: flex; justify-content: center">
+                                <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+                            </div>
+                            <div class="offset-2 col-sm-8">
+                                <h1 style="font-family: 'Meera Inima', sans-serif; font-size: 20px; color: #000;">Login tu cuenta <span style="font-weight: bold; font-family: 'Meera Inima', sans-serif;">ANFIBIA</span></h1>
+                                <p style="font-family: 'Meera Inima', sans-serif; font-size: 13px; color: #000000;">Inicia sesión con tu cuenta Anfibia y preparate para vivir la experiencia, si no tienes cuenta, te invitamos a <a routerLink="/crear-cuenta">registrarte</a>.</p>
+                                <hr>
+            
+                            </div>
+                               <div class="offset-2 col-sm-8" style="padding-bottom: 20px;">
+                                   
+                                    <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)" #f="ngForm">
+                                   
+                                    <div class="row">
+            
+                                        <div class=" col-sm-12 error-response" *ngIf="mensajeError">
+                                            <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                                {{mensajeError}}</h1>
+                
+                                        </div>
+                                       
+                                        <div class=" col-sm-12">
+                                         <div class="margin">
+                                             <div class="inputGroup">      
+                                                 <input type="text"
+                                                 id="accessData"
+                                                 formControlName="accessData"  
+                                                 name="accessData"
+                                                 required />
+                                                 <span class="inputBar"></span>
+                                                 <label>Nickname/Nombre de Usuario o correo</label>
+                                                 <span class="errorFormulario" *ngIf ="formLogin.get('accessData').value === '' && formLogin.get('accessData').touched">*Este campo es requerido</span>
+                                                 <!--<span class="errorFormulario" *ngIf="formLogin.get('accessData').errors?.email && formLogin.get('accessData').touched">*Error, ingresa un correo con el formato de correo valido, correo@dominio</span>-->
+                                                 <!--<span class="errorFormulario" *ngIf ="registerForm.get('userName').value === '' && registerForm.get('userName').touched">*Este campo es requerido</span>-->
+                                                
+                                                </div>
+                                             <div class="inputGroup">      
+                                                 <input type="password"
+                                                 id="password"
+                                                 formControlName="password"  
+                                                 name="password"
+                                                  required />
+                                                 <span class="inputBar"></span>
+                                                 <label>Contraseña</label>
+                                                 <span class="errorFormulario" *ngIf ="formLogin.get('password').value === '' && formLogin.get('password').touched">*Este campo es requerido</span>
+                                                 <!--<span class="errorFormulario" *ngIf ="registerForm.get('apellidoPaterno').value === '' && registerForm.get('apellidoPaterno').touched">*Este campo es requerido</span>-->
+                                             </div>
+            
+                                          
+            
+                                           
+                                            </div>
+             
+                                        </div>
+                                      
+             
+                                    </div>
+                                    <div class="row">
+                                        <!--<div class="offset-2 col-sm-8">
+                                            <div class="">      
+                                               
+                                                <label> <input type="checkbox"
+                                                id="aceptoTerminos"
+                                                formControlName="terminosyCondiciones"  
+                                                name="terminosyCondiciones"
+                                                
+                                                  /> He leido y acepto los <a routerLink="/asuntos-legales">Términos y condiciones de uso</a> de la información del sitio web de ANFIBIA</label>
+                                            </div>
+                                            <span  class="errorFormulario" *ngIf="registerForm.get('terminosyCondiciones').value === false">*Debes estar de acuerdo con nuestros terminos y condiciones.</span>
+                                          
+                                        </div>-->
+                                       
+                       
+                                        <div class="col-sm-12" style="margin-bottom: 20px;">
+                                            <!--<div class="button-container">
+                                                <button type="submit"
+                                                [disabled] = "registerForm.status === 'INVALID' || registerForm.get('terminosyCondiciones').value === false"
+                                                ><span>Ingresar</span></button>
+                                            </div>-->
+
+
+                                            <button (click) = "signInWithFB()">Iniciar sesiòn con facebook</button>
+                                            <button (click) = "signOut()">Deslogearse</button>
+                                            <div class="button-container">
+                                                <button type="submit"
+                                                ><span>Ingresar</span></button>
+                                            </div>
+            
+                                        </div>
+                                        <div class="col-sm-12">
+                                    
+                                            <a href="#" title="Facebook" class="btn btn-facebook btn-social btn-lg"><i class="fa fa-facebook"></i>Iniciar sesión usando Facebook</a>
+                                            <a href="#" title="Google" class="btn btn-google btn-social btn-lg"><i class="fa fa-google"></i>Iniciar sesión usando Google</a>
+            
+                                        </div>
+                                        <div class="col-sm-12 not-account">
+                                            <a routerLink="recuperar-contraseña">¿Olvidaste la contraseña?</a>
+                                            <p>No tengo una cuenta, <a type="button" (click) = "closeRed()">Registrate</a></p>
+            
+                                        </div>
+            
+                                    </div>
+            
+                                   </form>
+                                 
+                            
+            
+                               </div>
+                              
+                             
+                               
+            
+                           </div>
+                 
+                     
+                    </div>
+            
+                    
                 </div>
-            </div>
-            <input id="Login" name="Login" type="submit" (click)="iniciarSesion(usuario)" value="Iniciar sesión">
-        </form>       
-<hr> 
-<span style="color: white; text-align: center; margin-left: 200px;">¿Aún no tienes cuenta con nosotros? <a routerLink="/crear-cuenta" (click) = "closeModal()" style="color: #01AFAA;">Crear cuenta</a></span>                   
+            </div>                 
 </div>
 

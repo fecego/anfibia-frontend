@@ -16,11 +16,14 @@ Ipad Mini 2.4 Landscape--*/
     .textos-asuntos-legales h4{
         font-family: 'Meera Inima', sans-serif;
         font-weight: bold;
+        font-size: 16px;
         
     }
 
     .textos-asuntos-legales p{
         font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        
     }
 }
 
@@ -39,12 +42,12 @@ Ipad mini Landscape -- Si lo afecta
 
     .textos-asuntos-legales h4{
        
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .textos-asuntos-legales p{
         
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 

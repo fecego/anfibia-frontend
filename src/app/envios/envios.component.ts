@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import  {scrollToTop} from '../modulosAnfibia/prueba';
 @Component({
   selector: 'app-envios',
   templateUrl: './envios.component.html',
@@ -10,7 +10,7 @@ export class EnviosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+   scrollToTop();
   }
 
 }

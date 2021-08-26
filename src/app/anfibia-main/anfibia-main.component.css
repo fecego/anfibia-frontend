@@ -1,3 +1,129 @@
+
+
+@media only screen and (min-width: 1280px){
+
+    .star-average{
+        color:#efb810;
+        border: #efb810;
+    }
+
+
+    .product-details .pruebadivS{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        
+    }
+
+    .product-details .pruebadivS h6{
+        margin-bottom: 0;
+    }
+
+   
+
+
+    .pruebaBotones2{
+        background: transparent;
+        opacity: 0;
+        z-index: 1;
+        position: absolute;
+        top: 30%;
+        right: 3%;
+        transition: 0.3s;
+        
+      }
+    
+      .product-card:hover .pruebaBotones2{
+          opacity: 1;
+          position: absolute;
+          top: 55%;
+          right: 3%;
+      
+      }
+    
+      .pruebaBotones2 button{
+        background: none;
+        margin-bottom: 1px;
+        border:none;
+        font-family: 'Meera Inima', sans-serif;
+        font-size: 14px;
+        padding: 7px;
+      
+      }
+      
+      .pruebaBotones2 button:hover{
+        background: #000;
+        color: #fff;
+        transition: 0.5s ease-in-out;
+      }
+
+
+      section .screen{
+        position: relative;
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        transition: 0.5s;
+        
+    }
+
+    section:hover .screen{
+        opacity: 0.1;
+    } 
+
+    section .screen:hover{
+        flex-grow: 5;
+       
+        opacity: 1;
+    }  
+
+
+    section .screen .content{
+        position: relative;
+        width: 400px;
+        height: auto;
+        background: #fff;
+        padding: 40px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: 0.5s;
+        text-align: justify;
+       
+    }
+    
+
+    section .screen:hover .content{
+        transform: translateX(0);
+        transition-delay: 0.3s;
+    }
+    
+      
+
+    }
+
+
+    /*===================================================================================*/
+
+    @media only screen and (max-width: 1279px){
+        .pruebaBotones2{
+            opacity: 1;
+            position: absolute;
+            top: 55%;
+            right: 3%;
+        }
+
+
+        
+    }
+
+
+
+
+
+
 .margin-most-sold{
     margin-top: 30px;
 }
@@ -82,6 +208,8 @@
 
 
 
+
+
 .backImageBegin2{
     background-image: url('/assets/imagenes/hunting/cazadorInicio.png');
        background-position: bottom;
@@ -159,30 +287,30 @@
     transition: 0.5s;
   }
   
-  .pruebaBotones2{
-    position: absolute;
-    top: 60%;
-    right: 5%;
-   
+
+
+
+
+
+
+
+  .disabledBottonCart{
+      color: #999;
   }
 
+
+    
 
   
   .pruebaBotones2 button{
     background: #fff;
+    margin-bottom: 1px;
     border:none;
-    border-radius: 2px;
     font-family: 'Meera Inima', sans-serif;
-    font-size: 17px;
-    padding: 5px;
+    font-size: 14px;
+    padding: 7px;
     
   
-  }
-  
-  .pruebaBotones2 button:hover{
-    background: #A4A4A4;
-    color: #000;
-    transition: 0.5s ease-in-out;
   }
       
     
@@ -313,7 +441,7 @@
 }
 
 .see-more{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inimai', sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: #000;
@@ -432,7 +560,7 @@
   
   .modal-textos h1{
     color: #000;
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-size: 30px;
   }
   
@@ -444,7 +572,7 @@
   }
   
   .modal-textos h4 span{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inimai', sans-serif;
     font-size: 20px;
     color: #fff;
     background: #ff0000;
@@ -454,7 +582,7 @@
   
   .modal-textos p{
     color: #000;
-    font-family: 'Prometo-Thin';
+    font-family: 'Meera Inimai', sans-serif;
     font-weight: bolder;
   }
   
@@ -463,7 +591,7 @@
   }
   
   .basic-info h4{
-    font-family: 'Prometo-x-bold';
+    font-family: 'Anton', sans-serif;
     font-weight: bolder;
     color: #000;
     display: inline;
@@ -478,7 +606,7 @@
   }
   
   .modal-textos h5{
-    font-family: 'Prometo-Medium';
+    font-family: 'Meera Inimai', sans-serif;
     color: #000;
     padding-top: 20px;
   }
@@ -875,7 +1003,7 @@
     }
 
     .texto-fondo-left-imagen h5{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size: 20px;
         color: #000;
     }
@@ -887,20 +1015,20 @@
     }
 
     .texto-fondo-left-descubre{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size: 20px;
         color: #000;
     }
 
 
     .last-container h1{
-        font-family: 'Anton', sans-serif;
+        font-family: 'Meera Inima', sans-serif;
+        font-weight: bold;
         padding-top: 20px;
         color: #000;
-        font-size: 40px;
+        font-size: 25px;
         text-align: left;
         text-transform: none;
-
     }
 
     .last-container hr{
@@ -963,7 +1091,7 @@
     }
 
     .last-container-text2 p{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 20px;
         line-height: 0em;
         color: #000;
@@ -1067,14 +1195,14 @@
     }
 
     .texto-segundo h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size: 100px;
         text-align: center;
         padding-top: 26%;
     }
 
     .texto-segundo h3{
-        font-family: 'Prometo-Thin';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 25px;
         text-align: center;
     }
@@ -1087,14 +1215,14 @@
     }
 
     .texto-over-image h3{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         text-align: center;
         font-size: 35px;
 
     }
 
     .texto-over-image h4{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         text-align: center;
         font-size: 120px;
 
@@ -1102,7 +1230,7 @@
 
     .texto-over-image a{
         
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bolder;
         background: red;
         color: #fff;
@@ -1199,21 +1327,21 @@
     }
 
     .textos-iniciales2 h4{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size:40px;
         text-align: center;
 
     }
 
     .textos-iniciales2 h3{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 20px;
         text-align: center;
         padding: 3px;
     }
 
     .textos-iniciales2 a{
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bolder;
         background: red;
         color: #fff;
@@ -1387,7 +1515,7 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .tex-publicidad-1 h1{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size: 200px; 
         color: #fff; 
         position: absolute; 
@@ -1396,7 +1524,7 @@ background: rgba(0, 0, 0, 0.3);
     }
 
     .tex-publicidad-1 p{
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         font-size: 80px; 
         color: #fff; 
         position: absolute; 
@@ -1407,7 +1535,7 @@ background: rgba(0, 0, 0, 0.3);
     .tex-publicidad-1 h2{
         color: #ff0000;
         text-align: center;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         position: absolute; 
         top: 60%;
         text-align: center;
@@ -2269,6 +2397,11 @@ background: rgba(0, 0, 0, 0.3);
     }
 
 
+    .heartFull i::selection{
+        color: red;
+    }
+
+
     .fit-div{
         width: 100%;
         height: 500px;
@@ -2415,12 +2548,12 @@ background: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: -13px;
   height: 50px;
-  font-family: 'Prometo-Thin';
+  font-family: 'Meera Inimai', sans-serif;
   margin: 0 0 0 18px;
   font-size: 20px;
   color: #000000;
   font-weight: 600;
-  font-family: 'Prometo-Medium';
+  font-family: 'Meera Inimai', sans-serif;
 }
 
 .product-price h4 span {
@@ -2464,9 +2597,12 @@ background: rgba(0, 0, 0, 0.3);
 
     .seccion-productos-extras h1{
         font-family: 'Anton', sans-serif;
-        color: black;
-        font-size: 30px;
+        font-weight: normal;
+        padding-top: 20px;
+        color: #000;
+        font-size: 25px;
         text-align: left;
+        text-transform: none;   
 
     }
 
@@ -2682,7 +2818,7 @@ background: rgba(0, 0, 0, 0.3);
         overflow: hidden;
         width: 80%;
         text-align: center;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
   
     }
   
@@ -2721,7 +2857,7 @@ background: rgba(0, 0, 0, 0.3);
 
     .half_background {
         background: linear-gradient(to top, #8d8d8d 50%, transparent 50%);
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         letter-spacing: 5px;
         font-weight: bolder;
 
@@ -2780,7 +2916,7 @@ background: rgba(0, 0, 0, 0.3);
 
     .texto-inside-anfibia h1{
         text-align: center;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         color: white;
         font-weight: bold;
         font-size: 120px;
@@ -2790,7 +2926,7 @@ background: rgba(0, 0, 0, 0.3);
 
     .texto-inside-anfibia p{
         text-align: center;
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inimaia', sans-serif;
         color: white;
         font-weight: bold;
         font-size: 30px;
@@ -2850,45 +2986,46 @@ background: rgba(0, 0, 0, 0.3);
     .badge1 {
         position: absolute;
         left: 0;
-        top: 13px;
+        top: 4px;
         font-family: 'Meera Inimai', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
+        border-radius: 2px;
+        font-size: 12px;
         font-weight: 700;
-        background: #000;
-        color: #fff;
+        color: #000;
         padding: 3px 10px;
-        border-radius: none;
+        background: none;
+        margin-left: 1px;
+        z-index: 1000;
+        
     }
 
     .badge2 {
         position: absolute;
-        left: 0;
-        top: 40px;
-        text-transform: uppercase;
-        font-size: 14px;
+        border-radius: 2px;
+        left: 29%;
+        top: 4px;
+        font-size: 12px;
         font-family: 'Meera Inimai', sans-serif;
         font-weight: 700;
-        background: #ff0000;
-        color: #fff;
+        color: #000;
         padding: 3px 10px;
+        background: none;
+        z-index: 1000;
     }
 
    
 
     .badge3 {
         position: absolute;
-        right: 5px;
-        top: 47%;
-        text-transform: uppercase;
-        font-size: 14px;
+        left: 0%;
+        bottom: 36%;
+        font-size: 12px;
         font-family: 'Meera Inimai', sans-serif;
         font-weight: 700;
-        color: #fff;
-        background-color: #000000;
-        
-        
-        padding: 3px 10px;
+        padding: 4px;
+        border-radius:2px;
+        color: #0B615E;
+        z-index: 1000;
     }
     
     
@@ -2896,27 +3033,82 @@ background: rgba(0, 0, 0, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #f0f0f0;
-        height: 300px;
-        padding: 85px;
+        background: #FFF;
+        height: 250px;
+        padding: 5px;
        
     }
+  
+    .aguaSaladaBackground{
+        background: #58FAD0;
+      }
+      
+      .aguaDulceBackground{
+        background:#81F7F3;
+      }
+      
+      .lineasBackground{
+        background:#A9F5F2;
+      }
+      
+      .embarcacionesBackground{
+        background:#00FFFF;
+      }
+      
+      .buceorecBackground{
+        background:#58FA58;
+      }
+      
+      .ropaBackground{
+        background:#2EFE9A;
+      }
+      
+      .accesoriosBackground{
+        background: #2EFE9A;
+      }
+      
+      .riflesBackground{
+        background: #F7D358;
+      }
+      
+      .pistolasBackground{
+        background: #F4FA58;
+      }
+      
+      .arqueriaBackground{
+        background: #F7FE2E;
+      }
+      
+      .mantenimientoBackground{
+        background: #FAAC58;
+      }
+      
+      .ropaCaceriaBackground{
+        background: #FFBF00;
+      }
+      
+      .cuchilleriaBackground{
+        background: #FACC2E;
+      }
+      
+      .accesoriosCaceriaBackground{
+        background: #FFFF00;
+      }
     
     .product-tumb img {
-    
         max-width: 100%;
-        max-height: auto;
+        max-height: 100%;
         transition: all 200ms ease-in;
-        transform: scale(1);
+        /*transform: scale(1);*/
     }
     
-    .product-tumb img:hover {
+    /*.product-tumb img:hover {
       transition: all 300ms ease-in;
       transform: scale(1.2);
-    }
+    }*/
     
     .product-details {
-        padding: 30px;
+        padding: 20px;
     }
     
     .product-catagory {
@@ -2942,6 +3134,9 @@ background: rgba(0, 0, 0, 0.3);
                 font-size: 20px;
             }
         }*/
+
+
+    
     
     .product-details h4{
         font-family: 'Meera Inima', sans-serif;
@@ -2952,7 +3147,7 @@ background: rgba(0, 0, 0, 0.3);
     
       .product-details h4 span{
         font-weight: normal;
-        text-decoration: line-through;
+        /*text-decoration: line-through;*/
     }
     
       
@@ -2967,24 +3162,45 @@ background: rgba(0, 0, 0, 0.3);
       .product-details h5 span{
           color: red;
           font-weight: bold;
+          font-size: 15px;
       }
       
       .product-details h3{
-        font-family: 'Meera Inima', sans-serif;
-        font-size: 14px;
+        font-family: 'Meera Inimai', sans-serif;
+        font-size: 19px;
+        text-align: justify;
+        font-weight: bolder;
         color: #000;
+        margin-bottom: 0;
       }
+
+
+      .product-details h2{
+          font-family: 'Meera Inimai', sans-serif;
+          color: #999;
+          text-decoration: line-through;
+          font-size: 14px;
+      }
+
+      .product-details h6{
+        font-family: 'Meera Inimai', sans-serif;
+        color: red;
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 7px;
+        
+      }
+      
     
      
       
       .product-details h4 a {
-        font-weight: bold;
         display: block;
         margin-bottom: 10px;
-        color: #000000;
+        color: #000;
         text-decoration: none;
         transition: 0.3s;
-        font-size: 15px;
+        font-size: 13px;
         font-family: 'Meera Inima', sans-serif;
       }
       
@@ -3015,7 +3231,7 @@ background: rgba(0, 0, 0, 0.3);
         font-size: 20px;
         color: #000000;
         font-weight: 600;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
     }
     
 
@@ -3117,7 +3333,7 @@ background: rgba(0, 0, 0, 0.3);
         position: absolute;
         top: 85%;
         right: 7%;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimaia', sans-serif;
         font-size: 13px;
         color: #000000;
         border: 1px solid #000000;
@@ -3135,7 +3351,7 @@ background: rgba(0, 0, 0, 0.3);
         background: transparent;
         border: 2px solid black;
         color: black; 
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         padding: 5px;
         font-size: 20px;
     }
@@ -3168,14 +3384,14 @@ background: rgba(0, 0, 0, 0.3);
 
     .texto-video h1{
         color: white;
-        font-family: 'Prometo-x-bold';
+        font-family: 'Anton', sans-serif;
         letter-spacing: 6px;
         font-size: 110px;
     }
 
     .texto-video p{
         color: white;
-        font-family: 'Prometo-Light';
+        font-family: 'Meera Inimai', sans-serif;
         letter-spacing: 6px;
         font-size: 30px;
         font-weight: bolder;
@@ -3229,7 +3445,7 @@ background: rgba(0, 0, 0, 0.3);
         
     }
 
-    section:hover .screen{
+    /*section:hover .screen{
         opacity: 0.1;
     } 
 
@@ -3237,7 +3453,7 @@ background: rgba(0, 0, 0, 0.3);
         flex-grow: 5;
        
         opacity: 1;
-    }    
+    }*/    
 
     section .screen:nth-child(1){
         background: url('/assets/imagenes/paginaInicial/1.11.jpg');
@@ -3276,16 +3492,12 @@ background: rgba(0, 0, 0, 0.3);
     }
     
 
-    section .screen:hover .content{
-        transform: translateX(0);
-        transition-delay: 0.3s;
-    }
+    
 
 
     section .screen .content h1{
         font-family: 'Anton', sans-serif;
         color: black;
-        letter-spacing: 2px;
     }
 
     section .screen .content p{
@@ -3301,9 +3513,10 @@ background: rgba(0, 0, 0, 0.3);
 
     .product-Title h1{
         font-family: 'Anton', sans-serif;
+        font-weight: normal;
         padding-top: 20px;
         color: #000;
-        font-size: 30px;
+        font-size: 25px;
         text-align: left;
         text-transform: none;
     }
@@ -3320,7 +3533,7 @@ background: rgba(0, 0, 0, 0.3);
         }*/
 
     .product-Title p{
-        font-family: 'Prometo-thin';
+        font-family: 'Meera Inimai', sans-serif;
         color: #000;
         font-size: 25px;
         text-align: center;
@@ -3597,6 +3810,13 @@ Media query usado
 */
 @media screen and (max-width: 640px) and (min-width: 568px){
 
+
+
+    .last-container h1{
+        font-size: 16x;
+        
+    }
+
     .split{
         height: 300px;
     }
@@ -3678,11 +3898,10 @@ Media query usado
     }
 
     .botonesInicio button{
-        font-size: 10px;
-        padding-left: 0px;
-        width: 48%;
-        padding: 0;
-        margin: 0;
+        font-size: 12px;
+        padding: 4px;
+        width: 98%;
+        margin: 2px;
         text-align: center;
         border: 1px solid #000;
         margin-left: 2px;
@@ -3774,7 +3993,7 @@ Media query usado
         
         padding-top: 20px;
         
-        font-size: 30px;
+        font-size: 18px;
     }
 
     
@@ -3812,9 +4031,8 @@ Media query usado
     }
 
     .contenido-main p{
-        font-size: 30px;
-        letter-spacing: 3px;
-        font-weight: bolder;
+        font-size: 25px;
+        letter-spacing: 0px;
         text-align: center;
     }
 
@@ -3825,7 +4043,7 @@ Media query usado
 
     section .screen .content{
         position: relative;
-        width: 90%;
+        width: 60%;
         height: 55%;
         background: #fff;
         padding: 20px;
@@ -3837,18 +4055,17 @@ Media query usado
     }
     
 
-    section .screen:hover .content{
+    /*section .screen:hover .content{
         transform: translateX(0);
         transition-delay: 0.3s;
-    }
+    }*/
 
 
     section .screen .content h1{
-        font-family: 'Meera Inima', sans-serif;
+        font-family: 'Anton', sans-serif;
         color: black;
-        letter-spacing: 2px;
-        font-size: 20px;
-        font-weight: bolder;
+        letter-spacing: 0px;
+        font-size: 18px;
     }
 
     section .screen .content p{
@@ -3860,7 +4077,8 @@ Media query usado
     }
 
     .button-slide a{
-        font-size: 13px;
+        text-transform: none;
+        font-size: 14px;
         padding: 6px;
         color: black;
         overflow: hidden;
@@ -3868,10 +4086,12 @@ Media query usado
         position: absolute;
         top: 88%;
         left:50%;
+        border: 1px solid #000;
     }
 
     .seccion-productos-extras h1{
-        font-size: 30px;
+        font-size: 18px;
+
         
 
     }
@@ -3953,7 +4173,9 @@ Iphone 7 Portrait
  @media only screen and (max-width: 390px) and (min-width: 321px){
 
 
-
+    .product-Title h1{
+        font-size: 18px;
+    }
     
 
     section .screen .content{
@@ -3963,7 +4185,9 @@ Iphone 7 Portrait
     }
 
     .button-slide a{
-        font-size: 10px;
+        font-size: 14px;
+        text-transform: none;
+        border: 1px solid #000;
     }
 
     .content{
@@ -3974,15 +4198,21 @@ Iphone 7 Portrait
         height: 250px;
     }
 
+    section .screen .content{
+        padding: 10px;
+    }
+
     section .screen .content h1{
-        font-size: 20px;
+        font-size: 18px;
         font-family: 'Anton', sans-serif;
+        letter-spacing: 0;
         
     }
 
     section .screen .content p{
         font-size: 14px;
         font-family: 'Meera Inima', sans-serif;
+        letter-spacing: 0;
     }
 
 
@@ -4377,6 +4607,11 @@ Surface Pro 3 Portrait
 
   
 
+    .seccion-productos-extras h1{
+        font-size: 23px;
+    }
+
+
     .last-text-fit-y{
         position: absolute;
         top: 50%;
@@ -4409,11 +4644,11 @@ Surface Pro 3 Portrait
     }
 
     .texto-videoPrueba h1{
-        font-size: 40px;
+        font-size: 28px;
     }
 
     .texto-videoPrueba h2{
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .split{
@@ -4446,11 +4681,11 @@ Surface Pro 3 Portrait
     }
 
     .textos-iniciales h3{
-        font-size: 40px;
+        font-size: 28px;
     }
 
     .textos-iniciales p{
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .divBegin{
@@ -4490,12 +4725,12 @@ Surface Pro 3 Portrait
     }
 
     .pi-left h2{
-        font-size: 50px;
+        font-size: 28px;
         letter-spacing: 0px;
     }
 
     .pi-left h1{
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .pi-left h1{
@@ -4523,7 +4758,7 @@ Surface Pro 3 Portrait
        
        
         color: #000;
-        font-size: 40px;
+        font-size: 23px;
     }
 
     
@@ -4568,9 +4803,8 @@ Surface Pro 3 Portrait
 
     .contenido-main h1{
     
-        font-size: 40px;
-      
-        letter-spacing: 2px;
+        font-size: 28px;
+        font-weight: normal;
     }
 
     .contenido-main p{
@@ -4591,7 +4825,7 @@ Surface Pro 3 Portrait
         background: #000;
     }
 
-    section .screen{
+    /*section .screen{
         position: relative;
         flex-grow: 2;
         display: flex;
@@ -4628,7 +4862,7 @@ Surface Pro 3 Portrait
         font-size: 15px;
         
     
-    }
+    }*/
 
          
     .button-slide a{
@@ -4652,9 +4886,8 @@ Ipad mini Landscape -- Si lo afecta
 kindlefire landscape -- Si lo afecta
 */
 @media only screen and (max-width: 1024px) and (min-width: 1000px)  and (orientation: landscape){
+    
 
-
-   
     .newProdMargin{
         margin-top: 300px;
     }
@@ -4732,10 +4965,15 @@ kindlefire landscape -- Si lo afecta
     }
 
     .product-Title h1{
-        font-family: 'Anton', sans-serif;
+        font-family: 'Meera Inimai', sans-serif;
         padding-top: 20px;
         color: #000;
-        font-size: 40px;
+        font-size: 28px;
+    }
+
+
+    .seccion-productos-extras h1{
+        font-size: 28px;
     }
 
     .product-links-wish{
@@ -4865,7 +5103,7 @@ kindlefire landscape -- Si lo afecta
     .product-price2 h5{ 
         background: none;
         padding-left: 10px;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bolder;
         padding-top: 3px;
         color: #000;
@@ -4880,7 +5118,7 @@ kindlefire landscape -- Si lo afecta
         position: absolute;
         top: 85%;
         right: 2px;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 13px;
         color: #000000;
         border: 1px solid #000000;
@@ -4917,6 +5155,9 @@ kindlefire landscape -- Si lo afecta
     .publicidad-imagen6{
         height: auto;
     }
+
+    
+
 }
 
 
@@ -5069,7 +5310,7 @@ kindlefire landscape -- Si lo afecta
     }
 
     .product-Title h1{
-        font-size: 40px;
+        font-size: 25px;
     }
 
     .publicidad1{
@@ -5142,12 +5383,12 @@ kindlefire landscape -- Si lo afecta
         overflow: hidden;
         width: 80%;
         text-align: center;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
   
     }
 
     .seccion-productos-extras h1{
-        font-size: 40px;
+        font-size: 25px;
     }
     
 
@@ -5169,7 +5410,7 @@ kindlefire landscape -- Si lo afecta
         position: absolute;
         top: 85%;
         right: 2%;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 13px;
         color: #000000;
         border: 1px solid #000000;
@@ -5180,7 +5421,7 @@ kindlefire landscape -- Si lo afecta
       .product-price2 h5{ 
         background: none;
         padding-left: 0px;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-weight: bolder;
         padding-top: 3px;
         color: #000;
@@ -5395,7 +5636,7 @@ kindlefire landscape -- Si lo afecta
     }
 
     .pi-left span{
-        font-family:'Prometo-Medium'; color: #000;
+        font-family:'Meera Inimai'; color: #000;
     }
 
     
@@ -5409,7 +5650,7 @@ kindlefire landscape -- Si lo afecta
         position: absolute;
         top: 90%;
         left: 5%;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         color: #000000;
         border: 1px solid #000000;
         padding: 5px;
@@ -5423,7 +5664,7 @@ kindlefire landscape -- Si lo afecta
         position: absolute;
         top: 90%;
         right: 5%;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
         font-size: 15px;
         color: #000000;
         border: 1px solid #000000;
@@ -5529,12 +5770,16 @@ kindlefire landscape -- Si lo afecta
         overflow: hidden;
         width: 80%;
         text-align: center;
-        font-family: 'Prometo-Medium';
+        font-family: 'Meera Inimai', sans-serif;
   
     }
 
     .seccion-productos-extras h1{
-        font-size: 30px;
+        font-size: 18px;
+    }
+
+    .product-Title h1{
+        font-size: 18px;
     }
 
     .slides {
@@ -5652,13 +5897,14 @@ kindlefire landscape -- Si lo afecta
 Iphone 5 Portrait
 */
 @media only screen and (max-width: 320px){
-
     .margin-most-sold{
         margin-top: 60px;
     }
 
 
-  
+    .last-container h1{
+        font-size: 18px;
+    }
 
     .last-text-fit h1{
         font-size: 50px;
@@ -5770,6 +6016,11 @@ Iphone 5 Portrait
 
     .botonesInicio{
         padding: 2px;
+    
+    }
+
+    .botonesInicio button{
+        margin: 2px;
     }
 
     .texto-videoPrueba{
@@ -5842,7 +6093,12 @@ Iphone 5 Portrait
     
 
     .product-Title h1{
-        font-size: 30px;
+        font-size: 18px;
+    }
+
+
+    .seccion-productos-extras h1{
+        font-size: 18px;
     }
 
     .product-card{
@@ -5916,9 +6172,7 @@ Iphone 5 Portrait
         font-family: 'Meera Inima', sans-serif;
     }
 
-    .seccion-productos-extras h1{
-        font-size: 30px;
-    }
+   
 
     .product-text h2{
         font-size: 15px;

@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row" *ngIf="!mensaje && !mensajeError">
+        <div class="offset-3 col-sm-6" style="height: auto; margin-top: 30px; margin-bottom: 30px;">
+
+            <div class="row"  style="margin-top: 60px;">
+             <div class="offset-2 col-sm-8" style="display: flex; justify-content: center">
+                 <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+             </div>
+             <div class="offset-2 col-sm-8">
+                 <h1 style="font-family: 'Meera Inima', sans-serif; font-size: 20px; color: #000;">Generar Enlace de activación <span style="font-weight: bold; font-family: 'Meera Inima', sans-serif;">ANFIBIA</span></h1>
+                 <p style="font-family: 'Meera Inima', sans-serif; font-size: 13px; color: #000000;">Debes ingresar tu correo para que podamos generar un email con tu nuevo enlace de activación, también te recomendamos activar tu cuenta lo más pronto posible, el enlace de activación de la cuenta, caduca 24 hrs despues de su generación.</p>
+                 <hr>
+
+             </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px;">
+                    
+                     <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)" #f="ngForm">
+                    
+                     <div class="row">
+
+                         <!--<div class="offset-2 col-sm-8 error-response" *ngIf="mensajeError && mensaje == null">
+                             <h1><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                 {{mensajeError}}</h1>
+                                 
+ 
+                         </div>
+                         <div class="offset-2 col-sm-8 success-message" *ngIf="mensaje && mensajeError == null" >
+                            <p><i class="fa fa-check" aria-hidden="true"></i> {{mensaje}}</p>
+                        </div>-->
+
+
+
+                         <div class="offset-2 col-sm-8">
+                          <div class="margin">
+                              <div class="inputGroup">      
+                                  <input type="text"
+                                  id="accessData"
+                                  formControlName="accessData"  
+                                  name="accessData"
+                                  required />
+                                  <span class="inputBar"></span>
+                                  <label>Correo electronico</label>
+                                  <span class="errorFormulario" *ngIf ="formLogin.get('accessData').value === '' && formLogin.get('accessData').touched">*Este campo es requerido</span>
+                                  <!--<span class="errorFormulario" *ngIf="formLogin.get('accessData').errors?.email && formLogin.get('accessData').touched">*Error, ingresa un correo con el formato de correo valido, correo@dominio</span>-->
+                                  <!--<span class="errorFormulario" *ngIf ="registerForm.get('userName').value === '' && registerForm.get('userName').touched">*Este campo es requerido</span>-->
+                                 
+                                 </div>
+                            
+
+                           
+
+                            
+                             </div>
+
+                         </div>
+                        
+                         
+
+                     </div>
+                     <div class="row">
+                         <!--<div class="offset-2 col-sm-8">
+                             <div class="">      
+                                
+                                 <label> <input type="checkbox"
+                                 id="aceptoTerminos"
+                                 formControlName="terminosyCondiciones"  
+                                 name="terminosyCondiciones"
+                                 
+                                   /> He leido y acepto los <a routerLink="/asuntos-legales">Términos y condiciones de uso</a> de la información del sitio web de ANFIBIA</label>
+                             </div>
+                             <span  class="errorFormulario" *ngIf="registerForm.get('terminosyCondiciones').value === false">*Debes estar de acuerdo con nuestros terminos y condiciones.</span>
+                           
+                         </div>-->
+                        
+        
+                         <div class="offset-2 col-sm-8" style="margin-bottom: 20px;">
+                             <!--<div class="button-container">
+                                 <button type="submit"
+                                 [disabled] = "registerForm.status === 'INVALID' || registerForm.get('terminosyCondiciones').value === false"
+                                 ><span>Ingresar</span></button>
+                             </div>-->
+                             <div class="button-container">
+                                 <button type="submit"  #buttonRegister
+                                 ><span>Conseguir enlace</span></button>
+                             </div>
+                         </div>
+                       
+
+                     </div>
+
+                    </form>
+                  
+             
+
+                </div>
+               
+              
+                
+
+            </div>
+  
+      
+     </div>
+
+    </div>
+    <div class="row" *ngIf="mensaje || mensajeError">
+        <div class="offset-3 col-sm-6">
+            <app-result-active></app-result-active>
+
+        </div>
+
+    </div>
+
+</div>

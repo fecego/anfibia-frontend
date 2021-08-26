@@ -1,0 +1,61 @@
+
+
+.success-message{
+    height: 500px;
+    align-items: center;
+    text-align: justify;
+}
+
+.div-success{
+    margin-top: 25%;
+}
+
+.success-message h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.success-message p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    color: #000;
+}   
+
+
+.success-message a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+   
+}
+
+.div-error{
+    margin-top: 25%;
+}
+
+.error-message h1{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error-message{
+    height: 500px;
+    align-items: center;
+    text-align: justify;
+    
+}
+
+.error-message p{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+    color: #000;
+    
+   
+}
+
+.error-message a{
+    font-family: 'Meera Inima', sans-serif;
+    font-size: 13px;
+   
+}

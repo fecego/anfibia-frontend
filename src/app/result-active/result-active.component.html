@@ -1,0 +1,41 @@
+<div class="resultAction" *ngIf="mensajeMessageSend">
+  <div class="themargin">
+    <div style="display: flex; justify-content: center">
+        <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+    </div>
+    <h1>Enlace enviado</h1>
+    <p>Se envio un email al correo que registraste, te recomendamos activar tu cuenta lo más pronto posible, 
+        dado que el enlace que enviamos tiene un periodo de expiración de 24 hrs a partir de su generación.
+    </p>
+  </div>
+</div>
+
+
+
+<div class="resultAction" *ngIf="mensajeAlreadyActiva">
+   <div class="themargin">
+    <div style="display: flex; justify-content: center">
+        <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+    </div>
+    <h1>Cuanta activada</h1>
+    <p>La cuenta ya se encuentra activa, te sugerimos iniciar sesión para que puedas comenzar 
+        a equiparte con los productos de nuestra marca, Anfibia.
+    </p>
+    <a routerLink="/login">Ir al Login</a>
+   </div>
+</div>
+
+
+<div class="resultAction" *ngIf="mensajeErrorNotRegistrado">
+    <div class="themargin">
+        <div style="display: flex; justify-content: center">
+            <img src="/assets/imagenes/Logo/LogoCopia.png" alt="" width="20%" height="90%">
+        </div>
+        <h1>Cuenta no registrada</h1>
+        <p>No se encuentra registrada la cuenta que ingresaste, te sugerimos registrarte a Anfibia para que puedas obtener todos los beneficios de ser un
+            cliente.
+        </p>
+        <a routerLink="/crear-cuenta">Ir al registro</a>
+
+    </div>
+</div>
